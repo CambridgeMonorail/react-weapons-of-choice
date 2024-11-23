@@ -1,4 +1,4 @@
-import { useToast } from "@react-monorepo/shared/components/hooks/use-toast"
+
 import {
   Toast,
   ToastClose,
@@ -7,6 +7,7 @@ import {
   ToastTitle,
   ToastViewport,
 } from "@react-monorepo/shared/components/ui/toast"
+import { useToast } from "@react-monorepo/shared/hooks/use-toast"
 
 export function Toaster() {
   const { toasts } = useToast()
