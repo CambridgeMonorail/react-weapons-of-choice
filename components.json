@@ -10,6 +10,6 @@
   },
   "aliases": {
     "components": "@react-monorepo/shared/components",
-    "utils": "@react-monorepo/shared/shared/utils"
+    "utils": "@react-monorepo/shared/lib/utils"
   }
 }
