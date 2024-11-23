@@ -7,3 +7,4 @@
 - Adhere to TypeScript best practices, including strict typing and interfaces.
 - Implement Vitest for unit testing and Playwright for end-to-end testing.
 - Ensure all components are accessible and responsive.
+- shadcn reusable components are defined in @react-monorepo/shared

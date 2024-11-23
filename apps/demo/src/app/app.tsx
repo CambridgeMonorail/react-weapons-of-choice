@@ -1,51 +1,37 @@
-import NxWelcome from './nx-welcome';
-import { Button } from '@react-monorepo/shared';
-import { Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Toaster } from '@react-monorepo/shared/components/ui/toaster';
 
-export function App() {
+import Layout from './components/Layout';
+import Home from './components/Home';
+import ButtonDemo from './components/ButtonDemo';
+import CardDemo from './components/CardDemo';
+import FormDemo from './components/FormDemo';
+import DialogDemo from './components/DialogDemo';
+import DropdownDemo from './components/DropdownDemo';
+import TabsDemo from './components/TabsDemo';
+import ToggleDemo from './components/ToggleDemo';
+import TooltipDemo from './components/TooltipDemo';
+import ChartDemo from './components/ChartDemo';
+
+function App() {
   return (
-    <div>
-      <Button variant={'outline'}>Shared button</Button>
-      <NxWelcome title="demo" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-      </div>
+    <Layout>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
-        <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/">Click here to go back to root page.</Link>
-            </div>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/buttons" element={<ButtonDemo />} />
+        <Route path="/cards" element={<CardDemo />} />
+        <Route path="/forms" element={<FormDemo />} />
+        <Route path="/dialogs" element={<DialogDemo />} />
+        <Route path="/dropdowns" element={<DropdownDemo />} />
+        <Route path="/tabs" element={<TabsDemo />} />
+        <Route path="/toggles" element={<ToggleDemo />} />
+        <Route path="/tooltips" element={<TooltipDemo />} />
+        <Route path="/charts" element={<ChartDemo />} />
       </Routes>
-      {/* END: routes */}
-    </div>
+      <Toaster />
+    </Layout>
   );
 }
 
 export default App;
+
