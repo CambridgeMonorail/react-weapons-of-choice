@@ -1,10 +1,11 @@
 import NxWelcome from './nx-welcome';
-
+import { Button } from '@react-monorepo/shared';
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
   return (
     <div>
+      <Button variant={'outline'}>Shared button</Button>
       <NxWelcome title="demo" />
 
       {/* START: routes */}
