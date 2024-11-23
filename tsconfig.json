@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@my-org/shared": ["shared/src/index.ts"],
+      "@my-org/shared/*": ["shared/src/*"]
+    }
+  }
+}
