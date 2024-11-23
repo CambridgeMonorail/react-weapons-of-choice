@@ -4,9 +4,10 @@ An Nx Monorepo setup with React, Vite, Tailwind CSS and [Shadcn UI](https://gith
 
 For those that don't want or need Next.js in their stack.
 
+Inspired by and based upon [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo).
+
 Thanks to the help from this tutorial here: https://medium.com/readytowork-org/monorepo-setup-with-nx-nextjs-and-shadcn-ui-3b72c3599470
 
-And hours of tinkering around.
 
 ---
 
@@ -16,12 +17,44 @@ And hours of tinkering around.
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
-## Finish your CI setup
+## Table of Contents
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/nydsvj1Hng)
+- [Project Title and Description](#project-title-and-description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Run tasks](#run-tasks)
+- [Add new projects](#add-new-projects)
+- [Finish your CI setup](#finish-your-ci-setup)
+- [Install Nx Console](#install-nx-console)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact Information](#contact-information)
+- [Useful links](#useful-links)
+- [Join the Nx community](#join-the-nx-community)
 
+## Project Title and Description
 
-## Run tasks
+ReactMonorepo is an Nx Monorepo setup with React, Vite, Tailwind CSS, and Shadcn UI. It is designed for those who prefer not to use Next.js in their stack.
+
+## Installation
+
+To install the project, follow these steps:
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-repo/nx-react-tailwind-shadcn-boilerplate.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd nx-react-tailwind-shadcn-boilerplate
+    ```
+3. Install dependencies:
+    ```sh
+    npm install
+    ```
+
+## Usage
 
 To run the dev server for your app, use:
 
@@ -67,6 +100,9 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
+## Finish your CI setup
+
+[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/nydsvj1Hng)
 
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
@@ -75,6 +111,24 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo)
+- [Shadcn UI](https://github.com/shadcn-ui/ui)
+- [Nx](https://nx.dev)
+
+## Contact Information
+
+For any inquiries, please contact [your-email@example.com](mailto:your-email@example.com).
 
 ## Useful links
 
@@ -85,7 +139,8 @@ Learn more:
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-And join the Nx community:
+## Join the Nx community
+
 - [Discord](https://go.nx.dev/community)
 - [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
 - [Our Youtube channel](https://www.youtube.com/@nxdevtools)
