@@ -7,7 +7,7 @@
 export function Shared() {
   return (
     // <StyledShared>
-      <h1>Welcome to Shared!</h1>
+    <h1>Welcome to Shared!</h1>
     // </StyledShared>
   );
 }
