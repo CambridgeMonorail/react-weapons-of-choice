@@ -3,8 +3,20 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "nx serve": "npx nx serve fnr-app",
-    "nx graph": "npx nx show project fnr-app"
+    "build": "nx build",
+    "build:all": "nx run-many --target=build --all",
+    "build:affected": "nx affected --target=build",
+    "test": "nx test",
+    "test:all": "nx run-many --target=test --all",
+    "test:affected": "nx affected --target=test",
+    "lint": "nx lint",
+    "lint:all": "nx run-many --target=lint --all",
+    "lint:affected": "nx affected --target=lint",
+    "serve": "nx serve",
+    "serve:demo": "nx serve demo",
+    "format": "nx format:write",
+    "format:check": "nx format:check",
+    "clean": "nx run-many --target=clean --all"
   },
   "private": true,
   "packageManager": "pnpm@8.6.3",
@@ -14,6 +26,7 @@
     "clsx": "^2.1.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-router-dom": "6.11.2",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
   },
