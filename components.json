@@ -3,13 +3,13 @@
   "style": "new-york",
   "rsc": false,
   "tailwind": {
-    "config": "apps/**/tailwind.config.js",
-    "css": "apps/**/app/global.css",
+    "config": "apps/demo/tailwind.config.js",
+    "css": "apps/demo/src/styles.css",
     "baseColor": "stone",
     "cssVariables": true
   },
   "aliases": {
     "components": "@react-monorepo/shared/components",
-    "utils": "@react-monorepo/shared/shared/utils"
+    "utils": "@react-monorepo/shared/lib/utils"
   }
 }
