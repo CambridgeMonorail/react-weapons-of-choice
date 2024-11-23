@@ -1,9 +1,0 @@
-{
-  "name": "fnr-app",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/fnr-app/src",
-  "projectType": "application",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project fnr-app --web",
-  "targets": {}
-}
