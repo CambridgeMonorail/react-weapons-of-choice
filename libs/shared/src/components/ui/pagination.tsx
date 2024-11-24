@@ -1,6 +1,6 @@
 import * as React from "react"
-import { cn } from "@react-monorepo/shared/lib/utils"
-import { ButtonProps, buttonVariants } from "@react-monorepo/shared/components/ui/button"
+import { cn } from "@rwoc/shared/lib/utils"
+import { ButtonProps, buttonVariants } from "@rwoc/shared/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (

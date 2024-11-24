@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@react-monorepo/shared/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card"
 
 const componentDefinitions = [
   {

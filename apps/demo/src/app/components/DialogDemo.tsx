@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -8,9 +8,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@react-monorepo/shared/components/ui/dialog"
-import { Input } from "@react-monorepo/shared/components/ui/input"
-import { Label } from "@react-monorepo/shared/components/ui/label"
+} from "@rwoc/shared/components/ui/dialog"
+import { Input } from "@rwoc/shared/components/ui/input"
+import { Label } from "@rwoc/shared/components/ui/label"
 
 const DialogDemo = () => {
   return (

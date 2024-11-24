@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@react-monorepo/shared/components/ui/dropdown-menu"
+} from "@rwoc/shared/components/ui/dropdown-menu"
 
 const DropdownDemo = () => {
   return (

@@ -7,7 +7,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@react-monorepo/shared';
+} from '@rwoc/shared';
 import { Github, Twitter } from 'lucide-react';
 
 const ShadcnLogo = (props: React.SVGProps<SVGSVGElement>) => (
@@ -79,6 +79,8 @@ const ReactLogo = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
   const handleScrollToFeatures = () => {
     const featuresElement = document.getElementById('features');
     if (featuresElement) {
@@ -216,12 +218,12 @@ const LandingPage = () => {
           development.
         </p>
         <Button
-          size="lg"
-          onClick={() => window.open('https://demo-url.com', '_blank')}
-          className="bg-blue-600 text-white hover:bg-blue-700"
-        >
-          View Demo
-        </Button>
+      size="lg"
+      onClick={() => navigate('/home')}
+      className="bg-blue-600 text-white hover:bg-blue-700"
+    >
+      View Demo
+    </Button>
       </section>
 
       {/* Community and Collaboration Section */}

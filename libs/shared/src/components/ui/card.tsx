@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { cn } from "@react-monorepo/shared/lib/utils"
+import { cn } from "@rwoc/shared/lib/utils"
 
 const Card = React.forwardRef<
   HTMLDivElement,

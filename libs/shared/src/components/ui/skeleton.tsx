@@ -1,4 +1,4 @@
-import { cn } from "@react-monorepo/shared/lib/utils"
+import { cn } from "@rwoc/shared/lib/utils"
 
 function Skeleton({
   className,

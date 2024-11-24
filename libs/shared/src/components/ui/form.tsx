@@ -12,8 +12,8 @@ import {
   useFormContext,
 } from "react-hook-form"
 
-import { cn } from "@react-monorepo/shared/lib/utils"
-import { Label } from "@react-monorepo/shared/components/ui/label"
+import { cn } from "@rwoc/shared/lib/utils"
+import { Label } from "@rwoc/shared/components/ui/label"
 
 const Form = FormProvider
 
