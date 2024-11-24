@@ -1,4 +1,10 @@
-# ReactMonorepo
+# nx-react-tailwind-shadcn-boilerplate
+
+![Project Status](https://img.shields.io/badge/status-alpha-orange?style=for-the-badge)
+![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/RiffRoll?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/RiffRoll/ci.yml?style=for-the-badge)
+![License](https://img.shields.io/github/license/CambridgeMonorail/RiffRoll?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/RiffRoll?style=for-the-badge)
 
 An Nx Monorepo setup with React, Vite, Tailwind CSS and [Shadcn UI](https://github.com/shadcn-ui/ui).
 
@@ -6,8 +12,7 @@ For those that don't want or need Next.js in their stack.
 
 Inspired by and based upon [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo).
 
-Thanks to the help from this tutorial here: https://medium.com/readytowork-org/monorepo-setup-with-nx-nextjs-and-shadcn-ui-3b72c3599470
-
+Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/monorepo-setup-with-nx-nextjs-and-shadcn-ui-3b72c3599470>
 
 ---
 
@@ -20,6 +25,7 @@ Thanks to the help from this tutorial here: https://medium.com/readytowork-org/m
 ## Table of Contents
 
 - [Project Title and Description](#project-title-and-description)
+- [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Run tasks](#run-tasks)
@@ -35,21 +41,39 @@ Thanks to the help from this tutorial here: https://medium.com/readytowork-org/m
 
 ## Project Title and Description
 
-ReactMonorepo is an Nx Monorepo setup with React, Vite, Tailwind CSS, and Shadcn UI. It is designed for those who prefer not to use Next.js in their stack.
+nx-react-tailwind-shadcn-boilerplate is an Nx Monorepo setup with React, Vite, Tailwind CSS, and Shadcn UI. It is designed for those who prefer not to use Next.js in their stack.
+
+## Technologies Used
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Nx](https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ## Installation
 
 To install the project, follow these steps:
 
 1. Clone the repository:
+
     ```sh
     git clone https://github.com/your-repo/nx-react-tailwind-shadcn-boilerplate.git
     ```
+
 2. Navigate to the project directory:
+
     ```sh
     cd nx-react-tailwind-shadcn-boilerplate
     ```
+
 3. Install dependencies:
+
     ```sh
     npm install
     ```

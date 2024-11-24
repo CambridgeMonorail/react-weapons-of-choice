@@ -54,8 +54,8 @@ const Home = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Welcome to the shadcn Demo</CardTitle>
-        <CardDescription>Explore various components using the links below or the sidebar navigation</CardDescription>
+        <CardTitle>shadcn Component Showcase</CardTitle>
+        <CardDescription>Explore our collection of beautifully designed and fully functional components</CardDescription>
       </CardHeader>
       <CardContent>
         <dl className="space-y-4">
