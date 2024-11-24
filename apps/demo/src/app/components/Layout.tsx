@@ -1,5 +1,5 @@
 import { Button, Sidebar, SidebarContent, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from '@react-monorepo/shared';
-import { FC, ReactElement } from 'react';
+import { FC, ReactNode } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const navItems = [
@@ -16,7 +16,7 @@ const navItems = [
 ];
 
 interface LayoutProps {
-  children: ReactElement;
+  children: ReactNode;
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
@@ -78,4 +78,3 @@ const MenuIcon = ({ className }: { className?: string }) => (
     <line x1="3" y1="18" x2="21" y2="18" />
   </svg>
 );
-
