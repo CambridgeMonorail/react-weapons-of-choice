@@ -19,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Layout><Home /></Layout>} />
+{/*         <Route path="/home" element={<Layout><Home /></Layout>} />
         <Route path="/buttons" element={<Layout><ButtonDemo /></Layout>} />
         <Route path="/cards" element={<Layout><CardDemo /></Layout>} />
         <Route path="/forms" element={<Layout><FormDemo /></Layout>} />
@@ -28,7 +28,7 @@ function App() {
         <Route path="/tabs" element={<Layout><TabsDemo /></Layout>} />
         <Route path="/toggles" element={<Layout><ToggleDemo /></Layout>} />
         <Route path="/tooltips" element={<Layout><TooltipDemo /></Layout>} />
-        <Route path="/charts" element={<Layout><ChartDemo /></Layout>} />
+        <Route path="/charts" element={<Layout><ChartDemo /></Layout>} /> */}
       </Routes>
       <Toaster />
     </>
