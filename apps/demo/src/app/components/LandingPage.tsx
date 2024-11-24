@@ -104,7 +104,7 @@ const LandingPage = () => {
             size="lg"
             onClick={() =>
               window.open(
-                'https://github.com/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate',
+                'https://github.com/CambridgeMonorail/react-weapons-of-choice',
                 '_blank'
               )
             }
@@ -236,7 +236,7 @@ const LandingPage = () => {
             size="lg"
             onClick={() =>
               window.open(
-                'https://github.com/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate',
+                'https://github.com/CambridgeMonorail/react-weapons-of-choice',
                 '_blank'
               )
             }
@@ -268,7 +268,7 @@ const LandingPage = () => {
           size="lg"
           onClick={() =>
             window.open(
-              'https://github.com/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate',
+              'https://github.com/CambridgeMonorail/react-weapons-of-choice',
               '_blank'
             )
           }
@@ -288,7 +288,7 @@ const LandingPage = () => {
             Features
           </a>
           <a
-            href="https://github.com/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate"
+            href="https://github.com/CambridgeMonorail/react-weapons-of-choice"
             className="hover:underline"
           >
             Documentation
@@ -300,7 +300,7 @@ const LandingPage = () => {
             Community
           </a>
           <a
-            href="https://github.com/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate"
+            href="https://github.com/CambridgeMonorail/react-weapons-of-choice"
             className="hover:underline"
           >
             GitHub

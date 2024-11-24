@@ -1,10 +1,10 @@
-# nx-react-tailwind-shadcn-boilerplate
+# react-weapons-of-choice
 
 ![Project Status](https://img.shields.io/badge/status-alpha-orange?style=for-the-badge)
-![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
-![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate/ci.yml?style=for-the-badge)
-![License](https://img.shields.io/github/license/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
+![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/react-weapons-of-choice/ci.yml?style=for-the-badge)
+![License](https://img.shields.io/github/license/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
 
 An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
 
@@ -14,7 +14,7 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 
 ## Project Goals
 
-- **Simplified Setup**: Provide a ready-to-use boilerplate for developers looking to build SPAs using modern tools without the complexities of SSR or Next.js.
+- **Simplified Setup**: Provide a ready-to-use boilerplate for developers looking to build SPAs using modern tools without SSR or Next.js.
 - **Seamless Integration**: Combine Nx for monorepo management, Tailwind CSS for utility-first styling, and Shadcn UI for cohesive, customizable UI components.
 - **Scalability and Modularity**: Offer a scalable architecture with reusable libraries and clear boundaries between projects.
 - **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
@@ -37,14 +37,11 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - [Usage](#usage)
 - [Run tasks](#run-tasks)
 - [Add new projects](#add-new-projects)
-- [Finish your CI setup](#finish-your-ci-setup)
 - [Install Nx Console](#install-nx-console)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
-- [Contact Information](#contact-information)
 - [Useful links](#useful-links)
-- [Join the Nx community](#join-the-nx-community)
 
 ## Technologies Used
 
@@ -66,13 +63,13 @@ To install the project, follow these steps:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/your-repo/nx-react-tailwind-shadcn-boilerplate.git
+    git clone https://github.com/CambridgeMonorail/react-weapons-of-choice.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd nx-react-tailwind-shadcn-boilerplate
+    cd react-weapons-of-choice
     ```
 
 3. Install dependencies:
@@ -105,6 +102,45 @@ These targets are either [inferred automatically](https://nx.dev/concepts/inferr
 
 [More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
+## Run Tasks
+
+The following scripts are available to manage and build the project:
+
+- **Build**
+  - `pnpm run build:affected`: Build only the affected projects.
+  - `pnpm run build:all`: Build all projects.
+  - `pnpm run build`: Build the project.
+
+- **Clean**
+  - `pnpm run clean`: Clean all projects.
+
+- **Format**
+  - `pnpm run format:check`: Check the formatting of the code.
+  - `pnpm run format`: Format the code.
+
+- **Lint**
+  - `pnpm run lint:affected`: Lint only the affected projects.
+  - `pnpm run lint:all`: Lint all projects.
+  - `pnpm run lint`: Lint the project.
+
+- **Precommit**
+  - `pnpm run precommit`: Run lint, typecheck, test, and build before committing.
+
+- **Prepare**
+  - `pnpm run prepare`: Prepare Husky for Git hooks.
+
+- **Serve**
+  - `pnpm run serve:demo`: Serve the demo application.
+
+- **Test**
+  - `pnpm run test:affected`: Test only the affected projects.
+  - `pnpm run test:all`: Test all projects.
+  - `pnpm run test:e2e`: Run end-to-end tests.
+  - `pnpm run test`: Test the project.
+
+- **Typecheck**
+  - `pnpm run typecheck`: Typecheck the project without emitting output.
+
 ## Add new projects
 
 While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
@@ -127,12 +163,6 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Finish your CI setup
-
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/nydsvj1Hng)
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
 ## Install Nx Console
 
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
@@ -153,10 +183,6 @@ This project is licensed under the MIT License.
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
 - [Nx](https://nx.dev)
 
-## Contact Information
-
-For any inquiries, please contact [your-email@example.com](mailto:your-email@example.com).
-
 ## Useful links
 
 Learn more:
@@ -165,10 +191,3 @@ Learn more:
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Join the Nx community
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
