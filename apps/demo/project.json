@@ -9,7 +9,8 @@
       "executor": "@nx/vite:build",
       "options": {
         "outputPath": "dist/apps/demo",
-        "sourcemap": true
+        "sourcemap": true,
+        "baseHref": "%BASE_URL%"
       }
     },
     "serve": {
