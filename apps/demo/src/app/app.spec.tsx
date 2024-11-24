@@ -20,6 +20,6 @@ describe('App', () => {
         <App />
       </BrowserRouter>
     );
-    expect(getByText(/Welcome to shadcn Demo/gi)).toBeTruthy();
+    expect(getByText(/The Boilerplate That Speeds Up SPA Development/gi)).toBeTruthy();
   });
 });

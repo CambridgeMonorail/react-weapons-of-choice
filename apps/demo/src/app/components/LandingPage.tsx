@@ -90,6 +90,8 @@ const LandingPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
       {/* Hero Section */}
       <section className="text-center py-20">
+      <img src="/rwoc-logo.png" alt="React Weapons Of Choice Logo" className="mx-auto mb-6 w-32 h-32" />
+       
         <h1 className="text-5xl font-bold mb-6">
           The Boilerplate That Speeds Up SPA Development
         </h1>
