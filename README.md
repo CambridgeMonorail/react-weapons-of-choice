@@ -1,30 +1,37 @@
 # nx-react-tailwind-shadcn-boilerplate
 
 ![Project Status](https://img.shields.io/badge/status-alpha-orange?style=for-the-badge)
-![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/RiffRoll?style=for-the-badge)
-![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/RiffRoll/ci.yml?style=for-the-badge)
-![License](https://img.shields.io/github/license/CambridgeMonorail/RiffRoll?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/RiffRoll?style=for-the-badge)
+![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate/ci.yml?style=for-the-badge)
+![License](https://img.shields.io/github/license/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/nx-react-tailwind-shadcn-boilerplate?style=for-the-badge)
 
-An Nx Monorepo setup with React, Vite, Tailwind CSS and [Shadcn UI](https://github.com/shadcn-ui/ui).
-
-For those that don't want or need Next.js in their stack.
+An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
 
 Inspired by and based upon [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo).
 
 Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/monorepo-setup-with-nx-nextjs-and-shadcn-ui-3b72c3599470>
 
----
+## Project Goals
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+- **Simplified Setup**: Provide a ready-to-use boilerplate for developers looking to build SPAs using modern tools without the complexities of SSR or Next.js.
+- **Seamless Integration**: Combine Nx for monorepo management, Tailwind CSS for utility-first styling, and Shadcn UI for cohesive, customizable UI components.
+- **Scalability and Modularity**: Offer a scalable architecture with reusable libraries and clear boundaries between projects.
+- **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
+- **Community Collaboration**: Foster an open-source community to innovate, improve, and expand the project.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## Features
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-monorepo-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- 🏗 **Nx Monorepo**: Modular and scalable workspace for managing multiple projects and libraries.
+- 🎨 **Tailwind CSS**: Utility-first CSS framework for rapid and responsive UI development.
+- 🖌 **Shadcn UI**: A customizable component library for consistent and reusable design patterns.
+- ⚡ **Vite**: Fast and efficient development server and build tool.
+- 🚀 **CI/CD Integration**: Preconfigured workflows for automated builds and testing.
 
 ## Table of Contents
 
-- [Project Title and Description](#project-title-and-description)
+- [Project Goals](#project-goals)
+- [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -38,10 +45,6 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - [Contact Information](#contact-information)
 - [Useful links](#useful-links)
 - [Join the Nx community](#join-the-nx-community)
-
-## Project Title and Description
-
-nx-react-tailwind-shadcn-boilerplate is an Nx Monorepo setup with React, Vite, Tailwind CSS, and Shadcn UI. It is designed for those who prefer not to use Next.js in their stack.
 
 ## Technologies Used
 
@@ -83,19 +86,19 @@ To install the project, follow these steps:
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve fnr-app
+npx nx serve demo
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build fnr-app
+npx nx build demo
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project fnr-app
+npx nx show project demo
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
