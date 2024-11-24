@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
-import { cn } from "@react-monorepo/shared/lib/utils"
+import { cn } from "@rwoc/shared/lib/utils"
 import { Cross2Icon } from "@radix-ui/react-icons"
 
 const Sheet = SheetPrimitive.Root

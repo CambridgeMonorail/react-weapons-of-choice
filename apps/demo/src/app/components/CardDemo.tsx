@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   Card,
   CardContent,
@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@react-monorepo/shared/components/ui/card"
+} from "@rwoc/shared/components/ui/card"
 
 const CardDemo = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button";
+import { Button } from "@rwoc/shared/components/ui/button";
 
 const ButtonDemo = () => {
   return (

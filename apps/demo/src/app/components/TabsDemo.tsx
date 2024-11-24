@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   Card,
   CardContent,
@@ -7,15 +7,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@react-monorepo/shared/components/ui/card"
-import { Input } from "@react-monorepo/shared/components/ui/input"
-import { Label } from "@react-monorepo/shared/components/ui/label"
+} from "@rwoc/shared/components/ui/card"
+import { Input } from "@rwoc/shared/components/ui/input"
+import { Label } from "@rwoc/shared/components/ui/label"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@react-monorepo/shared/components/ui/tabs"
+} from "@rwoc/shared/components/ui/tabs"
 
 const TabsDemo = () => {
   

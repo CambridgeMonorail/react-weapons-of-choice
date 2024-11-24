@@ -8,7 +8,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from '@react-monorepo/shared';
+} from '@rwoc/shared';
 import { ReactElement } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 

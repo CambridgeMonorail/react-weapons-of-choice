@@ -12,7 +12,7 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from '@react-monorepo/shared';
+} from '@rwoc/shared';
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 
 export function NavMain({

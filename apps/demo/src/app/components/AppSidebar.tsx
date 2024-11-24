@@ -25,7 +25,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from '@react-monorepo/shared';
+} from '@rwoc/shared';
 import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';

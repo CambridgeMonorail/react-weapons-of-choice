@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
-import { cn } from "@react-monorepo/shared/lib/utils"
+import { cn } from "@rwoc/shared/lib/utils"
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icons"
 
 const MenubarMenu = MenubarPrimitive.Menu

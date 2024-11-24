@@ -9,7 +9,7 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from '@react-monorepo/shared';
+} from '@rwoc/shared';
 import { AppSidebar } from './AppSidebar';
 export function Layout() {
   return (

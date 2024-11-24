@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@react-monorepo/shared/components/ui/tooltip"
+} from "@rwoc/shared/components/ui/tooltip"
 
 const TooltipDemo = () => {
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Button } from "@react-monorepo/shared/components/ui/button"
+import { Button } from "@rwoc/shared/components/ui/button"
 import {
   Form,
   FormControl,
@@ -11,9 +11,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@react-monorepo/shared/components/ui/form"
-import { Input } from "@react-monorepo/shared/components/ui/input"
-import { toast } from "@react-monorepo/shared/hooks/use-toast"
+} from "@rwoc/shared/components/ui/form"
+import { Input } from "@rwoc/shared/components/ui/input"
+import { toast } from "@rwoc/shared/hooks/use-toast"
 
 const formSchema = z.object({
   username: z.string().min(2, {

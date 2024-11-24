@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Toaster } from '@react-monorepo/shared/components/ui/toaster';
+import { Toaster } from '@rwoc/shared/components/ui/toaster';
 
 import { Layout } from './components/Layout';
 import Home from './components/Home';

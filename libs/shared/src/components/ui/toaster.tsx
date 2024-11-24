@@ -6,8 +6,8 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@react-monorepo/shared/components/ui/toast"
-import { useToast } from "@react-monorepo/shared/hooks/use-toast"
+} from "@rwoc/shared/components/ui/toast"
+import { useToast } from "@rwoc/shared/hooks/use-toast"
 
 export function Toaster() {
   const { toasts } = useToast()

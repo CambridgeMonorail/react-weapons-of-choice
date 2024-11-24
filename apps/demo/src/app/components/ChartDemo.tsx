@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { Bar, BarChart, Line, LineChart, Pie, PieChart } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@react-monorepo/shared/components/ui/card"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@react-monorepo/shared/components/ui/chart"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@rwoc/shared/components/ui/chart"
 
 const data = [
   { name: "Jan", total: 1200 },

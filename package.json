@@ -1,11 +1,11 @@
 {
-  "name": "@react-monorepo/source",
+  "name": "react-weapons-of-choice",
   "version": "0.0.0",
   "description": "An Nx Monorepo setup with React, Vite, Tailwind CSS, and Shadcn UI.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-repo/nx-react-tailwind-shadcn-boilerplate.git"
+    "url": "https://github.com/CambridgeMonorail/react-weapons-of-choice.git"
   },
   "keywords": [
     "nx",
@@ -17,7 +17,7 @@
   ],
   "author": "Your Name <your-email@example.com>",
   "bugs": {
-    "url": "https://github.com/your-repo/nx-react-tailwind-shadcn-boilerplate/issues"
+    "url": "https://github.com/CambridgeMonorail/react-weapons-of-choice/issues"
   },
   "scripts": {
     "build:affected": "nx affected --target=build",
