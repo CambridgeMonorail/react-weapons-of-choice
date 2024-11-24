@@ -37,6 +37,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Set BASE_URL environment variable
+        run: echo "BASE_URL=/react-weapons-of-choice/" >> $GITHUB_ENV
+
       - name: Build project
         run: pnpm exec nx build demo --configuration=production
 
