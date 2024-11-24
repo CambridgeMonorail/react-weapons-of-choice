@@ -1,4 +1,5 @@
 
+- Write clean code that adheres to best practices for modern, typesafe React components, emphasizing security, robustness, maintainability, readability, separation of concerns, and avoiding repetition (DRY principle).
 - Use React functional components exclusively.
 - Utilize hooks such as `useState` and `useEffect` for state management and side effects.
 - Apply Tailwind CSS classes for styling components.
@@ -8,3 +9,6 @@
 - Implement Vitest for unit testing and Playwright for end-to-end testing.
 - Ensure all components are accessible and responsive.
 - shadcn reusable components are defined in @react-monorepo/shared
+- Prefer named (explicit) exports rather than default exports for clarity, maintainability, and better tooling support.
+- Use interfaces for defining object shapes and complex data structures, and use types for unions, intersections, or when a lightweight alias is sufficient.
+- Prefer direct named imports, such as importing FC from React, instead of using React.FC.
