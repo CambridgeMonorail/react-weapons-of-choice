@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from '@react-monorepo/shared/components/ui/toaster';
 
-import Layout from './components/Layout';
+import { Layout } from './components/Layout';
 import Home from './components/Home';
 import ButtonDemo from './components/ButtonDemo';
 import CardDemo from './components/CardDemo';
@@ -19,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Layout><Home /></Layout>} />
         <Route path="/buttons" element={<Layout><ButtonDemo /></Layout>} />
         <Route path="/cards" element={<Layout><CardDemo /></Layout>} />
         <Route path="/forms" element={<Layout><FormDemo /></Layout>} />
