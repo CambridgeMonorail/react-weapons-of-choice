@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button } from '@rwoc/shared/components/ui/button';
 
 interface CommunitySectionProps {
@@ -8,7 +8,7 @@ interface CommunitySectionProps {
   buttonAction: () => void;
 }
 
-const CommunitySection: React.FC<CommunitySectionProps> = ({ title, description, buttonText, buttonAction }) => {
+const CommunitySection: FC<CommunitySectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (
     <section className="text-center py-20 w-full">
       <h2 className="text-4xl font-bold mb-6 text-primary-foreground">{title}</h2>
@@ -26,4 +26,4 @@ const CommunitySection: React.FC<CommunitySectionProps> = ({ title, description,
   );
 };
 
-export default CommunitySection;
+export { CommunitySection };

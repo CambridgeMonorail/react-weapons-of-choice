@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 
 interface AboutSectionProps {
   title: string;
@@ -6,7 +6,7 @@ interface AboutSectionProps {
   logos: ReactElement[];
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({ title, description, logos }) => {
+export const AboutSection: FC<AboutSectionProps> = ({ title, description, logos }) => {
   return (
     <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
@@ -19,5 +19,3 @@ const AboutSection: React.FC<AboutSectionProps> = ({ title, description, logos }
     </section>
   );
 };
-
-export default AboutSection;

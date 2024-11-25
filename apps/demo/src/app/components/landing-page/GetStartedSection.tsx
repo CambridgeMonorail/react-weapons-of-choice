@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button } from '@rwoc/shared/components/ui/button';
 
 interface Step {
@@ -13,13 +13,13 @@ interface GetStartedSectionProps {
   buttonAction: () => void;
 }
 
-const GetStartedSection: React.FC<GetStartedSectionProps> = ({ title, steps, buttonText, buttonAction }) => {
+const GetStartedSection: FC<GetStartedSectionProps> = ({ title, steps, buttonText, buttonAction }) => {
   return (
     <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
       <div className="text-left max-w-2xl mx-auto">
-        {steps.map((step, index) => (
-          <p key={index} className="text-xl mb-4">
+        {steps.map((step) => (
+          <p key={step.stepNumber} className="text-xl mb-4">
             <strong>Step {step.stepNumber}:</strong> {step.stepDescription}
           </p>
         ))}
@@ -35,4 +35,4 @@ const GetStartedSection: React.FC<GetStartedSectionProps> = ({ title, steps, but
   );
 };
 
-export default GetStartedSection;
+export { GetStartedSection };

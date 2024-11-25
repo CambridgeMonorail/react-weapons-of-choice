@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button } from '@rwoc/shared/components/ui/button';
 
 interface HeroSectionProps {
@@ -11,7 +11,7 @@ interface HeroSectionProps {
   secondaryButtonAction: () => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({
+const HeroSection: FC<HeroSectionProps> = ({
   logoSrc,
   mainHeading,
   subHeading,
@@ -45,4 +45,4 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   );
 };
 
-export default HeroSection;
+export { HeroSection };

@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Twitter } from 'lucide-react';
 import { FeaturesSection } from './FeaturesSection';
-import AboutSection from './AboutSection';
-import CommunitySection from './CommunitySection';
-import DemoSection from './DemoSection';
-import Footer from './Footer';
-import GetStartedSection from './GetStartedSection';
-import HeroSection from './HeroSection';
+import { AboutSection } from './AboutSection';
+import { CommunitySection } from './CommunitySection';
+import { DemoSection } from './DemoSection';
+import { Footer } from './Footer';
+import { GetStartedSection } from './GetStartedSection';
+import { HeroSection } from './HeroSection';
 
 const ShadcnLogo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
@@ -181,8 +181,8 @@ export const LandingPage = () => {
           { text: 'GitHub', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
         ]}
         socialMediaIcons={[
-          { icon: Github, url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
-          { icon: Twitter, url: 'https://twitter.com/your-twitter-handle' },
+          { icon: (props) => <Github {...props} />, url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
+          { icon: (props) => <Twitter {...props} />, url: 'https://twitter.com/your-twitter-handle' },
         ]}
         copyrightText="&copy; 2024 React Weapons of Choice. All rights reserved."
       />

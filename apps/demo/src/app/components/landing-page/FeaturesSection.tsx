@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shared';
 
 interface Feature {
@@ -11,7 +11,7 @@ interface FeaturesSectionProps {
   features: Feature[];
 }
 
-const FeaturesSection: React.FC<FeaturesSectionProps> = ({ title, features }) => {
+const FeaturesSection: FC<FeaturesSectionProps> = ({ title, features }) => {
   return (
     <section id="features" className="text-center py-20 w-full px-4 md:px-8 lg:px-16">
       <h2 className="text-4xl font-bold mb-6 text-primary-foreground">{title}</h2>
@@ -20,7 +20,7 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ title, features }) =>
           <Card key={index} className="p-6 rounded-lg shadow-md bg-background">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold mb-4 text-primary">{feature.title}</CardTitle>
-              <CardDescription className="card-foreground">{feature.description}</CardDescription>
+              <CardDescription className="text-foreground">{feature.description}</CardDescription>
             </CardHeader>
           </Card>
         ))}

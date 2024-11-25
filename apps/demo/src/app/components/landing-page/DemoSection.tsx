@@ -8,7 +8,7 @@ interface DemoSectionProps {
   buttonAction: () => void;
 }
 
-const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
+export const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (
     <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
@@ -23,5 +23,3 @@ const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, but
     </section>
   );
 };
-
-export default DemoSection;
