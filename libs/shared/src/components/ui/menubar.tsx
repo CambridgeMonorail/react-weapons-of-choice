@@ -2,18 +2,18 @@
 
 import * as React from "react"
 import * as MenubarPrimitive from "@radix-ui/react-menubar"
-import { cn } from "./utils"
+import { cn } from "../../lib/utils"
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icons"
 
-const MenubarMenu = MenubarPrimitive.Menu
+const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu
 
-const MenubarGroup = MenubarPrimitive.Group
+const MenubarGroup: typeof MenubarPrimitive.Group = MenubarPrimitive.Group
 
-const MenubarPortal = MenubarPrimitive.Portal
+const MenubarPortal: typeof MenubarPrimitive.Portal = MenubarPrimitive.Portal
 
-const MenubarSub = MenubarPrimitive.Sub
+const MenubarSub: typeof MenubarPrimitive.Sub = MenubarPrimitive.Sub
 
-const MenubarRadioGroup = MenubarPrimitive.RadioGroup
+const MenubarRadioGroup: typeof MenubarPrimitive.RadioGroup = MenubarPrimitive.RadioGroup
 
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,
