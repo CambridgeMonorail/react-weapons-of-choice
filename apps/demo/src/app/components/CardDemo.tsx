@@ -30,7 +30,7 @@ const CardDemo = () => {
         </CardHeader>
         <CardContent>
           <img
-            src="/placeholder.svg?height=100&width=200"
+            src="./placeholder.svg?height=100&width=200"
             alt="Placeholder"
             className="w-full h-auto mb-4"
           />
@@ -42,4 +42,3 @@ const CardDemo = () => {
 };
 
 export default CardDemo;
-

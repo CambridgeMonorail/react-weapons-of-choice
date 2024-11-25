@@ -93,7 +93,7 @@ const LandingPage = () => {
       <h4 className="ribbon">So Very Alpha</h4>
       {/* Hero Section */}
       <section className="text-center py-20">
-      <img src="/rwoc-logo.png" alt="React Weapons Of Choice Logo" className="mx-auto mb-6 w-32 h-32" />
+      <img src="./rwoc-logo.png" alt="React Weapons Of Choice Logo" className="mx-auto mb-6 w-32 h-32" />
        
         <h1 className="text-5xl font-bold mb-6">
           The Boilerplate That Speeds Up SPA Development
