@@ -50,7 +50,9 @@ jobs:
           retry pnpm install --frozen-lockfile
 
       - name: Build project
-        run: pnpm exec nx build demo --configuration=production
+        run: |
+          export BASE_URL='/react-weapons-of-choice/'
+          pnpm exec nx build demo --configuration=production
 
       # Upload artifact for deployment
       - name: Upload to GitHub Pages artifact
