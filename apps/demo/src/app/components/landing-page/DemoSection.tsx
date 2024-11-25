@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Button } from '@rwoc/shared/components/ui/button';
 
 interface DemoSectionProps {
@@ -8,15 +8,15 @@ interface DemoSectionProps {
   buttonAction: () => void;
 }
 
-const DemoSection: React.FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
+const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (
-    <section className="text-center py-20 bg-white text-blue-600 w-full">
+    <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
       <p className="text-xl mb-8 max-w-2xl mx-auto">{description}</p>
       <Button
         size="lg"
         onClick={buttonAction}
-        className="bg-blue-600 text-white hover:bg-blue-700"
+        className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
       >
         {buttonText}
       </Button>

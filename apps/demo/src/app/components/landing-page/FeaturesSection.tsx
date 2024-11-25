@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shared';
 
 interface Feature {
   title: string;
@@ -13,17 +14,19 @@ interface FeaturesSectionProps {
 const FeaturesSection: React.FC<FeaturesSectionProps> = ({ title, features }) => {
   return (
     <section id="features" className="text-center py-20 w-full px-4 md:px-8 lg:px-16">
-      <h2 className="text-4xl font-bold mb-6">{title}</h2>
+      <h2 className="text-4xl font-bold mb-6 text-primary-foreground">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold mb-4">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
-          </div>
+          <Card key={index} className="p-6 rounded-lg shadow-md bg-background">
+            <CardHeader>
+              <CardTitle className="text-2xl font-semibold mb-4 text-primary">{feature.title}</CardTitle>
+              <CardDescription className="card-foreground">{feature.description}</CardDescription>
+            </CardHeader>
+          </Card>
         ))}
       </div>
     </section>
   );
 };
 
-export default FeaturesSection;
+export { FeaturesSection };

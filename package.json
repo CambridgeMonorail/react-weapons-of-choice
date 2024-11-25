@@ -29,7 +29,7 @@
     "lint:affected": "nx affected --target=lint",
     "lint:all": "nx run-many --target=lint --all",
     "lint": "nx lint",
-    "precommit": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build",
+    "precommit": "pnpm run lint:all && pnpm run typecheck && pnpm run build:all && pnpm run test:all ",
     "prepare": "husky",
     "serve:demo": "nx serve demo",
     "test:affected": "nx affected --target=test",

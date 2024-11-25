@@ -1,14 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@rwoc/shared';
 import { Github, Twitter } from 'lucide-react';
-import HeroSection from './landing-page/HeroSection';
-import AboutSection from './landing-page/AboutSection';
-import FeaturesSection from './landing-page/FeaturesSection';
-import DemoSection from './landing-page/DemoSection';
-import CommunitySection from './landing-page/CommunitySection';
-import GetStartedSection from './landing-page/GetStartedSection';
-import Footer from './landing-page/Footer';
+import { FeaturesSection } from './FeaturesSection';
+import AboutSection from './AboutSection';
+import CommunitySection from './CommunitySection';
+import DemoSection from './DemoSection';
+import Footer from './Footer';
+import GetStartedSection from './GetStartedSection';
+import HeroSection from './HeroSection';
 
 const ShadcnLogo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
@@ -78,7 +77,7 @@ const ReactLogo = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const LandingPage = () => {
+export const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleScrollToFeatures = () => {
@@ -89,7 +88,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-primary to-secondary text-foreground">
       <h4 className="ribbon">So Very Alpha</h4>
       <HeroSection
         logoSrc="./rwoc-logo.png"
@@ -109,11 +108,11 @@ const LandingPage = () => {
         title="Why React Weapons of Choice?"
         description="React Weapons of Choice is an open-source boilerplate designed for developers who want a fast, intuitive setup for SPAs. Say goodbye to configuration headaches and hello to productivity!"
         logos={[
-          <NxLogo className="w-16 h-16" />,
-          <TailwindLogo className="w-16 h-16" />,
-          <ShadcnLogo className="w-16 h-16" />,
-          <PnpmLogo className="w-16 h-16" />,
-          <ReactLogo className="w-16 h-16" />,
+          <NxLogo className="w-16 h-16" key="nx" />,
+          <TailwindLogo className="w-16 h-16" key="tailwind" />,
+          <ShadcnLogo className="w-16 h-16" key="shadcn" />,
+          <PnpmLogo className="w-16 h-16" key="pnpm" />,
+          <ReactLogo className="w-16 h-16" key="react" />,
         ]}
       />
       <FeaturesSection
@@ -182,13 +181,12 @@ const LandingPage = () => {
           { text: 'GitHub', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
         ]}
         socialMediaIcons={[
-          <Github className="w-8 h-8" />,
-          <Twitter className="w-8 h-8" />,
+          { icon: Github, url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
+          { icon: Twitter, url: 'https://twitter.com/your-twitter-handle' },
         ]}
-        copyrightText="&copy; 2023 React Weapons of Choice. All rights reserved."
+        copyrightText="&copy; 2024 React Weapons of Choice. All rights reserved."
       />
     </div>
   );
 };
 
-export default LandingPage;

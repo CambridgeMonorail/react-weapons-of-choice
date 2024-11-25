@@ -15,7 +15,7 @@ interface GetStartedSectionProps {
 
 const GetStartedSection: React.FC<GetStartedSectionProps> = ({ title, steps, buttonText, buttonAction }) => {
   return (
-    <section className="text-center py-20 bg-white text-blue-600 w-full">
+    <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
       <div className="text-left max-w-2xl mx-auto">
         {steps.map((step, index) => (
@@ -27,7 +27,7 @@ const GetStartedSection: React.FC<GetStartedSectionProps> = ({ title, steps, but
       <Button
         size="lg"
         onClick={buttonAction}
-        className="bg-blue-600 text-white hover:bg-blue-700"
+        className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
       >
         {buttonText}
       </Button>
