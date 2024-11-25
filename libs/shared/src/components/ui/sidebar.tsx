@@ -1,22 +1,21 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
-// import { useIsMobile } from "@rwoc/shared/components/hooks/use-mobile"
-// import { cn } from "@rwoc/shared/components/lib/utils"
-import { Button } from "@rwoc/shared/components/ui/button"
-import { Input } from "@rwoc/shared/components/ui/input"
-import { Separator } from "@rwoc/shared/components/ui/separator"
-import { Sheet, SheetContent } from "@rwoc/shared/components/ui/sheet"
-import { Skeleton } from "@rwoc/shared/components/ui/skeleton"
+
+import { Button } from "./button"
+import { Input } from "./input"
+import { Separator } from "./separator"
+import { Sheet, SheetContent } from "./sheet"
+import { Skeleton } from "./skeleton"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@rwoc/shared/components/ui/tooltip"
+} from "./tooltip"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
-import { useIsMobile } from "@rwoc/shared/hooks/use-mobile"
-import { cn } from "@rwoc/shared/lib/utils"
+import { useIsMobile } from "../../hooks/use-mobile"
+import { cn } from "../../lib/utils"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7

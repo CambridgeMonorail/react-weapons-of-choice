@@ -12,6 +12,7 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Swords
 } from 'lucide-react';
 
 
@@ -39,17 +40,17 @@ const data = {
   },
   teams: [
     {
-      name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
+      name: 'RWOC Inc',
+      logo: Swords,
       plan: 'Enterprise',
     },
     {
-      name: 'Acme Corp.',
+      name: 'RWOC Corp.',
       logo: AudioWaveform,
       plan: 'Startup',
     },
     {
-      name: 'Evil Corp.',
+      name: 'Other Corp.',
       logo: Command,
       plan: 'Free',
     },
