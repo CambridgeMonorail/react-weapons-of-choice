@@ -41,6 +41,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
+      - name: Prune pnpm store
+        run: pnpm store prune
+
       # Install dependencies
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
