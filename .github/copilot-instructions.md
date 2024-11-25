@@ -13,3 +13,9 @@
 - Use interfaces for defining object shapes and complex data structures, and use types for unions, intersections, or when a lightweight alias is sufficient.
 - Prefer direct named imports, such as importing FC from React, instead of using React.FC.
 - Projects should use relative imports to import from other files within the same project.
+- Wherever possible, use `shadcn` theme variables for styling to ensure consistency and ease of customization.
+- Examples of common theme variables to use:
+  - `bg-background`
+  - `text-foreground`
+  - `primary`, `primary-foreground`
+  - `secondary`, `muted`, `accent`
