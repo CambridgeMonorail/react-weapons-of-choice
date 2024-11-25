@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const useErrorHandling = (definedRoutes: string[]) => {
+export const useErrorHandling = (definedRoutes: string[]) => {
   const [isNotFound, setIsNotFound] = useState(false);
   const location = useLocation();
 
@@ -14,4 +14,3 @@ const useErrorHandling = (definedRoutes: string[]) => {
   return isNotFound;
 };
 
-export default useErrorHandling;
