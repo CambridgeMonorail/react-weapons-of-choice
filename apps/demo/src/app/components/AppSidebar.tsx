@@ -7,17 +7,12 @@ import {
   Bot,
   Command,
   Frame,
-  GalleryVerticalEnd,
   Map,
   PieChart,
   Settings2,
   SquareTerminal,
-  Swords
+  Swords,
 } from 'lucide-react';
-
-
-
-
 
 import { NavMain } from './NavMain';
 import {
