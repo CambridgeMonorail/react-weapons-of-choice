@@ -13,6 +13,7 @@ import ToggleDemo from './components/ToggleDemo';
 import TooltipDemo from './components/TooltipDemo';
 import ChartDemo from './components/ChartDemo';
 import LandingPage from './components/LandingPage';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -20,16 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Layout></Layout>} />
-{/*         <Route path="/home" element={<Layout><Home /></Layout>} />
-        <Route path="/buttons" element={<Layout><ButtonDemo /></Layout>} />
-        <Route path="/cards" element={<Layout><CardDemo /></Layout>} />
-        <Route path="/forms" element={<Layout><FormDemo /></Layout>} />
-        <Route path="/dialogs" element={<Layout><DialogDemo /></Layout>} />
-        <Route path="/dropdowns" element={<Layout><DropdownDemo /></Layout>} />
-        <Route path="/tabs" element={<Layout><TabsDemo /></Layout>} />
-        <Route path="/toggles" element={<Layout><ToggleDemo /></Layout>} />
-        <Route path="/tooltips" element={<Layout><TooltipDemo /></Layout>} />
-        <Route path="/charts" element={<Layout><ChartDemo /></Layout>} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
     </>
