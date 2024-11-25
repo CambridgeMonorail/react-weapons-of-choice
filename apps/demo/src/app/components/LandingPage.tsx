@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@rwoc/shared';
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@rwoc/shared';
 import { Github, Twitter } from 'lucide-react';
+import HeroSection from './landing-page/HeroSection';
+import AboutSection from './landing-page/AboutSection';
+import FeaturesSection from './landing-page/FeaturesSection';
+import DemoSection from './landing-page/DemoSection';
+import CommunitySection from './landing-page/CommunitySection';
+import GetStartedSection from './landing-page/GetStartedSection';
+import Footer from './landing-page/Footer';
 
 const ShadcnLogo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
@@ -91,232 +91,102 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
       <h4 className="ribbon">So Very Alpha</h4>
-      {/* Hero Section */}
-      <section className="text-center py-20">
-      <img src="./rwoc-logo.png" alt="React Weapons Of Choice Logo" className="mx-auto mb-6 w-32 h-32" />
-       
-        <h1 className="text-5xl font-bold mb-6">
-          The Boilerplate That Speeds Up SPA Development
-        </h1>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your
-          next React project.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <Button
-            size="lg"
-            onClick={() =>
-              window.open(
-                'https://github.com/CambridgeMonorail/react-weapons-of-choice',
-                '_blank'
-              )
-            }
-            className="bg-white text-blue-600 hover:bg-blue-100"
-          >
-            Get Started
-          </Button>
-          <Button
-            size="lg"
-            onClick={handleScrollToFeatures}
-            className="bg-white text-blue-600 hover:bg-blue-100"
-          >
-            Learn More
-          </Button>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="text-center py-20 bg-white text-blue-600 w-full">
-        <h2 className="text-4xl font-bold mb-6">
-          Why React Weapons of Choice?
-        </h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
-          React Weapons of Choice is an open-source boilerplate designed for
-          developers who want a fast, intuitive setup for SPAs. Say goodbye to
-          configuration headaches and hello to productivity!
-        </p>
-        <div className="flex justify-center space-x-4">
-          <NxLogo className="w-16 h-16" />
-          <TailwindLogo className="w-16 h-16" />
-          <ShadcnLogo className="w-16 h-16" />
-          <PnpmLogo className="w-16 h-16" />
-          <ReactLogo className="w-16 h-16" />
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section
-        id="features"
-        className="text-center py-20 w-full px-4 md:px-8 lg:px-16"
-      >
-        <h2 className="text-4xl font-bold mb-6">What You’ll Get</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>
-                🚀 Pre-configured Nx Workspace for Monorepo Management
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Manage your monorepo with ease using Nx.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>
-                🎨 Tailwind CSS Integration for Utility-First Styling
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Style your components effortlessly with Tailwind CSS.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>
-                🖌️ Shadcn UI Components for Consistent Design
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Use Shadcn UI components for a consistent look and feel.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>📂 Modular Architecture for Scalability</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Build scalable applications with a modular architecture.
-              </CardDescription>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>📑 Comprehensive Documentation and Examples</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>
-                Access detailed documentation and examples to get started
-                quickly.
-              </CardDescription>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section className="text-center py-20 bg-white text-blue-600 w-full">
-        <h2 className="text-4xl font-bold mb-6">See It in Action</h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Explore a live demo to see how React Weapons of Choice simplifies SPA
-          development.
-        </p>
-        <Button
-      size="lg"
-      onClick={() => navigate('/home')}
-      className="bg-blue-600 text-white hover:bg-blue-700"
-    >
-      View Demo
-    </Button>
-      </section>
-
-      {/* Community and Collaboration Section */}
-      <section className="text-center py-20 w-full">
-        <h2 className="text-4xl font-bold mb-6">Join the Community</h2>
-        <p className="text-xl mb-8 max-w-2xl mx-auto">
-          React Weapons of Choice is built by developers, for developers.
-          Contribute, discuss, and shape the future of the project.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <Button
-            size="lg"
-            onClick={() =>
-              window.open(
-                'https://github.com/CambridgeMonorail/react-weapons-of-choice',
-                '_blank'
-              )
-            }
-            className="bg-blue-600 text-white hover:bg-blue-700"
-          >
-            Contribute on GitHub
-          </Button>
-        </div>
-        <div className="flex justify-center space-x-4 mt-8">
-          <Github className="w-16 h-16" />
-        </div>
-      </section>
-
-      {/* Get Started Section */}
-      <section className="text-center py-20 bg-white text-blue-600 w-full">
-        <h2 className="text-4xl font-bold mb-6">Get Started in Minutes</h2>
-        <div className="text-left max-w-2xl mx-auto">
-          <p className="text-xl mb-4">
-            <strong>Step 1:</strong> Clone the repository.
-          </p>
-          <p className="text-xl mb-4">
-            <strong>Step 2:</strong> Install dependencies.
-          </p>
-          <p className="text-xl mb-4">
-            <strong>Step 3:</strong> Start the development server.
-          </p>
-        </div>
-        <Button
-          size="lg"
-          onClick={() =>
-            window.open(
-              'https://github.com/CambridgeMonorail/react-weapons-of-choice',
-              '_blank'
-            )
-          }
-          className="bg-blue-600 text-white hover:bg-blue-700"
-        >
-          Read the Documentation
-        </Button>
-      </section>
-
-      {/* Footer */}
-      <footer className="text-center py-8 bg-blue-600 text-white w-full">
-        <div className="flex justify-center space-x-4 mb-4">
-          <a href="#" className="hover:underline">
-            Home
-          </a>
-          <a href="#features" className="hover:underline">
-            Features
-          </a>
-          <a
-            href="https://github.com/CambridgeMonorail/react-weapons-of-choice"
-            className="hover:underline"
-          >
-            Documentation
-          </a>
-          <a
-            href="https://discord.com/invite/your-discord-invite"
-            className="hover:underline"
-          >
-            Community
-          </a>
-          <a
-            href="https://github.com/CambridgeMonorail/react-weapons-of-choice"
-            className="hover:underline"
-          >
-            GitHub
-          </a>
-        </div>
-        <div className="flex justify-center space-x-4">
-          <Github className="w-8 h-8" />
-          <Twitter className="w-8 h-8" />
-        </div>
-        <p className="mt-4">
-          &copy; 2023 React Weapons of Choice. All rights reserved.
-        </p>
-      </footer>
+      <HeroSection
+        logoSrc="./rwoc-logo.png"
+        mainHeading="The Boilerplate That Speeds Up SPA Development"
+        subHeading="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."
+        primaryButtonText="Get Started"
+        primaryButtonAction={() =>
+          window.open(
+            'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+            '_blank'
+          )
+        }
+        secondaryButtonText="Learn More"
+        secondaryButtonAction={handleScrollToFeatures}
+      />
+      <AboutSection
+        title="Why React Weapons of Choice?"
+        description="React Weapons of Choice is an open-source boilerplate designed for developers who want a fast, intuitive setup for SPAs. Say goodbye to configuration headaches and hello to productivity!"
+        logos={[
+          <NxLogo className="w-16 h-16" />,
+          <TailwindLogo className="w-16 h-16" />,
+          <ShadcnLogo className="w-16 h-16" />,
+          <PnpmLogo className="w-16 h-16" />,
+          <ReactLogo className="w-16 h-16" />,
+        ]}
+      />
+      <FeaturesSection
+        title="What You’ll Get"
+        features={[
+          {
+            title: '🚀 Pre-configured Nx Workspace for Monorepo Management',
+            description: 'Manage your monorepo with ease using Nx.',
+          },
+          {
+            title: '🎨 Tailwind CSS Integration for Utility-First Styling',
+            description: 'Style your components effortlessly with Tailwind CSS.',
+          },
+          {
+            title: '🖌️ Shadcn UI Components for Consistent Design',
+            description: 'Use Shadcn UI components for a consistent look and feel.',
+          },
+          {
+            title: '📂 Modular Architecture for Scalability',
+            description: 'Build scalable applications with a modular architecture.',
+          },
+          {
+            title: '📑 Comprehensive Documentation and Examples',
+            description: 'Access detailed documentation and examples to get started quickly.',
+          },
+        ]}
+      />
+      <DemoSection
+        title="See It in Action"
+        description="Explore a live demo to see how React Weapons of Choice simplifies SPA development."
+        buttonText="View Demo"
+        buttonAction={() => navigate('/home')}
+      />
+      <CommunitySection
+        title="Join the Community"
+        description="React Weapons of Choice is built by developers, for developers. Contribute, discuss, and shape the future of the project."
+        buttonText="Contribute on GitHub"
+        buttonAction={() =>
+          window.open(
+            'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+            '_blank'
+          )
+        }
+      />
+      <GetStartedSection
+        title="Get Started in Minutes"
+        steps={[
+          { stepNumber: 1, stepDescription: 'Clone the repository.' },
+          { stepNumber: 2, stepDescription: 'Install dependencies.' },
+          { stepNumber: 3, stepDescription: 'Start the development server.' },
+        ]}
+        buttonText="Read the Documentation"
+        buttonAction={() =>
+          window.open(
+            'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+            '_blank'
+          )
+        }
+      />
+      <Footer
+        navigationLinks={[
+          { text: 'Home', url: '#' },
+          { text: 'Features', url: '#features' },
+          { text: 'Documentation', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
+          { text: 'Community', url: 'https://discord.com/invite/your-discord-invite' },
+          { text: 'GitHub', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
+        ]}
+        socialMediaIcons={[
+          <Github className="w-8 h-8" />,
+          <Twitter className="w-8 h-8" />,
+        ]}
+        copyrightText="&copy; 2023 React Weapons of Choice. All rights reserved."
+      />
     </div>
   );
 };
