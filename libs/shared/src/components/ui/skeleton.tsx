@@ -1,4 +1,4 @@
-import { cn } from "@rwoc/shared/lib/utils"
+import { cn } from "./utils"
 
 function Skeleton({
   className,
