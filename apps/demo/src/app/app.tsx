@@ -12,21 +12,23 @@ import ContactPage from './components/pages/ContactPage';
 import BlogPage from './components/pages/BlogPage';
 import IndividualBlogPostPage from './components/pages/IndividualBlogPostPage';
 import TermsAndConditionsPage from './components/pages/TermsAndConditionsPage';
+import { Dashboard } from './components/Dashboard';
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Layout></Layout>} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/features" element={<FeaturesPage />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/faq" element={<FAQPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:postId" element={<IndividualBlogPostPage />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        <Route path="/home" element={<Layout><Dashboard /></Layout>} />
+        <Route path="/about" element={<Layout><AboutPage /></Layout>} />
+        <Route path="/features" element={<Layout><FeaturesPage /></Layout>} />
+        <Route path="/pricing" element={<Layout><PricingPage /></Layout>} />
+        <Route path="/faq" element={<Layout><FAQPage /></Layout>} />
+        <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
+        <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
+        <Route path="/blog/:postId" element={<Layout><IndividualBlogPostPage /></Layout>} />
+        <Route path="/terms-and-conditions" element={<Layout><TermsAndConditionsPage /></Layout>} />
+        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

@@ -81,6 +81,10 @@ const data = {
           title: 'Blog',
           url: '/blog',
         },
+        {
+          title: 'Terms and Conditions',
+          url: '/terms-and-conditions',
+        },
       ],
     },
     {
