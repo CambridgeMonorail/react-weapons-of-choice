@@ -1,7 +1,15 @@
-import React from 'react';
+import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shared/components/ui/card';
 
-const teamMembers = [
+interface TeamMember {
+  name: string;
+  role: string;
+  photo: string;
+  bio: string;
+  contact: string;
+}
+
+const teamMembers: TeamMember[] = [
   {
     name: 'John Doe',
     role: 'Project Lead',
@@ -25,17 +33,17 @@ const teamMembers = [
   },
 ];
 
-const AboutPage: React.FC = () => {
+const AboutPage: FC = () => {
   return (
-    <div className="space-y-8">
-      <section>
+    <div className="space-y-8 p-5 space-x-8">
+      <section className="px-5">
         <h2 className="text-3xl font-bold mb-4">Mission and Vision</h2>
         <p>
           Our mission is to revolutionize the way developers build applications by providing a robust and intuitive boilerplate. Our vision is to create a community-driven project that continuously evolves to meet the needs of developers worldwide.
         </p>
       </section>
 
-      <section>
+      <section >
         <h2 className="text-3xl font-bold mb-4">Team Introduction</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {teamMembers.map((member) => (
@@ -54,7 +62,7 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      <section>
+      <section className="px-5">
         <h2 className="text-3xl font-bold mb-4">Timeline</h2>
         <p>
           Explore the key milestones and evolution of our project from inception to the present day.
@@ -64,4 +72,4 @@ const AboutPage: React.FC = () => {
   );
 };
 
-export default AboutPage;
+export { AboutPage };

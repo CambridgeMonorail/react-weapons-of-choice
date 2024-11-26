@@ -4,7 +4,7 @@ import { Toaster } from '@rwoc/shared/components/ui/toaster';
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
 import NotFound from './components/NotFound';
-import AboutPage from './components/pages/AboutPage';
+import { AboutPage } from './components/pages/AboutPage';
 import FeaturesPage from './components/pages/FeaturesPage';
 import PricingPage from './components/pages/PricingPage';
 import FAQPage from './components/pages/FAQPage';
@@ -44,12 +44,12 @@ function App() {
         <Route path="/components/demo-button" element={<Layout><ButtonDemo /></Layout>} />
         <Route path="/components/demo-card" element={<Layout><CardDemo /></Layout>} />
         <Route path="/components/demo-chart" element={<Layout><ChartDemo /></Layout>} />
-        <Route path="/components/demo-footer" element={<Layout><DialogDemo /></Layout>} />
-        <Route path="/components/demo-sidebar" element={<Layout><DropdownDemo /></Layout>} />
-        <Route path="/components/demo-content" element={<Layout><FormDemo /></Layout>} />
-        <Route path="/components/demo-form" element={<Layout><TabsDemo /></Layout>} />
-        <Route path="/components/demo-list" element={<Layout><ToggleDemo /></Layout>} />
-        <Route path="/components/demo-item" element={<Layout><TooltipDemo /></Layout>} />
+        <Route path="/components/demo-dialog" element={<Layout><DialogDemo /></Layout>} />
+        <Route path="/components/demo-dropdown" element={<Layout><DropdownDemo /></Layout>} />
+        <Route path="/components/demo-form" element={<Layout><FormDemo /></Layout>} />
+        <Route path="/components/demo-tabs" element={<Layout><TabsDemo /></Layout>} />
+        <Route path="/components/demo-toggle" element={<Layout><ToggleDemo /></Layout>} />
+        <Route path="/components/demo-tooltip" element={<Layout><TooltipDemo /></Layout>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
