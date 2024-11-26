@@ -47,6 +47,41 @@ const componentDefinitions = [
     name: "Charts",
     description: "Visual representations of data using various chart types.",
     path: "/charts"
+  },
+  {
+    name: "About",
+    description: "Learn more about our mission, vision, and team.",
+    path: "/about"
+  },
+  {
+    name: "Features",
+    description: "Discover the powerful features of our boilerplate.",
+    path: "/features"
+  },
+  {
+    name: "Pricing",
+    description: "Choose the plan that best suits your needs.",
+    path: "/pricing"
+  },
+  {
+    name: "FAQ",
+    description: "Find answers to the most frequently asked questions.",
+    path: "/faq"
+  },
+  {
+    name: "Contact",
+    description: "Get in touch with us for inquiries and feedback.",
+    path: "/contact"
+  },
+  {
+    name: "Blog",
+    description: "Stay updated with our latest blog posts.",
+    path: "/blog"
+  },
+  {
+    name: "Terms and Conditions",
+    description: "Read our terms of service, privacy policies, and disclaimers.",
+    path: "/terms-and-conditions"
   }
 ];
 
@@ -76,4 +111,3 @@ const Home = () => {
 };
 
 export default Home;
-

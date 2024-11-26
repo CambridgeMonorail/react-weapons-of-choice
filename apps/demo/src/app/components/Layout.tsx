@@ -1,17 +1,13 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-  Separator,
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from '@rwoc/shared';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Separator, SidebarInset, SidebarProvider, SidebarTrigger } from '@rwoc/shared';
 import { AppSidebar } from './AppSidebar';
-export function Layout() {
+import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export function Layout({ children }: LayoutProps) {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -35,14 +31,7 @@ export function Layout() {
             </Breadcrumb>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-        </div>
+        {children}
       </SidebarInset>
     </SidebarProvider>
   );

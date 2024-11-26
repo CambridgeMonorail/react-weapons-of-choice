@@ -52,42 +52,55 @@ const data = {
   ],
   navMain: [
     {
-      title: 'Playground',
+      title: 'Pages',
       url: '#',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
+          title: 'About',
+          url: '/about',
         },
         {
-          title: 'Starred',
-          url: '#',
+          title: 'Features',
+          url: '/features',
         },
         {
-          title: 'Settings',
-          url: '#',
+          title: 'Pricing',
+          url: '/pricing',
+        },
+        {
+          title: 'FAQ',
+          url: '/faq',
+        },
+        {
+          title: 'Contact',
+          url: '/contact',
+        },
+        {
+          title: 'Blog',
+          url: '/blog',
+        },
+        {
+          title: 'Terms and Conditions',
+          url: '/terms-and-conditions',
         },
       ],
     },
     {
-      title: 'Models',
+      title: 'Components',
       url: '#',
       icon: Bot,
       items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
+        { title: 'Demo Button', url: '/components/demo-button' },
+        { title: 'Demo Card', url: '/components/demo-card' },
+        { title: 'Demo Chart', url: '/components/demo-chart' },
+        { title: 'Demo Dialog', url: '/components/demo-dialog' },
+        { title: 'Demo Dropdown', url: '/components/demo-dropdown' },
+        { title: 'Demo Form', url: '/components/demo-form' },
+        { title: 'Demo Tabs', url: '/components/demo-tabs' },
+        { title: 'Demo Toggle', url: '/components/demo-toggle' },
+        { title: 'Demo Tooltip', url: '/components/demo-tooltip' },
       ],
     },
     {
@@ -156,7 +169,7 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -172,4 +185,4 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarRail />
     </Sidebar>
   );
-}
+};

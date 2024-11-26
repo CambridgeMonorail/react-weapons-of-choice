@@ -1,15 +1,16 @@
-import React from 'react';
+import { FC } from 'react';
+import { Button } from '@rwoc/shared';
 
-const NotFound: React.FC = () => {
+const NotFound: FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold mb-4">404</h1>
-      <p className="text-lg mb-4">Page Not Found</p>
-      <a href="/" className="text-blue-600 hover:underline">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+      <h1 className="text-4xl font-bold mb-4 text-primary-foreground">404</h1>
+      <p className="text-lg mb-4 text-foreground">Page Not Found</p>
+      <a href="/" className="text-primary hover:underline">
         Go back to Home
       </a>
     </div>
   );
 };
 
-export default NotFound;
+export { NotFound };
