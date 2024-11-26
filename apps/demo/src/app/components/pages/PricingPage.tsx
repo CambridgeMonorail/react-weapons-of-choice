@@ -1,8 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shared/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shared/components/ui/table';
 
-const pricingTiers = [
+interface PricingTier {
+  name: string;
+  price: string;
+  features: string[];
+}
+
+const pricingTiers: PricingTier[] = [
   {
     name: 'Free',
     price: '$0',
@@ -20,9 +26,9 @@ const pricingTiers = [
   },
 ];
 
-const PricingPage: React.FC = () => {
+export const PricingPage: FC = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 px-10">
       <section>
         <h2 className="text-3xl font-bold mb-4">Pricing Tiers</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -72,5 +78,3 @@ const PricingPage: React.FC = () => {
     </div>
   );
 };
-
-export default PricingPage;

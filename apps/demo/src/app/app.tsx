@@ -3,11 +3,11 @@ import { Toaster } from '@rwoc/shared/components/ui/toaster';
 
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
-import NotFound from './components/NotFound';
+import { NotFound } from './components/NotFound';
 import { AboutPage } from './components/pages/AboutPage';
-import FeaturesPage from './components/pages/FeaturesPage';
-import PricingPage from './components/pages/PricingPage';
-import FAQPage from './components/pages/FAQPage';
+import { FeaturesPage } from './components/pages/FeaturesPage';
+import { PricingPage } from './components/pages/PricingPage';
+import { FAQPage } from './components/pages/FAQPage';
 import ContactPage from './components/pages/ContactPage';
 import BlogPage from './components/pages/BlogPage';
 import IndividualBlogPostPage from './components/pages/IndividualBlogPostPage';

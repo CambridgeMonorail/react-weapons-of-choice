@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -6,34 +6,42 @@ import {
   CardHeader,
   CardTitle,
 } from '@rwoc/shared/components/ui/card';
-
 import { Button } from '@rwoc/shared/components/ui/button';
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from '@rwoc/shared';
-
 import { BarChart, CartesianGrid, XAxis, Bar } from 'recharts';
 
-const FeaturesPage: React.FC = () => {
-  const chartData = [
+interface ChartData {
+  label: string;
+  performance: number;
+}
+
+const FeaturesPage: FC = () => {
+  const [chartData, setChartData] = useState<ChartData[]>([
     { label: 'Before', performance: 50 },
     { label: 'After', performance: 80 },
-  ];
+  ]);
 
   const chartConfig = {
     performance: {
       label: 'Performance',
-      color: '#2563eb', // You can use any valid CSS color value
+      color: 'var(--color-performance)',
     },
   };
 
+  useEffect(() => {
+    // Any side effects or data fetching can be handled here
+  }, []);
+
   return (
-    <div className="p-8">
+    <div className="p-8 bg-background text-foreground">
       <section className="mb-12">
         <h2 className="text-4xl font-bold mb-4">Detailed Descriptions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 1 */}
           <Card>
             <CardHeader>
               <CardTitle>
@@ -55,6 +63,7 @@ const FeaturesPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
+          {/* Card 2 */}
           <Card>
             <CardHeader>
               <CardTitle>
@@ -76,6 +85,7 @@ const FeaturesPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
+          {/* Card 3 */}
           <Card>
             <CardHeader>
               <CardTitle>
@@ -99,6 +109,7 @@ const FeaturesPage: React.FC = () => {
       <section className="mb-12">
         <h2 className="text-4xl font-bold mb-4">Use Cases</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Card 4 */}
           <Card>
             <CardHeader>
               <CardTitle>📊 Performance Improvements</CardTitle>
@@ -122,13 +133,14 @@ const FeaturesPage: React.FC = () => {
                   <ChartTooltip content={<ChartTooltipContent />} />
                   <Bar
                     dataKey="performance"
-                    fill="var(--color-performance)"
+                    fill={chartConfig.performance.color}
                     radius={4}
                   />
                 </BarChart>
               </ChartContainer>
             </CardContent>
           </Card>
+          {/* Card 5 */}
           <Card>
             <CardHeader>
               <CardTitle>📈 Scalability</CardTitle>
@@ -148,6 +160,7 @@ const FeaturesPage: React.FC = () => {
               </p>
             </CardContent>
           </Card>
+          {/* Card 6 */}
           <Card>
             <CardHeader>
               <CardTitle>📹 Video Demonstration</CardTitle>
@@ -172,4 +185,4 @@ const FeaturesPage: React.FC = () => {
   );
 };
 
-export default FeaturesPage;
+export { FeaturesPage };
