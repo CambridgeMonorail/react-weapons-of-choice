@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
 import { Button } from "@rwoc/shared/components/ui/button";
 
-const ButtonDemo = () => {
+const ButtonDemo: FC = () => {
   return (
     <div className="space-y-4">
-      <h2 className="text-2xl font-bold">Button Variants</h2>
+      <h2 className="text-2xl font-bold text-foreground">Button Variants</h2>
       <div className="flex space-x-2">
         <Button variant="default">Default</Button>
         <Button variant="destructive">Destructive</Button>
@@ -13,7 +13,7 @@ const ButtonDemo = () => {
         <Button variant="ghost">Ghost</Button>
         <Button variant="link">Link</Button>
       </div>
-      <h2 className="text-2xl font-bold">Button Sizes</h2>
+      <h2 className="text-2xl font-bold text-foreground">Button Sizes</h2>
       <div className="flex items-center space-x-2">
         <Button size="lg">Large</Button>
         <Button>Default</Button>
@@ -24,5 +24,5 @@ const ButtonDemo = () => {
   );
 };
 
-export default ButtonDemo;
+export { ButtonDemo };
 

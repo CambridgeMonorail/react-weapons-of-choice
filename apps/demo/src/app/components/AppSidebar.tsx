@@ -88,22 +88,20 @@ const data = {
       ],
     },
     {
-      title: 'Models',
+      title: 'Components',
       url: '#',
       icon: Bot,
       items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
+        { title: 'Demo Button', url: '/components/demo-button' },
+        { title: 'Demo Card', url: '/components/demo-card' },
+        { title: 'Demo Chart', url: '/components/demo-chart' },
+        { title: 'Demo Footer', url: '/components/demo-footer' },
+        { title: 'Demo Sidebar', url: '/components/demo-sidebar' },
+        { title: 'Demo Content', url: '/components/demo-content' },
+        { title: 'Demo Form', url: '/components/demo-form' },
+        { title: 'Demo List', url: '/components/demo-list' },
+        { title: 'Demo Item', url: '/components/demo-item' },
+        { title: 'Demo Modal', url: '/components/demo-modal' },
       ],
     },
     {

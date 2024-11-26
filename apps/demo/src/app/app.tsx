@@ -13,6 +13,18 @@ import BlogPage from './components/pages/BlogPage';
 import IndividualBlogPostPage from './components/pages/IndividualBlogPostPage';
 import TermsAndConditionsPage from './components/pages/TermsAndConditionsPage';
 import { Dashboard } from './components/Dashboard';
+import { ButtonDemo } from './components/component-demos/ButtonDemo';
+import CardDemo from './components/component-demos/CardDemo';
+import ChartDemo from './components/component-demos/ChartDemo';
+import DialogDemo from './components/component-demos/DialogDemo';
+import DropdownDemo from './components/component-demos/DropdownDemo';
+import FormDemo from './components/component-demos/FormDemo';
+import TabsDemo from './components/component-demos/TabsDemo';
+import ToggleDemo from './components/component-demos/ToggleDemo';
+import TooltipDemo from './components/component-demos/TooltipDemo';
+
+
+
 
 function App() {
   return (
@@ -29,6 +41,16 @@ function App() {
         <Route path="/blog/:postId" element={<Layout><IndividualBlogPostPage /></Layout>} />
         <Route path="/terms-and-conditions" element={<Layout><TermsAndConditionsPage /></Layout>} />
         <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
+        <Route path="/components/demo-button" element={<Layout><ButtonDemo /></Layout>} />
+        <Route path="/components/demo-card" element={<Layout><CardDemo /></Layout>} />
+        <Route path="/components/demo-chart" element={<Layout><ChartDemo /></Layout>} />
+        <Route path="/components/demo-footer" element={<Layout><DialogDemo /></Layout>} />
+        <Route path="/components/demo-sidebar" element={<Layout><DropdownDemo /></Layout>} />
+        <Route path="/components/demo-content" element={<Layout><FormDemo /></Layout>} />
+        <Route path="/components/demo-form" element={<Layout><TabsDemo /></Layout>} />
+        <Route path="/components/demo-list" element={<Layout><ToggleDemo /></Layout>} />
+        <Route path="/components/demo-item" element={<Layout><TooltipDemo /></Layout>} />
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
