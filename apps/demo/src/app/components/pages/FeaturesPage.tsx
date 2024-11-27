@@ -39,7 +39,7 @@ const FeaturesPage: FC = () => {
   return (
     <div className="p-8 bg-background text-foreground">
       <section className="mb-12">
-        <h2 className="text-4xl font-bold mb-4">Detailed Descriptions</h2>
+        <h2 className="text-4xl font-bold mb-4 text-primary">Detailed Descriptions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <Card>
@@ -107,7 +107,7 @@ const FeaturesPage: FC = () => {
         </div>
       </section>
       <section className="mb-12">
-        <h2 className="text-4xl font-bold mb-4">Use Cases</h2>
+        <h2 className="text-4xl font-bold mb-4 text-primary">Use Cases</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 4 */}
           <Card>

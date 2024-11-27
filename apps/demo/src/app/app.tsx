@@ -23,33 +23,32 @@ import TabsDemo from './components/component-demos/TabsDemo';
 import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
 
-
-
+const baseUrl = import.meta.env.BASE_URL;
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Layout><Dashboard /></Layout>} />
-        <Route path="/about" element={<Layout><AboutPage /></Layout>} />
-        <Route path="/features" element={<Layout><FeaturesPage /></Layout>} />
-        <Route path="/pricing" element={<Layout><PricingPage /></Layout>} />
-        <Route path="/faq" element={<Layout><FAQPage /></Layout>} />
-        <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
-        <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
-        <Route path="/blog/:postId" element={<Layout><IndividualBlogPostPage /></Layout>} />
-        <Route path="/terms-and-conditions" element={<Layout><TermsAndConditionsPage /></Layout>} />
-        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
-        <Route path="/components/demo-button" element={<Layout><ButtonDemo /></Layout>} />
-        <Route path="/components/demo-card" element={<Layout><CardDemo /></Layout>} />
-        <Route path="/components/demo-chart" element={<Layout><ChartDemo /></Layout>} />
-        <Route path="/components/demo-dialog" element={<Layout><DialogDemo /></Layout>} />
-        <Route path="/components/demo-dropdown" element={<Layout><DropdownDemo /></Layout>} />
-        <Route path="/components/demo-form" element={<Layout><FormDemo /></Layout>} />
-        <Route path="/components/demo-tabs" element={<Layout><TabsDemo /></Layout>} />
-        <Route path="/components/demo-toggle" element={<Layout><ToggleDemo /></Layout>} />
-        <Route path="/components/demo-tooltip" element={<Layout><TooltipDemo /></Layout>} />
+        <Route path={`${baseUrl}`} element={<LandingPage />} />
+        <Route path={`${baseUrl}home`} element={<Layout><Dashboard /></Layout>} />
+        <Route path={`${baseUrl}about`} element={<Layout><AboutPage /></Layout>} />
+        <Route path={`${baseUrl}features`} element={<Layout><FeaturesPage /></Layout>} />
+        <Route path={`${baseUrl}pricing`} element={<Layout><PricingPage /></Layout>} />
+        <Route path={`${baseUrl}faq`} element={<Layout><FAQPage /></Layout>} />
+        <Route path={`${baseUrl}contact`} element={<Layout><ContactPage /></Layout>} />
+        <Route path={`${baseUrl}blog`} element={<Layout><BlogPage /></Layout>} />
+        <Route path={`${baseUrl}blog/:postId`} element={<Layout><IndividualBlogPostPage /></Layout>} />
+        <Route path={`${baseUrl}terms-and-conditions`} element={<Layout><TermsAndConditionsPage /></Layout>} />
+        <Route path={`${baseUrl}dashboard`} element={<Layout><Dashboard /></Layout>} />
+        <Route path={`${baseUrl}components/demo-button`} element={<Layout><ButtonDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-card`} element={<Layout><CardDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-chart`} element={<Layout><ChartDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-dialog`} element={<Layout><DialogDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-dropdown`} element={<Layout><DropdownDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-form`} element={<Layout><FormDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-tabs`} element={<Layout><TabsDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-toggle`} element={<Layout><ToggleDemo /></Layout>} />
+        <Route path={`${baseUrl}components/demo-tooltip`} element={<Layout><TooltipDemo /></Layout>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
