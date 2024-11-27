@@ -55,37 +55,37 @@ const data = {
   navMain: [
     {
       title: 'Pages',
-      url: `${baseUrl}about`,
+      url: `#${baseUrl}about`,
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: 'About',
-          url: `${baseUrl}about`,
+          url: `#${baseUrl}about`,
         },
         {
           title: 'Features',
-          url: `${baseUrl}features`,
+          url: `#${baseUrl}features`,
         },
         {
           title: 'Pricing',
-          url: `${baseUrl}pricing`,
+          url: `#${baseUrl}pricing`,
         },
         {
           title: 'FAQ',
-          url: `${baseUrl}faq`,
+          url: `#${baseUrl}faq`,
         },
         {
           title: 'Contact',
-          url: `${baseUrl}contact`,
+          url: `#${baseUrl}contact`,
         },
         {
           title: 'Blog',
-          url: `${baseUrl}blog`,
+          url: `#${baseUrl}blog`,
         },
         {
           title: 'Terms and Conditions',
-          url: `${baseUrl}terms-and-conditions`,
+          url: `#${baseUrl}terms-and-conditions`,
         },
         {
           title: 'Color Palette',
@@ -95,18 +95,18 @@ const data = {
     },
     {
       title: 'Components',
-      url: `${baseUrl}components/demo-button`,
+      url: `#${baseUrl}components/demo-button`,
       icon: Bot,
       items: [
-        { title: 'Demo Button', url: `${baseUrl}components/demo-button` },
-        { title: 'Demo Card', url: `${baseUrl}components/demo-card` },
-        { title: 'Demo Chart', url: `${baseUrl}components/demo-chart` },
-        { title: 'Demo Dialog', url: `${baseUrl}components/demo-dialog` },
-        { title: 'Demo Dropdown', url: `${baseUrl}components/demo-dropdown` },
-        { title: 'Demo Form', url: `${baseUrl}components/demo-form` },
-        { title: 'Demo Tabs', url: `${baseUrl}components/demo-tabs` },
-        { title: 'Demo Toggle', url: `${baseUrl}components/demo-toggle` },
-        { title: 'Demo Tooltip', url: `${baseUrl}components/demo-tooltip` },
+        { title: 'Demo Button', url: `#${baseUrl}components/demo-button` },
+        { title: 'Demo Card', url: `#${baseUrl}components/demo-card` },
+        { title: 'Demo Chart', url: `#${baseUrl}components/demo-chart` },
+        { title: 'Demo Dialog', url: `#${baseUrl}components/demo-dialog` },
+        { title: 'Demo Dropdown', url: `#${baseUrl}components/demo-dropdown` },
+        { title: 'Demo Form', url: `#${baseUrl}components/demo-form` },
+        { title: 'Demo Tabs', url: `#${baseUrl}components/demo-tabs` },
+        { title: 'Demo Toggle', url: `#${baseUrl}components/demo-toggle` },
+        { title: 'Demo Tooltip', url: `#${baseUrl}components/demo-tooltip` },
       ],
     },
     {
