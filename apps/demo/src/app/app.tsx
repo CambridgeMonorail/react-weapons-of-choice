@@ -22,6 +22,7 @@ import FormDemo from './components/component-demos/FormDemo';
 import TabsDemo from './components/component-demos/TabsDemo';
 import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
+import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -49,7 +50,7 @@ function App() {
         <Route path={`${baseUrl}components/demo-tabs`} element={<Layout><TabsDemo /></Layout>} />
         <Route path={`${baseUrl}components/demo-toggle`} element={<Layout><ToggleDemo /></Layout>} />
         <Route path={`${baseUrl}components/demo-tooltip`} element={<Layout><TooltipDemo /></Layout>} />
-
+        <Route path={`${baseUrl}color-palette`} element={<Layout><ColorPalettePage /></Layout>} /> {/* Pfc6f */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />

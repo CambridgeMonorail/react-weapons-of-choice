@@ -87,6 +87,10 @@ const data = {
           title: 'Terms and Conditions',
           url: `${baseUrl}terms-and-conditions`,
         },
+        {
+          title: 'Color Palette',
+          url: `${baseUrl}color-palette`,
+        },
       ],
     },
     {
