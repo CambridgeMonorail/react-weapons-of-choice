@@ -37,7 +37,7 @@ const data = {
   },
   teams: [
     {
-      name: 'RWOC Inc',
+      name: 'RWOC',
       logo: Swords,
       plan: 'Enterprise',
     },

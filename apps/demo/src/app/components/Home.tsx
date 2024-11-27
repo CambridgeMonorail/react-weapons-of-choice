@@ -99,7 +99,7 @@ const Home = () => {
           {componentDefinitions.map((component) => (
             <div key={component.name} className="border-t pt-4 first:border-t-0 first:pt-0">
               <dt className="font-semibold text-lg">
-                <Link to={`${baseUrl}${component.path}`} className="text-blue-600 hover:underline">
+                <Link to={`${baseUrl}${component.path}`} className="text-primary-600 hover:underline">
                   {component.name}
                 </Link>
               </dt>

@@ -6,7 +6,7 @@ import { Button } from '@rwoc/shared/components/ui/button';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 px-4">
       <section>
         <h2 className="text-3xl font-bold mb-4">Contact Form</h2>
         <Card>

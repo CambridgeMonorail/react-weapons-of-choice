@@ -3,7 +3,7 @@ import React from 'react';
 const BlogPage: React.FC = () => {
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">Blog</h1>
+      <h1 className="text-4xl font-bold mb-4 text-primary">Blog</h1>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Article Listings</h2>
         <p>Stay updated with our latest blog posts, featuring summaries and publication dates.</p>

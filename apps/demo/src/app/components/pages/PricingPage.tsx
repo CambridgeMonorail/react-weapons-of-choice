@@ -30,7 +30,7 @@ export const PricingPage: FC = () => {
   return (
     <div className="space-y-8 px-10">
       <section>
-        <h2 className="text-3xl font-bold mb-4">Pricing Tiers</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">Pricing Tiers</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {pricingTiers.map((tier) => (
             <Card key={tier.name}>
@@ -51,7 +51,7 @@ export const PricingPage: FC = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold mb-4">Comparison Table</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">Comparison Table</h2>
         <Table>
           <TableHeader>
             <TableRow>
