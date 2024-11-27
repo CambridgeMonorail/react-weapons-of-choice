@@ -26,6 +26,8 @@ import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 // This is sample data.
 const data = {
   user: {
@@ -59,31 +61,31 @@ const data = {
       items: [
         {
           title: 'About',
-          url: '/about',
+          url: `${baseUrl}about`,
         },
         {
           title: 'Features',
-          url: '/features',
+          url: `${baseUrl}features`,
         },
         {
           title: 'Pricing',
-          url: '/pricing',
+          url: `${baseUrl}pricing`,
         },
         {
           title: 'FAQ',
-          url: '/faq',
+          url: `${baseUrl}faq`,
         },
         {
           title: 'Contact',
-          url: '/contact',
+          url: `${baseUrl}contact`,
         },
         {
           title: 'Blog',
-          url: '/blog',
+          url: `${baseUrl}blog`,
         },
         {
           title: 'Terms and Conditions',
-          url: '/terms-and-conditions',
+          url: `${baseUrl}terms-and-conditions`,
         },
       ],
     },
@@ -92,15 +94,15 @@ const data = {
       url: '#',
       icon: Bot,
       items: [
-        { title: 'Demo Button', url: '/components/demo-button' },
-        { title: 'Demo Card', url: '/components/demo-card' },
-        { title: 'Demo Chart', url: '/components/demo-chart' },
-        { title: 'Demo Dialog', url: '/components/demo-dialog' },
-        { title: 'Demo Dropdown', url: '/components/demo-dropdown' },
-        { title: 'Demo Form', url: '/components/demo-form' },
-        { title: 'Demo Tabs', url: '/components/demo-tabs' },
-        { title: 'Demo Toggle', url: '/components/demo-toggle' },
-        { title: 'Demo Tooltip', url: '/components/demo-tooltip' },
+        { title: 'Demo Button', url: `${baseUrl}components/demo-button` },
+        { title: 'Demo Card', url: `${baseUrl}components/demo-card` },
+        { title: 'Demo Chart', url: `${baseUrl}components/demo-chart` },
+        { title: 'Demo Dialog', url: `${baseUrl}components/demo-dialog` },
+        { title: 'Demo Dropdown', url: `${baseUrl}components/demo-dropdown` },
+        { title: 'Demo Form', url: `${baseUrl}components/demo-form` },
+        { title: 'Demo Tabs', url: `${baseUrl}components/demo-tabs` },
+        { title: 'Demo Toggle', url: `${baseUrl}components/demo-toggle` },
+        { title: 'Demo Tooltip', url: `${baseUrl}components/demo-tooltip` },
       ],
     },
     {
