@@ -6,6 +6,25 @@
 ![License](https://img.shields.io/github/license/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Project Goals](#project-goals)
+- [Features](#features)
+- [Why This Project Was Built](#why-this-project-was-built)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Run tasks](#run-tasks)
+- [Add new projects](#add-new-projects)
+- [Install Nx Console](#install-nx-console)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Useful links](#useful-links)
+
+## Overview
+
 An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
 
 Inspired by and based upon [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo).
@@ -20,6 +39,8 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
 - **Community Collaboration**: Foster an open-source community to innovate, improve, and expand the project.
 
+For a detailed breakdown of the project goals, see [Project Goals](./docs/project-goals.md).
+
 ## Features
 
 - 🏗 **Nx Monorepo**: Modular and scalable workspace for managing multiple projects and libraries.
@@ -28,20 +49,13 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - ⚡ **Vite**: Fast and efficient development server and build tool.
 - 🚀 **CI/CD Integration**: Preconfigured workflows for automated builds and testing.
 
-## Table of Contents
+## Why This Project Was Built
 
-- [Project Goals](#project-goals)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Run tasks](#run-tasks)
-- [Add new projects](#add-new-projects)
-- [Install Nx Console](#install-nx-console)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
-- [Useful links](#useful-links)
+While tools like Nx, Tailwind CSS, and Shadcn UI are incredibly powerful and offer numerous benefits for modern front-end development, the process of configuring them can still be time-consuming, error-prone, and frustrating, even for experienced developers. This is because setting up such architectures from scratch is an infrequent task, and each setup can have its own unique challenges and nuances.
+
+This project was built to address these challenges by providing a pre-configured, ready-to-use boilerplate that simplifies the initial setup process. By leveraging this boilerplate, developers can quickly start building their applications without worrying about the complexities of configuration, allowing them to focus on writing code and delivering features.
+
+For more details on why a React SPA boilerplate may still have some value in a Next.js world, see [Why a React SPA Boilerplate in a Next.js World?](./docs/why-spa-why.md)
 
 ## Technologies Used
 
@@ -171,7 +185,7 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
+Contributions are welcome! Please open an issue or submit a pull request for any changes. For detailed guidelines on how to contribute, see [Contributing](./docs/CONTRIBUTING.md).
 
 ## License
 
