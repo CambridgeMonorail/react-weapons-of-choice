@@ -55,7 +55,7 @@ const data = {
   navMain: [
     {
       title: 'Pages',
-      url: '#',
+      url: `${baseUrl}about`,
       icon: SquareTerminal,
       isActive: true,
       items: [
@@ -91,7 +91,7 @@ const data = {
     },
     {
       title: 'Components',
-      url: '#',
+      url: `${baseUrl}components/demo-button`,
       icon: Bot,
       items: [
         { title: 'Demo Button', url: `${baseUrl}components/demo-button` },
