@@ -26,7 +26,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'pnpm exec nx run demo:preview',
-    url: 'http://localhost:4300',
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
     cwd: workspaceRoot,
   },

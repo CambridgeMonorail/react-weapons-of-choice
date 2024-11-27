@@ -20,10 +20,10 @@ const renderApp = () => {
   } catch (error) {
     console.error('Error rendering the app:', error);
     root.render(
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-4">Error</h1>
-        <p className="text-lg mb-4">An error occurred while rendering the app.</p>
-        <a href="/" className="text-primary-600 hover:underline">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+        <h1 className="text-4xl font-bold mb-4 text-primary-foreground">Error</h1>
+        <p className="text-lg mb-4 text-foreground">An error occurred while rendering the app.</p>
+        <a href="/" className="text-primary hover:underline">
           Go back to Home
         </a>
       </div>

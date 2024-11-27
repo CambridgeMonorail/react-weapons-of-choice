@@ -23,6 +23,7 @@ import TabsDemo from './components/component-demos/TabsDemo';
 import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
+import withErrorHandling from './components/withErrorHandling'; // Padb6
 
 const baseUrl = import.meta.env.BASE_URL;
 
@@ -58,4 +59,4 @@ function App() {
   );
 }
 
-export default App;
+export default withErrorHandling(App); // Padb6

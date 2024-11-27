@@ -66,15 +66,15 @@ jobs:
         run: pnpm exec nx affected -t lint test build --base=origin/main --head=HEAD
 
       # Start Application
-      # - name: Start Application
-      #   run: pnpm exec nx run riffroll:preview &
-      #   env:
-      #      CI: true
+      - name: Start Application
+        run: pnpm exec nx run demo:preview &
+        env:
+          CI: true
 
       # Wait for Application to be Ready
-      # - name: Wait for Application to be Ready
-      #   run: npx wait-on http://localhost:4300
+      - name: Wait for Application to be Ready
+        run: npx wait-on http://localhost:4300
 
       # Run E2E Tests
-      # - name: Run E2E Tests
-      #   run: pnpm exec nx affected -t e2e --base=origin/main --head=HEAD
+      - name: Run E2E Tests
+        run: pnpm exec nx affected -t e2e --base=origin/main --head=HEAD
