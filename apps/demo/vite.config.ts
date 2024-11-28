@@ -28,6 +28,11 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    rollupOptions: {
+      output: {
+        format: 'esm',
+      },
+    },
   },
   define: {
     'process.env.DEBUG': JSON.stringify(process.env.DEBUG || 'false'),

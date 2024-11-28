@@ -12,7 +12,6 @@ const baseUrl = import.meta.env.BASE_URL;
 
 const renderApp = () => {
   try {
-    console.log('Base URL:', baseUrl);
     if (process.env.DEBUG === 'true') {
       console.debug('Rendering the app...');
     }

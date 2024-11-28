@@ -23,10 +23,11 @@ import FormDemo from './components/component-demos/FormDemo';
 import TabsDemo from './components/component-demos/TabsDemo';
 import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
-import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
+import { ColorPalettePage } from './components/pages/ColorPalettePage';
 
 function App() {
   const location = useLocation();
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     if (process.env.DEBUG === 'true') {
@@ -75,7 +76,7 @@ function App() {
         <Route path="components/demo-tabs" element={<Layout><TabsDemo /></Layout>} />
         <Route path="components/demo-toggle" element={<Layout><ToggleDemo /></Layout>} />
         <Route path="components/demo-tooltip" element={<Layout><TooltipDemo /></Layout>} />
-        <Route path="color-palette" element={<Layout><ColorPalettePage /></Layout>} /> {/* Pfc6f */}
+        <Route path="color-palette" element={<Layout><ColorPalettePage /></Layout>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
