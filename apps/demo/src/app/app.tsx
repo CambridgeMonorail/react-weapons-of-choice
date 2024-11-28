@@ -30,6 +30,13 @@ function App() {
   const [baseUrl, setBaseUrl] = useState(import.meta.env.BASE_URL);
 
   useEffect(() => {
+    console.log('App component mounted');
+    return () => {
+      console.log('App component unmounted');
+    };
+  }, []);
+
+  useEffect(() => {
     console.log(`Navigating to ${location.pathname}`);
   }, [location]);
 
@@ -38,7 +45,8 @@ function App() {
     if (baseElement) {
       setBaseUrl(baseElement.getAttribute('href') || '/');
     }
-  }, []);
+    console.log(`Base URL set to ${baseUrl}`);
+  }, [baseUrl]);
 
   return (
     <>
