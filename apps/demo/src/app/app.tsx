@@ -45,6 +45,13 @@ function App() {
     }
   }, [location]);
 
+  useEffect(() => {
+    console.log('Rendering process started');
+    return () => {
+      console.log('Rendering process ended');
+    };
+  }, []);
+
   return (
     <>
       <Routes>

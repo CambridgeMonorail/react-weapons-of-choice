@@ -8,10 +8,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+
 const renderApp = () => {
   try {
     const baseUrl = import.meta.env.BASE_URL || '/';
     console.log('renderApp: baseUrl', baseUrl);
+
 
     root.render(
       <StrictMode>
