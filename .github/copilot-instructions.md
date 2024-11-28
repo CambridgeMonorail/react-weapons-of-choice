@@ -1,6 +1,7 @@
 
 - This is a React SPA application designed to be run in the browser, written in typescript in a Nrwl Nx Monorepo.  Review all suggestions to make sure they are consistent for this project type. 
 - Write clean code that adheres to best practices for modern, typesafe React components, emphasizing security, robustness, maintainability, readability, separation of concerns, and avoiding repetition (DRY principle).
+- when adding console logging make sure it includes which function or component it is logging from.
 - Use React functional components exclusively.
 - Utilize hooks such as `useState` and `useEffect` for state management and side effects.
 - Apply Tailwind CSS classes for styling components.

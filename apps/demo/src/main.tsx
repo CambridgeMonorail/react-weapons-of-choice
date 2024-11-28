@@ -8,15 +8,10 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const baseElement = document.querySelector('base');
-const baseUrl = baseElement ? baseElement.getAttribute('href') || '/' : import.meta.env.BASE_URL;
-
 const renderApp = () => {
   try {
-    if (process.env.DEBUG === 'true') {
-      console.debug('Base URL:', baseUrl);
-      console.debug('Rendering the app...');
-    }
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    console.log('renderApp: baseUrl', baseUrl);
 
     root.render(
       <StrictMode>
@@ -27,10 +22,10 @@ const renderApp = () => {
     );
 
     if (process.env.DEBUG === 'true') {
-      console.debug('App rendered successfully.');
+      console.debug('renderApp: App rendered successfully.');
     }
   } catch (error) {
-    console.error('Error rendering the app:', error);
+    console.error('renderApp: Error rendering the app:', error);
     root.render(
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <h1 className="text-4xl font-bold mb-4">Error</h1>

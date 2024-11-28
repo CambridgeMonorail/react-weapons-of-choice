@@ -30,18 +30,18 @@ function App() {
 
   useEffect(() => {
     if (process.env.DEBUG === 'true') {
-      console.log('App component mounted');
+      console.log('App: component mounted');
     }
     return () => {
       if (process.env.DEBUG === 'true') {
-        console.log('App component unmounted');
+        console.log('App: component unmounted');
       }
     };
   }, []);
 
   useEffect(() => {
     if (process.env.DEBUG === 'true') {
-      console.log(`Navigating to ${location.pathname}`);
+      console.log(`App: Navigating to ${location.pathname}`);
     }
   }, [location]);
 
