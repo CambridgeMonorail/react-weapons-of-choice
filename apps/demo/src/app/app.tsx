@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Toaster } from '@rwoc/shared/components/ui/toaster';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
@@ -25,14 +25,20 @@ import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
 
-const baseUrl = import.meta.env.BASE_URL;
-
 function App() {
   const location = useLocation();
+  const [baseUrl, setBaseUrl] = useState(import.meta.env.BASE_URL);
 
   useEffect(() => {
     console.log(`Navigating to ${location.pathname}`);
   }, [location]);
+
+  useEffect(() => {
+    const baseElement = document.querySelector('base');
+    if (baseElement) {
+      setBaseUrl(baseElement.getAttribute('href') || '/');
+    }
+  }, []);
 
   return (
     <>
