@@ -10,13 +10,21 @@ const root = ReactDOM.createRoot(
 
 const renderApp = () => {
   try {
+    const baseElement = document.querySelector('base');
+    const baseUrl = baseElement ? baseElement.getAttribute('href') || '/' : import.meta.env.BASE_URL;
+
+    console.debug('Base URL:', baseUrl);
+    console.debug('Rendering the app...');
+
     root.render(
       <StrictMode>
-        <HashRouter>
+        <HashRouter basename={baseUrl}>
           <App />
         </HashRouter>
       </StrictMode>
     );
+
+    console.debug('App rendered successfully.');
   } catch (error) {
     console.error('Error rendering the app:', error);
     root.render(
@@ -29,25 +37,6 @@ const renderApp = () => {
       </div>
     );
   }
-};
-
-const AppWithBaseUrl = () => {
-  const [baseUrl, setBaseUrl] = useState(import.meta.env.BASE_URL);
-
-  useEffect(() => {
-    const baseElement = document.querySelector('base');
-    if (baseElement) {
-      setBaseUrl(baseElement.getAttribute('href') || '/');
-    }
-  }, []);
-
-  return (
-    <StrictMode>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </StrictMode>
-  );
 };
 
 renderApp();

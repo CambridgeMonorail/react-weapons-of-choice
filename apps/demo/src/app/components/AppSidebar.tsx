@@ -55,103 +55,103 @@ const data = {
   navMain: [
     {
       title: 'Pages',
-      url: `#${baseUrl}about`,
+      url: '/about',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: 'About',
-          url: `#${baseUrl}about`,
+          url: '/about',
         },
         {
           title: 'Features',
-          url: `#${baseUrl}features`,
+          url: '/features',
         },
         {
           title: 'Pricing',
-          url: `#${baseUrl}pricing`,
+          url: '/pricing',
         },
         {
           title: 'FAQ',
-          url: `#${baseUrl}faq`,
+          url: '/faq',
         },
         {
           title: 'Contact',
-          url: `#${baseUrl}contact`,
+          url: '/contact',
         },
         {
           title: 'Blog',
-          url: `#${baseUrl}blog`,
+          url: '/blog',
         },
         {
           title: 'Terms and Conditions',
-          url: `#${baseUrl}terms-and-conditions`,
+          url: '/terms-and-conditions',
         },
         {
           title: 'Color Palette',
-          url: `${baseUrl}color-palette`,
+          url: '/color-palette',
         },
       ],
     },
     {
       title: 'Components',
-      url: `#${baseUrl}components/demo-button`,
+      url: '/components/demo-button',
       icon: Bot,
       items: [
-        { title: 'Demo Button', url: `#${baseUrl}components/demo-button` },
-        { title: 'Demo Card', url: `#${baseUrl}components/demo-card` },
-        { title: 'Demo Chart', url: `#${baseUrl}components/demo-chart` },
-        { title: 'Demo Dialog', url: `#${baseUrl}components/demo-dialog` },
-        { title: 'Demo Dropdown', url: `#${baseUrl}components/demo-dropdown` },
-        { title: 'Demo Form', url: `#${baseUrl}components/demo-form` },
-        { title: 'Demo Tabs', url: `#${baseUrl}components/demo-tabs` },
-        { title: 'Demo Toggle', url: `#${baseUrl}components/demo-toggle` },
-        { title: 'Demo Tooltip', url: `#${baseUrl}components/demo-tooltip` },
+        { title: 'Demo Button', url: '/components/demo-button' },
+        { title: 'Demo Card', url: '/components/demo-card' },
+        { title: 'Demo Chart', url: '/components/demo-chart' },
+        { title: 'Demo Dialog', url: '/components/demo-dialog' },
+        { title: 'Demo Dropdown', url: '/components/demo-dropdown' },
+        { title: 'Demo Form', url: '/components/demo-form' },
+        { title: 'Demo Tabs', url: '/components/demo-tabs' },
+        { title: 'Demo Toggle', url: '/components/demo-toggle' },
+        { title: 'Demo Tooltip', url: '/components/demo-tooltip' },
       ],
     },
     {
       title: 'Documentation',
-      url: '#',
+      url: '/#',
       icon: BookOpen,
       items: [
         {
           title: 'Introduction',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Get Started',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Tutorials',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Changelog',
-          url: '#',
+          url: '/#',
         },
       ],
     },
     {
       title: 'Settings',
-      url: '#',
+      url: '/#',
       icon: Settings2,
       items: [
         {
           title: 'General',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Team',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Billing',
-          url: '#',
+          url: '/#',
         },
         {
           title: 'Limits',
-          url: '#',
+          url: '/#',
         },
       ],
     },
@@ -159,17 +159,17 @@ const data = {
   projects: [
     {
       name: 'Design Engineering',
-      url: '#',
+      url: '/#',
       icon: Frame,
     },
     {
       name: 'Sales & Marketing',
-      url: '#',
+      url: '/#',
       icon: PieChart,
     },
     {
       name: 'Travel',
-      url: '#',
+      url: '/#',
       icon: Map,
     },
   ],
