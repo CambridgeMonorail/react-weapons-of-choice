@@ -6,7 +6,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
-  base: process.env.BASE_URL || '/',
+  base: import.meta.env.BASE_URL || '/',
   cacheDir: '../../node_modules/.vite/apps/demo',
   server: {
     port: 4200,
@@ -44,3 +44,5 @@ export default defineConfig({
     },
   },
 });
+
+console.log('Base URL in Vite config:', import.meta.env.BASE_URL);

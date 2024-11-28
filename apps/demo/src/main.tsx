@@ -8,13 +8,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const baseElement = document.querySelector('base');
-const baseUrl = baseElement ? baseElement.getAttribute('href') || '/' : import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL;
 
 const renderApp = () => {
   try {
+    console.log('Base URL:', baseUrl);
     if (process.env.DEBUG === 'true') {
-      console.debug('Base URL:', baseUrl);
       console.debug('Rendering the app...');
     }
 
