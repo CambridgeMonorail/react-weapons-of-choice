@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/CambridgeMonorail/react-weapons-of-choice.git"
   },
+  "homepage": "https://cambridgemonorail.github.io/react-weapons-of-choice",
   "keywords": [
     "nx",
     "react",
