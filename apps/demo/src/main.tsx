@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { StrictMode, useEffect, useState } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 
@@ -29,6 +29,25 @@ const renderApp = () => {
       </div>
     );
   }
+};
+
+const AppWithBaseUrl = () => {
+  const [baseUrl, setBaseUrl] = useState(import.meta.env.BASE_URL);
+
+  useEffect(() => {
+    const baseElement = document.querySelector('base');
+    if (baseElement) {
+      setBaseUrl(baseElement.getAttribute('href') || '/');
+    }
+  }, []);
+
+  return (
+    <StrictMode>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </StrictMode>
+  );
 };
 
 renderApp();
