@@ -52,6 +52,7 @@ jobs:
       - name: Build project
         run: |
           export BASE_URL='/react-weapons-of-choice/'
+          export DEBUG='true'
           pnpm exec nx build demo --configuration=production
 
       # Upload artifact for deployment

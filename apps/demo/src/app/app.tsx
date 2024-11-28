@@ -29,14 +29,20 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    console.log('App component mounted');
+    if (process.env.DEBUG === 'true') {
+      console.log('App component mounted');
+    }
     return () => {
-      console.log('App component unmounted');
+      if (process.env.DEBUG === 'true') {
+        console.log('App component unmounted');
+      }
     };
   }, []);
 
   useEffect(() => {
-    console.log(`Navigating to ${location.pathname}`);
+    if (process.env.DEBUG === 'true') {
+      console.log(`Navigating to ${location.pathname}`);
+    }
   }, [location]);
 
   return (
