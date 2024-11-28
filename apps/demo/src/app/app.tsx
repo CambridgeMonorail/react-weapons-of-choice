@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { Toaster } from '@rwoc/shared/components/ui/toaster';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
@@ -27,7 +27,6 @@ import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
 
 function App() {
   const location = useLocation();
-  const [baseUrl, setBaseUrl] = useState(import.meta.env.BASE_URL);
 
   useEffect(() => {
     console.log('App component mounted');
@@ -40,38 +39,30 @@ function App() {
     console.log(`Navigating to ${location.pathname}`);
   }, [location]);
 
-  useEffect(() => {
-    const baseElement = document.querySelector('base');
-    if (baseElement) {
-      setBaseUrl(baseElement.getAttribute('href') || '/');
-    }
-    console.log(`Base URL set to ${baseUrl}`);
-  }, [baseUrl]);
-
   return (
     <>
       <Routes>
-        <Route path={`${baseUrl}`} element={<LandingPage />} />
-        <Route path={`${baseUrl}home`} element={<Layout><Dashboard /></Layout>} />
-        <Route path={`${baseUrl}about`} element={<Layout><AboutPage /></Layout>} />
-        <Route path={`${baseUrl}features`} element={<Layout><FeaturesPage /></Layout>} />
-        <Route path={`${baseUrl}pricing`} element={<Layout><PricingPage /></Layout>} />
-        <Route path={`${baseUrl}faq`} element={<Layout><FAQPage /></Layout>} />
-        <Route path={`${baseUrl}contact`} element={<Layout><ContactPage /></Layout>} />
-        <Route path={`${baseUrl}blog`} element={<Layout><BlogPage /></Layout>} />
-        <Route path={`${baseUrl}blog/:postId`} element={<Layout><IndividualBlogPostPage /></Layout>} />
-        <Route path={`${baseUrl}terms-and-conditions`} element={<Layout><TermsAndConditionsPage /></Layout>} />
-        <Route path={`${baseUrl}dashboard`} element={<Layout><Dashboard /></Layout>} />
-        <Route path={`${baseUrl}components/demo-button`} element={<Layout><ButtonDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-card`} element={<Layout><CardDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-chart`} element={<Layout><ChartDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-dialog`} element={<Layout><DialogDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-dropdown`} element={<Layout><DropdownDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-form`} element={<Layout><FormDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-tabs`} element={<Layout><TabsDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-toggle`} element={<Layout><ToggleDemo /></Layout>} />
-        <Route path={`${baseUrl}components/demo-tooltip`} element={<Layout><TooltipDemo /></Layout>} />
-        <Route path={`${baseUrl}color-palette`} element={<Layout><ColorPalettePage /></Layout>} /> {/* Pfc6f */}
+        <Route path="/" element={<LandingPage />} />
+        <Route path="home" element={<Layout><Dashboard /></Layout>} />
+        <Route path="about" element={<Layout><AboutPage /></Layout>} />
+        <Route path="features" element={<Layout><FeaturesPage /></Layout>} />
+        <Route path="pricing" element={<Layout><PricingPage /></Layout>} />
+        <Route path="faq" element={<Layout><FAQPage /></Layout>} />
+        <Route path="contact" element={<Layout><ContactPage /></Layout>} />
+        <Route path="blog" element={<Layout><BlogPage /></Layout>} />
+        <Route path="blog/:postId" element={<Layout><IndividualBlogPostPage /></Layout>} />
+        <Route path="terms-and-conditions" element={<Layout><TermsAndConditionsPage /></Layout>} />
+        <Route path="dashboard" element={<Layout><Dashboard /></Layout>} />
+        <Route path="components/demo-button" element={<Layout><ButtonDemo /></Layout>} />
+        <Route path="components/demo-card" element={<Layout><CardDemo /></Layout>} />
+        <Route path="components/demo-chart" element={<Layout><ChartDemo /></Layout>} />
+        <Route path="components/demo-dialog" element={<Layout><DialogDemo /></Layout>} />
+        <Route path="components/demo-dropdown" element={<Layout><DropdownDemo /></Layout>} />
+        <Route path="components/demo-form" element={<Layout><FormDemo /></Layout>} />
+        <Route path="components/demo-tabs" element={<Layout><TabsDemo /></Layout>} />
+        <Route path="components/demo-toggle" element={<Layout><ToggleDemo /></Layout>} />
+        <Route path="components/demo-tooltip" element={<Layout><TooltipDemo /></Layout>} />
+        <Route path="color-palette" element={<Layout><ColorPalettePage /></Layout>} /> {/* Pfc6f */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
