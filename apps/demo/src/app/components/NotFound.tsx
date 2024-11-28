@@ -1,16 +1,23 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { Button } from '@rwoc/shared';
 
 const NotFound: FC = () => {
-  const baseUrl = import.meta.env.BASE_URL;
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState<string>('');
+
+  useEffect(() => {
+    setCurrentPath(location.pathname);
+  }, [location]);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background">
-      <h1 className="text-4xl font-bold mb-4 text-primary-foreground">404</h1>
+      <h1 className="text-4xl font-bold mb-4 text-primary">404</h1>
       <p className="text-lg mb-4 text-foreground">Page Not Found</p>
-      <a href="/" className="text-primary hover:underline">
+      <p className="text-sm mb-4 text-muted">Attempted to access: {currentPath}</p>
+      <Link to="/" className="text-primary hover:underline">
         Go back to Home
-      </a>
+      </Link>
     </div>
   );
 };
