@@ -70,6 +70,15 @@ For more details on why a React SPA boilerplate may still have some value in a N
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
+- **React**: A JavaScript library for building user interfaces.
+- **Nrwl Nx**: A set of extensible dev tools for monorepos, which helps in managing and scaling the project.
+- **Tailwind CSS**: A utility-first CSS framework for styling the components.
+- **shadcn/ui**: A set of reusable UI components for consistent design.
+- **React Router**: A library for routing in React applications.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Vitest**: A Vite-native unit testing framework.
+- **Playwright**: An end-to-end testing framework.
+
 ## Installation
 
 To install the project, follow these steps:

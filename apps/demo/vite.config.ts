@@ -6,8 +6,8 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin';
 
 export default defineConfig({
   root: __dirname,
-  base: import.meta.env.BASE_URL || '/',
   cacheDir: '../../node_modules/.vite/apps/demo',
+  base: '/react-weapons-of-choice/',
   server: {
     port: 4200,
     host: 'localhost',
@@ -29,9 +29,6 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
   },
-  define: {
-    'process.env.DEBUG': JSON.stringify(process.env.DEBUG || 'false'),
-  },
   test: {
     watch: false,
     globals: true,
@@ -44,5 +41,3 @@ export default defineConfig({
     },
   },
 });
-
-console.log('Base URL in Vite config:', import.meta.env.BASE_URL);
