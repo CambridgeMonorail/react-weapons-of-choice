@@ -11,25 +11,25 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'John Doe',
+    name: 'John Beard',
     role: 'Project Lead',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'John is a seasoned developer with over 10 years of experience in full-stack development.',
-    contact: 'john.doe@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'John Beard is a seasoned developer with over 10 years of experience in full-stack development.',
+    contact: 'john.beard@example.com',
   },
   {
-    name: 'Jane Smith',
+    name: 'James Beard',
     role: 'UI/UX Designer',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'Jane is a creative designer who specializes in user experience and interface design.',
-    contact: 'jane.smith@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'James Beard is a creative designer who specializes in user experience and interface design.',
+    contact: 'james.beard@example.com',
   },
   {
-    name: 'Alice Johnson',
+    name: 'Alex Beard',
     role: 'Frontend Developer',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'Alice is a frontend developer with a passion for building responsive and accessible web applications.',
-    contact: 'alice.johnson@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'Alex Beard is a frontend developer with a passion for building responsive and accessible web applications.',
+    contact: 'alex.beard@example.com',
   },
 ];
 
