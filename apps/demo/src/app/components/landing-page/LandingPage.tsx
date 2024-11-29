@@ -89,21 +89,25 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-primary to-secondary text-foreground">
-      <h4 className="ribbon">So Very Alpha</h4>
+    <div className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground">
+      {/* <h4 className="ribbon">So Very Alpha</h4> */}
       <HeroSection
-        logoSrc={logoSrc}
-        mainHeading="The Boilerplate That Speeds Up SPA Development"
-        subHeading="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."
-        primaryButtonText="Get Started"
-        primaryButtonAction={() =>
-          window.open(
-            'https://github.com/CambridgeMonorail/react-weapons-of-choice',
-            '_blank'
-          )
-        }
-        secondaryButtonText="Learn More"
-        secondaryButtonAction={handleScrollToFeatures}
+        title="The Boilerplate That Speeds Up SPA Development"
+        subtitle="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."
+        description="Streamline your development workflow with a comprehensive and customizable boilerplate designed for speed and scalability."
+        image={logoSrc}
+        imageAlt="Logo for the boilerplate"
+        ctaPrimary={{
+          text: 'Get Started',
+          link: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+        }}
+        ctaSecondary={{
+          text: "Learn More",
+          link: "javascript:void(0);", // Prevent default behavior
+          onClick: handleScrollToFeatures, // Use an onClick handler
+        }}
+        layout="left"
+        data-testid="hero-section"
       />
       <AboutSection
         title="Why React Weapons of Choice?"
@@ -115,6 +119,7 @@ export const LandingPage = () => {
           <PnpmLogo className="w-16 h-16" key="pnpm" />,
           <ReactLogo className="w-16 h-16" key="react" />,
         ]}
+        data-testid="about-section"
       />
       <FeaturesSection
         title="What You’ll Get"
@@ -125,27 +130,33 @@ export const LandingPage = () => {
           },
           {
             title: '🎨 Tailwind CSS Integration for Utility-First Styling',
-            description: 'Style your components effortlessly with Tailwind CSS.',
+            description:
+              'Style your components effortlessly with Tailwind CSS.',
           },
           {
             title: '🖌️ Shadcn UI Components for Consistent Design',
-            description: 'Use Shadcn UI components for a consistent look and feel.',
+            description:
+              'Use Shadcn UI components for a consistent look and feel.',
           },
           {
             title: '📂 Modular Architecture for Scalability',
-            description: 'Build scalable applications with a modular architecture.',
+            description:
+              'Build scalable applications with a modular architecture.',
           },
           {
             title: '📑 Comprehensive Documentation and Examples',
-            description: 'Access detailed documentation and examples to get started quickly.',
+            description:
+              'Access detailed documentation and examples to get started quickly.',
           },
         ]}
+        data-testid="features-section"
       />
       <DemoSection
         title="See It in Action"
         description="Explore a live demo to see how React Weapons of Choice simplifies SPA development."
         buttonText="View Demo"
         buttonAction={() => navigate('/home')}
+        data-testid="demo-section"
       />
       <CommunitySection
         title="Join the Community"
@@ -157,6 +168,7 @@ export const LandingPage = () => {
             '_blank'
           )
         }
+        data-testid="community-section"
       />
       <GetStartedSection
         title="Get Started in Minutes"
@@ -172,22 +184,38 @@ export const LandingPage = () => {
             '_blank'
           )
         }
+        data-testid="get-started-section"
       />
       <Footer
         navigationLinks={[
           { text: 'Home', url: '#' },
           { text: 'Features', url: '#features' },
-          { text: 'Documentation', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
-          { text: 'Community', url: 'https://discord.com/invite/your-discord-invite' },
-          { text: 'GitHub', url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
+          {
+            text: 'Documentation',
+            url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+          },
+          {
+            text: 'Community',
+            url: 'https://discord.com/invite/your-discord-invite',
+          },
+          {
+            text: 'GitHub',
+            url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+          },
         ]}
         socialMediaIcons={[
-          { icon: (props) => <Github {...props} />, url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice' },
-          { icon: (props) => <Twitter {...props} />, url: 'https://twitter.com/your-twitter-handle' },
+          {
+            icon: (props) => <Github {...props} />,
+            url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
+          },
+          {
+            icon: (props) => <Twitter {...props} />,
+            url: 'https://twitter.com/your-twitter-handle',
+          },
         ]}
         copyrightText="&copy; 2024 React Weapons of Choice. All rights reserved."
+        data-testid="footer"
       />
     </div>
   );
 };
-
