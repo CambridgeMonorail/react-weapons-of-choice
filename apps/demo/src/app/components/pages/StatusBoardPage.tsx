@@ -40,13 +40,13 @@ const calendarEvents = [
   { date: "3/23", event: "Mike Out (Vacation)" },
 ]
 
-export default function StatusBoardPage() {
+export function StatusBoardPage() {
   return (
-    <div className="p-6 space-y-6 bg-black min-h-screen text-white">
+    <div className="p-6 space-y-6 bg-background min-h-screen text-foreground">
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader>
-            <CardTitle className="text-zinc-100">Project Metrics</CardTitle>
+            <CardTitle className="text-primary-foreground">Project Metrics</CardTitle>
           </CardHeader>
           <CardContent>
             <ChartContainer className="h-[200px]" config={chartConfig}>
@@ -66,9 +66,9 @@ export default function StatusBoardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader>
-            <CardTitle className="text-zinc-100">Project Status</CardTitle>
+            <CardTitle className="text-primary-foreground">Project Status</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function StatusBoardPage() {
                   <div className="flex gap-1 ml-auto">
                     {Array.from({length: 3}, (_, i) => (
                       <Avatar key={i} className="w-6 h-6">
-                        <AvatarFallback className="bg-zinc-800 text-xs">
+                        <AvatarFallback className="bg-muted text-xs">
                           {i + 1}
                         </AvatarFallback>
                       </Avatar>
@@ -96,21 +96,21 @@ export default function StatusBoardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Star className="w-4 h-4 text-yellow-500" />
-            <CardTitle className="text-zinc-100">Launch Countdown</CardTitle>
+            <CardTitle className="text-primary-foreground">Launch Countdown</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">25 DAYS</div>
-            <div className="text-sm text-zinc-400">UNTIL IPAD LAUNCH</div>
+            <div className="text-sm text-muted">UNTIL IPAD LAUNCH</div>
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Percent className="w-4 h-4 text-green-500" />
-            <CardTitle className="text-zinc-100">Revenue Change</CardTitle>
+            <CardTitle className="text-primary-foreground">Revenue Change</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-baseline gap-2">
@@ -120,17 +120,17 @@ export default function StatusBoardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Clock className="w-4 h-4" />
-            <CardTitle className="text-zinc-100">Bus Schedule</CardTitle>
+            <CardTitle className="text-primary-foreground">Bus Schedule</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {scheduleData?.map((schedule) => (
                 <div key={schedule.route} className="flex justify-between text-sm">
                   <span>Route {schedule.route}</span>
-                  <span className="text-zinc-400">{schedule.minutes}</span>
+                  <span className="text-muted">{schedule.minutes}</span>
                 </div>
               ))}
             </div>
@@ -139,16 +139,16 @@ export default function StatusBoardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <CalendarDays className="w-4 h-4" />
-            <CardTitle className="text-zinc-100">Calendar</CardTitle>
+            <CardTitle className="text-primary-foreground">Calendar</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
               {calendarEvents?.map((event, i) => (
                 <div key={i} className="flex justify-between text-sm">
-                  <span className="text-zinc-400">{event.date}</span>
+                  <span className="text-muted">{event.date}</span>
                   <span>{event.event}</span>
                 </div>
               ))}
@@ -156,13 +156,13 @@ export default function StatusBoardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-zinc-900 border-zinc-800">
+        <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <MessageSquare className="w-4 h-4" />
-            <CardTitle className="text-zinc-100">Latest Updates</CardTitle>
+            <CardTitle className="text-primary-foreground">Latest Updates</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-2 text-sm text-zinc-400">
+            <div className="space-y-2 text-sm text-muted">
               <p>WHATEVER DOES THAT COUNT?</p>
               <p>I CONFESS: I DIDN'T THINK MUCH OF HU</p>
               <p>HEALTHY!</p>
