@@ -4,19 +4,12 @@
   "sourceRoot": "apps/demo/src",
   "projectType": "application",
   "tags": [],
+  "// targets": "to see all targets run: nx show project demo --web",
   "targets": {
-    "build": {
-      "executor": "@nx/vite:build",
+    "type-check": {
+      "executor": "nx:run-commands",
       "options": {
-        "outputPath": "dist/apps/demo",
-        "sourcemap": true
-      }
-    },
-    "serve": {
-      "executor": "@nx/vite:dev-server",
-      "options": {
-        "buildTarget": "demo:build",
-        "sourcemap": true
+        "command": "tsc --noEmit"
       }
     }
   }

@@ -30,9 +30,7 @@ export function NavMain({
     }[];
   }[];
 }) {
-  const baseUrl = import.meta.env.BASE_URL;
 
-  console.log('Base URL in NavMain:', baseUrl);
 
   return (
     <SidebarGroup>
@@ -58,7 +56,7 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <Link to={`${baseUrl}${subItem.url}`}>
+                        <Link to={`${subItem.url}`}>
                           <span>{subItem.title}</span>
                         </Link>
                       </SidebarMenuSubButton>

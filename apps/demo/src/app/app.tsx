@@ -26,56 +26,171 @@ import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
 
 function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (process.env.DEBUG === 'true') {
-      console.log('App component mounted');
-    }
-    return () => {
-      if (process.env.DEBUG === 'true') {
-        console.log('App component unmounted');
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (process.env.DEBUG === 'true') {
-      console.log(`Navigating to ${location.pathname}`);
-    }
-  }, [location]);
-
-  useEffect(() => {
-    console.log('Rendering process started');
-    return () => {
-      console.log('Rendering process ended');
-    };
-  }, []);
-
   return (
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="home" element={<Layout><Dashboard /></Layout>} />
-        <Route path="about" element={<Layout><AboutPage /></Layout>} />
-        <Route path="features" element={<Layout><FeaturesPage /></Layout>} />
-        <Route path="pricing" element={<Layout><PricingPage /></Layout>} />
-        <Route path="faq" element={<Layout><FAQPage /></Layout>} />
-        <Route path="contact" element={<Layout><ContactPage /></Layout>} />
-        <Route path="blog" element={<Layout><BlogPage /></Layout>} />
-        <Route path="blog/:postId" element={<Layout><IndividualBlogPostPage /></Layout>} />
-        <Route path="terms-and-conditions" element={<Layout><TermsAndConditionsPage /></Layout>} />
-        <Route path="dashboard" element={<Layout><Dashboard /></Layout>} />
-        <Route path="components/demo-button" element={<Layout><ButtonDemo /></Layout>} />
-        <Route path="components/demo-card" element={<Layout><CardDemo /></Layout>} />
-        <Route path="components/demo-chart" element={<Layout><ChartDemo /></Layout>} />
-        <Route path="components/demo-dialog" element={<Layout><DialogDemo /></Layout>} />
-        <Route path="components/demo-dropdown" element={<Layout><DropdownDemo /></Layout>} />
-        <Route path="components/demo-form" element={<Layout><FormDemo /></Layout>} />
-        <Route path="components/demo-tabs" element={<Layout><TabsDemo /></Layout>} />
-        <Route path="components/demo-toggle" element={<Layout><ToggleDemo /></Layout>} />
-        <Route path="components/demo-tooltip" element={<Layout><TooltipDemo /></Layout>} />
-        <Route path="color-palette" element={<Layout><ColorPalettePage /></Layout>} /> {/* Pfc6f */}
+        <Route
+          path="home"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="about"
+          element={
+            <Layout>
+              <AboutPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="features"
+          element={
+            <Layout>
+              <FeaturesPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="pricing"
+          element={
+            <Layout>
+              <PricingPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="faq"
+          element={
+            <Layout>
+              <FAQPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="contact"
+          element={
+            <Layout>
+              <ContactPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="blog"
+          element={
+            <Layout>
+              <BlogPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="blog/:postId"
+          element={
+            <Layout>
+              <IndividualBlogPostPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="terms-and-conditions"
+          element={
+            <Layout>
+              <TermsAndConditionsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="dashboard"
+          element={
+            <Layout>
+              <Dashboard />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-button"
+          element={
+            <Layout>
+              <ButtonDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-card"
+          element={
+            <Layout>
+              <CardDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-chart"
+          element={
+            <Layout>
+              <ChartDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-dialog"
+          element={
+            <Layout>
+              <DialogDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-dropdown"
+          element={
+            <Layout>
+              <DropdownDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-form"
+          element={
+            <Layout>
+              <FormDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-tabs"
+          element={
+            <Layout>
+              <TabsDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-toggle"
+          element={
+            <Layout>
+              <ToggleDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="components/demo-tooltip"
+          element={
+            <Layout>
+              <TooltipDemo />
+            </Layout>
+          }
+        />
+        <Route
+          path="color-palette"
+          element={
+            <Layout>
+              <ColorPalettePage />
+            </Layout>
+          }
+        />{' '}
+        {/* Pfc6f */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
