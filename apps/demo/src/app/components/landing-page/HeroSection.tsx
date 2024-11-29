@@ -29,9 +29,10 @@ const HeroSection: FC<HeroSectionProps> = ({
         <Button
           size="lg"
           onClick={primaryButtonAction}
-          className="bg-background text-foreground hover:bg-primary/90 hover:text-background"
+          className="bg-background text-foreground hover:bg-primary/90 hover:text-background transform transition-transform hover:scale-105"
         >
           {primaryButtonText}
+          <span className="ml-2">→</span>
         </Button>
         <Button
           size="lg"

@@ -22,6 +22,20 @@ const CommunitySection: FC<CommunitySectionProps> = ({ title, description, butto
           {buttonText}
         </Button>
       </div>
+      <div className="mt-8">
+        <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">Testimonials</h3>
+        <blockquote className="text-lg italic mb-4">"React Weapons of Choice has transformed our development process!" - Jane Doe</blockquote>
+        <blockquote className="text-lg italic mb-4">"A must-have for any serious React developer." - John Smith</blockquote>
+      </div>
+      <div className="mt-8">
+        <h3 className="text-2xl font-semibold mb-4 text-primary-foreground">Community Stats</h3>
+        <p className="text-lg mb-2">500+ contributors</p>
+        <p className="text-lg mb-2">10k stars on GitHub</p>
+      </div>
+      <div className="mt-8 flex justify-center space-x-4">
+        <img src="./github-logo.png" alt="GitHub" className="w-12 h-12" />
+        <img src="./discord-logo.png" alt="Discord" className="w-12 h-12" />
+      </div>
     </section>
   );
 };
