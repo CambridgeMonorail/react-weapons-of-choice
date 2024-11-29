@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@rwoc/shared": ["libs/shared/src/index.ts"],
-      "@rwoc/shared/*": ["libs/shared/src/*"]
+      "@rwoc/shared/*": ["libs/shared/src/*"],
+      "storybook-host": ["libs/storybook-host/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
