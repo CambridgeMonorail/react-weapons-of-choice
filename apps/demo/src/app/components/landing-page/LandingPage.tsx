@@ -90,7 +90,7 @@ export const LandingPage = () => {
 
   return (
     <div className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground">
-      {/* <h4 className="ribbon">So Very Alpha</h4> */}
+     <h4 className="ribbon">So Very Alpha</h4> 
       <HeroSection
         title="The Boilerplate That Speeds Up SPA Development"
         subtitle="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."

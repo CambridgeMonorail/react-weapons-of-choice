@@ -91,6 +91,7 @@ const data = {
           title: 'Color Palette',
           url: '/color-palette',
         },
+        { title: 'StatusBoard', url: '/status-board' },
       ],
     },
     {

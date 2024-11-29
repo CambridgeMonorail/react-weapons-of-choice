@@ -24,6 +24,7 @@ import TabsDemo from './components/component-demos/TabsDemo';
 import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
+import { StatusBoardPage } from './components/pages/StatusBoardPage';
 
 function App() {
   return (
@@ -191,6 +192,14 @@ function App() {
           }
         />{' '}
         {/* Pfc6f */}
+        <Route
+          path="status-board"
+          element={
+            <Layout>
+              <StatusBoardPage />
+            </Layout>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
