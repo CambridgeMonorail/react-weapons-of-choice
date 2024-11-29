@@ -5,5 +5,10 @@
       "@rwoc/shared": ["libs/shared/src/index.ts"],
       "@rwoc/shared/*": ["libs/shared/src/*"]
     }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   }
 }
