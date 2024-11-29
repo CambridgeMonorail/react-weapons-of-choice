@@ -8,6 +8,7 @@ import { DemoSection } from './DemoSection';
 import { Footer } from './Footer';
 import { GetStartedSection } from './GetStartedSection';
 import { HeroSection } from './HeroSection';
+import logoSrc from '../../../assets/images/rwoc-logo.png';
 
 const ShadcnLogo = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
@@ -91,7 +92,7 @@ export const LandingPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-primary to-secondary text-foreground">
       <h4 className="ribbon">So Very Alpha</h4>
       <HeroSection
-        logoSrc="./rwoc-logo.png"
+        logoSrc={logoSrc}
         mainHeading="The Boilerplate That Speeds Up SPA Development"
         subHeading="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."
         primaryButtonText="Get Started"
