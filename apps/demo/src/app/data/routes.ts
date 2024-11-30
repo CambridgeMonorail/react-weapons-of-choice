@@ -25,6 +25,17 @@ import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
 import { paths } from '../constants/paths';
 
+/**
+ * Defines the routes for the application.
+ * Each route is an object with a path and an element.
+ * The path is the URL path, and the element is the React component to render.
+ * The Layout component is used to wrap pages that share a common layout.
+ * 
+ * To add a new route:
+ * 1. Import the component for the new route.
+ * 2. Add a new entry to the `routes` array with the path and element.
+ * 3. Use the `paths` object to reference the path to ensure consistency.
+ */
 export const routes: AppRoute[] = [
   { path: paths.home, element: createElement(LandingPage) },
   { path: paths.dashboard, element: createElement(Layout, null, createElement(DashboardPage)) },
