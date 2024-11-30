@@ -61,25 +61,40 @@ For more details on why a React SPA boilerplate may still have some value in a N
 
 ## Technologies Used
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Nx](https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white)
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Nx](https://img.shields.io/badge/Nx-143055?style=for-the-badge&logo=nx&logoColor=white)](https://nx.dev/)
+[![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
+[![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)](https://pnpm.io/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
+[![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)](https://github.com/features/actions)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcn&logoColor=white)](https://ui.shadcn.dev/)
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
+[![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=for-the-badge&logo=github-copilot&logoColor=white)](https://github.com/features/copilot)
 
-- **React**: A JavaScript library for building user interfaces.
-- **Nrwl Nx**: A set of extensible dev tools for monorepos, which helps in managing and scaling the project.
-- **Tailwind CSS**: A utility-first CSS framework for styling the components.
-- **shadcn/ui**: A set of reusable UI components for consistent design.
-- **React Router**: A library for routing in React applications.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
-- **Vitest**: A Vite-native unit testing framework.
-- **Playwright**: An end-to-end testing framework.
+- **React**: [A JavaScript library for building user interfaces.](https://reactjs.org/)
+- **TypeScript**: [A typed superset of JavaScript that compiles to plain JavaScript.](https://www.typescriptlang.org/)
+- **Node.js**: [A JavaScript runtime built on Chrome's V8 JavaScript engine.](https://nodejs.org/)
+- **Nx**: [A set of extensible dev tools for monorepos, which helps in managing and scaling the project.](https://nx.dev/)
+- **Markdown**: [A lightweight markup language for creating formatted text using a plain-text editor.](https://www.markdownguide.org/)
+- **pnpm**: [A fast, disk space-efficient package manager.](https://pnpm.io/)
+- **Vite**: [A build tool that provides a faster and leaner development experience for modern web projects.](https://vitejs.dev/)
+- **GitHub**: [A platform for version control and collaboration.](https://github.com/)
+- **GitHub Actions**: [A CI/CD service that allows you to automate your build, test, and deployment pipeline.](https://github.com/features/actions)
+- **Tailwind CSS**: [A utility-first CSS framework for styling the components.](https://tailwindcss.com/)
+- **shadcn/ui**: [A set of reusable UI components for consistent design.](https://ui.shadcn.dev/)
+- **React Router**: [A library for routing in React applications.](https://reactrouter.com/)
+- **Vitest**: [A Vite-native unit testing framework.](https://vitest.dev/)
+- **Playwright**: [An end-to-end testing framework.](https://playwright.dev/)
+- **Visual Studio Code**: [A source-code editor made by Microsoft for Windows, Linux, and macOS.](https://code.visualstudio.com/)
+- **GitHub Copilot**: [An AI pair programmer that helps you write code faster and with less work.](https://github.com/features/copilot)
+
 
 ## Installation
 
@@ -134,7 +149,8 @@ The following scripts are available to manage and build the project:
 - **Build**
   - `pnpm run build:affected`: Build only the affected projects.
   - `pnpm run build:all`: Build all projects.
-  - `pnpm run build`: Build the project.
+  - `pnpm run build:demo`: Build the demo application.
+  - `pnpm run build:shared`: Build the shared library.
 
 - **Clean**
   - `pnpm run clean`: Clean all projects.
@@ -146,25 +162,30 @@ The following scripts are available to manage and build the project:
 - **Lint**
   - `pnpm run lint:affected`: Lint only the affected projects.
   - `pnpm run lint:all`: Lint all projects.
-  - `pnpm run lint`: Lint the project.
+  - `pnpm run lint:demo`: Lint the demo application.
+  - `pnpm run lint:shared`: Lint the shared library.
 
 - **Precommit**
-  - `pnpm run precommit`: Run lint, typecheck, test, and build before committing.
+  - `pnpm run precommit`: Run lint, type-check, build, and test for all projects before committing.
 
 - **Prepare**
   - `pnpm run prepare`: Prepare Husky for Git hooks.
 
 - **Serve**
   - `pnpm run serve:demo`: Serve the demo application.
+  - `pnpm run serve:storybook`: Serve the Storybook instance.
 
 - **Test**
   - `pnpm run test:affected`: Test only the affected projects.
   - `pnpm run test:all`: Test all projects.
-  - `pnpm run test:e2e`: Run end-to-end tests.
-  - `pnpm run test`: Test the project.
+  - `pnpm run test:demo`: Test the demo application.
+  - `pnpm run test:shared`: Test the shared library.
 
-- **Typecheck**
-  - `pnpm run typecheck`: Typecheck the project without emitting output.
+- **Type-check**
+  - `pnpm run type-check:affected`: Type-check only the affected projects.
+  - `pnpm run type-check:all`: Type-check all projects.
+  - `pnpm run type-check:demo`: Type-check the demo application.
+  - `pnpm run type-check:shared`: Type-check the shared library.
 
 ## Add new projects
 
@@ -193,6 +214,76 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## Make This Your Own
+
+**Note: This process is a work in progress; we plan to provide automation scripts to streamline these steps once the boilerplate is fully developed.**
+
+### Fork the Repository
+
+1. Navigate to the original repository on GitHub.
+2. Click the "Fork" button in the upper-right corner to create a personal copy under your GitHub account.
+3. For detailed instructions, refer to GitHub's [Fork a repo documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
+### Clone the Forked Repository
+
+1. On your GitHub account, locate the forked repository.
+2. Click the "Code" button and copy the repository's URL.
+3. Open your terminal and execute:
+    ```bash
+    git clone https://github.com/yourusername/your-forked-repo.git
+    ```
+    Replace `yourusername` with your GitHub username and `your-forked-repo` with the repository name.
+
+### Update Project Identifiers
+
+1. Perform a global search and replace to update project-specific identifiers (e.g., project name, URLs, branding elements) throughout the codebase.
+2. Ensure all instances of the original project name are replaced with your new project name.
+
+### Modify Configuration Files
+
+1. Review and update configuration files such as `package.json` and `.env` to align with your project's requirements.
+2. Adjust metadata, dependencies, environment variables, and other settings as needed.
+
+### Review Documentation
+
+1. Update the documentation to reflect your project's context.
+2. Replace references to the original project with information pertinent to your project.
+
+### Set Up a New Remote Repository
+
+1. Create a new repository on GitHub for your project.
+2. In your terminal, navigate to your project's directory and execute:
+    ```bash
+    git remote remove origin
+    git remote add origin https://github.com/yourusername/your-new-repo.git
+    ```
+    Replace `yourusername` with your GitHub username and `your-new-repo` with the new repository name.
+
+### Push Changes to the New Repository
+
+1. Push your local changes to the new remote repository:
+    ```bash
+    git push -u origin main
+    ```
+    Ensure that your local branch is named `main`; if not, replace `main` with the correct branch name.
+
+### Install Dependencies and Initialize Git Hooks
+
+1. Install project dependencies using the package manager:
+    ```bash
+    pnpm install
+    ```
+2. Set up Git hooks or other initialization scripts as specified in the prepare script:
+    ```bash
+    pnpm run prepare
+    ```
+
+By following these steps, you can customize the boilerplate to suit your specific project needs while maintaining a clean and organized codebase.
+
+**Note:** We are in the process of developing automation scripts to streamline this setup process. These scripts will be integrated into the boilerplate once completed.
+
+For more information on forking repositories, consult GitHub's [About forks documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
 ## Contributing
 
