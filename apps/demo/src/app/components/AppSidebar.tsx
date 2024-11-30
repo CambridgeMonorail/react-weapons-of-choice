@@ -6,12 +6,10 @@ import {
   BookOpen,
   Bot,
   Command,
-  Frame,
-  Map,
-  PieChart,
   Settings2,
   SquareTerminal,
   Swords,
+  type LucideIcon,
 } from 'lucide-react';
 
 import { NavMain } from './NavMain';
@@ -22,12 +20,39 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '@rwoc/shared';
-import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
+// Define types for the sub-objects
+interface User {
+  name: string;
+  email: string;
+  avatar: string;
+}
+
+interface Team {
+  name: string;
+  logo: LucideIcon;
+  plan: string;
+}
+
+interface NavItem {
+  title: string;
+  url: string;
+  icon?: LucideIcon;
+  isActive?: boolean;
+  items?: NavItem[];
+}
+
+// Define the overall type for the data structure
+interface SidebarData {
+  user: User;
+  teams: Team[];
+  navMain: NavItem[];
+}
+
 // This is sample data.
-const data = {
+const data: SidebarData = {
   user: {
     name: 'shadcn',
     email: 'm@example.com',
@@ -52,7 +77,7 @@ const data = {
   ],
   navMain: [
     {
-      title: 'Pages',
+      title: 'Sample Pages', // Changed from 'Pages' to 'Navigation'
       url: '/about',
       icon: SquareTerminal,
       isActive: true,
@@ -159,23 +184,6 @@ const data = {
       ],
     },
   ],
-  projects: [
-    {
-      name: 'Design Engineering',
-      url: '/#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '/#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '/#',
-      icon: Map,
-    },
-  ],
 };
 
 export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
@@ -186,7 +194,6 @@ export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
