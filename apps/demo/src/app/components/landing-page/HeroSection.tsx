@@ -63,24 +63,20 @@ export function HeroSection({
           <div className="flex gap-4">
             {ctaPrimary && (
               <Button
-                onClick={ctaPrimary.onClick}
+                onClick={ctaPrimary.onClick || (() => window.location.href = ctaPrimary.link || '#')}
                 variant={'secondary'}
                 data-testid="cta-primary"
               >
-                <a href={ctaPrimary.link || 'javascript:void(0);'}>
-                  {ctaPrimary.text}
-                </a>
+                {ctaPrimary.text}
               </Button>
             )}
             {ctaSecondary && (
               <Button
-                onClick={ctaSecondary.onClick}
+                onClick={ctaSecondary.onClick || (() => window.location.href = ctaSecondary.link || '#')}
                 variant={'outline'}
                 data-testid="cta-secondary"
               >
-                <a href={ctaSecondary.link || 'javascript:void(0);'}>
-                  {ctaSecondary.text}
-                </a>
+                {ctaSecondary.text}
               </Button>
             )}
           </div>

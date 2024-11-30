@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { Button } from '@rwoc/shared';
 
 const NotFound: FC = () => {
   const location = useLocation();

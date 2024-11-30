@@ -11,39 +11,39 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'John Doe',
+    name: 'John Beard',
     role: 'Project Lead',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'John is a seasoned developer with over 10 years of experience in full-stack development.',
-    contact: 'john.doe@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'John Beard is a seasoned developer with over 10 years of experience in full-stack development.',
+    contact: 'john.beard@example.com',
   },
   {
-    name: 'Jane Smith',
+    name: 'James Beard',
     role: 'UI/UX Designer',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'Jane is a creative designer who specializes in user experience and interface design.',
-    contact: 'jane.smith@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'James Beard is a creative designer who specializes in user experience and interface design.',
+    contact: 'james.beard@example.com',
   },
   {
-    name: 'Alice Johnson',
+    name: 'Alex Beard',
     role: 'Frontend Developer',
-    photo: 'https://via.placeholder.com/150',
-    bio: 'Alice is a frontend developer with a passion for building responsive and accessible web applications.',
-    contact: 'alice.johnson@example.com',
+    photo: 'http://placebeard.it/150',
+    bio: 'Alex Beard is a frontend developer with a passion for building responsive and accessible web applications.',
+    contact: 'alex.beard@example.com',
   },
 ];
 
 const AboutPage: FC = () => {
   return (
-    <div className="space-y-8 p-5 space-x-8">
-      <section className="px-5">
+    <div className="p-6 m-4 space-y-6">
+      <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Mission and Vision</h2>
         <p>
           Our mission is to revolutionize the way developers build applications by providing a robust and intuitive boilerplate. Our vision is to create a community-driven project that continuously evolves to meet the needs of developers worldwide.
         </p>
       </section>
 
-      <section >
+      <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Team Introduction</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {teamMembers.map((member) => (

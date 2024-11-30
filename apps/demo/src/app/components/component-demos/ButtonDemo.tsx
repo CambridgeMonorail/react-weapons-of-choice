@@ -18,7 +18,7 @@ const ButtonDemo: FC = () => {
         <Button size="lg">Large</Button>
         <Button>Default</Button>
         <Button size="sm">Small</Button>
-        <Button size="icon"><span className="text-lg">🚀</span></Button>
+        <Button size="icon"><span role="img" aria-label="rocket" className="text-lg">🚀</span></Button>
       </div>
     </div>
   );

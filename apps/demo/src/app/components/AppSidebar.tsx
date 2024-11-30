@@ -26,8 +26,6 @@ import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
-const baseUrl = import.meta.env.BASE_URL;
-
 // This is sample data.
 const data = {
   user: {
@@ -60,6 +58,10 @@ const data = {
       isActive: true,
       items: [
         {
+          title: 'Dashboard',
+          url: '/dashboard',
+        },
+        {
           title: 'About',
           url: '/about',
         },
@@ -91,6 +93,7 @@ const data = {
           title: 'Color Palette',
           url: '/color-palette',
         },
+        { title: 'StatusBoard', url: '/status-board' },
       ],
     },
     {

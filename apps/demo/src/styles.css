@@ -31,21 +31,21 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    --sidebar-background: 244 71% 91%;
+    --sidebar-background: 239 100% 85%; /* 10% darker than --background */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 239 5% 20%; /* 10% darker than --foreground */
 
-    --sidebar-primary: 258 53% 44%;
+    --sidebar-primary: 239 69% 18%; /* 10% darker than --primary */
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 90%; /* 10% darker than --primary-foreground */
 
-    --sidebar-accent: 220 30% 80%;
+    --sidebar-accent: 201 30% 70%; /* 10% darker than --accent */
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 239 5% 10%; /* 10% darker than --accent-foreground */
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 239 30% 40%; /* 10% darker than --border */
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 239 69% 18%; /* 10% darker than --ring */
   }
 
   .dark {
@@ -75,21 +75,21 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-    --sidebar-background: 240 5.9% 10%;
+    --sidebar-background: 249 50% 20%; /* 10% lighter than --background */
 
-    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-foreground: 249 5% 80%; /* 10% lighter than --foreground */
 
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 249 69% 18%; /* 10% lighter than --primary */
 
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 100%; /* 10% lighter than --primary-foreground */
 
-    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent: 221 30% 35%; /* 10% lighter than --accent */
 
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 249 5% 90%; /* 10% lighter than --accent-foreground */
 
-    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-border: 249 30% 36%; /* 10% lighter than --border */
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 249 69% 18%; /* 10% lighter than --ring */
   }
 }
 

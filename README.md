@@ -6,6 +6,8 @@
 ![License](https://img.shields.io/github/license/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
 
+**NOTE: This project is currently in alpha. In fact, it's very alpha. This means it is still under active development and may undergo significant changes. Features may be incomplete or unstable. Got suggestions on what you would like to see or how to make it better? Add an issue and let us know!**
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -205,6 +207,7 @@ This project is licensed under the MIT License.
 - [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo)
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
 - [Nx](https://nx.dev)
+- [Placebeard](https://placebeard.it/): A fantastic service for placeholder images featuring bearded individuals, inspired by similar services like placekitten.com and placedog.com. We appreciate their free service for adding a touch of fun to our project.
 
 ## Useful links
 
