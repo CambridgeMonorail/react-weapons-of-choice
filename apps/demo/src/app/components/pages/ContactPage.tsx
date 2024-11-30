@@ -6,9 +6,10 @@ import { Button } from '@rwoc/shared/components/ui/button';
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="space-y-8 px-4">
+    <div className="p-6 m-4 space-y-6">
+      <h1 className="text-4xl font-bold mb-4 text-primary">Contact</h1>
       <section>
-        <h2 className="text-3xl font-bold mb-4">Contact Form</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">Contact Form</h2>
         <Card>
           <CardHeader>
             <CardTitle>Get in Touch</CardTitle>
@@ -35,12 +36,12 @@ const ContactPage: React.FC = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold mb-4">Information</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">Information</h2>
         <p>Reach out to us via email or follow us on social media for the latest updates.</p>
       </section>
 
       <section>
-        <h2 className="text-3xl font-bold mb-4">Map Integration</h2>
+        <h2 className="text-3xl font-bold mb-4 text-primary">Map Integration</h2>
         <p>Find our office location on the map below.</p>
         {/* Optional: Add map integration here */}
       </section>

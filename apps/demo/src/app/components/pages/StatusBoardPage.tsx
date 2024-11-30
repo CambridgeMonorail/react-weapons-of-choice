@@ -43,10 +43,11 @@ const calendarEvents = [
 export function StatusBoardPage() {
   return (
     <div className="p-6 space-y-6 bg-background min-h-screen text-foreground">
+      <h1 className="text-4xl font-bold mb-4 text-primary">Status Board</h1>
       <div className="grid gap-6 md:grid-cols-2">
         <Card className="bg-secondary border-muted">
           <CardHeader>
-            <CardTitle className="text-primary-foreground">Project Metrics</CardTitle>
+            <CardTitle className="text-primary">Project Metrics</CardTitle>
           </CardHeader>
           <CardContent>
             <ChartContainer className="h-[200px]" config={chartConfig}>
@@ -68,7 +69,7 @@ export function StatusBoardPage() {
 
         <Card className="bg-secondary border-muted">
           <CardHeader>
-            <CardTitle className="text-primary-foreground">Project Status</CardTitle>
+            <CardTitle className="text-primary">Project Status</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -99,7 +100,7 @@ export function StatusBoardPage() {
         <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Star className="w-4 h-4 text-yellow-500" />
-            <CardTitle className="text-primary-foreground">Launch Countdown</CardTitle>
+            <CardTitle className="text-primary">Launch Countdown</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">25 DAYS</div>
@@ -110,7 +111,7 @@ export function StatusBoardPage() {
         <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Percent className="w-4 h-4 text-green-500" />
-            <CardTitle className="text-primary-foreground">Revenue Change</CardTitle>
+            <CardTitle className="text-primary">Revenue Change</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-baseline gap-2">
@@ -123,7 +124,7 @@ export function StatusBoardPage() {
         <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <Clock className="w-4 h-4" />
-            <CardTitle className="text-primary-foreground">Bus Schedule</CardTitle>
+            <CardTitle className="text-primary">Bus Schedule</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -142,7 +143,7 @@ export function StatusBoardPage() {
         <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <CalendarDays className="w-4 h-4" />
-            <CardTitle className="text-primary-foreground">Calendar</CardTitle>
+            <CardTitle className="text-primary">Calendar</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
@@ -159,7 +160,7 @@ export function StatusBoardPage() {
         <Card className="bg-secondary border-muted">
           <CardHeader className="flex flex-row items-center gap-2">
             <MessageSquare className="w-4 h-4" />
-            <CardTitle className="text-primary-foreground">Latest Updates</CardTitle>
+            <CardTitle className="text-primary">Latest Updates</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-2 text-sm text-muted">

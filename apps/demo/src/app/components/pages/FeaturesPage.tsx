@@ -37,7 +37,8 @@ const FeaturesPage: FC = () => {
   }, []);
 
   return (
-    <div className="p-8 bg-background text-foreground">
+    <div className="p-6 m-4 space-y-6 bg-background text-foreground">
+      <h1 className="text-4xl font-bold mb-4 text-primary">Features</h1>
       <section className="mb-12">
         <h2 className="text-4xl font-bold mb-4 text-primary">Detailed Descriptions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

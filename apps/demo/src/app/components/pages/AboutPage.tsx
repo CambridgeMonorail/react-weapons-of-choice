@@ -35,15 +35,15 @@ const teamMembers: TeamMember[] = [
 
 const AboutPage: FC = () => {
   return (
-    <div className="space-y-8 p-5 space-x-8">
-      <section className="px-5">
+    <div className="p-6 m-4 space-y-6">
+      <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Mission and Vision</h2>
         <p>
           Our mission is to revolutionize the way developers build applications by providing a robust and intuitive boilerplate. Our vision is to create a community-driven project that continuously evolves to meet the needs of developers worldwide.
         </p>
       </section>
 
-      <section >
+      <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Team Introduction</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {teamMembers.map((member) => (

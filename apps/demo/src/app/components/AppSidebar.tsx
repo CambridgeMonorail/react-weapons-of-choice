@@ -60,6 +60,10 @@ const data = {
       isActive: true,
       items: [
         {
+          title: 'Dashboard',
+          url: '/dashboard',
+        },
+        {
           title: 'About',
           url: '/about',
         },

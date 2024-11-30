@@ -39,7 +39,8 @@ export const FAQPage = () => {
   };
 
   return (
-    <div className="space-y-8 p-4">
+    <div className="p-6 m-4 space-y-6">
+      <h1 className="text-4xl font-bold mb-4 text-primary">FAQ</h1>
       <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Common Questions</h2>
         <Input

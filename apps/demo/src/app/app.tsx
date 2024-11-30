@@ -13,7 +13,7 @@ import ContactPage from './components/pages/ContactPage';
 import BlogPage from './components/pages/BlogPage';
 import IndividualBlogPostPage from './components/pages/IndividualBlogPostPage';
 import TermsAndConditionsPage from './components/pages/TermsAndConditionsPage';
-import { Dashboard } from './components/Dashboard';
+
 import { ButtonDemo } from './components/component-demos/ButtonDemo';
 import CardDemo from './components/component-demos/CardDemo';
 import ChartDemo from './components/component-demos/ChartDemo';
@@ -25,6 +25,7 @@ import ToggleDemo from './components/component-demos/ToggleDemo';
 import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage'; // P9084
 import { StatusBoardPage } from './components/pages/StatusBoardPage';
+import { DashboardPage } from './components/pages/dashboard/DashboardPage';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           path="home"
           element={
             <Layout>
-              <Dashboard />
+              <DashboardPage />
             </Layout>
           }
         />
@@ -107,7 +108,7 @@ function App() {
           path="dashboard"
           element={
             <Layout>
-              <Dashboard />
+              <DashboardPage />
             </Layout>
           }
         />
@@ -191,7 +192,6 @@ function App() {
             </Layout>
           }
         />{' '}
-        {/* Pfc6f */}
         <Route
           path="status-board"
           element={
