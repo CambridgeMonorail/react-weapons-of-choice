@@ -1,4 +1,3 @@
-import { Card } from '@rwoc/shared';
 import { RevenueOverview } from './RevenueOverview';
 import { StatePerformanceTable } from './StatePerformance';
 import { ForecastChart } from './ForecastChart';
@@ -16,7 +15,7 @@ export function DashboardPage() {
       forecast: 200000,
       q3Adjusted: 180000,
       actual: 190000,
-      risk: 'medium' as 'medium', // Ensure the risk property matches the expected type
+      risk: 'medium' as const, // Ensure the risk property matches the expected type
       targetAchieved: 95,
     },
     // ... more data

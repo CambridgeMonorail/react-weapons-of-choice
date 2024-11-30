@@ -26,8 +26,6 @@ import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
-const baseUrl = import.meta.env.BASE_URL;
-
 // This is sample data.
 const data = {
   user: {

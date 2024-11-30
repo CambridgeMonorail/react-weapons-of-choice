@@ -103,8 +103,7 @@ export const LandingPage = () => {
         }}
         ctaSecondary={{
           text: "Learn More",
-          link: "javascript:void(0);", // Prevent default behavior
-          onClick: handleScrollToFeatures, // Use an onClick handler
+          onClick: handleScrollToFeatures, // Use the scroll handler directly
         }}
         layout="left"
         data-testid="hero-section"

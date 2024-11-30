@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@rwoc/shared/components/ui/card';
-import { Button } from '@rwoc/shared/components/ui/button';
+// import { Button } from '@rwoc/shared/components/ui/button'; // Unused import
 import {
   ChartContainer,
   ChartTooltip,
@@ -20,7 +20,7 @@ interface ChartData {
 }
 
 const FeaturesPage: FC = () => {
-  const [chartData, setChartData] = useState<ChartData[]>([
+  const [chartData] = useState<ChartData[]>([
     { label: 'Before', performance: 50 },
     { label: 'After', performance: 80 },
   ]);
@@ -46,7 +46,7 @@ const FeaturesPage: FC = () => {
           <Card>
             <CardHeader>
               <CardTitle>
-                🚀 Pre-configured Nx Workspace for Monorepo Management
+                <span role="img" aria-label="rocket">🚀</span> Pre-configured Nx Workspace for Monorepo Management
               </CardTitle>
               <CardDescription>
                 Manage your monorepo with ease using Nx.
@@ -68,7 +68,7 @@ const FeaturesPage: FC = () => {
           <Card>
             <CardHeader>
               <CardTitle>
-                🎨 Tailwind CSS Integration for Utility-First Styling
+                <span role="img" aria-label="palette">🎨</span> Tailwind CSS Integration for Utility-First Styling
               </CardTitle>
               <CardDescription>
                 Style your components effortlessly with Tailwind CSS.
@@ -90,7 +90,7 @@ const FeaturesPage: FC = () => {
           <Card>
             <CardHeader>
               <CardTitle>
-                🖌️ Shadcn UI Components for Consistent Design
+                <span role="img" aria-label="paintbrush">🖌️</span> Shadcn UI Components for Consistent Design
               </CardTitle>
               <CardDescription>
                 Use Shadcn UI components for a consistent look and feel.
@@ -113,7 +113,9 @@ const FeaturesPage: FC = () => {
           {/* Card 4 */}
           <Card>
             <CardHeader>
-              <CardTitle>📊 Performance Improvements</CardTitle>
+              <CardTitle>
+                <span role="img" aria-label="bar chart">📊</span> Performance Improvements
+              </CardTitle>
               <CardDescription>
                 Visualize the performance improvements with Nx.
               </CardDescription>
@@ -144,7 +146,9 @@ const FeaturesPage: FC = () => {
           {/* Card 5 */}
           <Card>
             <CardHeader>
-              <CardTitle>📈 Scalability</CardTitle>
+              <CardTitle>
+                <span role="img" aria-label="chart increasing">📈</span> Scalability
+              </CardTitle>
               <CardDescription>
                 See how our modular architecture scales with your project.
               </CardDescription>
@@ -164,7 +168,9 @@ const FeaturesPage: FC = () => {
           {/* Card 6 */}
           <Card>
             <CardHeader>
-              <CardTitle>📹 Video Demonstration</CardTitle>
+              <CardTitle>
+                <span role="img" aria-label="video camera">📹</span> Video Demonstration
+              </CardTitle>
               <CardDescription>
                 Watch a video demonstration of our features in action.
               </CardDescription>

@@ -1,6 +1,5 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { Toaster } from '@rwoc/shared/components/ui/toaster';
-import { useEffect } from 'react';
 
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
@@ -207,4 +206,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

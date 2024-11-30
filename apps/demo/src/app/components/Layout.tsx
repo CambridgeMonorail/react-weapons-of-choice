@@ -13,8 +13,9 @@ import {
 } from '@rwoc/shared';
 import { AppSidebar } from './AppSidebar';
 import { ReactNode } from 'react';
-import { Moon, Sun, Github } from 'lucide-react'
-import { Link } from 'react-router-dom';
+import { Moon, Sun, Github } from 'lucide-react';
+// Remove unused import
+// import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 interface LayoutProps {
