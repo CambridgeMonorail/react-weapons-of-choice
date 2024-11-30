@@ -20,6 +20,7 @@
 - [Run tasks](#run-tasks)
 - [Add new projects](#add-new-projects)
 - [Install Nx Console](#install-nx-console)
+- [Make This Your Own](#make-this-your-own)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
@@ -115,7 +116,7 @@ To install the project, follow these steps:
 3. Install dependencies:
 
     ```sh
-    npm install
+    pnpm install
     ```
 
 ## Usage

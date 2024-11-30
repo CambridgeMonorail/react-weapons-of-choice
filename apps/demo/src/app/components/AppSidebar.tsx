@@ -6,9 +6,6 @@ import {
   BookOpen,
   Bot,
   Command,
-  Frame,
-  Map,
-  PieChart,
   Settings2,
   SquareTerminal,
   Swords,
@@ -22,7 +19,6 @@ import {
   SidebarHeader,
   SidebarRail,
 } from '@rwoc/shared';
-import { NavProjects } from './NavProjects';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
@@ -52,7 +48,7 @@ const data = {
   ],
   navMain: [
     {
-      title: 'Pages',
+      title: 'Sample Pages', // Changed from 'Pages' to 'Navigation'
       url: '/about',
       icon: SquareTerminal,
       isActive: true,
@@ -159,23 +155,7 @@ const data = {
       ],
     },
   ],
-  projects: [
-    {
-      name: 'Design Engineering',
-      url: '/#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '/#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '/#',
-      icon: Map,
-    },
-  ],
+
 };
 
 export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
@@ -186,7 +166,7 @@ export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
