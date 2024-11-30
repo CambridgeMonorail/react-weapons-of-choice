@@ -1,4 +1,3 @@
-
 import { LandingPage } from './components/landing-page/LandingPage';
 import { Layout } from './components/Layout';
 import { NotFound } from './components/NotFound';
@@ -22,8 +21,14 @@ import TooltipDemo from './components/component-demos/TooltipDemo';
 import { ColorPalettePage } from './components/pages/ColorPalettePage';
 import { StatusBoardPage } from './components/pages/StatusBoardPage';
 import { DashboardPage } from './components/pages/dashboard/DashboardPage';
+import { RouteObject } from 'react-router-dom';
 
-export const routes = [
+type AppRoute = RouteObject & {
+  path: string;
+  element: JSX.Element;
+};
+
+export const routes: AppRoute[] = [
   { path: '/', element: <LandingPage /> },
   { path: 'home', element: <Layout><DashboardPage /></Layout> },
   { path: 'about', element: <Layout><AboutPage /></Layout> },

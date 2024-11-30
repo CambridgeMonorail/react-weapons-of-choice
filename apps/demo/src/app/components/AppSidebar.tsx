@@ -9,6 +9,7 @@ import {
   Settings2,
   SquareTerminal,
   Swords,
+  type LucideIcon,
 } from 'lucide-react';
 
 import { NavMain } from './NavMain';
@@ -22,8 +23,36 @@ import {
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 
+// Define types for the sub-objects
+interface User {
+  name: string;
+  email: string;
+  avatar: string;
+}
+
+interface Team {
+  name: string;
+  logo: LucideIcon;
+  plan: string;
+}
+
+interface NavItem {
+  title: string;
+  url: string;
+  icon?: LucideIcon;
+  isActive?: boolean;
+  items?: NavItem[];
+}
+
+// Define the overall type for the data structure
+interface SidebarData {
+  user: User;
+  teams: Team[];
+  navMain: NavItem[];
+}
+
 // This is sample data.
-const data = {
+const data: SidebarData = {
   user: {
     name: 'shadcn',
     email: 'm@example.com',
@@ -155,7 +184,6 @@ const data = {
       ],
     },
   ],
-
 };
 
 export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
@@ -166,7 +194,6 @@ export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
