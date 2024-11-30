@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { Toaster } from '@rwoc/shared/components/ui/toaster';
-import { routes } from './routes';
+import { routes } from './data/routes';
 
 function App() {
   return (
