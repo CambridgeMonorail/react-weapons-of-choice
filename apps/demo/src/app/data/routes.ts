@@ -38,6 +38,7 @@ import Home from '../components/Home';
  * 3. Use the `paths` object to reference the path to ensure consistency.
  */
 export const routes: AppRoute[] = [
+  { path: paths.landing, element: createElement(LandingPage) },
   { path: paths.home, element: createElement(Layout, null, createElement(DashboardPage)) },
   { path: paths.dashboard, element: createElement(Layout, null, createElement(DashboardPage)) },
   { path: paths.about, element: createElement(Layout, null, createElement(AboutPage)) },
