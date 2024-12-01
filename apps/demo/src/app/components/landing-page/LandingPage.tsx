@@ -144,7 +144,7 @@ export const LandingPage: FC = () => {
           },
           {
             icon: (props) => <Twitter {...props} />,
-            url: 'https://twitter.com/your-twitter-handle',
+            url: 'https://x.com/TimDMorris',
           },
         ]}
         copyrightText="&copy; 2024 React Weapons of Choice. All rights reserved."

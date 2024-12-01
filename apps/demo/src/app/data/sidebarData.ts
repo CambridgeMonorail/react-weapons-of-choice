@@ -4,9 +4,9 @@ import { paths } from '../constants/paths';
 
 export const sidebarData: SidebarConfiguration = {
   user: {
-    name: 'shadcn',
+    name: 'rwoc',
     email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
+    avatar: 'react-weapons-of-choice/assets/images/avatars/rwoc.jpg',
   },
   teams: [
     {
@@ -58,7 +58,7 @@ export const sidebarData: SidebarConfiguration = {
         { title: 'Demo Form', url: paths.components.demoForm },
         { title: 'Demo Tabs', url: paths.components.demoTabs },
         { title: 'Demo Toggle', url: paths.components.demoToggle },
-        { title: 'Demo Tooltip', url: paths.components.demoTooltip },
+        { title: 'Demo Tooltip', url: paths.demoTooltip },
       ],
     },
     {

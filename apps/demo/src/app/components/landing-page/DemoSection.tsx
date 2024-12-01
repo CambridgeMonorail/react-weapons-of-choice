@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@rwoc/shared/components/ui/button';
 
 interface DemoSectionProps {
@@ -8,7 +8,7 @@ interface DemoSectionProps {
   buttonAction: () => void;
 }
 
-export const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
+export const DemoSection = ({ title, description, buttonText, buttonAction }: DemoSectionProps) => {
   return (
     <section className="text-center py-20 bg-background text-primary w-full">
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
