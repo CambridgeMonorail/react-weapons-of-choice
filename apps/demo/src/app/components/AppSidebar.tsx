@@ -1,202 +1,48 @@
 'use client';
 
 import * as React from 'react';
-import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Settings2,
-  SquareTerminal,
-  Swords,
-  type LucideIcon,
-} from 'lucide-react';
-
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shared';
 import { NavMain } from './NavMain';
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
-} from '@rwoc/shared';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
+import { sidebarData } from '../data/sidebarData';
+import { SidebarConfiguration } from '../types/sidebarTypes';
 
-// Define types for the sub-objects
-interface User {
-  name: string;
-  email: string;
-  avatar: string;
-}
-
-interface Team {
-  name: string;
-  logo: LucideIcon;
-  plan: string;
-}
-
-interface NavItem {
-  title: string;
-  url: string;
-  icon?: LucideIcon;
-  isActive?: boolean;
-  items?: NavItem[];
-}
-
-// Define the overall type for the data structure
-interface SidebarData {
-  user: User;
-  teams: Team[];
-  navMain: NavItem[];
-}
-
-// This is sample data.
-const data: SidebarData = {
-  user: {
-    name: 'shadcn',
-    email: 'm@example.com',
-    avatar: '/avatars/shadcn.jpg',
-  },
-  teams: [
-    {
-      name: 'RWOC',
-      logo: Swords,
-      plan: 'Enterprise',
-    },
-    {
-      name: 'RWOC Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
-    },
-    {
-      name: 'Other Corp.',
-      logo: Command,
-      plan: 'Free',
-    },
-  ],
-  navMain: [
-    {
-      title: 'Sample Pages', // Changed from 'Pages' to 'Navigation'
-      url: '/about',
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: 'Dashboard',
-          url: '/dashboard',
-        },
-        {
-          title: 'About',
-          url: '/about',
-        },
-        {
-          title: 'Features',
-          url: '/features',
-        },
-        {
-          title: 'Pricing',
-          url: '/pricing',
-        },
-        {
-          title: 'FAQ',
-          url: '/faq',
-        },
-        {
-          title: 'Contact',
-          url: '/contact',
-        },
-        {
-          title: 'Blog',
-          url: '/blog',
-        },
-        {
-          title: 'Terms and Conditions',
-          url: '/terms-and-conditions',
-        },
-        {
-          title: 'Color Palette',
-          url: '/color-palette',
-        },
-        { title: 'StatusBoard', url: '/status-board' },
-      ],
-    },
-    {
-      title: 'Components',
-      url: '/components/demo-button',
-      icon: Bot,
-      items: [
-        { title: 'Demo Button', url: '/components/demo-button' },
-        { title: 'Demo Card', url: '/components/demo-card' },
-        { title: 'Demo Chart', url: '/components/demo-chart' },
-        { title: 'Demo Dialog', url: '/components/demo-dialog' },
-        { title: 'Demo Dropdown', url: '/components/demo-dropdown' },
-        { title: 'Demo Form', url: '/components/demo-form' },
-        { title: 'Demo Tabs', url: '/components/demo-tabs' },
-        { title: 'Demo Toggle', url: '/components/demo-toggle' },
-        { title: 'Demo Tooltip', url: '/components/demo-tooltip' },
-      ],
-    },
-    {
-      title: 'Documentation',
-      url: '/#',
-      icon: BookOpen,
-      items: [
-        {
-          title: 'Introduction',
-          url: '/#',
-        },
-        {
-          title: 'Get Started',
-          url: '/#',
-        },
-        {
-          title: 'Tutorials',
-          url: '/#',
-        },
-        {
-          title: 'Changelog',
-          url: '/#',
-        },
-      ],
-    },
-    {
-      title: 'Settings',
-      url: '/#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '/#',
-        },
-        {
-          title: 'Team',
-          url: '/#',
-        },
-        {
-          title: 'Billing',
-          url: '/#',
-        },
-        {
-          title: 'Limits',
-          url: '/#',
-        },
-      ],
-    },
-  ],
-};
-
-export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>) => {
+/**
+ * AppSidebar component
+ * 
+ * This component renders the sidebar of the application. It uses the `sidebarData` object
+ * to populate the user information, team switcher, and navigation items.
+ * 
+ * The sidebar is composed of:
+ * - SidebarHeader: Contains the TeamSwitcher component to switch between different teams.
+ * - SidebarContent: Contains the NavMain component to display the main navigation items.
+ * - SidebarFooter: Contains the NavUser component to display user information.
+ * - SidebarRail: An additional sidebar rail for extra functionality or icons.
+ * 
+ * The `sidebarData` object is imported from the data directory and contains:
+ * - user: Information about the current user (name, email, avatar).
+ * - teams: List of teams the user is part of, each with a name, logo, and plan.
+ * - navMain: List of main navigation items, each with a title, URL, icon, and optional sub-items.
+ * 
+ * To extend or modify the sidebar:
+ * 1. Update the `sidebarData` object in the data directory.
+ * 2. Modify the components (NavMain, NavUser, TeamSwitcher) as needed.
+ * 
+ * @param {React.ComponentProps<typeof Sidebar>} props - Props passed to the Sidebar component.
+ * @returns {JSX.Element} The rendered AppSidebar component.
+ */
+export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>): JSX.Element => {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher teams={sidebarData.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        <NavMain items={sidebarData.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={sidebarData.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
