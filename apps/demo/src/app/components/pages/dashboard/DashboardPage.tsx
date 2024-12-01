@@ -6,6 +6,8 @@ import {
 import { CalendarDateRangePicker } from '../components/date-range-picker';
 import { Overview } from '../components/overview';
 import { RecentSales } from '../components/recent-sales';
+import { salesData } from '../../../data/salesData';
+
 
 const DashboardPage: FC = () => {
   return (
@@ -152,7 +154,7 @@ const DashboardPage: FC = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <RecentSales />
+                  <RecentSales salesData={salesData} />
                 </CardContent>
               </Card>
             </div>
