@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const baseColors = [
+interface Color {
+  bg: string;
+  fg: string;
+  label: string;
+}
+
+interface ColorHex {
+  bg: string;
+  fg: string;
+}
+
+const baseColors: Color[] = [
   { bg: 'bg-background', fg: 'text-foreground', label: 'Background' },
   { bg: 'bg-foreground', fg: 'text-background', label: 'Foreground' },
   { bg: 'bg-card', fg: 'text-card-foreground', label: 'Card' },
@@ -36,7 +47,7 @@ const baseColors = [
   { bg: 'bg-sidebar-ring', fg: 'text-foreground', label: 'Sidebar Ring' },
 ];
 
-const getComputedColor = (className: string, root: HTMLElement) => {
+const getComputedColor = (className: string, root: HTMLElement): string => {
   const tempDiv = document.createElement("div");
   tempDiv.className = className;
   root.appendChild(tempDiv);
@@ -57,7 +68,7 @@ const hexToRgb = (hex: string): [number, number, number] | null => {
   return match ? [+match[1], +match[2], +match[3]] as [number, number, number] : null;
 };
 
-const getRelativeLuminance = (rgb: [number, number, number]) => {
+const getRelativeLuminance = (rgb: [number, number, number]): number => {
   const [r, g, b] = rgb.map((v) => {
     const normalized = v / 255;
     return normalized <= 0.03928 ? normalized / 12.92 : Math.pow((normalized + 0.055) / 1.055, 2.4);
@@ -65,7 +76,7 @@ const getRelativeLuminance = (rgb: [number, number, number]) => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 };
 
-const calculateContrast = (lum1: number, lum2: number) => {
+const calculateContrast = (lum1: number, lum2: number): number => {
   const brighter = Math.max(lum1, lum2);
   const darker = Math.min(lum1, lum2);
   return (brighter + 0.05) / (darker + 0.05);
@@ -79,16 +90,16 @@ const checkContrast = (contrast: number) => {
   };
 };
 
-const ColorPalettePage = () => {
+const ColorPalettePage: React.FC = () => {
   const [contrastRatios, setContrastRatios] = useState<Record<string, number>>({});
   const [contrastChecks, setContrastChecks] = useState<Record<string, ReturnType<typeof checkContrast>>>({});
-  const [colorHexes, setColorHexes] = useState<Record<string, { bg: string, fg: string }>>({});
+  const [colorHexes, setColorHexes] = useState<Record<string, ColorHex>>({});
 
   useEffect(() => {
     const root = document.body;
     const ratios: Record<string, number> = {};
     const checks: Record<string, ReturnType<typeof checkContrast>> = {};
-    const hexes: Record<string, { bg: string, fg: string }> = {};
+    const hexes: Record<string, ColorHex> = {};
     baseColors.forEach(({ bg, fg, label }) => {
       const bgColor = getComputedColor(bg, root);
       const fgColor = getComputedColor(fg, root);
@@ -113,17 +124,17 @@ const ColorPalettePage = () => {
     <div className="p-6 m-4 space-y-6 bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-4 text-primary">Color Palette</h1>
       <h2 className="text-2xl font-semibold mb-2 text-secondary">Base Colors</h2>
-      <p className="mb-4 ">
+      <p className="mb-4">
         Use the switcher in the header bar to see the dark theme colors.
       </p>
-      <p className="mb-4 ">
+      <div className="mb-4">
         According to WCAG guidelines, the minimum contrast ratio should be:
         <ul className="list-disc list-inside">
           <li>3:1 for large text (18pt and larger, or 14pt and bold)</li>
           <li>4.5:1 for normal text</li>
           <li>7:1 for enhanced readability</li>
         </ul>
-      </p>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {baseColors.map(({ bg, fg, label }) => (
           <div key={label} className={`p-4 ${bg} ${fg} rounded-lg`}>
