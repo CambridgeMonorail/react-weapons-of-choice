@@ -96,7 +96,6 @@ For more details on why a React SPA boilerplate may still have some value in a N
 - **Visual Studio Code**: [A source-code editor made by Microsoft for Windows, Linux, and macOS.](https://code.visualstudio.com/)
 - **GitHub Copilot**: [An AI pair programmer that helps you write code faster and with less work.](https://github.com/features/copilot)
 
-
 ## Installation
 
 To install the project, follow these steps:
@@ -226,14 +225,18 @@ Nx Console is an editor extension that enriches your developer experience. It le
 2. Click the "Fork" button in the upper-right corner to create a personal copy under your GitHub account.
 3. For detailed instructions, refer to GitHub's [Fork a repo documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
+For more information on forking repositories, consult GitHub's [About forks documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+
 ### Clone the Forked Repository
 
 1. On your GitHub account, locate the forked repository.
 2. Click the "Code" button and copy the repository's URL.
 3. Open your terminal and execute:
+
     ```bash
     git clone https://github.com/yourusername/your-forked-repo.git
     ```
+
     Replace `yourusername` with your GitHub username and `your-forked-repo` with the repository name.
 
 ### Update Project Identifiers
@@ -255,27 +258,34 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 1. Create a new repository on GitHub for your project.
 2. In your terminal, navigate to your project's directory and execute:
+
     ```bash
     git remote remove origin
     git remote add origin https://github.com/yourusername/your-new-repo.git
     ```
+
     Replace `yourusername` with your GitHub username and `your-new-repo` with the new repository name.
 
 ### Push Changes to the New Repository
 
 1. Push your local changes to the new remote repository:
+
     ```bash
     git push -u origin main
     ```
+
     Ensure that your local branch is named `main`; if not, replace `main` with the correct branch name.
 
 ### Install Dependencies and Initialize Git Hooks
 
 1. Install project dependencies using the package manager:
+
     ```bash
     pnpm install
     ```
+
 2. Set up Git hooks or other initialization scripts as specified in the prepare script:
+
     ```bash
     pnpm run prepare
     ```
@@ -284,7 +294,9 @@ By following these steps, you can customize the boilerplate to suit your specifi
 
 **Note:** We are in the process of developing automation scripts to streamline this setup process. These scripts will be integrated into the boilerplate once completed.
 
-For more information on forking repositories, consult GitHub's [About forks documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+### Adding a New Component Page to the Routing in Your React SPA
+
+To add a new component page to the routing in your React SPA, please refer to the detailed guide in [docs/adding-new-component-page.md](./docs/adding-new-component-page.md).
 
 ## Contributing
 
