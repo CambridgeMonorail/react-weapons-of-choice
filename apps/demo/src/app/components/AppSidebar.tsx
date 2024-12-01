@@ -6,7 +6,6 @@ import { NavMain } from './NavMain';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';
 import { sidebarData } from '../data/sidebarData';
-import { SidebarConfiguration } from '../types/sidebarTypes';
 
 /**
  * AppSidebar component
