@@ -1,10 +1,10 @@
-import React from 'react';
-import { Toggle } from "@rwoc/shared/components/ui/toggle"
-import { Bold, Italic, Underline } from "lucide-react"
+import { FC } from 'react';
+import { Toggle } from "@rwoc/shared/components/ui/toggle";
+import { Bold, Italic, Underline } from "lucide-react";
 
-const ToggleDemo = () => {
+export const ToggleDemo: FC = () => {
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col space-y-4 bg-background text-foreground">
       <div className="flex space-x-2">
         <Toggle aria-label="Toggle italic">
           <Italic className="h-4 w-4" />
@@ -21,6 +21,4 @@ const ToggleDemo = () => {
     </div>
   );
 };
-
-export default ToggleDemo;
 

@@ -1,27 +1,35 @@
-"use client"
+import { FC } from 'react';
+import { Bar, BarChart, Line, LineChart, Pie, PieChart } from "recharts";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@rwoc/shared/components/ui/chart";
 
-import React from 'react'
-import { Bar, BarChart, Line, LineChart, Pie, PieChart } from "recharts"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@rwoc/shared/components/ui/chart"
+interface DataItem {
+  name: string;
+  total: number;
+}
 
-const data = [
+interface PieDataItem {
+  name: string;
+  value: number;
+}
+
+const data: DataItem[] = [
   { name: "Jan", total: 1200 },
   { name: "Feb", total: 900 },
   { name: "Mar", total: 1600 },
   { name: "Apr", total: 1400 },
   { name: "May", total: 2200 },
   { name: "Jun", total: 1800 },
-]
+];
 
-const pieData = [
+const pieData: PieDataItem[] = [
   { name: "Group A", value: 400 },
   { name: "Group B", value: 300 },
   { name: "Group C", value: 300 },
   { name: "Group D", value: 200 },
-]
+];
 
-const ChartDemo = () => {
+export const ChartDemo: FC = () => {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <Card>
@@ -96,8 +104,6 @@ const ChartDemo = () => {
         </CardContent>
       </Card>
     </div>
-  )
-}
-
-export default ChartDemo
+  );
+};
 

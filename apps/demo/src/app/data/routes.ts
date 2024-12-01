@@ -9,22 +9,21 @@ import { FAQPage } from '../components/pages/FAQPage';
 import ContactPage from '../components/pages/ContactPage';
 import BlogPage from '../components/pages/BlogPage';
 import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
-import TermsAndConditionsPage from '../components/pages/TermsAndConditionsPage';
+import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
 import { ButtonDemo } from '../components/component-demos/ButtonDemo';
-import CardDemo from '../components/component-demos/CardDemo';
-import ChartDemo from '../components/component-demos/ChartDemo';
-import DialogDemo from '../components/component-demos/DialogDemo';
-import DropdownDemo from '../components/component-demos/DropdownDemo';
-import FormDemo from '../components/component-demos/FormDemo';
-import TabsDemo from '../components/component-demos/TabsDemo';
-import ToggleDemo from '../components/component-demos/ToggleDemo';
+import { CardDemo } from '../components/component-demos/CardDemo';
+import { ChartDemo } from '../components/component-demos/ChartDemo';
+import { DialogDemo } from '../components/component-demos/DialogDemo';
+import { DropdownDemo } from '../components/component-demos/DropdownDemo';
+import { FormDemo } from '../components/component-demos/FormDemo';
+import { TabsDemo } from '../components/component-demos/TabsDemo';
+import { ToggleDemo } from '../components/component-demos/ToggleDemo';
 import TooltipDemo from '../components/component-demos/TooltipDemo';
 import { ColorPalettePage } from '../components/pages/ColorPalettePage';
 import { StatusBoardPage } from '../components/pages/StatusBoardPage';
 import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
 import { paths } from '../constants/paths';
-import Home from '../components/Home';
 
 /**
  * Defines the routes for the application.

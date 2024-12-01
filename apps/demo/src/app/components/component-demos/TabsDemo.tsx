@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from "@rwoc/shared/components/ui/button"
+import { FC } from 'react';
+import { Button } from "@rwoc/shared/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,19 +7,18 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@rwoc/shared/components/ui/card"
-import { Input } from "@rwoc/shared/components/ui/input"
-import { Label } from "@rwoc/shared/components/ui/label"
+} from "@rwoc/shared/components/ui/card";
+import { Input } from "@rwoc/shared/components/ui/input";
+import { Label } from "@rwoc/shared/components/ui/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@rwoc/shared/components/ui/tabs"
+} from "@rwoc/shared/components/ui/tabs";
 
-const TabsDemo = () => {
-  
-return (
+const TabsDemo: FC = () => {
+  return (
     <Tabs defaultValue="account" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-2">
         <TabsTrigger value="account">Account</TabsTrigger>
@@ -75,5 +74,5 @@ return (
   );
 };
 
-export default TabsDemo;
+export { TabsDemo };
 

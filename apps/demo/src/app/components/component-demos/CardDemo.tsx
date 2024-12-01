@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from "@rwoc/shared/components/ui/button"
+import { FC } from 'react';
+import { Button } from "@rwoc/shared/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,9 +7,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@rwoc/shared/components/ui/card"
+} from "@rwoc/shared/components/ui/card";
 
-const CardDemo = () => {
+export const CardDemo: FC = () => {
   return (
     <div className="grid grid-cols-2 gap-4">
       <Card>
@@ -40,5 +40,3 @@ const CardDemo = () => {
     </div>
   );
 };
-
-export default CardDemo;
