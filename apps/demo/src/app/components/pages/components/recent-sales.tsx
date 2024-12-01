@@ -6,61 +6,57 @@ export function RecentSales() {
       <div className="flex items-center">
         <Avatar className="h-9 w-9">
           <AvatarImage src="/avatars/01.png" alt="Avatar" />
-          <AvatarFallback>OM</AvatarFallback>
+          <AvatarFallback>DN</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Olivia Martin</p>
-          <p className="text-sm text-muted-foreground">
-            olivia.martin@email.com
-          </p>
+          <p className="text-sm font-medium leading-none">Dom Node</p>
+          <p className="text-sm text-muted-foreground">dom.node@rwoc.dev</p>
         </div>
-        <div className="ml-auto font-medium">+$1,999.00</div>
+        <div className="ml-auto font-medium">+£1,234.56</div>
       </div>
       <div className="flex items-center">
         <Avatar className="flex h-9 w-9 items-center justify-center space-y-0 border">
           <AvatarImage src="/avatars/02.png" alt="Avatar" />
-          <AvatarFallback>JL</AvatarFallback>
+          <AvatarFallback>JS</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Jackson Lee</p>
-          <p className="text-sm text-muted-foreground">jackson.lee@email.com</p>
+          <p className="text-sm font-medium leading-none">Jason Script</p>
+          <p className="text-sm text-muted-foreground">jason.script@rwoc.dev</p>
         </div>
-        <div className="ml-auto font-medium">+$39.00</div>
+        <div className="ml-auto font-medium">+£45.67</div>
       </div>
       <div className="flex items-center">
         <Avatar className="h-9 w-9">
           <AvatarImage src="/avatars/03.png" alt="Avatar" />
-          <AvatarFallback>IN</AvatarFallback>
+          <AvatarFallback>SS</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Isabella Nguyen</p>
-          <p className="text-sm text-muted-foreground">
-            isabella.nguyen@email.com
-          </p>
+          <p className="text-sm font-medium leading-none">Sarah Styles</p>
+          <p className="text-sm text-muted-foreground">sarah.styles@rwoc.dev</p>
         </div>
-        <div className="ml-auto font-medium">+$299.00</div>
+        <div className="ml-auto font-medium">+£678.90</div>
       </div>
       <div className="flex items-center">
         <Avatar className="h-9 w-9">
           <AvatarImage src="/avatars/04.png" alt="Avatar" />
-          <AvatarFallback>WK</AvatarFallback>
+          <AvatarFallback>DB</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">William Kim</p>
-          <p className="text-sm text-muted-foreground">will@email.com</p>
+          <p className="text-sm font-medium leading-none">Debbie Bug</p>
+          <p className="text-sm text-muted-foreground">debbie.bug@rwoc.dev</p>
         </div>
-        <div className="ml-auto font-medium">+$99.00</div>
+        <div className="ml-auto font-medium">+£12.34</div>
       </div>
       <div className="flex items-center">
         <Avatar className="h-9 w-9">
           <AvatarImage src="/avatars/05.png" alt="Avatar" />
-          <AvatarFallback>SD</AvatarFallback>
+          <AvatarFallback>AF</AvatarFallback>
         </Avatar>
         <div className="ml-4 space-y-1">
-          <p className="text-sm font-medium leading-none">Sofia Davis</p>
-          <p className="text-sm text-muted-foreground">sofia.davis@email.com</p>
+          <p className="text-sm font-medium leading-none">Ajax Fetcher</p>
+          <p className="text-sm text-muted-foreground">ajax.fetcher@rwoc.dev</p>
         </div>
-        <div className="ml-auto font-medium">+$39.00</div>
+        <div className="ml-auto font-medium">+£89.01</div>
       </div>
     </div>
   );
