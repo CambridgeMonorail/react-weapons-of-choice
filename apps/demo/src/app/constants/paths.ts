@@ -7,6 +7,7 @@
  * 2. Use the new key in the `routes` and `sidebarData` files.
  */
 export const paths = {
+  landing: '/',
   home: '/home',
   about: '/about',
   features: '/features',

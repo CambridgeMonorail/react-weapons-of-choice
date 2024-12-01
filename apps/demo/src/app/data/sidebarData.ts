@@ -32,6 +32,7 @@ export const sidebarData: SidebarConfiguration = {
       icon: SquareTerminal,
       isActive: true,
       items: [
+        { title: 'Landing', url: paths.landing },
         { title: 'Dashboard', url: paths.dashboard },
         { title: 'About', url: paths.about },
         { title: 'Features', url: paths.features },
