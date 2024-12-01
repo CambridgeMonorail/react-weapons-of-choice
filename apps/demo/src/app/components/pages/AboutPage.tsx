@@ -7,14 +7,11 @@ import {
   CardDescription,
 } from '@rwoc/shared/components/ui/card';
 import { HeroSection } from '../landing-page/HeroSection';
-import { AboutSection } from '../landing-page/AboutSection';
-import { FeaturesSection } from '../landing-page/FeaturesSection';
 import { CommunitySection } from '../landing-page/CommunitySection';
 import { Footer } from '../landing-page/Footer';
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
-import { Logo } from '../shared/Logo';
 import TestimonialsSection from './components/Testimonials';
 
 interface TeamMember {

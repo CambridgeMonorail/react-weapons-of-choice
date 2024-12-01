@@ -1,8 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shared/components/ui/card";
 
-const componentDefinitions = [
+interface ComponentDefinition {
+  name: string;
+  description: string;
+  path: string;
+}
+
+const componentDefinitions: ComponentDefinition[] = [
   {
     name: "Buttons",
     description: "Interactive elements that trigger actions when clicked.",
@@ -85,11 +91,11 @@ const componentDefinitions = [
   }
 ];
 
-const Home = () => {
+export const Home: FC = () => {
   const baseUrl = import.meta.env.BASE_URL;
 
   return (
-    <Card>
+    <Card className="bg-background text-foreground">
       <CardHeader>
         <CardTitle>shadcn Component Showcase</CardTitle>
         <CardDescription>Explore our collection of beautifully designed and fully functional components</CardDescription>
@@ -99,7 +105,11 @@ const Home = () => {
           {componentDefinitions.map((component) => (
             <div key={component.name} className="border-t pt-4 first:border-t-0 first:pt-0">
               <dt className="font-semibold text-lg">
-                <Link to={`${baseUrl}${component.path}`} className="text-primary-600 hover:underline">
+                <Link 
+                  to={`${baseUrl}${component.path}`} 
+                  className="text-primary-foreground hover:underline"
+                  aria-label={`Navigate to ${component.name}`}
+                >
                   {component.name}
                 </Link>
               </dt>
@@ -111,5 +121,3 @@ const Home = () => {
     </Card>
   );
 };
-
-export default Home;

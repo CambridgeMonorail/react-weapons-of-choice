@@ -1,11 +1,15 @@
-import React from 'react';
+import { FC, ComponentType } from 'react';
 import { useErrorHandling } from '../hooks/useErrorHandling';
 import { NotFound } from './NotFound';
 
-const withErrorHandling = (WrappedComponent: React.ComponentType) => {
-  const definedRoutes = ['/', '/home', '/buttons', '/cards', '/forms', '/dialogs', '/dropdowns', '/tabs', '/toggles', '/tooltips', '/charts'];
+export const withErrorHandling = (WrappedComponent: ComponentType<Record<string, unknown>>) => {
+  const definedRoutes = [
+    '/', '/home', '/buttons', '/cards', '/forms', 
+    '/dialogs', '/dropdowns', '/tabs', '/toggles', 
+    '/tooltips', '/charts'
+  ];
 
-  const HOC: React.FC = (props) => {
+  const HOC: FC<Record<string, unknown>> = (props) => {
     const isNotFound = useErrorHandling(definedRoutes);
 
     if (isNotFound) {
@@ -17,5 +21,3 @@ const withErrorHandling = (WrappedComponent: React.ComponentType) => {
 
   return HOC;
 };
-
-export default withErrorHandling;

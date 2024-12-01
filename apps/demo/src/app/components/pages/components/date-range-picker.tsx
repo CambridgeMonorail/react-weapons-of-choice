@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
@@ -21,6 +21,7 @@ export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTML
               "w-[260px] justify-start text-left font-normal",
               !date && "text-muted-foreground"
             )}
+            aria-label="Select date range"
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
             {date?.from ? (

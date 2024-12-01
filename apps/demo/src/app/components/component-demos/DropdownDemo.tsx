@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from "@rwoc/shared/components/ui/button"
+import { FC } from 'react';
+import { Button } from "@rwoc/shared/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,15 +13,15 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@rwoc/shared/components/ui/dropdown-menu"
+} from "@rwoc/shared/components/ui/dropdown-menu";
 
-const DropdownDemo = () => {
+export const DropdownDemo: FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline" className="bg-background text-foreground">Open</Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
+      <DropdownMenuContent className="w-56 bg-background text-foreground">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
@@ -48,7 +48,7 @@ const DropdownDemo = () => {
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
-              <DropdownMenuSubContent>
+              <DropdownMenuSubContent className="bg-background text-foreground">
                 <DropdownMenuItem>Email</DropdownMenuItem>
                 <DropdownMenuItem>Message</DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -66,6 +66,4 @@ const DropdownDemo = () => {
     </DropdownMenu>
   );
 };
-
-export default DropdownDemo;
 
