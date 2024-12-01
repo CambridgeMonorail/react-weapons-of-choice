@@ -62,7 +62,7 @@ const AboutPage: FC = () => {
         </div>
       </section>
 
-      <section className="px-5">
+      <section >
         <h2 className="text-3xl font-bold mb-4 text-primary">Timeline</h2>
         <p>
           Explore the key milestones and evolution of our project from inception to the present day.
