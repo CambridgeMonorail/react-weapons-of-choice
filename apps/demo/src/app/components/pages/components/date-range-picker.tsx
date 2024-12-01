@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { addDays, format, startOfMonth, endOfMonth } from "date-fns";
+import { format, startOfMonth, endOfMonth } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
 import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shared";
 
-interface CalendarDateRangePickerProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export const CalendarDateRangePicker = ({ className }: CalendarDateRangePickerProps) => {
+export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTMLDivElement>) => {
   const [date, setDate] = useState<DateRange | undefined>({
     from: startOfMonth(new Date()),
     to: endOfMonth(new Date()),
