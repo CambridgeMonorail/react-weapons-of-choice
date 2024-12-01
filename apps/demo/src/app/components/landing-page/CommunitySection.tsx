@@ -11,8 +11,8 @@ interface CommunitySectionProps {
 const CommunitySection: FC<CommunitySectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (
     <section className="text-center py-20 w-full">
-      <h2 className="text-4xl font-bold mb-6 text-primary-foreground">{title}</h2>
-      <p className="text-xl mb-8 max-w-2xl mx-auto text-primary-foreground">{description}</p>
+      <h2 className="text-4xl font-bold mb-6 text-primary">{title}</h2>
+      <p className="text-xl mb-8 max-w-2xl mx-auto text-primary">{description}</p>
       <div className="flex justify-center space-x-4">
         <Button
           size="lg"

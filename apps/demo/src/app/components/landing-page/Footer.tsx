@@ -16,14 +16,27 @@ export const Footer: FC<FooterProps> = ({
     <footer className="text-center py-8 text-primary-foreground w-full">
       <nav className="flex justify-center space-x-4 mb-4" aria-label="Footer navigation">
         {navigationLinks.map((link, index) => (
-          <a key={index} href={link.url} className="hover:underline">
+          <a
+            key={index}
+            href={link.url}
+            className="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {link.text}
           </a>
         ))}
       </nav>
       <div className="flex justify-center space-x-4">
         {socialMediaIcons.map((iconData, index) => (
-          <a key={index} href={iconData.url} className="hover:underline" aria-label={`Link to ${iconData.url}`}>
+          <a
+            key={index}
+            href={iconData.url}
+            className="hover:underline"
+            aria-label={`Link to ${iconData.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <iconData.icon className="w-8 h-8" />
           </a>
         ))}

@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@rwoc/shared/components/ui/card';
-// import { Button } from '@rwoc/shared/components/ui/button'; // Unused import
 import {
   ChartContainer,
   ChartTooltip,
@@ -19,7 +18,7 @@ interface ChartData {
   performance: number;
 }
 
-const FeaturesPage: FC = () => {
+const FeaturesPage = () => {
   const [chartData] = useState<ChartData[]>([
     { label: 'Before', performance: 50 },
     { label: 'After', performance: 80 },

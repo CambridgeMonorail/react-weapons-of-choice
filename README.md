@@ -25,6 +25,7 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [Useful links](#useful-links)
+- [FAQs](#faqs)
 
 ## Overview
 
@@ -312,6 +313,7 @@ This project is licensed under the MIT License.
 - [Shadcn UI](https://github.com/shadcn-ui/ui)
 - [Nx](https://nx.dev)
 - [Placebeard](https://placebeard.it/): A fantastic service for placeholder images featuring bearded individuals, inspired by similar services like placekitten.com and placedog.com. We appreciate their free service for adding a touch of fun to our project.
+- [unDraw](https://undraw.co/): Open-source illustrations for any idea you can imagine and create. A constantly updated design project with beautiful SVG images that you can use completely free and without attribution. Created by [Katerina Limpitsouni](https://x.com/ninaLimpi).
 
 ## Useful links
 
@@ -321,3 +323,33 @@ Learn more:
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## FAQs
+
+### Why doesn't the app load?
+
+It's not finished yet.
+
+### Why is the button not working?
+
+It's not finished yet.
+
+### Why is there no dark mode?
+
+It's not finished yet.
+
+### Why does the page look weird on mobile?
+
+It's not finished yet.
+
+### Why is the documentation incomplete?
+
+It's not finished yet.
+
+### Why can't I find the feature I need?
+
+It's not finished yet.
+
+### Why is the sky blue?
+
+It's not finished yet. (Just kidding, that's actually due to Rayleigh scattering.)
