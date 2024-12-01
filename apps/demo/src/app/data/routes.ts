@@ -24,6 +24,7 @@ import { StatusBoardPage } from '../components/pages/StatusBoardPage';
 import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
 import { paths } from '../constants/paths';
+import Home from '../components/Home';
 
 /**
  * Defines the routes for the application.
@@ -37,7 +38,7 @@ import { paths } from '../constants/paths';
  * 3. Use the `paths` object to reference the path to ensure consistency.
  */
 export const routes: AppRoute[] = [
-  { path: paths.home, element: createElement(LandingPage) },
+  { path: paths.home, element: createElement(Layout, null, createElement(DashboardPage)) },
   { path: paths.dashboard, element: createElement(Layout, null, createElement(DashboardPage)) },
   { path: paths.about, element: createElement(Layout, null, createElement(AboutPage)) },
   { path: paths.features, element: createElement(Layout, null, createElement(FeaturesPage)) },
