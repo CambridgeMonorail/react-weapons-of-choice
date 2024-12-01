@@ -7,6 +7,7 @@ import { CommunitySection } from '../landing-page/CommunitySection';
 import { Footer } from '../landing-page/Footer';
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
+import imageSrc from '../../../assets/images/undraw_our_solution.svg';
 
 interface TeamMember {
   name: string;
@@ -45,8 +46,8 @@ const AboutPage: FC = () => {
     <div className="p-6 m-4 space-y-6">
       <HeroSection
         title="About React Weapons of Choice"
-        tagline="Empowering Developers with Modern React Tools"
-        image="path/to/banner-image.jpg"
+        subtitle="Empowering Developers with Modern React Tools"
+        image={imageSrc}
         imageAlt="Banner Image"
         description="Empowering Developers with Modern React Tools"
       />
