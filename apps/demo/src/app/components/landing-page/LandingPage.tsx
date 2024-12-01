@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Twitter } from 'lucide-react';
 import { FeaturesSection } from './FeaturesSection';
@@ -9,9 +9,9 @@ import { Footer } from './Footer';
 import { GetStartedSection } from './GetStartedSection';
 import { HeroSection } from './HeroSection';
 import logoSrc from '../../../assets/images/rwoc-logo.png';
-import { Logo } from '../shared/Logo'; // Import the new Logo component
+import { Logo } from '../shared/Logo';
 
-export const LandingPage = () => {
+export const LandingPage: FC = () => {
   const navigate = useNavigate();
 
   const handleScrollToFeatures = () => {
@@ -21,9 +21,13 @@ export const LandingPage = () => {
     }
   };
 
+  useEffect(() => {
+    // Any other side effects can be added here
+  }, []);
+
   return (
     <div className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground">
-     <h4 className="ribbon">So Very Alpha</h4> 
+      <h4 className="ribbon">So Very Alpha</h4>
       <div className="bg-primary">
         <HeroSection 
           title="The Boilerplate That Speeds Up SPA Development"
@@ -37,7 +41,7 @@ export const LandingPage = () => {
           }}
           ctaSecondary={{
             text: "Learn More",
-            onClick: handleScrollToFeatures, // Use the scroll handler directly
+            onClick: handleScrollToFeatures,
           }}
           layout="left"
           data-testid="hero-section"
@@ -64,23 +68,19 @@ export const LandingPage = () => {
           },
           {
             title: '🎨 Tailwind CSS Integration for Utility-First Styling',
-            description:
-              'Style your components effortlessly with Tailwind CSS.',
+            description: 'Style your components effortlessly with Tailwind CSS.',
           },
           {
             title: '🖌️ Shadcn UI Components for Consistent Design',
-            description:
-              'Use Shadcn UI components for a consistent look and feel.',
+            description: 'Use Shadcn UI components for a consistent look and feel.',
           },
           {
             title: '📂 Modular Architecture for Scalability',
-            description:
-              'Build scalable applications with a modular architecture.',
+            description: 'Build scalable applications with a modular architecture.',
           },
           {
             title: '📑 Comprehensive Documentation and Examples',
-            description:
-              'Access detailed documentation and examples to get started quickly.',
+            description: 'Access detailed documentation and examples to get started quickly.',
           },
         ]}
         data-testid="features-section"

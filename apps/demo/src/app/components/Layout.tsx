@@ -14,8 +14,7 @@ import {
 import { AppSidebar } from './AppSidebar';
 import { ReactNode } from 'react';
 import { Moon, Sun, Github } from 'lucide-react';
-// Remove unused import
-// import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 interface LayoutProps {
@@ -24,6 +23,8 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const location = useLocation();
+  const pathnames = location.pathname.split('/').filter((x) => x);
 
   useEffect(() => {
     // Placeholder for theme switching logic
@@ -40,15 +41,22 @@ export function Layout({ children }: LayoutProps) {
             <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
+                {pathnames.map((value, index) => {
+                  const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+                  const isLast = index === pathnames.length - 1;
+                  return (
+                    <BreadcrumbItem key={to} className={isLast ? '' : 'hidden md:block'}>
+                      {isLast ? (
+                        <BreadcrumbPage>{value}</BreadcrumbPage>
+                      ) : (
+                        <BreadcrumbLink>
+                          <Link to={to}>{value}</Link>
+                        </BreadcrumbLink>
+                      )}
+                      {!isLast && <BreadcrumbSeparator className="hidden md:block" />}
+                    </BreadcrumbItem>
+                  );
+                })}
               </BreadcrumbList>
             </Breadcrumb>
           </div>
