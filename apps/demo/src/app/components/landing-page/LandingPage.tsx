@@ -53,11 +53,11 @@ export const LandingPage: FC = () => {
         title="Why React Weapons of Choice?"
         description="React Weapons of Choice is an open-source boilerplate designed for developers who want a fast, intuitive setup for SPAs. Say goodbye to configuration headaches and hello to productivity!"
         logos={[
-          <Logo name="nx" className="w-16 h-16" key="nx" />,
-          <Logo name="tailwind" className="w-16 h-16" key="tailwind" />,
-          <Logo name="shadcn" className="w-16 h-16" key="shadcn" />,
-          <Logo name="pnpm" className="w-16 h-16" key="pnpm" />,
-          <Logo name="react" className="w-16 h-16" key="react" />,
+          <Logo name="nx" className="w-16 h-16 sm:w-12 sm:h-12" key="nx" />,
+          <Logo name="tailwind" className="w-16 h-16 sm:w-12 sm:h-12" key="tailwind" />,
+          <Logo name="shadcn" className="w-16 h-16 sm:w-12 sm:h-12" key="shadcn" />,
+          <Logo name="pnpm" className="w-16 h-16 sm:w-12 sm:h-12" key="pnpm" />,
+          <Logo name="react" className="w-16 h-16 sm:w-12 sm:h-12" key="react" />,
         ]}
         data-testid="about-section"
       />
@@ -127,6 +127,7 @@ export const LandingPage: FC = () => {
         data-testid="get-started-section"
       />
       <Footer
+        className="w-full px-4 sm:px-6 lg:px-8"
         navigationLinks={[
           { text: 'Home', url: '#' },
           { text: 'Features', url: '#features' },

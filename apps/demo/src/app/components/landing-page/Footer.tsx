@@ -13,8 +13,8 @@ export const Footer: FC<FooterProps> = ({
   copyrightText
 }) => {
   return (
-    <footer className="text-center py-8 text-primary-foreground w-full">
-      <nav className="flex justify-center space-x-4 mb-4" aria-label="Footer navigation">
+    <footer className="text-center py-8 text-primary-foreground w-full px-4 sm:px-6 lg:px-8">
+      <nav className="flex flex-wrap justify-center space-x-4 mb-4" aria-label="Footer navigation">
         {navigationLinks.map((link, index) => (
           <a
             key={index}
@@ -27,7 +27,7 @@ export const Footer: FC<FooterProps> = ({
           </a>
         ))}
       </nav>
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-wrap justify-center space-x-4">
         {socialMediaIcons.map((iconData, index) => (
           <a
             key={index}
@@ -41,7 +41,7 @@ export const Footer: FC<FooterProps> = ({
           </a>
         ))}
       </div>
-      <p className="mt-4">{copyrightText}</p>
+      <p className="mt-4 text-sm sm:text-base">{copyrightText}</p>
     </footer>
   );
 };
