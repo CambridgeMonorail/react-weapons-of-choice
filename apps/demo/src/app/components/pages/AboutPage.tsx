@@ -131,6 +131,7 @@ const AboutPage: FC = () => {
             '_blank'
           )
         }
+        isDarkBackground={false} // Pass the new prop
       />
 
       <section className="p-6 m-4">
