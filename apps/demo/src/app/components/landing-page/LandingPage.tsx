@@ -30,6 +30,7 @@ export const LandingPage: FC = () => {
       className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground"
       data-testid="landing-page"
     >
+
       <div className="bg-primary" data-testid="hero-section-container">
         <HeroSection
           title="The Boilerplate That Speeds Up SPA Development"
@@ -108,6 +109,7 @@ export const LandingPage: FC = () => {
             '_blank'
           )
         }
+        isDarkBackground={true} // Pass the new prop
         data-testid="community-section"
       />
       <GetStartedSection
