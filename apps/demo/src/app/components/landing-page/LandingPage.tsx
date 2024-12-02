@@ -26,10 +26,12 @@ export const LandingPage: FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground">
-      <h4 className="ribbon">So Very Alpha</h4>
-      <div className="bg-primary">
-        <HeroSection 
+    <div
+      className="min-h-screen min-w-screen flex flex-col items-center justify-center bg-primary text-foreground"
+      data-testid="landing-page"
+    >
+      <div className="bg-primary" data-testid="hero-section-container">
+        <HeroSection
           title="The Boilerplate That Speeds Up SPA Development"
           subtitle="Combine the power of Nx, Tailwind CSS, and Shadcn UI to kickstart your next React project."
           description="Streamline your development workflow with a comprehensive and customizable boilerplate designed for speed and scalability."
@@ -40,7 +42,7 @@ export const LandingPage: FC = () => {
             link: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
           }}
           ctaSecondary={{
-            text: "Learn More",
+            text: 'Learn More',
             onClick: handleScrollToFeatures,
           }}
           layout="left"
@@ -68,19 +70,23 @@ export const LandingPage: FC = () => {
           },
           {
             title: '🎨 Tailwind CSS Integration for Utility-First Styling',
-            description: 'Style your components effortlessly with Tailwind CSS.',
+            description:
+              'Style your components effortlessly with Tailwind CSS.',
           },
           {
             title: '🖌️ Shadcn UI Components for Consistent Design',
-            description: 'Use Shadcn UI components for a consistent look and feel.',
+            description:
+              'Use Shadcn UI components for a consistent look and feel.',
           },
           {
             title: '📂 Modular Architecture for Scalability',
-            description: 'Build scalable applications with a modular architecture.',
+            description:
+              'Build scalable applications with a modular architecture.',
           },
           {
             title: '📑 Comprehensive Documentation and Examples',
-            description: 'Access detailed documentation and examples to get started quickly.',
+            description:
+              'Access detailed documentation and examples to get started quickly.',
           },
         ]}
         data-testid="features-section"
