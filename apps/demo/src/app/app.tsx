@@ -13,7 +13,7 @@ const App: FC = () => {
   }, [location]);
 
   return (
-    <div className="bg-background text-foreground min-h-screen">
+    <div className="bg-background text-foreground min-h-screen min-w-screen" data-testid="app-container">
       <Routes>
         {routes.map((route) => (
           <Route 
@@ -21,13 +21,15 @@ const App: FC = () => {
             path={route.path} 
             element={
               <ErrorBoundary>
-                {route.element}
+                <div data-testid={`route-${route.path.replace('/', '-')}`}>
+                  {route.element}
+                </div>
               </ErrorBoundary>
             } 
           />
         ))}
       </Routes>
-      <Toaster />
+      <Toaster data-testid="toaster" />
     </div>
   );
 };

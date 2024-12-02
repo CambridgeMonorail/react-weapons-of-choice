@@ -33,38 +33,60 @@ export const HeroSection: FC<HeroSectionProps> = ({
       className={`bg-primary text-primary-foreground w-full ${className}`}
       data-testid="hero-section"
     >
-      <div className="w-full container mx-auto flex flex-col lg:flex-row items-center gap-8 py-12 lg:py-24">
+      <div className="w-full container mx-auto flex flex-col-reverse md:flex-col lg:flex-row items-center gap-8 py-12 lg:py-24 px-4 sm:px-6 md:px-12">
         {/* Content Section */}
         <div
-          className={`flex-1 space-y-6 ${
+          className={`flex-1 space-y-6 text-center lg:text-left ${
             isReversed ? 'order-last lg:order-first' : ''
           }`}
           data-testid="hero-content"
         >
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+          <h1
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight"
+            data-testid="hero-title"
+          >
             {title}
           </h1>
           {subtitle && (
-            <h2 className="text-2xl text-muted font-medium">{subtitle}</h2>
+            <h2
+              className="text-xl sm:text-2xl text-muted font-medium leading-snug"
+              data-testid="hero-subtitle"
+            >
+              {subtitle}
+            </h2>
           )}
           {description && (
-            <p className="text-lg text-muted">{description}</p>
+            <p
+              className="text-base sm:text-lg text-muted leading-relaxed"
+              data-testid="hero-description"
+            >
+              {description}
+            </p>
           )}
           {highlights && (
-            <ul className="space-y-2 text-muted">
+            <ul
+              className="space-y-2 text-muted"
+              data-testid="hero-highlights"
+            >
               {highlights.map((highlight, index) => (
-                <li key={index} className="flex items-center gap-2">
+                <li
+                  key={index}
+                  className="flex items-center gap-2 justify-center lg:justify-start"
+                  data-testid={`hero-highlight-${index}`}
+                >
                   <CheckIcon className="h-5 w-5 text-accent" />
                   {highlight}
                 </li>
               ))}
             </ul>
           )}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             {ctaPrimary && (
               <Button
-                onClick={ctaPrimary.onClick || (() => window.location.href = ctaPrimary.link || '#')}
-                variant={'secondary'}
+                onClick={
+                  ctaPrimary.onClick || (() => window.location.href = ctaPrimary.link || '#')
+                }
+                variant="secondary"
                 data-testid="cta-primary"
               >
                 {ctaPrimary.text}
@@ -72,8 +94,10 @@ export const HeroSection: FC<HeroSectionProps> = ({
             )}
             {ctaSecondary && (
               <Button
-                onClick={ctaSecondary.onClick || (() => window.location.href = ctaSecondary.link || '#')}
-                variant={'outline'}
+                onClick={
+                  ctaSecondary.onClick || (() => window.location.href = ctaSecondary.link || '#')
+                }
+                variant="outline"
                 data-testid="cta-secondary"
               >
                 {ctaSecondary.text}
@@ -83,11 +107,15 @@ export const HeroSection: FC<HeroSectionProps> = ({
         </div>
 
         {/* Media Section */}
-        <div className="flex-1" data-testid="hero-media">
+        <div
+          className="flex-1 flex justify-center items-center"
+          data-testid="hero-media"
+        >
           <img
             src={image}
             alt={imageAlt}
-            className="w-full rounded-lg object-cover"
+            className="w-3/4 sm:w-2/3 lg:w-full max-w-md rounded-lg object-cover"
+            data-testid="hero-image"
           />
         </div>
       </div>

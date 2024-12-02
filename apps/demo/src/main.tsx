@@ -10,6 +10,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
+
   <StrictMode>
     <HashRouter>
       <ThemeProvider>
