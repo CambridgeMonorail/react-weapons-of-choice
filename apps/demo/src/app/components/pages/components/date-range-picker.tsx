@@ -11,7 +11,7 @@ export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTML
   });
 
   return (
-    <div className={cn("grid gap-2", className)}>
+    <div className={cn("grid gap-2", className)} data-testid="date-range-picker">
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -22,6 +22,7 @@ export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTML
               !date && "text-muted-foreground"
             )}
             aria-label="Select date range"
+            data-testid="date-range-button"
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
             {date?.from ? (
@@ -37,7 +38,7 @@ export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTML
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="end">
+        <PopoverContent className="w-auto p-0" align="end" data-testid="date-range-popover">
           <Calendar
             initialFocus
             mode="range"
@@ -45,6 +46,7 @@ export const CalendarDateRangePicker = ({ className }: React.HTMLAttributes<HTML
             selected={date}
             onSelect={setDate}
             numberOfMonths={2}
+            data-testid="date-range-calendar"
           />
         </PopoverContent>
       </Popover>
