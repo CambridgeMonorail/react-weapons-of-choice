@@ -30,8 +30,8 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --sidebar-background: 239 100% 85%; /* 10% darker than --background */
-    --sidebar-foreground: 239 5% 20%; /* 10% darker than --foreground */
+    --sidebar-background: 249 100% 94%; /* 10% darker than --background */
+    --sidebar-foreground: 249 5% 20%; /* 10% darker than --foreground */
     --sidebar-primary: 239 69% 18%; /* 10% darker than --primary */
     --sidebar-primary-foreground: 0 0% 90%; /* 10% darker than --primary-foreground */
     --sidebar-accent: 201 30% 70%; /* 10% darker than --accent */
