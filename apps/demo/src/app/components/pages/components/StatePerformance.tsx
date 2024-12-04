@@ -1,5 +1,5 @@
 
-import { Card, CardContent, CardHeader, CardTitle, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@rwoc/shared";
+import { Card, CardContent, CardHeader, CardTitle, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@rwoc/shadcnui";
 import { AlertCircle, AlertTriangle, Table } from "lucide-react";
 
 interface StatePerformanceData {

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shared';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shadcnui';
 import { NavMain } from './NavMain';
 import { NavUser } from './NavUser';
 import { TeamSwitcher } from './TeamSwitcher';

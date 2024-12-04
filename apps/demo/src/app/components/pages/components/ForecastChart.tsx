@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@rwoc/shared";
+import { Card, CardContent, CardHeader, CardTitle } from "@rwoc/shadcnui";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { FC } from "react";
 

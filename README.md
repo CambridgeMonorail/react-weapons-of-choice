@@ -151,7 +151,7 @@ The following scripts are available to manage and build the project:
   - `pnpm run build:affected`: Build only the affected projects.
   - `pnpm run build:all`: Build all projects.
   - `pnpm run build:demo`: Build the demo application.
-  - `pnpm run build:shared`: Build the shared library.
+  - `pnpm run build:shadcnui`: Build the shadcnui library.
 
 - **Clean**
   - `pnpm run clean`: Clean all projects.
@@ -164,7 +164,7 @@ The following scripts are available to manage and build the project:
   - `pnpm run lint:affected`: Lint only the affected projects.
   - `pnpm run lint:all`: Lint all projects.
   - `pnpm run lint:demo`: Lint the demo application.
-  - `pnpm run lint:shared`: Lint the shared library.
+  - `pnpm run lint:shadcnui`: Lint the shadcnui library.
 
 - **Precommit**
   - `pnpm run precommit`: Run lint, type-check, build, and test for all projects before committing.
@@ -180,13 +180,13 @@ The following scripts are available to manage and build the project:
   - `pnpm run test:affected`: Test only the affected projects.
   - `pnpm run test:all`: Test all projects.
   - `pnpm run test:demo`: Test the demo application.
-  - `pnpm run test:shared`: Test the shared library.
+  - `pnpm run test:shadcnui`: Test the shadcnui library.
 
 - **Type-check**
   - `pnpm run type-check:affected`: Type-check only the affected projects.
   - `pnpm run type-check:all`: Type-check all projects.
   - `pnpm run type-check:demo`: Type-check the demo application.
-  - `pnpm run type-check:shared`: Type-check the shared library.
+  - `pnpm run type-check:shadcnui`: Type-check the shadcnui library.
 
 ## Add new projects
 

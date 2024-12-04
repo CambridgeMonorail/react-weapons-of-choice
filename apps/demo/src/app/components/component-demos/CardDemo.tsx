@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from "@rwoc/shared/components/ui/button";
+import { Button } from "@rwoc/shadcnui/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@rwoc/shared/components/ui/card";
+} from "@rwoc/shadcnui/components/ui/card";
 
 export const CardDemo: FC = () => {
   return (

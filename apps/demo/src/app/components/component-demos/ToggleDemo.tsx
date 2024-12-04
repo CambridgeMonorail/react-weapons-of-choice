@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Toggle } from "@rwoc/shared/components/ui/toggle";
+import { Toggle } from "@rwoc/shadcnui/components/ui/toggle";
 import { Bold, Italic, Underline } from "lucide-react";
 
 export const ToggleDemo: FC = () => {

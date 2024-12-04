@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@rwoc/shared/components/ui/card';
+} from '@rwoc/shadcnui/components/ui/card';
 import { HeroSection } from '../landing-page/HeroSection';
 import { CommunitySection } from '../landing-page/CommunitySection';
 import { Footer } from '../landing-page/Footer';

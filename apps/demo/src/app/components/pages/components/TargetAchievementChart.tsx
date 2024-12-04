@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle, Tooltip } from "@rwoc/shared";
+import { Card, CardContent, CardHeader, CardTitle, Tooltip } from "@rwoc/shadcnui";
 import { BarChart } from "recharts";
 import { ResponsiveContainer, XAxis, YAxis, Bar } from "recharts";
 

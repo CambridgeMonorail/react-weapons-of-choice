@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from "@rwoc/shared/components/ui/button"
+import { Button } from "@rwoc/shadcnui/components/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@rwoc/shared/components/ui/tooltip"
+} from "@rwoc/shadcnui/components/ui/tooltip"
 
 const TooltipDemo = () => {
   return (

@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rwoc/shared": ["libs/shared/src/index.ts"],
-      "@rwoc/shared/*": ["libs/shared/src/*"],
+      "@rwoc/shadcnui": ["libs/shadcnui/src/index.ts"],
+      "@rwoc/shadcnui/*": ["libs/shadcnui/src/*"],
       "shell": ["libs/shell/src/index.ts"],
       "storybook-host": ["libs/storybook-host/src/index.ts"]
     }

@@ -2,7 +2,7 @@
 
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { CalendarDays, Clock, MessageSquare, Percent, Star } from 'lucide-react'
-import { Avatar, AvatarFallback, Card, CardContent, CardHeader, CardTitle, ChartConfig, ChartContainer } from "@rwoc/shared";
+import { Avatar, AvatarFallback, Card, CardContent, CardHeader, CardTitle, ChartConfig, ChartContainer } from "@rwoc/shadcnui";
 
 
 const chartConfig = {

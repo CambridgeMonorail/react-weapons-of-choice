@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Shared from './shared';
+import Shadcnui from './shadcnui';
 
-describe('Shared', () => {
+describe('Shadcnui', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Shared />);
+    const { baseElement } = render(<Shadcnui />);
     expect(baseElement).toBeTruthy();
   });
 });

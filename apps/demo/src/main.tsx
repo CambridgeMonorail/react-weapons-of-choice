@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
-import { ThemeProvider } from '@rwoc/shared';
+import { ThemeProvider } from '@rwoc/shadcnui';
 
 import { App } from './app/app';
 

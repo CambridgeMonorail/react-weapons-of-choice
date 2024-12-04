@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@rwoc/shared"
+import { Avatar, AvatarFallback, AvatarImage } from "@rwoc/shadcnui"
 
 
 interface Testimonial {

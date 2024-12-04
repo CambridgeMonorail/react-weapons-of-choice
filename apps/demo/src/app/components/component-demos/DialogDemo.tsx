@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from "@rwoc/shared/components/ui/button";
+import { Button } from "@rwoc/shadcnui/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,9 +8,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@rwoc/shared/components/ui/dialog";
-import { Input } from "@rwoc/shared/components/ui/input";
-import { Label } from "@rwoc/shared/components/ui/label";
+} from "@rwoc/shadcnui/components/ui/dialog";
+import { Input } from "@rwoc/shadcnui/components/ui/input";
+import { Label } from "@rwoc/shadcnui/components/ui/label";
 
 interface Profile {
   name: string;

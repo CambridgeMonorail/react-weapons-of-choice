@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Toaster } from '@rwoc/shared/components/ui/toaster';
+import { Toaster } from '@rwoc/shadcnui/components/ui/toaster';
 import { routes } from './data/routes';
 import { ErrorBoundary } from './components/ErrorBoundary';
 

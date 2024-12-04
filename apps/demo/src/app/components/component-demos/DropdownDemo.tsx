@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from "@rwoc/shared/components/ui/button";
+import { Button } from "@rwoc/shadcnui/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@rwoc/shared/components/ui/dropdown-menu";
+} from "@rwoc/shadcnui/components/ui/dropdown-menu";
 
 export const DropdownDemo: FC = () => {
   return (
