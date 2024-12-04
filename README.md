@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/logos/rwoc-logo.svg" alt="RWOC Logo">
+</p>
+
 # react-weapons-of-choice
 
 ![Project Status](https://img.shields.io/badge/status-alpha-orange?style=for-the-badge)
