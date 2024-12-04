@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from '@rwoc/shared'; // Import shadcn Button component
+import { Button } from '@rwoc/shadcnui'; // Import shadcn Button component
 
 interface HeroSectionProps {
   title: string;

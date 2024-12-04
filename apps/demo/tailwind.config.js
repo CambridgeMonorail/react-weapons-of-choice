@@ -12,7 +12,7 @@ module.exports = {
     ),
     join(
       __dirname,
-      '../../libs/shared/src/**/*!(*.stories|*.spec).{ts,tsx,html}'
+      '../../libs/shadcnui/src/**/*!(*.stories|*.spec).{ts,tsx,html}'
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],

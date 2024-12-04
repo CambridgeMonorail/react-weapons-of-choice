@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Button } from "@rwoc/shared/components/ui/button";
+import { Button } from "@rwoc/shadcnui/components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,9 +11,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@rwoc/shared/components/ui/form";
-import { Input } from "@rwoc/shared/components/ui/input";
-import { toast } from "@rwoc/shared/hooks/use-toast";
+} from "@rwoc/shadcnui/components/ui/form";
+import { Input } from "@rwoc/shadcnui/components/ui/input";
+import { toast } from "@rwoc/shadcnui/hooks/use-toast";
 
 const formSchema = z.object({
   username: z.string().min(2, {

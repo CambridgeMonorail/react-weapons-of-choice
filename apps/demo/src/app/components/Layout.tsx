@@ -10,7 +10,7 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from '@rwoc/shared';
+} from '@rwoc/shadcnui';
 import { AppSidebar } from './AppSidebar';
 import { ReactNode } from 'react';
 import { Moon, Sun, Github } from 'lucide-react';

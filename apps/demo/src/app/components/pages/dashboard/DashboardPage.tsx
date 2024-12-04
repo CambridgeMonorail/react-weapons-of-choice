@@ -2,7 +2,7 @@ import { FC, useState, useEffect } from 'react';
 import { 
   Button, Card, CardContent, CardDescription, CardHeader, CardTitle, 
   Tabs, TabsContent, TabsList, TabsTrigger 
-} from '@rwoc/shared';
+} from '@rwoc/shadcnui';
 import { CalendarDateRangePicker } from '../components/date-range-picker';
 import { Overview } from '../components/overview';
 import { RecentSales } from '../components/recent-sales';

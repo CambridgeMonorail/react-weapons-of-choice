@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shared';
+import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
 
 interface Feature {
   title: string;

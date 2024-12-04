@@ -9,7 +9,7 @@
 - Adhere to TypeScript best practices, including strict typing and interfaces.
 - Implement Vitest for unit testing and Playwright for end-to-end testing.
 - Ensure all components are accessible and responsive.
-- shadcn reusable components are defined in @rwoc/shared
+- shadcn reusable components are defined in @rwoc/shadcnui
 - Prefer named (explicit) exports rather than default exports for clarity, maintainability, and better tooling support.
 - Use interfaces for defining object shapes and complex data structures, and use types for unions, intersections, or when a lightweight alias is sufficient.
 - Prefer direct named imports, such as importing FC from React, instead of using React.FC.

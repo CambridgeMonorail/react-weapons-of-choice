@@ -2,7 +2,7 @@ import { useState } from "react";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
-import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shared";
+import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shadcnui";
 
 export const CalendarDateRangePicker = ({
   className,

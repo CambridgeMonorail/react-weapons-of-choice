@@ -5,12 +5,12 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@rwoc/shared/components/ui/card';
+} from '@rwoc/shadcnui/components/ui/card';
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from '@rwoc/shared';
+} from '@rwoc/shadcnui';
 import { BarChart, CartesianGrid, XAxis, Bar } from 'recharts';
 
 interface ChartData {

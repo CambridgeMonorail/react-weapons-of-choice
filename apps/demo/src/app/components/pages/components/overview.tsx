@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
-import { useTheme } from '@rwoc/shared';
+import { useTheme } from '@rwoc/shadcnui';
 
 interface DataPoint {
   name: string;
