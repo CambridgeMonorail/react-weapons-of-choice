@@ -17,6 +17,13 @@ export default defineConfig({
     host: 'localhost',
   },
   plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: `@import "../../libs/common-tailwind/src/preflight.css"; @import "../../libs/common-tailwind/src/shadcn-theme.css";`,
+      },
+    },
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

@@ -37,7 +37,7 @@ Modify the tailwind.config.js in your new application to extend the shared confi
 const { join } = require('path');
 
 module.exports = {
-  presets: [require('../../libs/shared/common-tailwind/tailwind.config.js')],
+  presets: [require('../../libs/common-tailwind/tailwind.config.js')],
   content: [
     join(__dirname, 'src/**/*.{js,jsx,ts,tsx,html}'),
     // Automatically include content from dependencies
@@ -74,6 +74,28 @@ In your application's main stylesheet (e.g., styles.css), import the shared Pref
 @import 'libs/shared/common-tailwind/src/lib/shadcn-theme.css';
 
 /* Additional application-specific styles */
+```
+
+Additionally, configure the Vite CSS preprocessor options to ensure proper handling of the imported styles:
+
+```javascript
+// apps/new-app/vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      css: {
+        additionalData: `
+          @import 'libs/shared/common-tailwind/src/lib/preflight.css';
+          @import 'libs/shared/common-tailwind/src/lib/shadcn-theme.css';
+        `,
+      },
+    },
+  },
+});
 ```
 
 This structure allows you to include both the Preflight styles and the custom Shadcn theme. If you prefer to exclude either, simply omit the corresponding @import statement.
