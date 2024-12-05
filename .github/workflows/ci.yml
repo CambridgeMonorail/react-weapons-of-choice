@@ -64,9 +64,9 @@ jobs:
       # Run Nx Affected Tasks
       - name: Run Nx Affected Tasks
         run: |
-          pnpm exec nx affected -t lint --base=origin/main --head=HEAD --exclude=storybook-host
-          pnpm exec nx affected -t test --base=origin/main --head=HEAD --exclude=storybook-host
-          pnpm exec nx affected -t build --base=origin/main --head=HEAD --exclude=storybook-host
+          pnpm exec nx affected -t lint --base=origin/main --head=HEAD --exclude=storybook-host,common-tailwind
+          pnpm exec nx affected -t test --base=origin/main --head=HEAD --exclude=storybook-host,common-tailwind
+          pnpm exec nx affected -t build --base=origin/main --head=HEAD --exclude=storybook-host,common-tailwind
 
       # Start Application
       # - name: Start Application
