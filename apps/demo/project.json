@@ -12,5 +12,6 @@
         "command": "tsc --noEmit"
       }
     }
-  }
+  },
+  "implicitDependencies": ["shadcnui"]
 }
