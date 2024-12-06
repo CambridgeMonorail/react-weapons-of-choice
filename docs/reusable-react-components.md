@@ -16,30 +16,30 @@
 ## Principles of Reusable Component Design
 
 1. Single Responsibility Principle
-Each component should do one thing well. This makes it easier to understand, maintain, and reuse.
+   Each component should do one thing well. This makes it easier to understand, maintain, and reuse.
 2. Favor Composition Over Inheritance
-Build components by combining smaller, reusable parts rather than relying on inheritance. This enables flexibility and customizability.
+   Build components by combining smaller, reusable parts rather than relying on inheritance. This enables flexibility and customizability.
 
 ## Best Practices
 
 ### 1. Extend Native HTML Elements Where Possible
 
-   When creating components that wrap standard HTML elements like ```<button>```, ```<input>```, or ```<select>```, extend their props to inherit all native attributes. This ensures your component behaves like the original while adding custom functionality.
+When creating components that wrap standard HTML elements like `<button>`, `<input>`, or `<select>`, extend their props to inherit all native attributes. This ensures your component behaves like the original while adding custom functionality.
 
 ```tsx
 import React from 'react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
 }
 
 const Button: React.FC<ButtonProps> = ({ variant = 'primary', children, ...rest }) => {
-const className = `btn-${variant}`;
-return (
-<button className={className} {...rest}>
-{children}
-</button>
-);
+  const className = `btn-${variant}`;
+  return (
+    <button className={className} {...rest}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
@@ -58,40 +58,26 @@ Compose complex components using smaller, reusable building blocks. Allow consum
 Example: Hero Component with Composition
 
 ```tsx
-const Hero = ({ children }: { children: React.ReactNode }) => (
+const Hero = ({ children }: { children: React.ReactNode }) => <section className="hero">{children}</section>;
 
-  <section className="hero">{children}</section>
-);
+Hero.Title = ({ children }: { children: React.ReactNode }) => <h1 className="hero-title">{children}</h1>;
 
-Hero.Title = ({ children }: { children: React.ReactNode }) => (
+Hero.Subtitle = ({ children }: { children: React.ReactNode }) => <h2 className="hero-subtitle">{children}</h2>;
 
-  <h1 className="hero-title">{children}</h1>
-);
+Hero.Image = ({ src, alt }: { src: string; alt: string }) => <img className="hero-image" src={src} alt={alt} />;
 
-Hero.Subtitle = ({ children }: { children: React.ReactNode }) => (
-
-  <h2 className="hero-subtitle">{children}</h2>
-);
-
-Hero.Image = ({ src, alt }: { src: string; alt: string }) => (
-<img className="hero-image" src={src} alt={alt} />
-);
-
-Hero.CTA = ({ children }: { children: React.ReactNode }) => (
-
-  <div className="hero-cta">{children}</div>
-);
+Hero.CTA = ({ children }: { children: React.ReactNode }) => <div className="hero-cta">{children}</div>;
 
 // Usage
 const App = () => (
-<Hero>
-<Hero.Image src="image.jpg" alt="Hero" />
-<Hero.Title>Welcome to Our App</Hero.Title>
-<Hero.Subtitle>Make the most of your experience</Hero.Subtitle>
-<Hero.CTA>
-<button>Get Started</button>
-</Hero.CTA>
-</Hero>
+  <Hero>
+    <Hero.Image src="image.jpg" alt="Hero" />
+    <Hero.Title>Welcome to Our App</Hero.Title>
+    <Hero.Subtitle>Make the most of your experience</Hero.Subtitle>
+    <Hero.CTA>
+      <button>Get Started</button>
+    </Hero.CTA>
+  </Hero>
 );
 ```
 
@@ -107,12 +93,7 @@ Design components to allow users to supply their own content or child components
 Example: Component Slots
 
 ```tsx
-const Card = ({ header, content, footer }: {
-header: React.ReactNode;
-content: React.ReactNode;
-footer: React.ReactNode;
-}) => (
-
+const Card = ({ header, content, footer }: { header: React.ReactNode; content: React.ReactNode; footer: React.ReactNode }) => (
   <div className="card">
     <div className="card-header">{header}</div>
     <div className="card-content">{content}</div>
@@ -121,11 +102,7 @@ footer: React.ReactNode;
 );
 
 // Usage
-<Card
-header={<h1>Card Title</h1>}
-content={<p>Card details here.</p>}
-footer={<button>Click Me</button>}
-/>
+<Card header={<h1>Card Title</h1>} content={<p>Card details here.</p>} footer={<button>Click Me</button>} />;
 ```
 
 **Why?**
@@ -138,17 +115,15 @@ footer={<button>Click Me</button>}
 Avoid embedding too much state in reusable components. Instead:
 
 - Use props to receive data and onChange callbacks to notify parents of updates.
--Rely on React Context for shared state across multiple components.
+  -Rely on React Context for shared state across multiple components.
 
 **Example: Controlled Input**
 
 ```tsx
-const TextInput = ({ value, onChange, ...rest }: React.InputHTMLAttributes<HTMLInputElement>) => (
-<input value={value} onChange={onChange} {...rest} />
-);
+const TextInput = ({ value, onChange, ...rest }: React.InputHTMLAttributes<HTMLInputElement>) => <input value={value} onChange={onChange} {...rest} />;
 
 // Usage
-<TextInput value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+<TextInput value={inputValue} onChange={(e) => setInputValue(e.target.value)} />;
 ```
 
 **Why?**
@@ -166,7 +141,7 @@ For shared, reusable components:
 ```tsx
 // Good practice
 export const Button = ({ ...props }) => <button {...props} />;
-export const Input = ({ ...props }) => <input {...props} />; 
+export const Input = ({ ...props }) => <input {...props} />;
 ```
 
 ### 6. Ensure Accessibility
@@ -177,9 +152,9 @@ Example: Accessible Button
 
 ```tsx
 const AccessibleButton = ({ children, ...rest }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
-<button {...rest} aria-label={children?.toString()}>
-{children}
-</button>
+  <button {...rest} aria-label={children?.toString()}>
+    {children}
+  </button>
 );
 ```
 
@@ -196,10 +171,7 @@ Use utility-first CSS (e.g., TailwindCSS) or CSS-in-JS solutions (e.g., styled-c
 
 ```tsx
 const Button = ({ children, variant = 'primary', ...rest }: ButtonProps) => (
-<button
-className={`btn ${variant === 'primary' ? 'btn-primary' : 'btn-secondary'}`}
-{...rest}
->
+  <button className={`btn ${variant === 'primary' ? 'btn-primary' : 'btn-secondary'}`} {...rest}>
     {children}
   </button>
 );
