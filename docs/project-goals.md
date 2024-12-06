@@ -10,9 +10,9 @@
 
 Provide a ready-to-use boilerplate tailored for SPA development, combining the power of:
 
-- Nx for monorepo management.
-- Tailwind CSS for utility-first styling.
-- Shadcn UI for a cohesive component library.
+- ~~Nx for monorepo management.~~
+- ~~Tailwind CSS for utility-first styling.~~
+- ~~Shadcn UI for a cohesive component library.~~
 
 ### 2. Seamless Integration
 
@@ -32,6 +32,8 @@ Boost productivity with:
 - An intuitive, maintainable codebase.
 - Comprehensive documentation.
 - Minimal setup time and maximum efficiency.
+- **Storybook Integration**: Interactive environment for developing and testing UI components.
+- **Component Examples**: Pre-built examples of re-usable components to accelerate development.
 
 ### 5. Community Collaboration
 
