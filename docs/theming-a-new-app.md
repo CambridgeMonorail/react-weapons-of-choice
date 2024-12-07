@@ -130,3 +130,17 @@ These extensions will override or add to the shared theme settings, allowing for
 Run the Application: Start your new application to ensure that both the shared and custom Tailwind CSS configurations are applied correctly.
 Test Components: Check that Shadcn components render with the expected styles, confirming successful integration and customization.
 By following these steps, you can seamlessly integrate a shared Tailwind CSS configuration and Shadcn theme into any new application within your Nx monorepo. This approach promotes consistency across projects while allowing for individual customization to meet specific application requirements.
+
+## 7. Update Documentation
+
+Update the documentation to reflect any theming changes related to the `shell` library components.
+
+```markdown
+- The `Layout` component and all related components are now moved to the `shell` library.
+  - The `Layout` component is now located in `libs/shell/src/lib/Layout.tsx`.
+  - The `AppSidebar` component is now located in `libs/shell/src/lib/AppSidebar.tsx`.
+  - The `SidebarProvider`, `SidebarInset`, and `SidebarTrigger` components are now located in `libs/shell/src/lib/sidebar`.
+  - The `Breadcrumb` components remain in `libs/shadcnui/src/components/ui/breadcrumb.tsx`.
+  - The `Separator` component remains in `libs/shadcnui/src/components/ui/separator.tsx`.
+- The imports in the `Layout` component are updated to reference components from the `shell` library.
+```
