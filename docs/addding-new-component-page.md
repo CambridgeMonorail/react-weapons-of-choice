@@ -62,6 +62,20 @@ npm start
 
 Then, in your browser, visit <http://localhost:4200/new-component> to view the new component page.
 
+## 5. Update Documentation
+
+Update the documentation to reflect the new `shell` library and its components.
+
+```markdown
+- The `Layout` component and all related components are now moved to the `shell` library.
+  - The `Layout` component is now located in `libs/shell/src/lib/Layout.tsx`.
+  - The `AppSidebar` component is now located in `libs/shell/src/lib/AppSidebar.tsx`.
+  - The `SidebarProvider`, `SidebarInset`, and `SidebarTrigger` components are now located in `libs/shell/src/lib/sidebar`.
+  - The `Breadcrumb` components remain in `libs/shadcnui/src/components/ui/breadcrumb.tsx`.
+  - The `Separator` component remains in `libs/shadcnui/src/components/ui/separator.tsx`.
+- The imports in the `Layout` component are updated to reference components from the `shell` library.
+```
+
 ## Summary
 
 By following these steps, you can seamlessly add a new component page to your React SPA's routing system. This methodology promotes consistency and maintainability by centralizing path definitions and systematically updating routes and sidebar navigation.

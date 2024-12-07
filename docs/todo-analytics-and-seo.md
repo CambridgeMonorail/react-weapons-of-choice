@@ -100,3 +100,13 @@ const MyComponent = () => (
 
 - Ensure Accessibility: Ensure that all content is accessible without requiring JavaScript execution, as some crawlers may not execute JavaScript effectively.
 - Fallback Content: Provide meaningful fallback content or server-rendered HTML for critical information.
+
+## 3. Refactored Components Impact on Analytics and SEO
+
+- The `Layout` component and all related components are now moved to the `shell` library.
+  - The `Layout` component is now located in `libs/shell/src/lib/Layout.tsx`.
+  - The `AppSidebar` component is now located in `libs/shell/src/lib/AppSidebar.tsx`.
+  - The `SidebarProvider`, `SidebarInset`, and `SidebarTrigger` components are now located in `libs/shell/src/lib/sidebar`.
+  - The `Breadcrumb` components remain in `libs/shadcnui/src/components/ui/breadcrumb.tsx`.
+  - The `Separator` component remains in `libs/shadcnui/src/components/ui/separator.tsx`.
+- The imports in the `Layout` component are updated to reference components from the `shell` library.

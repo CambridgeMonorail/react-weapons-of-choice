@@ -55,4 +55,31 @@ This workflow keeps the public site updated by deploying the latest build to Git
 
 ---
 
-These workflows streamline CI and deployment processes, ensuring code quality and automated publishing to GitHub Pages.
+## Refactoring Impact on CI/CD Workflows
+
+### Purpose
+
+This section documents the impact of refactoring the `Layout` component and related components to the `shell` library on the CI/CD workflows.
+
+### Key Changes
+
+1. **Component Relocation**:
+   - The `Layout` component and all related components are now moved to the `shell` library.
+     - The `Layout` component is now located in `libs/shell/src/lib/Layout.tsx`.
+     - The `AppSidebar` component is now located in `libs/shell/src/lib/AppSidebar.tsx`.
+     - The `SidebarProvider`, `SidebarInset`, and `SidebarTrigger` components are now located in `libs/shell/src/lib/sidebar`.
+     - The `Breadcrumb` components remain in `libs/shadcnui/src/components/ui/breadcrumb.tsx`.
+     - The `Separator` component remains in `libs/shadcnui/src/components/ui/separator.tsx`.
+   - The imports in the `Layout` component are updated to reference components from the `shell` library.
+
+2. **CI Workflow**:
+   - Ensure that the CI workflow includes the new `shell` library in the affected tasks.
+   - Update the `pnpm exec nx affected` commands to include the `shell` library.
+
+3. **Deploy Workflow**:
+   - Verify that the build process includes the `shell` library components.
+   - Ensure that the deployment to GitHub Pages reflects the changes in the `shell` library.
+
+### Usage
+
+These changes ensure that the CI/CD workflows are updated to accommodate the refactoring of the `Layout` component and related components to the `shell` library, maintaining code quality and automated publishing to GitHub Pages.
