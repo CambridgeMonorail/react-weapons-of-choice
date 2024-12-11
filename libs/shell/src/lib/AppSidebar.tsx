@@ -2,10 +2,10 @@
 
 import * as React from 'react';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shadcnui';
-import { NavMain } from './NavMain';
-import { NavUser } from './NavUser';
-import { TeamSwitcher } from './TeamSwitcher';
-import { sidebarData } from '../data/sidebarData';
+import { useSidebarData } from './sidebarContext';
+import { TeamSwitcher } from './nav/TeamSwitcher';
+import { NavMain } from './nav/NavMain';
+import { NavUser } from './nav/NavUser';
 
 /**
  * AppSidebar component
@@ -32,6 +32,8 @@ import { sidebarData } from '../data/sidebarData';
  * @returns {JSX.Element} The rendered AppSidebar component.
  */
 export const AppSidebar = (props: React.ComponentProps<typeof Sidebar>): JSX.Element => {
+  const sidebarData = useSidebarData();
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
