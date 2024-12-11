@@ -80,7 +80,7 @@ const DashboardPage: FC = () => {
 
   return (
     <div
-      className={`min-h-screen  text-gray-900 flex-col ${
+      className={`min-h-screen  text-primary-900 flex-col ${
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
@@ -132,9 +132,9 @@ const DashboardPage: FC = () => {
             {/* Stats Cards with Trend Arrows and Sparklines */}
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {/* Total Revenue Card */}
-              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              <Card className="border border-gray-200 bg-primary-50 p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-semibold text-gray-700">
+                  <CardTitle className="text-sm font-semibold text-primary-700">
                     Total Revenue
                   </CardTitle>
                   {/* Icon remains the same */}
@@ -154,7 +154,7 @@ const DashboardPage: FC = () => {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-gray-900">
+                  <div className="text-2xl font-bold text-primary-900">
                     $45,231.89
                   </div>
                   {/* Trend Section */}
@@ -168,9 +168,9 @@ const DashboardPage: FC = () => {
               </Card>
 
               {/* Subscriptions Card */}
-              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              <Card className="border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-semibold text-gray-700">
+                  <CardTitle className="text-sm font-semibold text-primary-700">
                     Subscriptions
                   </CardTitle>
                   {/* Icon remains the same */}
@@ -197,7 +197,7 @@ const DashboardPage: FC = () => {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-gray-900">+2,350</div>
+                  <div className="text-2xl font-bold text-primary-900">+2,350</div>
                   <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
                     <ArrowUpIcon />
                     <span>+180.1%</span>
@@ -208,9 +208,9 @@ const DashboardPage: FC = () => {
               </Card>
 
               {/* Sales Card */}
-              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              <Card className="border border-gray-200 bg-primary-50 p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-semibold text-gray-700">
+                  <CardTitle className="text-sm font-semibold text-primary-700">
                     Sales
                   </CardTitle>
                   {/* Icon remains the same */}
@@ -240,7 +240,7 @@ const DashboardPage: FC = () => {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-gray-900">
+                  <div className="text-2xl font-bold text-primary-900">
                     +12,234
                   </div>
                   <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
@@ -253,9 +253,9 @@ const DashboardPage: FC = () => {
               </Card>
 
               {/* Active Now Card */}
-              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              <Card className="border border-gray-200 bg-primary-50 p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle className="text-sm font-semibold text-gray-700">
+                  <CardTitle className="text-sm font-semibold text-primary-700">
                     Active Now
                   </CardTitle>
                   {/* Icon remains the same */}
@@ -275,7 +275,7 @@ const DashboardPage: FC = () => {
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-gray-900">+573</div>
+                  <div className="text-2xl font-bold text-primary-900">+573</div>
                   <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
                     <ArrowUpIcon />
                     <span>+201</span>
@@ -289,7 +289,7 @@ const DashboardPage: FC = () => {
 
             {/* Overview and Recent Sales */}
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-1 md:col-span-2 lg:col-span-4  border border-gray-200 bg-white hover:shadow-sm transition-shadow">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-4  border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Visitors
@@ -316,7 +316,7 @@ const DashboardPage: FC = () => {
                 </CardFooter>
               </Card>
 
-              <Card className="col-span-1 md:col-span-2 lg:col-span-3  border border-gray-200 bg-white hover:shadow-sm transition-shadow">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-3  border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Recent Sales
