@@ -1,13 +1,20 @@
 import { FC, useState, useEffect } from 'react';
-import { 
-  Button, Card, CardContent, CardDescription, CardHeader, CardTitle, 
-  Tabs, TabsContent, TabsList, TabsTrigger 
+import {
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
 } from '@rwoc/shadcnui';
 import { CalendarDateRangePicker } from '../components/date-range-picker';
 import { Overview } from '../components/overview';
 import { RecentSales } from '../components/recent-sales';
 import { salesData } from '../../../data/salesData';
-
 
 const DashboardPage: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,145 +31,180 @@ const DashboardPage: FC = () => {
   }, []);
 
   return (
-    <div className={`flex-col ${isMobile ? 'flex' : 'hidden'} md:flex`}>
-      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Dashboard</h2>
-          <div className="flex items-center space-x-2">
+    <div
+      className={`min-h-screen bg-neutral-50 text-gray-900 flex-col ${
+        isMobile ? 'flex' : 'hidden'
+      } md:flex`}
+    >
+      <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Dashboard
+          </h2>
+          <div className="flex items-center space-x-3">
             <CalendarDateRangePicker />
-            <Button>Download</Button>
+            <Button
+              variant="default"
+              className="bg-purple-700 text-white hover:bg-purple-800 transition-colors"
+            >
+              Download
+            </Button>
           </div>
         </div>
+
+        {/* Tabs Section */}
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="flex flex-wrap">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="analytics" disabled>
+          <TabsList className="border-b border-gray-200 bg-white">
+            <TabsTrigger
+              value="overview"
+              className="
+                py-2 text-sm font-medium text-gray-700 
+                hover:text-gray-900 transition-colors 
+                data-[state=active]:border-b-2 data-[state=active]:border-purple-700 data-[state=active]:text-purple-700
+              "
+            >
+              Overview
+            </TabsTrigger>
+            <TabsTrigger
+              value="analytics"
+              disabled
+              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+            >
               Analytics
             </TabsTrigger>
-            <TabsTrigger value="reports" disabled>
+            <TabsTrigger
+              value="reports"
+              disabled
+              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+            >
               Reports
             </TabsTrigger>
-            <TabsTrigger value="notifications" disabled>
+            <TabsTrigger
+              value="notifications"
+              disabled
+              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+            >
               Notifications
             </TabsTrigger>
           </TabsList>
-          <TabsContent value="overview" className="space-y-4">
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">
+
+          <TabsContent value="overview" className="space-y-6">
+            {/* Stats Cards */}
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <CardTitle className="text-sm font-semibold text-gray-700">
                     Total Revenue
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
                     fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4 text-muted-foreground"
+                    className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">$45,231.89</div>
-                  <p className="text-xs text-muted-foreground">
-                    +20.1% from last month
-                  </p>
+                  <div className="text-2xl font-bold text-gray-900">
+                    $45,231.89
+                  </div>
+                  <p className="text-xs text-gray-500">+20.1% from last month</p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">
+
+              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <CardTitle className="text-sm font-semibold text-gray-700">
                     Subscriptions
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
                     fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4 text-muted-foreground"
+                    className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">+2350</div>
-                  <p className="text-xs text-muted-foreground">
+                  <div className="text-2xl font-bold text-gray-900">+2350</div>
+                  <p className="text-xs text-gray-500">
                     +180.1% from last month
                   </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">Sales</CardTitle>
+
+              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <CardTitle className="text-sm font-semibold text-gray-700">
+                    Sales
+                  </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
                     fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4 text-muted-foreground"
+                    className="h-5 w-5 text-gray-400"
                   >
-                    <rect width="20" height="14" x="2" y="5" rx="2" />
-                    <path d="M2 10h20" />
+                    <rect width="20" height="14" x="2" y="5" rx="2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 10h20" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">+12,234</div>
-                  <p className="text-xs text-muted-foreground">
-                    +19% from last month
-                  </p>
+                  <div className="text-2xl font-bold text-gray-900">
+                    +12,234
+                  </div>
+                  <p className="text-xs text-gray-500">+19% from last month</p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium">
+
+              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <CardTitle className="text-sm font-semibold text-gray-700">
                     Active Now
                   </CardTitle>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
                     fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="h-4 w-4 text-muted-foreground"
+                    className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">+573</div>
-                  <p className="text-xs text-muted-foreground">
-                    +201 since last hour
-                  </p>
+                  <div className="text-2xl font-bold text-gray-900">+573</div>
+                  <p className="text-xs text-gray-500">+201 since last hour</p>
                 </CardContent>
               </Card>
             </div>
-            <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-1 md:col-span-2 lg:col-span-4">
+
+            {/* Overview and Recent Sales */}
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-4 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition-shadow">
                 <CardHeader>
-                  <CardTitle>Overview</CardTitle>
+                  <CardTitle className="text-lg font-semibold text-gray-800">
+                    Overview
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="pl-2">
                   <Overview />
                 </CardContent>
               </Card>
-              <Card className="col-span-1 md:col-span-2 lg:col-span-3">
+
+              <Card className="col-span-1 md:col-span-2 lg:col-span-3 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition-shadow">
                 <CardHeader>
-                  <CardTitle>Recent Sales</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-lg font-semibold text-gray-800">
+                    Recent Sales
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
                     You made 265 sales this month.
                   </CardDescription>
                 </CardHeader>
