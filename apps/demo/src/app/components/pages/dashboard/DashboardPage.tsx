@@ -4,6 +4,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
   Tabs,
@@ -15,6 +16,53 @@ import { CalendarDateRangePicker } from '../components/date-range-picker';
 import { Overview } from '../components/overview';
 import { RecentSales } from '../components/recent-sales';
 import { salesData } from '../../../data/salesData';
+import { TrendingUp } from 'lucide-react';
+
+// Simple arrow icons (replace with your own icon set or heroicons if available)
+const ArrowUpIcon = () => (
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+  >
+    <path d="M5 12l5-5 5 5" />
+  </svg>
+);
+
+const ArrowDownIcon = () => (
+  <svg
+    className="w-4 h-4"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    viewBox="0 0 24 24"
+  >
+    <path d="M19 12l-5 5-5-5" />
+  </svg>
+);
+
+// A small sparkline component example (static for demo)
+const Sparkline = ({ color = 'text-green-600' }: { color?: string }) => (
+  <svg
+    className={`w-full h-6 mt-1 ${color}`}
+    viewBox="0 0 50 20"
+    preserveAspectRatio="none"
+  >
+    <polyline
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      // A sample line that goes up and down (replace with real data)
+      points="0,15 10,12 20,10 30,8 40,11 50,7"
+    />
+  </svg>
+);
 
 const DashboardPage: FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,7 +80,7 @@ const DashboardPage: FC = () => {
 
   return (
     <div
-      className={`min-h-screen bg-neutral-50 text-gray-900 flex-col ${
+      className={`min-h-screen  text-gray-900 flex-col ${
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
@@ -55,17 +103,8 @@ const DashboardPage: FC = () => {
 
         {/* Tabs Section */}
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="border-b border-gray-200 bg-white">
-            <TabsTrigger
-              value="overview"
-              className="
-                py-2 text-sm font-medium text-gray-700 
-                hover:text-gray-900 transition-colors 
-                data-[state=active]:border-b-2 data-[state=active]:border-purple-700 data-[state=active]:text-purple-700
-              "
-            >
-              Overview
-            </TabsTrigger>
+          <TabsList className="border-b border-gray-200">
+            <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger
               value="analytics"
               disabled
@@ -90,13 +129,15 @@ const DashboardPage: FC = () => {
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
-            {/* Stats Cards */}
+            {/* Stats Cards with Trend Arrows and Sparklines */}
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              {/* Total Revenue Card */}
+              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-sm font-semibold text-gray-700">
                     Total Revenue
                   </CardTitle>
+                  {/* Icon remains the same */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -104,22 +145,35 @@ const DashboardPage: FC = () => {
                     stroke="currentColor"
                     className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-gray-900">
                     $45,231.89
                   </div>
-                  <p className="text-xs text-gray-500">+20.1% from last month</p>
+                  {/* Trend Section */}
+                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
+                    <ArrowUpIcon />
+                    <span>+20.1%</span>
+                    <span className="text-gray-500">MoM</span>
+                  </div>
+                  <Sparkline color="text-green-600" />
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              {/* Subscriptions Card */}
+              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-sm font-semibold text-gray-700">
                     Subscriptions
                   </CardTitle>
+                  {/* Icon remains the same */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -127,24 +181,39 @@ const DashboardPage: FC = () => {
                     stroke="currentColor"
                     className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <circle cx="9" cy="7" r="4" />
+                    <path
+                      d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-gray-900">+2350</div>
-                  <p className="text-xs text-gray-500">
-                    +180.1% from last month
-                  </p>
+                  <div className="text-2xl font-bold text-gray-900">+2,350</div>
+                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
+                    <ArrowUpIcon />
+                    <span>+180.1%</span>
+                    <span className="text-gray-500">MoM</span>
+                  </div>
+                  <Sparkline color="text-green-600" />
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              {/* Sales Card */}
+              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-sm font-semibold text-gray-700">
                     Sales
                   </CardTitle>
+                  {/* Icon remains the same */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -152,23 +221,44 @@ const DashboardPage: FC = () => {
                     stroke="currentColor"
                     className="h-5 w-5 text-gray-400"
                   >
-                    <rect width="20" height="14" x="2" y="5" rx="2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2 10h20" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <rect
+                      width="20"
+                      height="14"
+                      x="2"
+                      y="5"
+                      rx="2"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M2 10h20"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-gray-900">
                     +12,234
                   </div>
-                  <p className="text-xs text-gray-500">+19% from last month</p>
+                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
+                    <ArrowUpIcon />
+                    <span>+19%</span>
+                    <span className="text-gray-500">MoM</span>
+                  </div>
+                  <Sparkline color="text-green-600" />
                 </CardContent>
               </Card>
 
-              <Card className="rounded-lg border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
+              {/* Active Now Card */}
+              <Card className="border border-gray-200 bg-white p-4 hover:shadow-sm transition-shadow">
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
                   <CardTitle className="text-sm font-semibold text-gray-700">
                     Active Now
                   </CardTitle>
+                  {/* Icon remains the same */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -176,30 +266,57 @@ const DashboardPage: FC = () => {
                     stroke="currentColor"
                     className="h-5 w-5 text-gray-400"
                   >
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"/>
+                    <path
+                      d="M22 12h-4l-3 9L9 3l-3 9H2"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-gray-900">+573</div>
-                  <p className="text-xs text-gray-500">+201 since last hour</p>
+                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
+                    <ArrowUpIcon />
+                    <span>+201</span>
+                    <span className="text-gray-500">HoH</span>{' '}
+                    {/* Hour-over-hour */}
+                  </div>
+                  <Sparkline color="text-green-600" />
                 </CardContent>
               </Card>
             </div>
 
             {/* Overview and Recent Sales */}
             <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-1 md:col-span-2 lg:col-span-4 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition-shadow">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-4  border border-gray-200 bg-white hover:shadow-sm transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-gray-800">
-                    Overview
+                    Visitors
                   </CardTitle>
+                  <CardDescription>
+                    Showing total visitors for the last 6 months
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="pl-2">
                   <Overview />
                 </CardContent>
+                <CardFooter>
+                  <div className="flex w-full items-start gap-2 text-sm">
+                    <div className="grid gap-2">
+                      <div className="flex items-center gap-2 font-medium leading-none">
+                        Trending up by 5.2% this month{' '}
+                        <TrendingUp className="h-4 w-4" />
+                      </div>
+                      <div className="flex items-center gap-2 leading-none text-muted-foreground">
+                        January - June 2024
+                      </div>
+                    </div>
+                  </div>
+                </CardFooter>
               </Card>
 
-              <Card className="col-span-1 md:col-span-2 lg:col-span-3 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition-shadow">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-3  border border-gray-200 bg-white hover:shadow-sm transition-shadow">
                 <CardHeader>
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Recent Sales
