@@ -1,6 +1,7 @@
 import { SidebarConfiguration } from '../types/sidebarTypes';
-import { Swords, AudioWaveform, Command, SquareTerminal, Bot, BookOpen, Settings2 } from 'lucide-react';
+import { Swords, AudioWaveform, SquareTerminal, Bot, BookOpen, Settings2 } from 'lucide-react';
 import { paths } from '../constants/paths';
+
 
 export const sidebarData: SidebarConfiguration = {
   user: {
@@ -18,11 +19,6 @@ export const sidebarData: SidebarConfiguration = {
       name: 'RWOC Corp.',
       logo: AudioWaveform,
       plan: 'Startup',
-    },
-    {
-      name: 'Other Corp.',
-      logo: Command,
-      plan: 'Free',
     },
   ],
   navMain: [

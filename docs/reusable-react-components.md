@@ -186,3 +186,57 @@ const Button = ({ children, variant = 'primary', ...rest }: ButtonProps) => (
 - [ ] Follow accessibility best practices.
 - [ ] Write concise, modular, and DRY components.
 - [ ] Use named exports for reusable component libraries.
+
+## Best Practices for Using the New `shell` Library Components
+
+### 1. Organize Components Logically
+
+Ensure that components within the `shell` library are organized logically. For example, group related components like `SidebarProvider`, `SidebarInset`, and `SidebarTrigger` together.
+
+### 2. Update Imports Consistently
+
+When using components from the `shell` library, update imports consistently across your application. This helps maintain a clean and understandable codebase.
+
+```tsx
+import { Layout, AppSidebar, SidebarProvider, SidebarInset, SidebarTrigger } from '@rwoc/shell';
+```
+
+### 3. Decompose Components for Reusability
+
+Decompose complex components into smaller, reusable parts. For example, the `Layout` component can be broken down into `Header`, `Breadcrumb`, and `ThemeToggle` components.
+
+### 4. Use Context for Shared State
+
+Utilize React Context to manage shared state across components. For example, the `SidebarProvider` can be used to provide the sidebar state to all child components without passing props down the component tree.
+
+### 5. Follow Accessibility and Responsiveness Best Practices
+
+Ensure that all components are accessible and responsive. Use semantic HTML and ARIA attributes to enhance usability for all users.
+
+### 6. Apply Tailwind CSS for Consistent Styling
+
+Use Tailwind CSS classes for component styling and prefer shadcn/ui components for consistent UI elements. This ensures a cohesive design language across your application.
+
+### 7. Write Clean, Modern, Type-Safe Code
+
+Adhere to TypeScript best practices, including strict typing and the use of interfaces. Write clean, modern, type-safe React functional components that emphasize security, robustness, maintainability, readability, separation of concerns, and the DRY principle.
+
+### 8. Implement Testing
+
+Implement Vitest for unit testing and Playwright for end-to-end testing. Ensure that all components are thoroughly tested to maintain code quality and reliability.
+
+### 9. Document Components
+
+Provide comprehensive documentation for each component in the `shell` library. This helps other developers understand how to use the components effectively and promotes consistency across the codebase.
+
+### 10. Use Named Exports
+
+Prefer named (explicit) exports over default exports for clarity and better tooling support. This makes it easier to identify and import specific components from the `shell` library.
+
+```tsx
+// Good practice
+export const Layout = ({ ...props }) => <div {...props} />;
+export const AppSidebar = ({ ...props }) => <div {...props} />;
+```
+
+By following these best practices, you can effectively use the new `shell` library components to build a maintainable, scalable, and high-quality React application.

@@ -20,7 +20,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       css: {
-        additionalData: `@import "../../libs/common-tailwind/src/preflight.css"; @import "../../libs/common-tailwind/src/shadcn-theme.css";`,
+        additionalData: `@import "../../../libs/common-tailwind/src/preflight.css"; @import "../../../libs/common-tailwind/src/shadcn-theme.css";`,
       },
     },
   },

@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "paths": {
       "@rwoc/shadcnui": ["libs/shadcnui/src/index.ts"],
-      "@rwoc/shadcnui/*": ["libs/shadcnui/src/*"]
+      "@rwoc/shadcnui/*": ["libs/shadcnui/src/*"],
+      "@rwoc/shell": ["libs/shell/src/index.ts"],
     }
   },
   "ts-node": {

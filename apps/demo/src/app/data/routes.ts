@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { LandingPage } from '../components/landing-page/LandingPage';
-import { Layout } from '../components/Layout';
+
 import { NotFound } from '../components/NotFound';
 import { AboutPage } from '../components/pages/AboutPage';
 import { FeaturesPage } from '../components/pages/FeaturesPage';
@@ -24,6 +24,8 @@ import { StatusBoardPage } from '../components/pages/StatusBoardPage';
 import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
 import { paths } from '../constants/paths';
+import { Layout } from '@rwoc/shell';
+import { sidebarData } from '../data/sidebarData'; // Adjust the import path as necessary
 
 /**
  * Defines the routes for the application.
@@ -38,26 +40,26 @@ import { paths } from '../constants/paths';
  */
 export const routes: AppRoute[] = [
   { path: paths.landing, element: createElement(LandingPage) },
-  { path: paths.home, element: createElement(Layout, null, createElement(DashboardPage)) },
-  { path: paths.dashboard, element: createElement(Layout, null, createElement(DashboardPage)) },
-  { path: paths.about, element: createElement(Layout, null, createElement(AboutPage)) },
-  { path: paths.features, element: createElement(Layout, null, createElement(FeaturesPage)) },
-  { path: paths.pricing, element: createElement(Layout, null, createElement(PricingPage)) },
-  { path: paths.faq, element: createElement(Layout, null, createElement(FAQPage)) },
-  { path: paths.contact, element: createElement(Layout, null, createElement(ContactPage)) },
-  { path: paths.blog, element: createElement(Layout, null, createElement(BlogPage)) },
-  { path: paths.blogPost, element: createElement(Layout, null, createElement(IndividualBlogPostPage)) },
-  { path: paths.termsAndConditions, element: createElement(Layout, null, createElement(TermsAndConditionsPage)) },
-  { path: paths.components.demoButton, element: createElement(Layout, null, createElement(ButtonDemo)) },
-  { path: paths.components.demoCard, element: createElement(Layout, null, createElement(CardDemo)) },
-  { path: paths.components.demoChart, element: createElement(Layout, null, createElement(ChartDemo)) },
-  { path: paths.components.demoDialog, element: createElement(Layout, null, createElement(DialogDemo)) },
-  { path: paths.components.demoDropdown, element: createElement(Layout, null, createElement(DropdownDemo)) },
-  { path: paths.components.demoForm, element: createElement(Layout, null, createElement(FormDemo)) },
-  { path: paths.components.demoTabs, element: createElement(Layout, null, createElement(TabsDemo)) },
-  { path: paths.components.demoToggle, element: createElement(Layout, null, createElement(ToggleDemo)) },
-  { path: paths.components.demoTooltip, element: createElement(Layout, null, createElement(TooltipDemo)) },
-  { path: paths.colorPalette, element: createElement(Layout, null, createElement(ColorPalettePage)) },
-  { path: paths.statusBoard, element: createElement(Layout, null, createElement(StatusBoardPage)) },
+  { path: paths.home, element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
+  { path: paths.dashboard, element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
+  { path: paths.about, element: createElement(Layout, { sidebarData, children: createElement(AboutPage) }) },
+  { path: paths.features, element: createElement(Layout, { sidebarData, children: createElement(FeaturesPage) }) },
+  { path: paths.pricing, element: createElement(Layout, { sidebarData, children: createElement(PricingPage) }) },
+  { path: paths.faq, element: createElement(Layout, { sidebarData, children: createElement(FAQPage) }) },
+  { path: paths.contact, element: createElement(Layout, { sidebarData, children: createElement(ContactPage) }) },
+  { path: paths.blog, element: createElement(Layout, { sidebarData, children: createElement(BlogPage) }) },
+  { path: paths.blogPost, element: createElement(Layout, { sidebarData, children: createElement(IndividualBlogPostPage) }) },
+  { path: paths.termsAndConditions, element: createElement(Layout, { sidebarData, children: createElement(TermsAndConditionsPage) }) },
+  { path: paths.components.demoButton, element: createElement(Layout, { sidebarData, children: createElement(ButtonDemo) }) },
+  { path: paths.components.demoCard, element: createElement(Layout, { sidebarData, children: createElement(CardDemo) }) },
+  { path: paths.components.demoChart, element: createElement(Layout, { sidebarData, children: createElement(ChartDemo) }) },
+  { path: paths.components.demoDialog, element: createElement(Layout, { sidebarData, children: createElement(DialogDemo) }) },
+  { path: paths.components.demoDropdown, element: createElement(Layout, { sidebarData, children: createElement(DropdownDemo) }) },
+  { path: paths.components.demoForm, element: createElement(Layout, { sidebarData, children: createElement(FormDemo) }) },
+  { path: paths.components.demoTabs, element: createElement(Layout, { sidebarData, children: createElement(TabsDemo) }) },
+  { path: paths.components.demoToggle, element: createElement(Layout, { sidebarData, children: createElement(ToggleDemo) }) },
+  { path: paths.components.demoTooltip, element: createElement(Layout, { sidebarData, children: createElement(TooltipDemo) }) },
+  { path: paths.colorPalette, element: createElement(Layout, { sidebarData, children: createElement(ColorPalettePage) }) },
+  { path: paths.statusBoard, element: createElement(Layout, { sidebarData, children: createElement(StatusBoardPage) }) },
   { path: paths.notFound, element: createElement(NotFound) },
 ];

@@ -1,5 +1,6 @@
-@import '../../libs/common-tailwind/src/preflight.css';
-@import '../../libs/common-tailwind/src/shadcn-theme.css';
+
+@import '../../../libs/common-tailwind/src/preflight.css';
+@import '../../../libs/common-tailwind/src/shadcn-theme.css';
 
 @layer base {
   * {
