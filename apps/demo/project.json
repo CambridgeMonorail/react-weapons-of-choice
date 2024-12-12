@@ -13,5 +13,5 @@
       }
     }
   },
-  "implicitDependencies": ["shadcnui", "shell"]
+  "implicitDependencies": ["shadcnui", "shell", "landing"]
 }
