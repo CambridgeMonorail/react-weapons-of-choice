@@ -6,9 +6,10 @@ import react from '@vitejs/plugin-react';
 
 const config: StorybookConfig = {
   stories: [
-    '../src/lib/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
     '../../../apps/demo/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
     '../../../libs/shadcnui/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../../../libs/landing/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+    '../../../libs/shadcnui-blocks/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
   ],
   addons: ['@storybook/addon-essentials'],
   framework: {
