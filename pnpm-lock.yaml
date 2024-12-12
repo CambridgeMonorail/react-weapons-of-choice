@@ -339,6 +339,8 @@ importers:
 
   libs/shadcnui: {}
 
+  libs/shell: {}
+
   libs/storybook-host: {}
 
 packages:

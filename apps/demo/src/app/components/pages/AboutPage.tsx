@@ -6,13 +6,12 @@ import {
   CardTitle,
   CardDescription,
 } from '@rwoc/shadcnui/components/ui/card';
-import { HeroSection } from '../landing-page/HeroSection';
-import { CommunitySection } from '../landing-page/CommunitySection';
-import { Footer } from '../landing-page/Footer';
+
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
 import TestimonialsSection from './components/Testimonials';
+import { CommunitySection, Footer, HeroSection } from '@rwoc/landing';
 
 interface TeamMember {
   name: string;

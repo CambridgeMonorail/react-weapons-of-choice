@@ -1,15 +1,10 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Twitter } from 'lucide-react';
-import { FeaturesSection } from './FeaturesSection';
-import { AboutSection } from './AboutSection';
-import { CommunitySection } from './CommunitySection';
-import { DemoSection } from './DemoSection';
-import { Footer } from './Footer';
-import { GetStartedSection } from './GetStartedSection';
-import { HeroSection } from './HeroSection';
+
 import logoSrc from '../../../assets/images/rwoc-logo.png';
 import { Logo } from '../shared/Logo';
+import { AboutSection, CommunitySection, DemoSection, FeaturesSection, Footer, GetStartedSection, HeroSection } from '@rwoc/landing';
 
 export const LandingPage: FC = () => {
   const navigate = useNavigate();

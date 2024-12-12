@@ -77,7 +77,7 @@ const DashboardPage: FC = () => {
 
   return (
     <div
-      className={`min-h-screen text-primary-900 flex-col ${
+      className={`h-full min-h-full text-primary-900 flex-col ${
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
