@@ -1,13 +1,13 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Twitter } from 'lucide-react';
-import { FeaturesSection } from './FeaturesSection';
-import { AboutSection } from './AboutSection';
-import { CommunitySection } from './CommunitySection';
-import { DemoSection } from './DemoSection';
-import { Footer } from './Footer';
-import { GetStartedSection } from './GetStartedSection';
-import { HeroSection } from './HeroSection';
+import { FeaturesSection } from '../../../../../../libs/landing/src/lib/components/FeaturesSection';
+import { AboutSection } from '../../../../../../libs/landing/src/lib/components/AboutSection';
+import { CommunitySection } from '../../../../../../libs/landing/src/lib/components/CommunitySection';
+import { DemoSection } from '../../../../../../libs/landing/src/lib/components/DemoSection';
+import { Footer } from '../../../../../../libs/landing/src/lib/components/Footer';
+import { GetStartedSection } from '../../../../../../libs/landing/src/lib/components/GetStartedSection';
+import { HeroSection } from '../../../../../../libs/landing/src/lib/components/HeroSection';
 import logoSrc from '../../../assets/images/rwoc-logo.png';
 import { Logo } from '../shared/Logo';
 

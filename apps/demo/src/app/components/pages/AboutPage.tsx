@@ -6,9 +6,9 @@ import {
   CardTitle,
   CardDescription,
 } from '@rwoc/shadcnui/components/ui/card';
-import { HeroSection } from '../landing-page/HeroSection';
-import { CommunitySection } from '../landing-page/CommunitySection';
-import { Footer } from '../landing-page/Footer';
+import { HeroSection } from '../../../../../../libs/landing/src/lib/components/HeroSection';
+import { CommunitySection } from '../../../../../../libs/landing/src/lib/components/CommunitySection';
+import { Footer } from '../../../../../../libs/landing/src/lib/components/Footer';
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
