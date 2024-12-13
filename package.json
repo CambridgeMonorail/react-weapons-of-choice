@@ -35,7 +35,7 @@
     "precommit": "pnpm run lint:all && pnpm run type-check:all && pnpm run build:all && pnpm run test:all ",
     "prepare": "husky",
     "serve:demo": "nx serve demo",
-    "serve:storybook": "STORYBOOK_DISABLE_TELEMETRY=true nx storybook storybook-host",
+    "serve:storybook": "cross-env STORYBOOK_DISABLE_TELEMETRY=true nx storybook storybook-host",
     "test:affected": "nx affected --target=test",
     "test:all": "nx run-many --target=test --all",
     "test:demo": "nx test demo",

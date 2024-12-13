@@ -1,12 +1,34 @@
 import { FC } from 'react';
 import { LucideProps } from 'lucide-react';
 
+/**
+ * Props for the Footer component.
+ */
 interface FooterProps {
+  /**
+   * Array of navigation links to be displayed in the footer.
+   * Each link should have a text and a URL.
+   */
   navigationLinks: { text: string; url: string }[];
+
+  /**
+   * Array of social media icons to be displayed in the footer.
+   * Each icon should be a React component and a URL.
+   */
   socialMediaIcons: { icon: FC<LucideProps>; url: string }[];
+
+  /**
+   * Text to be displayed as the copyright information.
+   */
   copyrightText: string;
 }
 
+/**
+ * Footer component for displaying navigation links, social media icons, and copyright information.
+ * 
+ * @param {FooterProps} props - Props for the Footer component.
+ * @returns {JSX.Element} The rendered Footer component.
+ */
 export const Footer: FC<FooterProps> = ({
   navigationLinks,
   socialMediaIcons,

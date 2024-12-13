@@ -6,13 +6,26 @@ interface Step {
   stepDescription: string;
 }
 
+/**
+ * Props for the GetStartedSection component.
+ */
 interface GetStartedSectionProps {
+  /** The title of the section */
   title: string;
+  /** An array of steps to display */
   steps: Step[];
+  /** The text to display on the button */
   buttonText: string;
+  /** The action to perform when the button is clicked */
   buttonAction: () => void;
 }
 
+/**
+ * A section component that displays a title, a list of steps, and a button.
+ * 
+ * @param {GetStartedSectionProps} props - The props for the component.
+ * @returns {JSX.Element} The rendered component.
+ */
 const GetStartedSection: FC<GetStartedSectionProps> = ({ title, steps, buttonText, buttonAction }) => {
   return (
     <section className="text-center py-20 bg-background text-primary w-full">
@@ -28,6 +41,7 @@ const GetStartedSection: FC<GetStartedSectionProps> = ({ title, steps, buttonTex
         size="lg"
         onClick={buttonAction}
         className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+        aria-label={buttonText}
       >
         {buttonText}
       </Button>
