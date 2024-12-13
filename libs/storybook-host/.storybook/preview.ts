@@ -1,1 +1,1 @@
-import '../../../apps/demo/src/styles.class';
+import '../../../apps/demo/src/styles.css';
