@@ -37,7 +37,7 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: '../../libs/common-tailwind/vite.config.ts',
+        viteConfigPath: 'libs/common-tailwind/vite.config.ts',
       },
     },
   },
