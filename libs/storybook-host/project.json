@@ -37,7 +37,7 @@
       "outputs": ["{options.outputDir}"],
       "cache": true,
       "options": {
-        "outputDir": "dist/storybook-host",
+        "outputDir": "libs/storybook-host/dist",
         "configDir": "libs/storybook-host/.storybook"
       },
       "configurations": {
@@ -56,7 +56,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "storybook-host:build-storybook",
-        "staticFilePath": "dist/storybook-host"
+        "staticFilePath": "libs/storybook/storybook-host/dist"
       },
       "configurations": {
         "ci": {
