@@ -1,35 +1,60 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import { mergeConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-
 const config: StorybookConfig = {
-  stories: [
-    '../../../apps/demo/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
-    '../../../libs/shadcnui/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
-    '../../../libs/landing/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
-    '../../../libs/shadcnui-blocks/**/*.@(mdx|stories.@(js|jsx|ts|tsx))',
+  stories: ['../../**/*.mdx', '../../**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    'storybook-dark-mode',
+    '@storybook/addon-themes',
+    {
+      name: '@storybook/addon-styling-webpack',
+      options: {
+        rules: [
+          // Replaces existing CSS rules to support PostCSS
+          {
+            test: /\.css$/,
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: { importLoaders: 1 },
+              },
+              {
+                // Gets options from `postcss.config.js` in your project root
+                loader: 'postcss-loader',
+                options: { implementation: require.resolve('postcss') },
+              },
+            ],
+          },
+        ],
+      },
+    },
   ],
-  addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',
-    options: {},
-  },
-  viteFinal: async (config) =>
-    mergeConfig(config, {
-      plugins: [react(), nxViteTsPaths()],
-      css: {
-        postcss: {
-          plugins: [
-            require('tailwindcss')({
-              config: '../../../apps/demo/tailwind.config.js', // Ensure this path points to your Tailwind config
-            }),
-            require('autoprefixer'),
-          ],
-        },
+    options: {
+      builder: {
+        viteConfigPath: '../../libs/common-tailwind/vite.config.ts',
       },
-    }),
+    },
+  },
+  docs: {
+    autodocs: 'tag',
+    defaultName: 'Documentation',
+  },
+  staticDirs: ['./assets'],
+  viteFinal: async (config, { configType }) => {
+    // Define 'process.env'
+    config.define = {
+      ...config.define,
+      'process.env': process.env,
+    };
+
+    return config;
+  },
 };
 
 export default config;
