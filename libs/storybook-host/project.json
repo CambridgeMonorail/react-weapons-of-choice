@@ -37,7 +37,7 @@
       "outputs": ["{options.outputDir}"],
       "cache": true,
       "options": {
-        "outputDir": "libs/storybook-host/dist",
+        "outputDir": "dist/apps/demo/storybook",
         "configDir": "libs/storybook-host/.storybook"
       },
       "configurations": {
