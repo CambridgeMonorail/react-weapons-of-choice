@@ -58,8 +58,8 @@ jobs:
           retry pnpm install --frozen-lockfile
 
       # Install Playwright Browsers
-      - name: Install Playwright Browsers
-        run: pnpm exec playwright install
+      # - name: Install Playwright Browsers
+      #   run: pnpm exec playwright install
 
       # Run Nx Affected Tasks
       - name: Run Nx Affected Tasks
