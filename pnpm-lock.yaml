@@ -207,6 +207,9 @@ importers:
       '@storybook/addon-a11y':
         specifier: ^8.4.7
         version: 8.4.7(storybook@8.4.7(prettier@2.8.8))
+      '@storybook/addon-actions':
+        specifier: ^8.4.7
+        version: 8.4.7(storybook@8.4.7(prettier@2.8.8))
       '@storybook/addon-docs':
         specifier: ^8.4.7
         version: 8.4.7(@types/react@18.3.1)(storybook@8.4.7(prettier@2.8.8))

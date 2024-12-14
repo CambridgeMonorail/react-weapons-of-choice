@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AboutSection } from './AboutSection';
 
 const meta: Meta<typeof AboutSection> = {
-  title: 'Landing/AboutSection',
+  title: 'Landing/About Section',
   component: AboutSection,
   tags: ['autodocs'],
   argTypes: {
@@ -11,10 +11,15 @@ const meta: Meta<typeof AboutSection> = {
       control: 'text',
       description: 'The title of the about section',
     },
-    content: {
-      name: 'Content',
+    description: {
+      name: 'Description',
       control: 'text',
-      description: 'The content of the about section',
+      description: 'The description of the about section',
+    },
+    logos: {
+      name: 'Logos',
+      control: 'array',
+      description: 'An array of React elements representing logos to display in the about section',
     },
   },
 };
@@ -30,6 +35,10 @@ export const Default: Story = {
   render: (args) => <AboutSection {...args} />,
   args: {
     title: 'About Us',
-    content: 'This is the about section content.',
+    description: 'This is the about section content.',
+    logos: [
+      <img src="logo1.png" alt="Logo 1" key="logo1" />,
+      <img src="logo2.png" alt="Logo 2" key="logo2" />,
+    ],
   },
 };

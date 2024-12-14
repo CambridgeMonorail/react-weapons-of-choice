@@ -4,7 +4,7 @@ import { Footer } from './Footer';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
 
 const meta: Meta<typeof Footer> = {
-  title: 'Components/Footer',
+  title: 'Landing/Footer',
   component: Footer,
 };
 

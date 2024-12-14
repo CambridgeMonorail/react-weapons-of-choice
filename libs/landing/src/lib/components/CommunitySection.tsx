@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from '@rwoc/shadcnui/components/ui/button';
+import { Button } from '@rwoc/shadcnui';
 
 /**
  * Props for the CommunitySection component.
