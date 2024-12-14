@@ -11,6 +11,10 @@ export default defineConfig({
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
+  assetsInclude: [
+    'src/preflight.css',
+    'src/shadcn-theme.css'
+  ],
   test: {
     watch: false,
     globals: true,

@@ -1,1 +1,1 @@
-import '../../../apps/demo/src/styles.class';
+import '../../common-tailwind/src/main.css';

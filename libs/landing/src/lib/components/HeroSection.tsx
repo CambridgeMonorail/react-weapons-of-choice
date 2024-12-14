@@ -1,19 +1,36 @@
 import { FC } from 'react';
 import { Button } from '@rwoc/shadcnui'; // Import shadcn Button component
 
+/**
+ * Props for the HeroSection component.
+ */
 interface HeroSectionProps {
+  /** The main title of the hero section. */
   title: string;
+  /** An optional subtitle for the hero section. */
   subtitle?: string;
+  /** An optional description for the hero section. */
   description?: string;
+  /** An optional list of highlights to display in the hero section. */
   highlights?: string[];
+  /** The URL of the image to display in the hero section. */
   image: string;
+  /** The alt text for the image. */
   imageAlt: string;
+  /** Optional primary call-to-action button configuration. */
   ctaPrimary?: { text: string; link?: string; onClick?: () => void };
+  /** Optional secondary call-to-action button configuration. */
   ctaSecondary?: { text: string; link?: string; onClick?: () => void };
+  /** Layout option for the hero section. */
   layout?: 'left' | 'right' | 'stacked';
+  /** Additional CSS classes to apply to the hero section. */
   className?: string;
 }
 
+/**
+ * A HeroSection component that displays a title, subtitle, description, highlights, and an image.
+ * It also includes optional primary and secondary call-to-action buttons.
+ */
 export const HeroSection: FC<HeroSectionProps> = ({
   title,
   subtitle,
@@ -123,6 +140,9 @@ export const HeroSection: FC<HeroSectionProps> = ({
   );
 };
 
+/**
+ * A CheckIcon component that renders an SVG check icon.
+ */
 const CheckIcon: FC<React.ComponentProps<'svg'>> = (props) => (
   <svg
     {...props}

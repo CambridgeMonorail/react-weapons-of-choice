@@ -3,7 +3,67 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/storybook-host/src",
   "projectType": "library",
-  "tags": [],
-  "// targets": "to see all targets run: nx show project storybook-host --web",
-  "targets": {}
+  "tags": ["type:app", "scope:app"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc -p tsconfig.lib.json --noEmit",
+          "tsc -p tsconfig.spec.json --noEmit"
+        ],
+        "cwd": "libs/storybook-host",
+        "forwardAllArgs": false
+      }
+    },
+    "storybook": {
+      "executor": "@nx/storybook:storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/storybook-host/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "cache": true,
+      "options": {
+        "outputDir": "dist/apps/demo/storybook",
+        "configDir": "libs/storybook-host/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/storybook-host/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "storybook-host:build-storybook",
+        "staticFilePath": "libs/storybook/storybook-host/dist"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "storybook-host:build-storybook:ci"
+        }
+      }
+    }
+  },
+  "implicitDependencies": ["landing", "demo"]
 }
