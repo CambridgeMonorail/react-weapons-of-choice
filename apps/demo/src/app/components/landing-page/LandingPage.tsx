@@ -36,11 +36,11 @@ export const LandingPage: FC = () => {
           image={logoSrc}
           imageAlt="Logo for the boilerplate"
           ctaPrimary={{
-            text: 'Get Started',
+            text: 'Start Building for Free',
             link: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
           }}
           ctaSecondary={{
-            text: 'Learn More',
+            text: 'Explore Features',
             onClick: handleScrollToFeatures,
           }}
           layout="left"
