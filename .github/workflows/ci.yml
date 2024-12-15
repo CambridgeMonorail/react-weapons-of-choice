@@ -30,7 +30,9 @@ jobs:
 
       # Install pnpm
       - name: Install pnpm
-        run: npm install -g pnpm@9.12.2
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.15.0
 
       # Cache pnpm dependencies using actions/cache@v4
       - name: Cache pnpm store
