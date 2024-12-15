@@ -5,6 +5,8 @@ import { Github, Twitter } from 'lucide-react';
 import logoSrc from '../../../assets/images/rwoc-logo.png';
 import { Logo } from '../shared/Logo';
 import { AboutSection, CommunitySection, DemoSection, FeaturesSection, Footer, GetStartedSection, HeroSection } from '@rwoc/landing';
+import { Tagline } from '@rwoc/shadcnui-blocks';
+
 
 export const LandingPage: FC = () => {
   const navigate = useNavigate();
@@ -122,6 +124,10 @@ export const LandingPage: FC = () => {
           )
         }
         data-testid="get-started-section"
+      />
+      <Tagline
+        text="Accelerate Development. Scale Seamlessly. Impress Instantly."
+        dataTestId="tagline"
       />
       <Footer
         className="w-full px-4 sm:px-6 lg:px-8"
