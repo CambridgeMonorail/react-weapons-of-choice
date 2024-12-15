@@ -1,81 +1,29 @@
-import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui/components/ui/card';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui/components/ui/table';
-
-interface PricingTier {
-  name: string;
-  price: string;
-  features: string[];
-}
-
-const pricingTiers: PricingTier[] = [
-  {
-    name: 'Free',
-    price: '$0',
-    features: ['Feature 1', 'Feature 2', 'Feature 3'],
-  },
-  {
-    name: 'Pro',
-    price: '$49',
-    features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4'],
-  },
-  {
-    name: 'Enterprise',
-    price: '$99',
-    features: ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5'],
-  },
-];
+import { FC, useState } from 'react';
+import { Switch } from '@rwoc/shadcnui/components/ui/switch';
+import { PricingTiers } from './PricingTiers';
+import { FeaturesComparison } from './FeaturesComparison';
 
 export const PricingPage: FC = () => {
-  return (
-    <div className="p-6 m-4 space-y-6">
-      <h1 className="text-4xl font-bold mb-4 text-primary">Pricing</h1>
-      <section>
-        <h2 className="text-3xl font-bold mb-4 text-primary">Pricing Tiers</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {pricingTiers.map((tier) => (
-            <Card key={tier.name}>
-              <CardHeader>
-                <CardTitle>{tier.name}</CardTitle>
-                <CardDescription>{tier.price}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="list-disc list-inside">
-                  {tier.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+  const [billingAnnual, setBillingAnnual] = useState(false);
 
-      <section>
-        <h2 className="text-3xl font-bold mb-4 text-primary">Comparison Table</h2>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Feature</TableHead>
-              {pricingTiers.map((tier) => (
-                <TableHead key={tier.name}>{tier.name}</TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {pricingTiers[0].features.map((feature, index) => (
-              <TableRow key={index}>
-                <TableCell>{feature}</TableCell>
-                {pricingTiers.map((tier) => (
-                  <TableCell key={tier.name}>
-                    {tier.features.includes(feature) ? '✔️' : '❌'}
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </section>
+  return (
+    <div className="p-6 m-4 space-y-10 bg-background text-foreground">
+      <header>
+        <h1 className="text-4xl font-bold mb-4 text-primary">Pricing</h1>
+        <p className="max-w-2xl text-foreground">
+          Choose the plan that fits your needs and scale as you grow. All plans include basic features and unlimited projects.
+        </p>
+      </header>
+
+      {/* Billing Toggle */}
+      <div className="flex items-center space-x-3" role="group" aria-label="Billing Toggle">
+        <span className="text-sm text-foreground">Monthly</span>
+        <Switch checked={billingAnnual} onCheckedChange={setBillingAnnual} aria-label="Toggle billing period" />
+        <span className="text-sm text-foreground">Annual (Save 20%)</span>
+      </div>
+
+      <PricingTiers billingAnnual={billingAnnual} />
+      <FeaturesComparison />
     </div>
   );
 };
