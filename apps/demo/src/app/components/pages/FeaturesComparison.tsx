@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui/components/ui/table';
+import { Check, X } from 'lucide-react'; // Import Lucide icons
 
 const featuresList = [
   'Unlimited Projects',
@@ -45,7 +46,7 @@ export const FeaturesComparison: FC = () => {
             <TableRow>
               <TableHead className="text-left">Feature</TableHead>
               {pricingTiers.map((tier) => (
-                <TableHead key={tier.name} className="text-center">
+                <TableHead key={tier.name} >
                   {tier.name}
                 </TableHead>
               ))}
@@ -54,13 +55,13 @@ export const FeaturesComparison: FC = () => {
           <TableBody>
             {featuresList.map((feature, index) => (
               <TableRow key={index} className="border-b border-muted">
-                <TableCell>{feature}</TableCell>
+                <TableCell >{feature}</TableCell> {/* Center-align feature cells */}
                 {pricingTiers.map((tier) => (
                   <TableCell key={tier.name} className="text-center">
                     {tier.features.includes(feature) ? (
-                      <span className="text-green-600 font-bold" aria-label={`${tier.name} includes ${feature}`}>✔</span>
+                      <Check className="text-green-600" aria-label={`${tier.name} includes ${feature}`} />
                     ) : (
-                      <span className="text-red-500 font-bold" aria-label={`${tier.name} does not include ${feature}`}>✘</span>
+                      <X className="text-red-500" aria-label={`${tier.name} does not include ${feature}`} />
                     )}
                   </TableCell>
                 ))}
