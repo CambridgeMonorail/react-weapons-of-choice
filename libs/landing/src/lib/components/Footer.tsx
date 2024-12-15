@@ -21,6 +21,11 @@ interface FooterProps {
    * Text to be displayed as the copyright information.
    */
   copyrightText: string;
+
+  /**
+   * Additional class names to apply to the footer element.
+   */
+  className?: string;
 }
 
 /**
@@ -32,10 +37,11 @@ interface FooterProps {
 export const Footer: FC<FooterProps> = ({
   navigationLinks,
   socialMediaIcons,
-  copyrightText
+  copyrightText,
+  className
 }) => {
   return (
-    <footer className="text-center py-8 text-primary-foreground w-full px-4 sm:px-6 lg:px-8">
+    <footer className={`text-center py-8 text-primary-foreground w-full px-4 sm:px-6 lg:px-8 ${className}`}>
       <nav className="flex flex-wrap justify-center space-x-4 mb-4" aria-label="Footer navigation">
         {navigationLinks.map((link, index) => (
           <a

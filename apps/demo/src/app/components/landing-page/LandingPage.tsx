@@ -5,7 +5,8 @@ import { Github, Twitter } from 'lucide-react';
 import logoSrc from '../../../assets/images/rwoc-logo.png';
 import { Logo } from '../shared/Logo';
 import { AboutSection, CommunitySection, DemoSection, FeaturesSection, Footer, GetStartedSection, HeroSection } from '@rwoc/landing';
-import { Tagline } from './Tagline';
+import { Tagline } from '@rwoc/shadcnui-blocks';
+
 
 export const LandingPage: FC = () => {
   const navigate = useNavigate();
