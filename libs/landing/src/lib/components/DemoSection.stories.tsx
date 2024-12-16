@@ -32,6 +32,17 @@ const meta: Meta<typeof DemoSection> = {
 export default meta;
 type Story = StoryObj<typeof DemoSection>;
 
+/**
+ * Default story for the DemoSection component.
+ * 
+ * @example
+ * <DemoSection
+ *   title="Demo Section"
+ *   description="This is the demo section content."
+ *   buttonText="Click Me"
+ *   buttonAction={() => alert('Button clicked!')}
+ * />
+ */
 export const Default: Story = {
   name: 'Default',
   render: (args) => <DemoSection {...args} />,
@@ -44,6 +55,17 @@ export const Default: Story = {
   },
 };
 
+/**
+ * Story for the DemoSection component with different props.
+ * 
+ * @example
+ * <DemoSection
+ *   title="Try Our Features"
+ *   description="Explore the various features we offer."
+ *   buttonText="Learn More"
+ *   buttonAction={() => alert('Learn More clicked!')}
+ * />
+ */
 export const WithDifferentProps: Story = {
   name: 'With Different Props',
   render: (args) => <DemoSection {...args} />,
@@ -56,6 +78,17 @@ export const WithDifferentProps: Story = {
   },
 };
 
+/**
+ * Story for the DemoSection component with edge case props.
+ * 
+ * @example
+ * <DemoSection
+ *   title=""
+ *   description=""
+ *   buttonText=""
+ *   buttonAction={() => alert('Button clicked!')}
+ * />
+ */
 export const WithEdgeCases: Story = {
   name: 'With Edge Cases',
   render: (args) => <DemoSection {...args} />,

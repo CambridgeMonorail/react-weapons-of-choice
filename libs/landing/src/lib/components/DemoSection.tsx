@@ -18,9 +18,7 @@ interface DemoSectionProps {
 
 /**
  * A section component that displays a title, description, and a button.
- * 
- * @param {DemoSectionProps} props - The props for the component.
- * @returns {JSX.Element} The rendered section component.
+
  */
 export const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (
