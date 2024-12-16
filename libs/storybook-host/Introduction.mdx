@@ -1,0 +1,71 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Welcome to the Component Library
+
+## Overview
+
+This component library is designed to provide a comprehensive set of reusable UI components for building modern web applications. The library is built with React and TypeScript, ensuring type safety and a seamless development experience.
+
+## Getting Started
+
+To get started with the component library, follow these steps:
+
+1. **Install the library**: Use pnpm to install the component library in your project.
+
+    ```sh
+    pnpm install @rwoc/component-library
+    ```
+
+2. **Import the components**: Import the desired components into your project.
+
+    ```tsx
+    import { Button, Card, Dialog } from '@rwoc/component-library';
+    ```
+
+3. **Use the components**: Start using the components in your application.
+
+    ```tsx
+    const App = () => (
+      <div>
+        <Button variant="primary">Click Me</Button>
+        <Card title="Card Title">Card Content</Card>
+        <Dialog isOpen={true} onClose={() => {}}>
+          Dialog Content
+        </Dialog>
+      </div>
+    );
+    ```
+
+## Best Practices
+
+When using the component library, follow these best practices to ensure a consistent and maintainable codebase:
+
+* Write clean, modern, type-safe React functional components that adhere to best practices, emphasizing security, robustness, maintainability, readability, separation of concerns, and the DRY principle.
+* Utilize React hooks such as `useState` and `useEffect` for state management and handling side effects.
+* Apply Tailwind CSS classes for component styling and prefer `shadcn/ui` components for consistent UI elements.
+* Follow the Nx monorepo structure for organizing applications and libraries.
+* Adhere to TypeScript best practices, including strict typing and the use of interfaces.
+* Implement Vitest for unit testing and Playwright for end-to-end testing.
+* Ensure all components are accessible and responsive.
+* Prefer named (explicit) exports over default exports for clarity and better tooling support.
+* Use interfaces to define object shapes and complex data structures, and types for unions, intersections, or lightweight aliases.
+* Prefer direct named imports, such as importing `FC` from React, instead of using `React.FC`. Use relative imports for files within the same project.
+* Utilize `shadcn` theme variables for styling to ensure consistency and ease of customization. Common theme variables include `bg-background`, `text-foreground`, `primary`, `primary-foreground`, `secondary`, `muted`, and `accent`.
+* Prioritize flexibility and maintainability by extending native HTML element props. Use composition to break down complex components into smaller, reusable parts, allowing customization through props, slots, or the `children` prop. Keep components as stateless as possible, delegating state management to parent components or using React Context when necessary. Follow accessibility best practices and ensure styles are modular and reusable. Write concise, modular, and DRY components, using named exports to promote clarity and reusability.
+
+## Resources
+
+For additional information and resources, refer to the following links:
+
+* [Storybook MDX Documentation](https://storybook.js.org/docs/react/writing-docs/mdx)
+* [Configuring Storybook](https://storybook.js.org/docs/react/configure/overview)
+* [Theming in Storybook](https://storybook.js.org/docs/react/configure/theming)
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+* [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+* [shadcn/ui Documentation](https://ui.shadcn.dev/docs)
+* [Nx Documentation](https://nx.dev/getting-started/intro)
+* [Vitest Documentation](https://vitest.dev/guide/)
+* [Playwright Documentation](https://playwright.dev/docs/intro)
