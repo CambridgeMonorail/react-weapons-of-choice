@@ -1,37 +1,35 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { GetStartedSection } from './GetStartedSection';
-import { action } from '@storybook/addon-actions';
 
 const meta: Meta<typeof GetStartedSection> = {
-  title: 'Landing/GetStartedSection',
+  title: 'Landing/Get Started Section',
   component: GetStartedSection,
   tags: ['autodocs'],
   argTypes: {
     title: {
       name: 'Title',
-      control: { type: 'text' },
+      control: 'text',
       description: 'The title of the get started section',
     },
     steps: {
       name: 'Steps',
-      control: { type: 'object' },
+      control: 'object',
       description: 'An array of steps to display',
     },
     buttonText: {
       name: 'Button Text',
-      control: { type: 'text' },
-      description: 'The text displayed on the button',
+      control: 'text',
+      description: 'The text to display on the button',
     },
     buttonAction: {
       name: 'Button Action',
-      action: 'button-click',
-      description: 'The action performed when the button is clicked',
+      action: 'clicked',
+      description: 'The action to perform when the button is clicked',
     },
   },
 };
 
 export default meta;
-
 type Story = StoryObj<typeof GetStartedSection>;
 
 export const Default: Story = {
@@ -40,12 +38,13 @@ export const Default: Story = {
   args: {
     title: 'Get Started',
     steps: [
-      { stepNumber: 1, stepDescription: 'Sign up for an account.' },
-      { stepNumber: 2, stepDescription: 'Verify your email address.' },
-      { stepNumber: 3, stepDescription: 'Complete your profile.' },
+      { stepNumber: 1, stepDescription: 'Sign up for an account' },
+      { stepNumber: 2, stepDescription: 'Verify your email address' },
+      { stepNumber: 3, stepDescription: 'Start using the application' },
     ],
     buttonText: 'Get Started',
-    buttonAction: action('button-click'),
+    buttonAction: () => alert('Get Started clicked!'),
+    'data-testid': 'get-started-section',
   },
 };
 
@@ -55,12 +54,13 @@ export const WithDifferentProps: Story = {
   args: {
     title: 'Begin Your Journey',
     steps: [
-      { stepNumber: 1, stepDescription: 'Create an account.' },
-      { stepNumber: 2, stepDescription: 'Confirm your email.' },
-      { stepNumber: 3, stepDescription: 'Set up your profile.' },
+      { stepNumber: 1, stepDescription: 'Create your profile' },
+      { stepNumber: 2, stepDescription: 'Customize your settings' },
+      { stepNumber: 3, stepDescription: 'Explore the features' },
     ],
-    buttonText: 'Start Now',
-    buttonAction: action('button-click'),
+    buttonText: 'Begin Now',
+    buttonAction: () => alert('Begin Now clicked!'),
+    'data-testid': 'get-started-section',
   },
 };
 
@@ -71,6 +71,7 @@ export const WithEdgeCases: Story = {
     title: '',
     steps: [],
     buttonText: '',
-    buttonAction: action('button-click'),
+    buttonAction: () => alert('Button clicked!'),
+    'data-testid': 'get-started-section',
   },
 };

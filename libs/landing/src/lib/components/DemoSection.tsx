@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Button } from '@rwoc/shadcnui/components/ui/button';
+// Update the import path to the correct location of the Button component
+import { Button } from '@rwoc/shadcnui';
 
 /**
  * Props for the DemoSection component.
