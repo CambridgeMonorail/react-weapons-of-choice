@@ -15,5 +15,11 @@ export const parameters = {
   docs: {
     page: null,
   },
-  
+  backgrounds: {
+    default: 'light',
+    values: [
+      { name: 'light', value: '#ffffff' },
+      { name: 'dark', value: '#000000' },
+    ],
+  },
 };

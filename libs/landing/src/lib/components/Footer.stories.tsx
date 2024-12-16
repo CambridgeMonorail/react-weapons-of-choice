@@ -1,22 +1,12 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Footer } from './Footer';
-import { Facebook, Twitter, Instagram, LinkedIn } from 'lucide-react';
-import { withBackgrounds } from '@storybook/addon-backgrounds';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const meta: Meta<typeof Footer> = {
   title: 'Landing/Footer',
   component: Footer,
-  decorators: [withBackgrounds],
-  parameters: {
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#000000' },
-      ],
-    },
-  },
+
   argTypes: {
     navigationLinks: {
       name: 'Navigation Links',
@@ -56,7 +46,7 @@ export const Default: Story = {
       { icon: Facebook, url: 'https://facebook.com' },
       { icon: Twitter, url: 'https://twitter.com' },
       { icon: Instagram, url: 'https://instagram.com' },
-      { icon: LinkedIn, url: 'https://linkedin.com' },
+      { icon: Linkedin, url: 'https://linkedin.com' },
     ],
     copyrightText: '© 2023 Your Company. All rights reserved.',
   },
@@ -75,7 +65,7 @@ export const WithDifferentProps: Story = {
       { icon: Facebook, url: 'https://facebook.com' },
       { icon: Twitter, url: 'https://twitter.com' },
       { icon: Instagram, url: 'https://instagram.com' },
-      { icon: LinkedIn, url: 'https://linkedin.com' },
+      { icon: Linkedin, url: 'https://linkedin.com' },
     ],
     copyrightText: '© 2023 Your Company. All rights reserved.',
     className: 'bg-dark text-light',

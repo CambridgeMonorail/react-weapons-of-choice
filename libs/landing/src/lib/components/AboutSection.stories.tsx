@@ -1,21 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AboutSection } from './AboutSection';
-import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 const meta: Meta<typeof AboutSection> = {
   title: 'Landing/About Section',
   component: AboutSection,
   tags: ['autodocs'],
-  decorators: [withBackgrounds],
-  parameters: {
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#ffffff' },
-        { name: 'dark', value: '#000000' },
-      ],
-    },
-  },
+
   argTypes: {
     title: {
       name: 'Title',
@@ -30,7 +20,8 @@ const meta: Meta<typeof AboutSection> = {
     logos: {
       name: 'Logos',
       control: 'array',
-      description: 'An array of React elements representing logos to display in the about section',
+      description:
+        'An array of React elements representing logos to display in the about section',
     },
   },
 };
