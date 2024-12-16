@@ -1,0 +1,102 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Getting Started" />
+
+## Introduction
+
+Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides an overview of the various libraries available within the monorepo, each designed to help you build a consistent, maintainable, and cohesive application.
+
+## Overview of Libraries
+
+#### 1. **`@rwoc/component-library`**
+- **Description**: A collection of reusable UI components designed to be used across various projects within the monorepo. The library includes components such as buttons, cards, dialogs, and more.
+- **Usage**: Import and use these components to build consistent and cohesive user interfaces.
+- **Example**:
+  ```tsx
+  import { Button, Card, Dialog } from '@rwoc/component-library';
+
+  const App = () => (
+    <div>
+      <Button variant="primary">Click Me</Button>
+      <Card title="Card Title">Card Content</Card>
+      <Dialog isOpen={true} onClose={() => {}}>
+        Dialog Content
+      </Dialog>
+    </div>
+  );
+  ```
+
+#### 2. **`@rwoc/shadcnui`**
+- **Description**: A library providing UI components styled with Shadcn UI, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
+- **Usage**: Use these components to maintain a cohesive design system throughout the application.
+- **Example**:
+  ```tsx
+  import { Switch, Table, TableRow, TableCell } from '@rwoc/shadcnui';
+
+  const Settings = () => (
+    <div>
+      <Switch checked={true} onCheckedChange={() => {}} />
+      <Table>
+        <TableRow>
+          <TableCell>Item 1</TableCell>
+          <TableCell>Item 2</TableCell>
+        </TableRow>
+      </Table>
+    </div>
+  );
+  ```
+
+#### 3. **`@rwoc/common-tailwind`**
+- **Description**: A library containing common Tailwind CSS configurations and utility classes used across the monorepo. It includes preflight styles and theme configurations.
+- **Usage**: Import the CSS files to apply consistent styling and utility classes throughout the application.
+- **Example**:
+  ```css
+  @import '@rwoc/common-tailwind/src/preflight.css';
+  @import '@rwoc/common-tailwind/src/shadcn-theme.css';
+  ```
+
+#### 4. **`@rwoc/landing`**
+- **Description**: A library containing components and sections specifically designed for the landing pages of the application. It includes sections like Hero, About, Community, and more.
+- **Usage**: Use these components to build engaging and informative landing pages.
+- **Example**:
+  ```tsx
+  import { HeroSection, AboutSection, CommunitySection } from '@rwoc/landing';
+
+  const LandingPage = () => (
+    <div>
+      <HeroSection title="Welcome" subtitle="Discover our platform" />
+      <AboutSection />
+      <CommunitySection />
+    </div>
+  );
+  ```
+
+#### 5. **`@rwoc/shell`**
+- **Description**: A library providing layout components and utilities for the overall structure of the application. It includes components like `Layout`, `AppSidebar`, `Breadcrumb`, and more.
+- **Usage**: Use these components to create a consistent and responsive layout for the application.
+- **Example**:
+  ```tsx
+  import { Layout, AppSidebar, Breadcrumb } from '@rwoc/shell';
+
+  const App = () => (
+    <Layout>
+      <AppSidebar />
+      <Breadcrumb />
+      <main>
+        {/* Main content */}
+      </main>
+    </Layout>
+  );
+  ```
+
+### Summary
+
+The monorepo is organized into several libraries, each serving a specific purpose to ensure a modular, maintainable, and cohesive codebase. These libraries include:
+
+- **`@rwoc/component-library`**: Reusable UI components.
+- **`@rwoc/shadcnui`**: Shadcn UI styled components.
+- **`@rwoc/common-tailwind`**: Common Tailwind CSS configurations.
+- **`@rwoc/landing`**: Components for landing pages.
+- **`@rwoc/shell`**: Layout components and utilities.
+
+By leveraging these libraries, you can build a consistent and maintainable application with a clear separation of concerns.
