@@ -39,6 +39,11 @@ type Story = StoryObj<typeof Tagline>;
 
 /**
  * Default story for the Tagline component.
+ * 
+ * This story demonstrates the default usage of the Tagline component
+ * with sample text and default properties. It can be used as a reference
+ * for how to integrate and customize the Tagline component in different
+ * contexts.
  */
 export const Default: Story = {
   name: 'Default',

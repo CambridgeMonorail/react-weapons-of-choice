@@ -1,5 +1,6 @@
 import { FC } from 'react';
-import { Button } from '@rwoc/shadcnui/components/ui/button';
+// Update the import path to the correct location of the Button component
+import { Button } from '@rwoc/shadcnui';
 
 /**
  * Props for the DemoSection component.
@@ -17,9 +18,7 @@ interface DemoSectionProps {
 
 /**
  * A section component that displays a title, description, and a button.
- * 
- * @param {DemoSectionProps} props - The props for the component.
- * @returns {JSX.Element} The rendered section component.
+
  */
 export const DemoSection: FC<DemoSectionProps> = ({ title, description, buttonText, buttonAction }) => {
   return (

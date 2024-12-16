@@ -122,6 +122,7 @@
     "@shadcn/ui": "^0.0.4",
     "@storybook/addon-a11y": "^8.4.7",
     "@storybook/addon-actions": "^8.4.7",
+    "@storybook/addon-backgrounds": "^8.4.7",
     "@storybook/addon-docs": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
