@@ -4,19 +4,31 @@ import { ReactElement } from 'react';
  * Props for the AboutSection component.
  */
 interface AboutSectionProps {
-  /** The title to display in the about section. */
+  /** 
+   * The title to display in the about section. 
+   * This should be a short, descriptive heading that summarizes the content of the section.
+   */
   title: string;
-  /** The description to display in the about section. */
+  
+  /** 
+   * The description to display in the about section. 
+   * This should provide more detailed information about the organization, product, or service.
+   */
   description: string;
-  /** An array of React elements representing logos to display in the about section. */
+  
+  /** 
+   * An array of React elements representing logos to display in the about section. 
+   * These logos can represent partners, technologies, or other relevant entities.
+   */
   logos: ReactElement[];
 }
 
 /**
  * A component that renders an about section with a title, description, and logos.
  * 
- * @param {AboutSectionProps} props - The props for the component.
- * @returns {ReactElement} The rendered about section component.
+ * This component is typically used in landing pages to provide visitors with information
+ * about the organization, product, or service. It helps to build credibility and trust
+ * by showcasing key details and visual elements such as logos of partners or technologies.
  */
 export const AboutSection = ({ title, description, logos }: AboutSectionProps): ReactElement => {
   return (
