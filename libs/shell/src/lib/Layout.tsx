@@ -17,6 +17,7 @@ import { Moon, Sun, Github } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SidebarProvider as SidebarDataProvider, SidebarData } from './sidebarContext';
+import { Logo } from '@rwoc/shadcnui-blocks';
 
 interface LayoutProps {
   children: ReactNode;
@@ -41,12 +42,14 @@ export function Layout({ children, sidebarData }: LayoutProps) {
           <header
             className="flex h-16 flex-shrink-0 items-center justify-between gap-2 border-b px-4 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 w-full max-w-full"
             data-testid="header"
+            role="banner"
           >
             <div
               className="flex items-center gap-2"
               data-testid="breadcrumb-container"
+              aria-label="Breadcrumb navigation"
             >
-              <SidebarTrigger className="-ml-1" data-testid="sidebar-trigger" />
+              <SidebarTrigger className="-ml-1" data-testid="sidebar-trigger" aria-label="Toggle sidebar" />
               <Separator orientation="vertical" className="mr-2 h-4" />
               <Breadcrumb>
                 <BreadcrumbList>
@@ -60,7 +63,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                         data-testid={`breadcrumb-item-${index}`}
                       >
                         {isLast ? (
-                          <BreadcrumbPage>{value}</BreadcrumbPage>
+                          <BreadcrumbPage aria-current="page">{value}</BreadcrumbPage>
                         ) : (
                           <BreadcrumbLink>
                             <Link to={to}>{value}</Link>
@@ -85,6 +88,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                 onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                 title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
                 data-testid="theme-toggle-button"
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
               >
                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
@@ -96,6 +100,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                 asChild
                 title="View GitHub repository"
                 data-testid="github-link"
+                aria-label="View GitHub repository"
               >
                 <a
                   href="https://github.com/CambridgeMonorail/react-weapons-of-choice"
@@ -110,8 +115,8 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                 variant="ghost"
                 size="icon"
                 asChild
-                title="Open Storybook in a new tab"
-                aria-label="Open Storybook in a new tab"
+                title="Open Storybook"
+                aria-label="Open Storybook"
                 data-testid="storybook-link"
               >
                 <a
@@ -119,12 +124,13 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <Logo name="storybook" className="h-[1.2rem] w-[1.2rem]" />
                   <span className="sr-only">Storybook</span>
                 </a>
               </Button>
             </div>
           </header>
-          <div className="flex-1 overflow-auto">
+          <div className="flex-1 overflow-auto" role="main">
             {children}
           </div>
         </SidebarInset>
