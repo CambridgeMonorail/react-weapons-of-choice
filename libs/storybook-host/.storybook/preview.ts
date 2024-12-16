@@ -1,11 +1,18 @@
 import '../../common-tailwind/src/main.css';
-import { addParameters } from '@storybook/react';
 
-addParameters({
+export const parameters = {
   options: {
     initialActive: 'docs',
-    docs: {
-      page: null,
-    },
   },
-});
+  docs: {
+    page: null,
+  },
+  storySort: {
+    order: [
+      'Introduction',
+      'Getting Started',
+      'Best Practices',
+      'Resources',
+    ],
+  },
+};

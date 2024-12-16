@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Getting Started" />
+
+## Getting Started
+
+To get started with the component library, follow these steps:
+
+1. **Install the library**: Use pnpm to install the component library in your project.
+
+    ```sh
+    pnpm install @rwoc/component-library
+    ```
+
+2. **Import the components**: Import the desired components into your project.
+
+    ```tsx
+    import { Button, Card, Dialog } from '@rwoc/component-library';
+    ```
+
+3. **Use the components**: Start using the components in your application.
+
+    ```tsx
+    const App = () => (
+      <div>
+        <Button variant="primary">Click Me</Button>
+        <Card title="Card Title">Card Content</Card>
+        <Dialog isOpen={true} onClose={() => {}}>
+          Dialog Content
+        </Dialog>
+      </div>
+    );
+    ```
