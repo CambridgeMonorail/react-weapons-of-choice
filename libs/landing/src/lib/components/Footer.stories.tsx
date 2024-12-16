@@ -6,7 +6,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 const meta: Meta<typeof Footer> = {
   title: 'Landing/Footer',
   component: Footer,
-
+  tags: ['autodocs'],
   argTypes: {
     navigationLinks: {
       name: 'Navigation Links',
@@ -28,6 +28,16 @@ const meta: Meta<typeof Footer> = {
       control: 'text',
       description: 'Additional class names to apply to the footer element',
     },
+    backgroundColor: {
+      name: 'Background Color',
+      control: 'text',
+      description: 'Background color for the footer',
+    },
+    textColor: {
+      name: 'Text Color',
+      control: 'text',
+      description: 'Text color for the footer',
+    },
   },
 };
 
@@ -48,7 +58,7 @@ export const Default: Story = {
       { icon: Instagram, url: 'https://instagram.com' },
       { icon: Linkedin, url: 'https://linkedin.com' },
     ],
-    copyrightText: '© 2023 Your Company. All rights reserved.',
+    copyrightText: '© 2024 Your Company. All rights reserved.',
   },
 };
 
@@ -67,8 +77,29 @@ export const WithDifferentProps: Story = {
       { icon: Instagram, url: 'https://instagram.com' },
       { icon: Linkedin, url: 'https://linkedin.com' },
     ],
-    copyrightText: '© 2023 Your Company. All rights reserved.',
+    copyrightText: '© 2024 Your Company. All rights reserved.',
     className: 'bg-dark text-light',
+  },
+};
+
+export const WithCustomColors: Story = {
+  name: 'With Custom Colors',
+  render: (args) => <Footer {...args} />,
+  args: {
+    navigationLinks: [
+      { text: 'Portfolio', url: '/portfolio' },
+      { text: 'Testimonials', url: '/testimonials' },
+      { text: 'FAQ', url: '/faq' },
+    ],
+    socialMediaIcons: [
+      { icon: Facebook, url: 'https://facebook.com' },
+      { icon: Twitter, url: 'https://twitter.com' },
+      { icon: Instagram, url: 'https://instagram.com' },
+      { icon: Linkedin, url: 'https://linkedin.com' },
+    ],
+    copyrightText: '© 2024 Your Company. All rights reserved.',
+    backgroundColor: 'bg-secondary',
+    textColor: 'text-secondary-foreground',
   },
 };
 

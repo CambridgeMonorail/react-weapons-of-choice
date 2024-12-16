@@ -26,22 +26,31 @@ interface FooterProps {
    * Additional class names to apply to the footer element.
    */
   className?: string;
+
+  /**
+   * Background color for the footer.
+   */
+  backgroundColor?: string;
+
+  /**
+   * Text color for the footer.
+   */
+  textColor?: string;
 }
 
 /**
  * Footer component for displaying navigation links, social media icons, and copyright information.
- * 
- * @param {FooterProps} props - Props for the Footer component.
- * @returns {JSX.Element} The rendered Footer component.
  */
 export const Footer: FC<FooterProps> = ({
   navigationLinks,
   socialMediaIcons,
   copyrightText,
-  className
+  className,
+  backgroundColor = 'bg-primary',
+  textColor = 'text-primary-foreground'
 }) => {
   return (
-    <footer className={`text-center py-8 text-primary-foreground w-full px-4 sm:px-6 lg:px-8 ${className}`}>
+    <footer className={`${backgroundColor} ${textColor} text-center py-8 w-full px-4 sm:px-6 lg:px-8 ${className}`}>
       <nav className="flex flex-wrap justify-center space-x-4 mb-4" aria-label="Footer navigation">
         {navigationLinks.map((link, index) => (
           <a
