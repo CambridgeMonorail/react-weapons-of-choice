@@ -1,10 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AboutSection } from './AboutSection';
+import { withBackgrounds } from '@storybook/addon-backgrounds';
 
 const meta: Meta<typeof AboutSection> = {
   title: 'Landing/About Section',
   component: AboutSection,
   tags: ['autodocs'],
+  decorators: [withBackgrounds],
+  parameters: {
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#000000' },
+      ],
+    },
+  },
   argTypes: {
     title: {
       name: 'Title',
@@ -40,5 +51,34 @@ export const Default: Story = {
       <img src="logo1.png" alt="Logo 1" key="logo1" />,
       <img src="logo2.png" alt="Logo 2" key="logo2" />,
     ],
+  },
+};
+
+/**
+ * Story for the AboutSection component with different prop combinations.
+ */
+export const WithDifferentProps: Story = {
+  name: 'With Different Props',
+  render: (args) => <AboutSection {...args} />,
+  args: {
+    title: 'Our Mission',
+    description: 'We aim to provide the best services.',
+    logos: [
+      <img src="logo3.png" alt="Logo 3" key="logo3" />,
+      <img src="logo4.png" alt="Logo 4" key="logo4" />,
+    ],
+  },
+};
+
+/**
+ * Story for the AboutSection component with edge cases.
+ */
+export const WithEdgeCases: Story = {
+  name: 'With Edge Cases',
+  render: (args) => <AboutSection {...args} />,
+  args: {
+    title: '',
+    description: '',
+    logos: [],
   },
 };

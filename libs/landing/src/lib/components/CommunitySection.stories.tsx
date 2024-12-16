@@ -53,3 +53,33 @@ export const Default: Story = {
     isDarkBackground: false,
   },
 };
+
+/**
+ * Story for the CommunitySection component with different prop combinations.
+ */
+export const WithDifferentProps: Story = {
+  name: 'With Different Props',
+  render: (args) => <CommunitySection {...args} />,
+  args: {
+    title: 'Connect with Us',
+    description: 'Engage with our community and share your experiences.',
+    buttonText: 'Join Now',
+    buttonAction: action('button-click'),
+    isDarkBackground: true,
+  },
+};
+
+/**
+ * Story for the CommunitySection component with edge cases.
+ */
+export const WithEdgeCases: Story = {
+  name: 'With Edge Cases',
+  render: (args) => <CommunitySection {...args} />,
+  args: {
+    title: '',
+    description: '',
+    buttonText: '',
+    buttonAction: action('button-click'),
+    isDarkBackground: false,
+  },
+};
