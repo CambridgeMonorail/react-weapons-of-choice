@@ -106,6 +106,22 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                   <span className="sr-only">GitHub repository</span>
                 </a>
               </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                asChild
+                title="Open Storybook in a new tab"
+                aria-label="Open Storybook in a new tab"
+                data-testid="storybook-link"
+              >
+                <a
+                  href="https://cambridgemonorail.github.io/react-weapons-of-choice/storybook/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">Storybook</span>
+                </a>
+              </Button>
             </div>
           </header>
           <div className="flex-1 overflow-auto">
