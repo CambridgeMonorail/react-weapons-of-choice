@@ -19,9 +19,18 @@ interface CommunitySectionProps {
 
 /**
  * A section component for displaying community-related information.
+ * This component is typically used on landing pages to encourage users to join or engage with a community.
+ * It includes a title, description, and a call-to-action button.
  * 
- * @param {CommunitySectionProps} props - The props for the component.
- * @returns {JSX.Element} The rendered component.
+ * **Effective CTA Button Text Guidelines:**
+ * - **Action-Oriented Language:** Use strong verbs to clearly indicate the desired action.
+ * - **Urgency:** Incorporate time-sensitive phrases to prompt immediate engagement.
+ * - **Value Proposition:** Clearly communicate the benefit users will receive.
+ * - **Clarity and Brevity:** Keep text concise and straightforward, ideally 2-5 words.
+ * - **Personalization:** When appropriate, use first-person language to create a personal connection.
+ * - **Visual Prominence:** Design buttons with contrasting colors and ample whitespace for visibility.
+ * - **Alignment with User Intent:** Match the CTA with the user's stage in the buyer's journey.
+ * - **Testing and Optimization:** Regularly perform A/B testing to determine the most effective CTA text.
  */
 const CommunitySection: FC<CommunitySectionProps> = ({ title, description, buttonText, buttonAction, isDarkBackground }) => {
   return (
