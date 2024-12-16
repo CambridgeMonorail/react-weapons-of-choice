@@ -175,6 +175,12 @@ Refactor the `Layout` component and all related components to the `shell` librar
 - **Error Message**: Notify users of a missing page.
 - **Navigation Options**: Redirect to relevant sections or homepage.
 
+### Effective CTA Guide
+
+- **Crafting Effective Call-to-Action (CTA) Button Text**: A guide outlining best practices for creating compelling CTA button text.
+- **Sections**: Action-oriented language, urgency, value proposition, clarity, personalization, visual prominence, user intent alignment, and testing.
+- **Additional Resources**: Links to external resources for further reading.
+
 ---
 
 By focusing on these goals and deliverables, **React Weapons of Choice** empowers developers to efficiently build high-quality SPAs, leveraging a re-usable component architecture along with the strengths of Nx, Tailwind CSS, and Shadcn UI. This approach ensures developers have the building blocks they need to customize and launch their applications rapidly.
