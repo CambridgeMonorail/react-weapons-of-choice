@@ -63,28 +63,28 @@ export const LandingPage: FC = () => {
         title="What You’ll Get"
         features={[
           {
-            title: '🚀 Pre-configured Nx Workspace for Monorepo Management',
-            description: 'Manage your monorepo with ease using Nx.',
+            title: '🚀 Spend Less Time Configuring, More Time Coding',
+            description: 'Pre-configured Nx workspace helps you manage monorepos effortlessly, so you can focus on building features, not tooling.',
           },
           {
-            title: '🎨 Tailwind CSS Integration for Utility-First Styling',
+            title: '🎨 Beautiful, Consistent Styling in Minutes',
             description:
-              'Style your components effortlessly with Tailwind CSS.',
+              'Tailwind CSS comes fully integrated, making it easy to create modern, responsive UIs with minimal effort.',
           },
           {
-            title: '🖌️ Shadcn UI Components for Consistent Design',
+            title: '🖌️ Pixel-Perfect UI Without the Hassle',
             description:
-              'Use Shadcn UI components for a consistent look and feel.',
+              'Shadcn UI provides ready-to-use, accessible components for a professional and consistent design experience.',
           },
           {
-            title: '📂 Modular Architecture for Scalability',
+            title: '📂 Scale with Confidence',
             description:
-              'Build scalable applications with a modular architecture.',
+              'A modular architecture ensures your project grows seamlessly as your application and team expand.',
           },
           {
-            title: '📑 Comprehensive Documentation and Examples',
+            title: '📑 Get Started Fast with Step-by-Step Docs',
             description:
-              'Access detailed documentation and examples to get started quickly.',
+              'Comprehensive documentation and examples empower you to set up, customize, and deploy your project quickly.',
           },
         ]}
         data-testid="features-section"
