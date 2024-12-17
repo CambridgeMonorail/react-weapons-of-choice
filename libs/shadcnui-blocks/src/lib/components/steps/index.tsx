@@ -47,8 +47,8 @@ export const Steps: FC<StepsProps> = ({
   subheading,
   highlight,
   steps,
-  className = "",
-  highlightClassName = "text-primary",
+  className = '',
+  highlightClassName = 'text-primary',
 }) => {
   const renderSubheading = () => {
     if (!subheading || !highlight) return subheading;
@@ -56,15 +56,21 @@ export const Steps: FC<StepsProps> = ({
     const parts = subheading.split(new RegExp(`(${highlight})`, 'gi'));
     return parts.map((part, index) =>
       part.toLowerCase() === highlight.toLowerCase() ? (
-        <span key={index} className={highlightClassName}>{part}</span>
+        <span key={index} className={highlightClassName}>
+          {part}
+        </span>
       ) : (
-        <span key={index} className="text-foreground">{part}</span>
+        <span key={index} className="text-foreground">
+          {part}
+        </span>
       )
     );
   };
 
   return (
-    <div className={`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between ${className}`}>
+    <div
+      className={`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between ${className}`}
+    >
       {(heading || subheading) && (
         <div className="text-center">
           {heading && (
@@ -83,7 +89,10 @@ export const Steps: FC<StepsProps> = ({
       <div className="mt-20">
         <ul className="md:grid md:grid-cols-3 md:gap-10">
           {steps.map((step, index) => (
-            <li key={index} className="bg-background p-5 pb-10 text-center relative">
+            <li
+              key={index}
+              className="bg-popover p-5 pb-10 text-center relative rounded-[var(--radius)]"
+            >
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
                   <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary text-primary-foreground border-4 border-background text-xl font-semibold">
@@ -91,7 +100,9 @@ export const Steps: FC<StepsProps> = ({
                   </div>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-lg leading-6 font-semibold text-foreground">{step.title}</h4>
+                  <h4 className="text-lg leading-6 font-semibold text-foreground">
+                    {step.title}
+                  </h4>
                   <p className="mt-2 text-base leading-6 text-foreground">
                     {step.description}
                   </p>

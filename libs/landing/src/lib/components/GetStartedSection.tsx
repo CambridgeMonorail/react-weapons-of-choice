@@ -1,10 +1,6 @@
 import { FC } from 'react';
 import { Button } from '@rwoc/shadcnui';
-
-interface Step {
-  stepNumber: number;
-  stepDescription: string;
-}
+import { Steps, Step } from '@rwoc/shadcnui-blocks';
 
 /**
  * Props for the GetStartedSection component.
@@ -24,20 +20,25 @@ interface GetStartedSectionProps {
 
 /**
  * A section component that displays a title, a list of steps, and a button.
- * 
+ *
  * @param {GetStartedSectionProps} props - The props for the component.
  * @returns {JSX.Element} The rendered component.
  */
-const GetStartedSection: FC<GetStartedSectionProps> = ({ title, steps, buttonText, buttonAction, 'data-testid': dataTestId }) => {
+const GetStartedSection: FC<GetStartedSectionProps> = ({
+  title,
+  steps,
+  buttonText,
+  buttonAction,
+  'data-testid': dataTestId,
+}) => {
   return (
-    <section className="text-center py-20 bg-background text-primary w-full" data-testid={dataTestId}>
+    <section
+      className="text-center py-20 bg-background text-primary w-full"
+      data-testid={dataTestId}
+    >
       <h2 className="text-4xl font-bold mb-6">{title}</h2>
-      <div className="text-left max-w-2xl mx-auto px-4 sm:px-0">
-        {steps.map((step) => (
-          <p key={step.stepNumber} className="text-xl mb-4">
-            <strong>Step {step.stepNumber}:</strong> {step.stepDescription}
-          </p>
-        ))}
+      <div className="text-left max-w-4xl mx-auto px-4 sm:px-0 pb-12">
+        <Steps className="" steps={steps} />
       </div>
       <Button
         size="lg"
