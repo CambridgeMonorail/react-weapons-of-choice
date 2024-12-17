@@ -83,7 +83,7 @@ export const Steps: FC<StepsProps> = ({
       <div className="mt-20">
         <ul className="md:grid md:grid-cols-3 md:gap-10">
           {steps.map((step, index) => (
-            <li key={index} className="bg-background p-5 pb-10 text-center relative">
+            <li key={index} className="bg-popover p-5 pb-10 text-center relative">
               <div className="flex flex-col items-center">
                 <div className="flex-shrink-0 relative top-0 -mt-16">
                   <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary text-primary-foreground border-4 border-background text-xl font-semibold">

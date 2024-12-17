@@ -112,9 +112,9 @@ export const LandingPage: FC = () => {
       <GetStartedSection
         title="Get Started in Minutes"
         steps={[
-          { stepNumber: 1, stepDescription: 'Clone the repository.' },
-          { stepNumber: 2, stepDescription: 'Install dependencies.' },
-          { stepNumber: 3, stepDescription: 'Start the development server.' },
+          { title: 'Clone the repository.', description: 'Clone the repository.' },
+          { title: 'Install dependencies.', description: 'Install dependencies using pnpm.' },
+          { title: 'Start the development server.', description: 'Run the development server to see your changes.' },
         ]}
         buttonText="Read the Documentation"
         buttonAction={() =>
