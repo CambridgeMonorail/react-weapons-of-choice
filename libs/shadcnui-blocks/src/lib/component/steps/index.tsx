@@ -14,22 +14,28 @@ export interface StepsProps {
 }
 
 export const Steps: FC<StepsProps> = ({
-  heading = "STEPS",
-  subheading = "How it Works?",
+  heading,
+  subheading,
   highlight = "Works?",
   steps,
   className = "",
 }) => {
   return (
     <div className={`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between ${className}`}>
-      <div className="text-center">
-        <p className="mt-4 text-sm leading-7 text-muted font-regular">
-          {heading}
-        </p>
-        <h3 className="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-foreground">
-          How it <span className="text-primary">{highlight}</span>
-        </h3>
-      </div>
+      {(heading || subheading) && (
+        <div className="text-center">
+          {heading && (
+            <p className="mt-4 text-sm leading-7 text-muted font-regular">
+              {heading}
+            </p>
+          )}
+          {subheading && (
+            <h3 className="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-foreground">
+              {subheading} <span className="text-primary">{highlight}</span>
+            </h3>
+          )}
+        </div>
+      )}
 
       <div className="mt-20">
         <ul className="md:grid md:grid-cols-3 md:gap-10">
