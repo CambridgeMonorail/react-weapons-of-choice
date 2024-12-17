@@ -114,7 +114,7 @@ export const LandingPage: FC = () => {
         steps={[
           { title: 'Clone the repository.', description: 'Clone the repository.' },
           { title: 'Install dependencies.', description: 'Install dependencies using pnpm.' },
-          { title: 'Start the development server.', description: 'Run the development server to see your changes.' },
+          { title: 'Start the server.', description: 'Run the development server to see your changes.' },
         ]}
         buttonText="Read the Documentation"
         buttonAction={() =>
