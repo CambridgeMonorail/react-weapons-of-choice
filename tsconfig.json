@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "paths": {
       "@rwoc/shadcnui": ["libs/shadcnui/src/index.ts"],
       "@rwoc/shadcnui/*": ["libs/shadcnui/src/*"],
