@@ -1,26 +1,54 @@
 import React, { FC } from 'react';
 
+/**
+ * Represents a single step in the Steps component.
+ */
 export interface Step {
   title: string;
   description: string;
 }
 
+/**
+ * Props for the Steps component.
+ */
 export interface StepsProps {
+  /**
+   * The heading of the steps section.
+   */
   heading?: string;
+  /**
+   * The subheading of the steps section.
+   */
   subheading?: string;
+  /**
+   * The highlighted text in the subheading.
+   */
   highlight?: string;
+  /**
+   * Array of steps to display.
+   */
   steps: Step[];
+  /**
+   * Additional Tailwind CSS classes for the steps component.
+   */
   className?: string;
-  highlightClassName?: string; // New prop for highlight class name
+  /**
+   * Additional Tailwind CSS classes for the highlighted text.
+   */
+  highlightClassName?: string;
 }
 
+/**
+ * Steps component to display a series of steps with titles and descriptions.
+ * Useful for guiding users through a process or workflow.
+ */
 export const Steps: FC<StepsProps> = ({
   heading,
   subheading,
   highlight,
   steps,
   className = "",
-  highlightClassName = "text-primary", // Default to text-primary
+  highlightClassName = "text-primary",
 }) => {
   const renderSubheading = () => {
     if (!subheading || !highlight) return subheading;

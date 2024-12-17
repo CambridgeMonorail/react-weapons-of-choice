@@ -49,8 +49,6 @@ const stepData = [
 ];
 
 /**
- * Demonstrates the default usage of the Steps component.
- * 
  * This example shows how to use the Steps component to display a series of steps
  * with titles and descriptions. It is useful for guiding users through a process
  * or workflow.
@@ -72,8 +70,6 @@ export const Default: Story = {
 };
 
 /**
- * Demonstrates the Steps component with a custom highlight class.
- * 
  * This example shows how to use the Steps component with a custom highlight class.
  * It is useful when you want to apply custom styles to the highlighted text.
  */
@@ -95,8 +91,6 @@ export const WithCustomHighlightClass: Story = {
 };
 
 /**
- * Demonstrates the Steps component without a heading.
- * 
  * This example shows how to use the Steps component without providing a heading.
  * It is useful when the heading is not needed or is provided by a parent component.
  */
@@ -116,8 +110,6 @@ export const WithoutHeading: Story = {
 };
 
 /**
- * Demonstrates the Steps component without a subheading.
- * 
  * This example shows how to use the Steps component without providing a subheading.
  * It is useful when the subheading is not needed or is provided by a parent component.
  */
@@ -136,8 +128,6 @@ export const WithoutSubheading: Story = {
 };
 
 /**
- * Demonstrates the Steps component without a highlight.
- * 
  * This example shows how to use the Steps component without providing a highlight.
  * It is useful when the highlight is not needed or is provided by a parent component.
  */
@@ -157,8 +147,6 @@ export const WithoutHighlight: Story = {
 };
 
 /**
- * Demonstrates the Steps component without a heading and subheading.
- * 
  * This example shows how to use the Steps component without providing a heading and subheading.
  * It is useful when both are not needed or are provided by a parent component.
  */
