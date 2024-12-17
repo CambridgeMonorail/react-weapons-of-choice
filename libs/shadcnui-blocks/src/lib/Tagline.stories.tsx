@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tagline } from './Tagline';
 
 const meta: Meta<typeof Tagline> = {
-  title: 'Landing/Tagline',
+  title: 'Shadcn UI Blocks/Tagline',
   component: Tagline,
   tags: ['autodocs'],
   argTypes: {
