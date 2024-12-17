@@ -21,6 +21,11 @@ const meta: Meta<typeof Steps> = {
       control: 'text',
       description: 'The highlighted text in the heading',
     },
+    highlightClassName: {
+      name: 'Highlight Class Name',
+      control: 'text',
+      description: 'Additional Tailwind CSS classes for the highlighted text',
+    },
     steps: {
       name: 'Steps',
       control: 'object',
@@ -54,10 +59,37 @@ export const Default: Story = {
   name: 'Default',
   render: (args: StepsProps) => <Steps {...args} />,
   args: {
-    heading: 'STEPS',
-    subheading: 'How it Works?',
-    highlight: 'Works?',
-    steps: stepData,
+    heading: 'Default Heading',
+    subheading: 'This is a subheading with a highlight',
+    highlight: 'highlight',
+    steps: [
+      { title: 'Step 1', description: 'Description for step 1' },
+      { title: 'Step 2', description: 'Description for step 2' },
+      { title: 'Step 3', description: 'Description for step 3' },
+    ],
+    className: '',
+  },
+};
+
+/**
+ * Demonstrates the Steps component with a custom highlight class.
+ * 
+ * This example shows how to use the Steps component with a custom highlight class.
+ * It is useful when you want to apply custom styles to the highlighted text.
+ */
+export const WithCustomHighlightClass: Story = {
+  name: 'With Custom Highlight Class',
+  render: (args: StepsProps) => <Steps {...args} />,
+  args: {
+    heading: 'Custom Highlight Class Heading',
+    subheading: 'This is a subheading with a custom highlight',
+    highlight: 'custom',
+    highlightClassName: 'text-accent', // Custom highlight class
+    steps: [
+      { title: 'Step 1', description: 'Description for step 1' },
+      { title: 'Step 2', description: 'Description for step 2' },
+      { title: 'Step 3', description: 'Description for step 3' },
+    ],
     className: '',
   },
 };
@@ -72,9 +104,13 @@ export const WithoutHeading: Story = {
   name: 'Without Heading',
   render: (args: StepsProps) => <Steps {...args} />,
   args: {
-    subheading: 'How it Works?',
-    highlight: 'Works?',
-    steps: stepData,
+    subheading: 'This is a subheading without a heading',
+    highlight: 'subheading',
+    steps: [
+      { title: 'Step 1', description: 'Description for step 1' },
+      { title: 'Step 2', description: 'Description for step 2' },
+      { title: 'Step 3', description: 'Description for step 3' },
+    ],
     className: '',
   },
 };
@@ -89,9 +125,33 @@ export const WithoutSubheading: Story = {
   name: 'Without Subheading',
   render: (args: StepsProps) => <Steps {...args} />,
   args: {
-    heading: 'STEPS',
-    highlight: 'Works?',
-    steps: stepData,
+    heading: 'Heading without subheading',
+    steps: [
+      { title: 'Step 1', description: 'Description for step 1' },
+      { title: 'Step 2', description: 'Description for step 2' },
+      { title: 'Step 3', description: 'Description for step 3' },
+    ],
+    className: '',
+  },
+};
+
+/**
+ * Demonstrates the Steps component without a highlight.
+ * 
+ * This example shows how to use the Steps component without providing a highlight.
+ * It is useful when the highlight is not needed or is provided by a parent component.
+ */
+export const WithoutHighlight: Story = {
+  name: 'Without Highlight',
+  render: (args: StepsProps) => <Steps {...args} />,
+  args: {
+    heading: 'Heading without highlight',
+    subheading: 'This is a subheading without highlight',
+    steps: [
+      { title: 'Step 1', description: 'Description for step 1' },
+      { title: 'Step 2', description: 'Description for step 2' },
+      { title: 'Step 3', description: 'Description for step 3' },
+    ],
     className: '',
   },
 };

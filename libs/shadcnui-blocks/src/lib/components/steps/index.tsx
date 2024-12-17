@@ -11,27 +11,42 @@ export interface StepsProps {
   highlight?: string;
   steps: Step[];
   className?: string;
+  highlightClassName?: string; // New prop for highlight class name
 }
 
 export const Steps: FC<StepsProps> = ({
   heading,
   subheading,
-  highlight = "Works?",
+  highlight,
   steps,
   className = "",
+  highlightClassName = "text-primary", // Default to text-primary
 }) => {
+  const renderSubheading = () => {
+    if (!subheading || !highlight) return subheading;
+
+    const parts = subheading.split(new RegExp(`(${highlight})`, 'gi'));
+    return parts.map((part, index) =>
+      part.toLowerCase() === highlight.toLowerCase() ? (
+        <span key={index} className={highlightClassName}>{part}</span>
+      ) : (
+        <span key={index} className="text-foreground">{part}</span>
+      )
+    );
+  };
+
   return (
     <div className={`max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between ${className}`}>
       {(heading || subheading) && (
         <div className="text-center">
           {heading && (
-            <p className="mt-4 text-sm leading-7 text-muted font-regular">
+            <p className="mt-4 text-sm leading-7 text-foreground font-regular">
               {heading}
             </p>
           )}
           {subheading && (
             <h3 className="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-foreground">
-              {subheading} <span className="text-primary">{highlight}</span>
+              {renderSubheading()}
             </h3>
           )}
         </div>
@@ -49,7 +64,7 @@ export const Steps: FC<StepsProps> = ({
                 </div>
                 <div className="mt-4">
                   <h4 className="text-lg leading-6 font-semibold text-foreground">{step.title}</h4>
-                  <p className="mt-2 text-base leading-6 text-muted">
+                  <p className="mt-2 text-base leading-6 text-foreground">
                     {step.description}
                   </p>
                 </div>
