@@ -27,10 +27,8 @@ describe('LandingPage', () => {
         <LandingPage />
       </BrowserRouter>
     );
-    expect(getByText(/Built for Performance – Optimized tools for blazing-fast development/gi)).toBeTruthy();
+    expect(getByText(/Optimized Tools for Rapid Development/gi)).toBeTruthy();
   });
-
-
 
   it('should revise feature titles and descriptions to emphasize user benefits', () => {
     const { getByText } = render(
@@ -38,8 +36,8 @@ describe('LandingPage', () => {
         <LandingPage />
       </BrowserRouter>
     );
-    expect(getByText(/Stop Wasting Time on Setup – Start Coding Fast/gi)).toBeTruthy();
-    expect(getByText(/Craft Stunning, Responsive UIs with Ease/gi)).toBeTruthy();
-    expect(getByText(/Easily Scale Your Project Without Breaking a Sweat/gi)).toBeTruthy();
+    expect(getByText(/Instant Setup – Code Without Delay/gi)).toBeTruthy();
+    expect(getByText(/Effortless Responsive UI Design/gi)).toBeTruthy();
+    expect(getByText(/Seamless Project Scalability/gi)).toBeTruthy();
   });
 });
