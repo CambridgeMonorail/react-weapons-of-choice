@@ -141,9 +141,9 @@ export const LandingPage: FC = () => {
         data-testid="features-section"
       />
       <DemoSection
-        title="See It in Action"
-        description="Explore a live demo to see how React Weapons of Choice simplifies SPA development."
-        buttonText="View Demo"
+        title="Experience It Yourself"
+        description="Try our live demo to see how effortlessly you can set up and scale your React project with React Weapons of Choice."
+        buttonText="Try the Demo"
         buttonAction={() => navigate('/home')}
         data-testid="demo-section"
       />
