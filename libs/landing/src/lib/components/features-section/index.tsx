@@ -26,7 +26,7 @@ const FeaturesSection: FC<FeaturesSectionProps> = ({ title, features, className,
         {features.map((feature, index) => (
           <Card key={index} className={`p-6 shadow-md bg-background ${feature.className}`}>
             <CardHeader>
-              <CardTitle className="text-2xl font-semibold mb-4 text-primary flex items-center">
+              <CardTitle className="text-2xl font-semibold mb-4 text-primary inline-flex items-center">
                 {feature.icon && <div className="mr-2 flex-shrink-0">{feature.icon}</div>} {/* Render the icon if it exists */}
                 <span>{feature.title}</span>
               </CardTitle>
