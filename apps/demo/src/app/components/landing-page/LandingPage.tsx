@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Github, Twitter } from 'lucide-react';
+import { Github, Twitter, Rocket, Palette, Paintbrush, BarChart, ChartLine, Video } from 'lucide-react';
 
 import logoSrc from '../../../assets/images/rwoc-logo.png';
 
@@ -63,30 +63,42 @@ export const LandingPage: FC = () => {
         title="What You’ll Get"
         features={[
           {
-            title: '🚀 Spend Less Time Configuring, More Time Coding',
+            title: '🚀 Stop Wasting Time on Setup – Start Coding Fast',
             description: 'Pre-configured Nx workspace helps you manage monorepos effortlessly, so you can focus on building features, not tooling.',
+            icon: <Rocket className="text-red-500" />
           },
           {
-            title: '🎨 Beautiful, Consistent Styling in Minutes',
+            title: '🎨 Craft Stunning, Responsive UIs with Ease',
             description:
               'Tailwind CSS comes fully integrated, making it easy to create modern, responsive UIs with minimal effort.',
+            icon: <Palette className="text-blue-500" />
           },
           {
             title: '🖌️ Pixel-Perfect UI Without the Hassle',
             description:
               'Shadcn UI provides ready-to-use, accessible components for a professional and consistent design experience.',
+            icon: <Paintbrush className="text-green-500" />
           },
           {
-            title: '📂 Scale with Confidence',
+            title: '📂 Easily Scale Your Project Without Breaking a Sweat',
             description:
               'A modular architecture ensures your project grows seamlessly as your application and team expand.',
+            icon: <BarChart className="text-yellow-500" />
           },
           {
             title: '📑 Get Started Fast with Step-by-Step Docs',
             description:
               'Comprehensive documentation and examples empower you to set up, customize, and deploy your project quickly.',
+            icon: <ChartLine className="text-purple-500" />
+          },
+          {
+            title: '⚡ Built for Performance – Optimized tools for blazing-fast development',
+            description:
+              'Our tools are optimized for performance, ensuring your development process is as fast as possible.',
+            icon: <Video className="text-orange-500" />
           },
         ]}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hover:shadow-lg hover:scale-105 transition-transform duration-300"
         data-testid="features-section"
       />
       <DemoSection

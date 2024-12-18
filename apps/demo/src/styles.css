@@ -1,4 +1,3 @@
-
 @import '../../../libs/common-tailwind/src/preflight.css';
 @import '../../../libs/common-tailwind/src/shadcn-theme.css';
 
@@ -53,4 +52,32 @@
 
 .ribbon:after {
   left: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-in-out;
 }
