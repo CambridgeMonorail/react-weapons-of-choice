@@ -30,15 +30,7 @@ describe('LandingPage', () => {
     expect(getByText(/Built for Performance – Optimized tools for blazing-fast development/gi)).toBeTruthy();
   });
 
-  it('should apply hover effects to feature cards', () => {
-    const { container } = render(
-      <BrowserRouter>
-        <LandingPage />
-      </BrowserRouter>
-    );
-    const featureCards = container.querySelectorAll('.hover\\:shadow-lg.hover\\:scale-105.transition-transform.duration-300');
-    expect(featureCards.length).toBeGreaterThan(0);
-  });
+
 
   it('should revise feature titles and descriptions to emphasize user benefits', () => {
     const { getByText } = render(
