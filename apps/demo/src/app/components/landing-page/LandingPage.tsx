@@ -65,40 +65,46 @@ export const LandingPage: FC = () => {
           {
             title: '🚀 Stop Wasting Time on Setup – Start Coding Fast',
             description: 'Pre-configured Nx workspace helps you manage monorepos effortlessly, so you can focus on building features, not tooling.',
-            icon: <Rocket className="text-red-500" />
+            icon: <Rocket className="text-red-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
           {
             title: '🎨 Craft Stunning, Responsive UIs with Ease',
             description:
               'Tailwind CSS comes fully integrated, making it easy to create modern, responsive UIs with minimal effort.',
-            icon: <Palette className="text-blue-500" />
+            icon: <Palette className="text-blue-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
           {
             title: '🖌️ Pixel-Perfect UI Without the Hassle',
             description:
               'Shadcn UI provides ready-to-use, accessible components for a professional and consistent design experience.',
-            icon: <Paintbrush className="text-green-500" />
+            icon: <Paintbrush className="text-green-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
           {
             title: '📂 Easily Scale Your Project Without Breaking a Sweat',
             description:
               'A modular architecture ensures your project grows seamlessly as your application and team expand.',
-            icon: <BarChart className="text-yellow-500" />
+            icon: <BarChart className="text-yellow-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
           {
             title: '📑 Get Started Fast with Step-by-Step Docs',
             description:
               'Comprehensive documentation and examples empower you to set up, customize, and deploy your project quickly.',
-            icon: <ChartLine className="text-purple-500" />
+            icon: <ChartLine className="text-purple-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
           {
             title: '⚡ Built for Performance – Optimized tools for blazing-fast development',
             description:
               'Our tools are optimized for performance, ensuring your development process is as fast as possible.',
-            icon: <Video className="text-orange-500" />
+            icon: <Video className="text-orange-500" />,
+            className: "hover:shadow-lg hover:scale-105 transition-transform duration-300"
           },
         ]}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hover:shadow-lg hover:scale-105 transition-transform duration-300"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         data-testid="features-section"
       />
       <DemoSection
