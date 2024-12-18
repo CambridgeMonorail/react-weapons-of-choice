@@ -13,10 +13,6 @@ interface FeaturesSectionProps {
 
 /**
  * FeaturesSection component displays a section with a title and a list of features.
- *
- * @param {string} title - The title of the features section.
- * @param {Feature[]} features - An array of feature objects, each containing a title and description.
- * @returns {JSX.Element} The rendered FeaturesSection component.
  */
 const FeaturesSection: FC<FeaturesSectionProps> = ({ title, features }) => {
   return (

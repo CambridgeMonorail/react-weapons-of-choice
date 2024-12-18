@@ -91,7 +91,6 @@ const DashboardPage: FC = () => {
             <CalendarDateRangePicker />
             <Button
               variant="default"
-              className="bg-purple-700 text-white hover:bg-purple-800 transition-colors"
             >
               Download
             </Button>

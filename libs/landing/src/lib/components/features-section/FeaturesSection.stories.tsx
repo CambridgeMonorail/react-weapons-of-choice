@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FeaturesSection } from './FeaturesSection';
+import { FeaturesSection } from '.';
 
 const meta: Meta<typeof FeaturesSection> = {
   title: 'Landing/FeaturesSection',
@@ -9,7 +9,7 @@ const meta: Meta<typeof FeaturesSection> = {
     title: {
       name: 'Title',
       control: { type: 'text' },
-      description: 'The title of the features section',
+      description: 'The main heading for the features section',
     },
     features: {
       name: 'Features',
