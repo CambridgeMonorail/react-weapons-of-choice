@@ -12,11 +12,10 @@ import {
   TabsList,
   TabsTrigger,
 } from '@rwoc/shadcnui';
-import { CalendarDateRangePicker } from '../components/date-range-picker';
-import { Overview } from '../components/overview';
-import { RecentSales } from '../components/recent-sales';
+
 import { salesData } from '../../../data/salesData';
 import { TrendingUp } from 'lucide-react';
+import { CalendarDateRangePicker, Overview, RecentSales } from '@rwoc/shadcnui-blocks';
 
 const ArrowUpIcon = () => (
   <svg

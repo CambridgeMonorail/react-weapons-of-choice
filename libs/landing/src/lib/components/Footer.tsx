@@ -15,7 +15,7 @@ interface FooterProps {
    * Array of social media icons to be displayed in the footer.
    * Each icon should be a React component and a URL.
    */
-  socialMediaIcons: { icon: FC<LucideProps>; url: string }[];
+  socialMediaIcons: { icon: FC<LucideProps>; url: string; target?: string; rel?: string }[];
 
   /**
    * Text to be displayed as the copyright information.
@@ -71,8 +71,8 @@ export const Footer: FC<FooterProps> = ({
             href={iconData.url}
             className="hover:underline"
             aria-label={`Link to ${iconData.url}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={iconData.target}
+            rel={iconData.rel}
           >
             <iconData.icon className="w-8 h-8" />
           </a>
