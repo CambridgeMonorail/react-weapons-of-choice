@@ -4,7 +4,7 @@ import { CalendarDateRangePicker } from './index';
 import { CalendarDateRangePickerProps } from './types';
 
 const meta: Meta<typeof CalendarDateRangePicker> = {
-  title: 'Shadcnui Blocks/CalendarDateRangePicker',
+  title: 'Shadcnui Blocks/Calendar Date Range Picker',
   component: CalendarDateRangePicker,
   tags: ['autodocs'],
   argTypes: {
