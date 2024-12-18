@@ -4,14 +4,29 @@ import { CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
 import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shadcnui";
 
+/**
+ * Props for the CalendarDateRangePicker component.
+ * Extends native HTML div element props.
+ */
 interface CalendarDateRangePickerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * CalendarDateRangePicker component allows users to select a date range using a calendar popover.
+ */
 export const CalendarDateRangePicker: React.FC<CalendarDateRangePickerProps> = ({ className }) => {
   const [date, setDate] = useState<DateRange | undefined>({
     from: startOfMonth(new Date()),
     to: endOfMonth(new Date()),
   });
 
+  /**
+   * Formats the date range for display.
+   * 
+   * @param {Date | undefined} from - The start date of the range.
+   * @param {Date | undefined} to - The end date of the range.
+   * @param {string} formatStr - The format string.
+   * @returns {string} The formatted date range.
+   */
   const formatDateRange = (from: Date | undefined, to: Date | undefined, formatStr: string) => {
     if (!from) return "Pick a date";
     return to ? `${format(from, formatStr)} - ${format(to, formatStr)}` : format(from, formatStr);
