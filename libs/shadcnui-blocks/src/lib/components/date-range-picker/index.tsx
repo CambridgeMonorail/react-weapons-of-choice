@@ -5,15 +5,9 @@ import { DateRange } from "react-day-picker";
 import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shadcnui";
 
 /**
- * Props for the CalendarDateRangePicker component.
- * Extends native HTML div element props.
- */
-interface CalendarDateRangePickerProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-/**
  * CalendarDateRangePicker component allows users to select a date range using a calendar popover.
  */
-export const CalendarDateRangePicker: React.FC<CalendarDateRangePickerProps> = ({ className }) => {
+export const CalendarDateRangePicker: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => {
   const [date, setDate] = useState<DateRange | undefined>({
     from: startOfMonth(new Date()),
     to: endOfMonth(new Date()),

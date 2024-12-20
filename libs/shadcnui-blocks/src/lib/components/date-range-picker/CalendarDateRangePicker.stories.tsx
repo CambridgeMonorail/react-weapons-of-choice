@@ -1,7 +1,5 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { CalendarDateRangePicker } from './index';
-import { CalendarDateRangePickerProps } from './types';
 
 const meta: Meta<typeof CalendarDateRangePicker> = {
   title: 'Shadcnui Blocks/Calendar Date Range Picker',

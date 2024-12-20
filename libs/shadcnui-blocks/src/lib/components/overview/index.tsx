@@ -1,6 +1,6 @@
-import { FC, useMemo } from 'react';
+import { FC } from 'react';
 import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts';
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent, useTheme } from '@rwoc/shadcnui';
+import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from '@rwoc/shadcnui';
 import 'tailwindcss/tailwind.css';
 
 interface DataPoint {
