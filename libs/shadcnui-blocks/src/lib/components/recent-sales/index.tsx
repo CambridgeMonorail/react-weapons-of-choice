@@ -9,7 +9,7 @@ interface Sale {
   avatarFallback: string;
 }
 
-interface RecentSalesProps {
+export interface RecentSalesProps {
   salesData: Sale[];
 }
 
