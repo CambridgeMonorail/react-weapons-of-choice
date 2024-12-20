@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Steps, StepsProps } from '.';
 
 const meta: Meta<typeof Steps> = {
-  title: 'Shadcn UI Blocks/Steps',
+  title: 'Shadcnui Blocks/Steps',
   component: Steps,
   tags: ['autodocs'],
   argTypes: {

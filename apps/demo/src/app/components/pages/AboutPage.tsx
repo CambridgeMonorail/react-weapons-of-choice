@@ -10,8 +10,9 @@ import {
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
-import TestimonialsSection from './components/Testimonials';
+
 import { CommunitySection, Footer, HeroSection } from '@rwoc/landing';
+import { TestimonialsSection } from '@rwoc/shadcnui-blocks';
 
 interface TeamMember {
   name: string;
@@ -170,14 +171,10 @@ const AboutPage: FC = () => {
             {
               icon: Github,
               url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',
-              target: '_blank',
-              rel: 'noopener noreferrer',
             },
             {
               icon: Twitter,
               url: 'https://x.com/TimDMorris',
-              target: '_blank',
-              rel: 'noopener noreferrer',
             },
           ]}
           copyrightText="&copy; 2024 React Weapons of Choice. All rights reserved."

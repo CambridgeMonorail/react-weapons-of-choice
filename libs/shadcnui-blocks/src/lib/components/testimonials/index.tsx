@@ -1,15 +1,17 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@rwoc/shadcnui"
+import { FC } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@rwoc/shadcnui";
 
-
+// Define the Testimonial interface
 interface Testimonial {
-  id: number
-  name: string
-  role: string
-  company: string
-  testimonial: string
-  avatar: string
+  id: number;
+  name: string;
+  role: string;
+  company: string;
+  testimonial: string;
+  avatar: string;
 }
 
+// Testimonials data
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -61,10 +63,11 @@ const testimonials: Testimonial[] = [
   }
 ];
 
-export default function TestimonialsSection() {
+// TestimonialsSection component
+export const TestimonialsSection: FC = () => {
   return (
     <section className="w-full py-12">
-      <div className="container ">
+      <div className="container">
         <h2 className="text-3xl font-bold text-left mb-10 text-gray-800 dark:text-gray-100">
           What Our Customers Say
         </h2>
@@ -92,6 +95,6 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 

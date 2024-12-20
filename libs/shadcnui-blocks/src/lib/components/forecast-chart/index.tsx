@@ -3,9 +3,20 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "rec
 import { FC } from "react";
 
 interface ForecastChartProps {
+  /**
+   * Array of data points for the chart.
+   * Each data point should include a month, forecast value, and actual value.
+   */
   data: { month: string; forecast: number; actual: number }[];
 }
 
+/**
+ * ForecastChart component displays a line chart comparing forecasted and actual values over time.
+ * It uses the Recharts library for rendering the chart and Shadcn UI components for styling.
+ * 
+ * @param {ForecastChartProps} props - The props for the ForecastChart component.
+ * @returns {JSX.Element} The rendered ForecastChart component.
+ */
 const ForecastChart: FC<ForecastChartProps> = ({ data }) => {
   return (
     <Card className="bg-secondary border-0 text-foreground">
@@ -29,4 +40,4 @@ const ForecastChart: FC<ForecastChartProps> = ({ data }) => {
   );
 }
 
-export { ForecastChart };
+export { ForecastChart, ForecastChartProps };

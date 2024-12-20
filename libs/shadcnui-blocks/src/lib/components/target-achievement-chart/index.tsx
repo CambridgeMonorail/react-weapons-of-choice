@@ -1,18 +1,17 @@
+import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, Tooltip } from "@rwoc/shadcnui";
-import { BarChart } from "recharts";
-import { ResponsiveContainer, XAxis, YAxis, Bar } from "recharts";
-
+import { BarChart, ResponsiveContainer, XAxis, YAxis, Bar } from "recharts";
 
 interface TargetAchievementData {
   state: string;
   targetAchieved: number;
 }
 
-interface TargetAchievementChartProps {
+export interface TargetAchievementChartProps {
   data: TargetAchievementData[];
 }
 
-export function TargetAchievementChart({ data }: TargetAchievementChartProps) {
+export const TargetAchievementChart: FC<TargetAchievementChartProps> = ({ data }) => {
   return (
     <Card className="bg-secondary border-0 text-foreground lg:col-span-2">
       <CardHeader>
@@ -32,4 +31,4 @@ export function TargetAchievementChart({ data }: TargetAchievementChartProps) {
       </CardContent>
     </Card>
   );
-}
+};
