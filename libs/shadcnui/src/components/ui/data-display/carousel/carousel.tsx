@@ -19,6 +19,10 @@ type CarouselProps = {
   setApi?: (api: CarouselApi) => void
 }
 
+/**
+ * CarouselContextProps interface extends CarouselProps and includes additional properties
+ * for managing the carousel state and behavior.
+ */
 type CarouselContextProps = {
   carouselRef: ReturnType<typeof useEmblaCarousel>[0]
   api: ReturnType<typeof useEmblaCarousel>[1]
@@ -40,6 +44,9 @@ function useCarousel() {
   return context
 }
 
+/**
+ * Carousel component is used to create a carousel with customizable options and plugins.
+ */
 const Carousel = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & CarouselProps
@@ -148,6 +155,20 @@ const Carousel = React.forwardRef<
 )
 Carousel.displayName = "Carousel"
 
+/**
+ * CarouselContent component is used to wrap the content of the Carousel.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the carousel content.
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - Props for the CarouselContent component.
+ * @returns {JSX.Element} The CarouselContent component.
+ *
+ * @example
+ * <CarouselContent className="custom-class">
+ *   <CarouselItem>Item 1</CarouselItem>
+ *   <CarouselItem>Item 2</CarouselItem>
+ *   <CarouselItem>Item 3</CarouselItem>
+ * </CarouselContent>
+ */
 const CarouselContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -170,6 +191,16 @@ const CarouselContent = React.forwardRef<
 })
 CarouselContent.displayName = "CarouselContent"
 
+/**
+ * CarouselItem component is used to represent an individual item in the Carousel.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the carousel item.
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - Props for the CarouselItem component.
+ * @returns {JSX.Element} The CarouselItem component.
+ *
+ * @example
+ * <CarouselItem className="custom-class">Item 1</CarouselItem>
+ */
 const CarouselItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -192,6 +223,18 @@ const CarouselItem = React.forwardRef<
 })
 CarouselItem.displayName = "CarouselItem"
 
+/**
+ * CarouselPrevious component is used to create a button for scrolling to the previous item in the Carousel.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the button.
+ * @param {string} variant - The variant of the button (default: "outline").
+ * @param {string} size - The size of the button (default: "icon").
+ * @param {React.ComponentProps<typeof Button>} props - Props for the CarouselPrevious component.
+ * @returns {JSX.Element} The CarouselPrevious component.
+ *
+ * @example
+ * <CarouselPrevious className="custom-class" />
+ */
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
@@ -221,6 +264,18 @@ const CarouselPrevious = React.forwardRef<
 })
 CarouselPrevious.displayName = "CarouselPrevious"
 
+/**
+ * CarouselNext component is used to create a button for scrolling to the next item in the Carousel.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the button.
+ * @param {string} variant - The variant of the button (default: "outline").
+ * @param {string} size - The size of the button (default: "icon").
+ * @param {React.ComponentProps<typeof Button>} props - Props for the CarouselNext component.
+ * @returns {JSX.Element} The CarouselNext component.
+ *
+ * @example
+ * <CarouselNext className="custom-class" />
+ */
 const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>

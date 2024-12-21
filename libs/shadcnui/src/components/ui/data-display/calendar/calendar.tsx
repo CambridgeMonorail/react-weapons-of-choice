@@ -1,19 +1,22 @@
-import * as React from "react"
+import { FC, ComponentProps } from "react"
 import { DayPicker } from "react-day-picker"
-
-import { cn } from "../../../../lib/utils"
-
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons"
+import { cn } from "../../../../lib/utils"
 import { buttonVariants } from "../../input-controls/button"
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = ComponentProps<typeof DayPicker>
 
-function Calendar({
+/**
+ * Calendar component is used to display a calendar with various customization options.
+ * @param {CalendarProps} props - Props for the Calendar component.
+ * @returns {JSX.Element} The Calendar component.
+ */
+export const Calendar: FC<CalendarProps> = ({
   className,
   classNames,
   showOutsideDays = true,
   ...props
-}: CalendarProps) {
+}) => {
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
@@ -59,13 +62,11 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeftIcon className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRightIcon className="h-4 w-4" />,
+        IconLeft: (props) => <ChevronLeftIcon className="h-4 w-4" {...props} />,
+        IconRight: (props) => <ChevronRightIcon className="h-4 w-4" {...props} />,
       }}
       {...props}
     />
   )
 }
 Calendar.displayName = "Calendar"
-
-export { Calendar }
