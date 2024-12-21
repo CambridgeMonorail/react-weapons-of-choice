@@ -4,40 +4,6 @@ import { cn } from "../../../../lib/utils"
 
 /**
  * Table component is used to display tabular data with customizable styling.
- *
- * @param {string} className - Additional Tailwind CSS classes for the table.
- * @param {React.HTMLAttributes<HTMLTableElement>} props - Props for the Table component.
- * @returns {JSX.Element} The Table component.
- *
- * @example
- * <Table className="custom-class">
- *   <TableHeader>
- *     <TableRow>
- *       <TableHead>Header 1</TableHead>
- *       <TableHead>Header 2</TableHead>
- *       <TableHead>Header 3</TableHead>
- *     </TableRow>
- *   </TableHeader>
- *   <TableBody>
- *     <TableRow>
- *       <TableCell>Data 1</TableCell>
- *       <TableCell>Data 2</TableCell>
- *       <TableCell>Data 3</TableCell>
- *     </TableRow>
- *     <TableRow>
- *       <TableCell>Data 4</TableCell>
- *       <TableCell>Data 5</TableCell>
- *       <TableCell>Data 6</TableCell>
- *     </TableRow>
- *   </TableBody>
- *   <TableFooter>
- *     <TableRow>
- *       <TableCell>Footer 1</TableCell>
- *       <TableCell>Footer 2</TableCell>
- *       <TableCell>Footer 3</TableCell>
- *     </TableRow>
- *   </TableFooter>
- * </Table>
  */
 const Table = React.forwardRef<
   HTMLTableElement,

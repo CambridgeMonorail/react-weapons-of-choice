@@ -46,25 +46,6 @@ function useCarousel() {
 
 /**
  * Carousel component is used to create a carousel with customizable options and plugins.
- *
- * @param {CarouselOptions} opts - Options for the carousel.
- * @param {CarouselPlugin} plugins - Plugins for the carousel.
- * @param {"horizontal" | "vertical"} orientation - The orientation of the carousel.
- * @param {(api: CarouselApi) => void} setApi - Callback to set the carousel API.
- * @param {string} className - Additional Tailwind CSS classes for the carousel.
- * @param {React.HTMLAttributes<HTMLDivElement>} props - Props for the Carousel component.
- * @returns {JSX.Element} The Carousel component.
- *
- * @example
- * <Carousel orientation="horizontal" className="custom-class">
- *   <CarouselContent>
- *     <CarouselItem>Item 1</CarouselItem>
- *     <CarouselItem>Item 2</CarouselItem>
- *     <CarouselItem>Item 3</CarouselItem>
- *   </CarouselContent>
- *   <CarouselPrevious />
- *   <CarouselNext />
- * </Carousel>
  */
 const Carousel = React.forwardRef<
   HTMLDivElement,

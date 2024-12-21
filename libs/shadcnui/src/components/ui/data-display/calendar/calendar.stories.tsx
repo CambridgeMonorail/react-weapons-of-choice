@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Calendar } from './calendar';
 
 const meta: Meta<typeof Calendar> = {
-  title: 'Shadcnui/Calendar',
+  title: 'Shadcnui/Data Display/Calendar',
   component: Calendar,
   tags: ['autodocs'],
   argTypes: {

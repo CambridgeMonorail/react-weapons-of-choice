@@ -3,24 +3,6 @@ import * as React from "react"
 
 /**
  * Card component is a flexible content container with various styling options.
- *
- * @param {string} className - Additional Tailwind CSS classes for the card.
- * @param {React.HTMLAttributes<HTMLDivElement>} props - Props for the Card component.
- * @returns {JSX.Element} The Card component.
- *
- * @example
- * <Card className="custom-class">
- *   <CardHeader>
- *     <CardTitle>Card Title</CardTitle>
- *     <CardDescription>Card Description</CardDescription>
- *   </CardHeader>
- *   <CardContent>
- *     <p>This is the content of the card.</p>
- *   </CardContent>
- *   <CardFooter>
- *     <p>Card Footer</p>
- *   </CardFooter>
- * </Card>
  */
 const Card = React.forwardRef<
   HTMLDivElement,

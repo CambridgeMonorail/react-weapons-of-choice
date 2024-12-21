@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ChartContainer, ChartTooltip, ChartLegend, ChartTooltipContent, ChartLegendContent } from './chart';
 
 const meta: Meta<typeof ChartContainer> = {
-  title: 'Shadcnui/Chart',
+  title: 'Shadcnui/Data Display/Chart',
   component: ChartContainer,
   tags: ['autodocs'],
   argTypes: {

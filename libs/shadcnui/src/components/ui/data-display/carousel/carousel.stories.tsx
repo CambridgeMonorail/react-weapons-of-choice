@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from './carousel';
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Shadcnui/Carousel',
+  title: 'Shadcnui/Data Display/Carousel',
   component: Carousel,
   tags: ['autodocs'],
   argTypes: {

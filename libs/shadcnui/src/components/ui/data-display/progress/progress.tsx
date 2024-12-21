@@ -7,14 +7,6 @@ import { cn } from "../../../../lib/utils"
 
 /**
  * Progress component is used to display a progress bar with customizable value.
- *
- * @param {string} className - Additional Tailwind CSS classes for the progress bar.
- * @param {number} value - The progress value.
- * @param {React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>} props - Props for the Progress component.
- * @returns {JSX.Element} The Progress component.
- *
- * @example
- * <Progress value={50} className="custom-class" />
  */
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,

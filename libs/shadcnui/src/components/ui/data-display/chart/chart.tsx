@@ -41,16 +41,6 @@ function useChart() {
 
 /**
  * ChartContainer component is used to create a container for charts with customizable configuration.
- *
- * @param {ChartConfig} config - Configuration for the chart.
- * @param {React.ComponentProps<"div">} props - Props for the ChartContainer component.
- * @returns {JSX.Element} The ChartContainer component.
- *
- * @example
- * <ChartContainer config={sampleConfig}>
- *   <ChartTooltip content={<ChartTooltipContent />} />
- *   <ChartLegend content={<ChartLegendContent />} />
- * </ChartContainer>
  */
 const ChartContainer = React.forwardRef<
   HTMLDivElement,
