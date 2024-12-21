@@ -23,10 +23,25 @@ const badgeVariants = cva(
   }
 )
 
+/**
+ * BadgeProps interface extends HTML attributes and VariantProps for the Badge component.
+ * It includes properties for className and variant.
+ */
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
+/**
+ * Badge component is used to display a small badge with different variants.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the badge.
+ * @param {string} variant - The variant of the badge (default, secondary, destructive, outline).
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - Props for the Badge component.
+ * @returns {JSX.Element} The Badge component.
+ *
+ * @example
+ * <Badge variant="default" className="custom-class">Default Badge</Badge>
+ */
 function Badge({ className, variant, ...props }: BadgeProps) {
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props} />

@@ -8,6 +8,18 @@ import { buttonVariants } from "../../input-controls/button"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
+/**
+ * Calendar component is used to display a calendar with various customization options.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the calendar.
+ * @param {object} classNames - Custom class names for different parts of the calendar.
+ * @param {boolean} showOutsideDays - Whether to show days outside the current month.
+ * @param {React.ComponentProps<typeof DayPicker>} props - Props for the Calendar component.
+ * @returns {JSX.Element} The Calendar component.
+ *
+ * @example
+ * <Calendar className="custom-class" showOutsideDays={false} />
+ */
 function Calendar({
   className,
   classNames,
