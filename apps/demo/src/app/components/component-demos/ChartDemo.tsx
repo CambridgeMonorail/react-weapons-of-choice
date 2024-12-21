@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Bar, BarChart, Line, LineChart, Pie, PieChart } from "recharts";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shadcnui/components/ui/card";
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@rwoc/shadcnui/components/ui/chart";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shadcnui";
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@rwoc/shadcnui";
 
 interface DataItem {
   name: string;

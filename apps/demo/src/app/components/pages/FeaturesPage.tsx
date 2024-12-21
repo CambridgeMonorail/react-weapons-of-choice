@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@rwoc/shadcnui/components/ui/card';
+} from '@rwoc/shadcnui';
 import {
   ChartContainer,
   ChartTooltip,

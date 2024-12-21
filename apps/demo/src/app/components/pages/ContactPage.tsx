@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui/components/ui/card';
-import { Input } from '@rwoc/shadcnui/components/ui/input';
-import { Textarea } from '@rwoc/shadcnui/components/ui/textarea';
-import { Button } from '@rwoc/shadcnui/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
+import { Input } from '@rwoc/shadcnui';
+import { Textarea } from '@rwoc/shadcnui';
+import { Button } from '@rwoc/shadcnui';
 
 const ContactPage: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shadcnui/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@rwoc/shadcnui";
 
 interface ComponentDefinition {
   name: string;

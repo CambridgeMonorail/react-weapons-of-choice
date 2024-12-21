@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Button } from "@rwoc/shadcnui/components/ui/button";
+import { Button } from "@rwoc/shadcnui";
 import {
   Form,
   FormControl,
@@ -11,8 +11,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@rwoc/shadcnui/components/ui/form";
-import { Input } from "@rwoc/shadcnui/components/ui/input";
+} from "@rwoc/shadcnui";
+import { Input } from "@rwoc/shadcnui";
 import { toast } from "@rwoc/shadcnui/hooks/use-toast";
 
 const formSchema = z.object({
