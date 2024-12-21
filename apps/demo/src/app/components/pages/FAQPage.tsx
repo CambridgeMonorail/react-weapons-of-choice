@@ -1,6 +1,6 @@
 import { useState, useEffect, ChangeEvent } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui/components/ui/card';
-import { Input } from '@rwoc/shadcnui/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
+import { Input } from '@rwoc/shadcnui';
 
 interface FAQ {
   question: string;

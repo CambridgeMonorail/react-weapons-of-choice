@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Switch } from '@rwoc/shadcnui/components/ui/switch';
+import { Switch } from '@rwoc/shadcnui';
 import { PricingTiers } from './PricingTiers';
 import { FeaturesComparison } from './FeaturesComparison';
 

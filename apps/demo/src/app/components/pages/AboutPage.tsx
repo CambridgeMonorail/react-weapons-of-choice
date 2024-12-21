@@ -5,7 +5,7 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@rwoc/shadcnui/components/ui/card';
+} from '@rwoc/shadcnui';
 
 import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';

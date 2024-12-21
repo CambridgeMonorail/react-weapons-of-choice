@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
 import { Check, X } from 'lucide-react'; // Import Lucide icons
 
 const featuresList = [

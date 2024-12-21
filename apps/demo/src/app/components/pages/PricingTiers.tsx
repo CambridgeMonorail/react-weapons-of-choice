@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui/components/ui/card';
-import { Button } from '@rwoc/shadcnui/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
+import { Button } from '@rwoc/shadcnui';
 
 interface PricingTier {
   name: string;

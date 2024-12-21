@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from "@rwoc/shadcnui/components/ui/button";
+import { Button } from "@rwoc/shadcnui";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@rwoc/shadcnui/components/ui/dropdown-menu";
+} from "@rwoc/shadcnui";
 
 export const DropdownDemo: FC = () => {
   return (

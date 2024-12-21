@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button } from "@rwoc/shadcnui/components/ui/button";
+import { Button } from "@rwoc/shadcnui";
 import {
   Card,
   CardContent,
@@ -7,15 +7,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@rwoc/shadcnui/components/ui/card";
-import { Input } from "@rwoc/shadcnui/components/ui/input";
-import { Label } from "@rwoc/shadcnui/components/ui/label";
+} from "@rwoc/shadcnui";
+import { Input } from "@rwoc/shadcnui";
+import { Label } from "@rwoc/shadcnui";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@rwoc/shadcnui/components/ui/tabs";
+} from "@rwoc/shadcnui";
 
 const TabsDemo: FC = () => {
   return (
