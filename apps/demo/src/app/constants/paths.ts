@@ -19,17 +19,10 @@ export const paths = {
   termsAndConditions: '/terms-and-conditions',
   dashboard: '/dashboard',
   components: {
-    demoButton: '/components/demo-button',
-    demoCard: '/components/demo-card',
-    demoChart: '/components/demo-chart',
-    demoDialog: '/components/demo-dialog',
-    demoDropdown: '/components/demo-dropdown',
-    demoForm: '/components/demo-form',
-    demoTabs: '/components/demo-tabs',
-    demoToggle: '/components/demo-toggle',
-    demoTooltip: '/components/demo-tooltip',
+    colorPalette: '/color-palette',
+    libraryPage: '/library',
   },
-  colorPalette: '/color-palette',
+
   statusBoard: '/status-board',
   notFound: '*',
 };
