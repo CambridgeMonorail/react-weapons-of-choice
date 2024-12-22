@@ -1,6 +1,5 @@
-import * as React from "react"
+import { FC, HTMLAttributes } from "react"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "../../../../lib/utils"
 
 const badgeVariants = cva(
@@ -23,14 +22,21 @@ const badgeVariants = cva(
   }
 )
 
+/**
+ * BadgeProps interface extends HTML attributes and VariantProps for the Badge component.
+ * It includes properties for className and variant.
+ */
 export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
-function Badge({ className, variant, ...props }: BadgeProps) {
+/**
+ * Badge component is used to display a small badge with different variants.
+ * @param {BadgeProps} props - Props for the Badge component.
+ * @returns {JSX.Element} The Badge component.
+ */
+export const Badge: FC<BadgeProps> = ({ className, variant, ...props }) => {
   return (
     <div className={cn(badgeVariants({ variant }), className)} {...props} />
   )
 }
-
-export { Badge, badgeVariants }

@@ -1,5 +1,8 @@
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Skeleton component is used to display a loading placeholder with a pulsing animation.
+ */
 function Skeleton({
   className,
   ...props

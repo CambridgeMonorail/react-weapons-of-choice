@@ -39,6 +39,9 @@ function useChart() {
   return context
 }
 
+/**
+ * ChartContainer component is used to create a container for charts with customizable configuration.
+ */
 const ChartContainer = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -72,6 +75,16 @@ const ChartContainer = React.forwardRef<
 })
 ChartContainer.displayName = "Chart"
 
+/**
+ * ChartStyle component is used to apply custom styles to the chart based on the configuration.
+ *
+ * @param {string} id - The ID of the chart.
+ * @param {ChartConfig} config - Configuration for the chart.
+ * @returns {JSX.Element | null} The ChartStyle component.
+ *
+ * @example
+ * <ChartStyle id="chart-1" config={sampleConfig} />
+ */
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(
     ([_, config]) => config.theme || config.color
@@ -105,8 +118,26 @@ ${colorConfig
   )
 }
 
+/**
+ * ChartTooltip component is used to display a tooltip for the chart.
+ *
+ * @param {RechartsPrimitive.TooltipProps} props - Props for the ChartTooltip component.
+ * @returns {JSX.Element} The ChartTooltip component.
+ *
+ * @example
+ * <ChartTooltip content={<ChartTooltipContent />} />
+ */
 const ChartTooltip = RechartsPrimitive.Tooltip
 
+/**
+ * ChartTooltipContent component is used to customize the content of the chart tooltip.
+ *
+ * @param {RechartsPrimitive.TooltipProps & React.ComponentProps<"div">} props - Props for the ChartTooltipContent component.
+ * @returns {JSX.Element | null} The ChartTooltipContent component.
+ *
+ * @example
+ * <ChartTooltipContent payload={samplePayload} />
+ */
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
@@ -261,8 +292,26 @@ const ChartTooltipContent = React.forwardRef<
 )
 ChartTooltipContent.displayName = "ChartTooltip"
 
+/**
+ * ChartLegend component is used to display a legend for the chart.
+ *
+ * @param {RechartsPrimitive.LegendProps} props - Props for the ChartLegend component.
+ * @returns {JSX.Element} The ChartLegend component.
+ *
+ * @example
+ * <ChartLegend content={<ChartLegendContent />} />
+ */
 const ChartLegend = RechartsPrimitive.Legend
 
+/**
+ * ChartLegendContent component is used to customize the content of the chart legend.
+ *
+ * @param {RechartsPrimitive.LegendProps & React.ComponentProps<"div">} props - Props for the ChartLegendContent component.
+ * @returns {JSX.Element | null} The ChartLegendContent component.
+ *
+ * @example
+ * <ChartLegendContent payload={samplePayload} />
+ */
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
