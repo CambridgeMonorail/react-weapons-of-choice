@@ -1,31 +1,22 @@
-import { createElement } from 'react';
-import { LandingPage } from '../components/landing-page/LandingPage';
-
-import { NotFound } from '../components/NotFound';
 import { AboutPage } from '../components/pages/AboutPage';
-import { FeaturesPage } from '../components/pages/FeaturesPage';
-import { PricingPage } from '../components/pages/PricingPage';
-import { FAQPage } from '../components/pages/FAQPage';
-import ContactPage from '../components/pages/ContactPage';
-import BlogPage from '../components/pages/BlogPage';
-import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
-import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
-import { ButtonDemo } from '../components/component-demos/ButtonDemo';
-import { CardDemo } from '../components/component-demos/CardDemo';
-import { ChartDemo } from '../components/component-demos/ChartDemo';
-import { DialogDemo } from '../components/component-demos/DialogDemo';
-import { DropdownDemo } from '../components/component-demos/DropdownDemo';
-import { FormDemo } from '../components/component-demos/FormDemo';
-import { TabsDemo } from '../components/component-demos/TabsDemo';
-import { ToggleDemo } from '../components/component-demos/ToggleDemo';
-import TooltipDemo from '../components/component-demos/TooltipDemo';
-import { ColorPalettePage } from '../components/pages/ColorPalettePage';
-import { StatusBoardPage } from '../components/pages/StatusBoardPage';
-import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
-import { paths } from '../constants/paths';
+import { ColorPalettePage } from '../components/pages/ColorPalettePage';
+import { createElement } from 'react';
+import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
+import { FAQPage } from '../components/pages/FAQPage';
+import { FeaturesPage } from '../components/pages/FeaturesPage';
+import { LandingPage } from '../components/landing-page/LandingPage';
 import { Layout } from '@rwoc/shell';
-import { sidebarData } from '../data/sidebarData'; // Adjust the import path as necessary
+import { LibraryPage } from '../components/pages/LibraryPage';
+import { NotFound } from '../components/NotFound';
+import { paths } from '../constants/paths';
+import { PricingPage } from '../components/pages/PricingPage';
+import { sidebarData } from '../data/sidebarData';
+import { StatusBoardPage } from '../components/pages/StatusBoardPage';
+import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
+import BlogPage from '../components/pages/BlogPage';
+import ContactPage from '../components/pages/ContactPage';
+import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
 
 /**
  * Defines the routes for the application.
@@ -50,16 +41,8 @@ export const routes: AppRoute[] = [
   { path: paths.blog, element: createElement(Layout, { sidebarData, children: createElement(BlogPage) }) },
   { path: paths.blogPost, element: createElement(Layout, { sidebarData, children: createElement(IndividualBlogPostPage) }) },
   { path: paths.termsAndConditions, element: createElement(Layout, { sidebarData, children: createElement(TermsAndConditionsPage) }) },
-  { path: paths.components.demoButton, element: createElement(Layout, { sidebarData, children: createElement(ButtonDemo) }) },
-  { path: paths.components.demoCard, element: createElement(Layout, { sidebarData, children: createElement(CardDemo) }) },
-  { path: paths.components.demoChart, element: createElement(Layout, { sidebarData, children: createElement(ChartDemo) }) },
-  { path: paths.components.demoDialog, element: createElement(Layout, { sidebarData, children: createElement(DialogDemo) }) },
-  { path: paths.components.demoDropdown, element: createElement(Layout, { sidebarData, children: createElement(DropdownDemo) }) },
-  { path: paths.components.demoForm, element: createElement(Layout, { sidebarData, children: createElement(FormDemo) }) },
-  { path: paths.components.demoTabs, element: createElement(Layout, { sidebarData, children: createElement(TabsDemo) }) },
-  { path: paths.components.demoToggle, element: createElement(Layout, { sidebarData, children: createElement(ToggleDemo) }) },
-  { path: paths.components.demoTooltip, element: createElement(Layout, { sidebarData, children: createElement(TooltipDemo) }) },
-  { path: paths.colorPalette, element: createElement(Layout, { sidebarData, children: createElement(ColorPalettePage) }) },
+  { path: paths.components.colorPalette, element: createElement(Layout, { sidebarData, children: createElement(ColorPalettePage) }) },
+  { path: paths.components.libraryPage, element: createElement(Layout, { sidebarData, children: createElement(LibraryPage) }) },
   { path: paths.statusBoard, element: createElement(Layout, { sidebarData, children: createElement(StatusBoardPage) }) },
   { path: paths.notFound, element: createElement(NotFound) },
 ];

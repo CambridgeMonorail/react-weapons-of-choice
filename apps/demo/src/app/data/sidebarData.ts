@@ -37,27 +37,20 @@ export const sidebarData: SidebarConfiguration = {
         { title: 'Contact', url: paths.contact },
         { title: 'Blog', url: paths.blog },
         { title: 'Terms and Conditions', url: paths.termsAndConditions },
-        { title: 'Color Palette', url: paths.colorPalette },
+
         { title: 'StatusBoard', url: paths.statusBoard },
       ],
     },
     {
       title: 'Components',
-      url: paths.components.demoButton,
+      url: paths.components.libraryPage,
       icon: Bot,
       items: [
-        { title: 'Demo Button', url: paths.components.demoButton },
-        { title: 'Demo Card', url: paths.components.demoCard },
-        { title: 'Demo Chart', url: paths.components.demoChart },
-        { title: 'Demo Dialog', url: paths.components.demoDialog },
-        { title: 'Demo Dropdown', url: paths.components.demoDropdown },
-        { title: 'Demo Form', url: paths.components.demoForm },
-        { title: 'Demo Tabs', url: paths.components.demoTabs },
-        { title: 'Demo Toggle', url: paths.components.demoToggle },
-        { title: 'Demo Tooltip', url: paths.demoTooltip },
+        { title: 'Shadcn/ui Components', url: paths.components.libraryPage },
+        { title: 'Color Palette', url: paths.components.colorPalette },
       ],
     },
-    {
+/*     {
       title: 'Documentation',
       url: paths.notFound,
       icon: BookOpen,
@@ -78,6 +71,6 @@ export const sidebarData: SidebarConfiguration = {
         { title: 'Billing', url: paths.notFound },
         { title: 'Limits', url: paths.notFound },
       ],
-    },
+    }, */
   ],
 };
