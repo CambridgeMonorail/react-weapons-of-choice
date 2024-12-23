@@ -5,6 +5,30 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Drawer component provides a modal drawer that slides in from the bottom of the screen.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Drawer>
+ *   <DrawerTrigger asChild>
+ *     <Button variant="outline">Open Drawer</Button>
+ *   </DrawerTrigger>
+ *   <DrawerContent>
+ *     <DrawerHeader>
+ *       <DrawerTitle>Drawer Title</DrawerTitle>
+ *       <DrawerDescription>
+ *         This is a simple drawer description.
+ *       </DrawerDescription>
+ *     </DrawerHeader>
+ *     <DrawerFooter>
+ *       <DrawerClose>Close</DrawerClose>
+ *     </DrawerFooter>
+ *   </DrawerContent>
+ * </Drawer>
+ * ```
+ */
 const Drawer = ({
   shouldScaleBackground = true,
   ...props
@@ -16,12 +40,32 @@ const Drawer = ({
 )
 Drawer.displayName = "Drawer"
 
+/**
+ * DrawerTrigger component is used to open the Drawer.
+ * 
+ * @component
+ */
 const DrawerTrigger = DrawerPrimitive.Trigger
 
+/**
+ * DrawerPortal component is used to render the Drawer in a portal.
+ * 
+ * @component
+ */
 const DrawerPortal = DrawerPrimitive.Portal
 
+/**
+ * DrawerClose component is used to render the close button of the Drawer.
+ * 
+ * @component
+ */
 const DrawerClose = DrawerPrimitive.Close
 
+/**
+ * DrawerOverlay component is used to render the overlay behind the Drawer.
+ * 
+ * @component
+ */
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
@@ -34,6 +78,11 @@ const DrawerOverlay = React.forwardRef<
 ))
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 
+/**
+ * DrawerContent component is used to render the content of the Drawer.
+ * 
+ * @component
+ */
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
@@ -55,6 +104,11 @@ const DrawerContent = React.forwardRef<
 ))
 DrawerContent.displayName = "DrawerContent"
 
+/**
+ * DrawerHeader component is used to render the header of the Drawer.
+ * 
+ * @component
+ */
 const DrawerHeader = ({
   className,
   ...props
@@ -66,6 +120,11 @@ const DrawerHeader = ({
 )
 DrawerHeader.displayName = "DrawerHeader"
 
+/**
+ * DrawerFooter component is used to render the footer of the Drawer.
+ * 
+ * @component
+ */
 const DrawerFooter = ({
   className,
   ...props
@@ -77,6 +136,11 @@ const DrawerFooter = ({
 )
 DrawerFooter.displayName = "DrawerFooter"
 
+/**
+ * DrawerTitle component is used to render the title of the Drawer.
+ * 
+ * @component
+ */
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
@@ -92,6 +156,11 @@ const DrawerTitle = React.forwardRef<
 ))
 DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 
+/**
+ * DrawerDescription component is used to render the description of the Drawer.
+ * 
+ * @component
+ */
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>

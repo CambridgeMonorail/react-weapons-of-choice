@@ -5,14 +5,58 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { cn } from "../../../../lib/utils"
 import { Cross2Icon } from "@radix-ui/react-icons"
 
+/**
+ * Dialog component provides a modal dialog that interrupts the user's workflow to present important information or request input.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Dialog>
+ *   <DialogTrigger asChild>
+ *     <Button variant="outline">Open Dialog</Button>
+ *   </DialogTrigger>
+ *   <DialogContent>
+ *     <DialogHeader>
+ *       <DialogTitle>Dialog Title</DialogTitle>
+ *       <DialogDescription>
+ *         This is a simple dialog description.
+ *       </DialogDescription>
+ *     </DialogHeader>
+ *     <DialogFooter>
+ *       <DialogClose>Close</DialogClose>
+ *     </DialogFooter>
+ *   </DialogContent>
+ * </Dialog>
+ * ```
+ */
 const Dialog = DialogPrimitive.Root
 
+/**
+ * DialogTrigger component is used to open the Dialog.
+ * 
+ * @component
+ */
 const DialogTrigger = DialogPrimitive.Trigger
 
+/**
+ * DialogPortal component is used to render the Dialog in a portal.
+ * 
+ * @component
+ */
 const DialogPortal = DialogPrimitive.Portal
 
+/**
+ * DialogClose component is used to render the close button of the Dialog.
+ * 
+ * @component
+ */
 const DialogClose = DialogPrimitive.Close
 
+/**
+ * DialogOverlay component is used to render the overlay behind the Dialog.
+ * 
+ * @component
+ */
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
@@ -28,6 +72,11 @@ const DialogOverlay = React.forwardRef<
 ))
 DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
+/**
+ * DialogContent component is used to render the content of the Dialog.
+ * 
+ * @component
+ */
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
@@ -52,6 +101,11 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
+/**
+ * DialogHeader component is used to render the header of the Dialog.
+ * 
+ * @component
+ */
 const DialogHeader = ({
   className,
   ...props
@@ -66,6 +120,11 @@ const DialogHeader = ({
 )
 DialogHeader.displayName = "DialogHeader"
 
+/**
+ * DialogFooter component is used to render the footer of the Dialog.
+ * 
+ * @component
+ */
 const DialogFooter = ({
   className,
   ...props
@@ -80,6 +139,11 @@ const DialogFooter = ({
 )
 DialogFooter.displayName = "DialogFooter"
 
+/**
+ * DialogTitle component is used to render the title of the Dialog.
+ * 
+ * @component
+ */
 const DialogTitle = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
@@ -95,6 +159,11 @@ const DialogTitle = React.forwardRef<
 ))
 DialogTitle.displayName = DialogPrimitive.Title.displayName
 
+/**
+ * DialogDescription component is used to render the description of the Dialog.
+ * 
+ * @component
+ */
 const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>

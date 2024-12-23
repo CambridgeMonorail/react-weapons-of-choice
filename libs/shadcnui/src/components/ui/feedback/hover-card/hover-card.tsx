@@ -5,10 +5,39 @@ import * as HoverCardPrimitive from "@radix-ui/react-hover-card"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * HoverCard component provides a popover that appears when the user hovers over an element.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <HoverCard>
+ *   <HoverCardTrigger asChild>
+ *     <Button variant="outline">Hover over me</Button>
+ *   </HoverCardTrigger>
+ *   <HoverCardContent>
+ *     <div className="text-sm">
+ *       <strong>HoverCard Title</strong>
+ *       <p>This is a simple hover card description.</p>
+ *     </div>
+ *   </HoverCardContent>
+ * </HoverCard>
+ * ```
+ */
 const HoverCard = HoverCardPrimitive.Root
 
+/**
+ * HoverCardTrigger component is used to open the HoverCard.
+ * 
+ * @component
+ */
 const HoverCardTrigger = HoverCardPrimitive.Trigger
 
+/**
+ * HoverCardContent component is used to render the content of the HoverCard.
+ * 
+ * @component
+ */
 const HoverCardContent = React.forwardRef<
   React.ElementRef<typeof HoverCardPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof HoverCardPrimitive.Content>

@@ -19,6 +19,18 @@ const alertVariants = cva(
   }
 )
 
+/**
+ * Alert component provides a visual representation of an alert message.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Alert>
+ *   <AlertTitle>Default Alert</AlertTitle>
+ *   <AlertDescription>This is a default alert message.</AlertDescription>
+ * </Alert>
+ * ```
+ */
 const Alert = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & VariantProps<typeof alertVariants>
@@ -32,6 +44,11 @@ const Alert = React.forwardRef<
 ))
 Alert.displayName = "Alert"
 
+/**
+ * AlertTitle component is used to render the title of the Alert.
+ * 
+ * @component
+ */
 const AlertTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -44,6 +61,11 @@ const AlertTitle = React.forwardRef<
 ))
 AlertTitle.displayName = "AlertTitle"
 
+/**
+ * AlertDescription component is used to render the description of the Alert.
+ * 
+ * @component
+ */
 const AlertDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>

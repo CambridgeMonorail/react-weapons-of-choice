@@ -4,13 +4,52 @@ import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import { cn } from "../../../../lib/utils"
 import { buttonVariants } from "../../input-controls/button"
 
-
+/**
+ * AlertDialog component provides a modal dialog that interrupts the user's workflow to confirm a critical action.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <AlertDialog>
+ *   <AlertDialogTrigger asChild>
+ *     <Button variant="outline">Open Dialog</Button>
+ *   </AlertDialogTrigger>
+ *   <AlertDialogContent>
+ *     <AlertDialogHeader>
+ *       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+ *       <AlertDialogDescription>
+ *         This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+ *       </AlertDialogDescription>
+ *     </AlertDialogHeader>
+ *     <AlertDialogFooter>
+ *       <AlertDialogCancel>Cancel</AlertDialogCancel>
+ *       <AlertDialogAction>Confirm</AlertDialogAction>
+ *     </AlertDialogFooter>
+ *   </AlertDialogContent>
+ * </AlertDialog>
+ * ```
+ */
 const AlertDialog = AlertDialogPrimitive.Root
 
+/**
+ * AlertDialogTrigger component is used to open the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 
+/**
+ * AlertDialogPortal component is used to render the AlertDialog in a portal.
+ * 
+ * @component
+ */
 const AlertDialogPortal = AlertDialogPrimitive.Portal
 
+/**
+ * AlertDialogOverlay component is used to render the overlay behind the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogOverlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
@@ -26,6 +65,11 @@ const AlertDialogOverlay = React.forwardRef<
 ))
 AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
 
+/**
+ * AlertDialogContent component is used to render the content of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
@@ -44,6 +88,11 @@ const AlertDialogContent = React.forwardRef<
 ))
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
 
+/**
+ * AlertDialogHeader component is used to render the header of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogHeader = ({
   className,
   ...props
@@ -58,6 +107,11 @@ const AlertDialogHeader = ({
 )
 AlertDialogHeader.displayName = "AlertDialogHeader"
 
+/**
+ * AlertDialogFooter component is used to render the footer of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogFooter = ({
   className,
   ...props
@@ -72,6 +126,11 @@ const AlertDialogFooter = ({
 )
 AlertDialogFooter.displayName = "AlertDialogFooter"
 
+/**
+ * AlertDialogTitle component is used to render the title of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogTitle = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
@@ -84,6 +143,11 @@ const AlertDialogTitle = React.forwardRef<
 ))
 AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 
+/**
+ * AlertDialogDescription component is used to render the description of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogDescription = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
@@ -97,6 +161,11 @@ const AlertDialogDescription = React.forwardRef<
 AlertDialogDescription.displayName =
   AlertDialogPrimitive.Description.displayName
 
+/**
+ * AlertDialogAction component is used to render the action button of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogAction = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
@@ -109,6 +178,11 @@ const AlertDialogAction = React.forwardRef<
 ))
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 
+/**
+ * AlertDialogCancel component is used to render the cancel button of the AlertDialog.
+ * 
+ * @component
+ */
 const AlertDialogCancel = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
