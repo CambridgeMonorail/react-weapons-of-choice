@@ -3,7 +3,7 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from './tool
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/Tooltip',
+  title: 'Shadcnui/Feedback/Tooltip',
   component: Tooltip,
   tags: ['autodocs'],
 };

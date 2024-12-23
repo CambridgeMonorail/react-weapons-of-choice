@@ -3,7 +3,7 @@ import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerFooter, Drawe
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Drawer> = {
-  title: 'Components/Drawer',
+  title: 'Shadcnui/Feedback/Drawer',
   component: Drawer,
   tags: ['autodocs'],
 };

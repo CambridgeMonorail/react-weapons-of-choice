@@ -3,7 +3,7 @@ import { Toast, ToastProvider, ToastViewport, ToastTitle, ToastDescription, Toas
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Toast> = {
-  title: 'Components/Toast',
+  title: 'Shadcnui/Feedback/Toast',
   component: Toast,
   tags: ['autodocs'],
 };

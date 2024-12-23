@@ -3,7 +3,7 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogFooter, Dialo
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
+  title: 'Shadcnui/Feedback/Dialog',
   component: Dialog,
   tags: ['autodocs'],
 };

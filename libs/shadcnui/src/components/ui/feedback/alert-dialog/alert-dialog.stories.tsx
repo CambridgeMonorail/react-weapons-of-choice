@@ -3,7 +3,7 @@ import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof AlertDialog> = {
-  title: 'Components/AlertDialog',
+  title: 'Shadcnui/Feedback/AlertDialog',
   component: AlertDialog,
   tags: ['autodocs'],
 };

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Alert, AlertTitle, AlertDescription } from './alert';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Components/Alert',
+  title: 'Shadcnui/Feedback/Alert',
   component: Alert,
   tags: ['autodocs'],
 };
