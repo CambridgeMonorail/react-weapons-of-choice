@@ -3,12 +3,43 @@ import * as PopoverPrimitive from "@radix-ui/react-popover"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Popover component provides a popover that appears when the user clicks on a trigger element.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Popover>
+ *   <PopoverTrigger asChild>
+ *     <Button variant="outline">Open Popover</Button>
+ *   </PopoverTrigger>
+ *   <PopoverContent>
+ *     <p>This is a simple popover content.</p>
+ *   </PopoverContent>
+ * </Popover>
+ * ```
+ */
 const Popover = PopoverPrimitive.Root
 
+/**
+ * PopoverTrigger component is used to open the Popover.
+ * 
+ * @component
+ */
 const PopoverTrigger = PopoverPrimitive.Trigger
 
+/**
+ * PopoverAnchor component is used to render an anchor element for the Popover.
+ * 
+ * @component
+ */
 const PopoverAnchor = PopoverPrimitive.Anchor
 
+/**
+ * PopoverContent component is used to render the content of the Popover.
+ * 
+ * @component
+ */
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>

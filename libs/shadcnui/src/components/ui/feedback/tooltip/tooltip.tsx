@@ -5,12 +5,45 @@ import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * TooltipProvider component provides a context for managing tooltip interactions.
+ * 
+ * @component
+ */
 const TooltipProvider = TooltipPrimitive.Provider
 
+/**
+ * Tooltip component provides a popover that appears when the user hovers over an element.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <TooltipProvider>
+ *   <Tooltip>
+ *     <TooltipTrigger asChild>
+ *       <Button variant="outline">Hover me</Button>
+ *     </TooltipTrigger>
+ *     <TooltipContent>
+ *       This is a default tooltip message.
+ *     </TooltipContent>
+ *   </Tooltip>
+ * </TooltipProvider>
+ * ```
+ */
 const Tooltip = TooltipPrimitive.Root
 
+/**
+ * TooltipTrigger component is used to open the Tooltip.
+ * 
+ * @component
+ */
 const TooltipTrigger = TooltipPrimitive.Trigger
 
+/**
+ * TooltipContent component is used to render the content of the Tooltip.
+ * 
+ * @component
+ */
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>

@@ -4,8 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "../../../../lib/utils"
 import { Cross2Icon } from "@radix-ui/react-icons"
 
+/**
+ * ToastProvider component provides a context for managing toast notifications.
+ * 
+ * @component
+ */
 const ToastProvider = ToastPrimitives.Provider
 
+/**
+ * ToastViewport component is used to render the viewport for toast notifications.
+ * 
+ * @component
+ */
 const ToastViewport = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Viewport>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
@@ -37,6 +47,19 @@ const toastVariants = cva(
   }
 )
 
+/**
+ * Toast component provides a toast notification.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Toast>
+ *   <ToastTitle>Default Toast</ToastTitle>
+ *   <ToastDescription>This is a default toast message.</ToastDescription>
+ *   <ToastClose />
+ * </Toast>
+ * ```
+ */
 const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
@@ -52,6 +75,11 @@ const Toast = React.forwardRef<
 })
 Toast.displayName = ToastPrimitives.Root.displayName
 
+/**
+ * ToastAction component is used to render the action button of the Toast.
+ * 
+ * @component
+ */
 const ToastAction = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Action>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
@@ -67,6 +95,11 @@ const ToastAction = React.forwardRef<
 ))
 ToastAction.displayName = ToastPrimitives.Action.displayName
 
+/**
+ * ToastClose component is used to render the close button of the Toast.
+ * 
+ * @component
+ */
 const ToastClose = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Close>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>
@@ -85,6 +118,11 @@ const ToastClose = React.forwardRef<
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName
 
+/**
+ * ToastTitle component is used to render the title of the Toast.
+ * 
+ * @component
+ */
 const ToastTitle = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Title>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
@@ -97,6 +135,11 @@ const ToastTitle = React.forwardRef<
 ))
 ToastTitle.displayName = ToastPrimitives.Title.displayName
 
+/**
+ * ToastDescription component is used to render the description of the Toast.
+ * 
+ * @component
+ */
 const ToastDescription = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Description>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
