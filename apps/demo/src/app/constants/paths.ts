@@ -8,21 +8,20 @@
  */
 export const paths = {
   landing: '/',
-  home: '/home',
   about: '/about',
-  features: '/features',
-  pricing: '/pricing',
-  faq: '/faq',
-  contact: '/contact',
   blog: '/blog',
   blogPost: '/blog/:postId',
-  termsAndConditions: '/terms-and-conditions',
+  contact: '/contact',
   dashboard: '/dashboard',
+  faq: '/faq',
+  features: '/features',
+  home: '/home',
+  pricing: '/pricing',
+  statusBoard: '/status-board',
+  termsAndConditions: '/terms-and-conditions',
   components: {
     colorPalette: '/color-palette',
     libraryPage: '/library',
   },
-
-  statusBoard: '/status-board',
   notFound: '*',
 };

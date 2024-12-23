@@ -1,23 +1,22 @@
-import { createElement } from 'react';
-import { LandingPage } from '../components/landing-page/LandingPage';
-
-import { NotFound } from '../components/NotFound';
 import { AboutPage } from '../components/pages/AboutPage';
-import { FeaturesPage } from '../components/pages/FeaturesPage';
-import { PricingPage } from '../components/pages/PricingPage';
-import { FAQPage } from '../components/pages/FAQPage';
-import ContactPage from '../components/pages/ContactPage';
-import BlogPage from '../components/pages/BlogPage';
-import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
-import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
-import { ColorPalettePage } from '../components/pages/ColorPalettePage';
-import { StatusBoardPage } from '../components/pages/StatusBoardPage';
-import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
 import { AppRoute } from '../types/app-route';
-import { paths } from '../constants/paths';
+import { ColorPalettePage } from '../components/pages/ColorPalettePage';
+import { createElement } from 'react';
+import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
+import { FAQPage } from '../components/pages/FAQPage';
+import { FeaturesPage } from '../components/pages/FeaturesPage';
+import { LandingPage } from '../components/landing-page/LandingPage';
 import { Layout } from '@rwoc/shell';
-import { sidebarData } from '../data/sidebarData'; 
-import LibraryPage from '../components/pages/LibraryPage';
+import { LibraryPage } from '../components/pages/LibraryPage';
+import { NotFound } from '../components/NotFound';
+import { paths } from '../constants/paths';
+import { PricingPage } from '../components/pages/PricingPage';
+import { sidebarData } from '../data/sidebarData';
+import { StatusBoardPage } from '../components/pages/StatusBoardPage';
+import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
+import BlogPage from '../components/pages/BlogPage';
+import ContactPage from '../components/pages/ContactPage';
+import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
 
 /**
  * Defines the routes for the application.
