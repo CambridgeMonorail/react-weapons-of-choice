@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator } from './command';
 
 const meta: Meta<typeof Command> = {
-  title: 'Components/Command',
+  title: 'Shadcnui/Navigation/Command',
   component: Command,
   tags: ['autodocs'],
 };

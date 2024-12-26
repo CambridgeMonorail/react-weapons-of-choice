@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuPortal, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup } from './context-menu';
 
 const meta: Meta<typeof ContextMenu> = {
-  title: 'Components/ContextMenu',
+  title: 'Shadcnui/Navigation/ContextMenu',
   component: ContextMenu,
   tags: ['autodocs'],
 };

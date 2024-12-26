@@ -38,23 +38,6 @@ Pagination.displayName = "Pagination"
 
 /**
  * PaginationContent component that provides the content for the pagination.
- * 
- * @component
- * @example
- * ```tsx
- * <PaginationContent>
- *   <PaginationPrevious href="#" />
- *   <PaginationItem>
- *     <PaginationLink href="#" isActive>
- *       1
- *     </PaginationLink>
- *   </PaginationItem>
- *   <PaginationItem>
- *     <PaginationLink href="#">2</PaginationLink>
- *   </PaginationItem>
- *   <PaginationNext href="#" />
- * </PaginationContent>
- * ```
  */
 const PaginationContent = React.forwardRef<
   HTMLUListElement,

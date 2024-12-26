@@ -6,27 +6,6 @@ import { ChevronDownIcon } from "@radix-ui/react-icons"
 
 /**
  * NavigationMenu component that provides a navigation menu interface.
- * 
- * @component
- * @example
- * ```tsx
- * <NavigationMenu>
- *   <NavigationMenuList>
- *     <NavigationMenuItem>
- *       <NavigationMenuTrigger>Item 1</NavigationMenuTrigger>
- *       <NavigationMenuContent>
- *         <NavigationMenuLink href="#">Link 1</NavigationMenuLink>
- *       </NavigationMenuContent>
- *     </NavigationMenuItem>
- *     <NavigationMenuItem>
- *       <NavigationMenuTrigger>Item 2</NavigationMenuTrigger>
- *       <NavigationMenuContent>
- *         <NavigationMenuLink href="#">Link 2</NavigationMenuLink>
- *       </NavigationMenuContent>
- *     </NavigationMenuItem>
- *   </NavigationMenuList>
- * </NavigationMenu>
- * ```
  */
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,

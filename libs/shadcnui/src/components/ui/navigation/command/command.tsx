@@ -8,21 +8,6 @@ import { Dialog, DialogContent } from "../../feedback/dialog/dialog"
 
 /**
  * Command component that provides a command palette interface.
- * 
- * @component
- * @example
- * ```tsx
- * <Command>
- *   <CommandInput placeholder="Search..." />
- *   <CommandList>
- *     <CommandEmpty>No results found.</CommandEmpty>
- *     <CommandGroup heading="Suggestions">
- *       <CommandItem>Item 1</CommandItem>
- *       <CommandItem>Item 2</CommandItem>
- *     </CommandGroup>
- *   </CommandList>
- * </Command>
- * ```
  */
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { Pagination, PaginationContent, PaginationLink, PaginationItem, PaginationPrevious, PaginationNext, PaginationEllipsis } from './pagination';
 
 const meta: Meta<typeof Pagination> = {
-  title: 'Components/Pagination',
+  title: 'Shadcnui/Navigation/Pagination',
   component: Pagination,
   tags: ['autodocs'],
 };

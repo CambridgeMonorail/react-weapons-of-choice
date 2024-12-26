@@ -7,34 +7,6 @@ import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icon
 
 /**
  * Menubar component that provides a menubar interface.
- * 
- * @component
- * @example
- * ```tsx
- * <Menubar>
- *   <MenubarMenu>
- *     <MenubarTrigger>File</MenubarTrigger>
- *     <MenubarContent>
- *       <MenubarItem>New File</MenubarItem>
- *       <MenubarItem>Open File</MenubarItem>
- *       <MenubarSeparator />
- *       <MenubarItem>Save</MenubarItem>
- *       <MenubarItem>Save As</MenubarItem>
- *     </MenubarContent>
- *   </MenubarMenu>
- *   <MenubarMenu>
- *     <MenubarTrigger>Edit</MenubarTrigger>
- *     <MenubarContent>
- *       <MenubarItem>Undo</MenubarItem>
- *       <MenubarItem>Redo</MenubarItem>
- *       <MenubarSeparator />
- *       <MenubarItem>Cut</MenubarItem>
- *       <MenubarItem>Copy</MenubarItem>
- *       <MenubarItem>Paste</MenubarItem>
- *     </MenubarContent>
- *   </MenubarMenu>
- * </Menubar>
- * ```
  */
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,

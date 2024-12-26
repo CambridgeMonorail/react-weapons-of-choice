@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator, NavigationMenuViewport } from './navigation-menu';
 
 const meta: Meta<typeof NavigationMenu> = {
-  title: 'Components/NavigationMenu',
+  title: 'Shadcnui/Navigation/NavigationMenu',
   component: NavigationMenu,
   tags: ['autodocs'],
 };

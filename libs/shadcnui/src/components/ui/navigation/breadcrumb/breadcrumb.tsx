@@ -5,26 +5,6 @@ import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 
 /**
  * Breadcrumb component that provides a navigation aid in web applications.
- * 
- * @component
- * @example
- * ```tsx
- * <Breadcrumb>
- *   <BreadcrumbList>
- *     <BreadcrumbItem>
- *       <BreadcrumbLink href="#">Home</BreadcrumbLink>
- *     </BreadcrumbItem>
- *     <BreadcrumbSeparator />
- *     <BreadcrumbItem>
- *       <BreadcrumbLink href="#">Library</BreadcrumbLink>
- *     </BreadcrumbItem>
- *     <BreadcrumbSeparator />
- *     <BreadcrumbItem>
- *       <BreadcrumbPage>Data</BreadcrumbPage>
- *     </BreadcrumbItem>
- *   </BreadcrumbList>
- * </Breadcrumb>
- * ```
  */
 const Breadcrumb = React.forwardRef<
   HTMLElement,
