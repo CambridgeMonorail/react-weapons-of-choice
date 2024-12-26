@@ -4,6 +4,28 @@ import { cn } from "../../../../lib/utils"
 import { ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { ButtonProps, buttonVariants } from "../../input-controls/button"
 
+/**
+ * Pagination component that provides a navigation interface for paginated content.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Pagination>
+ *   <PaginationContent>
+ *     <PaginationPrevious href="#" />
+ *     <PaginationItem>
+ *       <PaginationLink href="#" isActive>
+ *         1
+ *       </PaginationLink>
+ *     </PaginationItem>
+ *     <PaginationItem>
+ *       <PaginationLink href="#">2</PaginationLink>
+ *     </PaginationItem>
+ *     <PaginationNext href="#" />
+ *   </PaginationContent>
+ * </Pagination>
+ * ```
+ */
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
@@ -14,6 +36,9 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
 )
 Pagination.displayName = "Pagination"
 
+/**
+ * PaginationContent component that provides the content for the pagination.
+ */
 const PaginationContent = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<"ul">
@@ -26,6 +51,19 @@ const PaginationContent = React.forwardRef<
 ))
 PaginationContent.displayName = "PaginationContent"
 
+/**
+ * PaginationItem component that represents a single item within the pagination.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PaginationItem>
+ *   <PaginationLink href="#" isActive>
+ *     1
+ *   </PaginationLink>
+ * </PaginationItem>
+ * ```
+ */
 const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
@@ -39,6 +77,17 @@ type PaginationLinkProps = {
 } & Pick<ButtonProps, "size"> &
   React.ComponentProps<"a">
 
+/**
+ * PaginationLink component that provides a link within the pagination.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PaginationLink href="#" isActive>
+ *   1
+ * </PaginationLink>
+ * ```
+ */
 const PaginationLink = ({
   className,
   isActive,
@@ -59,6 +108,15 @@ const PaginationLink = ({
 )
 PaginationLink.displayName = "PaginationLink"
 
+/**
+ * PaginationPrevious component that provides a link to the previous page within the pagination.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PaginationPrevious href="#" />
+ * ```
+ */
 const PaginationPrevious = ({
   className,
   ...props
@@ -75,6 +133,15 @@ const PaginationPrevious = ({
 )
 PaginationPrevious.displayName = "PaginationPrevious"
 
+/**
+ * PaginationNext component that provides a link to the next page within the pagination.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PaginationNext href="#" />
+ * ```
+ */
 const PaginationNext = ({
   className,
   ...props
@@ -91,6 +158,15 @@ const PaginationNext = ({
 )
 PaginationNext.displayName = "PaginationNext"
 
+/**
+ * PaginationEllipsis component that provides an ellipsis for long pagination lists.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <PaginationEllipsis />
+ * ```
+ */
 const PaginationEllipsis = ({
   className,
   ...props
