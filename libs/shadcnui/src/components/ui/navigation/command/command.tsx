@@ -6,6 +6,24 @@ import { cn } from "../../../../lib/utils"
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons"
 import { Dialog, DialogContent } from "../../feedback/dialog/dialog"
 
+/**
+ * Command component that provides a command palette interface.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Command>
+ *   <CommandInput placeholder="Search..." />
+ *   <CommandList>
+ *     <CommandEmpty>No results found.</CommandEmpty>
+ *     <CommandGroup heading="Suggestions">
+ *       <CommandItem>Item 1</CommandItem>
+ *       <CommandItem>Item 2</CommandItem>
+ *     </CommandGroup>
+ *   </CommandList>
+ * </Command>
+ * ```
+ */
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive>
@@ -21,6 +39,24 @@ const Command = React.forwardRef<
 ))
 Command.displayName = CommandPrimitive.displayName
 
+/**
+ * CommandDialog component that provides a dialog interface for the command palette.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandDialog>
+ *   <CommandInput placeholder="Search..." />
+ *   <CommandList>
+ *     <CommandEmpty>No results found.</CommandEmpty>
+ *     <CommandGroup heading="Suggestions">
+ *       <CommandItem>Item 1</CommandItem>
+ *       <CommandItem>Item 2</CommandItem>
+ *     </CommandGroup>
+ *   </CommandList>
+ * </CommandDialog>
+ * ```
+ */
 const CommandDialog = ({ children, ...props }: DialogProps) => {
   return (
     <Dialog {...props}>
@@ -33,6 +69,15 @@ const CommandDialog = ({ children, ...props }: DialogProps) => {
   )
 }
 
+/**
+ * CommandInput component that provides an input field for the command palette.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandInput placeholder="Search..." />
+ * ```
+ */
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
@@ -52,6 +97,21 @@ const CommandInput = React.forwardRef<
 
 CommandInput.displayName = CommandPrimitive.Input.displayName
 
+/**
+ * CommandList component that provides a list of command items.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandList>
+ *   <CommandEmpty>No results found.</CommandEmpty>
+ *   <CommandGroup heading="Suggestions">
+ *     <CommandItem>Item 1</CommandItem>
+ *     <CommandItem>Item 2</CommandItem>
+ *   </CommandGroup>
+ * </CommandList>
+ * ```
+ */
 const CommandList = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>
@@ -65,6 +125,15 @@ const CommandList = React.forwardRef<
 
 CommandList.displayName = CommandPrimitive.List.displayName
 
+/**
+ * CommandEmpty component that provides a message when no command results are found.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandEmpty>No results found.</CommandEmpty>
+ * ```
+ */
 const CommandEmpty = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Empty>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
@@ -78,6 +147,18 @@ const CommandEmpty = React.forwardRef<
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 
+/**
+ * CommandGroup component that groups command items together.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandGroup heading="Suggestions">
+ *   <CommandItem>Item 1</CommandItem>
+ *   <CommandItem>Item 2</CommandItem>
+ * </CommandGroup>
+ * ```
+ */
 const CommandGroup = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Group>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
@@ -94,6 +175,15 @@ const CommandGroup = React.forwardRef<
 
 CommandGroup.displayName = CommandPrimitive.Group.displayName
 
+/**
+ * CommandSeparator component that provides a separator between command groups.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandSeparator />
+ * ```
+ */
 const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
@@ -106,6 +196,15 @@ const CommandSeparator = React.forwardRef<
 ))
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 
+/**
+ * CommandItem component that represents a single command item.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandItem>Item 1</CommandItem>
+ * ```
+ */
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
@@ -122,6 +221,15 @@ const CommandItem = React.forwardRef<
 
 CommandItem.displayName = CommandPrimitive.Item.displayName
 
+/**
+ * CommandShortcut component that provides a shortcut key for a command item.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <CommandShortcut>⌘1</CommandShortcut>
+ * ```
+ */
 const CommandShortcut = ({
   className,
   ...props

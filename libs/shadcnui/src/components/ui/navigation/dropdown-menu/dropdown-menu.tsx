@@ -5,18 +5,108 @@ import { cn } from "../../../../lib/utils"
 
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icons"
 
+/**
+ * DropdownMenu component that provides a dropdown menu interface.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenu>
+ *   <DropdownMenuTrigger>
+ *     <button>Click here</button>
+ *   </DropdownMenuTrigger>
+ *   <DropdownMenuContent>
+ *     <DropdownMenuItem>Item 1</DropdownMenuItem>
+ *     <DropdownMenuItem>Item 2</DropdownMenuItem>
+ *   </DropdownMenuContent>
+ * </DropdownMenu>
+ * ```
+ */
 const DropdownMenu = DropdownMenuPrimitive.Root
 
+/**
+ * DropdownMenuTrigger component that triggers the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuTrigger>
+ *   <button>Click here</button>
+ * </DropdownMenuTrigger>
+ * ```
+ */
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 
+/**
+ * DropdownMenuGroup component that groups dropdown menu items.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuGroup>
+ *   <DropdownMenuItem>Item 1</DropdownMenuItem>
+ *   <DropdownMenuItem>Item 2</DropdownMenuItem>
+ * </DropdownMenuGroup>
+ * ```
+ */
 const DropdownMenuGroup = DropdownMenuPrimitive.Group
 
+/**
+ * DropdownMenuPortal component that provides a portal for the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuPortal>
+ *   <DropdownMenuContent>
+ *     <DropdownMenuItem>Item 1</DropdownMenuItem>
+ *     <DropdownMenuItem>Item 2</DropdownMenuItem>
+ *   </DropdownMenuContent>
+ * </DropdownMenuPortal>
+ * ```
+ */
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal
 
+/**
+ * DropdownMenuSub component that provides a sub menu within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuSub>
+ *   <DropdownMenuSubTrigger>Sub Menu</DropdownMenuSubTrigger>
+ *   <DropdownMenuSubContent>
+ *     <DropdownMenuItem>Sub Item 1</DropdownMenuItem>
+ *     <DropdownMenuItem>Sub Item 2</DropdownMenuItem>
+ *   </DropdownMenuSubContent>
+ * </DropdownMenuSub>
+ * ```
+ */
 const DropdownMenuSub = DropdownMenuPrimitive.Sub
 
+/**
+ * DropdownMenuRadioGroup component that provides a radio group within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuRadioGroup value="item-1">
+ *   <DropdownMenuRadioItem value="item-1">Radio Item 1</DropdownMenuRadioItem>
+ *   <DropdownMenuRadioItem value="item-2">Radio Item 2</DropdownMenuRadioItem>
+ * </DropdownMenuRadioGroup>
+ * ```
+ */
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 
+/**
+ * DropdownMenuSubTrigger component that triggers the sub menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuSubTrigger>Sub Menu</DropdownMenuSubTrigger>
+ * ```
+ */
 const DropdownMenuSubTrigger = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {
@@ -39,6 +129,18 @@ const DropdownMenuSubTrigger = React.forwardRef<
 DropdownMenuSubTrigger.displayName =
   DropdownMenuPrimitive.SubTrigger.displayName
 
+/**
+ * DropdownMenuSubContent component that provides the content for the sub menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuSubContent>
+ *   <DropdownMenuItem>Sub Item 1</DropdownMenuItem>
+ *   <DropdownMenuItem>Sub Item 2</DropdownMenuItem>
+ * </DropdownMenuSubContent>
+ * ```
+ */
 const DropdownMenuSubContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
@@ -55,6 +157,18 @@ const DropdownMenuSubContent = React.forwardRef<
 DropdownMenuSubContent.displayName =
   DropdownMenuPrimitive.SubContent.displayName
 
+/**
+ * DropdownMenuContent component that provides the content for the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuContent>
+ *   <DropdownMenuItem>Item 1</DropdownMenuItem>
+ *   <DropdownMenuItem>Item 2</DropdownMenuItem>
+ * </DropdownMenuContent>
+ * ```
+ */
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
@@ -74,6 +188,15 @@ const DropdownMenuContent = React.forwardRef<
 ))
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName
 
+/**
+ * DropdownMenuItem component that represents a single item within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuItem>Item 1</DropdownMenuItem>
+ * ```
+ */
 const DropdownMenuItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
@@ -92,6 +215,16 @@ const DropdownMenuItem = React.forwardRef<
 ))
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
 
+/**
+ * DropdownMenuCheckboxItem component that provides a checkbox item within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuCheckboxItem checked>Checkbox Item 1</DropdownMenuCheckboxItem>
+ * <DropdownMenuCheckboxItem>Checkbox Item 2</DropdownMenuCheckboxItem>
+ * ```
+ */
 const DropdownMenuCheckboxItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
@@ -116,6 +249,18 @@ const DropdownMenuCheckboxItem = React.forwardRef<
 DropdownMenuCheckboxItem.displayName =
   DropdownMenuPrimitive.CheckboxItem.displayName
 
+/**
+ * DropdownMenuRadioItem component that provides a radio item within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuRadioGroup value="item-1">
+ *   <DropdownMenuRadioItem value="item-1">Radio Item 1</DropdownMenuRadioItem>
+ *   <DropdownMenuRadioItem value="item-2">Radio Item 2</DropdownMenuRadioItem>
+ * </DropdownMenuRadioGroup>
+ * ```
+ */
 const DropdownMenuRadioItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
@@ -138,6 +283,15 @@ const DropdownMenuRadioItem = React.forwardRef<
 ))
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName
 
+/**
+ * DropdownMenuLabel component that provides a label within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuLabel>Label 1</DropdownMenuLabel>
+ * ```
+ */
 const DropdownMenuLabel = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
@@ -156,6 +310,15 @@ const DropdownMenuLabel = React.forwardRef<
 ))
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
 
+/**
+ * DropdownMenuSeparator component that provides a separator within the dropdown menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuSeparator />
+ * ```
+ */
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
@@ -168,6 +331,18 @@ const DropdownMenuSeparator = React.forwardRef<
 ))
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
+/**
+ * DropdownMenuShortcut component that provides a shortcut key for a dropdown menu item.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <DropdownMenuItem>
+ *   Item 1
+ *   <DropdownMenuShortcut>⌘1</DropdownMenuShortcut>
+ * </DropdownMenuItem>
+ * ```
+ */
 const DropdownMenuShortcut = ({
   className,
   ...props

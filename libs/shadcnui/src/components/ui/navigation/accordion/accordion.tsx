@@ -3,8 +3,38 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import { cn } from "../../../../lib/utils"
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 
+/**
+ * Accordion component that allows users to toggle the visibility of content sections.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Accordion type="single" collapsible>
+ *   <AccordionItem value="item-1">
+ *     <AccordionTrigger>Item 1</AccordionTrigger>
+ *     <AccordionContent>Content for item 1</AccordionContent>
+ *   </AccordionItem>
+ *   <AccordionItem value="item-2">
+ *     <AccordionTrigger>Item 2</AccordionTrigger>
+ *     <AccordionContent>Content for item 2</AccordionContent>
+ *   </AccordionItem>
+ * </Accordion>
+ * ```
+ */
 const Accordion = AccordionPrimitive.Root
 
+/**
+ * AccordionItem component that represents a single item within an Accordion.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <AccordionItem value="item-1">
+ *   <AccordionTrigger>Item 1</AccordionTrigger>
+ *   <AccordionContent>Content for item 1</AccordionContent>
+ * </AccordionItem>
+ * ```
+ */
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
@@ -17,6 +47,15 @@ const AccordionItem = React.forwardRef<
 ))
 AccordionItem.displayName = "AccordionItem"
 
+/**
+ * AccordionTrigger component that acts as a button to toggle the visibility of AccordionContent.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <AccordionTrigger>Item 1</AccordionTrigger>
+ * ```
+ */
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
@@ -37,6 +76,15 @@ const AccordionTrigger = React.forwardRef<
 ))
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 
+/**
+ * AccordionContent component that contains the content to be toggled by the AccordionTrigger.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <AccordionContent>Content for item 1</AccordionContent>
+ * ```
+ */
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>

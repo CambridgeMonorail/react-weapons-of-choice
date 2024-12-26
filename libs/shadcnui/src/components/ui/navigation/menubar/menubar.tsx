@@ -5,16 +5,37 @@ import * as MenubarPrimitive from "@radix-ui/react-menubar"
 import { cn } from "../../../../lib/utils"
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from "@radix-ui/react-icons"
 
-const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu
-
-const MenubarGroup: typeof MenubarPrimitive.Group = MenubarPrimitive.Group
-
-const MenubarPortal: typeof MenubarPrimitive.Portal = MenubarPrimitive.Portal
-
-const MenubarSub: typeof MenubarPrimitive.Sub = MenubarPrimitive.Sub
-
-const MenubarRadioGroup: typeof MenubarPrimitive.RadioGroup = MenubarPrimitive.RadioGroup
-
+/**
+ * Menubar component that provides a menubar interface.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Menubar>
+ *   <MenubarMenu>
+ *     <MenubarTrigger>File</MenubarTrigger>
+ *     <MenubarContent>
+ *       <MenubarItem>New File</MenubarItem>
+ *       <MenubarItem>Open File</MenubarItem>
+ *       <MenubarSeparator />
+ *       <MenubarItem>Save</MenubarItem>
+ *       <MenubarItem>Save As</MenubarItem>
+ *     </MenubarContent>
+ *   </MenubarMenu>
+ *   <MenubarMenu>
+ *     <MenubarTrigger>Edit</MenubarTrigger>
+ *     <MenubarContent>
+ *       <MenubarItem>Undo</MenubarItem>
+ *       <MenubarItem>Redo</MenubarItem>
+ *       <MenubarSeparator />
+ *       <MenubarItem>Cut</MenubarItem>
+ *       <MenubarItem>Copy</MenubarItem>
+ *       <MenubarItem>Paste</MenubarItem>
+ *     </MenubarContent>
+ *   </MenubarMenu>
+ * </Menubar>
+ * ```
+ */
 const Menubar = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Root>
@@ -30,6 +51,93 @@ const Menubar = React.forwardRef<
 ))
 Menubar.displayName = MenubarPrimitive.Root.displayName
 
+/**
+ * MenubarMenu component that provides a menu within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarMenu>
+ *   <MenubarTrigger>File</MenubarTrigger>
+ *   <MenubarContent>
+ *     <MenubarItem>New File</MenubarItem>
+ *     <MenubarItem>Open File</MenubarItem>
+ *   </MenubarContent>
+ * </MenubarMenu>
+ * ```
+ */
+const MenubarMenu: typeof MenubarPrimitive.Menu = MenubarPrimitive.Menu
+
+/**
+ * MenubarGroup component that groups menubar items.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarGroup>
+ *   <MenubarItem>Item 1</MenubarItem>
+ *   <MenubarItem>Item 2</MenubarItem>
+ * </MenubarGroup>
+ * ```
+ */
+const MenubarGroup: typeof MenubarPrimitive.Group = MenubarPrimitive.Group
+
+/**
+ * MenubarPortal component that provides a portal for the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarPortal>
+ *   <MenubarContent>
+ *     <MenubarItem>Item 1</MenubarItem>
+ *     <MenubarItem>Item 2</MenubarItem>
+ *   </MenubarContent>
+ * </MenubarPortal>
+ * ```
+ */
+const MenubarPortal: typeof MenubarPrimitive.Portal = MenubarPrimitive.Portal
+
+/**
+ * MenubarSub component that provides a sub menu within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarSub>
+ *   <MenubarSubTrigger>Sub Menu</MenubarSubTrigger>
+ *   <MenubarSubContent>
+ *     <MenubarItem>Sub Item 1</MenubarItem>
+ *     <MenubarItem>Sub Item 2</MenubarItem>
+ *   </MenubarSubContent>
+ * </MenubarSub>
+ * ```
+ */
+const MenubarSub: typeof MenubarPrimitive.Sub = MenubarPrimitive.Sub
+
+/**
+ * MenubarRadioGroup component that provides a radio group within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarRadioGroup value="item-1">
+ *   <MenubarRadioItem value="item-1">Radio Item 1</MenubarRadioItem>
+ *   <MenubarRadioItem value="item-2">Radio Item 2</MenubarRadioItem>
+ * </MenubarRadioGroup>
+ * ```
+ */
+const MenubarRadioGroup: typeof MenubarPrimitive.RadioGroup = MenubarPrimitive.RadioGroup
+
+/**
+ * MenubarTrigger component that triggers the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarTrigger>File</MenubarTrigger>
+ * ```
+ */
 const MenubarTrigger = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Trigger>
@@ -45,6 +153,15 @@ const MenubarTrigger = React.forwardRef<
 ))
 MenubarTrigger.displayName = MenubarPrimitive.Trigger.displayName
 
+/**
+ * MenubarSubTrigger component that triggers the sub menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarSubTrigger>Sub Menu</MenubarSubTrigger>
+ * ```
+ */
 const MenubarSubTrigger = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.SubTrigger>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.SubTrigger> & {
@@ -66,6 +183,18 @@ const MenubarSubTrigger = React.forwardRef<
 ))
 MenubarSubTrigger.displayName = MenubarPrimitive.SubTrigger.displayName
 
+/**
+ * MenubarSubContent component that provides the content for the sub menu.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarSubContent>
+ *   <MenubarItem>Sub Item 1</MenubarItem>
+ *   <MenubarItem>Sub Item 2</MenubarItem>
+ * </MenubarSubContent>
+ * ```
+ */
 const MenubarSubContent = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.SubContent>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.SubContent>
@@ -81,6 +210,18 @@ const MenubarSubContent = React.forwardRef<
 ))
 MenubarSubContent.displayName = MenubarPrimitive.SubContent.displayName
 
+/**
+ * MenubarContent component that provides the content for the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarContent>
+ *   <MenubarItem>Item 1</MenubarItem>
+ *   <MenubarItem>Item 2</MenubarItem>
+ * </MenubarContent>
+ * ```
+ */
 const MenubarContent = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Content>
@@ -106,6 +247,15 @@ const MenubarContent = React.forwardRef<
 )
 MenubarContent.displayName = MenubarPrimitive.Content.displayName
 
+/**
+ * MenubarItem component that represents a single item within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarItem>Item 1</MenubarItem>
+ * ```
+ */
 const MenubarItem = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Item> & {
@@ -124,6 +274,16 @@ const MenubarItem = React.forwardRef<
 ))
 MenubarItem.displayName = MenubarPrimitive.Item.displayName
 
+/**
+ * MenubarCheckboxItem component that provides a checkbox item within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarCheckboxItem checked>Checkbox Item 1</MenubarCheckboxItem>
+ * <MenubarCheckboxItem>Checkbox Item 2</MenubarCheckboxItem>
+ * ```
+ */
 const MenubarCheckboxItem = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.CheckboxItem>
@@ -147,6 +307,18 @@ const MenubarCheckboxItem = React.forwardRef<
 ))
 MenubarCheckboxItem.displayName = MenubarPrimitive.CheckboxItem.displayName
 
+/**
+ * MenubarRadioItem component that provides a radio item within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarRadioGroup value="item-1">
+ *   <MenubarRadioItem value="item-1">Radio Item 1</MenubarRadioItem>
+ *   <MenubarRadioItem value="item-2">Radio Item 2</MenubarRadioItem>
+ * </MenubarRadioGroup>
+ * ```
+ */
 const MenubarRadioItem = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.RadioItem>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.RadioItem>
@@ -169,6 +341,15 @@ const MenubarRadioItem = React.forwardRef<
 ))
 MenubarRadioItem.displayName = MenubarPrimitive.RadioItem.displayName
 
+/**
+ * MenubarLabel component that provides a label within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarLabel>Label 1</MenubarLabel>
+ * ```
+ */
 const MenubarLabel = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Label> & {
@@ -187,6 +368,15 @@ const MenubarLabel = React.forwardRef<
 ))
 MenubarLabel.displayName = MenubarPrimitive.Label.displayName
 
+/**
+ * MenubarSeparator component that provides a separator within the menubar.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarSeparator />
+ * ```
+ */
 const MenubarSeparator = React.forwardRef<
   React.ElementRef<typeof MenubarPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof MenubarPrimitive.Separator>
@@ -199,6 +389,18 @@ const MenubarSeparator = React.forwardRef<
 ))
 MenubarSeparator.displayName = MenubarPrimitive.Separator.displayName
 
+/**
+ * MenubarShortcut component that provides a shortcut key for a menubar item.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <MenubarItem>
+ *   Item 1
+ *   <MenubarShortcut>⌘1</MenubarShortcut>
+ * </MenubarItem>
+ * ```
+ */
 const MenubarShortcut = ({
   className,
   ...props

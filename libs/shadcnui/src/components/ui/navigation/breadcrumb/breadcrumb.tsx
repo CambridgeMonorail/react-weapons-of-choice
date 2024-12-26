@@ -3,6 +3,29 @@ import { Slot } from "@radix-ui/react-slot"
 import { cn } from "../../../../lib/utils"
 import { ChevronRightIcon, DotsHorizontalIcon } from "@radix-ui/react-icons"
 
+/**
+ * Breadcrumb component that provides a navigation aid in web applications.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Breadcrumb>
+ *   <BreadcrumbList>
+ *     <BreadcrumbItem>
+ *       <BreadcrumbLink href="#">Home</BreadcrumbLink>
+ *     </BreadcrumbItem>
+ *     <BreadcrumbSeparator />
+ *     <BreadcrumbItem>
+ *       <BreadcrumbLink href="#">Library</BreadcrumbLink>
+ *     </BreadcrumbItem>
+ *     <BreadcrumbSeparator />
+ *     <BreadcrumbItem>
+ *       <BreadcrumbPage>Data</BreadcrumbPage>
+ *     </BreadcrumbItem>
+ *   </BreadcrumbList>
+ * </Breadcrumb>
+ * ```
+ */
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   React.ComponentPropsWithoutRef<"nav"> & {
@@ -11,6 +34,27 @@ const Breadcrumb = React.forwardRef<
 >(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
 Breadcrumb.displayName = "Breadcrumb"
 
+/**
+ * BreadcrumbList component that represents a list of breadcrumb items.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbList>
+ *   <BreadcrumbItem>
+ *     <BreadcrumbLink href="#">Home</BreadcrumbLink>
+ *   </BreadcrumbItem>
+ *   <BreadcrumbSeparator />
+ *   <BreadcrumbItem>
+ *     <BreadcrumbLink href="#">Library</BreadcrumbLink>
+ *   </BreadcrumbItem>
+ *   <BreadcrumbSeparator />
+ *   <BreadcrumbItem>
+ *     <BreadcrumbPage>Data</BreadcrumbPage>
+ *   </BreadcrumbItem>
+ * </BreadcrumbList>
+ * ```
+ */
 const BreadcrumbList = React.forwardRef<
   HTMLOListElement,
   React.ComponentPropsWithoutRef<"ol">
@@ -26,6 +70,17 @@ const BreadcrumbList = React.forwardRef<
 ))
 BreadcrumbList.displayName = "BreadcrumbList"
 
+/**
+ * BreadcrumbItem component that represents a single item within a breadcrumb list.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbItem>
+ *   <BreadcrumbLink href="#">Home</BreadcrumbLink>
+ * </BreadcrumbItem>
+ * ```
+ */
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentPropsWithoutRef<"li">
@@ -38,6 +93,15 @@ const BreadcrumbItem = React.forwardRef<
 ))
 BreadcrumbItem.displayName = "BreadcrumbItem"
 
+/**
+ * BreadcrumbLink component that represents a link within a breadcrumb item.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbLink href="#">Home</BreadcrumbLink>
+ * ```
+ */
 const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<"a"> & {
@@ -56,6 +120,15 @@ const BreadcrumbLink = React.forwardRef<
 })
 BreadcrumbLink.displayName = "BreadcrumbLink"
 
+/**
+ * BreadcrumbPage component that represents the current page within a breadcrumb.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbPage>Data</BreadcrumbPage>
+ * ```
+ */
 const BreadcrumbPage = React.forwardRef<
   HTMLSpanElement,
   React.ComponentPropsWithoutRef<"span">
@@ -71,6 +144,15 @@ const BreadcrumbPage = React.forwardRef<
 ))
 BreadcrumbPage.displayName = "BreadcrumbPage"
 
+/**
+ * BreadcrumbSeparator component that represents a separator between breadcrumb items.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbSeparator />
+ * ```
+ */
 const BreadcrumbSeparator = ({
   children,
   className,
@@ -87,6 +169,15 @@ const BreadcrumbSeparator = ({
 )
 BreadcrumbSeparator.displayName = "BreadcrumbSeparator"
 
+/**
+ * BreadcrumbEllipsis component that represents an ellipsis for long breadcrumb paths.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <BreadcrumbEllipsis />
+ * ```
+ */
 const BreadcrumbEllipsis = ({
   className,
   ...props
@@ -101,7 +192,7 @@ const BreadcrumbEllipsis = ({
     <span className="sr-only">More</span>
   </span>
 )
-BreadcrumbEllipsis.displayName = "BreadcrumbElipssis"
+BreadcrumbEllipsis.displayName = "BreadcrumbEllipsis"
 
 export {
   Breadcrumb,

@@ -3,8 +3,36 @@ import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Tabs component that provides a tabbed navigation interface.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <Tabs defaultValue="tab1">
+ *   <TabsList>
+ *     <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+ *     <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+ *   </TabsList>
+ *   <TabsContent value="tab1">Content for Tab 1</TabsContent>
+ *   <TabsContent value="tab2">Content for Tab 2</TabsContent>
+ * </Tabs>
+ * ```
+ */
 const Tabs = TabsPrimitive.Root
 
+/**
+ * TabsList component that provides a list of tab triggers.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <TabsList>
+ *   <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+ *   <TabsTrigger value="tab2">Tab 2</TabsTrigger>
+ * </TabsList>
+ * ```
+ */
 const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
@@ -20,6 +48,15 @@ const TabsList = React.forwardRef<
 ))
 TabsList.displayName = TabsPrimitive.List.displayName
 
+/**
+ * TabsTrigger component that acts as a button to switch between tabs.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <TabsTrigger value="tab1">Tab 1</TabsTrigger>
+ * ```
+ */
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
@@ -35,6 +72,15 @@ const TabsTrigger = React.forwardRef<
 ))
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
+/**
+ * TabsContent component that contains the content to be displayed for each tab.
+ * 
+ * @component
+ * @example
+ * ```tsx
+ * <TabsContent value="tab1">Content for Tab 1</TabsContent>
+ * ```
+ */
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
