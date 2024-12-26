@@ -3,6 +3,18 @@ import * as CheckboxPrimitive from "@radix-ui/react-checkbox"
 import { cn } from "../../../../lib/utils"
 import { CheckIcon } from "@radix-ui/react-icons"
 
+/**
+ * Checkbox component.
+ *
+ * This component renders a checkbox with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the checkbox.
+ * @param {boolean} disabled - Disable the checkbox.
+ * @param {boolean} checked - Checked state of the checkbox.
+ *
+ * @example
+ * <Checkbox className="custom-class" disabled={false} checked={true} />
+ */
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>

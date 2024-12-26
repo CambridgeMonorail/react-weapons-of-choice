@@ -3,6 +3,25 @@ import { OTPInput, OTPInputContext } from "input-otp"
 import { cn } from "../../../../lib/utils"
 import { MinusIcon } from "@radix-ui/react-icons"
 
+/**
+ * InputOTP component.
+ *
+ * This component renders an OTP (One-Time Password) input with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the InputOTP.
+ * @param {string} containerClassName - Additional Tailwind CSS classes for the container.
+ * @param {boolean} disabled - Disable the InputOTP.
+ *
+ * @example
+ * <InputOTP className="custom-class" containerClassName="container-class" disabled={false}>
+ *   <InputOTPGroup>
+ *     <InputOTPSlot index={0} />
+ *     <InputOTPSlot index={1} />
+ *     <InputOTPSlot index={2} />
+ *     <InputOTPSlot index={3} />
+ *   </InputOTPGroup>
+ * </InputOTP>
+ */
 const InputOTP = React.forwardRef<
   React.ElementRef<typeof OTPInput>,
   React.ComponentPropsWithoutRef<typeof OTPInput>
@@ -19,6 +38,21 @@ const InputOTP = React.forwardRef<
 ))
 InputOTP.displayName = "InputOTP"
 
+/**
+ * InputOTPGroup component.
+ *
+ * This component renders a group of InputOTP slots.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the group.
+ *
+ * @example
+ * <InputOTPGroup className="custom-class">
+ *   <InputOTPSlot index={0} />
+ *   <InputOTPSlot index={1} />
+ *   <InputOTPSlot index={2} />
+ *   <InputOTPSlot index={3} />
+ * </InputOTPGroup>
+ */
 const InputOTPGroup = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">
@@ -27,6 +61,17 @@ const InputOTPGroup = React.forwardRef<
 ))
 InputOTPGroup.displayName = "InputOTPGroup"
 
+/**
+ * InputOTPSlot component.
+ *
+ * This component renders an individual slot for the OTP input.
+ *
+ * @param {number} index - The index of the slot.
+ * @param {string} className - Additional Tailwind CSS classes for the slot.
+ *
+ * @example
+ * <InputOTPSlot index={0} className="custom-class" />
+ */
 const InputOTPSlot = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & { index: number }
@@ -55,6 +100,14 @@ const InputOTPSlot = React.forwardRef<
 })
 InputOTPSlot.displayName = "InputOTPSlot"
 
+/**
+ * InputOTPSeparator component.
+ *
+ * This component renders a separator between OTP slots.
+ *
+ * @example
+ * <InputOTPSeparator />
+ */
 const InputOTPSeparator = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div">

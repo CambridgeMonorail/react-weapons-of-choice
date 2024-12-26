@@ -5,7 +5,23 @@ import { type VariantProps } from "class-variance-authority"
 import { cn } from "../../../../lib/utils"
 import { toggleVariants } from "../toggle/toggle"
 
-
+/**
+ * ToggleGroup component.
+ *
+ * This component renders a group of toggle buttons with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the toggle group.
+ * @param {string} variant - Variant of the toggle buttons.
+ * @param {string} size - Size of the toggle buttons.
+ * @param {React.ReactNode} children - Child elements to be rendered within the toggle group.
+ *
+ * @example
+ * <ToggleGroup className="custom-class" variant="default" size="default">
+ *   <ToggleGroupItem value="1">Item 1</ToggleGroupItem>
+ *   <ToggleGroupItem value="2">Item 2</ToggleGroupItem>
+ *   <ToggleGroupItem value="3">Item 3</ToggleGroupItem>
+ * </ToggleGroup>
+ */
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants>
 >({
@@ -31,6 +47,21 @@ const ToggleGroup = React.forwardRef<
 
 ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
 
+/**
+ * ToggleGroupItem component.
+ *
+ * This component renders an individual toggle button with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the toggle item.
+ * @param {string} variant - Variant of the toggle item.
+ * @param {string} size - Size of the toggle item.
+ * @param {React.ReactNode} children - Child elements to be rendered within the toggle item.
+ *
+ * @example
+ * <ToggleGroupItem className="custom-class" variant="default" size="default" value="1">
+ *   Item 1
+ * </ToggleGroupItem>
+ */
 const ToggleGroupItem = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &

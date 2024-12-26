@@ -5,6 +5,30 @@ import * as SelectPrimitive from "@radix-ui/react-select"
 import { cn } from "../../../../lib/utils"
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 
+/**
+ * Select component.
+ *
+ * This component renders a select dropdown with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the select.
+ * @param {boolean} disabled - Disable the select.
+ * @param {string} value - Value of the selected item.
+ *
+ * @example
+ * <Select className="custom-class" disabled={false} value="1">
+ *   <SelectTrigger>
+ *     <SelectValue placeholder="Select an option" />
+ *   </SelectTrigger>
+ *   <SelectContent>
+ *     <SelectGroup>
+ *       <SelectLabel>Options</SelectLabel>
+ *       <SelectItem value="1">Option 1</SelectItem>
+ *       <SelectItem value="2">Option 2</SelectItem>
+ *       <SelectItem value="3">Option 3</SelectItem>
+ *     </SelectGroup>
+ *   </SelectContent>
+ * </Select>
+ */
 const Select = SelectPrimitive.Root
 
 const SelectGroup = SelectPrimitive.Group

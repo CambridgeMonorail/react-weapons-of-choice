@@ -3,6 +3,21 @@ import * as SliderPrimitive from "@radix-ui/react-slider"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Slider component.
+ *
+ * This component renders a slider with customizable styles and states.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the slider.
+ * @param {boolean} disabled - Disable the slider.
+ * @param {number[]} value - Value of the slider.
+ * @param {number} min - Minimum value of the slider.
+ * @param {number} max - Maximum value of the slider.
+ * @param {number} step - Step value of the slider.
+ *
+ * @example
+ * <Slider className="custom-class" disabled={false} value={[50]} min={0} max={100} step={1} />
+ */
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
