@@ -1,5 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuCheckboxItem, DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuGroup, DropdownMenuPortal, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger } from './dropdown-menu';
+import { 
+  DropdownMenu, 
+  DropdownMenuTrigger, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuCheckboxItem, 
+  DropdownMenuRadioItem, 
+  DropdownMenuLabel, 
+  DropdownMenuSeparator, 
+  DropdownMenuShortcut, 
+  DropdownMenuSub, 
+  DropdownMenuSubContent, 
+  DropdownMenuSubTrigger 
+} from './dropdown-menu';
 
 const meta: Meta<typeof DropdownMenu> = {
   title: 'Shadcnui/Navigation/DropdownMenu',
@@ -55,10 +68,10 @@ export const WithRadioItems: Story = {
         <button>Click here</button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuRadioGroup value="item-1">
+        <div role="radiogroup">
           <DropdownMenuRadioItem value="item-1">Radio Item 1</DropdownMenuRadioItem>
           <DropdownMenuRadioItem value="item-2">Radio Item 2</DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   ),
