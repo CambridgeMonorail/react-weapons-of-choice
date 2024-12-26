@@ -5,6 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  Tooltip,
 } from '@rwoc/shadcnui';
 import {
   ChartContainer,
@@ -12,6 +13,7 @@ import {
   ChartTooltipContent,
 } from '@rwoc/shadcnui';
 import { BarChart, CartesianGrid, XAxis, Bar } from 'recharts';
+import { Rocket, Palette, Paintbrush, BarChart as BarChartIcon, Video } from 'lucide-react';
 
 interface ChartData {
   label: string;
@@ -42,10 +44,11 @@ const FeaturesPage = () => {
         <h2 className="text-4xl font-bold mb-4 text-primary">Detailed Descriptions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="rocket">🚀</span> Pre-configured Nx Workspace for Monorepo Management
+                <Rocket className="inline-block mr-2 text-red-500" />
+                Pre-configured Nx Workspace for Monorepo Management
               </CardTitle>
               <CardDescription>
                 Manage your monorepo with ease using Nx.
@@ -64,10 +67,11 @@ const FeaturesPage = () => {
             </CardContent>
           </Card>
           {/* Card 2 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="palette">🎨</span> Tailwind CSS Integration for Utility-First Styling
+                <Palette className="inline-block mr-2 text-blue-500" />
+                Tailwind CSS Integration for Utility-First Styling
               </CardTitle>
               <CardDescription>
                 Style your components effortlessly with Tailwind CSS.
@@ -86,10 +90,11 @@ const FeaturesPage = () => {
             </CardContent>
           </Card>
           {/* Card 3 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="paintbrush">🖌️</span> Shadcn UI Components for Consistent Design
+                <Paintbrush className="inline-block mr-2 text-green-500" />
+                Shadcn UI Components for Consistent Design
               </CardTitle>
               <CardDescription>
                 Use Shadcn UI components for a consistent look and feel.
@@ -110,10 +115,11 @@ const FeaturesPage = () => {
         <h2 className="text-4xl font-bold mb-4 text-primary">Use Cases</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 4 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="bar chart">📊</span> Performance Improvements
+                <BarChartIcon className="inline-block mr-2 text-yellow-500" />
+                Performance Improvements
               </CardTitle>
               <CardDescription>
                 Visualize the performance improvements with Nx.
@@ -143,10 +149,11 @@ const FeaturesPage = () => {
             </CardContent>
           </Card>
           {/* Card 5 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="chart increasing">📈</span> Scalability
+                <BarChartIcon className="inline-block mr-2 text-yellow-500" />
+                Scalability
               </CardTitle>
               <CardDescription>
                 See how our modular architecture scales with your project.
@@ -165,10 +172,11 @@ const FeaturesPage = () => {
             </CardContent>
           </Card>
           {/* Card 6 */}
-          <Card>
+          <Card className="hover:shadow-lg transition-shadow duration-300">
             <CardHeader>
               <CardTitle>
-                <span role="img" aria-label="video camera">📹</span> Video Demonstration
+                <Video className="inline-block mr-2 text-orange-500" />
+                Video Demonstration
               </CardTitle>
               <CardDescription>
                 Watch a video demonstration of our features in action.
