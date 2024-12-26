@@ -7,27 +7,6 @@ import { cn } from "../../../../lib/utils"
 
 /**
  * Drawer component provides a modal drawer that slides in from the bottom of the screen.
- * 
- * @component
- * @example
- * ```tsx
- * <Drawer>
- *   <DrawerTrigger asChild>
- *     <Button variant="outline">Open Drawer</Button>
- *   </DrawerTrigger>
- *   <DrawerContent>
- *     <DrawerHeader>
- *       <DrawerTitle>Drawer Title</DrawerTitle>
- *       <DrawerDescription>
- *         This is a simple drawer description.
- *       </DrawerDescription>
- *     </DrawerHeader>
- *     <DrawerFooter>
- *       <DrawerClose>Close</DrawerClose>
- *     </DrawerFooter>
- *   </DrawerContent>
- * </Drawer>
- * ```
  */
 const Drawer = ({
   shouldScaleBackground = true,

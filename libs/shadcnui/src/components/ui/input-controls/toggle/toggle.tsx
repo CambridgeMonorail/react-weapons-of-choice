@@ -27,6 +27,11 @@ const toggleVariants = cva(
   }
 );
 
+/**
+ * Toggle component.
+ *
+ * This component renders a toggle button with customizable styles and states.
+ */
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root> &
