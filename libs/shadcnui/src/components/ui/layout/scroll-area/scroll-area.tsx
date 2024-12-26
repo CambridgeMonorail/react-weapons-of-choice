@@ -3,6 +3,11 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * ScrollArea component.
+ *
+ * This component provides a scrollable container with customizable scrollbars.
+ */
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
@@ -21,6 +26,17 @@ const ScrollArea = React.forwardRef<
 ))
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName
 
+/**
+ * ScrollBar component.
+ *
+ * This component provides a customizable scrollbar for the ScrollArea.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the scrollbar.
+ * @param {string} orientation - The orientation of the scrollbar (vertical or horizontal).
+ *
+ * @example
+ * <ScrollBar orientation="horizontal" />
+ */
 const ScrollBar = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>

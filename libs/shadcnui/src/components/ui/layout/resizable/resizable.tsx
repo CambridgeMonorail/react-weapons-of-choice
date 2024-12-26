@@ -4,6 +4,11 @@ import * as ResizablePrimitive from "react-resizable-panels"
 import { cn } from "../../../../lib/utils"
 import { DragHandleDots2Icon } from "@radix-ui/react-icons"
 
+/**
+ * ResizablePanelGroup component.
+ *
+ * This component provides a group of resizable panels.
+ */
 const ResizablePanelGroup = ({
   className,
   ...props
@@ -17,8 +22,32 @@ const ResizablePanelGroup = ({
   />
 )
 
+/**
+ * ResizablePanel component.
+ *
+ * This component provides a resizable panel.
+ *
+ * @param {React.ComponentProps<typeof ResizablePrimitive.Panel>} props - Props for the ResizablePanel component.
+ *
+ * @example
+ * <ResizablePanel>
+ *   <div>Panel Content</div>
+ * </ResizablePanel>
+ */
 const ResizablePanel = ResizablePrimitive.Panel
 
+/**
+ * ResizableHandle component.
+ *
+ * This component provides a handle for resizing panels.
+ *
+ * @param {boolean} withHandle - Whether to include a visual handle.
+ * @param {string} className - Additional Tailwind CSS classes for the handle.
+ * @param {React.ComponentProps<typeof ResizablePrimitive.PanelResizeHandle>} props - Props for the ResizableHandle component.
+ *
+ * @example
+ * <ResizableHandle withHandle />
+ */
 const ResizableHandle = ({
   withHandle,
   className,

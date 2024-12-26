@@ -7,14 +7,82 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Sheet component.
+ *
+ * This component provides a sheet dialog that can be used to display content
+ * in a modal-like overlay.
+ *
+ * @param {boolean} open - Whether the sheet is open by default.
+ * @param {React.ReactNode} children - The content to be rendered inside the sheet.
+ *
+ * @example
+ * <Sheet open={true}>
+ *   <SheetTrigger>Open Sheet</SheetTrigger>
+ *   <SheetContent>
+ *     <SheetHeader>
+ *       <SheetTitle>Sheet Title</SheetTitle>
+ *       <SheetDescription>Sheet Description</SheetDescription>
+ *     </SheetHeader>
+ *     <div>Sheet Content</div>
+ *     <SheetFooter>
+ *       <SheetClose>Close</SheetClose>
+ *     </SheetFooter>
+ *   </SheetContent>
+ * </Sheet>
+ */
 const Sheet = SheetPrimitive.Root
 
+/**
+ * SheetTrigger component.
+ *
+ * This component is used to trigger the opening of the sheet.
+ *
+ * @param {React.ReactNode} children - The content to be rendered inside the trigger.
+ * @param {string} className - Additional Tailwind CSS classes for the trigger.
+ *
+ * @example
+ * <SheetTrigger className="bg-gray-200 p-2">Open Sheet</SheetTrigger>
+ */
 const SheetTrigger = SheetPrimitive.Trigger
 
+/**
+ * SheetClose component.
+ *
+ * This component is used to close the sheet.
+ *
+ * @param {React.ReactNode} children - The content to be rendered inside the close button.
+ * @param {string} className - Additional Tailwind CSS classes for the close button.
+ *
+ * @example
+ * <SheetClose className="bg-gray-200 p-2">Close</SheetClose>
+ */
 const SheetClose = SheetPrimitive.Close
 
+/**
+ * SheetPortal component.
+ *
+ * This component provides a portal for rendering the sheet content outside the DOM hierarchy.
+ *
+ * @param {React.ReactNode} children - The content to be rendered inside the portal.
+ *
+ * @example
+ * <SheetPortal>
+ *   <SheetContent>Sheet Content</SheetContent>
+ * </SheetPortal>
+ */
 const SheetPortal = SheetPrimitive.Portal
 
+/**
+ * SheetOverlay component.
+ *
+ * This component provides an overlay for the sheet.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the overlay.
+ *
+ * @example
+ * <SheetOverlay className="bg-black/80" />
+ */
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
@@ -49,6 +117,20 @@ const sheetVariants = cva(
   }
 )
 
+/**
+ * SheetContent component.
+ *
+ * This component provides the content for the sheet.
+ *
+ * @param {string} side - The side of the screen where the sheet appears (top, bottom, left, right).
+ * @param {string} className - Additional Tailwind CSS classes for the content.
+ * @param {React.ReactNode} children - The content to be rendered inside the sheet.
+ *
+ * @example
+ * <SheetContent side="right" className="p-4">
+ *   <div>Sheet Content</div>
+ * </SheetContent>
+ */
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
     VariantProps<typeof sheetVariants> {}
@@ -74,6 +156,20 @@ const SheetContent = React.forwardRef<
 ))
 SheetContent.displayName = SheetPrimitive.Content.displayName
 
+/**
+ * SheetHeader component.
+ *
+ * This component provides the header for the sheet.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the header.
+ * @param {React.ReactNode} children - The content to be rendered inside the header.
+ *
+ * @example
+ * <SheetHeader className="p-4">
+ *   <SheetTitle>Sheet Title</SheetTitle>
+ *   <SheetDescription>Sheet Description</SheetDescription>
+ * </SheetHeader>
+ */
 const SheetHeader = ({
   className,
   ...props
@@ -88,6 +184,19 @@ const SheetHeader = ({
 )
 SheetHeader.displayName = "SheetHeader"
 
+/**
+ * SheetFooter component.
+ *
+ * This component provides the footer for the sheet.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the footer.
+ * @param {React.ReactNode} children - The content to be rendered inside the footer.
+ *
+ * @example
+ * <SheetFooter className="p-4">
+ *   <SheetClose>Close</SheetClose>
+ * </SheetFooter>
+ */
 const SheetFooter = ({
   className,
   ...props
@@ -102,6 +211,17 @@ const SheetFooter = ({
 )
 SheetFooter.displayName = "SheetFooter"
 
+/**
+ * SheetTitle component.
+ *
+ * This component provides the title for the sheet.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the title.
+ * @param {React.ReactNode} children - The content to be rendered inside the title.
+ *
+ * @example
+ * <SheetTitle className="text-lg font-semibold">Sheet Title</SheetTitle>
+ */
 const SheetTitle = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
@@ -114,6 +234,17 @@ const SheetTitle = React.forwardRef<
 ))
 SheetTitle.displayName = SheetPrimitive.Title.displayName
 
+/**
+ * SheetDescription component.
+ *
+ * This component provides the description for the sheet.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the description.
+ * @param {React.ReactNode} children - The content to be rendered inside the description.
+ *
+ * @example
+ * <SheetDescription className="text-sm">Sheet Description</SheetDescription>
+ */
 const SheetDescription = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>

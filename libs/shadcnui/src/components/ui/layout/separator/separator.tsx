@@ -3,6 +3,11 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 import { cn } from "../../../../lib/utils"
 
+/**
+ * Separator component.
+ *
+ * This component provides a visual separator between elements, either horizontally or vertically.
+ */
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
