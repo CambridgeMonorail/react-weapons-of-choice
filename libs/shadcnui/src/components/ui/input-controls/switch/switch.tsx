@@ -5,15 +5,6 @@ import { cn } from "../../../../lib/utils"
 
 /**
  * Switch component.
- *
- * This component renders a switch with customizable styles and states.
- *
- * @param {string} className - Additional Tailwind CSS classes for the switch.
- * @param {boolean} disabled - Disable the switch.
- * @param {boolean} checked - Checked state of the switch.
- *
- * @example
- * <Switch className="custom-class" disabled={false} checked={true} />
  */
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,

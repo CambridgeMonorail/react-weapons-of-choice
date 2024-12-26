@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator } from '.';
+import { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator } from './select';
 
 const meta: Meta<typeof Select> = {
-  title: 'Shadcnui/Select',
+  title: 'Shadcnui/Input/Select',
   component: Select,
   tags: ['autodocs'],
   argTypes: {

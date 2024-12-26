@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from '.';
+import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from './input-otp';
 
 const meta: Meta<typeof InputOTP> = {
-  title: 'Shadcnui/InputOTP',
+  title: 'Shadcnui/Input/InputOTP',
   component: InputOTP,
   tags: ['autodocs'],
   argTypes: {

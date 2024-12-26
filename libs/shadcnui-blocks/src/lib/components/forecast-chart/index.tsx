@@ -13,9 +13,6 @@ interface ForecastChartProps {
 /**
  * ForecastChart component displays a line chart comparing forecasted and actual values over time.
  * It uses the Recharts library for rendering the chart and Shadcn UI components for styling.
- * 
- * @param {ForecastChartProps} props - The props for the ForecastChart component.
- * @returns {JSX.Element} The rendered ForecastChart component.
  */
 const ForecastChart: FC<ForecastChartProps> = ({ data }) => {
   return (

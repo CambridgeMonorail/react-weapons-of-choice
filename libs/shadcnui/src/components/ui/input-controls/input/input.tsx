@@ -1,4 +1,5 @@
 import * as React from "react"
+import { forwardRef, ComponentProps } from "react"
 
 import { cn } from "../../../../lib/utils"
 
@@ -6,16 +7,8 @@ import { cn } from "../../../../lib/utils"
  * Input component.
  *
  * This component renders an input field with customizable styles and states.
- *
- * @param {string} className - Additional Tailwind CSS classes for the input.
- * @param {string} type - Type of the input.
- * @param {boolean} disabled - Disable the input.
- * @param {string} placeholder - Placeholder text for the input.
- *
- * @example
- * <Input className="custom-class" type="text" disabled={false} placeholder="Enter text" />
  */
-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
+const Input = forwardRef<HTMLInputElement, ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
     return (
       <input

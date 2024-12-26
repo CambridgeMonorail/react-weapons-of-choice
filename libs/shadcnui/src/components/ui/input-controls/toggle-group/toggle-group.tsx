@@ -14,9 +14,10 @@ import { toggleVariants } from "../toggle/toggle"
  * @param {string} variant - Variant of the toggle buttons.
  * @param {string} size - Size of the toggle buttons.
  * @param {React.ReactNode} children - Child elements to be rendered within the toggle group.
+ * @param {string} type - Type of the toggle group.
  *
  * @example
- * <ToggleGroup className="custom-class" variant="default" size="default">
+ * <ToggleGroup className="custom-class" variant="default" size="default" type="single">
  *   <ToggleGroupItem value="1">Item 1</ToggleGroupItem>
  *   <ToggleGroupItem value="2">Item 2</ToggleGroupItem>
  *   <ToggleGroupItem value="3">Item 3</ToggleGroupItem>
@@ -32,10 +33,11 @@ const ToggleGroupContext = React.createContext<
 const ToggleGroup = React.forwardRef<
   React.ElementRef<typeof ToggleGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> &
-    VariantProps<typeof toggleVariants>
->(({ className, variant, size, children, ...props }, ref) => (
+    VariantProps<typeof toggleVariants> & { type: "single" | "multiple" }
+>(({ className, variant, size, type, children, ...props }, ref) => (
   <ToggleGroupPrimitive.Root
     ref={ref}
+    type={type}
     className={cn("flex items-center justify-center gap-1", className)}
     {...props}
   >

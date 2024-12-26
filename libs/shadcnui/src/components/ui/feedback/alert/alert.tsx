@@ -21,15 +21,6 @@ const alertVariants = cva(
 
 /**
  * Alert component provides a visual representation of an alert message.
- * 
- * @component
- * @example
- * ```tsx
- * <Alert>
- *   <AlertTitle>Default Alert</AlertTitle>
- *   <AlertDescription>This is a default alert message.</AlertDescription>
- * </Alert>
- * ```
  */
 const Alert = React.forwardRef<
   HTMLDivElement,

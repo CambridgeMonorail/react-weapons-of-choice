@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ToggleGroup, ToggleGroupItem } from '.';
+import { ToggleGroup, ToggleGroupItem } from './toggle-group';
 
 const meta: Meta<typeof ToggleGroup> = {
-  title: 'Shadcnui/ToggleGroup',
+  title: 'Shadcnui/Input/ToggleGroup',
   component: ToggleGroup,
   tags: ['autodocs'],
   argTypes: {
@@ -20,6 +20,12 @@ const meta: Meta<typeof ToggleGroup> = {
       name: 'Value',
       control: 'text',
       description: 'Value of the selected toggle item',
+    },
+    type: {
+      name: 'Type',
+      control: 'radio',
+      options: ['single', 'multiple'],
+      description: 'Type of the toggle group',
     },
   },
 };
@@ -45,6 +51,7 @@ export const Default: Story = {
     className: '',
     disabled: false,
     value: '1',
+    type: 'single',
   },
 };
 
@@ -65,6 +72,7 @@ export const Disabled: Story = {
     className: '',
     disabled: true,
     value: '1',
+    type: 'single',
   },
 };
 
@@ -85,5 +93,6 @@ export const SelectedValue: Story = {
     className: '',
     disabled: false,
     value: '2',
+    type: 'single',
   },
 };

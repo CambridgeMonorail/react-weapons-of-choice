@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { RadioGroup, RadioGroupItem } from '.';
+import { RadioGroup, RadioGroupItem } from './radio-group';
 
 const meta: Meta<typeof RadioGroup> = {
-  title: 'Shadcnui/RadioGroup',
+  title: 'Shadcnui/Input/RadioGroup',
   component: RadioGroup,
   tags: ['autodocs'],
   argTypes: {

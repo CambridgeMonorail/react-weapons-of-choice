@@ -6,13 +6,6 @@ import { cn } from "../../../../lib/utils"
  * Textarea component.
  *
  * This component renders a textarea with customizable styles and states.
- *
- * @param {string} className - Additional Tailwind CSS classes for the textarea.
- * @param {boolean} disabled - Disable the textarea.
- * @param {string} placeholder - Placeholder text for the textarea.
- *
- * @example
- * <Textarea className="custom-class" disabled={false} placeholder="Enter text" />
  */
 const Textarea = React.forwardRef<
   HTMLTextAreaElement,

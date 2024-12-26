@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Toggle } from '.';
+import { Toggle } from './toggle';
 
 const meta: Meta<typeof Toggle> = {
-  title: 'Shadcnui/Toggle',
+  title: 'Shadcnui/Input/Toggle',
   component: Toggle,
   tags: ['autodocs'],
   argTypes: {

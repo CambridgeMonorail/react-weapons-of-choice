@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from '.';
+import { Checkbox } from './checkbox';
+
 
 const meta: Meta<typeof Checkbox> = {
-  title: 'Shadcnui/Checkbox',
+  title: 'Shadcnui/Input/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Slider } from '.';
+import { Slider } from './slider';
 
 const meta: Meta<typeof Slider> = {
-  title: 'Shadcnui/Slider',
+  title: 'Shadcnui/Input/Slider',
   component: Slider,
   tags: ['autodocs'],
   argTypes: {

@@ -31,17 +31,6 @@ const toggleVariants = cva(
  * Toggle component.
  *
  * This component renders a toggle button with customizable styles and states.
- *
- * @param {string} className - Additional Tailwind CSS classes for the toggle.
- * @param {string} variant - Variant of the toggle button.
- * @param {string} size - Size of the toggle button.
- * @param {boolean} disabled - Disable the toggle button.
- * @param {boolean} pressed - Pressed state of the toggle button.
- *
- * @example
- * <Toggle className="custom-class" variant="default" size="default" disabled={false} pressed={false}>
- *   Toggle Button
- * </Toggle>
  */
 const Toggle = React.forwardRef<
   React.ElementRef<typeof TogglePrimitive.Root>,
