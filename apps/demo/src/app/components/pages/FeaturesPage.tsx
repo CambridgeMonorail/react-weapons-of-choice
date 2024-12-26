@@ -13,7 +13,15 @@ import {
   ChartTooltipContent,
 } from '@rwoc/shadcnui';
 import { BarChart, CartesianGrid, XAxis, Bar } from 'recharts';
-import { Rocket, Palette, Paintbrush, BarChart as BarChartIcon, Video } from 'lucide-react';
+import {
+  Rocket,
+  Palette,
+  Paintbrush,
+  BarChart as BarChartIcon,
+  Video,
+  TrendingUp,
+} from 'lucide-react';
+import { Logo } from '@rwoc/shadcnui-blocks';
 
 interface ChartData {
   label: string;
@@ -29,7 +37,7 @@ const FeaturesPage = () => {
   const chartConfig = {
     performance: {
       label: 'Performance',
-      color: 'var(--color-performance)',
+      color: 'var(--primary)',
     },
   };
 
@@ -41,7 +49,9 @@ const FeaturesPage = () => {
     <div className="p-6 m-4 space-y-6 bg-background text-foreground">
       <h1 className="text-4xl font-bold mb-4 text-primary">Features</h1>
       <section className="mb-12">
-        <h2 className="text-4xl font-bold mb-4 text-primary">Detailed Descriptions</h2>
+        <h2 className="text-4xl font-bold mb-4 text-primary">
+          Detailed Descriptions
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <Card className="hover:shadow-lg transition-shadow duration-300">
@@ -55,12 +65,15 @@ const FeaturesPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <img
-                src="./nx-workspace.png"
-                alt="Nx Workspace"
-                className="w-full h-auto mb-4"
-              />
-              <p>
+              <div className="flex justify-center">
+                <Logo
+                  fill="fill-primary"
+                  height="100px"
+                  name="nx"
+                  width="100px"
+                />
+              </div>
+              <p className="mt-4">
                 Streamline your development process with a pre-configured Nx
                 workspace.
               </p>
@@ -78,12 +91,15 @@ const FeaturesPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <img
-                src="./tailwind-css.png"
-                alt="Tailwind CSS"
-                className="w-full h-auto mb-4"
-              />
-              <p>
+              <div className="flex justify-center">
+                <Logo
+                  fill="fill-primary"
+                  height="100px"
+                  name="tailwind"
+                  width="100px"
+                />
+              </div>
+              <p className="mt-4">
                 Utilize the power of Tailwind CSS for fast and efficient
                 styling.
               </p>
@@ -101,12 +117,17 @@ const FeaturesPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <img
-                src="./shadcn-ui.png"
-                alt="Shadcn UI"
-                className="w-full h-auto mb-4"
-              />
-              <p>Achieve a cohesive design with Shadcn UI components.</p>
+              <div className="flex justify-center">
+                <Logo
+                  fill="fill-primary"
+                  height="100px"
+                  name="shadcn"
+                  width="100px"
+                />
+              </div>
+              <p className="mt-4">
+                Achieve a cohesive design with Shadcn UI components.
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -160,11 +181,11 @@ const FeaturesPage = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <img
-                src="./scalability.png"
-                alt="Scalability"
-                className="w-full h-auto mb-4"
-              />
+              {' '}
+              <div className="flex justify-center">
+                {' '}
+                <TrendingUp className="h-24 w-24" />
+              </div>
               <p>
                 Our architecture ensures your project can grow without
                 limitations.
