@@ -173,16 +173,6 @@ SidebarProvider.displayName = "SidebarProvider"
  *
  * This component provides a sidebar with various configurations, including
  * collapsible behavior and different variants.
- *
- * @param {string} side - The side of the screen where the sidebar appears (left or right).
- * @param {string} variant - The variant of the sidebar (sidebar, floating, inset).
- * @param {string} collapsible - The collapsible behavior of the sidebar (offcanvas, icon, none).
- * @param {React.ReactNode} children - The content to be rendered inside the sidebar.
- *
- * @example
- * <Sidebar side="left" variant="sidebar" collapsible="offcanvas">
- *   <SidebarContent>Content</SidebarContent>
- * </Sidebar>
  */
 const Sidebar = React.forwardRef<
   HTMLDivElement,

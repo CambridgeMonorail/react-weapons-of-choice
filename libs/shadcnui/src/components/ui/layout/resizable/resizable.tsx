@@ -8,20 +8,6 @@ import { DragHandleDots2Icon } from "@radix-ui/react-icons"
  * ResizablePanelGroup component.
  *
  * This component provides a group of resizable panels.
- *
- * @param {string} className - Additional Tailwind CSS classes for the container.
- * @param {React.ComponentProps<typeof ResizablePrimitive.PanelGroup>} props - Props for the ResizablePanelGroup component.
- *
- * @example
- * <ResizablePanelGroup className="custom-class">
- *   <ResizablePanel>
- *     <div>Panel 1</div>
- *   </ResizablePanel>
- *   <ResizableHandle withHandle />
- *   <ResizablePanel>
- *     <div>Panel 2</div>
- *   </ResizablePanel>
- * </ResizablePanelGroup>
  */
 const ResizablePanelGroup = ({
   className,

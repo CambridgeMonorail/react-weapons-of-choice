@@ -7,14 +7,6 @@ import { cn } from "../../../../lib/utils"
  * ScrollArea component.
  *
  * This component provides a scrollable container with customizable scrollbars.
- *
- * @param {string} className - Additional Tailwind CSS classes for the container.
- * @param {React.ReactNode} children - The content to be rendered inside the scrollable area.
- *
- * @example
- * <ScrollArea className="h-64 w-64">
- *   <div className="h-96 w-full bg-gray-200">Scrollable Content</div>
- * </ScrollArea>
  */
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root>,
