@@ -43,6 +43,22 @@ function useSidebar() {
   return context
 }
 
+/**
+ * SidebarProvider component.
+ *
+ * This component provides context for the sidebar, including state management
+ * and keyboard shortcuts.
+ *
+ * @param {boolean} defaultOpen - Whether the sidebar is open by default.
+ * @param {boolean} open - Controlled open state of the sidebar.
+ * @param {Function} onOpenChange - Callback function when the open state changes.
+ * @param {React.ReactNode} children - The content to be rendered inside the sidebar.
+ *
+ * @example
+ * <SidebarProvider defaultOpen={true}>
+ *   <Sidebar>Content</Sidebar>
+ * </SidebarProvider>
+ */
 const SidebarProvider = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -152,6 +168,22 @@ const SidebarProvider = React.forwardRef<
 )
 SidebarProvider.displayName = "SidebarProvider"
 
+/**
+ * Sidebar component.
+ *
+ * This component provides a sidebar with various configurations, including
+ * collapsible behavior and different variants.
+ *
+ * @param {string} side - The side of the screen where the sidebar appears (left or right).
+ * @param {string} variant - The variant of the sidebar (sidebar, floating, inset).
+ * @param {string} collapsible - The collapsible behavior of the sidebar (offcanvas, icon, none).
+ * @param {React.ReactNode} children - The content to be rendered inside the sidebar.
+ *
+ * @example
+ * <Sidebar side="left" variant="sidebar" collapsible="offcanvas">
+ *   <SidebarContent>Content</SidebarContent>
+ * </Sidebar>
+ */
 const Sidebar = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -255,6 +287,17 @@ const Sidebar = React.forwardRef<
 )
 Sidebar.displayName = "Sidebar"
 
+/**
+ * SidebarTrigger component.
+ *
+ * This component provides a button to toggle the sidebar.
+ *
+ * @param {Function} onClick - Callback function when the button is clicked.
+ * @param {string} className - Additional Tailwind CSS classes for the button.
+ *
+ * @example
+ * <SidebarTrigger className="custom-class" onClick={() => console.log('Clicked')} />
+ */
 const SidebarTrigger = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
@@ -281,6 +324,17 @@ const SidebarTrigger = React.forwardRef<
 });
 SidebarTrigger.displayName = "SidebarTrigger";
 
+/**
+ * SidebarRail component.
+ *
+ * This component provides a rail for toggling the sidebar.
+ *
+ * @param {Function} onClick - Callback function when the rail is clicked.
+ * @param {string} className - Additional Tailwind CSS classes for the rail.
+ *
+ * @example
+ * <SidebarRail className="custom-class" onClick={() => console.log('Clicked')} />
+ */
 const SidebarRail = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button">
@@ -310,6 +364,19 @@ const SidebarRail = React.forwardRef<
 })
 SidebarRail.displayName = "SidebarRail"
 
+/**
+ * SidebarInset component.
+ *
+ * This component provides an inset container for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the container.
+ * @param {React.ReactNode} children - The content to be rendered inside the container.
+ *
+ * @example
+ * <SidebarInset className="custom-class">
+ *   <div>Content</div>
+ * </SidebarInset>
+ */
 const SidebarInset = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"main">
@@ -328,6 +395,17 @@ const SidebarInset = React.forwardRef<
 })
 SidebarInset.displayName = "SidebarInset"
 
+/**
+ * SidebarInput component.
+ *
+ * This component provides an input field for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the input.
+ * @param {React.ReactNode} children - The content to be rendered inside the input.
+ *
+ * @example
+ * <SidebarInput className="custom-class" placeholder="Search..." />
+ */
 const SidebarInput = React.forwardRef<
   React.ElementRef<typeof Input>,
   React.ComponentProps<typeof Input>
@@ -346,6 +424,19 @@ const SidebarInput = React.forwardRef<
 })
 SidebarInput.displayName = "SidebarInput"
 
+/**
+ * SidebarHeader component.
+ *
+ * This component provides a header for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the header.
+ * @param {React.ReactNode} children - The content to be rendered inside the header.
+ *
+ * @example
+ * <SidebarHeader className="custom-class">
+ *   <div>Header Content</div>
+ * </SidebarHeader>
+ */
 const SidebarHeader = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -361,6 +452,19 @@ const SidebarHeader = React.forwardRef<
 })
 SidebarHeader.displayName = "SidebarHeader"
 
+/**
+ * SidebarFooter component.
+ *
+ * This component provides a footer for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the footer.
+ * @param {React.ReactNode} children - The content to be rendered inside the footer.
+ *
+ * @example
+ * <SidebarFooter className="custom-class">
+ *   <div>Footer Content</div>
+ * </SidebarFooter>
+ */
 const SidebarFooter = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -376,6 +480,16 @@ const SidebarFooter = React.forwardRef<
 })
 SidebarFooter.displayName = "SidebarFooter"
 
+/**
+ * SidebarSeparator component.
+ *
+ * This component provides a separator for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the separator.
+ *
+ * @example
+ * <SidebarSeparator className="custom-class" />
+ */
 const SidebarSeparator = React.forwardRef<
   React.ElementRef<typeof Separator>,
   React.ComponentProps<typeof Separator>
@@ -391,6 +505,19 @@ const SidebarSeparator = React.forwardRef<
 })
 SidebarSeparator.displayName = "SidebarSeparator"
 
+/**
+ * SidebarContent component.
+ *
+ * This component provides content for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the content.
+ * @param {React.ReactNode} children - The content to be rendered inside the content.
+ *
+ * @example
+ * <SidebarContent className="custom-class">
+ *   <div>Content</div>
+ * </SidebarContent>
+ */
 const SidebarContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -409,6 +536,19 @@ const SidebarContent = React.forwardRef<
 })
 SidebarContent.displayName = "SidebarContent"
 
+/**
+ * SidebarGroup component.
+ *
+ * This component provides a group container for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the group.
+ * @param {React.ReactNode} children - The content to be rendered inside the group.
+ *
+ * @example
+ * <SidebarGroup className="custom-class">
+ *   <div>Group Content</div>
+ * </SidebarGroup>
+ */
 const SidebarGroup = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -424,6 +564,20 @@ const SidebarGroup = React.forwardRef<
 })
 SidebarGroup.displayName = "SidebarGroup"
 
+/**
+ * SidebarGroupLabel component.
+ *
+ * This component provides a label for the sidebar group.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the label.
+ * @param {React.ReactNode} children - The content to be rendered inside the label.
+ * @param {boolean} asChild - Whether to render the label as a child component.
+ *
+ * @example
+ * <SidebarGroupLabel className="custom-class" asChild={true}>
+ *   <div>Label Content</div>
+ * </SidebarGroupLabel>
+ */
 const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & { asChild?: boolean }
@@ -445,6 +599,20 @@ const SidebarGroupLabel = React.forwardRef<
 })
 SidebarGroupLabel.displayName = "SidebarGroupLabel"
 
+/**
+ * SidebarGroupAction component.
+ *
+ * This component provides an action button for the sidebar group.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the action button.
+ * @param {React.ReactNode} children - The content to be rendered inside the action button.
+ * @param {boolean} asChild - Whether to render the action button as a child component.
+ *
+ * @example
+ * <SidebarGroupAction className="custom-class" asChild={true}>
+ *   <div>Action Content</div>
+ * </SidebarGroupAction>
+ */
 const SidebarGroupAction = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button"> & { asChild?: boolean }
@@ -468,6 +636,19 @@ const SidebarGroupAction = React.forwardRef<
 })
 SidebarGroupAction.displayName = "SidebarGroupAction"
 
+/**
+ * SidebarGroupContent component.
+ *
+ * This component provides content for the sidebar group.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the content.
+ * @param {React.ReactNode} children - The content to be rendered inside the content.
+ *
+ * @example
+ * <SidebarGroupContent className="custom-class">
+ *   <div>Group Content</div>
+ * </SidebarGroupContent>
+ */
 const SidebarGroupContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -481,6 +662,20 @@ const SidebarGroupContent = React.forwardRef<
 ))
 SidebarGroupContent.displayName = "SidebarGroupContent"
 
+/**
+ * SidebarMenu component.
+ *
+ * This component provides a menu for the sidebar.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the menu.
+ * @param {React.ReactNode} children - The content to be rendered inside the menu.
+ *
+ * @example
+ * <SidebarMenu className="custom-class">
+ *   <SidebarMenuItem>Item 1</SidebarMenuItem>
+ *   <SidebarMenuItem>Item 2</SidebarMenuItem>
+ * </SidebarMenu>
+ */
 const SidebarMenu = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<"ul">
@@ -494,6 +689,19 @@ const SidebarMenu = React.forwardRef<
 ))
 SidebarMenu.displayName = "SidebarMenu"
 
+/**
+ * SidebarMenuItem component.
+ *
+ * This component provides a menu item for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the menu item.
+ * @param {React.ReactNode} children - The content to be rendered inside the menu item.
+ *
+ * @example
+ * <SidebarMenuItem className="custom-class">
+ *   <div>Item Content</div>
+ * </SidebarMenuItem>
+ */
 const SidebarMenuItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
@@ -529,6 +737,22 @@ const sidebarMenuButtonVariants = cva(
   }
 )
 
+/**
+ * SidebarMenuButton component.
+ *
+ * This component provides a button for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the button.
+ * @param {React.ReactNode} children - The content to be rendered inside the button.
+ * @param {boolean} asChild - Whether to render the button as a child component.
+ * @param {boolean} isActive - Whether the button is active.
+ * @param {string|object} tooltip - Tooltip content for the button.
+ *
+ * @example
+ * <SidebarMenuButton className="custom-class" isActive={true} tooltip="Tooltip Content">
+ *   <div>Button Content</div>
+ * </SidebarMenuButton>
+ */
 const SidebarMenuButton = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button"> & {
@@ -588,6 +812,21 @@ const SidebarMenuButton = React.forwardRef<
 )
 SidebarMenuButton.displayName = "SidebarMenuButton"
 
+/**
+ * SidebarMenuAction component.
+ *
+ * This component provides an action button for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the action button.
+ * @param {React.ReactNode} children - The content to be rendered inside the action button.
+ * @param {boolean} asChild - Whether to render the action button as a child component.
+ * @param {boolean} showOnHover - Whether to show the action button on hover.
+ *
+ * @example
+ * <SidebarMenuAction className="custom-class" showOnHover={true}>
+ *   <div>Action Content</div>
+ * </SidebarMenuAction>
+ */
 const SidebarMenuAction = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<"button"> & {
@@ -619,6 +858,19 @@ const SidebarMenuAction = React.forwardRef<
 })
 SidebarMenuAction.displayName = "SidebarMenuAction"
 
+/**
+ * SidebarMenuBadge component.
+ *
+ * This component provides a badge for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the badge.
+ * @param {React.ReactNode} children - The content to be rendered inside the badge.
+ *
+ * @example
+ * <SidebarMenuBadge className="custom-class">
+ *   <div>Badge Content</div>
+ * </SidebarMenuBadge>
+ */
 const SidebarMenuBadge = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
@@ -640,6 +892,17 @@ const SidebarMenuBadge = React.forwardRef<
 ))
 SidebarMenuBadge.displayName = "SidebarMenuBadge"
 
+/**
+ * SidebarMenuSkeleton component.
+ *
+ * This component provides a skeleton loader for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the skeleton loader.
+ * @param {boolean} showIcon - Whether to show an icon in the skeleton loader.
+ *
+ * @example
+ * <SidebarMenuSkeleton className="custom-class" showIcon={true} />
+ */
 const SidebarMenuSkeleton = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -678,6 +941,20 @@ const SidebarMenuSkeleton = React.forwardRef<
 })
 SidebarMenuSkeleton.displayName = "SidebarMenuSkeleton"
 
+/**
+ * SidebarMenuSub component.
+ *
+ * This component provides a sub-menu for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the sub-menu.
+ * @param {React.ReactNode} children - The content to be rendered inside the sub-menu.
+ *
+ * @example
+ * <SidebarMenuSub className="custom-class">
+ *   <SidebarMenuSubItem>Sub Item 1</SidebarMenuSubItem>
+ *   <SidebarMenuSubItem>Sub Item 2</SidebarMenuSubItem>
+ * </SidebarMenuSub>
+ */
 const SidebarMenuSub = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<"ul">
@@ -695,12 +972,41 @@ const SidebarMenuSub = React.forwardRef<
 ))
 SidebarMenuSub.displayName = "SidebarMenuSub"
 
+/**
+ * SidebarMenuSubItem component.
+ *
+ * This component provides a sub-menu item for the sidebar menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the sub-menu item.
+ * @param {React.ReactNode} children - The content to be rendered inside the sub-menu item.
+ *
+ * @example
+ * <SidebarMenuSubItem className="custom-class">
+ *   <div>Sub Item Content</div>
+ * </SidebarMenuSubItem>
+ */
 const SidebarMenuSubItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ ...props }, ref) => <li ref={ref} {...props} />)
 SidebarMenuSubItem.displayName = "SidebarMenuSubItem"
 
+/**
+ * SidebarMenuSubButton component.
+ *
+ * This component provides a button for the sidebar sub-menu.
+ *
+ * @param {string} className - Additional Tailwind CSS classes for the button.
+ * @param {React.ReactNode} children - The content to be rendered inside the button.
+ * @param {boolean} asChild - Whether to render the button as a child component.
+ * @param {boolean} isActive - Whether the button is active.
+ * @param {string} size - The size of the button (sm, md).
+ *
+ * @example
+ * <SidebarMenuSubButton className="custom-class" isActive={true} size="md">
+ *   <div>Button Content</div>
+ * </SidebarMenuSubButton>
+ */
 const SidebarMenuSubButton = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentProps<"a"> & {
