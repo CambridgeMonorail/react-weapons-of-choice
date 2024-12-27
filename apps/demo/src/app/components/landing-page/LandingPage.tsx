@@ -23,6 +23,7 @@ import {
   HeroSection,
 } from '@rwoc/landing';
 import { Logo, Tagline } from '@rwoc/shadcnui-blocks';
+import { LogoCarousel } from '@rwoc/shadcnui-blocks'; // Pfa41
 
 export const LandingPage: FC = () => {
   const navigate = useNavigate();
@@ -185,6 +186,15 @@ export const LandingPage: FC = () => {
         }
         data-testid="get-started-section"
       />
+      <LogoCarousel // P0d9e
+        logos={[ // P0d9e
+          { id: '1', src: 'path/to/logo1.svg', alt: 'Logo 1' }, // P0d9e
+          { id: '2', src: 'path/to/logo2.svg', alt: 'Logo 2' }, // P0d9e
+          { id: '3', src: 'path/to/logo3.svg', alt: 'Logo 3' }, // P0d9e
+        ]} // P0d9e
+        header="Our Partners" // P0d9e
+        subheader="Trusted by the best" // P0d9e
+      /> // P0d9e
       <Tagline
         text="Accelerate Development. Scale Seamlessly. Impress Instantly."
         dataTestId="tagline"
