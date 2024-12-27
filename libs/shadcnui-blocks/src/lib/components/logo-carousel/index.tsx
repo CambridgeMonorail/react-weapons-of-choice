@@ -6,6 +6,12 @@ interface LogoCarouselProps {
   subheader?: string;
 }
 
+/**
+ * LogoCarousel component displays a horizontal scrolling carousel of logos.
+ * 
+ * This component is useful for showcasing partner logos, client logos, or any
+ * other set of logos in a visually appealing and interactive manner.
+ */
 const LogoCarousel: FC<LogoCarouselProps> = ({ logos, header, subheader }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [carouselLogos, setCarouselLogos] = useState([...logos, ...logos]); // Duplicate logos for seamless scroll
