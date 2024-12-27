@@ -1,7 +1,4 @@
-import React, { FC, useEffect, useRef } from 'react';
-import { cn } from '@rwoc/shadcnui';
-import { useTheme } from '@rwoc/shadcnui';
-import { motion, useAnimation } from 'framer-motion';
+import React, { FC } from 'react';
 
 interface LogoData {
   id: string;
@@ -16,53 +13,31 @@ interface LogoCarouselProps {
 }
 
 const LogoCarousel: FC<LogoCarouselProps> = ({ logos, header, subheader }) => {
-  const { theme } = useTheme();
-  const controls = useAnimation();
-  const carouselRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      controls.start({
-        x: '-100%',
-        transition: { duration: 10, ease: 'linear' },
-      });
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [controls]);
+  // Duplicate logos to achieve a seamless loop
+  const duplicatedLogos = [...logos, ...logos];
 
   return (
     <div className="flex flex-col items-center justify-center">
+      {/* Header Section */}
       {header && <h2 className="text-2xl font-bold text-primary">{header}</h2>}
       {subheader && <p className="text-lg text-muted">{subheader}</p>}
-      <div
-        ref={carouselRef}
-        className="overflow-hidden w-full mt-4"
-        style={{ height: '100px' }}
-      >
-        <motion.div
-          className="flex"
-          animate={controls}
-          initial={{ x: '0%' }}
-          onAnimationComplete={() => controls.start({ x: '0%' })}
-        >
-          {logos.map((logo) => (
-            <motion.div
-              key={logo.id}
-              className="flex-shrink-0 w-24 h-24 mx-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+
+      {/* Logo Carousel */}
+      <div className="relative w-full overflow-hidden mt-4" style={{ height: '100px' }}>
+        <div className="grid grid-flow-col auto-cols-[calc(25%)] animate-scroll">
+          {duplicatedLogos.map((logo, index) => (
+            <div
+              key={`${logo.id}-${index}`}
+              className="flex-shrink-0 w-full h-24 flex items-center justify-center"
             >
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="w-full h-full object-contain"
+                className="w-auto h-full object-contain"
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

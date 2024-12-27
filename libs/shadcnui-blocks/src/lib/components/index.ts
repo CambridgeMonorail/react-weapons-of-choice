@@ -1,6 +1,7 @@
 export * from './date-range-picker/index';
 export * from './forecast-chart/index';
 export * from './logo/index';
+export * from './logo-carousel/index';
 export * from './overview/index';
 export * from './recent-sales/index';
 export * from './revenue-overview/index';
