@@ -1,6 +1,5 @@
 import { useState, useEffect, ChangeEvent } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
-import { Input } from '@rwoc/shadcnui';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, Input } from '@rwoc/shadcnui';
 
 interface FAQ {
   question: string;
@@ -43,11 +42,11 @@ export const FAQPage = () => {
   };
 
   return (
-    <div className="p-6 m-4 space-y-6">
-      <h1 className="text-4xl font-bold mb-4 text-primary">FAQ</h1>
+    <div className="p-6 m-4 space-y-6 bg-background text-foreground">
+      <h1 className="text-5xl font-bold mb-6 text-primary">FAQ</h1>
       <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Common Questions</h2>
-        <p className="mb-4 text-lg text-muted">Here are answers to the most common questions about React Weapons of Choice.</p>
+        <p className="mb-4 text-lg">Here are answers to the most common questions about React Weapons of Choice.</p>
         <Input
           type="text"
           placeholder="Search for questions..."
