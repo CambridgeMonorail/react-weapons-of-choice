@@ -96,12 +96,14 @@ const logoMap: Record<string, FC<SVGProps<SVGSVGElement>>> = {
 // Reusable Logo component
 interface LogoProps extends SVGProps<SVGSVGElement> {
   name: keyof typeof logoMap;
+  title?: string;
+  ariaLabel?: string;
 }
 
 /**
  * Logo component that renders different logos based on the provided name.
  */
-const Logo: FC<LogoProps> = ({ name, ...props }) => {
+const Logo: FC<LogoProps> = ({ name, title, ariaLabel, ...props }) => {
   const LogoComponent = logoMap[name];
 
   if (!LogoComponent) {
@@ -109,7 +111,14 @@ const Logo: FC<LogoProps> = ({ name, ...props }) => {
     return null;
   }
 
-  return <LogoComponent data-testid={`logo-${name}`} {...props} />;
+  return (
+    <LogoComponent
+      data-testid={`logo-${name}`}
+      title={title}
+      aria-label={ariaLabel}
+      {...props}
+    />
+  );
 };
 
 export { Logo, LogoProps };

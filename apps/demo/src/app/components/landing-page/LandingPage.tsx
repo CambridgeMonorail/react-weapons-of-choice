@@ -67,22 +67,40 @@ export const LandingPage: FC = () => {
         title="Why React Weapons of Choice?"
         description="React Weapons of Choice is an open-source boilerplate designed for developers who want a fast, intuitive setup for SPAs. Say goodbye to configuration headaches and hello to productivity!"
         logos={[
-          <Logo name="nx" className="w-16 h-16 sm:w-12 sm:h-12" key="nx" />,
+          <Logo
+            name="nx"
+            className="w-16 h-16 sm:w-12 sm:h-12"
+            key="nx"
+            title="Nx"
+            ariaLabel="Nx"
+          />,
           <Logo
             name="tailwind"
             className="w-16 h-16 sm:w-12 sm:h-12"
             key="tailwind"
+            title="Tailwind CSS"
+            ariaLabel="Tailwind CSS"
           />,
           <Logo
             name="shadcn"
             className="w-16 h-16 sm:w-12 sm:h-12"
             key="shadcn"
+            title="Shadcn"
+            ariaLabel="Shadcn"
           />,
-          <Logo name="pnpm" className="w-16 h-16 sm:w-12 sm:h-12" key="pnpm" />,
+          <Logo
+            name="pnpm"
+            className="w-16 h-16 sm:w-12 sm:h-12"
+            key="pnpm"
+            title="Pnpm"
+            ariaLabel="Pnpm"
+          />,
           <Logo
             name="react"
             className="w-16 h-16 sm:w-12 sm:h-12"
             key="react"
+            title="React"
+            ariaLabel="React"
           />,
         ]}
         data-testid="about-section"
@@ -186,15 +204,6 @@ export const LandingPage: FC = () => {
         }
         data-testid="get-started-section"
       />
-      <LogoCarousel // P0d9e
-        logos={[ // P0d9e
-          { id: '1', src: 'path/to/logo1.svg', alt: 'Logo 1' }, // P0d9e
-          { id: '2', src: 'path/to/logo2.svg', alt: 'Logo 2' }, // P0d9e
-          { id: '3', src: 'path/to/logo3.svg', alt: 'Logo 3' }, // P0d9e
-        ]} // P0d9e
-        header="Our Partners" // P0d9e
-        subheader="Trusted by the best" // P0d9e
-      /> // P0d9e
       <Tagline
         text="Accelerate Development. Scale Seamlessly. Impress Instantly."
         dataTestId="tagline"
