@@ -27,10 +27,23 @@ const meta: Meta<typeof LogoCarousel> = {
 export default meta;
 type Story = StoryObj<typeof LogoCarousel>;
 
+// Inline SVGs for sample logos
 const sampleLogos = [
-  { id: '1', src: 'path/to/logo1.svg', alt: 'Logo 1' },
-  { id: '2', src: 'path/to/logo2.svg', alt: 'Logo 2' },
-  { id: '3', src: 'path/to/logo3.svg', alt: 'Logo 3' },
+  {
+    id: '1',
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"%3E%3Ccircle cx="32" cy="32" r="32" fill="%23FF0000" /%3E%3C/svg%3E',
+    alt: 'Red Circle',
+  },
+  {
+    id: '2',
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" fill="%2300FF00" /%3E%3C/svg%3E',
+    alt: 'Green Square',
+  },
+  {
+    id: '3',
+    src: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"%3E%3Cpolygon points="32,0 64,64 0,64" fill="%230000FF" /%3E%3C/svg%3E',
+    alt: 'Blue Triangle',
+  },
 ];
 
 /**
