@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, useEffect, useState, useRef } from 'react';
 
 interface LogoCarouselProps {
   logos: ReactElement[];
@@ -7,8 +7,34 @@ interface LogoCarouselProps {
 }
 
 const LogoCarousel: FC<LogoCarouselProps> = ({ logos, header, subheader }) => {
-  // Duplicate logos to achieve a seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [carouselLogos, setCarouselLogos] = useState([...logos, ...logos]); // Duplicate logos for seamless scroll
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const scrollStep = 1; // Scroll speed (px per interval)
+    const interval = 16; // Interval duration (~60 FPS)
+    let animationFrame: number;
+
+    const startScrolling = () => {
+      if (!container) return;
+
+      container.scrollLeft += scrollStep;
+
+      // Check if the first logo is fully out of view
+      if (container.scrollLeft >= container.scrollWidth / 2) {
+        container.scrollLeft = 0; // Reset scroll position to maintain seamless loop
+      }
+
+      animationFrame = requestAnimationFrame(startScrolling); // Keep scrolling
+    };
+
+    animationFrame = requestAnimationFrame(startScrolling); // Start the animation
+
+    return () => cancelAnimationFrame(animationFrame); // Cleanup on unmount
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -17,12 +43,16 @@ const LogoCarousel: FC<LogoCarouselProps> = ({ logos, header, subheader }) => {
       {subheader && <p className="text-lg">{subheader}</p>}
 
       {/* Logo Carousel */}
-      <div className="relative w-full overflow-hidden mt-4" style={{ height: '100px' }}>
-        <div className="grid grid-flow-col auto-cols-[calc(25%)] animate-scroll">
-          {duplicatedLogos.map((logo, index) => (
+      <div
+        ref={containerRef}
+        className="relative w-full overflow-hidden mt-4"
+        style={{ height: '100px', whiteSpace: 'nowrap' }}
+      >
+        <div className="flex">
+          {carouselLogos.map((logo, index) => (
             <div
-              key={index}
-              className="flex-shrink-0 w-full h-24 flex items-center justify-center"
+              key={`logo-${index}`}
+              className="flex-shrink-0 w-1/4 h-24 flex items-center justify-center"
             >
               {logo}
             </div>

@@ -102,6 +102,13 @@ export const LandingPage: FC = () => {
             title="React"
             ariaLabel="React"
           />,
+          <Logo
+          name="vite"
+          className="w-16 h-16 sm:w-12 sm:h-12"
+          key="vite"
+          title="Vite"
+          ariaLabel="Vite"
+        />,
         ]}
         data-testid="about-section"
       />
