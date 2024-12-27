@@ -93,8 +93,21 @@ const logoMap: Record<string, FC<SVGProps<SVGSVGElement>>> = {
   storybook: StorybookLogo
 };
 
+// Wrapper component to handle title and ariaLabel
+const LogoWrapper: FC<SVGProps<SVGSVGElement> & { title?: string; ariaLabel?: string }> = ({
+  title,
+  ariaLabel,
+  children,
+  ...props
+}) => (
+  <svg {...props} aria-label={ariaLabel}>
+    {title && <title>{title}</title>}
+    {children}
+  </svg>
+);
+
 // Reusable Logo component
-interface LogoProps extends SVGProps<SVGSVGElement> {
+interface LogoProps extends Omit<SVGProps<SVGSVGElement>, 'title'> {
   name: keyof typeof logoMap;
   title?: string;
   ariaLabel?: string;
@@ -112,12 +125,9 @@ const Logo: FC<LogoProps> = ({ name, title, ariaLabel, ...props }) => {
   }
 
   return (
-    <LogoComponent
-      data-testid={`logo-${name}`}
-      title={title}
-      aria-label={ariaLabel}
-      {...props}
-    />
+    <LogoWrapper title={title} ariaLabel={ariaLabel} {...props}>
+      <LogoComponent />
+    </LogoWrapper>
   );
 };
 
