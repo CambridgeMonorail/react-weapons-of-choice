@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, useEffect, useState, useRef } from 'react';
+import { FC, ReactElement, useEffect, useState, useRef } from 'react';
 
 interface LogoCarouselProps {
   logos: ReactElement[];
