@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CommunitySection } from './CommunitySection';
+
 import { action } from '@storybook/addon-actions'; // Still explicitly import the action utility
+import { CommunitySection } from './CommunitySection';
 
 const meta: Meta<typeof CommunitySection> = {
   title: 'Landing/CommunitySection',

@@ -25,6 +25,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { AboutSection } from './AboutSection';
 
+
 const meta: Meta<typeof AboutSection> = {
   title: 'Landing/About Section',
   component: AboutSection,

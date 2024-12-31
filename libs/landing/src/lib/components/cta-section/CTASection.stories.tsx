@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CTASection } from './CTASection';
+
 import { action } from '@storybook/addon-actions';
+import { CTASection } from './CTASection';
 
 const meta: Meta<typeof CTASection> = {
   title: 'Landing/CTASection',
