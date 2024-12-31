@@ -1,10 +1,13 @@
 import { AboutPage } from '../pages/about/About';
 import { AppRoute } from '../types/app-route';
+import { BlogPage } from '../pages/blog/Blog';
 import { ColorPalettePage } from '../pages/color-palette/ColorPalette';
+import { ContactPage } from '../pages/contact/Contact';
 import { createElement } from 'react';
 import { DashboardPage } from '../pages/dashboard/Dashboard';
 import { FAQPage } from '../pages/faq/FAQ';
 import { FeaturesPage } from '../pages/features/Features';
+import { IndividualBlogPostPage } from '../pages/blog/IndividualBlogPost';
 import { LandingPage } from '../pages/landing/Landing';
 import { Layout } from '@rwoc/shell';
 import { LibraryPage } from '../pages/library/Library';
@@ -14,9 +17,6 @@ import { PricingPage } from '../pages/pricing/Pricing';
 import { sidebarData } from '../data/sidebarData';
 import { StatusBoardPage } from '../pages/status-board/StatusBoard';
 import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
-import BlogPage from '../pages/blog/Blog';
-import ContactPage from '../pages/contact/Contact';
-import IndividualBlogPostPage from '../pages/blog/IndividualBlogPost';
 
 /**
  * Defines the routes for the application.
