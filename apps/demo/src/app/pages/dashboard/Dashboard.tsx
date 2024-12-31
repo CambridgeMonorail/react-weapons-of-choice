@@ -13,9 +13,10 @@ import {
   TabsTrigger,
 } from '@rwoc/shadcnui';
 
-import { salesData } from '../../../data/salesData';
+
 import { TrendingUp } from 'lucide-react';
 import { CalendarDateRangePicker, Overview, RecentSales } from '@rwoc/shadcnui-blocks';
+import { salesData } from '../../data/salesData';
 
 const ArrowUpIcon = () => (
   <svg

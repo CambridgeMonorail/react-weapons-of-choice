@@ -1,13 +1,10 @@
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
-import { Input } from '@rwoc/shadcnui';
-import { Textarea } from '@rwoc/shadcnui';
-import { Button } from '@rwoc/shadcnui';
+import { FC } from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, Input, Textarea, Button } from '@rwoc/shadcnui';
 
-const ContactPage: React.FC = () => {
+const ContactPage: FC = () => {
   return (
-    <div className="p-6 m-4 space-y-6">
-      <h1 className="text-4xl font-bold mb-4 text-primary">Contact</h1>
+    <div className="p-6 m-4 space-y-6 container mx-auto bg-background text-foreground">
+      <h1 className="text-5xl font-bold mb-6 text-primary">Contact</h1>
       <section>
         <h2 className="text-3xl font-bold mb-4 text-primary">Contact Form</h2>
         <Card>
@@ -18,16 +15,16 @@ const ContactPage: React.FC = () => {
           <CardContent>
             <form className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                <Input id="name" type="text" required />
+                <label htmlFor="name" className="block text-sm font-medium text-muted">Name</label>
+                <Input id="name" type="text" required aria-label="Name" />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                <Input id="email" type="email" required />
+                <label htmlFor="email" className="block text-sm font-medium text-muted">Email</label>
+                <Input id="email" type="email" required aria-label="Email" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-                <Textarea id="message" rows={4} required />
+                <label htmlFor="message" className="block text-sm font-medium text-muted">Message</label>
+                <Textarea id="message" rows={4} required aria-label="Message" />
               </div>
               <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">Submit</Button>
             </form>
@@ -49,4 +46,4 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default ContactPage;
+export { ContactPage };
