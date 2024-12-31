@@ -10,3 +10,5 @@ export * from './steps/index';
 export * from './tagline/index';
 export * from './target-achievement-chart/index';
 export * from './testimonials/index';
+export * from './StatItem';
+export * from './StatsBlock';

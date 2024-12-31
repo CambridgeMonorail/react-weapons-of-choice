@@ -12,6 +12,8 @@
    6. [Ensure Accessibility](#6-ensure-accessibility)
    7. [Abstract Styles for Reuse](#7-abstract-styles-for-reuse)
 3. [Summary Checklist](#summary-checklist)
+4. [StatItem Component](#statitem-component)
+5. [StatsBlock Component](#statsblock-component)
 
 ## Principles of Reusable Component Design
 
@@ -240,3 +242,76 @@ export const AppSidebar = ({ ...props }) => <div {...props} />;
 ```
 
 By following these best practices, you can effectively use the new `shell` library components to build a maintainable, scalable, and high-quality React application.
+
+## StatItem Component
+
+The `StatItem` component is designed to encapsulate individual statistic elements, including an icon, value, title, and description. It is flexible and reusable across different parts of the application.
+
+### Props
+
+- `icon`: ReactNode - The icon to display.
+- `value`: string | number - The value of the statistic.
+- `title`: string - The title of the statistic.
+- `description`: string - A brief description of the statistic.
+
+### Usage
+
+```tsx
+import { StatItem } from '@rwoc/shadcnui-blocks';
+import { FaUser } from 'react-icons/fa';
+
+const Example = () => (
+  <StatItem
+    icon={<FaUser className="text-primary" />}
+    value="1,234"
+    title="Users"
+    description="Number of active users"
+  />
+);
+```
+
+## StatsBlock Component
+
+The `StatsBlock` component aggregates multiple `StatItem` components into a cohesive block. It uses a flexbox layout with wrapping for responsiveness and includes accessibility features.
+
+### Props
+
+- `stats`: StatItemProps[] - An array of statistic data to dynamically generate `StatItem` components.
+
+### Usage
+
+```tsx
+import { StatsBlock } from '@rwoc/shadcnui-blocks';
+import { FaUser, FaChartLine, FaDollarSign } from 'react-icons/fa';
+
+const stats = [
+  {
+    icon: <FaUser className="text-primary" />,
+    value: '1,234',
+    title: 'Users',
+    description: 'Number of active users',
+  },
+  {
+    icon: <FaChartLine className="text-primary" />,
+    value: '567',
+    title: 'Sessions',
+    description: 'Number of sessions today',
+  },
+  {
+    icon: <FaDollarSign className="text-primary" />,
+    value: '$12,345',
+    title: 'Revenue',
+    description: 'Total revenue this month',
+  },
+];
+
+const Example = () => <StatsBlock stats={stats} />;
+```
+
+### Empty State
+
+The `StatsBlock` component displays a placeholder message or icon when there is no data to display.
+
+```tsx
+const ExampleEmptyState = () => <StatsBlock stats={[]} />;
+```
