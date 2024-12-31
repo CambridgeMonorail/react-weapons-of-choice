@@ -15,8 +15,7 @@ import logoSrc from '../../../assets/images/rwoc-logo.png';
 
 import {
   AboutSection,
-  CommunitySection,
-  DemoSection,
+  CTASection,
   FeaturesSection,
   Footer,
   GetStartedSection,
@@ -166,14 +165,16 @@ export const LandingPage: FC = () => {
         ]}
         data-testid="features-section"
       />
-      <DemoSection
+      <CTASection
+        variant="light" // 
         title="Experience It Yourself"
         description="Try our live demo to see how effortlessly you can set up and scale your React project with React Weapons of Choice."
         buttonText="Try the Demo"
         buttonAction={() => navigate('/home')}
         data-testid="demo-section"
       />
-      <CommunitySection
+      <CTASection
+        variant="dark" 
         title="Join the Community"
         description="React Weapons of Choice is built by developers, for developers. Contribute, discuss, and shape the future of the project."
         buttonText="Contribute on GitHub"
@@ -183,7 +184,6 @@ export const LandingPage: FC = () => {
             '_blank'
           )
         }
-        isDarkBackground={true} // Pass the new prop
         data-testid="community-section"
       />
       <GetStartedSection
