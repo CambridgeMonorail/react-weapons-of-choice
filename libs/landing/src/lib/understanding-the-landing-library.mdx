@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/blocks';
 import { HeroSection } from './components/hero-section/HeroSection';
 import { AboutSection } from './components/about-section/AboutSection';
-import { CommunitySection } from './components/community-section/CommunitySection';
+import { CTASection } from './components/cta-section/CTASection';
 import { FeaturesSection } from './components/features-section/';
 
 <Meta title="Landing/Understanding the Landing Library" />
@@ -71,24 +71,23 @@ The `landing` library is a collection of React components specifically designed 
 
 ---
 
-### 3. **`CommunitySection`**
+### 3. **`CTASection`**
 - **Description**: 
-  - The `CommunitySection` highlights the community around your project—testimonials, user stories, or links to community-driven content.
-  - This social proof can include quotes from real users, GitHub contributions, forum activity, or other metrics that showcase genuine engagement.
+  - The `CTASection` is designed to prompt users to take a specific action, such as trying a demo, signing up, or learning more. 
+  - This component typically includes a title, description, and a call-to-action button, making it a crucial part of driving user engagement and conversions.
 
-<CommunitySection
-  title="Join Our Community"
-  description="Connect with other users and contribute to our project."
-  testimonials={[
-    { name: 'User 1', quote: 'This is amazing!' },
-    { name: 'User 2', quote: 'I love it!' }
-  ]}
+<CTASection
+  buttonAction={() => {}}
+  buttonText="Start Your Free Trial"
+  description="Sign up for a free trial and discover how our platform can help you streamline your workflow and boost productivity."
+  title="Get Started Today"
+  variant="light"
 />
 
 > **Engagement Tips:**  
-> - Show real human faces or user avatars to build trust.  
-> - Invite visitors to join your Slack/Discord channels or follow you on GitHub to foster ongoing interaction.  
-> - Emphasize how new members can participate (e.g., “Contribute on GitHub,” “Join Our Discord,” etc.).
+> - Use clear and compelling language for the call-to-action to encourage user interaction.  
+> - Ensure the button stands out visually and is easy to click.  
+> - Test different variants (e.g., light vs. dark) to see which performs better with your audience.
 
 ---
 
