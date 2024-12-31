@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { StatItem, StatItemProps } from './StatItem';
-import { FaUser, FaChartLine, FaDollarSign } from 'react-icons/fa';
+import { User, TrendingUp, DollarSign } from 'lucide-react';
 
 const meta: Meta<typeof StatItem> = {
   title: 'Shadcnui Blocks/StatItem',
@@ -24,7 +24,7 @@ export const Default: Story = {
   name: 'Default',
   render: (args: StatItemProps) => <StatItem {...args} />,
   args: {
-    icon: <FaUser className="text-primary" />,
+    icon: <User className="text-primary" />,
     value: '1,234',
     title: 'Users',
     description: 'Number of active users',
@@ -38,7 +38,7 @@ export const Custom: Story = {
   name: 'Custom',
   render: (args: StatItemProps) => <StatItem {...args} />,
   args: {
-    icon: <FaChartLine className="text-primary" />,
+    icon: <TrendingUp className="text-primary" />,
     value: '567',
     title: 'Sessions',
     description: 'Number of sessions today',
@@ -52,7 +52,7 @@ export const Revenue: Story = {
   name: 'Revenue',
   render: (args: StatItemProps) => <StatItem {...args} />,
   args: {
-    icon: <FaDollarSign className="text-primary" />,
+    icon: <DollarSign className="text-primary" />,
     value: '$12,345',
     title: 'Revenue',
     description: 'Total revenue this month',
