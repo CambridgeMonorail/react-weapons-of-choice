@@ -12,7 +12,7 @@ import { NotFound } from '../pages/not-found/NotFound';
 import { paths } from '../constants/paths';
 import { PricingPage } from '../pages/pricing/Pricing';
 import { sidebarData } from '../data/sidebarData';
-import { StatusBoardPage } from '../pages/staus-board/StatusBoard';
+import { StatusBoardPage } from '../pages/status-board/StatusBoard';
 import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
 import BlogPage from '../pages/blog/Blog';
 import ContactPage from '../pages/contact/Contact';
