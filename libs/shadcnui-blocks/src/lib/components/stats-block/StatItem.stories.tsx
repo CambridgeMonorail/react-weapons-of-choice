@@ -11,6 +11,7 @@ const meta: Meta<typeof StatItem> = {
     value: { control: 'text' },
     title: { control: 'text' },
     description: { control: 'text' },
+    className: { control: 'text' },
   },
 };
 
@@ -56,5 +57,21 @@ export const Revenue: Story = {
     value: '$12,345',
     title: 'Revenue',
     description: 'Total revenue this month',
+  },
+};
+
+/**
+ * CustomClass story for the StatItem component.
+ * This example shows how to use the StatItem component with a custom className.
+ */
+export const CustomClass: Story = {
+  name: 'Custom Class',
+  render: (args: StatItemProps) => <StatItem {...args} />,
+  args: {
+    className: 'bg-green-50 p-6 rounded-lg',
+    icon: <User className="text-primary" />,
+    value: '1,234',
+    title: 'Users',
+    description: 'Number of active users',
   },
 };
