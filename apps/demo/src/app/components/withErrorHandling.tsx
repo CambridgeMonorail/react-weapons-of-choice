@@ -1,6 +1,6 @@
 import { FC, ComponentType } from 'react';
 import { useErrorHandling } from '../hooks/useErrorHandling';
-import { NotFound } from './NotFound';
+import { NotFound } from '../pages/not-found/NotFound';
 
 export const withErrorHandling = (WrappedComponent: ComponentType<Record<string, unknown>>) => {
   const definedRoutes = [

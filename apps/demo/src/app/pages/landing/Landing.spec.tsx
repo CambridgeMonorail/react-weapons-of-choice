@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { LandingPage } from './LandingPage';
+import { LandingPage } from './Landing';
 
 describe('LandingPage', () => {
   it('should render successfully', () => {

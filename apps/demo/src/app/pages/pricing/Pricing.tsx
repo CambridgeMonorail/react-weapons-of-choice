@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { Switch } from '@rwoc/shadcnui';
-import { PricingTiers } from './PricingTiers';
-import { FeaturesComparison } from './FeaturesComparison';
+import { PricingTiers } from '../../components/PricingTiers';
+import { FeaturesComparison } from '../../components/FeaturesComparison';
 
 export const PricingPage: FC = () => {
   const [billingAnnual, setBillingAnnual] = useState(false);
