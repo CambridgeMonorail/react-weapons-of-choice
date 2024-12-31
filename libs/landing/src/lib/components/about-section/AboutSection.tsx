@@ -22,6 +22,16 @@ interface AboutSectionProps {
    * These logos can represent partners, technologies, or other relevant entities.
    */
   logos: ReactElement[];
+
+  /**
+   * Optional header for the logo carousel.
+   */
+  header?: string;
+
+  /**
+   * Optional subheader for the logo carousel.
+   */
+  subheader?: string;
 }
 
 /**
@@ -31,16 +41,16 @@ interface AboutSectionProps {
  * about the organization, product, or service. It helps to build credibility and trust
  * by showcasing key details and visual elements such as logos of partners or technologies.
  */
-export const AboutSection = ({ title, description, logos }: AboutSectionProps): ReactElement => {
+export const AboutSection = ({ title, description, logos, header, subheader }: AboutSectionProps): ReactElement => {
   return (
     <section data-testid="about-section" className="text-center py-20 px-5 bg-background text-primary w-full">
       <h2 data-testid="about-title" className="text-4xl font-bold mb-6">{title}</h2>
-      <p data-testid="about-description" className="text-xl mb-8 max-w-2xl mx-auto">{description}</p>
+      <p data-testid="about-description" className="text-xl mb-8 max-w-2xl mx-auto text-center">{description}</p>
       {logos.length > 0 ? (
         <LogoCarousel
           logos={logos}
-          header="Our Weapons of Choice"
-          subheader="Built with the best"
+          header={header}
+          subheader={subheader}
         />
       ) : (
         <div data-testid="about-logos" className="flex flex-wrap justify-center space-x-4 sm:space-x-2">

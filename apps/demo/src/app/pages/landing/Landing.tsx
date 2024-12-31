@@ -109,6 +109,8 @@ export const LandingPage: FC = () => {
           ariaLabel="Vite"
         />,
         ]}
+        header="Our Weapons of Choice"
+        subheader="Built with the best"
         data-testid="about-section"
       />
       <FeaturesSection
