@@ -42,17 +42,17 @@ export const CTASection: FC<CTASectionProps> = ({
   const baseParagraphClasses = 'text-xl mb-8 max-w-2xl mx-auto';
   
   // Default styles for the 'light' variant
-  let sectionClasses = 'bg-light text-primary';
+  let sectionClasses = 'bg-background text-primary';
   let headingClasses = `${baseHeadingClasses} text-primary`;
   let paragraphClasses = `${baseParagraphClasses} text-primary`;
   let buttonClasses = 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground';
 
   // Override styles if using the 'dark' variant
   if (variant === 'dark') {
-    sectionClasses = 'bg-dark text-primary-foreground';
+    sectionClasses = 'bg-primary text-primary-foreground';
     headingClasses = `${baseHeadingClasses} text-primary-foreground`;
     paragraphClasses = `${baseParagraphClasses} text-primary-foreground`;
-    buttonClasses = 'bg-primary text-primary-foreground hover:bg-primary-foreground/90 hover:text-primary';
+    buttonClasses = 'bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary';
   }
 
   return (
