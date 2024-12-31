@@ -1,22 +1,22 @@
-import { AboutPage } from '../components/pages/AboutPage';
+import { AboutPage } from '../pages/AboutPage';
 import { AppRoute } from '../types/app-route';
-import { ColorPalettePage } from '../components/pages/ColorPalettePage';
+import { ColorPalettePage } from '../pages/ColorPalettePage';
 import { createElement } from 'react';
-import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
-import { FAQPage } from '../components/pages/FAQPage';
-import { FeaturesPage } from '../components/pages/FeaturesPage';
-import { LandingPage } from '../components/landing-page/LandingPage';
+import { DashboardPage } from '../pages/DashboardPage';
+import { FAQPage } from '../pages/FAQPage';
+import { FeaturesPage } from '../pages/FeaturesPage';
+import { LandingPage } from '../pages/LandingPage';
 import { Layout } from '@rwoc/shell';
-import { LibraryPage } from '../components/pages/LibraryPage';
-import { NotFound } from '../components/NotFound';
+import { LibraryPage } from '../pages/LibraryPage';
+import { NotFound } from '../pages/NotFound';
 import { paths } from '../constants/paths';
-import { PricingPage } from '../components/pages/PricingPage';
+import { PricingPage } from '../pages/PricingPage';
 import { sidebarData } from '../data/sidebarData';
-import { StatusBoardPage } from '../components/pages/StatusBoardPage';
-import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
-import BlogPage from '../components/pages/BlogPage';
-import ContactPage from '../components/pages/ContactPage';
-import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
+import { StatusBoardPage } from '../pages/StatusBoardPage';
+import { TermsAndConditionsPage } from '../pages/TermsAndConditionsPage';
+import BlogPage from '../pages/BlogPage';
+import ContactPage from '../pages/ContactPage';
+import IndividualBlogPostPage from '../pages/IndividualBlogPostPage';
 
 /**
  * Defines the routes for the application.
