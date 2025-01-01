@@ -72,7 +72,7 @@ export const HeroSection: FC<HeroSectionProps> = ({
     descriptionClasses = 'text-primary-foreground';
     highlightIconClasses = 'text-primary-foreground';
     buttonPrimaryClasses = 'bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary';
-    buttonSecondaryClasses = 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground';
+    buttonSecondaryClasses = 'bg-secondary text-secondary-foreground/90 hover:bg-secondary/90 hover:text-secondary-foreground';
   }
 
   return (

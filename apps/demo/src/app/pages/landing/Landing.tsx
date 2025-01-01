@@ -60,6 +60,7 @@ export const LandingPage: FC = () => {
           }}
           layout="left"
           data-testid="hero-section"
+          variant='dark'
         />
       </div>
       <AboutSection

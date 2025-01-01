@@ -11,7 +11,7 @@ import { paths } from '../../constants/paths';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
 
-import { CommunitySection, Footer, HeroSection } from '@rwoc/landing';
+import { CTASection, CommunitySection, Footer, HeroSection } from '@rwoc/landing';
 import { TestimonialsSection } from '@rwoc/shadcnui-blocks';
 
 interface TeamMember {
@@ -121,17 +121,17 @@ const AboutPage: FC = () => {
         </div>
       </section>
 
-      <CommunitySection
-        title="Community and Contributions"
-        description="Learn how you can contribute to RWOC and collaborate with the community."
-        buttonText="Contribute on GitHub"
+      <CTASection
         buttonAction={() =>
           window.open(
             'https://github.com/CambridgeMonorail/react-weapons-of-choice',
             '_blank'
           )
         }
-        isDarkBackground={false} // Pass the new prop
+        buttonText="Contribute on GitHub"
+        description="Learn how you can contribute to RWOC and collaborate with the community."
+        title="Community and Contributions"
+        variant="light"
       />
 
       <section className="p-6 m-4">
