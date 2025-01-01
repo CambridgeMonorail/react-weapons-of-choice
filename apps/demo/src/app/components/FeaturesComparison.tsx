@@ -1,9 +1,17 @@
 import { FC } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
 import { Check, X } from 'lucide-react'; // Import Lucide icons
-import { featuresList, pricingTiers } from '../data/featuresComparisonData';
 
-export const FeaturesComparison: FC = () => {
+interface FeaturesComparisonProps {
+  data: Array<{
+    feature: string;
+    basic: boolean;
+    pro: boolean;
+    enterprise: boolean;
+  }>;
+}
+
+export const FeaturesComparison: FC<FeaturesComparisonProps> = ({ data }) => {
   return (
     <section>
       <h2 className="text-3xl font-bold mb-4 text-primary">Comparison Table</h2>
@@ -12,26 +20,18 @@ export const FeaturesComparison: FC = () => {
           <TableHeader>
             <TableRow>
               <TableHead className="text-left">Feature</TableHead>
-              {pricingTiers.map((tier) => (
-                <TableHead key={tier.name} >
-                  {tier.name}
-                </TableHead>
-              ))}
+              <TableHead className="text-center">Basic</TableHead>
+              <TableHead className="text-center">Pro</TableHead>
+              <TableHead className="text-center">Enterprise</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {featuresList.map((feature, index) => (
+            {data.map((item, index) => (
               <TableRow key={index} className="border-b border-muted">
-                <TableCell >{feature}</TableCell> {/* Center-align feature cells */}
-                {pricingTiers.map((tier) => (
-                  <TableCell key={tier.name} className="text-center">
-                    {tier.features.includes(feature) ? (
-                      <Check className="text-green-600" aria-label={`${tier.name} includes ${feature}`} />
-                    ) : (
-                      <X className="text-red-500" aria-label={`${tier.name} does not include ${feature}`} />
-                    )}
-                  </TableCell>
-                ))}
+                <TableCell>{item.feature}</TableCell>
+                <TableCell className="text-center">{item.basic ? <Check className="text-green-600" aria-label="Basic includes feature" /> : <X className="text-red-500" aria-label="Basic does not include feature" />}</TableCell>
+                <TableCell className="text-center">{item.pro ? <Check className="text-green-600" aria-label="Pro includes feature" /> : <X className="text-red-500" aria-label="Pro does not include feature" />}</TableCell>
+                <TableCell className="text-center">{item.enterprise ? <Check className="text-green-600" aria-label="Enterprise includes feature" /> : <X className="text-red-500" aria-label="Enterprise does not include feature" />}</TableCell>
               </TableRow>
             ))}
           </TableBody>

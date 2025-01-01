@@ -1,18 +1,19 @@
 import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
 import { Button } from '@rwoc/shadcnui';
-import { pricingTiers } from '../data/pricingTiersData';
+import { PricingTier } from '../data/pricingTiersData';
 
 interface PricingTiersProps {
   billingAnnual: boolean;
+  tiers: PricingTier[];
 }
 
-export const PricingTiers: FC<PricingTiersProps> = ({ billingAnnual }) => {
+export const PricingTiers: FC<PricingTiersProps> = ({ billingAnnual, tiers }) => {
   return (
     <section>
       <h2 className="text-3xl font-bold mb-4 text-primary">Pricing Tiers</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {pricingTiers.map((tier) => (
+        {tiers.map((tier) => (
           <Card
             key={tier.name}
             className={`relative ${
