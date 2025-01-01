@@ -1,40 +1,7 @@
 import { FC } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
 import { Check, X } from 'lucide-react'; // Import Lucide icons
-
-const featuresList = [
-  'Unlimited Projects',
-  '24/7 Support',
-  'Advanced Analytics',
-  'Team Collaboration',
-  'Dedicated Account Manager',
-];
-
-interface PricingTier {
-  name: string;
-  features: string[];
-}
-
-const pricingTiers: PricingTier[] = [
-  {
-    name: 'Free',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics'],
-  },
-  {
-    name: 'Pro',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics', 'Team Collaboration'],
-  },
-  {
-    name: 'Enterprise',
-    features: [
-      'Unlimited Projects',
-      '24/7 Support',
-      'Advanced Analytics',
-      'Team Collaboration',
-      'Dedicated Account Manager',
-    ],
-  },
-];
+import { featuresList, pricingTiers } from '../data/featuresComparisonData';
 
 export const FeaturesComparison: FC = () => {
   return (
