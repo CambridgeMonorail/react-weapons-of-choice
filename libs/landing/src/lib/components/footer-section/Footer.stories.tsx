@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Footer } from './Footer';
+import { Footer } from '.';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const meta: Meta<typeof Footer> = {

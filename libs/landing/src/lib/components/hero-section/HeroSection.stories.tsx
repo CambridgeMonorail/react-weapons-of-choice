@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { action } from '@storybook/addon-actions';
-import { HeroSection } from './HeroSection';
+import { HeroSection } from '.';
 
 const meta: Meta<typeof HeroSection> = {
   title: 'Landing/HeroSection',
