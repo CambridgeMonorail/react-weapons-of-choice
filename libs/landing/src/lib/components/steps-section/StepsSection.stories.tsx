@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { GetStartedSection } from './GetStartedSection';
+import { StepsSection } from './StepsSection';
 
-const meta: Meta<typeof GetStartedSection> = {
-  title: 'Landing/Get Started Section',
-  component: GetStartedSection,
+const meta: Meta<typeof StepsSection> = {
+  title: 'Landing/Steps Section',
+  component: StepsSection,
   tags: ['autodocs'],
   argTypes: {
     title: {
       name: 'Title',
       control: 'text',
-      description: 'The title of the get started section',
+      description: 'The title of the steps section',
     },
     steps: {
       name: 'Steps',
@@ -30,27 +30,27 @@ const meta: Meta<typeof GetStartedSection> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof GetStartedSection>;
+type Story = StoryObj<typeof StepsSection>;
 
 export const Default: Story = {
   name: 'Default',
-  render: (args) => <GetStartedSection {...args} />,
+  render: (args) => <StepsSection {...args} />,
   args: {
-    title: 'Get Started',
+    title: 'Steps',
     steps: [
       { stepNumber: 1, stepDescription: 'Sign up for an account' },
       { stepNumber: 2, stepDescription: 'Verify your email address' },
       { stepNumber: 3, stepDescription: 'Start using the application' },
     ],
-    buttonText: 'Get Started',
-    buttonAction: () => alert('Get Started clicked!'),
-    'data-testid': 'get-started-section',
+    buttonText: 'Steps',
+    buttonAction: () => alert('Steps clicked!'),
+    'data-testid': 'steps-section',
   },
 };
 
 export const WithDifferentProps: Story = {
   name: 'With Different Props',
-  render: (args) => <GetStartedSection {...args} />,
+  render: (args) => <StepsSection {...args} />,
   args: {
     title: 'Begin Your Journey',
     steps: [
@@ -60,18 +60,18 @@ export const WithDifferentProps: Story = {
     ],
     buttonText: 'Begin Now',
     buttonAction: () => alert('Begin Now clicked!'),
-    'data-testid': 'get-started-section',
+    'data-testid': 'steps-section',
   },
 };
 
 export const WithEdgeCases: Story = {
   name: 'With Edge Cases',
-  render: (args) => <GetStartedSection {...args} />,
+  render: (args) => <StepsSection {...args} />,
   args: {
     title: '',
     steps: [],
     buttonText: '',
     buttonAction: () => alert('Button clicked!'),
-    'data-testid': 'get-started-section',
+    'data-testid': 'steps-section',
   },
 };

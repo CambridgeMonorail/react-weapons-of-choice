@@ -18,7 +18,7 @@ import {
   CTASection,
   FeaturesSection,
   Footer,
-  GetStartedSection,
+  StepsSection,
   HeroSection,
 } from '@rwoc/landing';
 import { Logo, Tagline } from '@rwoc/shadcnui-blocks';
@@ -189,7 +189,7 @@ export const LandingPage: FC = () => {
         }
         data-testid="community-section"
       />
-      <GetStartedSection
+      <StepsSection
         title="Get Started in Minutes"
         steps={[
           {
@@ -212,7 +212,7 @@ export const LandingPage: FC = () => {
             '_blank'
           )
         }
-        data-testid="get-started-section"
+        data-testid="steps-section"
       />
       <Tagline
         text="Accelerate Development. Scale Seamlessly. Impress Instantly."
