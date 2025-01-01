@@ -4,7 +4,7 @@ import { Meta } from '@storybook/blocks';
 
 # Understanding the Shadcn/ui Library
 
-`shadcn/ui` is a comprehensive library of reusable React components designed to provide a consistent and customizable UI experience. These components are built using modern React practices, TypeScript, and Tailwind CSS, ensuring they are type-safe, maintainable, and easy to integrate into any project.
+[`shadcn/ui`](https://ui.shadcn.com/) is a comprehensive library of reusable React components designed to provide a consistent and customizable UI experience. These components are built using modern React practices, TypeScript, and Tailwind CSS, ensuring they are type-safe, maintainable, and easy to integrate into any project.
 
 ## Why Shadcn/ui is Popular
 
@@ -48,10 +48,10 @@ By integrating Shadcn/ui into your projects, you gain:
 To use the components from `shadcn/ui`, simply import them into your React project and start building your UI. Here's an example of how to use the `Button` component:
 
 ```tsx
-import React from 'react';
-import { Button } from 'shadcn/ui';
+import React, { FC } from 'react';
+import { Button } from '@rwoc/shadcnui';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <div className="p-4">
       <Button className="bg-primary text-primary-foreground">Click Me</Button>
@@ -60,7 +60,6 @@ const App: React.FC = () => {
 };
 
 export default App;
-
 ```
 
-By leveraging these reusable components, you can streamline your development process and ensure a consistent and high-quality user experience across your application.
+By leveraging these reusable components, you can streamline your development process and ensure a consistent and high-quality user experience across your application. For more information, visit the [Shadcn/ui documentation](https://ui.shadcn.com/).

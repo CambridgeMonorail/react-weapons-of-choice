@@ -3,9 +3,9 @@ import { Button } from '@rwoc/shadcnui';
 import { Steps, Step } from '@rwoc/shadcnui-blocks';
 
 /**
- * Props for the GetStartedSection component.
+ * Props for the StepsSection component.
  */
-interface GetStartedSectionProps {
+interface StepsSectionProps {
   /** The title of the section */
   title: string;
   /** An array of steps to display */
@@ -21,10 +21,10 @@ interface GetStartedSectionProps {
 /**
  * A section component that displays a title, a list of steps, and a button.
  *
- * @param {GetStartedSectionProps} props - The props for the component.
+ * @param {StepsSectionProps} props - The props for the component.
  * @returns {JSX.Element} The rendered component.
  */
-const GetStartedSection: FC<GetStartedSectionProps> = ({
+const StepsSection: FC<StepsSectionProps> = ({
   title,
   steps,
   buttonText,
@@ -52,4 +52,4 @@ const GetStartedSection: FC<GetStartedSectionProps> = ({
   );
 };
 
-export { GetStartedSection };
+export { StepsSection };

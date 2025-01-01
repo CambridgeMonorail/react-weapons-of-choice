@@ -69,3 +69,20 @@ export const MixedData: StoryObj<StatsBlockProps> = {
     ],
   },
 };
+
+/**
+ * CustomClass story for the StatsBlock component.
+ * This example shows how to use the StatsBlock component with a custom className.
+ */
+export const CustomClass: StoryObj<StatsBlockProps> = {
+  name: 'Custom Class',
+  render: (args) => <StatsBlock {...args} />,
+  args: {
+    className: 'bg-blue-50 p-6 rounded-lg',
+    stats: [
+      { icon: <User />, title: 'Users', value: '1,200', description: 'Total number of users' },
+      { icon: <TrendingUp />, title: 'Growth', value: '30%', description: 'Growth rate' },
+      { icon: <DollarSign />, title: 'Revenue', value: '$12,000', description: 'Total revenue' },
+    ],
+  },
+};

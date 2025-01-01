@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { HeroSection } from './HeroSection';
+
 import { action } from '@storybook/addon-actions';
+import { HeroSection } from '.';
 
 const meta: Meta<typeof HeroSection> = {
   title: 'Landing/HeroSection',
@@ -57,6 +58,12 @@ const meta: Meta<typeof HeroSection> = {
       control: { type: 'text' },
       description: 'Additional CSS classes to apply to the hero section',
     },
+    variant: {
+      name: 'Variant',
+      control: 'select',
+      options: ['light', 'dark'],
+      description: 'The visual variant for the section\'s background and text',
+    },
   },
 };
 
@@ -77,6 +84,7 @@ export const Default: Story = {
     ctaPrimary: { text: 'Get Started', onClick: action('primary-cta-click') },
     ctaSecondary: { text: 'Learn More', onClick: action('secondary-cta-click') },
     layout: 'left',
+    variant: 'light',
   },
 };
 
@@ -93,6 +101,7 @@ export const WithDifferentProps: Story = {
     ctaPrimary: { text: 'Contact Us', onClick: action('primary-cta-click') },
     ctaSecondary: { text: 'Read More', onClick: action('secondary-cta-click') },
     layout: 'right',
+    variant: 'dark',
   },
 };
 

@@ -8,26 +8,8 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
 
 ## Overview of Libraries
 
-#### 1. **`@rwoc/component-library`**
-- **Description**: A collection of reusable UI components designed to be used across various projects within the monorepo. The library includes components such as buttons, cards, dialogs, and more.
-- **Usage**: Import and use these components to build consistent and cohesive user interfaces.
-- **Example**:
-  ```tsx
-  import { Button, Card, Dialog } from '@rwoc/component-library';
-
-  const App = () => (
-    <div>
-      <Button variant="primary">Click Me</Button>
-      <Card title="Card Title">Card Content</Card>
-      <Dialog isOpen={true} onClose={() => {}}>
-        Dialog Content
-      </Dialog>
-    </div>
-  );
-  ```
-
-#### 2. **`@rwoc/shadcnui`**
-- **Description**: A library providing UI components styled with Shadcn UI, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
+#### 1. **`@rwoc/shadcnui`**
+- **Description**: A library providing base UI components styled with @rwoc/shadcnui, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
 - **Usage**: Use these components to maintain a cohesive design system throughout the application.
 - **Example**:
   ```tsx
@@ -46,6 +28,26 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
   );
   ```
 
+For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.com/).
+
+#### 2. **`@rwoc/shadcnui-blocks`**
+- **Description**: A collection of composite UI components built from the base Shadcn UI components. The library includes components such as buttons, cards, dialogs, and more.
+- **Usage**: Import and use these components to build consistent and cohesive user interfaces.
+- **Example**:
+  ```tsx
+  import { Button, Card, Dialog } from '@rwoc/shadcnui-blocks';
+
+  const App = () => (
+    <div>
+      <Button variant="primary">Click Me</Button>
+      <Card title="Card Title">Card Content</Card>
+      <Dialog isOpen={true} onClose={() => {}}>
+        Dialog Content
+      </Dialog>
+    </div>
+  );
+  ```
+
 #### 3. **`@rwoc/common-tailwind`**
 - **Description**: A library containing common Tailwind CSS configurations and utility classes used across the monorepo. It includes preflight styles and theme configurations.
 - **Usage**: Import the CSS files to apply consistent styling and utility classes throughout the application.
@@ -55,18 +57,20 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
   @import '@rwoc/common-tailwind/src/shadcn-theme.css';
   ```
 
+For more information on Tailwind CSS, visit their [website](https://tailwindcss.com/).
+
 #### 4. **`@rwoc/landing`**
-- **Description**: A library containing components and sections specifically designed for the landing pages of the application. It includes sections like Hero, About, Community, and more.
+- **Description**: A library containing components and sections specifically designed for the landing pages of the application. It includes sections like Hero, About, CTA, and more.
 - **Usage**: Use these components to build engaging and informative landing pages.
 - **Example**:
   ```tsx
-  import { HeroSection, AboutSection, CommunitySection } from '@rwoc/landing';
+  import { HeroSection, AboutSection, CTASection } from '@rwoc/landing';
 
   const LandingPage = () => (
     <div>
       <HeroSection title="Welcome" subtitle="Discover our platform" />
       <AboutSection />
-      <CommunitySection />
+      <CTASection />
     </div>
   );
   ```
@@ -93,10 +97,12 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
 
 The monorepo is organized into several libraries, each serving a specific purpose to ensure a modular, maintainable, and cohesive codebase. These libraries include:
 
-- **`@rwoc/component-library`**: Reusable UI components.
-- **`@rwoc/shadcnui`**: Shadcn UI styled components.
+- **`@rwoc/shadcnui`**: Base @rwoc/shadcnui components.
+- **`@rwoc/shadcnui-blocks`**: Composite UI components built from @rwoc/shadcnui components.
 - **`@rwoc/common-tailwind`**: Common Tailwind CSS configurations.
 - **`@rwoc/landing`**: Components for landing pages.
 - **`@rwoc/shell`**: Layout components and utilities.
 
 By leveraging these libraries, you can build a consistent and maintainable application with a clear separation of concerns.
+
+For more information on Nx, visit their [website](https://nx.dev/).

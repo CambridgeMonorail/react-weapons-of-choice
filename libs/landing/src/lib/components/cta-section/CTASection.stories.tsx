@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CTASection } from './CTASection';
+
 import { action } from '@storybook/addon-actions';
+import { CTASection } from '.';
 
 const meta: Meta<typeof CTASection> = {
   title: 'Landing/CTASection',
@@ -42,6 +43,17 @@ type Story = StoryObj<typeof CTASection>;
 /**
  * Default story for the CTASection component.
  * Demonstrates the component with default props.
+ * 
+ * Effective CTA Button Text Guidelines:
+ * 
+ * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
+ * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
+ * - **Value Proposition**: Clearly communicate the benefit users will receive.
+ * - **Clarity and Brevity**: Keep text concise and straightforward, ideally 2-5 words.
+ * - **Personalization**: When appropriate, use first-person language to create a personal connection.
+ * - **Visual Prominence**: Design buttons with contrasting colors and ample whitespace for visibility.
+ * - **Alignment with User Intent**: Match the CTA with the user's stage in the buyer's journey.
+ * - **Testing and Optimization**: Regularly perform A/B testing to determine the most effective CTA text.
  */
 export const Default: Story = {
   name: 'Default',
@@ -58,6 +70,17 @@ export const Default: Story = {
 /**
  * Story for the CTASection component with different prop combinations.
  * Shows the component with a dark background and different text.
+ * 
+ * Effective CTA Button Text Guidelines:
+ * 
+ * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
+ * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
+ * - **Value Proposition**: Clearly communicate the benefit users will receive.
+ * - **Clarity and Brevity**: Keep text concise and straightforward, ideally 2-5 words.
+ * - **Personalization**: When appropriate, use first-person language to create a personal connection.
+ * - **Visual Prominence**: Design buttons with contrasting colors and ample whitespace for visibility.
+ * - **Alignment with User Intent**: Match the CTA with the user's stage in the buyer's journey.
+ * - **Testing and Optimization**: Regularly perform A/B testing to determine the most effective CTA text.
  */
 export const WithDifferentProps: Story = {
   name: 'With Different Props',
@@ -74,6 +97,17 @@ export const WithDifferentProps: Story = {
 /**
  * Story for the CTASection component with edge cases.
  * Demonstrates the component with empty strings for title, description, and buttonText.
+ * 
+ * Effective CTA Button Text Guidelines:
+ * 
+ * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
+ * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
+ * - **Value Proposition**: Clearly communicate the benefit users will receive.
+ * - **Clarity and Brevity**: Keep text concise and straightforward, ideally 2-5 words.
+ * - **Personalization**: When appropriate, use first-person language to create a personal connection.
+ * - **Visual Prominence**: Design buttons with contrasting colors and ample whitespace for visibility.
+ * - **Alignment with User Intent**: Match the CTA with the user's stage in the buyer's journey.
+ * - **Testing and Optimization**: Regularly perform A/B testing to determine the most effective CTA text.
  */
 export const WithEdgeCases: Story = {
   name: 'With Edge Cases',

@@ -18,7 +18,7 @@ import {
   CTASection,
   FeaturesSection,
   Footer,
-  GetStartedSection,
+  StepsSection,
   HeroSection,
 } from '@rwoc/landing';
 import { Logo, Tagline } from '@rwoc/shadcnui-blocks';
@@ -60,6 +60,7 @@ export const LandingPage: FC = () => {
           }}
           layout="left"
           data-testid="hero-section"
+          variant='dark'
         />
       </div>
       <AboutSection
@@ -109,6 +110,8 @@ export const LandingPage: FC = () => {
           ariaLabel="Vite"
         />,
         ]}
+        header="Our Weapons of Choice"
+        subheader="Built with the best"
         data-testid="about-section"
       />
       <FeaturesSection
@@ -186,7 +189,7 @@ export const LandingPage: FC = () => {
         }
         data-testid="community-section"
       />
-      <GetStartedSection
+      <StepsSection
         title="Get Started in Minutes"
         steps={[
           {
@@ -209,7 +212,7 @@ export const LandingPage: FC = () => {
             '_blank'
           )
         }
-        data-testid="get-started-section"
+        data-testid="steps-section"
       />
       <Tagline
         text="Accelerate Development. Scale Seamlessly. Impress Instantly."
