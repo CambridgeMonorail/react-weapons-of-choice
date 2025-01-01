@@ -8,7 +8,7 @@ When using the component library, follow these best practices to ensure a consis
 
 - Write clean, modern, type-safe React functional components that adhere to best practices, emphasizing security, robustness, maintainability, readability, separation of concerns, and the DRY principle.
 - Utilize React hooks such as `useState` and `useEffect` for state management and handling side effects.
-- Apply Tailwind CSS classes for component styling and prefer `shadcn/ui` components for consistent UI elements.
+- Apply Tailwind CSS classes for component styling and prefer `@rwoc/shadcnui` components for consistent UI elements.
 - Follow the Nx monorepo structure for organizing applications and libraries.
 - Adhere to TypeScript best practices, including strict typing and the use of interfaces.
 - Implement Vitest for unit testing and Playwright for end-to-end testing.
@@ -16,11 +16,11 @@ When using the component library, follow these best practices to ensure a consis
 - Prefer named (explicit) exports over default exports for clarity and better tooling support.
 - Use interfaces to define object shapes and complex data structures, and types for unions, intersections, or lightweight aliases.
 - Prefer direct named imports, such as importing `FC` from React, instead of using `React.FC`. Use relative imports for files within the same project.
-- Utilize `shadcn` theme variables for styling to ensure consistency and ease of customization. Common theme variables include `bg-background`, `text-foreground`, `primary`, `primary-foreground`, `secondary`, `muted`, and `accent`.
+- Utilize `@rwoc/shadcnui` theme variables for styling to ensure consistency and ease of customization. Common theme variables include `bg-background`, `text-foreground`, `primary`, `primary-foreground`, `secondary`, `muted`, and `accent`.
 - Prioritize flexibility and maintainability by extending native HTML element props. Use composition to break down complex components into smaller, reusable parts, allowing customization through props, slots, or the `children` prop. Keep components as stateless as possible, delegating state management to parent components or using React Context when necessary. Follow accessibility best practices and ensure styles are modular and reusable. Write concise, modular, and DRY components, using named exports to promote clarity and reusability.
 
 ## Resources
 
 - For more information on Tailwind CSS, visit their [website](https://tailwindcss.com/).
-- For more information on Shadcn UI, visit their [website](https://ui.shadcn.com/).
+- For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.com/).
 - For more information on Nx, visit their [website](https://nx.dev/).
