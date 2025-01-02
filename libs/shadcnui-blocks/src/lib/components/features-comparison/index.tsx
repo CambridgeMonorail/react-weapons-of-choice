@@ -2,17 +2,28 @@ import { FC } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
 import { Check, X } from 'lucide-react';
 
-interface FeatureComparisonData {
+/**
+ * Interface representing the data structure for feature comparison.
+ */
+export interface FeatureComparisonData {
   feature: string;
   basic: boolean;
   pro: boolean;
   enterprise: boolean;
 }
 
-interface FeaturesComparisonProps {
+/**
+ * Props for the FeaturesComparison component.
+ */
+export interface FeaturesComparisonProps {
   data: FeatureComparisonData[];
 }
 
+/**
+ * FeaturesComparison component.
+ * 
+ * This component renders a comparison table for different features across various tiers (Basic, Pro, Enterprise).
+ */
 export const FeaturesComparison: FC<FeaturesComparisonProps> = ({ data }) => {
   return (
     <section>
