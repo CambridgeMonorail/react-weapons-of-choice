@@ -1,6 +1,14 @@
 import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, Button } from '@rwoc/shadcnui';
-import { PricingTier } from '../data/pricingTiersData';
+
+export interface PricingTier {
+  name: string;
+  monthlyPrice: string;
+  annualPrice: string;
+  features: string[];
+  description: string;
+  isMostPopular?: boolean;
+}
 
 interface PricingTiersProps {
   billingAnnual: boolean;

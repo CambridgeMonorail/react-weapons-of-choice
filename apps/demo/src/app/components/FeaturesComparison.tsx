@@ -2,13 +2,15 @@ import { FC } from 'react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
 import { Check, X } from 'lucide-react';
 
+interface FeatureComparisonData {
+  feature: string;
+  basic: boolean;
+  pro: boolean;
+  enterprise: boolean;
+}
+
 interface FeaturesComparisonProps {
-  data: Array<{
-    feature: string;
-    basic: boolean;
-    pro: boolean;
-    enterprise: boolean;
-  }>;
+  data: FeatureComparisonData[];
 }
 
 export const FeaturesComparison: FC<FeaturesComparisonProps> = ({ data }) => {

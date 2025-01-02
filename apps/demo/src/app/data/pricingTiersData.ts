@@ -1,13 +1,5 @@
+import { PricingTier } from '../components/PricingTiers';
 import { featuresList } from './featuresData';
-
-export interface PricingTier {
-  name: string;
-  monthlyPrice: string;
-  annualPrice: string;
-  features: string[];
-  description: string;
-  isMostPopular?: boolean;
-}
 
 export const pricingTiers: PricingTier[] = [
   {
