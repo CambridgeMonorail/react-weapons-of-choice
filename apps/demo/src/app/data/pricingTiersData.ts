@@ -1,3 +1,5 @@
+import { featuresList } from './featuresData';
+
 export interface PricingTier {
   name: string;
   monthlyPrice: string;
@@ -13,14 +15,14 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: '$0',
     annualPrice: '$0',
     description: 'Ideal for hobbyists and first-time users.',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics'],
+    features: [featuresList[0], featuresList[1], featuresList[2]],
   },
   {
     name: 'Pro',
     monthlyPrice: '$49',
     annualPrice: '$490',
     description: 'Perfect for growing teams with expanding needs.',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics', 'Team Collaboration'],
+    features: [featuresList[0], featuresList[1], featuresList[2], featuresList[3]],
     isMostPopular: true,
   },
   {
@@ -28,12 +30,13 @@ export const pricingTiers: PricingTier[] = [
     monthlyPrice: '$99',
     annualPrice: '$990',
     description: 'Tailored for large organizations and complex workflows.',
-    features: [
-      'Unlimited Projects',
-      '24/7 Support',
-      'Advanced Analytics',
-      'Team Collaboration',
-      'Dedicated Account Manager',
-    ],
+    features: [...featuresList],
   },
 ];
+
+export const featuresComparisonData = featuresList.map((feature) => ({
+  feature,
+  basic: pricingTiers[0].features.includes(feature),
+  pro: pricingTiers[1].features.includes(feature),
+  enterprise: pricingTiers[2].features.includes(feature),
+}));

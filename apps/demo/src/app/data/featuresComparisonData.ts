@@ -1,10 +1,4 @@
-export const featuresList = [
-  'Unlimited Projects',
-  '24/7 Support',
-  'Advanced Analytics',
-  'Team Collaboration',
-  'Dedicated Account Manager',
-];
+import { featuresList } from './featuresData';
 
 export interface PricingTier {
   name: string;
@@ -32,10 +26,15 @@ export const pricingTiers: PricingTier[] = [
   },
 ];
 
-export const featuresComparisonData = [
-  { feature: 'Unlimited Projects', basic: true, pro: true, enterprise: true },
-  { feature: '24/7 Support', basic: true, pro: true, enterprise: true },
-  { feature: 'Advanced Analytics', basic: true, pro: true, enterprise: true },
-  { feature: 'Team Collaboration', basic: false, pro: true, enterprise: true },
-  { feature: 'Dedicated Account Manager', basic: false, pro: false, enterprise: true },
-];
+export const featuresComparisonData = featuresList.map((feature) => ({
+  feature,
+  basic: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics'].includes(feature),
+  pro: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics', 'Team Collaboration'].includes(feature),
+  enterprise: [
+    'Unlimited Projects',
+    '24/7 Support',
+    'Advanced Analytics',
+    'Team Collaboration',
+    'Dedicated Account Manager',
+  ].includes(feature),
+}));
