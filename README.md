@@ -198,85 +198,101 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-## Make This Your Own
+# Make This Your Own
 
-**Note: This process is a work in progress; we plan to provide automation scripts to streamline these steps once the boilerplate is fully developed.**
+Follow these steps to fork and customize the boilerplate for your own project.
 
-### Fork the Repository
+---
 
-1. Navigate to the original repository on GitHub.
-2. Click the "Fork" button in the upper-right corner to create a personal copy under your GitHub account.
-3. For detailed instructions, refer to GitHub's [Fork a repo documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+## 1. Fork the Repository
 
-For more information on forking repositories, consult GitHub's [About forks documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
+1. Navigate to the **original** repository on GitHub.  
+2. Click the **Fork** button in the upper-right corner to create a personal copy under your GitHub account.  
+3. For detailed instructions, refer to GitHub’s [Fork a repo documentation](https://docs.github.com/en/get-started/quickstart/fork-a-repo).
 
-### Clone the Forked Repository
+---
 
-1. On your GitHub account, locate the forked repository.
-2. Click the "Code" button and copy the repository's URL.
-3. Open your terminal and execute:
+## 2. Clone the Forked Repository
+
+1. Locate the **forked** repository on your GitHub account.  
+2. Click the **Code** button and copy the repository’s URL.  
+3. Open your terminal and run:
 
     ```bash
-    git clone https://github.com/yourusername/your-forked-repo.git
+    git clone https://github.com/<your-username>/<your-forked-repo>.git
     ```
 
-    Replace `yourusername` with your GitHub username and `your-forked-repo` with the repository name.
+   Replace `<your-username>` with your GitHub username and `<your-forked-repo>` with the repository name.
 
-### Update Project Identifiers
+---
 
-You can update project identifiers manually or use the provided setup script to automate the process.
+## 3. Update Project Identifiers
 
-#### Manual Update
+You can update project identifiers either **manually** or by using the **setup script** included in this boilerplate.
 
-1. Perform a global search and replace to update project-specific identifiers (e.g., project name, URLs, branding elements) throughout the codebase.
-2. Ensure all instances of the original project name are replaced with your new project name.
+### 3.1 Manual Update
 
-#### Using the Setup Script
+1. Perform a global **search and replace** across the codebase to update:
+   - Project name  
+   - URLs  
+   - Branding elements  
+   - Any other relevant identifiers  
 
-1. Install project dependencies:
+2. Ensure **all** instances of the original project name are replaced with your new project name.
+
+### 3.2 Using the Setup Script
+
+1. **Install project dependencies**:
 
     ```bash
     pnpm install
     ```
 
-2. Run the setup script:
+2. **Run the setup script**:
 
     ```bash
     pnpm run setup
     ```
 
-    The setup script will guide you through the process of replacing the following key strings:
+   The script will prompt you to replace:
+   - **Organization**: e.g., “CambridgeMonorail” → “YourOrgName”  
+   - **Machine-Readable App Name**: e.g., “react-weapons-of-choice” → “my-awesome-app”  
+   - **Human-Readable App Name**: e.g., “React Weapons of Choice” → “My Awesome App”  
+   - **Abbreviation**: e.g., “rwoc” → “maa”  
 
-    - Organization: Replaces "CambridgeMonorail" with your chosen org name.
-    - Machine-Readable App Name: Replaces "react-weapons-of-choice" with something like my-awesome-app.
-    - Human-Readable App Name: Replaces "React Weapons of Choice" with something like My Awesome App.
-    - Abbreviation: Replaces "rwoc" with something like maa.
+   You will also have the option to set a **new Git remote** URL.
 
-    You will also have the option to set a new Git remote URL.
+---
 
-### Modify Configuration Files
+## 4. Modify Configuration Files
 
-1. Review and update configuration files such as `package.json` and `.env` to align with your project's requirements.
-2. Adjust metadata, dependencies, environment variables, and other settings as needed.
+1. Review and update configuration files—such as `package.json` and `.env`—to align them with your project’s requirements.  
+2. Adjust metadata, dependencies, environment variables, and other project-specific settings as needed.
 
-### Review Documentation
+---
 
-1. Update the documentation to reflect your project's context.
-2. Replace references to the original project with information pertinent to your project.
+## 5. Review Documentation
 
-### Set Up a New Remote Repository
+1. **Replace** references to the original project with your new project details.  
+2. Update any relevant documentation (e.g., README, wiki pages) to reflect your project’s context and branding.
 
-1. Create a new repository on GitHub for your project.
-2. In your terminal, navigate to your project's directory and execute:
+---
+
+## 6. Set Up a New Remote Repository
+
+1. Create a **new repository** on GitHub for your customized project.  
+2. In your terminal, **navigate** to your project’s directory and run:
 
     ```bash
     git remote remove origin
-    git remote add origin https://github.com/yourusername/your-new-repo.git
+    git remote add origin https://github.com/<your-username>/<your-new-repo>.git
     ```
 
-    Replace `yourusername` with your GitHub username and `your-new-repo` with the new repository name.
+   Replace `<your-username>` with your GitHub username and `<your-new-repo>` with the new repository name.
 
-### Push Changes to the New Repository
+---
+
+## 7. Push Changes to the New Repository
 
 1. Push your local changes to the new remote repository:
 
@@ -284,25 +300,29 @@ You can update project identifiers manually or use the provided setup script to 
     git push -u origin main
     ```
 
-    Ensure that your local branch is named `main`; if not, replace `main` with the correct branch name.
+   Make sure your local branch is named `main`. If not, replace `main` with the correct branch name.
 
-### Install Dependencies and Initialize Git Hooks
+---
 
-1. Install project dependencies using the package manager:
+## 8. Install Dependencies and Initialize Git Hooks
+
+1. **Install** any required dependencies (if you haven’t already):
 
     ```bash
     pnpm install
     ```
 
-2. Set up Git hooks or other initialization scripts as specified in the prepare script:
+2. **Set up Git hooks** or other initialization scripts:
 
     ```bash
     pnpm run prepare
     ```
 
-By following these steps, you can customize the boilerplate to suit your specific project needs while maintaining a clean and organized codebase.
+   This typically configures hooks like pre-commit or lint-staged checks.
 
-**Note:** We are in the process of developing automation scripts to streamline this setup process. These scripts will be integrated into the boilerplate once completed.
+---
+
+By following these steps, you can fully customize the boilerplate to fit your project’s needs while maintaining a clean, organized codebase.
 
 ## Add new projects
 
