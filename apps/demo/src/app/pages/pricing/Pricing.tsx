@@ -2,6 +2,8 @@ import { FC, useState } from 'react';
 import { Switch } from '@rwoc/shadcnui';
 import { PricingTiers } from '../../components/PricingTiers';
 import { FeaturesComparison } from '../../components/FeaturesComparison';
+import { pricingTiers } from '../../data/pricingTiersData';
+import { featuresComparisonData } from '../../data/featuresComparisonData';
 
 export const PricingPage: FC = () => {
   const [billingAnnual, setBillingAnnual] = useState(false);
@@ -22,8 +24,8 @@ export const PricingPage: FC = () => {
         <span className="text-sm text-foreground">Annual (Save 20%)</span>
       </div>
 
-      <PricingTiers billingAnnual={billingAnnual} />
-      <FeaturesComparison />
+      <PricingTiers billingAnnual={billingAnnual} tiers={pricingTiers} />
+      <FeaturesComparison data={featuresComparisonData} />
     </div>
   );
 };
