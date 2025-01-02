@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { Switch } from '@rwoc/shadcnui';
-import { PricingTiers } from '../../components/PricingTiers';
-import { FeaturesComparison } from '../../components/FeaturesComparison';
+import { PricingTiers, FeaturesComparison } from '@rwoc/shadcnui-blocks';
 import { pricingTiers } from '../../data/pricingTiersData';
 import { featuresComparisonData } from '../../data/featuresComparisonData';
 

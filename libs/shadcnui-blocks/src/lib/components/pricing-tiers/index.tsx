@@ -1,6 +1,9 @@
 import { FC } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, Button } from '@rwoc/shadcnui';
 
+/**
+ * Interface representing a pricing tier.
+ */
 export interface PricingTier {
   name: string;
   monthlyPrice: string;
@@ -10,11 +13,46 @@ export interface PricingTier {
   isMostPopular?: boolean;
 }
 
+/**
+ * Props for the PricingTiers component.
+ */
 interface PricingTiersProps {
   billingAnnual: boolean;
   tiers: PricingTier[];
 }
 
+/**
+ * PricingTiers component.
+ * 
+ * This component renders a list of pricing tiers, each represented by a card.
+ * 
+ * @param {PricingTiersProps} props - The props for the component.
+ * @param {boolean} props.billingAnnual - Whether the billing is annual or monthly.
+ * @param {PricingTier[]} props.tiers - The list of pricing tiers.
+ * 
+ * @example
+ * ```tsx
+ * const tiers = [
+ *   {
+ *     name: 'Basic',
+ *     monthlyPrice: '$10',
+ *     annualPrice: '$100',
+ *     features: ['Feature 1', 'Feature 2'],
+ *     description: 'Basic plan description',
+ *   },
+ *   {
+ *     name: 'Pro',
+ *     monthlyPrice: '$20',
+ *     annualPrice: '$200',
+ *     features: ['Feature 1', 'Feature 2', 'Feature 3'],
+ *     description: 'Pro plan description',
+ *     isMostPopular: true,
+ *   },
+ * ];
+ * 
+ * <PricingTiers billingAnnual={true} tiers={tiers} />
+ * ```
+ */
 export const PricingTiers: FC<PricingTiersProps> = ({ billingAnnual, tiers }) => {
   return (
     <section>
