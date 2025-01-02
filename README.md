@@ -224,8 +224,35 @@ For more information on forking repositories, consult GitHub's [About forks docu
 
 ### Update Project Identifiers
 
+You can update project identifiers manually or use the provided setup script to automate the process.
+
+#### Manual Update
+
 1. Perform a global search and replace to update project-specific identifiers (e.g., project name, URLs, branding elements) throughout the codebase.
 2. Ensure all instances of the original project name are replaced with your new project name.
+
+#### Using the Setup Script
+
+1. Install project dependencies:
+
+    ```bash
+    pnpm install
+    ```
+
+2. Run the setup script:
+
+    ```bash
+    pnpm run setup
+    ```
+
+    The setup script will guide you through the process of replacing the following key strings:
+
+    - Organization: Replaces "CambridgeMonorail" with your chosen org name.
+    - Machine-Readable App Name: Replaces "react-weapons-of-choice" with something like my-awesome-app.
+    - Human-Readable App Name: Replaces "React Weapons of Choice" with something like My Awesome App.
+    - Abbreviation: Replaces "rwoc" with something like maa.
+
+    You will also have the option to set a new Git remote URL.
 
 ### Modify Configuration Files
 
@@ -276,31 +303,6 @@ For more information on forking repositories, consult GitHub's [About forks docu
 By following these steps, you can customize the boilerplate to suit your specific project needs while maintaining a clean and organized codebase.
 
 **Note:** We are in the process of developing automation scripts to streamline this setup process. These scripts will be integrated into the boilerplate once completed.
-
-### Run the Setup Script
-
-After forking and cloning the repository, you can run the setup script to personalize the project. The setup script will prompt you for new values and update the project accordingly.
-
-1. Install project dependencies:
-
-    ```bash
-    pnpm install
-    ```
-
-2. Run the setup script:
-
-    ```bash
-    pnpm run setup
-    ```
-
-The setup script will guide you through the process of replacing the following key strings:
-
-- Organization: Replaces "CambridgeMonorail" with your chosen org name.
-- Machine-Readable App Name: Replaces "react-weapons-of-choice" with something like my-awesome-app.
-- Human-Readable App Name: Replaces "React Weapons of Choice" with something like My Awesome App.
-- Abbreviation: Replaces "rwoc" with something like maa.
-
-You will also have the option to set a new Git remote URL.
 
 ## Add new projects
 
