@@ -5,36 +5,33 @@ export interface PricingTier {
   features: string[];
 }
 
+/**
+ * An array of pricing tiers, each with a name and a list of features.
+ * The features are subsets of the featuresList.
+ */
 export const pricingTiers: PricingTier[] = [
   {
     name: 'Free',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics'],
+    features: featuresList.slice(0, 3),
   },
   {
     name: 'Pro',
-    features: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics', 'Team Collaboration'],
+    features: featuresList.slice(0, 4),
   },
   {
     name: 'Enterprise',
-    features: [
-      'Unlimited Projects',
-      '24/7 Support',
-      'Advanced Analytics',
-      'Team Collaboration',
-      'Dedicated Account Manager',
-    ],
+    features: featuresList,
   },
 ];
 
+/**
+ * An array of objects that compare features across different pricing tiers.
+ * Each object contains a feature and boolean values indicating its availability
+ * in the basic, pro, and enterprise tiers.
+ */
 export const featuresComparisonData = featuresList.map((feature) => ({
   feature,
-  basic: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics'].includes(feature),
-  pro: ['Unlimited Projects', '24/7 Support', 'Advanced Analytics', 'Team Collaboration'].includes(feature),
-  enterprise: [
-    'Unlimited Projects',
-    '24/7 Support',
-    'Advanced Analytics',
-    'Team Collaboration',
-    'Dedicated Account Manager',
-  ].includes(feature),
+  basic: featuresList.slice(0, 3).includes(feature),
+  pro: featuresList.slice(0, 4).includes(feature),
+  enterprise: featuresList.includes(feature),
 }));
