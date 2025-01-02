@@ -277,6 +277,31 @@ By following these steps, you can customize the boilerplate to suit your specifi
 
 **Note:** We are in the process of developing automation scripts to streamline this setup process. These scripts will be integrated into the boilerplate once completed.
 
+### Run the Setup Script
+
+After forking and cloning the repository, you can run the setup script to personalize the project. The setup script will prompt you for new values and update the project accordingly.
+
+1. Install project dependencies:
+
+    ```bash
+    pnpm install
+    ```
+
+2. Run the setup script:
+
+    ```bash
+    pnpm run setup
+    ```
+
+The setup script will guide you through the process of replacing the following key strings:
+
+- Organization: Replaces "CambridgeMonorail" with your chosen org name.
+- Machine-Readable App Name: Replaces "react-weapons-of-choice" with something like my-awesome-app.
+- Human-Readable App Name: Replaces "React Weapons of Choice" with something like My Awesome App.
+- Abbreviation: Replaces "rwoc" with something like maa.
+
+You will also have the option to set a new Git remote URL.
+
 ## Add new projects
 
 While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.

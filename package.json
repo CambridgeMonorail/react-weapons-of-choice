@@ -47,7 +47,8 @@
     "type-check:affected": "nx affected --target=type-check",
     "type-check:all": "nx run-many --target=type-check --all",
     "type-check:demo": "nx run demo:type-check",
-    "type-check:shadcnui": "nx run shadcnui:type-check"
+    "type-check:shadcnui": "nx run shadcnui:type-check",
+    "setup": "node ./scripts/setup.js"
   },
   "private": true,
   "packageManager": "pnpm@8.6.3",
