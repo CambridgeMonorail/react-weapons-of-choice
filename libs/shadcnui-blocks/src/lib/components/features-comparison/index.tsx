@@ -5,7 +5,7 @@ import { Check, X } from 'lucide-react';
 /**
  * Interface representing the data structure for feature comparison.
  */
-interface FeatureComparisonData {
+export interface FeatureComparisonData {
   feature: string;
   basic: boolean;
   pro: boolean;
@@ -15,7 +15,7 @@ interface FeatureComparisonData {
 /**
  * Props for the FeaturesComparison component.
  */
-interface FeaturesComparisonProps {
+export interface FeaturesComparisonProps {
   data: FeatureComparisonData[];
 }
 
@@ -23,20 +23,6 @@ interface FeaturesComparisonProps {
  * FeaturesComparison component.
  * 
  * This component renders a comparison table for different features across various tiers (Basic, Pro, Enterprise).
- * 
- * @param {FeaturesComparisonProps} props - The props for the component.
- * @param {FeatureComparisonData[]} props.data - The data for the feature comparison.
- * 
- * @example
- * ```tsx
- * const data = [
- *   { feature: 'Feature 1', basic: true, pro: true, enterprise: true },
- *   { feature: 'Feature 2', basic: false, pro: true, enterprise: true },
- *   { feature: 'Feature 3', basic: false, pro: false, enterprise: true },
- * ];
- * 
- * <FeaturesComparison data={data} />
- * ```
  */
 export const FeaturesComparison: FC<FeaturesComparisonProps> = ({ data }) => {
   return (
