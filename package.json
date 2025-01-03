@@ -52,7 +52,6 @@
   },
   "private": true,
   "packageManager": "pnpm@8.6.3",
-  "type": "module",
   "dependencies": {
     "-": "^0.0.1",
     "@hookform/resolvers": "^3.9.1",
