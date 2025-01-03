@@ -12,6 +12,11 @@
 
 **NOTE: This project is currently in alpha. In fact, it's very alpha. This means it is still under active development and may undergo significant changes. Features may be incomplete or unstable. Got suggestions on what you would like to see or how to make it better? Add an issue and let us know!**
 
+![Performance](./lighthouse-badges/performance.svg)
+![Accessibility](./lighthouse-badges/accessibility.svg)
+![Best Practices](./lighthouse-badges/best-practices.svg)
+![SEO](./lighthouse-badges/seo.svg)
+
 ## Table of Contents
 
 - [Overview](#overview)
