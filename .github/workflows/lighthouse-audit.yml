@@ -1,0 +1,38 @@
+name: Lighthouse Badges
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types:
+      - completed
+  workflow_dispatch:  # Allow manual triggering of the workflow
+
+permissions:
+  contents: write  # Ensure we can push commits
+
+jobs:
+  lighthouse:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Run Lighthouse and Generate Badges
+        uses: patrickhulce/lighthouse-badges-action@v2
+        with:
+          urls: 'https://cambridgemonorail.github.io/react-weapons-of-choice/'
+          output_path: './lighthouse-badges'
+
+      - name: Commit & Push badges
+        run: |
+          git config user.name "tim.morris+buildbot" 
+          git config user.email "tim.morris+buildbot@users.noreply.github.com"
+          git add lighthouse-badges
+          if git diff --cached --quiet; then
+            echo "No changes in badges. Skipping commit."
+            exit 0
+          fi
+          git commit -m "chore: update Lighthouse badges"
+          # Use PAT to push directly to main (bypassing branch protection if you allow this bot user)
+          git push https://x-access-token:${{ secrets.RWOC_PAT }}@github.com/CambridgeMonorail/react-weapons-of-choice.git HEAD:main
