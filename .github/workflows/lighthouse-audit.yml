@@ -63,7 +63,6 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }}
           APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
           APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
-          GITHUB_OUTPUT: $GITHUB_OUTPUT
 
       - name: Commit & Push badges
         env:
