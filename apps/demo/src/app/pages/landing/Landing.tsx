@@ -11,7 +11,7 @@ import {
   Video,
 } from 'lucide-react';
 
-import logoSrc from '../../../assets/images/rwoc-logo.png';
+import logoSrc from '../../../assets/images/app-logo.webp';
 
 import {
   AboutSection,

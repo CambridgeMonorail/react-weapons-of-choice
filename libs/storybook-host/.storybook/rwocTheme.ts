@@ -9,7 +9,7 @@ export default create({
 
   brandTitle: 'RWOC Storybook',
   brandUrl: 'https://cambridgemonorail.github.io/react-weapons-of-choice/',
-  brandImage: './rwoc-logo.png',
+  brandImage: './app-logo.webp',
   brandTarget: '_self',
 
   //
