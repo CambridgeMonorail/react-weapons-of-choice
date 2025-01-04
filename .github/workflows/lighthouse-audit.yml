@@ -56,13 +56,15 @@ jobs:
           });
 
           auth({ type: 'installation' }).then(({ token }) => {
-            console.log(`::set-output name=token::${token}`);
+            const fs = require('fs');
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `token=${token}\n`);
           });
           EOF
         env:
           APP_ID: ${{ secrets.APP_ID }}
           APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
           APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
+          GITHUB_OUTPUT: $GITHUB_OUTPUT
 
       - name: Commit & Push badges
         env:
