@@ -47,11 +47,10 @@ jobs:
           # Generate a token for the GitHub App
           node <<EOF
           const { createAppAuth } = require('@octokit/auth-app');
-          const fs = require('fs');
 
           const auth = createAppAuth({
             appId: process.env.APP_ID,
-            privateKey: fs.readFileSync(process.env.APP_PRIVATE_KEY, 'utf8'),
+            privateKey: process.env.APP_PRIVATE_KEY.replace(/\\n/g, '\n'),
             installationId: process.env.APP_INSTALLATION_ID,
           });
 
