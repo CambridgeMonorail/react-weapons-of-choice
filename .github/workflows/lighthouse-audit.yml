@@ -32,8 +32,15 @@ jobs:
           AUTHOR=$(git log -1 --pretty=format:'%an')
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
-            exit 0
+            exit 1
           fi
+        continue-on-error: true
+
+      - name: Log commit author
+        if: success()
+        run: |
+          AUTHOR=$(git log -1 --pretty=format:'%an')
+          echo "Commit author: $AUTHOR"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
