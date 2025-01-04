@@ -42,7 +42,7 @@ jobs:
         id: generate-token
         run: |
           # Install required libraries
-          npm install -g jsonwebtoken @octokit/auth-app
+          pnpm add -g jsonwebtoken @octokit/auth-app
 
           # Generate a token for the GitHub App
           node <<EOF
