@@ -50,7 +50,11 @@ jobs:
       - name: Commit and push changes
         run: |
           git add ./lighthouse-badges/*
-          git commit -m "Update Lighthouse badges"
-          git push origin main
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update Lighthouse badges"
+            git push origin main
+          fi
         env:
           GITHUB_TOKEN: ${{ steps.generate-app-token.outputs.token }}
