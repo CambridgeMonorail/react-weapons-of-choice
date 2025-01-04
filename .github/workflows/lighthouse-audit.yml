@@ -2,13 +2,13 @@ name: Lighthouse Badges
 
 on:
   workflow_run:
-    workflows: ["Deploy to GitHub Pages"]
+    workflows: ['Deploy to GitHub Pages']
     types:
       - completed
-  workflow_dispatch:  # Allow manual triggering of the workflow
+  workflow_dispatch: # Allow manual triggering of the workflow
 
 permissions:
-  contents: write  # Needed to push changes back to the repo
+  contents: write # Needed to push changes back to the repo
 
 jobs:
   update-badges:
@@ -27,14 +27,14 @@ jobs:
           token: ${{ steps.generate-app-token.outputs.token }}
 
       - name: Set up Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version: '22'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 9.15.0 
+          version: 9.15.0
 
       - name: Install dependencies
         run: pnpm install
