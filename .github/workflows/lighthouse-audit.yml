@@ -11,74 +11,46 @@ permissions:
   contents: write  # Needed to push changes back to the repo
 
 jobs:
-  lighthouse:
-    # Run only if the previous workflow succeeded or if manually triggered
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+  update-badges:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Generate GitHub App token
+        id: generate-app-token
+        uses: getsentry/action-github-app-token@v1.0.6
         with:
-          node-version: '22'
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      - name: Install pnpm
+      - name: Check out the repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ steps.generate-app-token.outputs.token }}
+
+      - name: Set up Node.js
+          uses: actions/setup-node@v4
+          with:
+            node-version: '22'
+
+      - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: 9.15.0
+          version: 9.15.0 
 
       - name: Install dependencies
-        # Switch to npm install if you prefer npm
         run: pnpm install
 
-      - name: Run Lighthouse and Generate Badges
-        # Run the CLI directly with your chosen URL & output path
-        run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --o='./lighthouse-badges'
+      - name: Generate Lighthouse badges
+        run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges'
 
-      - name: Authenticate as GitHub App
-        id: generate-token
+      - name: Configure Git
         run: |
-          # Install required libraries
-          npm install -g jsonwebtoken @octokit/auth-app
+          git config user.name "Monorail Updater"
+          git config user.email "monorail-updater@users.noreply.github.com"
 
-          # Generate a token for the GitHub App
-          node <<EOF
-          const { createAppAuth } = require('@octokit/auth-app');
-          const fs = require('fs');
-
-          const auth = createAppAuth({
-            appId: process.env.APP_ID,
-            privateKey: fs.readFileSync(process.env.APP_PRIVATE_KEY, 'utf8'),
-            installationId: process.env.APP_INSTALLATION_ID,
-          });
-
-          auth({ type: 'installation' }).then(({ token }) => {
-            console.log(`::set-output name=token::${token}`);
-          });
-          EOF
-        env:
-          APP_ID: ${{ secrets.APP_ID }}
-          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
-          APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
-
-      - name: Commit & Push badges
-        env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+      - name: Commit and push changes
         run: |
-          # Configure commit author
-          git config user.name "tim.morris+buildbot"
-          git config user.email "tim.morris+buildbot@users.noreply.github.com"
-
-          # Stage and commit badges
-          git add lighthouse-badges
-          if git diff --cached --quiet; then
-            echo "No changes in badges. Skipping commit."
-            exit 0
-          fi
-          git commit -m "chore: update Lighthouse badges"
-
-          # Push to main branch
-          git push https://x-access-token:${{ steps.generate-token.outputs.token }}@github.com/CambridgeMonorail/react-weapons-of-choice.git HEAD:main
+          git add ./lighthouse-badges/*
+          git commit -m "Update Lighthouse badges"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-app-token.outputs.token }}
