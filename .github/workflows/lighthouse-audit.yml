@@ -8,7 +8,7 @@ on:
   workflow_dispatch:  # Allow manual triggering of the workflow
 
 permissions:
-  contents: write  # Needed if you want to commit changes back to the repo
+  contents: write  # Needed to push changes back to the repo
 
 jobs:
   lighthouse:
@@ -38,7 +38,35 @@ jobs:
         # Run the CLI directly with your chosen URL & output path
         run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --o='./lighthouse-badges'
 
+      - name: Authenticate as GitHub App
+        id: generate-token
+        run: |
+          # Install required libraries
+          npm install -g jsonwebtoken @octokit/auth-app
+
+          # Generate a token for the GitHub App
+          node <<EOF
+          const { createAppAuth } = require('@octokit/auth-app');
+          const fs = require('fs');
+
+          const auth = createAppAuth({
+            appId: process.env.APP_ID,
+            privateKey: fs.readFileSync(process.env.APP_PRIVATE_KEY, 'utf8'),
+            installationId: process.env.APP_INSTALLATION_ID,
+          });
+
+          auth({ type: 'installation' }).then(({ token }) => {
+            console.log(`::set-output name=token::${token}`);
+          });
+          EOF
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+          APP_INSTALLATION_ID: ${{ secrets.APP_INSTALLATION_ID }}
+
       - name: Commit & Push badges
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
           # Configure commit author
           git config user.name "tim.morris+buildbot"
@@ -52,5 +80,5 @@ jobs:
           fi
           git commit -m "chore: update Lighthouse badges"
 
-          # Push to main using a PAT (bypassing branch protections if configured)
-          git push https://x-access-token:${{ secrets.RWOC_PAT }}@github.com/CambridgeMonorail/react-weapons-of-choice.git HEAD:main
+          # Push to main branch
+          git push https://x-access-token:${{ steps.generate-token.outputs.token }}@github.com/CambridgeMonorail/react-weapons-of-choice.git HEAD:main
