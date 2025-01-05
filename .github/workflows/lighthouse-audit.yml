@@ -93,6 +93,10 @@ jobs:
         env:
           LIGHTHOUSE_BADGES_CONFIGURATION_PATH: '.lighthouse-config.json'
         run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges'
+   
+      # Clean up Lighthouse configuration file
+      - name: Clean up
+        run: rm .lighthouse-config.json
 
       # Configure Git
       - name: Configure Git
@@ -112,7 +116,3 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ steps.generate-app-token.outputs.token }}
-
-      # Clean up Lighthouse configuration file
-      - name: Clean up
-        run: rm .lighthouse-config.json
