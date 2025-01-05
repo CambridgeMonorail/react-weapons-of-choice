@@ -68,6 +68,7 @@ jobs:
           {
             "extends": "lighthouse:default",
             "settings": {
+              "onlyCategories": ["performance", "accessibility", "best-practices", "seo"],
               "maxWaitForFcp": 15000,
               "maxWaitForLoad": 35000,
               "formFactor": "desktop",
