@@ -23,12 +23,18 @@ jobs:
           fetch-depth: 0
 
       - name: Check Commit Author
+        id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
+          echo "::set-output name=author::$AUTHOR"
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit author is Monorail Updater. Exiting..."
             exit 0
-          fi
+
+      # Exit if commit author is Monorail Updater
+      - name: Exit if commit author is Monorail Updater
+        if: steps.check-author.outputs.author == 'Monorail Updater'
+        run: exit 0
 
       # Set up Node.js with version 22
       - name: Setup Node.js

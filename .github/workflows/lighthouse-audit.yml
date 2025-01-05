@@ -40,10 +40,16 @@ jobs:
         id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
+          echo "::set-output name=author::$AUTHOR"
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
             exit 0
           fi
+
+      # Exit if commit author is Monorail Updater
+      - name: Exit if commit author is Monorail Updater
+        if: steps.check-author.outputs.author == 'Monorail Updater'
+        run: exit 0
 
       # Set up Node.js
       - name: Set up Node.js
