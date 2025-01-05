@@ -13,7 +13,8 @@ permissions:
 jobs:
   update-badges:
     runs-on: ubuntu-latest
-    steps:   
+    steps:
+      # Generate GitHub App token
       - name: Generate GitHub App token
         id: generate-app-token
         uses: getsentry/action-github-app-token@v1.0.6
@@ -21,17 +22,20 @@ jobs:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
+      # Check out the repository
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
           token: ${{ steps.generate-app-token.outputs.token }}
 
+      # Log commit author
       - name: Log commit author
         if: success()
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
           echo "Commit author: $AUTHOR"
 
+      # Check commit author
       - name: Check commit author
         id: check-author
         run: |
@@ -39,29 +43,54 @@ jobs:
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
             exit 0
-          fi
 
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
+      # Set up pnpm
       - name: Set up pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 9.15.0
 
+      # Install dependencies
       - name: Install dependencies
         run: pnpm install
 
+      # Create Lighthouse configuration file
+      - name: Create Lighthouse configuration file
+        run: |
+          cat << 'EOF' > .lighthouse-config.json
+          {
+            "extends": "lighthouse:default",
+            "settings": {
+              "formFactor": "desktop",
+              "onlyCategories": [
+                "performance",
+                "accessibility",
+                "best-practices",
+                "seo"
+              ]
+            }
+          }
+          EOF
+
+      # Generate Lighthouse badges
       - name: Generate Lighthouse badges
+        env:
+          LIGHTHOUSE_BADGES_CONFIGURATION_PATH: '.lighthouse-config.json'
         run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges'
 
+      # Configure Git
       - name: Configure Git
         run: |
           git config user.name "Monorail Updater"
           git config user.email "monorail-updater@users.noreply.github.com"
 
+      # Commit and push changes
       - name: Commit and push changes
         run: |
           git add ./lighthouse-badges/*
