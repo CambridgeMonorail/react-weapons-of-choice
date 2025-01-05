@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { Button } from '@rwoc/shadcnui'; // Import shadcn Button component
 
 /**
@@ -54,6 +54,17 @@ export const HeroSection: FC<HeroSectionProps> = ({
   variant = 'light',
 }) => {
   const isReversed = layout === 'right';
+
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = image;
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, [image]);
 
   // Default styles for the 'light' variant
   let sectionClasses = 'bg-background text-primary';
@@ -162,6 +173,8 @@ export const HeroSection: FC<HeroSectionProps> = ({
             src={image}
             alt={imageAlt}
             className="w-3/4 sm:w-2/3 lg:w-full max-w-md rounded-lg object-cover"
+            width="448" 
+            height="448"
             data-testid="hero-image"
           />
         </div>

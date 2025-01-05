@@ -16,8 +16,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Manrope', ...fontFamily.sans],
-        heading: ['Oswald', ...fontFamily.sans],
+        sans: ['Manrope', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif', ...fontFamily.sans],
+        heading: ['Oswald', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif', ...fontFamily.sans],
       },
     },
   },
