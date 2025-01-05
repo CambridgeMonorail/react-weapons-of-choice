@@ -13,7 +13,7 @@ permissions:
 jobs:
   update-badges:
     runs-on: ubuntu-latest
-    steps:
+    steps:   
       - name: Generate GitHub App token
         id: generate-app-token
         uses: getsentry/action-github-app-token@v1.0.6
@@ -26,21 +26,20 @@ jobs:
         with:
           token: ${{ steps.generate-app-token.outputs.token }}
 
+      - name: Log commit author
+        if: success()
+        run: |
+          AUTHOR=$(git log -1 --pretty=format:'%an')
+          echo "Commit author: $AUTHOR"
+
       - name: Check commit author
         id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
-            exit 1
+            exit 0
           fi
-        continue-on-error: true
-
-      - name: Log commit author
-        if: success()
-        run: |
-          AUTHOR=$(git log -1 --pretty=format:'%an')
-          echo "Commit author: $AUTHOR"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

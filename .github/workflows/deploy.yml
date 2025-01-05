@@ -18,6 +18,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Check Commit Author
+        run: |
+          AUTHOR=$(git log -1 --pretty=format:'%an')
+          if [ "$AUTHOR" = "Monorail Updater" ]; then
+            echo "Commit author is Monorail Updater. Exiting..."
+            exit 0
+          fi
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
