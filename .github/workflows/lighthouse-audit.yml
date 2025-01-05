@@ -108,6 +108,7 @@ jobs:
           else
             git commit -m "Update Lighthouse badges"
             git push origin main
+          fi
         env:
           GITHUB_TOKEN: ${{ steps.generate-app-token.outputs.token }}
 
