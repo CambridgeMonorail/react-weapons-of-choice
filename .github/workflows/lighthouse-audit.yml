@@ -40,10 +40,16 @@ jobs:
         id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
+          echo "author=$AUTHOR" >> $GITHUB_ENV
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
             exit 0
           fi
+
+      # Exit if commit author is Monorail Updater
+      - name: Exit if commit author is Monorail Updater
+        if: env.author == 'Monorail Updater'
+        run: exit 0
 
       # Set up Node.js
       - name: Set up Node.js
@@ -92,7 +98,7 @@ jobs:
       - name: Generate Lighthouse badges
         env:
           LIGHTHOUSE_BADGES_CONFIGURATION_PATH: '.lighthouse-config.json'
-        run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges'
+        run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges' -r
    
       # Clean up Lighthouse configuration file
       - name: Clean up
