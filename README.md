@@ -17,6 +17,8 @@
 ![Best Practices](./lighthouse-badges/lighthouse_best-practices.svg)
 ![SEO](./lighthouse-badges/lighthouse_seo.svg)
 
+[View Detailed Lighthouse Report](https://htmlpreview.github.io/?https://github.com/CambridgeMonorail/react-weapons-of-choice/blob/main/lighthouse-badges/cambridgemonorail_github_io_react_weapons_of_choice_.html)
+
 ## Table of Contents
 
 - [Overview](#overview)
