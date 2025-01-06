@@ -14,6 +14,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AUTHOR_NAME: ''
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -22,28 +24,29 @@ jobs:
         id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
-          echo "author=$AUTHOR" >> $GITHUB_ENV
+          echo "AUTHOR_NAME=$AUTHOR" >> $GITHUB_ENV
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit author is Monorail Updater. Exiting..."
             exit 0
           fi
 
-      # Exit if commit author is Monorail Updater
-      - name: Exit if commit author is Monorail Updater
-        if: env.author == 'Monorail Updater'
-        run: exit 0
-
+      # Set up Node.js
       - name: Setup Node.js
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
+      # Install pnpm
       - name: Install pnpm
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: pnpm/action-setup@v2
         with:
           version: 9.15.0
 
+      # Cache pnpm dependencies
       - name: Cache pnpm dependencies
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/cache@v4
         with:
           path: ~/.pnpm-store
@@ -52,9 +55,11 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Prune pnpm store
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: pnpm store prune
 
       - name: Install dependencies
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           retry() {
             for i in {1..3}; do
@@ -67,12 +72,14 @@ jobs:
           retry pnpm install --frozen-lockfile
 
       - name: Build project
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           export BASE_URL='/react-weapons-of-choice/'
           export DEBUG='true'
           pnpm exec nx build demo --configuration=production --base=$BASE_URL
 
       - name: Build storybook
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           export BASE_URL='/react-weapons-of-choice/'
           export DEBUG='true'
@@ -80,6 +87,7 @@ jobs:
 
       # Upload artifact for deployment
       - name: Upload to GitHub Pages artifact
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/upload-pages-artifact@v1
         with:
           path: dist/apps/demo # Path to your build output
@@ -94,4 +102,5 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/deploy-pages@v1

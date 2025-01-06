@@ -13,6 +13,8 @@ permissions:
 jobs:
   update-badges:
     runs-on: ubuntu-latest
+    env:
+      AUTHOR_NAME: ''
     steps:
       # Generate GitHub App token
       - name: Generate GitHub App token
@@ -40,35 +42,34 @@ jobs:
         id: check-author
         run: |
           AUTHOR=$(git log -1 --pretty=format:'%an')
-          echo "author=$AUTHOR" >> $GITHUB_ENV
+          echo "AUTHOR_NAME=$AUTHOR" >> $GITHUB_ENV
           if [ "$AUTHOR" = "Monorail Updater" ]; then
             echo "Commit made by Monorail Updater, exiting..."
             exit 0
           fi
 
-      # Exit if commit author is Monorail Updater
-      - name: Exit if commit author is Monorail Updater
-        if: env.author == 'Monorail Updater'
-        run: exit 0
-
       # Set up Node.js
       - name: Set up Node.js
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
       # Set up pnpm
       - name: Set up pnpm
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: pnpm/action-setup@v2
         with:
           version: 9.15.0
 
       # Install dependencies
       - name: Install dependencies
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: pnpm install
 
       # Create Lighthouse configuration file
       - name: Create Lighthouse configuration file
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           cat << 'EOF' > .lighthouse-config.json
           {
@@ -96,22 +97,26 @@ jobs:
 
       # Generate Lighthouse badges
       - name: Generate Lighthouse badges
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         env:
           LIGHTHOUSE_BADGES_CONFIGURATION_PATH: '.lighthouse-config.json'
         run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges' -r
    
       # Clean up Lighthouse configuration file
       - name: Clean up
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: rm .lighthouse-config.json
 
       # Configure Git
       - name: Configure Git
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           git config user.name "Monorail Updater"
           git config user.email "monorail-updater@users.noreply.github.com"
 
       # Commit and push changes
       - name: Commit and push changes
+        if: env.AUTHOR_NAME != 'Monorail Updater'
         run: |
           git add ./lighthouse-badges/*
           if git diff-index --quiet HEAD; then
