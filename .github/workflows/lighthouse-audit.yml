@@ -75,6 +75,7 @@ jobs:
           {
             "extends": "lighthouse:default",
             "settings": {
+              "onlyCategories": ["performance", "accessibility", "best-practices", "seo"],
               "formFactor": "desktop",
               "screenEmulation": {
                 "mobile": false,
