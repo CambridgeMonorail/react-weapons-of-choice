@@ -69,42 +69,42 @@ export const LandingPage: FC = () => {
         logos={[
           <Logo
             name="nx"
-            className="w-16 h-16 sm:w-12 sm:h-12"
+            className="w-26 h-26 sm:w-12 sm:h-12"
             key="nx"
             title="Nx"
             ariaLabel="Nx"
           />,
           <Logo
             name="tailwind"
-            className="w-16 h-16 sm:w-12 sm:h-12"
+            className="w-26 h-26 sm:w-12 sm:h-12"
             key="tailwind"
             title="Tailwind CSS"
             ariaLabel="Tailwind CSS"
           />,
           <Logo
             name="shadcn"
-            className="w-16 h-16 sm:w-12 sm:h-12"
+            className="w-26 h-26 sm:w-12 sm:h-12"
             key="shadcn"
             title="Shadcn"
             ariaLabel="Shadcn"
           />,
           <Logo
             name="pnpm"
-            className="w-16 h-16 sm:w-12 sm:h-12"
+            className="w-26 h-26 sm:w-12 sm:h-12"
             key="pnpm"
             title="Pnpm"
             ariaLabel="Pnpm"
           />,
           <Logo
             name="react"
-            className="w-16 h-16 sm:w-12 sm:h-12"
+            className="w-26 h-26 sm:w-12 sm:h-12"
             key="react"
             title="React"
             ariaLabel="React"
           />,
           <Logo
           name="vite"
-          className="w-16 h-16 sm:w-12 sm:h-12"
+          className="w-26 h-26 sm:w-12 sm:h-12"
           key="vite"
           title="Vite"
           ariaLabel="Vite"
