@@ -2,6 +2,8 @@
 
 This guide outlines the steps to incorporate a shared Tailwind CSS configuration and Shadcn theme into a new application within your Nx monorepo. Additionally, it explains how to customize the theme for individual application requirements.
 
+**Note:** The current theme was generated using the Ready.js [Shadcn UI Theme Generator](https://www.readyjs.dev/tools/shadcn-ui-theme-generator).
+
 ## Table of Contents
 1. [Generate the New Application](#1-generate-the-new-application)
 2. [Set Up Tailwind CSS in the New Application](#2-set-up-tailwind-css-in-the-new-application)
