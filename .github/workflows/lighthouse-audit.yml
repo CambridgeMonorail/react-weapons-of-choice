@@ -76,8 +76,6 @@ jobs:
             "extends": "lighthouse:default",
             "settings": {
               "onlyCategories": ["performance", "accessibility", "best-practices", "seo"],
-              "maxWaitForFcp": 15000,
-              "maxWaitForLoad": 35000,
               "formFactor": "desktop",
               "screenEmulation": {
                 "mobile": false,
@@ -101,7 +99,7 @@ jobs:
         env:
           LIGHTHOUSE_BADGES_CONFIGURATION_PATH: '.lighthouse-config.json'
         run: pnpx lighthouse-badges --url='https://cambridgemonorail.github.io/react-weapons-of-choice/' --output-path='./lighthouse-badges' -r
-   
+
       # Clean up Lighthouse configuration file
       - name: Clean up
         if: env.AUTHOR_NAME != 'Monorail Updater'
