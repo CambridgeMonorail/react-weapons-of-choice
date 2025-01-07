@@ -81,10 +81,18 @@ jobs:
                 "mobile": false,
                 "width": 1350,
                 "height": 940,
-                "deviceScaleFactor": 1,
+                "deviceScaleFactor": 1.75,
                 "disabled": false
               },
-              "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+              "throttling": {
+                "rttMs": 40,
+                "throughputKbps": 10240,
+                "cpuSlowdownMultiplier": 1,
+                "requestLatencyMs": 0,
+                "downloadThroughputKbps": 0,
+                "uploadThroughputKbps": 0
+              },
+              "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 10; Pixel 4 XL) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36",
               "skipAudits": [
                 "uses-http2",
                 "bf-cache"
