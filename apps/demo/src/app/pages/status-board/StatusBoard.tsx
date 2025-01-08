@@ -1,63 +1,81 @@
-"use client"
+'use client';
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
-import { CalendarDays, Clock, MessageSquare, Percent, Star } from 'lucide-react'
-import { Avatar, AvatarFallback, Card, CardContent, CardHeader, CardTitle, ChartConfig, ChartContainer, Button, Input, Textarea } from "@rwoc/shadcnui";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import {
+  CalendarDays,
+  Clock,
+  MessageSquare,
+  Percent,
+  Star,
+} from 'lucide-react';
+import {
+  Avatar,
+  AvatarFallback,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  ChartConfig,
+  ChartContainer,
+  Button,
+  Input,
+  Textarea,
+} from '@rwoc/shadcnui';
 import { useEffect, useState } from 'react';
-import { paths } from '../../constants/paths';
 import { Logo } from '@rwoc/shadcnui-blocks';
+import { navigationConfig } from '../../constants/navigationConfig';
 
 const chartConfig = {
-    desktop: {
-      label: "Desktop",
-      color: "hsl(var(--chart-1))",
-    },
-  } satisfies ChartConfig
+  desktop: {
+    label: 'Desktop',
+    color: 'hsl(var(--chart-1))',
+  },
+} satisfies ChartConfig;
 
 const projectData = [
-  { name: "TRANSMIT", count: 18, days: 1 },
-  { name: "CODA", count: 29, days: 3 },
-  { name: "UNISON", count: 48, days: 3 },
-  { name: "CANDYBAR", count: 8, days: 2 },
-  { name: "GENERAL", count: 3, days: 0 },
-].map(item => ({
+  { name: 'TRANSMIT', count: 18, days: 1 },
+  { name: 'CODA', count: 29, days: 3 },
+  { name: 'UNISON', count: 48, days: 3 },
+  { name: 'CANDYBAR', count: 8, days: 2 },
+  { name: 'GENERAL', count: 3, days: 0 },
+].map((item) => ({
   name: item.name || '',
   count: item.count ?? 0,
-  days: item.days ?? 0
+  days: item.days ?? 0,
 }));
 
 const scheduleData = [
-  { route: "4", time: "1:02", minutes: "9 Min" },
-  { route: "9", time: "9 Min", minutes: "5 Min" },
-  { route: "14", time: "5 Min", minutes: "11 Min" },
-  { route: "19", time: "11 Min", minutes: "3:55" },
-  { route: "20", time: "3:55", minutes: "" },
-]
+  { route: '4', time: '1:02', minutes: '9 Min' },
+  { route: '9', time: '9 Min', minutes: '5 Min' },
+  { route: '14', time: '5 Min', minutes: '11 Min' },
+  { route: '19', time: '11 Min', minutes: '3:55' },
+  { route: '20', time: '3:55', minutes: '' },
+];
 
 const calendarEvents = [
-  { date: "3/11", event: "Ned Out (Vacation)" },
-  { date: "3/12", event: "Ned Out (Vacation)" },
-  { date: "3/15", event: "Status Meeting" },
-  { date: "3/22", event: "Mike Out (Vacation)" },
-  { date: "3/23", event: "Mike Out (Vacation)" },
-]
+  { date: '3/11', event: 'Ned Out (Vacation)' },
+  { date: '3/12', event: 'Ned Out (Vacation)' },
+  { date: '3/15', event: 'Status Meeting' },
+  { date: '3/22', event: 'Mike Out (Vacation)' },
+  { date: '3/23', event: 'Mike Out (Vacation)' },
+];
 
 const incidentHistory = [
-  { date: "3/10", incident: "Server Outage", resolution: "Resolved" },
-  { date: "3/11", incident: "Database Issue", resolution: "Resolved" },
-  { date: "3/12", incident: "Network Latency", resolution: "Ongoing" },
-]
+  { date: '3/10', incident: 'Server Outage', resolution: 'Resolved' },
+  { date: '3/11', incident: 'Database Issue', resolution: 'Resolved' },
+  { date: '3/12', incident: 'Network Latency', resolution: 'Ongoing' },
+];
 
 const maintenanceSchedule = [
-  { date: "3/20", maintenance: "Database Upgrade", impact: "Downtime" },
-  { date: "3/25", maintenance: "Server Maintenance", impact: "Downtime" },
-]
+  { date: '3/20', maintenance: 'Database Upgrade', impact: 'Downtime' },
+  { date: '3/25', maintenance: 'Server Maintenance', impact: 'Downtime' },
+];
 
 export function StatusBoardPage() {
   const [statusData, setStatusData] = useState([
-    { name: "TRANSMIT", status: "yellow" },
-    { name: "UNISON", status: "red" },
-    { name: "CODA", status: "green" },
+    { name: 'TRANSMIT', status: 'yellow' },
+    { name: 'UNISON', status: 'red' },
+    { name: 'CODA', status: 'green' },
   ]);
 
   useEffect(() => {
@@ -66,9 +84,7 @@ export function StatusBoardPage() {
       setStatusData((prevData) =>
         prevData.map((item) => ({
           ...item,
-          status: ["green", "yellow", "red"][
-            Math.floor(Math.random() * 3)
-          ],
+          status: ['green', 'yellow', 'red'][Math.floor(Math.random() * 3)],
         }))
       );
     }, 5000);
@@ -80,10 +96,20 @@ export function StatusBoardPage() {
     <div className="p-6 space-y-6 bg-background min-h-screen text-foreground">
       <header className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-4">
-          <Logo fill="fill-primary" height="50px" name="company-logo" width="50px" />
+          <Logo
+            fill="fill-primary"
+            height="50px"
+            name="company-logo"
+            width="50px"
+          />
           <h1 className="text-4xl font-bold text-primary">Status Board</h1>
         </div>
-        <Button variant="default" onClick={() => window.open(paths.contact, '_blank')}>Contact Support</Button>
+        <Button
+          variant="default"
+          onClick={() => window.open(navigationConfig.paths.contact, '_blank')}
+        >
+          Contact Support
+        </Button>
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -117,13 +143,18 @@ export function StatusBoardPage() {
             <div className="space-y-4">
               {statusData.map((project) => (
                 <div key={project.name} className="flex items-center gap-4">
-                  <div className={`w-3 h-3 rounded-full ${
-                    project.status === "yellow" ? "bg-yellow-500" :
-                    project.status === "red" ? "bg-red-500" : "bg-green-500"
-                  }`} />
+                  <div
+                    className={`w-3 h-3 rounded-full ${
+                      project.status === 'yellow'
+                        ? 'bg-yellow-500'
+                        : project.status === 'red'
+                        ? 'bg-red-500'
+                        : 'bg-green-500'
+                    }`}
+                  />
                   <span>{project.name}</span>
                   <div className="flex gap-1 ml-auto">
-                    {Array.from({length: 3}, (_, i) => (
+                    {Array.from({ length: 3 }, (_, i) => (
                       <Avatar key={i} className="w-6 h-6">
                         <AvatarFallback className="bg-muted text-xs">
                           {i + 1}
@@ -171,7 +202,10 @@ export function StatusBoardPage() {
           <CardContent>
             <div className="space-y-2">
               {scheduleData?.map((schedule) => (
-                <div key={schedule.route} className="flex justify-between text-sm">
+                <div
+                  key={schedule.route}
+                  className="flex justify-between text-sm"
+                >
                   <span>Route {schedule.route}</span>
                   <span className="text-muted">{schedule.minutes}</span>
                 </div>
@@ -261,14 +295,29 @@ export function StatusBoardPage() {
           <CardContent>
             <form className="space-y-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Email
+                </label>
                 <Input id="email" type="email" required />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Phone
+                </label>
                 <Input id="phone" type="tel" required />
               </div>
-              <Button type="submit" className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary">Subscribe</Button>
+              <Button
+                type="submit"
+                className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              >
+                Subscribe
+              </Button>
             </form>
           </CardContent>
         </Card>
@@ -280,12 +329,30 @@ export function StatusBoardPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-2 text-sm text-muted">
-              <p>For assistance, please visit our <a href={paths.contact} className="text-primary underline">Contact Page</a>.</p>
-              <p>Check out our <a href={paths.faq} className="text-primary underline">FAQ</a> for common questions.</p>
+              <p>
+                For assistance, please visit our{' '}
+                <a
+                  href={navigationConfig.paths.contact}
+                  className="text-primary underline"
+                >
+                  Contact Page
+                </a>
+                .
+              </p>
+              <p>
+                Check out our{' '}
+                <a
+                  href={navigationConfig.paths.faq}
+                  className="text-primary underline"
+                >
+                  FAQ
+                </a>{' '}
+                for common questions.
+              </p>
             </div>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }
