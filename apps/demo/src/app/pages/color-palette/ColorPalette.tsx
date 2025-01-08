@@ -1,9 +1,15 @@
+import { Card, CardContent, CardHeader, CardTitle, cn, Tabs, TabsContent, TabsList, TabsTrigger } from '@rwoc/shadcnui';
 import React, { useEffect, useState } from 'react';
 
-interface Color {
+interface ColorPair {
   bg: string;
   fg: string;
-  label: string;
+  name: string;
+}
+
+interface SingleColor {
+  class: string;
+  name: string;
 }
 
 interface ColorHex {
@@ -11,40 +17,31 @@ interface ColorHex {
   fg: string;
 }
 
-const baseColors: Color[] = [
-  { bg: 'bg-background', fg: 'text-foreground', label: 'Background' },
-  { bg: 'bg-foreground', fg: 'text-background', label: 'Foreground' },
-  { bg: 'bg-card', fg: 'text-card-foreground', label: 'Card' },
-  { bg: 'bg-card-foreground', fg: 'text-card', label: 'Card Foreground' },
-  { bg: 'bg-popover', fg: 'text-popover-foreground', label: 'Popover' },
-  { bg: 'bg-popover-foreground', fg: 'text-popover', label: 'Popover Foreground' },
-  { bg: 'bg-primary', fg: 'text-primary-foreground', label: 'Primary' },
-  { bg: 'bg-primary-foreground', fg: 'text-primary', label: 'Primary Foreground' },
-  { bg: 'bg-secondary', fg: 'text-secondary-foreground', label: 'Secondary' },
-  { bg: 'bg-secondary-foreground', fg: 'text-secondary', label: 'Secondary Foreground' },
-  { bg: 'bg-muted', fg: 'text-muted-foreground', label: 'Muted' },
-  { bg: 'bg-muted-foreground', fg: 'text-muted', label: 'Muted Foreground' },
-  { bg: 'bg-accent', fg: 'text-accent-foreground', label: 'Accent' },
-  { bg: 'bg-accent-foreground', fg: 'text-accent', label: 'Accent Foreground' },
-  { bg: 'bg-destructive', fg: 'text-destructive-foreground', label: 'Destructive' },
-  { bg: 'bg-destructive-foreground', fg: 'text-destructive', label: 'Destructive Foreground' },
-  { bg: 'bg-border', fg: 'text-foreground', label: 'Border' },
-  { bg: 'bg-input', fg: 'text-foreground', label: 'Input' },
-  { bg: 'bg-ring', fg: 'text-foreground', label: 'Ring' },
-  { bg: 'bg-radius', fg: 'text-foreground', label: 'Radius' },
-  { bg: 'bg-chart-1', fg: 'text-foreground', label: 'Chart 1' },
-  { bg: 'bg-chart-2', fg: 'text-foreground', label: 'Chart 2' },
-  { bg: 'bg-chart-3', fg: 'text-foreground', label: 'Chart 3' },
-  { bg: 'bg-chart-4', fg: 'text-foreground', label: 'Chart 4' },
-  { bg: 'bg-chart-5', fg: 'text-foreground', label: 'Chart 5' },
-  { bg: 'bg-sidebar-background', fg: 'text-sidebar-foreground', label: 'Sidebar Background' },
-  { bg: 'bg-sidebar-foreground', fg: 'text-sidebar-background', label: 'Sidebar Foreground' },
-  { bg: 'bg-sidebar-primary', fg: 'text-sidebar-primary-foreground', label: 'Sidebar Primary' },
-  { bg: 'bg-sidebar-primary-foreground', fg: 'text-sidebar-primary', label: 'Sidebar Primary Foreground' },
-  { bg: 'bg-sidebar-accent', fg: 'text-sidebar-accent-foreground', label: 'Sidebar Accent' },
-  { bg: 'bg-sidebar-accent-foreground', fg: 'text-sidebar-accent', label: 'Sidebar Accent Foreground' },
-  { bg: 'bg-sidebar-border', fg: 'text-foreground', label: 'Sidebar Border' },
-  { bg: 'bg-sidebar-ring', fg: 'text-foreground', label: 'Sidebar Ring' },
+const colorPairs: ColorPair[] = [
+  { bg: "bg-background", fg: "text-foreground", name: "Background" },
+  { bg: "bg-card", fg: "text-card-foreground", name: "Card" },
+  { bg: "bg-popover", fg: "text-popover-foreground", name: "Popover" },
+  { bg: "bg-primary", fg: "text-primary-foreground", name: "Primary" },
+  { bg: "bg-secondary", fg: "text-secondary-foreground", name: "Secondary" },
+  { bg: "bg-muted", fg: "text-muted-foreground", name: "Muted" },
+  { bg: "bg-accent", fg: "text-accent-foreground", name: "Accent" },
+  { bg: "bg-destructive", fg: "text-destructive-foreground", name: "Destructive" },
+  { bg: "bg-[hsl(var(--sidebar-background))]", fg: "text-[hsl(var(--sidebar-foreground))]", name: "Sidebar" },
+  { bg: "bg-[hsl(var(--sidebar-primary))]", fg: "text-[hsl(var(--sidebar-primary-foreground))]", name: "Sidebar Primary" },
+  { bg: "bg-[hsl(var(--sidebar-accent))]", fg: "text-[hsl(var(--sidebar-accent-foreground))]", name: "Sidebar Accent" },
+];
+
+const singleColors: SingleColor[] = [
+  { class: "border-border", name: "Border" },
+  { class: "bg-input", name: "Input" },
+  { class: "ring-ring", name: "Ring" },
+  { class: "bg-[hsl(var(--chart-1))]", name: "Chart 1" },
+  { class: "bg-[hsl(var(--chart-2))]", name: "Chart 2" },
+  { class: "bg-[hsl(var(--chart-3))]", name: "Chart 3" },
+  { class: "bg-[hsl(var(--chart-4))]", name: "Chart 4" },
+  { class: "bg-[hsl(var(--chart-5))]", name: "Chart 5" },
+  { class: "border-[hsl(var(--sidebar-border))]", name: "Sidebar Border" },
+  { class: "ring-[hsl(var(--sidebar-ring))]", name: "Sidebar Ring" },
 ];
 
 const getComputedColor = (className: string, root: HTMLElement): string => {
@@ -90,6 +87,40 @@ const checkContrast = (contrast: number) => {
   };
 };
 
+const ColorBlock = ({ bgClass, fgClass, name, contrast, checks, hexes }: { bgClass: string; fgClass: string; name: string; contrast?: number; checks?: ReturnType<typeof checkContrast>; hexes?: ColorHex }) => (
+  <Card className={cn("overflow-hidden", bgClass)}>
+    <CardHeader className="p-4">
+      <CardTitle className={cn("text-lg", fgClass)}>{name}</CardTitle>
+    </CardHeader>
+    <CardContent className={cn("p-4 pt-0", fgClass)}>
+      <p className="text-sm">
+        Contrast: {contrast ? contrast.toFixed(2) : "N/A"}
+      </p>
+      <p className="text-xs italic">
+        <div>Large Text: {checks?.largeText ? "Pass" : "Fail"}</div>
+        <div>Normal Text: {checks?.normalText ? "Pass" : "Fail"}</div>
+        <div>Enhanced Readability: {checks?.enhanced ? "Pass" : "Fail"}</div>
+      </p>
+      <p className="text-xs">
+        <div>Background: {hexes?.bg}</div>
+        <div>Foreground: {hexes?.fg}</div>
+      </p>
+    </CardContent>
+  </Card>
+);
+
+const ColorCircle = ({ colorClass, name }: { colorClass: string; name: string }) => (
+  <div className="flex flex-col items-center">
+    <div className={cn(
+      "w-16 h-16 rounded-full shadow-md",
+      colorClass,
+      colorClass.startsWith("border-") ? "border-4" : "",
+      colorClass.startsWith("ring-") ? "ring-4" : ""
+    )} />
+    <span className="mt-2 text-sm text-center">{name}</span>
+  </div>
+);
+
 const ColorPalettePage: React.FC = () => {
   const [contrastRatios, setContrastRatios] = useState<Record<string, number>>({});
   const [contrastChecks, setContrastChecks] = useState<Record<string, ReturnType<typeof checkContrast>>>({});
@@ -100,7 +131,7 @@ const ColorPalettePage: React.FC = () => {
     const ratios: Record<string, number> = {};
     const checks: Record<string, ReturnType<typeof checkContrast>> = {};
     const hexes: Record<string, ColorHex> = {};
-    baseColors.forEach(({ bg, fg, label }) => {
+    colorPairs.forEach(({ bg, fg, name }) => {
       const bgColor = getComputedColor(bg, root);
       const fgColor = getComputedColor(fg, root);
       const bgRgb = hexToRgb(bgColor);
@@ -110,9 +141,9 @@ const ColorPalettePage: React.FC = () => {
         const bgLuminance = getRelativeLuminance(bgRgb);
         const fgLuminance = getRelativeLuminance(fgRgb);
         const contrast = calculateContrast(bgLuminance, fgLuminance);
-        ratios[label] = contrast;
-        checks[label] = checkContrast(contrast);
-        hexes[label] = { bg: rgbToHex(bgColor), fg: rgbToHex(fgColor) };
+        ratios[name] = contrast;
+        checks[name] = checkContrast(contrast);
+        hexes[name] = { bg: rgbToHex(bgColor), fg: rgbToHex(fgColor) };
       }
     });
     setContrastRatios(ratios);
@@ -121,51 +152,47 @@ const ColorPalettePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-6 m-4 space-y-6 bg-background text-foreground">
-      <h1 className="text-4xl font-bold mb-4 text-primary">Color Palette</h1>
-      <h2 className="text-2xl font-semibold mb-2 text-secondary">Base Colors</h2>
-      <p className="mb-4">
-        Use the switcher in the header bar to see the dark theme colors.
-      </p>
-      <div className="mb-4">
-        According to WCAG guidelines, the minimum contrast ratio should be:
-        <ul className="list-disc list-inside">
-          <li>3:1 for large text (18pt and larger, or 14pt and bold)</li>
-          <li>4.5:1 for normal text</li>
-          <li>7:1 for enhanced readability</li>
-        </ul>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {baseColors.map(({ bg, fg, label }) => (
-          <div key={label} className={`p-4 ${bg} ${fg} rounded-lg`}>
-            <div>{label}</div>
-            <div>
-              Contrast:{" "}
-              {contrastRatios[label]
-                ? contrastRatios[label].toFixed(2)
-                : "Calculating..."}
-            </div>
-            <div className="text-xs italic">
-              <div>
-                Large Text:{" "}
-                {contrastChecks[label]?.largeText ? "Pass" : "Fail"}
-              </div>
-              <div>
-                Normal Text:{" "}
-                {contrastChecks[label]?.normalText ? "Pass" : "Fail"}
-              </div>
-              <div>
-                Enhanced Readability:{" "}
-                {contrastChecks[label]?.enhanced ? "Pass" : "Fail"}
-              </div>
-            </div>
-            <div className="text-xs">
-              <div>Background: {colorHexes[label]?.bg}</div>
-              <div>Foreground: {colorHexes[label]?.fg}</div>
-            </div>
+    <div className="container mx-auto py-8 px-4">
+      <h1 className="text-4xl font-bold mb-8 text-center">shadcn Theme Color Demonstration</h1>
+      
+      <Tabs defaultValue="pairs" className="w-full">
+        <TabsList className="grid w-full grid-cols-2 mb-8">
+          <TabsTrigger value="pairs">Background-Foreground Pairs</TabsTrigger>
+          <TabsTrigger value="single">Additional Colors</TabsTrigger>
+        </TabsList>
+        <TabsContent value="pairs">
+          <div className="mb-4">
+            Use the switcher in the header bar to see the dark theme colors.
           </div>
-        ))}
-      </div>
+          <div className="mb-4">
+            According to WCAG guidelines, the minimum contrast ratio should be:
+            <ul className="list-disc list-inside">
+              <li>3:1 for large text (18pt and larger, or 14pt and bold)</li>
+              <li>4.5:1 for normal text</li>
+              <li>7:1 for enhanced readability</li>
+            </ul>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {colorPairs.map(({ bg, fg, name }) => (
+              <ColorBlock key={name} bgClass={bg} fgClass={fg} name={name} contrast={contrastRatios[name]} checks={contrastChecks[name]} hexes={colorHexes[name]} />
+            ))}
+          </div>
+        </TabsContent>
+        <TabsContent value="single">
+          <Card>
+            <CardHeader>
+              <CardTitle>Additional Theme Colors</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                {singleColors.map(({ class: colorClass, name }) => (
+                  <ColorCircle key={name} colorClass={colorClass} name={name} />
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
