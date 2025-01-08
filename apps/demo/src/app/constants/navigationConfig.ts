@@ -18,6 +18,9 @@ import { StatusBoardPage } from '../pages/status-board/StatusBoard';
 import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
 import { Layout } from '@rwoc/shell';
 
+/**
+ * Object containing all the paths used in the application.
+ */
 const paths = {
   landing: '/',
   about: '/about',
@@ -38,6 +41,9 @@ const paths = {
   notFound: '*',
 };
 
+/**
+ * Configuration for the sidebar, including user information, teams, and navigation items.
+ */
 const sidebarData: SidebarConfiguration = {
   user: {
     name: 'rwoc',
@@ -87,12 +93,22 @@ const sidebarData: SidebarConfiguration = {
   ],
 };
 
+/**
+ * Helper function to create a route object.
+ * @param path - The URL path for the route.
+ * @param component - The React component to render for the route.
+ * @param useLayout - Whether to wrap the component with the Layout component.
+ * @returns The route object.
+ */
 const createRoute = (path: string, component: React.ComponentType, useLayout = true) => {
   return useLayout
     ? { path, element: createElement(Layout, { sidebarData, children: createElement(component) }) }
     : { path, element: createElement(component) };
 };
 
+/**
+ * Array of route objects for the application.
+ */
 const routes = [
   createRoute(paths.landing, LandingPage, false),
   createRoute(paths.about, AboutPage),
@@ -111,6 +127,9 @@ const routes = [
   createRoute(paths.notFound, NotFound, false),
 ];
 
+/**
+ * Configuration object for navigation, including paths, sidebar data, and routes.
+ */
 export const navigationConfig = {
   paths,
   sidebarData,

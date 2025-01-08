@@ -1,20 +1,53 @@
 # Navigation Structure
 
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Current Navigation Structure](#current-navigation-structure)
+   - [Navigation Configuration File](#navigation-configuration-file)
+3. [Guidelines for Developers](#guidelines-for-developers)
+   - [Adding a New Route](#adding-a-new-route)
+   - [Updating an Existing Route](#updating-an-existing-route)
+   - [Removing a Route](#removing-a-route)
+
+## Introduction
+
+This document provides an overview of the navigation structure for the React Single Page Application (SPA) within the Nrwl Nx Monorepo. The navigation structure is centralized in a single configuration file to ensure consistency and ease of maintenance. This document also includes guidelines for developers on how to add, update, and remove routes.
+
 ## Current Navigation Structure
 
-The current navigation structure is defined across three files:
+The current navigation structure is centralized in a single configuration file:
 
-1. `apps/demo/src/app/constants/paths.ts`
-2. `apps/demo/src/app/data/routes.ts`
-3. `apps/demo/src/app/data/sidebarData.ts`
+1. `apps/demo/src/app/constants/navigationConfig.ts`
 
-### `apps/demo/src/app/constants/paths.ts`
+### Navigation Configuration File
 
-This file centralizes all route paths in a single object. This ensures consistency and makes it easier to update paths in one place.
+This file centralizes all route paths, routes, and sidebar data in a single object. This ensures consistency and makes it easier to update paths, routes, and sidebar data in one place.
 
 Example:
+
 ```typescript
-export const paths = {
+import { createElement } from 'react';
+import { SidebarConfiguration } from '../types/sidebarTypes';
+import { Swords, AudioWaveform, SquareTerminal, Bot } from 'lucide-react';
+
+import { LandingPage } from '../pages/landing/Landing';
+import { AboutPage } from '../pages/about/About';
+import { BlogPage } from '../pages/blog/Blog';
+import { IndividualBlogPostPage } from '../pages/blog/IndividualBlogPost';
+import { ColorPalettePage } from '../pages/color-palette/ColorPalette';
+import { ContactPage } from '../pages/contact/Contact';
+import { DashboardPage } from '../pages/dashboard/Dashboard';
+import { FAQPage } from '../pages/faq/FAQ';
+import { FeaturesPage } from '../pages/features/Features';
+import { LibraryPage } from '../pages/library/Library';
+import { NotFound } from '../pages/not-found/NotFound';
+import { PricingPage } from '../pages/pricing/Pricing';
+import { StatusBoardPage } from '../.pages/status-board/StatusBoard';
+import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
+import { Layout } from '@rwoc/shell';
+
+const paths = {
   landing: '/',
   about: '/about',
   blog: '/blog',
@@ -29,68 +62,12 @@ export const paths = {
   termsAndConditions: '/terms-and-conditions',
   components: {
     colorPalette: '/color-palette',
-    libraryPage: '/library',
+    library: '/library',
   },
   notFound: '*',
 };
-```
 
-### `apps/demo/src/app/data/routes.ts`
-
-This file defines the routes for the application. Each route is an object with a path and an element. The path is the URL path, and the element is the React component to render.
-
-Example:
-```typescript
-import { AboutPage } from '../components/pages/AboutPage';
-import { AppRoute } from '../types/app-route';
-import { ColorPalettePage } from '../components/pages/ColorPalettePage';
-import { createElement } from 'react';
-import { DashboardPage } from '../components/pages/dashboard/DashboardPage';
-import { FAQPage } from '../components/pages/FAQPage';
-import { FeaturesPage } from '../components/pages/FeaturesPage';
-import { LandingPage } from '../components/landing-page/LandingPage';
-import { Layout } from '@rwoc/shell';
-import { LibraryPage } from '../components/pages/LibraryPage';
-import { NotFound } from '../components/NotFound';
-import { paths } from '../constants/paths';
-import { PricingPage } from '../components/pages/PricingPage';
-import { sidebarData } from '../data/sidebarData';
-import { StatusBoardPage } from '../components/pages/StatusBoardPage';
-import { TermsAndConditionsPage } from '../components/pages/TermsAndConditionsPage';
-import BlogPage from '../components/pages/BlogPage';
-import ContactPage from '../components/pages/ContactPage';
-import IndividualBlogPostPage from '../components/pages/IndividualBlogPostPage';
-
-export const routes: AppRoute[] = [
-  { path: paths.landing, element: createElement(LandingPage) },
-  { path: paths.home, element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
-  { path: paths.dashboard, element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
-  { path: paths.about, element: createElement(Layout, { sidebarData, children: createElement(AboutPage) }) },
-  { path: paths.features, element: createElement(Layout, { sidebarData, children: createElement(FeaturesPage) }) },
-  { path: paths.pricing, element: createElement(Layout, { sidebarData, children: createElement(PricingPage) }) },
-  { path: paths.faq, element: createElement(Layout, { sidebarData, children: createElement(FAQPage) }) },
-  { path: paths.contact, element: createElement(Layout, { sidebarData, children: createElement(ContactPage) }) },
-  { path: paths.blog, element: createElement(Layout, { sidebarData, children: createElement(BlogPage) }) },
-  { path: paths.blogPost, element: createElement(Layout, { sidebarData, children: createElement(IndividualBlogPostPage) }) },
-  { path: paths.termsAndConditions, element: createElement(Layout, { sidebarData, children: createElement(TermsAndConditionsPage) }) },
-  { path: paths.components.colorPalette, element: createElement(Layout, { sidebarData, children: createElement(ColorPalettePage) }) },
-  { path: paths.components.libraryPage, element: createElement(Layout, { sidebarData, children: createElement(LibraryPage) }) },
-  { path: paths.statusBoard, element: createElement(Layout, { sidebarData, children: createElement(StatusBoardPage) }) },
-  { path: paths.notFound, element: createElement(NotFound) },
-];
-```
-
-### `apps/demo/src/app/data/sidebarData.ts`
-
-This file defines the sidebar data, including user information, teams, and navigation items.
-
-Example:
-```typescript
-import { SidebarConfiguration } from '../types/sidebarTypes';
-import { Swords, AudioWaveform, SquareTerminal, Bot, BookOpen, Settings2 } from 'lucide-react';
-import { paths } from '../constants/paths';
-
-export const sidebarData: SidebarConfiguration = {
+const sidebarData: SidebarConfiguration = {
   user: {
     name: 'rwoc',
     email: 'm@example.com',
@@ -129,175 +106,63 @@ export const sidebarData: SidebarConfiguration = {
     },
     {
       title: 'Components',
-      url: paths.components.libraryPage,
+      url: paths.components.library,
       icon: Bot,
       items: [
-        { title: 'Shadcn/ui Components', url: paths.components.libraryPage },
+        { title: 'Shadcn/ui Components', url: paths.components.library },
         { title: 'Color Palette', url: paths.components.colorPalette },
       ],
     },
   ],
 };
-```
 
-## Proposed Improvements
-
-### Centralize Path Definitions
-
-To reduce redundancy, centralize path definitions in a single file, such as `apps/demo/src/app/constants/paths.ts`. Ensure that all other files reference the paths from this centralized file.
-
-### Use a Configuration Object
-
-Create a configuration object that includes paths, routes, and sidebar data in a single file. This can help reduce redundancy and improve maintainability.
-
-Example:
-```typescript
-const config = {
-  paths: {
-    landing: '/',
-    about: '/about',
-    blog: '/blog',
-    blogPost: '/blog/:postId',
-    contact: '/contact',
-    dashboard: '/dashboard',
-    faq: '/faq',
-    features: '/features',
-    home: '/home',
-    pricing: '/pricing',
-    statusBoard: '/status-board',
-    termsAndConditions: '/terms-and-conditions',
-    components: {
-      colorPalette: '/color-palette',
-      libraryPage: '/library',
-    },
-    notFound: '*',
-  },
-  routes: [
-    { path: '/', element: createElement(LandingPage) },
-    { path: '/home', element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
-    { path: '/dashboard', element: createElement(Layout, { sidebarData, children: createElement(DashboardPage) }) },
-    { path: '/about', element: createElement(Layout, { sidebarData, children: createElement(AboutPage) }) },
-    { path: '/features', element: createElement(Layout, { sidebarData, children: createElement(FeaturesPage) }) },
-    { path: '/pricing', element: createElement(Layout, { sidebarData, children: createElement(PricingPage) }) },
-    { path: '/faq', element: createElement(Layout, { sidebarData, children: createElement(FAQPage) }) },
-    { path: '/contact', element: createElement(Layout, { sidebarData, children: createElement(ContactPage) }) },
-    { path: '/blog', element: createElement(Layout, { sidebarData, children: createElement(BlogPage) }) },
-    { path: '/blog/:postId', element: createElement(Layout, { sidebarData, children: createElement(IndividualBlogPostPage) }) },
-    { path: '/terms-and-conditions', element: createElement(Layout, { sidebarData, children: createElement(TermsAndConditionsPage) }) },
-    { path: '/color-palette', element: createElement(Layout, { sidebarData, children: createElement(ColorPalettePage) }) },
-    { path: '/library', element: createElement(Layout, { sidebarData, children: createElement(LibraryPage) }) },
-    { path: '/status-board', element: createElement(Layout, { sidebarData, children: createElement(StatusBoardPage) }) },
-    { path: '*', element: createElement(NotFound) },
-  ],
-  sidebarData: {
-    user: {
-      name: 'rwoc',
-      email: 'm@example.com',
-      avatar: 'react-weapons-of-choice/assets/images/avatars/rwoc.jpg',
-    },
-    teams: [
-      {
-        name: 'RWOC',
-        logo: Swords,
-        plan: 'Enterprise',
-      },
-      {
-        name: 'RWOC Corp.',
-        logo: AudioWaveform,
-        plan: 'Startup',
-      },
-    ],
-    navMain: [
-      {
-        title: 'Sample Pages',
-        url: '/about',
-        icon: SquareTerminal,
-        isActive: true,
-        items: [
-          { title: 'Landing', url: '/' },
-          { title: 'Dashboard', url: '/dashboard' },
-          { title: 'About', url: '/about' },
-          { title: 'Features', url: '/features' },
-          { title: 'Pricing', url: '/pricing' },
-          { title: 'FAQ', url: '/faq' },
-          { title: 'Contact', url: '/contact' },
-          { title: 'Blog', url: '/blog' },
-          { title: 'Terms and Conditions', url: '/terms-and-conditions' },
-          { title: 'StatusBoard', url: '/status-board' },
-        ],
-      },
-      {
-        title: 'Components',
-        url: '/library',
-        icon: Bot,
-        items: [
-          { title: 'Shadcn/ui Components', url: '/library' },
-          { title: 'Color Palette', url: '/color-palette' },
-        ],
-      },
-    ],
-  },
+const createRoute = (path: string, component: React.ComponentType, useLayout = true) => {
+  return useLayout
+    ? { path, element: createElement(Layout, { sidebarData, children: createElement(component) }) }
+    : { path, element: createElement(component) };
 };
-```
 
-### Utilize Dynamic Imports
-
-Use dynamic imports to load route components based on the path definitions. This can help reduce redundancy and improve performance by loading components only when needed.
-
-Example:
-```typescript
-import { lazy } from 'react';
-
-const LandingPage = lazy(() => import('../components/landing-page/LandingPage'));
-const AboutPage = lazy(() => import('../components/pages/AboutPage'));
-const DashboardPage = lazy(() => import('../components/pages/dashboard/DashboardPage'));
-const FAQPage = lazy(() => import('../components/pages/FAQPage'));
-const FeaturesPage = lazy(() => import('../components/pages/FeaturesPage'));
-const PricingPage = lazy(() => import('../components/pages/PricingPage'));
-const ContactPage = lazy(() => import('../components/pages/ContactPage'));
-const BlogPage = lazy(() => import('../components/pages/BlogPage'));
-const IndividualBlogPostPage = lazy(() => import('../components/pages/IndividualBlogPostPage'));
-const TermsAndConditionsPage = lazy(() => import('../components/pages/TermsAndConditionsPage'));
-const ColorPalettePage = lazy(() => import('../components/pages/ColorPalettePage'));
-const LibraryPage = lazy(() => import('../components/pages/LibraryPage'));
-const StatusBoardPage = lazy(() => import('../components/pages/StatusBoardPage'));
-const NotFound = lazy(() => import('../components/NotFound'));
-
-export const routes: AppRoute[] = [
-  { path: config.paths.landing, element: createElement(LandingPage) },
-  { path: config.paths.home, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(DashboardPage) }) },
-  { path: config.paths.dashboard, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(DashboardPage) }) },
-  { path: config.paths.about, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(AboutPage) }) },
-  { path: config.paths.features, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(FeaturesPage) }) },
-  { path: config.paths.pricing, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(PricingPage) }) },
-  { path: config.paths.faq, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(FAQPage) }) },
-  { path: config.paths.contact, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(ContactPage) }) },
-  { path: config.paths.blog, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(BlogPage) }) },
-  { path: config.paths.blogPost, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(IndividualBlogPostPage) }) },
-  { path: config.paths.termsAndConditions, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(TermsAndConditionsPage) }) },
-  { path: config.paths.components.colorPalette, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(ColorPalettePage) }) },
-  { path: config.paths.components.libraryPage, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(LibraryPage) }) },
-  { path: config.paths.statusBoard, element: createElement(Layout, { sidebarData: config.sidebarData, children: createElement(StatusBoardPage) }) },
-  { path: config.paths.notFound, element: createElement(NotFound) },
+const routes = [
+  createRoute(paths.landing, LandingPage, false),
+  createRoute(paths.about, AboutPage),
+  createRoute(paths.blog, BlogPage),
+  createRoute(paths.blogPost, IndividualBlogPostPage),
+  createRoute(paths.components.colorPalette, ColorPalettePage),
+  createRoute(paths.components.library, LibraryPage),
+  createRoute(paths.contact, ContactPage),
+  createRoute(paths.dashboard, DashboardPage),
+  createRoute(paths.faq, FAQPage),
+  createRoute(paths.features, FeaturesPage),
+  createRoute(paths.home, DashboardPage),
+  createRoute(paths.pricing, PricingPage),
+  createRoute(paths.statusBoard, StatusBoardPage),
+  createRoute(paths.termsAndConditions, TermsAndConditionsPage),
+  createRoute(paths.notFound, NotFound, false),
 ];
+
+export const navigationConfig = {
+  paths,
+  sidebarData,
+  routes,
+};
 ```
 
 ## Guidelines for Developers
 
 ### Adding a New Route
 
-1. Define the new path in the `paths` object in `apps/demo/src/app/constants/paths.ts`.
-2. Add a new entry to the `routes` array in `apps/demo/src/app/data/routes.ts` with the path and element.
-3. Update the `sidebarData` object in `apps/demo/src/app/data/sidebarData.ts` to include the new route in the navigation.
+1. Define the new path in the `paths` object in `apps/demo/src/app/constants/navigationConfig.ts`.
+2. Add a new entry to the `routes` array in `apps/demo/src/app/constants/navigationConfig.ts` with the path and element.
+3. Update the `sidebarData` object in `apps/demo/src/app/constants/navigationConfig.ts` to include the new route in the navigation.
 
 ### Updating an Existing Route
 
-1. Update the path in the `paths` object in `apps/demo/src/app/constants/paths.ts`.
-2. Modify the corresponding entry in the `routes` array in `apps/demo/src/app/data/routes.ts`.
-3. Update the `sidebarData` object in `apps/demo/src/app/data/sidebarData.ts` to reflect the changes in the navigation.
+1. Update the path in the `paths` object in `apps/demo/src/app/constants/navigationConfig.ts`.
+2. Modify the corresponding entry in the `routes` array in `apps/demo/src/app/constants/navigationConfig.ts`.
+3. Update the `sidebarData` object in `apps/demo/src/app/constants/navigationConfig.ts` to reflect the changes in the navigation.
 
 ### Removing a Route
 
-1. Remove the path from the `paths` object in `apps/demo/src/app/constants/paths.ts`.
-2. Delete the corresponding entry from the `routes` array in `apps/demo/src/app/data/routes.ts`.
-3. Update the `sidebarData` object in `apps/demo/src/app/data/sidebarData.ts` to remove the route from the navigation.
+1. Remove the path from the `paths` object in `apps/demo/src/app/constants/navigationConfig.ts`.
+2. Delete the corresponding entry from the `routes` array in `apps/demo/src/app/constants/navigationConfig.ts`.
+3. Update the `sidebarData` object in `apps/demo/src/app/constants/navigationConfig.ts` to remove the route from the navigation.
