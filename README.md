@@ -17,6 +17,8 @@
 ![Best Practices](./lighthouse-badges/lighthouse_best-practices.svg)
 ![SEO](./lighthouse-badges/lighthouse_seo.svg)
 
+These badges represent the results of Lighthouse audits, which are run to ensure the application meets high standards in performance, accessibility, best practices, and SEO. Note that these audits are conducted for the desktop version of the application, as its primary use case is on desktop, although it is fully responsive.
+
 [View Detailed Lighthouse Report](https://htmlpreview.github.io/?https://github.com/CambridgeMonorail/react-weapons-of-choice/blob/main/lighthouse-badges/cambridgemonorail_github_io_react_weapons_of_choice_.html)
 
 ## Table of Contents

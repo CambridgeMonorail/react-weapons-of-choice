@@ -7,11 +7,11 @@ import {
   CardDescription,
 } from '@rwoc/shadcnui';
 
-import { paths } from '../../constants/paths';
+import { navigationConfig } from '../../constants/navigationConfig';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
 
-import { CTASection, CommunitySection, Footer, HeroSection } from '@rwoc/landing';
+import { CTASection, Footer, HeroSection } from '@rwoc/landing';
 import { TestimonialsSection } from '@rwoc/shadcnui-blocks';
 
 interface TeamMember {
@@ -152,8 +152,8 @@ const AboutPage: FC = () => {
       <div className="bg-primary">
         <Footer 
           navigationLinks={[
-            { text: 'Home', url: paths.home },
-            { text: 'Features', url: paths.features },
+            { text: 'Home', url: navigationConfig.paths.home },
+            { text: 'Features', url: navigationConfig.paths.features },
             {
               text: 'Documentation',
               url: 'https://github.com/CambridgeMonorail/react-weapons-of-choice',

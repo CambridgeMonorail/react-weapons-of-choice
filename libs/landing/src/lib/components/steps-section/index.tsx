@@ -21,8 +21,8 @@ interface StepsSectionProps {
 /**
  * A section component that displays a title, a list of steps, and a button.
  *
- * @param {StepsSectionProps} props - The props for the component.
- * @returns {JSX.Element} The rendered component.
+ * The component helps visually illustrate a multi-step process with notes explaining each step.
+ * Its primary use case is for landing pages that provide an overview of product functionality or getting started guides.
  */
 const StepsSection: FC<StepsSectionProps> = ({
   title,
