@@ -38,6 +38,21 @@ export interface NumberAndSecondaryStatProps {
 }
 
 /**
+ * Utility function to format large numeric values.
+ */
+const formatValue = (value: number): string => {
+  if (value >= 1_000_000_000) {
+    return `${(value / 1_000_000_000).toFixed(1)}B`;
+  } else if (value >= 1_000_000) {
+    return `${(value / 1_000_000).toFixed(1)}M`;
+  } else if (value >= 1_000) {
+    return `${(value / 1_000).toFixed(1)}K`;
+  } else {
+    return value.toString();
+  }
+};
+
+/**
  * A component that displays a main value with optional secondary statistics, goal progress, comparison, and trendline.
  */
 export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
@@ -195,19 +210,22 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   //
   // 5. Main value and label
   //
+  const formattedMainValue =
+    typeof mainValue === 'number' ? formatValue(mainValue) : mainValue;
+
   const mainValueElement = (
     <div className="flex flex-col items-start">
-      <CardTitle
+      <div
         className="text-4xl font-bold tracking-tight"
         data-testid="main-value"
       >
         {prefix && <span className="mr-1">{prefix}</span>}
-        {mainValue}
-      </CardTitle>
+        {formattedMainValue}
+      </div>
       {mainLabel && (
-        <CardDescription className="mt-1" data-testid="main-label">
+        <div className="mt-1" data-testid="main-label">
           {mainLabel}
-        </CardDescription>
+        </div>
       )}
     </div>
   );

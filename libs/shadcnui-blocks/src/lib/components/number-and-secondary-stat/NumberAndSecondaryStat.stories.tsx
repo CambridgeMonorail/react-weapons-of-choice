@@ -161,3 +161,35 @@ export const ReversedLayout: Story = {
     className: '',
   },
 };
+
+/**
+ * FormatValueDemo story for the NumberAndSecondaryStat component.
+ * This example demonstrates the formatValue feature for different ranges of numbers.
+ */
+export const FormatValueDemo: Story = {
+  name: 'Format Value Demo',
+  render: () => (
+    <div className="flex space-x-4">
+      <NumberAndSecondaryStat
+        mainValue={999}
+        mainLabel="Less than a thousand"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500}
+        mainLabel="More than a thousand"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500000}
+        mainLabel="More than a million"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500000000}
+        mainLabel="More than a billion"
+        className="w-[230px] h-[230px]"
+      />
+    </div>
+  ),
+};
