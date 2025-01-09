@@ -7,7 +7,8 @@ import {
   CardDescription,
   CardContent,
 } from "@rwoc/shadcnui"
-import { SparkLine } from "@/components/charts/SparkLine"
+import { SparkLine } from "../charts/SparkLine"
+
 
 export interface NumberAndSecondaryStatProps {
   mainValue: number | string
@@ -34,7 +35,7 @@ export interface NumberAndSecondaryStatProps {
   className?: string
 }
 
-export function NumberAndSecondaryStatWidget({
+export function NumberAndSecondaryStat({
   mainValue,
   prefix,
   mainLabel,

@@ -71,9 +71,9 @@ const stats = [
 <StatsBlock stats={stats} />
 ```
 
-### NumberAndSecondaryStatWidget
+### NumberAndSecondaryStat
 
-The `NumberAndSecondaryStatWidget` component displays a main value, optional label, secondary stats, goals, comparison, and trendline.
+The `NumberAndSecondaryStat` component displays a main value, optional label, secondary stats, goals, comparison, and trendline.
 
 #### Props
 
@@ -100,9 +100,9 @@ The `NumberAndSecondaryStatWidget` component displays a main value, optional lab
 #### Usage
 
 ```tsx
-import { NumberAndSecondaryStatWidget } from '@rwoc/shadcnui-blocks';
+import { NumberAndSecondaryStat } from '@rwoc/shadcnui-blocks';
 
-<NumberAndSecondaryStatWidget
+<NumberAndSecondaryStat
   mainValue={1234}
   prefix="$"
   mainLabel="Revenue"

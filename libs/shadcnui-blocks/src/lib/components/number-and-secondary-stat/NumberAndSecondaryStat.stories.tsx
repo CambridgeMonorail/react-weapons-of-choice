@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NumberAndSecondaryStatWidget, NumberAndSecondaryStatProps } from './NumberAndSecondaryStatWidget';
+import { NumberAndSecondaryStat, NumberAndSecondaryStatProps } from './NumberAndSecondaryStat';
 
-const meta: Meta<typeof NumberAndSecondaryStatWidget> = {
-  title: 'Shadcnui Blocks/NumberAndSecondaryStatWidget',
-  component: NumberAndSecondaryStatWidget,
+const meta: Meta<typeof NumberAndSecondaryStat> = {
+  title: 'Shadcnui Blocks/NumberAndSecondaryStat',
+  component: NumberAndSecondaryStat,
   tags: ['autodocs'],
   argTypes: {
     mainValue: { control: 'text' },
@@ -19,15 +19,15 @@ const meta: Meta<typeof NumberAndSecondaryStatWidget> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof NumberAndSecondaryStatWidget>;
+type Story = StoryObj<typeof NumberAndSecondaryStat>;
 
 /**
- * Default story for the NumberAndSecondaryStatWidget component.
+ * Default story for the NumberAndSecondaryStat component.
  * This example shows how to use the component with basic props.
  */
 export const Default: Story = {
   name: 'Default',
-  render: (args: NumberAndSecondaryStatProps) => <NumberAndSecondaryStatWidget {...args} />,
+  render: (args: NumberAndSecondaryStatProps) => <NumberAndSecondaryStat {...args} />,
   args: {
     mainValue: 1234,
     prefix: '$',
@@ -45,12 +45,12 @@ export const Default: Story = {
 };
 
 /**
- * CustomClassName story for the NumberAndSecondaryStatWidget component.
+ * CustomClassName story for the NumberAndSecondaryStat component.
  * This example shows how to use the component with custom Tailwind CSS classes.
  */
 export const CustomClassName: Story = {
   name: 'Custom Class Name',
-  render: (args: NumberAndSecondaryStatProps) => <NumberAndSecondaryStatWidget {...args} />,
+  render: (args: NumberAndSecondaryStatProps) => <NumberAndSecondaryStat {...args} />,
   args: {
     mainValue: 5678,
     prefix: '€',
