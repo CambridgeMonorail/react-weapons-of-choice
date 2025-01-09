@@ -44,11 +44,11 @@ const singleColors: SingleColor[] = [
   { class: "ring-[hsl(var(--sidebar-ring))]", name: "Sidebar Ring" },
 ];
 
-const getComputedColor = (className: string, root: HTMLElement): string => {
+const getComputedColor = (className: string, root: HTMLElement, property: 'color' | 'backgroundColor'): string => {
   const tempDiv = document.createElement("div");
   tempDiv.className = className;
   root.appendChild(tempDiv);
-  const color = window.getComputedStyle(tempDiv).color;
+  const color = window.getComputedStyle(tempDiv)[property];
   root.removeChild(tempDiv);
   return color;
 };
@@ -132,18 +132,25 @@ const ColorPalettePage: React.FC = () => {
     const checks: Record<string, ReturnType<typeof checkContrast>> = {};
     const hexes: Record<string, ColorHex> = {};
     colorPairs.forEach(({ bg, fg, name }) => {
-      const bgColor = getComputedColor(bg, root);
-      const fgColor = getComputedColor(fg, root);
+      const bgColor = getComputedColor(bg, root, 'backgroundColor');
+      const fgColor = getComputedColor(fg, root, 'color');
+      const bgHex = rgbToHex(bgColor);
+      const fgHex = rgbToHex(fgColor);
       const bgRgb = hexToRgb(bgColor);
       const fgRgb = hexToRgb(fgColor);
+
+      console.log(`Processing ${name}`);
+      console.log(`Background color: ${bgColor}, Foreground color: ${fgColor}`);
+      console.log(`Background hex: ${bgHex}, Foreground hex: ${fgHex}`);
 
       if (bgRgb && fgRgb) {
         const bgLuminance = getRelativeLuminance(bgRgb);
         const fgLuminance = getRelativeLuminance(fgRgb);
         const contrast = calculateContrast(bgLuminance, fgLuminance);
+        console.log(`Contrast ratio for ${name}: ${contrast}`);
         ratios[name] = contrast;
         checks[name] = checkContrast(contrast);
-        hexes[name] = { bg: rgbToHex(bgColor), fg: rgbToHex(fgColor) };
+        hexes[name] = { bg: bgHex, fg: fgHex };
       }
     });
     setContrastRatios(ratios);
@@ -155,6 +162,19 @@ const ColorPalettePage: React.FC = () => {
     <div className="container mx-auto py-8 px-4">
       <h1 className="text-4xl font-bold mb-8 text-center">shadcn Theme Color Demonstration</h1>
       
+      <div className="p-4 bg-primary">
+        test 1
+      </div>
+
+      <div className="p-4 text-primary-foreground">
+        test 2
+      </div>
+
+      <div>
+        test 3
+      </div>
+
+
       <Tabs defaultValue="pairs" className="w-full">
         <TabsList className="grid w-full grid-cols-2 mb-8">
           <TabsTrigger value="pairs">Background-Foreground Pairs</TabsTrigger>
