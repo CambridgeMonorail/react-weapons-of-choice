@@ -217,8 +217,6 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
       className={`flex flex-col ${className}`}
       data-testid="number-and-secondary-stat"
     >
-
-
       <CardContent
         className="flex-grow space-y-4 flex flex-col justify-center"
         data-testid="card-content"
