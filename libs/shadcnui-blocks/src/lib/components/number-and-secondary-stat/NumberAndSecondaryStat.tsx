@@ -9,7 +9,9 @@ import {
 } from "@rwoc/shadcnui"
 import { SparkLine } from "../charts/SparkLine"
 
-
+/**
+ * Props for the NumberAndSecondaryStat component.
+ */
 export interface NumberAndSecondaryStatProps {
   mainValue: number | string
   prefix?: string
@@ -35,7 +37,10 @@ export interface NumberAndSecondaryStatProps {
   className?: string
 }
 
-export function NumberAndSecondaryStat({
+/**
+ * A component that displays a main value with optional secondary statistics, goal progress, comparison, and trendline.
+ */
+export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   mainValue,
   prefix,
   mainLabel,
@@ -45,12 +50,12 @@ export function NumberAndSecondaryStat({
   trendline,
   secondaryStats,
   className = "",
-}: NumberAndSecondaryStatProps) {
+}) => {
   //
   // 1. Comparison logic
   //
-  let comparisonElement: React.ReactNode = null
-  if (comparison) {
+  const comparisonElement = React.useMemo(() => {
+    if (!comparison) return null
     const { baselineValue, displayMode = "absolute", label } = comparison
     const currentValue =
       typeof mainValue === "number" ? mainValue : parseFloat(`${mainValue}`)
@@ -61,9 +66,9 @@ export function NumberAndSecondaryStat({
 
     const isUp = diff > 0
     const arrow = isUp ? (
-      <ArrowUp className="h-4 w-4 text-green-500" />
+      <ArrowUp className="h-4 w-4 text-primary" />
     ) : diff < 0 ? (
-      <ArrowDown className="h-4 w-4 text-red-500" />
+      <ArrowDown className="h-4 w-4 text-accent" />
     ) : null
 
     const absoluteText = `${isUp ? "+" : diff < 0 ? "-" : ""}${diffAbsolute}`
@@ -78,26 +83,26 @@ export function NumberAndSecondaryStat({
       displayText = `${absoluteText} (${percentText})`
     }
 
-    comparisonElement = (
+    return (
       <div className="flex items-center space-x-2">
         {arrow}
         <span className="text-sm font-medium">{displayText}</span>
         {label && <span className="text-sm text-muted-foreground">{label}</span>}
       </div>
     )
-  }
+  }, [comparison, mainValue])
 
   //
   // 2. Goal progress
   //
-  let goalElement: React.ReactNode = null
-  if (goal) {
+  const goalElement = React.useMemo(() => {
+    if (!goal) return null
     const { current, target, showBar, label } = goal
     const goalCurrent =
       current ?? (typeof mainValue === "number" ? mainValue : 0)
     const percentage = Math.min((goalCurrent / target) * 100, 100)
 
-    goalElement = (
+    return (
       <div className="space-y-1">
         {label && (
           <div className="text-sm text-muted-foreground">
@@ -105,9 +110,9 @@ export function NumberAndSecondaryStat({
           </div>
         )}
         {showBar && (
-          <div className="relative w-full h-2 bg-gray-200 rounded">
+          <div className="relative w-full h-2 bg-secondary rounded">
             <div
-              className="absolute left-0 top-0 h-2 bg-green-500 rounded"
+              className="absolute left-0 top-0 h-2 bg-primary rounded"
               style={{ width: `${percentage}%` }}
             />
           </div>
@@ -117,33 +122,33 @@ export function NumberAndSecondaryStat({
         </div>
       </div>
     )
-  }
+  }, [goal, mainValue])
 
   //
   // 3. Trendline (recharts-based sparkline)
   //
-  let trendlineElement: React.ReactNode = null
-  if (trendline && trendline.length > 0) {
-    trendlineElement = (
+  const trendlineElement = React.useMemo(() => {
+    if (!trendline || trendline.length === 0) return null
+    return (
       <div className="mt-2 w-full">
         <SparkLine data={trendline} strokeColor="#4ade80" height={50} />
       </div>
     )
-  }
+  }, [trendline])
 
   //
   // 4. Secondary stats
   //
-  let secondaryStatsElement: React.ReactNode = null
-  if (secondaryStats && secondaryStats.length > 0) {
-    secondaryStatsElement = (
+  const secondaryStatsElement = React.useMemo(() => {
+    if (!secondaryStats || secondaryStats.length === 0) return null
+    return (
       <ul className="space-y-2">
         {secondaryStats.map(({ label, value, direction }, index) => {
           let arrow: React.ReactNode = null
           if (direction === "up") {
-            arrow = <ArrowUp className="h-4 w-4 text-green-500" />
+            arrow = <ArrowUp className="h-4 w-4 text-primary" />
           } else if (direction === "down") {
-            arrow = <ArrowDown className="h-4 w-4 text-red-500" />
+            arrow = <ArrowDown className="h-4 w-4 text-accent" />
           }
 
           return (
@@ -156,7 +161,7 @@ export function NumberAndSecondaryStat({
         })}
       </ul>
     )
-  }
+  }, [secondaryStats])
 
   //
   // 5. Layout logic: reversed vs. normal
