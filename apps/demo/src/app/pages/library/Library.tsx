@@ -28,7 +28,7 @@ export function LibraryPage() {
   return (
     <div className="font-sans bg-background p-8 min-h-screen">
       {/* HERO / HEADER */}
-      <header className="text-center mb-12">
+      <header className="mb-12">
         <h1 className="text-4xl font-extrabold text-text-foreground">
           React Weapons of Choice
         </h1>
