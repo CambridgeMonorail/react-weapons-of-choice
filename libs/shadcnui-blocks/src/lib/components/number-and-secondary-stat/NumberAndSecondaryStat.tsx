@@ -242,14 +242,14 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
       data-testid="number-and-secondary-stat"
     >
       <CardContent
-        className="flex-grow space-y-4 flex flex-col justify-center"
+        className="flex-grow space-y-2 flex flex-col justify-center"
         data-testid="card-content"
       >
         {mainValueElement}
         {comparisonElement}
-        {goalElement}
         {trendlineElement}
         {secondaryStatsElement}
+        {goalElement}
       </CardContent>
     </Card>
   );

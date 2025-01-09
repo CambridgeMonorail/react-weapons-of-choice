@@ -76,6 +76,38 @@ export const FormatValueDemo: Story = {
 };
 
 /**
+ * This example shows how to use the prefix prop to display a currency symbol.
+ */
+export const WithPrefix: Story = {
+  name: 'With Prefix',
+  render: (args: NumberAndSecondaryStatProps) => (
+    <NumberAndSecondaryStat {...args} />
+  ),
+  args: {
+    mainValue: 123456,
+    prefix: '$',
+    mainLabel: 'Revenue',
+    className: 'w-[230px] h-[230px]',
+  },
+};
+
+/**
+ * This example demonstrates how to use the goal prop to display goal progress.
+ */
+export const GoalDemo: Story = {
+  name: 'Goal Demo',
+  render: (args: NumberAndSecondaryStatProps) => (
+    <NumberAndSecondaryStat {...args} />
+  ),
+  args: {
+    mainValue: 7500,
+    mainLabel: 'Current Progress',
+    goal: { current: 7500, target: 10000, showBar: true, label: 'Goal Progress' },
+    className: 'w-[230px] h-[230px]',
+  },
+};
+
+/**
  * This example shows how to use the component with custom Tailwind CSS classes.
  */
 export const CustomClassName: Story = {
@@ -100,21 +132,5 @@ export const CustomClassName: Story = {
       { value: 20, label: 'Returned Orders', direction: 'down' },
     ],
     className: 'bg-primary text-primary-foreground',
-  },
-};
-
-/**
- * This example shows how to use the prefix prop to display a currency symbol.
- */
-export const WithPrefix: Story = {
-  name: 'With Prefix',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 123456,
-    prefix: '$',
-    mainLabel: 'Revenue',
-    className: 'w-[230px] h-[230px]',
   },
 };
