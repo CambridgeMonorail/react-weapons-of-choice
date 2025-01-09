@@ -162,14 +162,31 @@ const ColorPalettePage: React.FC = () => {
         </TabsList>
         <TabsContent value="pairs">
           <div className="mb-4">
-            Use the switcher in the header bar to see the dark theme colors.
+            Accessibility Matters
           </div>
           <div className="mb-4">
-            According to WCAG guidelines, the minimum contrast ratio should be:
+            Choosing the right color combinations is crucial for ensuring your application is accessible to all users. This demonstration evaluates ShadCN UI theme colors against WCAG contrast standards, helping you identify areas that might need adjustments for better readability.
+          </div>
+          <div className="mb-4">
+            What is WCAG Contrast?
             <ul className="list-disc list-inside">
-              <li>3:1 for large text (18pt and larger, or 14pt and bold)</li>
-              <li>4.5:1 for normal text</li>
-              <li>7:1 for enhanced readability</li>
+              <li>3:1 for large text (18pt or larger, or 14pt and bold).</li>
+              <li>4.5:1 for normal text.</li>
+              <li>7:1 for enhanced readability, especially for users with visual impairments.</li>
+            </ul>
+            If a color pair fails the guidelines, consider adjusting your theme to make your content more inclusive.
+          </div>
+          <div className="mb-4">
+            Color Pair Definitions
+            Each color swatch on this page represents a specific combination of background and foreground colors from the ShadCN UI theme. These combinations are used in different UI elements, such as buttons, cards, and text blocks.
+          </div>
+          <div className="mb-4">
+            Why Contrast is Important
+            Low contrast ratios can make content difficult to read, particularly for users with vision impairments or in low-light conditions. By understanding the contrast levels of your theme colors, you can:
+            <ul className="list-disc list-inside">
+              <li>Improve readability and user experience.</li>
+              <li>Ensure compliance with accessibility standards.</li>
+              <li>Create an interface that is functional and beautiful.</li>
             </ul>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
