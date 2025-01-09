@@ -25,8 +25,7 @@ export default meta;
 type Story = StoryObj<typeof NumberAndSecondaryStat>;
 
 /**
- * Default story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with just a value and label.
+ * This example shows a simple use case for the component with just a value and label.
  */
 export const Default: Story = {
   name: 'Default',
@@ -41,7 +40,42 @@ export const Default: Story = {
 };
 
 /**
- * CustomClassName story for the NumberAndSecondaryStat component.
+ * This example demonstrates how large numeric values are formatted for display.
+ * - Numeric values less than a thousand are shown as-is.
+ * - Values in the thousands are shown with a 'K' suffix (e.g., 1,500 becomes 1.5K).
+ * - Values in the millions are shown with an 'M' suffix (e.g., 1,500,000 becomes 1.5M).
+ * - Values in the billions are shown with a 'B' suffix (e.g., 1,500,000,000 becomes 1.5B).
+ * - Only one decimal place is shown for values in the thousands, millions, and billions.
+ */
+export const FormatValueDemo: Story = {
+  name: 'Format Value Demo',
+  render: () => (
+    <div className="flex space-x-4">
+      <NumberAndSecondaryStat
+        mainValue={999}
+        mainLabel="Less than a thousand"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500}
+        mainLabel="More than a thousand"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500000}
+        mainLabel="More than a million"
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={1500000000}
+        mainLabel="More than a billion"
+        className="w-[230px] h-[230px]"
+      />
+    </div>
+  ),
+};
+
+/**
  * This example shows how to use the component with custom Tailwind CSS classes.
  */
 export const CustomClassName: Story = {
@@ -70,126 +104,17 @@ export const CustomClassName: Story = {
 };
 
 /**
- * WithoutGoalAndComparison story for the NumberAndSecondaryStat component.
- * This example shows how to use the component without goal and comparison props.
+ * This example shows how to use the prefix prop to display a currency symbol.
  */
-export const WithoutGoalAndComparison: Story = {
-  name: 'Without Goal and Comparison',
+export const WithPrefix: Story = {
+  name: 'With Prefix',
   render: (args: NumberAndSecondaryStatProps) => (
     <NumberAndSecondaryStat {...args} />
   ),
   args: {
-    mainValue: 7890,
-    prefix: '£',
-    mainLabel: 'Sales',
-    reversedLayout: false,
-    trendline: [150, 250, 350, 450, 550],
-    secondaryStats: [
-      { value: 100, label: 'New Signups', direction: 'up' },
-      { value: 30, label: 'Cancellations', direction: 'down' },
-    ],
-    className: '',
+    mainValue: 123456,
+    prefix: '$',
+    mainLabel: 'Revenue',
+    className: 'w-[230px] h-[230px]',
   },
-};
-
-/**
- * WithOnlyTrendline story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with only a trendline.
- */
-export const WithOnlyTrendline: Story = {
-  name: 'With Only Trendline',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 3456,
-    prefix: '¥',
-    mainLabel: 'Expenses',
-    reversedLayout: false,
-    trendline: [50, 150, 250, 350, 450],
-    className: '',
-  },
-};
-
-/**
- * WithOnlySecondaryStats story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with only secondary stats.
- */
-export const WithOnlySecondaryStats: Story = {
-  name: 'With Only Secondary Stats',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 2345,
-    prefix: '₹',
-    mainLabel: 'Net Income',
-    reversedLayout: false,
-    secondaryStats: [
-      { value: 150, label: 'Active Users', direction: 'up' },
-      { value: 20, label: 'Inactive Users', direction: 'down' },
-    ],
-    className: '',
-  },
-};
-
-/**
- * ReversedLayout story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with the reversed layout.
- */
-export const ReversedLayout: Story = {
-  name: 'Reversed Layout',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 4567,
-    prefix: '₩',
-    mainLabel: 'Gross Margin',
-    reversedLayout: true,
-    goal: { current: 4567, target: 8000, showBar: true, label: 'Margin Goal' },
-    comparison: {
-      baselineValue: 4000,
-      displayMode: 'absolute',
-      label: 'Compared to last year',
-    },
-    trendline: [300, 400, 500, 600, 700],
-    secondaryStats: [
-      { value: 250, label: 'New Leads', direction: 'up' },
-      { value: 40, label: 'Lost Leads', direction: 'down' },
-    ],
-    className: '',
-  },
-};
-
-/**
- * FormatValueDemo story for the NumberAndSecondaryStat component.
- * This example demonstrates the formatValue feature for different ranges of numbers.
- */
-export const FormatValueDemo: Story = {
-  name: 'Format Value Demo',
-  render: () => (
-    <div className="flex space-x-4">
-      <NumberAndSecondaryStat
-        mainValue={999}
-        mainLabel="Less than a thousand"
-        className="w-[230px] h-[230px]"
-      />
-      <NumberAndSecondaryStat
-        mainValue={1500}
-        mainLabel="More than a thousand"
-        className="w-[230px] h-[230px]"
-      />
-      <NumberAndSecondaryStat
-        mainValue={1500000}
-        mainLabel="More than a million"
-        className="w-[230px] h-[230px]"
-      />
-      <NumberAndSecondaryStat
-        mainValue={1500000000}
-        mainLabel="More than a billion"
-        className="w-[230px] h-[230px]"
-      />
-    </div>
-  ),
 };
