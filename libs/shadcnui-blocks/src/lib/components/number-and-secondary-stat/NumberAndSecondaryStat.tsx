@@ -67,12 +67,12 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
     const isUp = diff > 0;
     const arrow = isUp ? (
       <ArrowUp
-        className="h-4 w-4 text-primary"
+        className={`h-4 w-4 ${reversedLayout ? 'text-accent' : 'text-primary'}`}
         data-testid="comparison-arrow-up"
       />
     ) : diff < 0 ? (
       <ArrowDown
-        className="h-4 w-4 text-accent"
+        className={`h-4 w-4 ${reversedLayout ? 'text-primary' : 'text-accent'}`}
         data-testid="comparison-arrow-down"
       />
     ) : null;
@@ -101,7 +101,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
         )}
       </div>
     );
-  }, [comparison, mainValue]);
+  }, [comparison, mainValue, reversedLayout]);
 
   //
   // 2. Goal progress
@@ -193,10 +193,10 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   }, [secondaryStats]);
 
   //
-  // 5. Layout logic: reversed vs. normal
+  // 5. Main value and label
   //
   const mainValueElement = (
-    <>
+    <div className="flex flex-col items-start">
       <CardTitle
         className="text-4xl font-bold tracking-tight"
         data-testid="main-value"
@@ -209,7 +209,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
           {mainLabel}
         </CardDescription>
       )}
-    </>
+    </div>
   );
 
   return (
@@ -221,24 +221,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
         className="flex-grow space-y-4 flex flex-col justify-center"
         data-testid="card-content"
       >
-        {reversedLayout ? (
-          <>
-            {mainLabel && (
-              <CardDescription className="mt-1" data-testid="main-label">
-                {mainLabel}
-              </CardDescription>
-            )}
-            <CardTitle
-              className="text-4xl font-bold tracking-tight"
-              data-testid="main-value"
-            >
-              {prefix && <span className="mr-1">{prefix}</span>}
-              {mainValue}
-            </CardTitle>
-          </>
-        ) : (
-          mainValueElement
-        )}
+        {mainValueElement}
         {comparisonElement}
         {goalElement}
         {trendlineElement}
