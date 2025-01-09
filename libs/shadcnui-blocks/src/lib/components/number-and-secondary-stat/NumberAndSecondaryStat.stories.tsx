@@ -26,7 +26,7 @@ type Story = StoryObj<typeof NumberAndSecondaryStat>;
 
 /**
  * Default story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with basic props.
+ * This example shows how to use the component with just a value and label.
  */
 export const Default: Story = {
   name: 'Default',
@@ -35,37 +35,8 @@ export const Default: Story = {
   ),
   args: {
     mainValue: 1234,
-    prefix: '$',
-    mainLabel: 'Revenue',
-    reversedLayout: false,
-    goal: { current: 1234, target: 2000, showBar: true, label: 'Goal' },
-    comparison: {
-      baselineValue: 1000,
-      displayMode: 'both',
-      label: 'Compared to last month',
-    },
-    trendline: [100, 200, 300, 400, 500],
-    secondaryStats: [
-      { value: 200, label: 'New Customers', direction: 'up' },
-      { value: 50, label: 'Churned Customers', direction: 'down' },
-    ],
-    className: '',
-  },
-};
-
-/**
- * SimpleValueAndLabel story for the NumberAndSecondaryStat component.
- * This example shows how to use the component with just a value and label.
- */
-export const SimpleValueAndLabel: Story = {
-  name: 'Simple Value and Label',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 1234,
     mainLabel: 'Simple Label',
-    className: '',
+    className: 'w-[230px] h-[230px]',
   },
 };
 
