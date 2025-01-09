@@ -216,14 +216,14 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   const mainValueElement = (
     <div className="flex flex-col items-start">
       <div
-        className="text-4xl font-bold tracking-tight"
+        className="text-6xl font-bold tracking-tight"
         data-testid="main-value"
       >
         {prefix && <span className="mr-1">{prefix}</span>}
         {formattedMainValue}
       </div>
       {mainLabel && (
-        <div className="mt-1" data-testid="main-label">
+        <div className="mt-1 text-muted-foreground" data-testid="main-label">
           {mainLabel}
         </div>
       )}
