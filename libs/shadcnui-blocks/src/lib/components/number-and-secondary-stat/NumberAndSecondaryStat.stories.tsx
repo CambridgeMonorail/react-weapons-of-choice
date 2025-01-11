@@ -108,6 +108,40 @@ export const GoalDemo: Story = {
 };
 
 /**
+ * This example demonstrates how to use the comparison prop to display comparison with a baseline value.
+ * 
+ * Props:
+ * - `mainValue`: The current value to be displayed.
+ * - `mainLabel`: A label for the main value.
+ * - `comparison`: An object containing:
+ *   - `baselineValue`: The value to compare against.
+ *   - `displayMode`: How to display the comparison ('absolute', 'percent', or 'both').
+ *   - `label`: An optional label to describe the comparison.
+ * 
+ * Effects:
+ * - The `comparison` prop drives the display of the comparison element.
+ * - `baselineValue` is used to calculate the difference and percentage change.
+ * - `displayMode` determines whether the difference is shown as an absolute value, a percentage, or both.
+ * - `label` provides additional context for the comparison.
+ */
+export const ComparisonDemo: Story = {
+  name: 'Comparison Demo',
+  render: (args: NumberAndSecondaryStatProps) => (
+    <NumberAndSecondaryStat {...args} />
+  ),
+  args: {
+    mainValue: 1500,
+    mainLabel: 'Current Value',
+    comparison: {
+      baselineValue: 1000,
+      displayMode: 'percent',
+      label: 'MTD',
+    },
+    className: 'w-[230px] h-[230px]',
+  },
+};
+
+/**
  * This example shows how to use the component with custom Tailwind CSS classes.
  */
 export const CustomClassName: Story = {
@@ -132,25 +166,5 @@ export const CustomClassName: Story = {
       { value: 20, label: 'Returned Orders', direction: 'down' },
     ],
     className: 'bg-primary text-primary-foreground',
-  },
-};
-
-/**
- * This example demonstrates how to use the comparison prop to display comparison with a baseline value.
- */
-export const ComparisonDemo: Story = {
-  name: 'Comparison Demo',
-  render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
-  ),
-  args: {
-    mainValue: 1500,
-    mainLabel: 'Current Value',
-    comparison: {
-      baselineValue: 1000,
-      displayMode: 'both',
-      label: 'Compared to last month',
-    },
-    className: 'w-[230px] h-[230px]',
   },
 };

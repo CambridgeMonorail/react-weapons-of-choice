@@ -1,14 +1,6 @@
 import * as React from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-  CardFooter,
-  Badge,
-} from '@rwoc/shadcnui';
+import { Card, CardContent, CardFooter, Badge } from '@rwoc/shadcnui';
 import { SparkLine } from '../charts/SparkLine';
 
 /**
@@ -56,6 +48,24 @@ const formatValue = (value: number): string => {
 
 /**
  * A component that displays a main value with optional secondary statistics, goal progress, comparison, and trendline.
+ *
+ * Modes of Display:
+ * - Main Value: Displays the main numeric value with an optional prefix and label.
+ * - Comparison: Compares the main value to a baseline value and displays the difference as an absolute value, percentage, or both.
+ * - Goal Progress: Shows the progress towards a goal with a progress bar and percentage.
+ * - Trendline: Displays a sparkline chart to show trends over time.
+ * - Secondary Stats: Displays additional statistics with optional directional arrows.
+ *
+ * Props:
+ * - `mainValue`: The main numeric value to be displayed.
+ * - `prefix`: An optional prefix for the main value (e.g., currency symbol).
+ * - `mainLabel`: An optional label for the main value.
+ * - `reversedLayout`: A boolean to reverse the layout of comparison arrows.
+ * - `goal`: An object containing goal-related properties (`current`, `target`, `showBar`, `label`).
+ * - `comparison`: An object containing comparison-related properties (`baselineValue`, `displayMode`, `label`).
+ * - `trendline`: An array of numbers representing the trendline data.
+ * - `secondaryStats`: An array of objects representing secondary statistics (`value`, `label`, `direction`).
+ * - `className`: An optional class name for custom styling.
  */
 export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   mainValue,
@@ -237,7 +247,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
       </div>
       {mainLabel && (
         <div
-          className="mt-1 text-muted-foreground overflow-hidden text-ellipsis whitespace-nowrap"
+          className="mt-1 ml-1 text-muted-foreground overflow-hidden text-ellipsis whitespace-nowrap"
           data-testid="main-label"
           title={mainLabel}
         >
