@@ -28,6 +28,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
+  const isLargeScreen = window.innerWidth > 1024;
 
   useEffect(() => {
     // Placeholder for theme switching logic
@@ -35,7 +36,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
   }, [theme]);
 
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={isLargeScreen}>
       <SidebarDataProvider data={sidebarData}>
         <AppSidebar />
         <SidebarInset className="flex flex-col h-full w-full">
