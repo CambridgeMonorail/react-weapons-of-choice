@@ -134,3 +134,23 @@ export const CustomClassName: Story = {
     className: 'bg-primary text-primary-foreground',
   },
 };
+
+/**
+ * This example demonstrates how to use the comparison prop to display comparison with a baseline value.
+ */
+export const ComparisonDemo: Story = {
+  name: 'Comparison Demo',
+  render: (args: NumberAndSecondaryStatProps) => (
+    <NumberAndSecondaryStat {...args} />
+  ),
+  args: {
+    mainValue: 1500,
+    mainLabel: 'Current Value',
+    comparison: {
+      baselineValue: 1000,
+      displayMode: 'both',
+      label: 'Compared to last month',
+    },
+    className: 'w-[230px] h-[230px]',
+  },
+};

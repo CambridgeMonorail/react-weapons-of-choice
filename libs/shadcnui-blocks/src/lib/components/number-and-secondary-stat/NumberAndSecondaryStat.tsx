@@ -236,7 +236,11 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
         </div>
       </div>
       {mainLabel && (
-        <div className="mt-1 text-muted-foreground" data-testid="main-label">
+        <div
+          className="mt-1 text-muted-foreground overflow-hidden text-ellipsis whitespace-nowrap"
+          data-testid="main-label"
+          title={mainLabel}
+        >
           {mainLabel}
         </div>
       )}
