@@ -77,34 +77,34 @@ const DashboardPage: FC = () => {
 
   return (
     <div
-      className={`h-full min-h-full text-primary-900 flex-col ${
+      data-testid="dashboard-page"
+      className={`h-full min-h-full w-full text-primary-900 flex-col ${
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
-      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 w-full" data-testid="dashboard-content">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0" data-testid="dashboard-header">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight" data-testid="dashboard-title">
             Dashboard
           </h2>
-          <div className="flex items-center space-x-3">
-            <CalendarDateRangePicker />
-            <Button
-              variant="default"
-            >
+          <div className="flex items-center space-x-3" data-testid="dashboard-actions">
+            <CalendarDateRangePicker data-testid="date-range-picker" />
+            <Button variant="default" data-testid="download-button">
               Download
             </Button>
           </div>
         </div>
 
         {/* Tabs Section */}
-        <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="border-b border-gray-200">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
+        <Tabs defaultValue="overview" className="space-y-4" data-testid="dashboard-tabs">
+          <TabsList className="border-b border-gray-200" data-testid="tabs-list">
+            <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
             <TabsTrigger
               value="analytics"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-analytics"
             >
               Analytics
             </TabsTrigger>
@@ -112,6 +112,7 @@ const DashboardPage: FC = () => {
               value="reports"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-reports"
             >
               Reports
             </TabsTrigger>
@@ -119,14 +120,15 @@ const DashboardPage: FC = () => {
               value="notifications"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-notifications"
             >
               Notifications
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="overview" className="space-y-4">
+          <TabsContent value="overview" className="space-y-4" data-testid="tab-content-overview">
             {/* Stats Cards with Trend Arrows and Sparklines */}
-            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4" data-testid="stats-cards">
               {/* Total Revenue Card */}
               <NumberAndSecondaryStat
                 mainValue={45231.89}
@@ -138,7 +140,8 @@ const DashboardPage: FC = () => {
                   label: 'vs last month',
                 }}
                 trendline={[37650, 40000, 42000, 45000, 45231.89]}
-                className="bg-background text-foreground"
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="total-revenue-card"
               />
 
               {/* Subscriptions Card */}
@@ -151,7 +154,8 @@ const DashboardPage: FC = () => {
                   label: 'vs last month',
                 }}
                 trendline={[840, 1200, 1800, 2200, 2350]}
-                className="bg-background text-foreground"
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="subscriptions-card"
               />
 
               {/* Sales Card */}
@@ -164,7 +168,8 @@ const DashboardPage: FC = () => {
                   label: 'vs last month',
                 }}
                 trendline={[10280, 11000, 11500, 12000, 12234]}
-                className="bg-background text-foreground"
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="sales-card"
               />
 
               {/* Active Now Card */}
@@ -177,13 +182,14 @@ const DashboardPage: FC = () => {
                   label: 'vs last hour',
                 }}
                 trendline={[372, 400, 450, 500, 573]}
-                className="bg-background text-foreground"
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="active-now-card"
               />
             </div>
 
             {/* Overview and Recent Sales */}
-            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4">
+            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7" data-testid="overview-recent-sales">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4" data-testid="visitors-card">
                 <CardHeader className="w-full">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Visitors
@@ -209,7 +215,7 @@ const DashboardPage: FC = () => {
                 </CardFooter>
               </Card>
 
-              <Card className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4" data-testid="recent-sales-card">
                 <CardHeader className="w-full">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Recent Sales

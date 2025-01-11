@@ -38,7 +38,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
     <SidebarProvider>
       <SidebarDataProvider data={sidebarData}>
         <AppSidebar />
-        <SidebarInset className="flex flex-col h-full">
+        <SidebarInset className="flex flex-col h-full w-full">
           <header
             className="flex h-16 flex-shrink-0 items-center justify-between gap-2 border-b px-4 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 w-full max-w-full"
             data-testid="header"
@@ -130,7 +130,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
               </Button>
             </div>
           </header>
-          <div className="flex-1 overflow-auto" role="main">
+          <div className="flex-1 overflow-y-auto w-full" role="main">
             {children}
           </div>
         </SidebarInset>
