@@ -13,8 +13,7 @@ import {
   TabsTrigger,
 } from '@rwoc/shadcnui';
 
-
-import { TrendingUp } from 'lucide-react';
+import { TrendingUp, Download } from 'lucide-react';
 import { CalendarDateRangePicker, Overview, RecentSales, NumberAndSecondaryStat } from '@rwoc/shadcnui-blocks';
 import { salesData } from '../../data/salesData';
 
@@ -82,7 +81,7 @@ const DashboardPage: FC = () => {
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
-      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 w-full" data-testid="dashboard-content">
+      <div className="flex-1 space-y-4 p-4 md:p-2 pt-6 w-full" data-testid="dashboard-content">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0" data-testid="dashboard-header">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight" data-testid="dashboard-title">
@@ -91,7 +90,8 @@ const DashboardPage: FC = () => {
           <div className="flex items-center space-x-3" data-testid="dashboard-actions">
             <CalendarDateRangePicker data-testid="date-range-picker" />
             <Button variant="default" data-testid="download-button">
-              Download
+              <span className="hidden sm:inline">Download</span>
+              <Download className="sm:hidden" />
             </Button>
           </div>
         </div>
