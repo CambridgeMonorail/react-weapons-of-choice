@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import {
   NumberAndSecondaryStat,
   NumberAndSecondaryStatProps,
-} from './NumberAndSecondaryStat';
+} from '.';
 
 const meta: Meta<typeof NumberAndSecondaryStat> = {
   title: 'Shadcnui Blocks/NumberAndSecondaryStat',

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
 import { Card, CardContent, CardFooter, Badge } from '@rwoc/shadcnui';
 import { SparkLine } from '../charts/SparkLine';
@@ -67,7 +67,7 @@ const formatValue = (value: number): string => {
  * - `secondaryStats`: An array of objects representing secondary statistics (`value`, `label`, `direction`).
  * - `className`: An optional class name for custom styling.
  */
-export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
+export const NumberAndSecondaryStat: FC<NumberAndSecondaryStatProps> = ({
   mainValue,
   prefix,
   mainLabel,
@@ -76,7 +76,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
   comparison,
   trendline,
   secondaryStats,
-  className = '',
+  className,
 }) => {
   //
   // 1. Comparison logic
@@ -259,7 +259,7 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
 
   return (
     <Card
-      className={`flex flex-col ${className}`}
+      className={`flex flex-col ${className ?? ''}`}
       data-testid="number-and-secondary-stat"
     >
       <CardContent
