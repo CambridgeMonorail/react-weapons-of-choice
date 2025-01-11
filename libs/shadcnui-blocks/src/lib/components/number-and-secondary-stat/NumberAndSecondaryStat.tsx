@@ -94,18 +94,18 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
     const isUp = diff > 0;
     const arrow = isUp ? (
       <ArrowUp
-        className={`h-4 w-4 ${reversedLayout ? 'text-accent' : 'text-primary'}`}
+        className={`h-4 w-4 ${reversedLayout ? 'text-destructive' : 'text-primary'}`}
         data-testid="comparison-arrow-up"
       />
     ) : diff < 0 ? (
       <ArrowDown
-        className={`h-4 w-4 ${reversedLayout ? 'text-primary' : 'text-accent'}`}
+        className={`h-4 w-4 ${reversedLayout ? 'text-primary' : 'text-destructive'}`}
         data-testid="comparison-arrow-down"
       />
     ) : null;
 
     const absoluteText = `${isUp ? '+' : diff < 0 ? '-' : ''}${diffAbsolute}`;
-    const percentText = `${isUp ? '+' : diff < 0 ? '-' : ''}${diffPercent}%`;
+    const percentText = `${isUp ? '+' : diff < 0 ? '' : ''}${diffPercent}%`;
 
     let displayText = '';
     if (displayMode === 'absolute') {

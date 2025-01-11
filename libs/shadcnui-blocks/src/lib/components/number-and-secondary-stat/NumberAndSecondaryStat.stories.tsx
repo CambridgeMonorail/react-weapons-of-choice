@@ -127,7 +127,39 @@ export const GoalDemo: Story = {
 export const ComparisonDemo: Story = {
   name: 'Comparison Demo',
   render: (args: NumberAndSecondaryStatProps) => (
-    <NumberAndSecondaryStat {...args} />
+    <div className="flex space-x-4">
+      <NumberAndSecondaryStat {...args} />
+      <NumberAndSecondaryStat
+        mainValue={1000}
+        mainLabel="Same Value"
+        comparison={{
+          baselineValue: 1000,
+          displayMode: 'percent',
+          label: 'MTD',
+        }}
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={500}
+        mainLabel="Smaller Value"
+        comparison={{
+          baselineValue: 1000,
+          displayMode: 'absolute',
+          label: 'MTD',
+        }}
+        className="w-[230px] h-[230px]"
+      />
+      <NumberAndSecondaryStat
+        mainValue={2000}
+        mainLabel="Larger Value"
+        comparison={{
+          baselineValue: 1000,
+          displayMode: 'percent',
+          label: 'MTD',
+        }}
+        className="w-[230px] h-[230px]"
+      />
+    </div>
   ),
   args: {
     mainValue: 1500,
