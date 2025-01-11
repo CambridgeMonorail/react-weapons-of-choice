@@ -6,6 +6,8 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  CardFooter,
+  Badge,
 } from '@rwoc/shadcnui';
 import { SparkLine } from '../charts/SparkLine';
 
@@ -127,17 +129,25 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
     const goalCurrent =
       current ?? (typeof mainValue === 'number' ? mainValue : 0);
     const percentage = Math.min((goalCurrent / target) * 100, 100);
+    const formattedTarget = formatValue(target);
 
     return (
-      <div className="space-y-1" data-testid="goal-element">
-        {label && (
-          <div className="text-sm text-muted-foreground">
-            {label} (Target: {target})
-          </div>
-        )}
+      <div
+        className="flex flex-col space-y-1 w-full"
+        data-testid="goal-element"
+        role="progressbar"
+        aria-valuenow={goalCurrent}
+        aria-valuemin={0}
+        aria-valuemax={target}
+        aria-valuetext={`${goalCurrent} out of ${target}`}
+      >
+        <div className="flex justify-between items-center px-2">
+          <div className="text-sm font-medium">{percentage.toFixed(1)}%</div>
+          <Badge className="text-xs">{formattedTarget}</Badge>
+        </div>
         {showBar && (
           <div
-            className="relative w-full h-2 bg-secondary rounded"
+            className="relative w-full h-2 bg-secondary rounded mt-auto"
             data-testid="goal-progress-bar-container"
           >
             <div
@@ -147,9 +157,6 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
             />
           </div>
         )}
-        <div className="text-sm font-medium">
-          {goalCurrent} / {target}
-        </div>
       </div>
     );
   }, [goal, mainValue]);
@@ -242,15 +249,19 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
       data-testid="number-and-secondary-stat"
     >
       <CardContent
-        className="flex-grow space-y-2 flex flex-col justify-center"
+        className="flex-grow space-y-2 flex flex-col justify-center p-2 pb-0"
         data-testid="card-content"
       >
         {mainValueElement}
         {comparisonElement}
         {trendlineElement}
         {secondaryStatsElement}
-        {goalElement}
       </CardContent>
+      {goalElement && (
+        <CardFooter className="w-full p-0" data-testid="card-footer">
+          {goalElement}
+        </CardFooter>
+      )}
     </Card>
   );
 };
