@@ -268,8 +268,8 @@ export const NumberAndSecondaryStat: React.FC<NumberAndSecondaryStatProps> = ({
       >
         {mainValueElement}
         {comparisonElement}
-        {trendlineElement}
         {secondaryStatsElement}
+        {trendlineElement}
       </CardContent>
       {goalElement && (
         <CardFooter className="w-full p-0" data-testid="card-footer">

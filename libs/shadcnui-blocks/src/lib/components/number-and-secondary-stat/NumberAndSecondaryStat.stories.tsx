@@ -182,21 +182,24 @@ export const CustomClassName: Story = {
     <NumberAndSecondaryStat {...args} />
   ),
   args: {
-    mainValue: 5678,
+    mainValue: 274057,
     prefix: '€',
     mainLabel: 'Profit',
     reversedLayout: true,
-    goal: { current: 5678, target: 10000, showBar: true, label: 'Profit Goal' },
     comparison: {
-      baselineValue: 5000,
+      baselineValue: 250000,
       displayMode: 'percent',
-      label: 'Compared to last quarter',
+      label: 'QTD',
     },
-    trendline: [200, 300, 400, 500, 600],
-    secondaryStats: [
-      { value: 300, label: 'New Orders', direction: 'up' },
-      { value: 20, label: 'Returned Orders', direction: 'down' },
+    trendline: [
+      38594,
+      39957,
+      35316,
+      35913,
+      36668,
+      45660,
+      41949
     ],
-    className: 'bg-primary text-primary-foreground',
+    className: 'bg-primary text-primary-foreground w-[230px] h-[230px]',
   },
 };
