@@ -15,7 +15,7 @@ import {
 
 
 import { TrendingUp } from 'lucide-react';
-import { CalendarDateRangePicker, Overview, RecentSales } from '@rwoc/shadcnui-blocks';
+import { CalendarDateRangePicker, Overview, RecentSales, NumberAndSecondaryStat } from '@rwoc/shadcnui-blocks';
 import { salesData } from '../../data/salesData';
 
 const ArrowUpIcon = () => (
@@ -77,34 +77,34 @@ const DashboardPage: FC = () => {
 
   return (
     <div
-      className={`h-full min-h-full text-primary-900 flex-col ${
+      data-testid="dashboard-page"
+      className={`h-full min-h-full w-full text-primary-900 flex-col ${
         isMobile ? 'flex' : 'hidden'
       } md:flex`}
     >
-      <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6 w-full" data-testid="dashboard-content">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0" data-testid="dashboard-header">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight" data-testid="dashboard-title">
             Dashboard
           </h2>
-          <div className="flex items-center space-x-3">
-            <CalendarDateRangePicker />
-            <Button
-              variant="default"
-            >
+          <div className="flex items-center space-x-3" data-testid="dashboard-actions">
+            <CalendarDateRangePicker data-testid="date-range-picker" />
+            <Button variant="default" data-testid="download-button">
               Download
             </Button>
           </div>
         </div>
 
         {/* Tabs Section */}
-        <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList className="border-b border-gray-200">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
+        <Tabs defaultValue="overview" className="space-y-4" data-testid="dashboard-tabs">
+          <TabsList className="border-b border-gray-200" data-testid="tabs-list">
+            <TabsTrigger value="overview" data-testid="tab-overview">Overview</TabsTrigger>
             <TabsTrigger
               value="analytics"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-analytics"
             >
               Analytics
             </TabsTrigger>
@@ -112,6 +112,7 @@ const DashboardPage: FC = () => {
               value="reports"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-reports"
             >
               Reports
             </TabsTrigger>
@@ -119,175 +120,76 @@ const DashboardPage: FC = () => {
               value="notifications"
               disabled
               className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              data-testid="tab-notifications"
             >
               Notifications
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="overview" className="space-y-6">
+          <TabsContent value="overview" className="space-y-4" data-testid="tab-content-overview">
             {/* Stats Cards with Trend Arrows and Sparklines */}
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4" data-testid="stats-cards">
               {/* Total Revenue Card */}
-              <Card className="border border-gray-200 bg-primary-50 p-2 md:p-4 hover:shadow-sm transition-shadow flex flex-col items-start">
-                <CardHeader className="flex w-full items-start justify-between">
-                  <div className="flex items-center justify-between w-full">
-                    <CardTitle className="text-sm font-semibold text-primary-700 ml-2">
-                      Total Revenue
-                    </CardTitle>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="h-5 w-5 text-gray-400"
-                    >
-                      <path
-                        d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </CardHeader>
-                <CardContent className="w-full">
-                  <div className="text-2xl font-bold text-primary-900">
-                    $45,231.89
-                  </div>
-                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
-                    <ArrowUpIcon />
-                    <span>+20.1%</span>
-                    <span className="text-gray-500">MoM</span>
-                  </div>
-                  <Sparkline color="text-green-600" />
-                </CardContent>
-              </Card>
+              <NumberAndSecondaryStat
+                mainValue={45231.89}
+                prefix="$"
+                mainLabel="Total Revenue"
+                comparison={{
+                  baselineValue: 37650,
+                  displayMode: 'percent',
+                  label: 'vs last month',
+                }}
+                trendline={[37650, 40000, 42000, 45000, 45231.89]}
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="total-revenue-card"
+              />
 
               {/* Subscriptions Card */}
-              <Card className="border border-gray-200 bg-primary-50 p-2 md:p-4 hover:shadow-sm transition-shadow flex flex-col items-start">
-                <CardHeader className="flex w-full items-start justify-between">
-                  <div className="flex items-center justify-between w-full">
-                    <CardTitle className="text-sm font-semibold text-primary-700 ml-2">
-                      Subscriptions
-                    </CardTitle>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="h-5 w-5 text-gray-400"
-                    >
-                      <path
-                        d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <circle cx="9" cy="7" r="4" />
-                      <path
-                        d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </CardHeader>
-                <CardContent className="w-full">
-                  <div className="text-2xl font-bold text-primary-900">+2,350</div>
-                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
-                    <ArrowUpIcon />
-                    <span>+180.1%</span>
-                    <span className="text-gray-500">MoM</span>
-                  </div>
-                  <Sparkline color="text-green-600" />
-                </CardContent>
-              </Card>
+              <NumberAndSecondaryStat
+                mainValue={2350}
+                mainLabel="Subscriptions"
+                comparison={{
+                  baselineValue: 840,
+                  displayMode: 'percent',
+                  label: 'vs last month',
+                }}
+                trendline={[840, 1200, 1800, 2200, 2350]}
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="subscriptions-card"
+              />
 
               {/* Sales Card */}
-              <Card className="border border-gray-200 bg-primary-50 p-2 md:p-4 hover:shadow-sm transition-shadow flex flex-col items-start">
-                <CardHeader className="flex w-full items-start justify-between">
-                  <div className="flex items-center justify-between w-full">
-                    <CardTitle className="text-sm font-semibold text-primary-700 ml-2">
-                      Sales
-                    </CardTitle>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="h-5 w-5 text-gray-400"
-                    >
-                      <rect
-                        width="20"
-                        height="14"
-                        x="2"
-                        y="5"
-                        rx="2"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M2 10h20"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </CardHeader>
-                <CardContent className="w-full">
-                  <div className="text-2xl font-bold text-primary-900">
-                    +12,234
-                  </div>
-                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
-                    <ArrowUpIcon />
-                    <span>+19%</span>
-                    <span className="text-gray-500">MoM</span>
-                  </div>
-                  <Sparkline color="text-green-600" />
-                </CardContent>
-              </Card>
+              <NumberAndSecondaryStat
+                mainValue={12234}
+                mainLabel="Sales"
+                comparison={{
+                  baselineValue: 10280,
+                  displayMode: 'percent',
+                  label: 'vs last month',
+                }}
+                trendline={[10280, 11000, 11500, 12000, 12234]}
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="sales-card"
+              />
 
               {/* Active Now Card */}
-              <Card className="border border-gray-200 bg-primary-50 p-2 md:p-4 hover:shadow-sm transition-shadow flex flex-col items-start">
-                <CardHeader className="flex w-full items-start justify-between">
-                  <div className="flex items-center justify-between w-full">
-                    <CardTitle className="text-sm font-semibold text-primary-700 ml-2">
-                      Active Now
-                    </CardTitle>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="h-5 w-5 text-gray-400"
-                    >
-                      <path
-                        d="M22 12h-4l-3 9L9 3l-3 9H2"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </CardHeader>
-                <CardContent className="w-full">
-                  <div className="text-2xl font-bold text-primary-900">+573</div>
-                  <div className="flex items-center space-x-1 text-sm text-green-600 mt-1">
-                    <ArrowUpIcon />
-                    <span>+201</span>
-                    <span className="text-gray-500">HoH</span>
-                  </div>
-                  <Sparkline color="text-green-600" />
-                </CardContent>
-              </Card>
+              <NumberAndSecondaryStat
+                mainValue={573}
+                mainLabel="Active Now"
+                comparison={{
+                  baselineValue: 372,
+                  displayMode: 'percent',
+                  label: 'vs last hour',
+                }}
+                trendline={[372, 400, 450, 500, 573]}
+                className="bg-background text-foreground min-w-[220px] min-h-[220px]"
+                data-testid="active-now-card"
+              />
             </div>
 
             {/* Overview and Recent Sales */}
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4">
+            <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7" data-testid="overview-recent-sales">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4" data-testid="visitors-card">
                 <CardHeader className="w-full">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Visitors
@@ -313,7 +215,7 @@ const DashboardPage: FC = () => {
                 </CardFooter>
               </Card>
 
-              <Card className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4">
+              <Card className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4" data-testid="recent-sales-card">
                 <CardHeader className="w-full">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Recent Sales
