@@ -15,8 +15,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  useIsMobile,
 } from '@rwoc/shadcnui';
-import { useIsMobile } from '@rwoc/shadcnui/src/hooks/use-mobile';
+
 import { ReactNode } from 'react';
 
 interface MenubarLayoutProps {
