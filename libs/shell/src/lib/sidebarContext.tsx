@@ -1,7 +1,7 @@
 import { createContext, useContext, ReactNode, ElementType } from 'react';
 import { LucideIcon } from 'lucide-react';
 
-interface SidebarData {
+export interface SidebarData {
   user: { name: string; email: string; avatar: string };
   teams: { name: string; logo: ElementType; plan: string }[];
   navMain: { title: string; url: string; icon?: LucideIcon; isActive?: boolean; items?: { title: string; url: string }[] }[];

@@ -20,10 +20,22 @@ import { SidebarProvider as SidebarDataProvider, SidebarData } from './sidebarCo
 import { Logo } from '@rwoc/shadcnui-blocks';
 
 interface LayoutProps {
+  /** The main content to be displayed within the layout */
   children: ReactNode;
+  /** Data for configuring the sidebar, including user info, teams, and navigation items */
   sidebarData: SidebarData;
 }
 
+/**
+ * Layout component that provides a consistent structure for the application.
+ * It includes a sidebar, header with breadcrumb navigation, theme toggle, and GitHub link.
+ * 
+ * ## When a Sidebar Is Better
+ *
+ * - **Scalability**: Ideal for applications with numerous top-level items, as side navigation can accommodate more links and is easier to expand as the product grows.
+ * - **Customizable Structures**: Supports user-configured navigation, making it suitable for platforms like Slack or Outlook where users manage channels or folders.
+ * - **Vertical Scanning**: Aligns with natural vertical scanning patterns, allowing users to view multiple navigation links simultaneously, enhancing speed and efficiency.
+ */
 export function Layout({ children, sidebarData }: LayoutProps) {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const location = useLocation();
