@@ -9,7 +9,6 @@ import {
   MenubarSubTrigger,
   MenubarSubContent,
   MenubarCheckboxItem,
-  MenubarRadioGroup,
   MenubarRadioItem,
   DropdownMenu,
   DropdownMenuTrigger,
@@ -17,10 +16,9 @@ import {
   DropdownMenuItem,
   useIsMobile,
 } from '@rwoc/shadcnui';
-
 import { ReactNode } from 'react';
 
-interface MenuItem {
+type MenuItem = {
   label: string;
   shortcut?: string;
   disabled?: boolean;
@@ -29,12 +27,12 @@ interface MenuItem {
   checked?: boolean;
   value?: string;
   items?: MenuItem[];
-}
+};
 
-interface MenubarLayoutProps {
+type MenubarLayoutProps = {
   children: ReactNode;
   menuData: MenuItem[];
-}
+};
 
 /**
  * MenubarLayout component provides a responsive navigation menu that adapts
@@ -69,7 +67,7 @@ export function MenubarLayout({ children, menuData }: MenubarLayoutProps) {
           );
         case 'radio':
           return (
-            <MenubarRadioItem key={index} value={item.value}>
+            <MenubarRadioItem key={index} value={item.value || ''}>
               {item.label}
             </MenubarRadioItem>
           );

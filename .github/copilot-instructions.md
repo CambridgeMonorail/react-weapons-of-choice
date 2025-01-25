@@ -8,7 +8,7 @@
 - Testing: Implement Vitest for unit testing and Playwright for end-to-end testing.
 - Accessibility and Responsiveness: Ensure all components are accessible and responsive.
 - Component Exports: Prefer named (explicit) exports over default exports for clarity and better tooling support.
-- Type Definitions: Use interfaces to define object shapes and complex data structures, and types for unions, intersections, or lightweight aliases.
+- Type Definitions: Prefer types for defining object shapes, unions, intersections, and lightweight aliases. Use interfaces only when absolutely necessary, such as when extending or merging object definitions.
 - Imports: Prefer direct named imports, such as importing FC from React, instead of using React.FC. Use relative imports for files within the same project.
 - Styling Consistency: Utilize shadcn theme variables for styling to ensure consistency and ease of customization. Common theme variables include bg-background, text-foreground, primary, primary-foreground, secondary, muted, and accent.
 - Component Design: Prioritize flexibility and maintainability by extending native HTML element props. Use composition to break down complex components into smaller, reusable parts, allowing customization through props, slots, or the children prop. Keep components as stateless as possible, delegating state management to parent components or using React Context when necessary. Follow accessibility best practices and ensure styles are modular and reusable. Write concise, modular, and DRY components, using named exports to promote clarity and reusability.
