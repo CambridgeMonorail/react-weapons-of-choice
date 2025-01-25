@@ -24,6 +24,16 @@ interface MenubarLayoutProps {
   children: ReactNode;
 }
 
+/**
+ * MenubarLayout component provides a responsive navigation menu that adapts
+ * to both desktop and mobile views. On desktop, it displays a traditional
+ * menubar, while on mobile, it uses a dropdown menu.
+ *
+ * ## When a Top Navigation Menu Is Better:
+ * - Space Efficiency: Consumes less screen space, preserving more area for content display, which is beneficial for content-centric websites.
+ * - Hover-Activated Submenus: Facilitates the use of hover-activated submenus and mega menus, which are effective for accommodating a large number of options or revealing lower-level site pages at a glance.
+ * - User Familiarity: Users often expect top navigation on websites, making it a conventional choice that aligns with user expectations.
+ */
 export function MenubarLayout({ children }: MenubarLayoutProps) {
   const isMobile = useIsMobile();
 

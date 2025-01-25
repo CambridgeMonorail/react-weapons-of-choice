@@ -11,14 +11,14 @@ export interface User {
 
 export interface Team {
   name: string;
-  logo: Icon;
+  logo: typeof Icon;
   plan: string;
 }
 
 export interface NavItem {
   title: string;
   url: string;
-  icon?: Icon;
+  icon?: typeof Icon;
   isActive?: boolean;
   items?: NavItem[];
 }
@@ -59,7 +59,9 @@ const meta: Meta<typeof Layout> = {
   decorators: [
     (Story) => (
       <MemoryRouter>
-        <Story />
+        <div style={{ height: '400px' }}>
+          <Story />
+        </div>
       </MemoryRouter>
     ),
   ],
