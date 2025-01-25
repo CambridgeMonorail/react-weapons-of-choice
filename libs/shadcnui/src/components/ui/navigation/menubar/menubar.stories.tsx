@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem, MenubarSeparator, MenubarLabel, MenubarCheckboxItem, MenubarRadioGroup, MenubarRadioItem, MenubarSubContent, MenubarSubTrigger, MenubarSub } from './menubar';
+import { MenubarLayout } from '@rwoc/shell';
 
 const meta: Meta<typeof Menubar> = {
   title: 'Shadcnui/Navigation/Menubar',
@@ -119,5 +120,19 @@ export const WithLabelsAndSeparators: Story = {
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
+  ),
+};
+
+/**
+ * MenubarLayout demonstrating usage of MenubarLayout component.
+ */
+export const MenubarLayoutStory: Story = {
+  render: () => (
+    <MenubarLayout>
+      <div className="p-4">
+        <h1>Content goes here</h1>
+        <p>This is an example of using the MenubarLayout component.</p>
+      </div>
+    </MenubarLayout>
   ),
 };
