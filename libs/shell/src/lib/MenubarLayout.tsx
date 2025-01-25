@@ -20,8 +20,20 @@ import {
 
 import { ReactNode } from 'react';
 
+interface MenuItem {
+  label: string;
+  shortcut?: string;
+  disabled?: boolean;
+  inset?: boolean;
+  type?: 'item' | 'separator' | 'sub' | 'checkbox' | 'radio';
+  checked?: boolean;
+  value?: string;
+  items?: MenuItem[];
+}
+
 interface MenubarLayoutProps {
   children: ReactNode;
+  menuData: MenuItem[];
 }
 
 /**
@@ -34,8 +46,42 @@ interface MenubarLayoutProps {
  * - Hover-Activated Submenus: Facilitates the use of hover-activated submenus and mega menus, which are effective for accommodating a large number of options or revealing lower-level site pages at a glance.
  * - User Familiarity: Users often expect top navigation on websites, making it a conventional choice that aligns with user expectations.
  */
-export function MenubarLayout({ children }: MenubarLayoutProps) {
+export function MenubarLayout({ children, menuData }: MenubarLayoutProps) {
   const isMobile = useIsMobile();
+
+  const renderMenuItems = (items: MenuItem[]) => {
+    return items.map((item, index) => {
+      switch (item.type) {
+        case 'separator':
+          return <MenubarSeparator key={index} />;
+        case 'sub':
+          return (
+            <MenubarSub key={index}>
+              <MenubarSubTrigger>{item.label}</MenubarSubTrigger>
+              <MenubarSubContent>{renderMenuItems(item.items || [])}</MenubarSubContent>
+            </MenubarSub>
+          );
+        case 'checkbox':
+          return (
+            <MenubarCheckboxItem key={index} checked={item.checked}>
+              {item.label}
+            </MenubarCheckboxItem>
+          );
+        case 'radio':
+          return (
+            <MenubarRadioItem key={index} value={item.value}>
+              {item.label}
+            </MenubarRadioItem>
+          );
+        default:
+          return (
+            <MenubarItem key={index} disabled={item.disabled} inset={item.inset}>
+              {item.label} {item.shortcut && <span>{item.shortcut}</span>}
+            </MenubarItem>
+          );
+      }
+    });
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -45,99 +91,19 @@ export function MenubarLayout({ children }: MenubarLayoutProps) {
             <button className="p-2">☰</button>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>File</DropdownMenuItem>
-            <DropdownMenuItem>Edit</DropdownMenuItem>
-            <DropdownMenuItem>View</DropdownMenuItem>
-            <DropdownMenuItem>Profiles</DropdownMenuItem>
+            {menuData.map((menu, index) => (
+              <DropdownMenuItem key={index}>{menu.label}</DropdownMenuItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (
         <Menubar>
-          <MenubarMenu>
-            <MenubarTrigger>File</MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem>
-                New Tab <span>⌘T</span>
-              </MenubarItem>
-              <MenubarItem>
-                New Window <span>⌘N</span>
-              </MenubarItem>
-              <MenubarItem disabled>New Incognito Window</MenubarItem>
-              <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Share</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Email link</MenubarItem>
-                  <MenubarItem>Messages</MenubarItem>
-                  <MenubarItem>Notes</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem>
-                Print... <span>⌘P</span>
-              </MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger>Edit</MenubarTrigger>
-            <MenubarContent>
-              <MenubarItem>
-                Undo <span>⌘Z</span>
-              </MenubarItem>
-              <MenubarItem>
-                Redo <span>⇧⌘Z</span>
-              </MenubarItem>
-              <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Find</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Search the web</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Find...</MenubarItem>
-                  <MenubarItem>Find Next</MenubarItem>
-                  <MenubarItem>Find Previous</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem>Cut</MenubarItem>
-              <MenubarItem>Copy</MenubarItem>
-              <MenubarItem>Paste</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger>View</MenubarTrigger>
-            <MenubarContent>
-              <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
-              <MenubarCheckboxItem checked>
-                Always Show Full URLs
-              </MenubarCheckboxItem>
-              <MenubarSeparator />
-              <MenubarItem inset>
-                Reload <span>⌘R</span>
-              </MenubarItem>
-              <MenubarItem disabled inset>
-                Force Reload <span>⇧⌘R</span>
-              </MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Toggle Fullscreen</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Hide Sidebar</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger>Profiles</MenubarTrigger>
-            <MenubarContent>
-              <MenubarRadioGroup value="benoit">
-                <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-              </MenubarRadioGroup>
-              <MenubarSeparator />
-              <MenubarItem inset>Edit...</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Add Profile...</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
+          {menuData.map((menu, index) => (
+            <MenubarMenu key={index}>
+              <MenubarTrigger>{menu.label}</MenubarTrigger>
+              <MenubarContent>{renderMenuItems(menu.items || [])}</MenubarContent>
+            </MenubarMenu>
+          ))}
         </Menubar>
       )}
       <div className="flex-1 overflow-y-auto w-full" role="main">
