@@ -142,7 +142,7 @@ const Logo: FC<LogoProps> = ({
   }
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="inline-flex items-center">
       <LogoWrapper
         title={title}
         ariaLabel={ariaLabel}
