@@ -1,32 +1,30 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom'; // Import jest-dom for custom matchers
 import { Header } from './index';
-import { Logo } from '@rwoc/shadcnui-blocks';
-import { Button } from '@rwoc/shadcnui';
 import { Home, User, Settings } from 'lucide-react';
 
 describe('Header', () => {
-  const logo = <Logo name="react" />;
-  const actionButtons = [
-    <Button variant="ghost" size="icon"><Home /></Button>,
-    <Button variant="ghost" size="icon"><User /></Button>,
-    <Button variant="ghost" size="icon"><Settings /></Button>,
+  const actionButtonsProps = [
+    { icon: <Home />, label: 'Home' },
+    { icon: <User />, label: 'User' },
+    { icon: <Settings />, label: 'Settings' },
   ];
 
   it('renders the logo and action buttons', () => {
-    render(<Header logo={logo} actionButtons={actionButtons} />);
+    render(<Header logoIcon={<Home />} actionButtonsProps={actionButtonsProps} />);
     expect(screen.getByTestId('logo')).toBeInTheDocument();
     expect(screen.getAllByRole('button')).toHaveLength(3);
   });
 
   it('applies additional class names', () => {
-    render(<Header logo={logo} actionButtons={actionButtons} className="custom-class" />);
-    expect(screen.getByRole('banner')).toHaveClass('custom-class');
+    render(<Header logoIcon={<Home />} actionButtonsProps={actionButtonsProps} className="custom-class" />);
+    expect(screen.getByTestId('header')).toHaveClass('custom-class');
   });
 
   it('is responsive', () => {
-    render(<Header logo={logo} actionButtons={actionButtons} />);
-    const header = screen.getByRole('banner');
-    expect(header).toHaveClass('bg-white', 'shadow-sm');
-    expect(header).toHaveClass('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-6', 'lg:px-8', 'h-16', 'flex', 'items-center', 'justify-between');
+    render(<Header logoIcon={<Home />} actionButtonsProps={actionButtonsProps} />);
+    const header = screen.getByTestId('header');
+    expect(header).toHaveClass('bg-primary', 'text-primary-foreground');
+    expect(header).toHaveClass('flex', 'justify-between', 'p-4', 'items-center');
   });
 });

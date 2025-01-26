@@ -1,8 +1,5 @@
 import { FC, ReactNode } from 'react';
-import {
-  ActionButtons,
-  ActionButtonProps,
-} from '@rwoc/shadcnui-blocks';
+import { ActionButtons, ActionButtonProps } from '@rwoc/shadcnui-blocks';
 import { cn } from '@rwoc/shadcnui';
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -33,6 +30,9 @@ export type HeaderProps = {
   variant?: VariantProps<typeof headerVariants>['variant'];
 };
 
+/**
+ * Header component for displaying a header section with a logo, title, center content, and action buttons.
+ */
 export const Header: FC<HeaderProps> = ({
   actionButtonsProps,
   className,
@@ -42,13 +42,15 @@ export const Header: FC<HeaderProps> = ({
   variant,
 }) => {
   return (
-    <header className={cn(headerVariants({ variant }), className)}>
-      <div className="flex items-center space-x-2 flex-none">
+    <header className={cn(headerVariants({ variant }), className)} data-testid="header">
+      <div className="flex items-center space-x-2 flex-none" data-testid="logo">
         {logoIcon}
         {title && <div>{title}</div>}
       </div>
-      <div className="grow flex justify-center">{centerContent}</div>
-      <div className="flex-none">
+      <div className="grow flex justify-center" data-testid="center-content">
+        {centerContent}
+      </div>
+      <div className="flex-none" data-testid="action-buttons">
         <ActionButtons buttons={actionButtonsProps} />
       </div>
     </header>
