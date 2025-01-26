@@ -45,5 +45,18 @@ export const Default: Story = {
   args: {
     menuItems,
     children: <div className="p-4">Main content goes here</div>,
+    mode: 'below-header',
+  },
+};
+
+/**
+ * HeaderMode story for the MenubarLayout component.
+ * Demonstrates the layout with the responsive nav bar in the header.
+ */
+export const HeaderMode: Story = {
+  args: {
+    menuItems,
+    children: <div className="p-4">Main content goes here</div>,
+    mode: 'header',
   },
 };

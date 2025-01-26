@@ -18,31 +18,36 @@ export type MenuItem = {
 export type MenubarLayoutProps = {
   children: ReactNode
   menuItems: MenuItem[]
+  mode: 'header' | 'below-header'
 }
 
 /**
  * MenubarLayout component renders a layout with a header and a responsive navigation bar.
  * The consuming code is expected to wrap this layout in a router (e.g., HashRouter or BrowserRouter).
  */
-const MenubarLayout: FC<MenubarLayoutProps> = ({ children, menuItems }) => {
+const MenubarLayout: FC<MenubarLayoutProps> = ({ children, menuItems, mode }) => {
   const actionButtonsProps = [
     { icon: <Bell className="h-5 w-5" />, label: "Notifications" },
     { icon: <Settings className="h-5 w-5" />, label: "Settings" },
     { icon: <User className="h-5 w-5" />, label: "User profile" },
   ]
 
+  const renderResponsiveNavBar = () => (
+    <ResponsiveNavBar menuItems={menuItems} data-testid="responsive-nav-bar" />
+  );
+
   return (
     // The consuming code is expected to wrap this layout in a router (e.g., HashRouter or BrowserRouter)
     <div className="min-h-screen flex flex-col" data-testid="menubar-layout">
       <Header
         actionButtonsProps={actionButtonsProps}
-        centerContent={<div className="text-center">Center Content</div>}
+        centerContent={mode === 'header' ? renderResponsiveNavBar() : <div className="text-center"></div>}
         logoIcon={<House />}
         title="MY APPLICATION"
         variant="primary"
         data-testid="header"
       />
-      <ResponsiveNavBar menuItems={menuItems} data-testid="responsive-nav-bar" />
+      {mode === 'below-header' && renderResponsiveNavBar()}
       <main className="flex-grow" data-testid="main-content">{children}</main>
     </div>
   )
