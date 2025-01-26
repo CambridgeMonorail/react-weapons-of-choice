@@ -3,9 +3,9 @@
 import * as React from 'react';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shadcnui';
 import { useSidebarData } from './sidebarContext';
-import { TeamSwitcher } from './nav/TeamSwitcher';
-import { NavMain } from './nav/NavMain';
-import { NavUser } from './nav/NavUser';
+import { TeamSwitcher } from '../nav/TeamSwitcher';
+import { NavMain } from '../nav/NavMain';
+import { NavUser } from '../nav/NavUser';
 
 /**
  * AppSidebar component
