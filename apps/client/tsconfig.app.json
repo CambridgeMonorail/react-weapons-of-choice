@@ -1,0 +1,39 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "types": [
+      "node",
+      "@nx/react/typings/cssmodule.d.ts",
+      "@nx/react/typings/image.d.ts",
+      "vite/client"
+    ]
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.js",
+    "src/**/*.test.js",
+    "src/**/*.spec.jsx",
+    "src/**/*.test.jsx",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "../../libs/shell/src/lib/nav/NavMain.tsx",
+    "../../libs/shell/src/lib/nav/NavUser.tsx",
+    "../../libs/shell/src/lib/nav/TeamSwitcher.tsx",
+    "../../libs/landing/src/lib/components/about-section/index.tsx",
+    "../../libs/landing/src/lib/components/features-section/FeaturesSection.tsx",
+    "../../libs/landing/src/lib/components/footer-section/index.tsx",
+    "../../libs/landing/src/lib/components/get-started-section/StepsSection.tsx",
+    "../../libs/landing/src/lib/components/hero-section/index.tsx",
+    "../../libs/landing/src/lib/components/steps-section/index.tsx"
+  ]
+}

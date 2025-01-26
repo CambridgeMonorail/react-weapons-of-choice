@@ -76,7 +76,7 @@ jobs:
         run: |
           export BASE_URL='/react-weapons-of-choice/'
           export DEBUG='true'
-          pnpm exec nx build demo --configuration=production --base=$BASE_URL
+          pnpm exec nx build client --configuration=production --base=$BASE_URL
 
       - name: Build storybook
         if: env.AUTHOR_NAME != 'Monorail Updater'
@@ -90,7 +90,7 @@ jobs:
         if: env.AUTHOR_NAME != 'Monorail Updater'
         uses: actions/upload-pages-artifact@v1
         with:
-          path: dist/apps/demo # Path to your build output
+          path: dist/apps/client # Path to your build output
 
   # Deploy step (separate job for GitHub Pages deployment)
   deploy:

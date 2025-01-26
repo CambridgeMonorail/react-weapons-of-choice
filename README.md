@@ -137,19 +137,19 @@ To install the project, follow these steps:
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve demo
+npx nx serve client
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build demo
+npx nx build client
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project demo
+npx nx show project client
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
@@ -163,7 +163,7 @@ The following scripts are available to manage and build the project:
 - **Build**
   - `pnpm run build:affected`: Build only the affected projects.
   - `pnpm run build:all`: Build all projects.
-  - `pnpm run build:demo`: Build the demo application.
+  - `pnpm run build:client`: Build the client application.
   - `pnpm run build:shadcnui`: Build the shadcnui library.
 
 - **Clean**
@@ -176,7 +176,7 @@ The following scripts are available to manage and build the project:
 - **Lint**
   - `pnpm run lint:affected`: Lint only the affected projects.
   - `pnpm run lint:all`: Lint all projects.
-  - `pnpm run lint:demo`: Lint the demo application.
+  - `pnpm run lint:client`: Lint the client application.
   - `pnpm run lint:shadcnui`: Lint the shadcnui library.
 
 - **Precommit**
@@ -186,19 +186,19 @@ The following scripts are available to manage and build the project:
   - `pnpm run prepare`: Prepare Husky for Git hooks.
 
 - **Serve**
-  - `pnpm run serve:demo`: Serve the demo application.
+  - `pnpm run serve:client`: Serve the client application.
   - `pnpm run serve:storybook`: Serve the Storybook instance.
 
 - **Test**
   - `pnpm run test:affected`: Test only the affected projects.
   - `pnpm run test:all`: Test all projects.
-  - `pnpm run test:demo`: Test the demo application.
+  - `pnpm run test:client`: Test the client application.
   - `pnpm run test:shadcnui`: Test the shadcnui library.
 
 - **Type-check**
   - `pnpm run type-check:affected`: Type-check only the affected projects.
   - `pnpm run type-check:all`: Type-check all projects.
-  - `pnpm run type-check:demo`: Type-check the demo application.
+  - `pnpm run type-check:client`: Type-check the client application.
   - `pnpm run type-check:shadcnui`: Type-check the shadcnui library.
 
 ## Install Nx Console
@@ -342,7 +342,7 @@ Use the plugin's generator to create new projects.
 To generate a new application, use:
 
 ```sh
-npx nx g @nx/react:app demo
+npx nx g @nx/react:app client
 ```
 
 To generate a new library, use:
