@@ -1,112 +1,52 @@
-import {
-  Menubar,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarContent,
-  MenubarItem,
-  MenubarSeparator,
-  MenubarSub,
-  MenubarSubTrigger,
-  MenubarSubContent,
-  MenubarCheckboxItem,
-  MenubarRadioItem,
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  useIsMobile,
-} from '@rwoc/shadcnui';
-import { ReactNode } from 'react';
-
-type MenuItem = {
-  label: string;
-  shortcut?: string;
-  disabled?: boolean;
-  inset?: boolean;
-  type?: 'item' | 'separator' | 'sub' | 'checkbox' | 'radio';
-  checked?: boolean;
-  value?: string;
-  items?: MenuItem[];
-};
-
-type MenubarLayoutProps = {
-  children: ReactNode;
-  menuData: MenuItem[];
-};
+import type { FC, ReactNode } from "react"
+import { Bell, Settings, User, House } from "lucide-react"
+import { Header } from "@rwoc/landing"
+import { ResponsiveNavBar } from "@rwoc/shadcnui-blocks"
 
 /**
- * MenubarLayout component provides a responsive navigation menu that adapts
- * to both desktop and mobile views. On desktop, it displays a traditional
- * menubar, while on mobile, it uses a dropdown menu.
- *
- * ## When a Top Navigation Menu Is Better:
- * - Space Efficiency: Consumes less screen space, preserving more area for content display, which is beneficial for content-centric websites.
- * - Hover-Activated Submenus: Facilitates the use of hover-activated submenus and mega menus, which are effective for accommodating a large number of options or revealing lower-level site pages at a glance.
- * - User Familiarity: Users often expect top navigation on websites, making it a conventional choice that aligns with user expectations.
+ * MenuItem type defines the structure of each menu item.
  */
-export function MenubarLayout({ children, menuData }: MenubarLayoutProps) {
-  const isMobile = useIsMobile();
+export type MenuItem = {
+  label: string
+  path?: string
+  children?: MenuItem[]
+}
 
-  const renderMenuItems = (items: MenuItem[]) => {
-    return items.map((item, index) => {
-      switch (item.type) {
-        case 'separator':
-          return <MenubarSeparator key={index} />;
-        case 'sub':
-          return (
-            <MenubarSub key={index}>
-              <MenubarSubTrigger>{item.label}</MenubarSubTrigger>
-              <MenubarSubContent>{renderMenuItems(item.items || [])}</MenubarSubContent>
-            </MenubarSub>
-          );
-        case 'checkbox':
-          return (
-            <MenubarCheckboxItem key={index} checked={item.checked}>
-              {item.label}
-            </MenubarCheckboxItem>
-          );
-        case 'radio':
-          return (
-            <MenubarRadioItem key={index} value={item.value || ''}>
-              {item.label}
-            </MenubarRadioItem>
-          );
-        default:
-          return (
-            <MenubarItem key={index} disabled={item.disabled} inset={item.inset}>
-              {item.label} {item.shortcut && <span>{item.shortcut}</span>}
-            </MenubarItem>
-          );
-      }
-    });
-  };
+/**
+ * MenubarLayoutProps type defines the props for the MenubarLayout component.
+ */
+export type MenubarLayoutProps = {
+  children: ReactNode
+  menuItems: MenuItem[]
+}
+
+/**
+ * MenubarLayout component renders a layout with a header and a responsive navigation bar.
+ * The consuming code is expected to wrap this layout in a router (e.g., HashRouter or BrowserRouter).
+ */
+const MenubarLayout: FC<MenubarLayoutProps> = ({ children, menuItems }) => {
+  const actionButtonsProps = [
+    { icon: <Bell className="h-5 w-5" />, label: "Notifications" },
+    { icon: <Settings className="h-5 w-5" />, label: "Settings" },
+    { icon: <User className="h-5 w-5" />, label: "User profile" },
+  ]
 
   return (
-    <div className="flex flex-col h-full w-full">
-      {isMobile ? (
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <button className="p-2">☰</button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            {menuData.map((menu, index) => (
-              <DropdownMenuItem key={index}>{menu.label}</DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-      ) : (
-        <Menubar>
-          {menuData.map((menu, index) => (
-            <MenubarMenu key={index}>
-              <MenubarTrigger>{menu.label}</MenubarTrigger>
-              <MenubarContent>{renderMenuItems(menu.items || [])}</MenubarContent>
-            </MenubarMenu>
-          ))}
-        </Menubar>
-      )}
-      <div className="flex-1 overflow-y-auto w-full" role="main">
-        {children}
-      </div>
+    // The consuming code is expected to wrap this layout in a router (e.g., HashRouter or BrowserRouter)
+    <div className="min-h-screen flex flex-col" data-testid="menubar-layout">
+      <Header
+        actionButtonsProps={actionButtonsProps}
+        centerContent={<div className="text-center">Center Content</div>}
+        logoIcon={<House />}
+        title="MY APPLICATION"
+        variant="primary"
+        data-testid="header"
+      />
+      <ResponsiveNavBar menuItems={menuItems} data-testid="responsive-nav-bar" />
+      <main className="flex-grow" data-testid="main-content">{children}</main>
     </div>
-  );
+  )
 }
+
+export { MenubarLayout }
+

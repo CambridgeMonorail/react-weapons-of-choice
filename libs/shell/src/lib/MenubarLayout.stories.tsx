@@ -1,123 +1,49 @@
-import { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { MenubarLayout, MenuItem } from './MenubarLayout';
+import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof MenubarLayout> = {
-  title: 'Shell/MenubarLayout',
+  title: 'Shadcnui Blocks/MenubarLayout',
   component: MenubarLayout,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [
+    (Story) => (
+      <BrowserRouter>
+        <div style={{ height: '400px' }}>
+          <Story />
+        </div>
+      </BrowserRouter>
+    ),
+  ],
 };
 
 export default meta;
 
 type Story = StoryObj<typeof MenubarLayout>;
 
-const menuData: MenuItem[] = [
+const menuItems: MenuItem[] = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
   {
-    label: 'File',
-    items: [
-      { label: 'New Tab', shortcut: '⌘T' },
-      { label: 'New Window', shortcut: '⌘N' },
-      { label: 'New Incognito Window', disabled: true },
-      { type: 'separator' },
-      {
-        label: 'Share',
-        type: 'sub',
-        items: [
-          { label: 'Email link' },
-          { label: 'Messages' },
-          { label: 'Notes' },
-        ],
-      },
-      { type: 'separator' },
-      { label: 'Print...', shortcut: '⌘P' },
+    label: 'Services',
+    children: [
+      { label: 'Consulting', path: '/services/consulting' },
+      { label: 'Development', path: '/services/development' },
     ],
   },
-  {
-    label: 'Edit',
-    items: [
-      { label: 'Undo', shortcut: '⌘Z' },
-      { label: 'Redo', shortcut: '⇧⌘Z' },
-      { type: 'separator' },
-      {
-        label: 'Find',
-        type: 'sub',
-        items: [
-          { label: 'Search the web' },
-          { type: 'separator' },
-          { label: 'Find...' },
-          { label: 'Find Next' },
-          { label: 'Find Previous' },
-        ],
-      },
-      { type: 'separator' },
-      { label: 'Cut' },
-      { label: 'Copy' },
-      { label: 'Paste' },
-    ],
-  },
-  {
-    label: 'View',
-    items: [
-      { label: 'Always Show Bookmarks Bar', type: 'checkbox' },
-      { label: 'Always Show Full URLs', type: 'checkbox', checked: true },
-      { type: 'separator' },
-      { label: 'Reload', shortcut: '⌘R', inset: true },
-      { label: 'Force Reload', shortcut: '⇧⌘R', inset: true, disabled: true },
-      { type: 'separator' },
-      { label: 'Toggle Fullscreen', inset: true },
-      { type: 'separator' },
-      { label: 'Hide Sidebar', inset: true },
-    ],
-  },
-  {
-    label: 'Profiles',
-    items: [
-      {
-        type: 'radio',
-        value: 'benoit',
-        items: [
-          { label: 'Andy', value: 'andy' },
-          { label: 'Benoit', value: 'benoit' },
-          { label: 'Luis', value: 'luis' },
-        ],
-      },
-      { type: 'separator' },
-      { label: 'Edit...', inset: true },
-      { type: 'separator' },
-      { label: 'Add Profile...', inset: true },
-    ],
-  },
+  { label: 'Contact', path: '/contact' },
 ];
 
 /**
- * Default MenubarLayout for desktop view.
+ * Default story for the MenubarLayout component.
+ * Demonstrates the layout with a set of menu items and some children content.
  */
-export const DesktopView: Story = {
+export const Default: Story = {
   args: {
+    menuItems,
     children: <div className="p-4">Main content goes here</div>,
-    menuData,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'responsive',
-    },
-  },
-};
-
-/**
- * MenubarLayout for mobile view.
- */
-export const MobileView: Story = {
-  args: {
-    children: <div className="p-4">Main content goes here</div>,
-    menuData,
-  },
-  parameters: {
-    viewport: {
-      defaultViewport: 'mobile2',
-    },
   },
 };
