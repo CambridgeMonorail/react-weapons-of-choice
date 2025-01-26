@@ -139,3 +139,33 @@ export const WithCustomClassNames: Story = {
     nameClassName: 'custom-name-class',
   },
 };
+
+/**
+ * Demonstrates the Logo component with custom sizes.
+ */
+export const CustomSizes: Story = {
+  name: 'Custom Sizes',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'shadcn',
+    width: '150px',
+    height: '150px',
+    fill: 'currentColor',
+  },
+};
+
+/**
+ * Demonstrates the Logo component with custom class names for both logo and name.
+ */
+export const CustomClassNames: Story = {
+  name: 'Custom Class Names',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'shadcn',
+    width: '100px',
+    height: '100px',
+    fill: 'currentColor',
+    logoClassName: 'custom-logo-class',
+    nameClassName: 'custom-name-class',
+  },
+};
