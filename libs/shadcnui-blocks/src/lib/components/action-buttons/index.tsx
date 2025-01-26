@@ -60,11 +60,12 @@ export const ActionButton: FC<ActionButtonProps> = ({
  * Props for the ActionButtons component.
  *
  * This interface defines the structure for the props that are passed to the ActionButtons component,
- * which includes an array of ActionButtonProps objects. Each object in the array represents a button
- * with its own icon, label, onClick handler, and optional tooltip.
+ * which includes an array of ActionButtonProps objects and an optional onButtonClick handler.
+ * Each object in the array represents a button with its own icon, label, onClick handler, and optional tooltip.
  */
 export interface ActionButtonsProps {
   buttons: ActionButtonProps[];
+  onButtonClick?: (index: number) => void;
 }
 
 /**
@@ -78,11 +79,18 @@ export interface ActionButtonsProps {
  * a number of action buttons need to be rendered together. It provides a convenient way to group
  * multiple action buttons with consistent styling and optional tooltips.
  */
-export const ActionButtons: FC<ActionButtonsProps> = ({ buttons }) => {
+export const ActionButtons: FC<ActionButtonsProps> = ({ buttons, onButtonClick }) => {
   return (
     <TooltipProvider>
       {buttons.map((button, index) => (
-        <ActionButton key={index} {...button} />
+        <ActionButton
+          key={index}
+          {...button}
+          onClick={() => {
+            button.onClick?.();
+            onButtonClick?.(index);
+          }}
+        />
       ))}
     </TooltipProvider>
   );
