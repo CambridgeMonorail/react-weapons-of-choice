@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react';
 import {
-  Logo,
-  LogoProps,
   ActionButtons,
   ActionButtonProps,
 } from '@rwoc/shadcnui-blocks';
@@ -27,34 +25,32 @@ const headerVariants = cva('flex justify-between p-4 items-center', {
 });
 
 export type HeaderProps = {
-  logoProps: LogoProps;
   actionButtonsProps: ActionButtonProps[];
   className?: string;
   title?: string;
+  logoIcon?: ReactNode;
   centerContent?: ReactNode;
   variant?: VariantProps<typeof headerVariants>['variant'];
 };
 
 export const Header: FC<HeaderProps> = ({
-  logoProps,
   actionButtonsProps,
   className,
   title,
+  logoIcon,
   centerContent,
   variant,
 }) => {
   return (
-    <>
-      <header className={cn(headerVariants({ variant }), className)}>
-        <div className="flex-none">
-          {' '}
-          <Logo {...logoProps} logoClassName="h-4" displayName={title} />
-        </div>
-        <div className="grow flex justify-center"> {centerContent}</div>
-        <div className="flex-none">
-          <ActionButtons buttons={actionButtonsProps} />
-        </div>
-      </header>
-    </>
+    <header className={cn(headerVariants({ variant }), className)}>
+      <div className="flex items-center space-x-2 flex-none">
+        {logoIcon}
+        {title && <div>{title}</div>}
+      </div>
+      <div className="grow flex justify-center">{centerContent}</div>
+      <div className="flex-none">
+        <ActionButtons buttons={actionButtonsProps} />
+      </div>
+    </header>
   );
 };

@@ -7,11 +7,6 @@ const meta: Meta<typeof Header> = {
   component: Header,
   tags: ['autodocs'],
   argTypes: {
-    logoProps: {
-      name: 'Logo Props',
-      control: 'object',
-      description: 'The props for the logo component',
-    },
     actionButtonsProps: {
       name: 'Action Buttons Props',
       control: 'array',
@@ -38,6 +33,11 @@ const meta: Meta<typeof Header> = {
       options: ['primary', 'card', 'secondary', 'muted', 'accent', 'destructive', 'sidebar'],
       description: 'Variant of the header styling',
     },
+    logoIcon: {
+      name: 'Logo Icon',
+      control: 'none',
+      description: 'Icon to display as the logo',
+    },
   },
 };
 
@@ -51,11 +51,11 @@ export const Basic: Story = {
   name: 'Basic',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [{ icon: <Home />, label: 'Home' }],
     title: 'MY APPLICATION',
     centerContent: <div className="text-center">Center Content</div>,
     variant: 'primary',
+    logoIcon: <Home />,
   },
 };
 
@@ -66,7 +66,6 @@ export const MultipleActionButtons: Story = {
   name: 'Multiple Action Buttons',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
@@ -83,7 +82,6 @@ export const CustomClassNames: Story = {
   name: 'Custom Class Names',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
@@ -101,7 +99,6 @@ export const ResponsiveLayout: Story = {
   name: 'Responsive Layout',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
@@ -118,7 +115,6 @@ export const WithTitle: Story = {
   name: 'With Title',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
@@ -136,7 +132,6 @@ export const WithCenterContent: Story = {
   name: 'With Center Content',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
@@ -154,7 +149,6 @@ export const NoActionButtons: Story = {
   name: 'No Action Buttons',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'react' },
     actionButtonsProps: [],
     variant: 'sidebar',
   },
@@ -167,12 +161,12 @@ export const DifferentLogo: Story = {
   name: 'Different Logo',
   render: (args) => <Header {...args} />,
   args: {
-    logoProps: { name: 'tailwind' },
     actionButtonsProps: [
       { icon: <Home />, label: 'Home' },
       { icon: <User />, label: 'User' },
       { icon: <Settings />, label: 'Settings' },
     ],
+    logoIcon: <Home />,
     variant: 'primary',
   },
 };

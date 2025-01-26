@@ -58,17 +58,19 @@ const Logo: FC<LogoProps> = ({
   }
 
   return (
-    <div className="inline-flex items-center">
+    <div className="inline-flex items-center flex-none">
       <LogoWrapper
         title={title}
         ariaLabel={ariaLabel}
-        className={logoClassName}
+        className={`w-auto ${logoClassName || ''}`}
         {...props}
       >
         <LogoComponent />
       </LogoWrapper>
       {displayName && (
-        <span className={`text-lg font-semibold ${nameClassName}`}>
+        <span
+          className={`ml-2 text-lg font-semibold whitespace-nowrap ${nameClassName}`}
+        >
           {displayName}
         </span>
       )}
