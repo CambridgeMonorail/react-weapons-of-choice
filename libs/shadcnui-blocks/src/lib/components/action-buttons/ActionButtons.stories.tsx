@@ -1,65 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ActionButton, ActionButtons, ActionButtonProps, ActionButtonsProps } from './index';
-import { FaBeer, FaCoffee, FaApple } from 'react-icons/fa';
+import { TooltipProvider } from '@rwoc/shadcnui';
+import { ActionButtons, ActionButtonsProps } from './index';
+import { Beer, Coffee, Apple } from 'lucide-react';
 
-const meta: Meta<typeof ActionButton> = {
-  title: 'Shadcnui Blocks/ActionButton',
-  component: ActionButton,
-  tags: ['autodocs'],
-  argTypes: {
-    icon: { control: 'object' },
-    label: { control: 'text' },
-    onClick: { action: 'clicked' },
-    tooltip: { control: 'text' },
-  },
-};
-
-export default meta;
-type Story = StoryObj<typeof ActionButton>;
-
-/**
- * Default story for the ActionButton component.
- * This example shows how to use the ActionButton component with different icons and labels.
- */
-export const Default: Story = {
-  name: 'Default',
-  render: (args: ActionButtonProps) => <ActionButton {...args} />,
-  args: {
-    icon: <FaBeer />,
-    label: 'Beer',
-    tooltip: 'Click for beer',
-  },
-};
-
-/**
- * CustomIcon story for the ActionButton component.
- * This example shows how to use the ActionButton component with a custom icon.
- */
-export const CustomIcon: Story = {
-  name: 'Custom Icon',
-  render: (args: ActionButtonProps) => <ActionButton {...args} />,
-  args: {
-    icon: <FaCoffee />,
-    label: 'Coffee',
-    tooltip: 'Click for coffee',
-  },
-};
-
-/**
- * CustomTooltip story for the ActionButton component.
- * This example shows how to use the ActionButton component with a custom tooltip.
- */
-export const CustomTooltip: Story = {
-  name: 'Custom Tooltip',
-  render: (args: ActionButtonProps) => <ActionButton {...args} />,
-  args: {
-    icon: <FaApple />,
-    label: 'Apple',
-    tooltip: 'Click for apple',
-  },
-};
-
-const metaButtons: Meta<typeof ActionButtons> = {
+const meta: Meta<typeof ActionButtons> = {
   title: 'Shadcnui Blocks/ActionButtons',
   component: ActionButtons,
   tags: ['autodocs'],
@@ -68,14 +12,24 @@ const metaButtons: Meta<typeof ActionButtons> = {
   },
 };
 
+export default meta;
+
+/**
+ * Default story for the ActionButtons component.
+ * This example shows how to use the ActionButtons component with different buttons.
+ */
 export const ActionButtonsDefault: StoryObj<ActionButtonsProps> = {
-  name: 'Default',
-  render: (args) => <ActionButtons {...args} />,
+  name: 'Default ActionButtons',
+  render: (args) => (
+    <TooltipProvider>
+      <ActionButtons {...args} />
+    </TooltipProvider>
+  ),
   args: {
     buttons: [
-      { icon: <FaBeer />, label: 'Beer', tooltip: 'Click for beer' },
-      { icon: <FaCoffee />, label: 'Coffee', tooltip: 'Click for coffee' },
-      { icon: <FaApple />, label: 'Apple', tooltip: 'Click for apple' },
+      { icon: <Beer />, label: 'Beer', tooltip: 'Click for beer' },
+      { icon: <Coffee />, label: 'Coffee', tooltip: 'Click for coffee' },
+      { icon: <Apple />, label: 'Apple', tooltip: 'Click for apple' },
     ],
   },
 };
@@ -84,14 +38,18 @@ export const ActionButtonsDefault: StoryObj<ActionButtonsProps> = {
  * CustomButtons story for the ActionButtons component.
  * This example shows how to use the ActionButtons component with custom buttons.
  */
-export const CustomButtons: StoryObj<ActionButtonsProps> = {
-  name: 'Custom Buttons',
-  render: (args) => <ActionButtons {...args} />,
+export const CustomButtonsActionButtons: StoryObj<ActionButtonsProps> = {
+  name: 'Custom Buttons ActionButtons',
+  render: (args) => (
+    <TooltipProvider>
+      <ActionButtons {...args} />
+    </TooltipProvider>
+  ),
   args: {
     buttons: [
-      { icon: <FaBeer />, label: 'Beer', tooltip: 'Click for beer' },
-      { icon: <FaCoffee />, label: 'Coffee', tooltip: 'Click for coffee' },
-      { icon: <FaApple />, label: 'Apple', tooltip: 'Click for apple' },
+      { icon: <Beer />, label: 'Beer', tooltip: 'Click for beer' },
+      { icon: <Coffee />, label: 'Coffee', tooltip: 'Click for coffee' },
+      { icon: <Apple />, label: 'Apple', tooltip: 'Click for apple' },
     ],
   },
 };
