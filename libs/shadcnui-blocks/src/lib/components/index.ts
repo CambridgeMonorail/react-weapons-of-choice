@@ -13,3 +13,4 @@ export * from './testimonials/index';
 export * from './stats-block/StatItem';
 export * from './stats-block/StatsBlock';
 export * from './number-and-secondary-stat/index';
+export * from './action-buttons/index';

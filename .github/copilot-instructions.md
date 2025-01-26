@@ -2,7 +2,7 @@
 - Package Management: Use pnpm exclusively for installing packages.
 - Code Quality: Write clean, modern, type-safe React functional components that adhere to best practices, emphasizing security, robustness, maintainability, readability, separation of concerns, and the DRY principle.
 - State Management: Utilize React hooks such as useState and useEffect for state management and handling side effects.
-- Styling: Apply Tailwind CSS classes for component styling and prefer shadcn/ui components for consistent UI elements.
+- Styling: Apply Tailwind CSS classes for component styling and prefer shadcn/ui components for consistent UI elements. Import shadcn components from '@rwoc/shadcnui'.
 - Monorepo Organization: Follow the Nx monorepo structure for organizing applications and libraries.
 - TypeScript Practices: Adhere to TypeScript best practices, including strict typing and the use of interfaces.
 - Testing: Implement Vitest for unit testing and Playwright for end-to-end testing.
@@ -13,3 +13,4 @@
 - Styling Consistency: Utilize shadcn theme variables for styling to ensure consistency and ease of customization. Common theme variables include bg-background, text-foreground, primary, primary-foreground, secondary, muted, and accent.
 - Component Design: Prioritize flexibility and maintainability by extending native HTML element props. Use composition to break down complex components into smaller, reusable parts, allowing customization through props, slots, or the children prop. Keep components as stateless as possible, delegating state management to parent components or using React Context when necessary. Follow accessibility best practices and ensure styles are modular and reusable. Write concise, modular, and DRY components, using named exports to promote clarity and reusability.
 - When creating Storybook stories be sure to use the latest syntax, use StoryObj, tags: ['autodocs'], cover the possible component use caseses and make sure the stories have JSDoc comments that explain what they are, the user does not to be told they are stories but what they demonstrate.
+- Icons: Use lucide-react for icons.
