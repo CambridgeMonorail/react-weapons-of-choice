@@ -10,7 +10,7 @@ The project is organized into several key directories:
 
 The `apps` directory contains the main applications within the monorepo. Each application is organized into its own subdirectory. For example:
 
-- `demo`: The main demo application showcasing the features of the RWOC monorepo.
+- `client`: The main client application showcasing the features of the RWOC monorepo.
 
 ### `libs`
 
@@ -37,7 +37,7 @@ The `tools` directory contains custom scripts and tools used for managing the mo
 
 ```
 /apps
-  /demo
+  /client
     /src
       /app
         /components

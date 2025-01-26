@@ -17,10 +17,10 @@
     "paths": {
       "@rwoc/landing": ["libs/landing/src/index.ts"],
       "@rwoc/shadcnui": ["libs/shadcnui/src/index.ts"],
+      "@rwoc/shadcnui-blocks": ["libs/shadcnui-blocks/src/index.ts"],
       "@rwoc/shadcnui/*": ["libs/shadcnui/src/*"],
       "@rwoc/shell": ["libs/shell/src/index.ts"],
       "common-tailwind": ["libs/common-tailwind/src/index.ts"],
-      "@rwoc/shadcnui-blocks": ["libs/shadcnui-blocks/src/index.ts"],
       "storybook-host": ["libs/storybook-host/src/index.ts"]
     }
   },

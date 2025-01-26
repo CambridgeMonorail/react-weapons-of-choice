@@ -4,8 +4,8 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "apps/demo/tailwind.config.js",
-    "css": "apps/demo/src/styles.css",
+    "config": "apps/client/tailwind.config.js",
+    "css": "apps/client/src/styles.css",
     "baseColor": "indigo",
     "cssVariables": true
   },

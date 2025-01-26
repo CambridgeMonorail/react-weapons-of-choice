@@ -1,32 +1,3 @@
-# Navigation Structure
-
-## Table of Contents
-
-1. [Introduction](#introduction)
-2. [Current Navigation Structure](#current-navigation-structure)
-   - [Navigation Configuration File](#navigation-configuration-file)
-3. [Guidelines for Developers](#guidelines-for-developers)
-   - [Adding a New Route](#adding-a-new-route)
-   - [Updating an Existing Route](#updating-an-existing-route)
-   - [Removing a Route](#removing-a-route)
-
-## Introduction
-
-This document provides an overview of the navigation structure for the React Single Page Application (SPA) within the Nrwl Nx Monorepo. The navigation structure is centralized in a single configuration file to ensure consistency and ease of maintenance. This document also includes guidelines for developers on how to add, update, and remove routes.
-
-## Current Navigation Structure
-
-The current navigation structure is centralized in a single configuration file:
-
-1. `apps/client/src/app/constants/navigationConfig.ts`
-
-### Navigation Configuration File
-
-This file centralizes all route paths, routes, and sidebar data in a single object. This ensures consistency and makes it easier to update paths, routes, and sidebar data in one place.
-
-Example:
-
-```typescript
 import { createElement } from 'react';
 import { SidebarConfiguration } from '../types/sidebarTypes';
 import { Swords, AudioWaveform, SquareTerminal, Bot } from 'lucide-react';
@@ -43,10 +14,13 @@ import { FeaturesPage } from '../pages/features/Features';
 import { LibraryPage } from '../pages/library/Library';
 import { NotFound } from '../pages/not-found/NotFound';
 import { PricingPage } from '../pages/pricing/Pricing';
-import { StatusBoardPage } from '../.pages/status-board/StatusBoard';
+import { StatusBoardPage } from '../pages/status-board/StatusBoard';
 import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
 import { Layout } from '@rwoc/shell';
 
+/**
+ * Object containing all the paths used in the application.
+ */
 const paths = {
   landing: '/',
   about: '/about',
@@ -67,6 +41,9 @@ const paths = {
   notFound: '*',
 };
 
+/**
+ * Configuration for the sidebar, including user information, teams, and navigation items.
+ */
 const sidebarData: SidebarConfiguration = {
   user: {
     name: 'rwoc',
@@ -116,12 +93,32 @@ const sidebarData: SidebarConfiguration = {
   ],
 };
 
-const createRoute = (path: string, component: React.ComponentType, useLayout = true) => {
+/**
+ * Helper function to create a route object.
+ * @param path - The URL path for the route.
+ * @param component - The React component to render for the route.
+ * @param useLayout - Whether to wrap the component with the Layout component.
+ * @returns The route object.
+ */
+const createRoute = (
+  path: string,
+  component: React.ComponentType,
+  useLayout = true
+) => {
   return useLayout
-    ? { path, element: createElement(Layout, { sidebarData, children: createElement(component) }) }
+    ? {
+        path,
+        element: createElement(Layout, {
+          sidebarData,
+          children: createElement(component),
+        }),
+      }
     : { path, element: createElement(component) };
 };
 
+/**
+ * Array of route objects for the application.
+ */
 const routes = [
   createRoute(paths.landing, LandingPage, false),
   createRoute(paths.about, AboutPage),
@@ -140,29 +137,11 @@ const routes = [
   createRoute(paths.notFound, NotFound, false),
 ];
 
+/**
+ * Configuration object for navigation, including paths, sidebar data, and routes.
+ */
 export const navigationConfig = {
   paths,
   sidebarData,
   routes,
 };
-```
-
-## Guidelines for Developers
-
-### Adding a New Route
-
-1. Define the new path in the `paths` object in `apps/client/src/app/constants/navigationConfig.ts`.
-2. Add a new entry to the `routes` array in `apps/client/src/app/constants/navigationConfig.ts` with the path and element.
-3. Update the `sidebarData` object in `apps/client/src/app/constants/navigationConfig.ts` to include the new route in the navigation.
-
-### Updating an Existing Route
-
-1. Update the path in the `paths` object in `apps/client/src/app/constants/navigationConfig.ts`.
-2. Modify the corresponding entry in the `routes` array in `apps/client/src/app/constants/navigationConfig.ts`.
-3. Update the `sidebarData` object in `apps/client/src/app/constants/navigationConfig.ts` to reflect the changes in the navigation.
-
-### Removing a Route
-
-1. Remove the path from the `paths` object in `apps/client/src/app/constants/navigationConfig.ts`.
-2. Delete the corresponding entry from the `routes` array in `apps/client/src/app/constants/navigationConfig.ts`.
-3. Update the `sidebarData` object in `apps/client/src/app/constants/navigationConfig.ts` to remove the route from the navigation.
