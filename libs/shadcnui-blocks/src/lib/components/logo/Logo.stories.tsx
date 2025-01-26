@@ -15,6 +15,9 @@ const meta: Meta<typeof Logo> = {
     width: { control: 'text' },
     height: { control: 'text' },
     fill: { control: 'color' },
+    displayName: { control: 'text' },
+    logoClassName: { control: 'text' },
+    nameClassName: { control: 'text' },
   },
 };
 
@@ -102,5 +105,67 @@ export const Storybook: Story = {
     width: '100px',
     height: '100px',
     fill: 'currentColor',
+  },
+};
+
+/**
+ * Demonstrates the Logo component with a display name.
+ */
+export const WithDisplayName: Story = {
+  name: 'With Display Name',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'react',
+    width: '100px',
+    height: '100px',
+    fill: 'currentColor',
+    displayName: 'React',
+  },
+};
+
+/**
+ * Demonstrates the Logo component with custom class names for logo and name.
+ */
+export const WithCustomClassNames: Story = {
+  name: 'With Custom Class Names',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'tailwind',
+    width: '100px',
+    height: '100px',
+    fill: 'currentColor',
+    displayName: 'Tailwind CSS',
+    logoClassName: 'custom-logo-class',
+    nameClassName: 'custom-name-class',
+  },
+};
+
+/**
+ * Demonstrates the Logo component with custom sizes.
+ */
+export const CustomSizes: Story = {
+  name: 'Custom Sizes',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'shadcn',
+    width: '150px',
+    height: '150px',
+    fill: 'currentColor',
+  },
+};
+
+/**
+ * Demonstrates the Logo component with custom class names for both logo and name.
+ */
+export const CustomClassNames: Story = {
+  name: 'Custom Class Names',
+  render: (args: LogoProps) => <Logo {...args} />,
+  args: {
+    name: 'shadcn',
+    width: '100px',
+    height: '100px',
+    fill: 'currentColor',
+    logoClassName: 'custom-logo-class',
+    nameClassName: 'custom-name-class',
   },
 };
