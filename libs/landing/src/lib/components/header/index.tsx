@@ -28,6 +28,7 @@ export type HeaderProps = {
   logoIcon?: ReactNode;
   centerContent?: ReactNode;
   variant?: VariantProps<typeof headerVariants>['variant'];
+  onButtonClick?: (index: number) => void;
 };
 
 /**
@@ -40,6 +41,7 @@ export const Header: FC<HeaderProps> = ({
   logoIcon,
   centerContent,
   variant,
+  onButtonClick,
 }) => {
   return (
     <header className={cn(headerVariants({ variant }), className)} data-testid="header">
@@ -51,7 +53,7 @@ export const Header: FC<HeaderProps> = ({
         {centerContent}
       </div>
       <div className="flex-none" data-testid="action-buttons">
-        <ActionButtons buttons={actionButtonsProps} />
+        <ActionButtons buttons={actionButtonsProps} onButtonClick={onButtonClick} />
       </div>
     </header>
   );
