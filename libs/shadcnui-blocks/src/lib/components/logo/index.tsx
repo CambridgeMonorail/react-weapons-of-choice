@@ -117,12 +117,23 @@ interface LogoProps extends Omit<SVGProps<SVGSVGElement>, 'title'> {
   name: keyof typeof logoMap;
   title?: string;
   ariaLabel?: string;
+  logoClassName?: string; // Optional custom class name for logo
+  nameClassName?: string; // Optional custom class name for name
+  displayName?: string; // Optional display name
 }
 
 /**
  * Logo component that renders different logos based on the provided name.
  */
-const Logo: FC<LogoProps> = ({ name, title, ariaLabel, ...props }) => {
+const Logo: FC<LogoProps> = ({
+  name,
+  title,
+  ariaLabel,
+  logoClassName,
+  nameClassName,
+  displayName,
+  ...props
+}) => {
   const LogoComponent = logoMap[name];
 
   if (!LogoComponent) {
@@ -131,9 +142,21 @@ const Logo: FC<LogoProps> = ({ name, title, ariaLabel, ...props }) => {
   }
 
   return (
-    <LogoWrapper title={title} ariaLabel={ariaLabel} {...props}>
-      <LogoComponent />
-    </LogoWrapper>
+    <div className="flex items-center space-x-2">
+      <LogoWrapper
+        title={title}
+        ariaLabel={ariaLabel}
+        className={logoClassName}
+        {...props}
+      >
+        <LogoComponent />
+      </LogoWrapper>
+      {displayName && (
+        <span className={`text-lg font-semibold ${nameClassName}`}>
+          {displayName}
+        </span>
+      )}
+    </div>
   );
 };
 
