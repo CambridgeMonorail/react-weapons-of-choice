@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="docs/images/logos/app-logo.svg" alt="RWOC Logo" width="25%" height="25%">
+  <img src="docs/images/logos/app-logo.svg" alt="Erisfy Logo" width="25%" height="25%">
 </p>
 
-# react-weapons-of-choice
+# Erisfy
 
 ![Project Status](https://img.shields.io/badge/status-alpha-orange?style=for-the-badge)
-![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
-![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/react-weapons-of-choice/ci.yml?style=for-the-badge)
-![License](https://img.shields.io/github/license/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
-![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/react-weapons-of-choice?style=for-the-badge)
+![Version](https://img.shields.io/github/package-json/v/CambridgeMonorail/erisfy?style=for-the-badge)
+![Build Status](https://img.shields.io/github/actions/workflow/status/CambridgeMonorail/erisfy/ci.yml?style=for-the-badge)
+![License](https://img.shields.io/github/license/CambridgeMonorail/erisfy?style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/CambridgeMonorail/erisfy?style=for-the-badge)
 
 **NOTE: This project is currently in alpha. In fact, it's very alpha. This means it is still under active development and may undergo significant changes. Features may be incomplete or unstable. Got suggestions on what you would like to see or how to make it better? Add an issue and let us know!**
 
@@ -19,7 +19,7 @@
 
 These badges represent the results of Lighthouse audits, which are run to ensure the application meets high standards in performance, accessibility, best practices, and SEO. Note that these audits are conducted for the desktop version of the application, as its primary use case is on desktop, although it is fully responsive.
 
-[View Detailed Lighthouse Report](https://htmlpreview.github.io/?https://github.com/CambridgeMonorail/react-weapons-of-choice/blob/main/lighthouse-badges/cambridgemonorail_github_io_react_weapons_of_choice_.html)
+[View Detailed Lighthouse Report](https://htmlpreview.github.io/?https://github.com/CambridgeMonorail/erisfy/blob/main/lighthouse-badges/cambridgemonorail_github_io_erisfy.html)
 
 ## Table of Contents
 
@@ -42,11 +42,9 @@ These badges represent the results of Lighthouse audits, which are run to ensure
 
 ## Overview
 
-An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
+Erisfy is a fantasy island playground for experimenting with UI and UX for FinTech applications. This repository is a fork of "react-weapons-of-choice" and focuses on building prototype UIs with shadcn/ui components as their foundation. It serves as a sandbox for testing UI/UX concepts and design patterns.
 
-Inspired by and based upon [joshuarobs/nx-shadcn-ui-monorepo](https://github.com/joshuarobs/nx-shadcn-ui-monorepo).
-
-Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/monorepo-setup-with-nx-nextjs-and-shadcn-ui-3b72c3599470>
+The name "Erisfy" is derived from combining "Eris," the Greek goddess of chaos, strife, and discord, with "fy," which stands for finance. Eris was known as Discordia in Roman mythology. Some texts hold her to be one of the eldest goddesses, the daughter of Nyx, the goddess of night, while others say she is the sister of the war god Ares. The combination of "Eris" and "fy" reflects the project's focus on experimenting with UI and UX for FinTech applications, embracing the dynamic and innovative nature of the field.
 
 ## Project Goals
 
@@ -55,6 +53,7 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - **Scalability and Modularity**: Offer a scalable architecture with reusable libraries and clear boundaries between projects.
 - **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
 - **Community Collaboration**: Foster an open-source community to innovate, improve, and expand the project.
+- **Experimentation**: Explore and test new UI/UX concepts and design patterns for FinTech applications.
 
 For a detailed breakdown of the project goals, see [Project Goals](./docs/project-goals.md).
 
@@ -117,13 +116,13 @@ To install the project, follow these steps:
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/CambridgeMonorail/react-weapons-of-choice.git
+    git clone https://github.com/CambridgeMonorail/erisfy.git
     ```
 
 2. Navigate to the project directory:
 
     ```sh
-    cd react-weapons-of-choice
+    cd erisfy
     ```
 
 3. Install dependencies:
