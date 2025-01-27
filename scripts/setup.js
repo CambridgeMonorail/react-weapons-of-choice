@@ -11,6 +11,9 @@
   ---------------------------------------------------------------------------------
 */
 
+import fs from 'fs';
+import path from 'path';
+
 // List of files or globs where we want to do replacements
 // Adjust or expand as needed to reflect your actual file structure.
 function getFilesToReplace() {
@@ -32,6 +35,19 @@ function validateInput(input, regex, errorMessage) {
     return errorMessage;
   }
   return true;
+}
+
+async function deleteDirectoryContents(directoryPath) {
+  try {
+    const files = fs.readdirSync(directoryPath);
+    for (const file of files) {
+      const filePath = path.join(directoryPath, file);
+      fs.unlinkSync(filePath);
+    }
+    console.log(`Deleted contents of directory: ${directoryPath}`);
+  } catch (error) {
+    console.error(`Failed to delete contents of directory: ${directoryPath}`, error);
+  }
 }
 
 (async function main() {
@@ -86,6 +102,12 @@ function validateInput(input, regex, errorMessage) {
         default: 'https://github.com/my-new-org/my-awesome-app.git',
         validate: (input) => validateInput(input, /^(https?|git):\/\/[^\s/$.?#].[^\s]*$/, 'Invalid URL. Please enter a valid Git remote URL.'),
       },
+      {
+        type: 'confirm',
+        name: 'deleteLighthouseBadges',
+        message: 'Would you like to delete the contents of the lighthouse-badges directory?',
+        default: true,
+      },
     ]);
 
     const {
@@ -95,6 +117,7 @@ function validateInput(input, regex, errorMessage) {
       newAbbreviation,
       updateGitRemote,
       newGitUrl,
+      deleteLighthouseBadges,
     } = answers;
 
     console.log("\nStarting the setup process...\n");
@@ -156,7 +179,13 @@ function validateInput(input, regex, errorMessage) {
       }
     }
 
-    // 4. Final instructions
+    // 4. Optionally delete contents of lighthouse-badges directory
+    if (deleteLighthouseBadges) {
+      const lighthouseBadgesPath = path.join(process.cwd(), 'lighthouse-badges');
+      await deleteDirectoryContents(lighthouseBadgesPath);
+    }
+
+    // 5. Final instructions
     console.log(`
 --------------------------------------------------------------------------------
 Setup Complete!
