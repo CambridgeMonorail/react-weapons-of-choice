@@ -3,7 +3,7 @@ import { MenubarLayout, MenuItem } from './MenubarLayout';
 import { BrowserRouter } from 'react-router-dom';
 
 const meta: Meta<typeof MenubarLayout> = {
-  title: 'Shadcnui Blocks/MenubarLayout',
+  title: 'Shell/MenubarLayout',
   component: MenubarLayout,
   tags: ['autodocs'],
   parameters: {
