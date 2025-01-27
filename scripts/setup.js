@@ -11,19 +11,19 @@
   ---------------------------------------------------------------------------------
 */
 
-const inquirer = require('inquirer');
-const replace = require('replace-in-file');
-const { execSync } = require('child_process');
-
 // List of files or globs where we want to do replacements
 // Adjust or expand as needed to reflect your actual file structure.
 function getFilesToReplace() {
   return [
-    'README.md',
+    '.github/workflows/**', 
+    '**/.env', 
+    'apps/client/**', 
+    'libs/**/package.json', 
+    'libs/**/README.md', 
+    'libs/storybook-host/**/*.ts', // Include .ts files in libs/storybook-host
+    'libs/shell/**/*.tsx', // Include .tsx files in libs/shell
     'package.json',
-    '.env',
-    'packages/**/package.json',
-    'packages/**/README.md',
+    'README.md',
   ];
 }
 
@@ -38,8 +38,12 @@ function validateInput(input, regex, errorMessage) {
   try {
     console.log("Welcome to the setup script! Let's get started.\n");
 
+    // Dynamically import inquirer and child_process
+    const inquirer = await import('inquirer');
+    const { execSync } = await import('child_process');
+
     // 1. Prompt the user for new values
-    const answers = await inquirer.prompt([
+    const answers = await inquirer.default.prompt([
       {
         type: 'input',
         name: 'newOrgName',
@@ -100,7 +104,8 @@ function validateInput(input, regex, errorMessage) {
 
     try {
       console.log("Replacing text in files...");
-      const result = await replace({
+      const { replaceInFile } = await import('replace-in-file');
+      const result = await replaceInFile({
         files: filesToReplace,
         from: [
           /CambridgeMonorail/g,         // old GitHub Org
