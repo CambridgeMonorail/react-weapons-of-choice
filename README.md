@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logos/rwoc-logo.svg" alt="RWOC Logo" width="25%" height="25%">
+  <img src="docs/images/logos/app-logo.svg" alt="RWOC Logo" width="25%" height="25%">
 </p>
 
 # react-weapons-of-choice
@@ -246,6 +246,9 @@ You can update project identifiers either **manually** or by using the **setup s
    - URLs  
    - Branding elements  
    - Any other relevant identifiers  
+   - **Images**: Replace the following images with ones suitable for your use case:
+     - `apps\client\src\assets\images\app-logo.webp`
+     - `docs/images/logos/app-logo.svg`
 
 2. Ensure **all** instances of the original project name are replaced with your new project name.
 

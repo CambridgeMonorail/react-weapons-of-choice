@@ -11,19 +11,22 @@
   ---------------------------------------------------------------------------------
 */
 
-const inquirer = require('inquirer');
-const replace = require('replace-in-file');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
 
 // List of files or globs where we want to do replacements
 // Adjust or expand as needed to reflect your actual file structure.
 function getFilesToReplace() {
   return [
-    'README.md',
+    '.github/workflows/**', 
+    '**/.env', 
+    'apps/client/**', 
+    'libs/**/package.json', 
+    'libs/**/README.md', 
+    'libs/storybook-host/**/*.ts', // Include .ts files in libs/storybook-host
+    'libs/shell/**/*.tsx', // Include .tsx files in libs/shell
     'package.json',
-    '.env',
-    'packages/**/package.json',
-    'packages/**/README.md',
+    'README.md',
   ];
 }
 
@@ -34,12 +37,29 @@ function validateInput(input, regex, errorMessage) {
   return true;
 }
 
+async function deleteDirectoryContents(directoryPath) {
+  try {
+    const files = fs.readdirSync(directoryPath);
+    for (const file of files) {
+      const filePath = path.join(directoryPath, file);
+      fs.unlinkSync(filePath);
+    }
+    console.log(`Deleted contents of directory: ${directoryPath}`);
+  } catch (error) {
+    console.error(`Failed to delete contents of directory: ${directoryPath}`, error);
+  }
+}
+
 (async function main() {
   try {
     console.log("Welcome to the setup script! Let's get started.\n");
 
+    // Dynamically import inquirer and child_process
+    const inquirer = await import('inquirer');
+    const { execSync } = await import('child_process');
+
     // 1. Prompt the user for new values
-    const answers = await inquirer.prompt([
+    const answers = await inquirer.default.prompt([
       {
         type: 'input',
         name: 'newOrgName',
@@ -82,6 +102,12 @@ function validateInput(input, regex, errorMessage) {
         default: 'https://github.com/my-new-org/my-awesome-app.git',
         validate: (input) => validateInput(input, /^(https?|git):\/\/[^\s/$.?#].[^\s]*$/, 'Invalid URL. Please enter a valid Git remote URL.'),
       },
+      {
+        type: 'confirm',
+        name: 'deleteLighthouseBadges',
+        message: 'Would you like to delete the contents of the lighthouse-badges directory?',
+        default: true,
+      },
     ]);
 
     const {
@@ -91,6 +117,7 @@ function validateInput(input, regex, errorMessage) {
       newAbbreviation,
       updateGitRemote,
       newGitUrl,
+      deleteLighthouseBadges,
     } = answers;
 
     console.log("\nStarting the setup process...\n");
@@ -100,7 +127,8 @@ function validateInput(input, regex, errorMessage) {
 
     try {
       console.log("Replacing text in files...");
-      const result = await replace({
+      const { replaceInFile } = await import('replace-in-file');
+      const result = await replaceInFile({
         files: filesToReplace,
         from: [
           /CambridgeMonorail/g,         // old GitHub Org
@@ -151,7 +179,13 @@ function validateInput(input, regex, errorMessage) {
       }
     }
 
-    // 4. Final instructions
+    // 4. Optionally delete contents of lighthouse-badges directory
+    if (deleteLighthouseBadges) {
+      const lighthouseBadgesPath = path.join(process.cwd(), 'lighthouse-badges');
+      await deleteDirectoryContents(lighthouseBadgesPath);
+    }
+
+    // 5. Final instructions
     console.log(`
 --------------------------------------------------------------------------------
 Setup Complete!

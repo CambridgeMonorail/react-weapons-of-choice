@@ -48,7 +48,7 @@ const sidebarData: SidebarConfiguration = {
   user: {
     name: 'rwoc',
     email: 'm@example.com',
-    avatar: 'react-weapons-of-choice/assets/images/avatars/rwoc.jpg',
+    avatar: 'react-weapons-of-choice/assets/images/avatars/avatar.jpg',
   },
   teams: [
     {
