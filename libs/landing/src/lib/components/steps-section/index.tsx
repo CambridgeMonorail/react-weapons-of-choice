@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Button } from '@rwoc/shadcnui';
-import { Steps, Step } from '@rwoc/shadcnui-blocks';
+import { Button } from '@erisfy/shadcnui';
+import { Steps, Step } from '@erisfy/shadcnui-blocks';
 
 /**
  * Props for the StepsSection component.

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, Tooltip } from "@rwoc/shadcnui";
+import { Card, CardContent, CardHeader, CardTitle, Tooltip } from "@erisfy/shadcnui";
 import { BarChart, ResponsiveContainer, XAxis, YAxis, Bar } from "recharts";
 
 interface TargetAchievementData {

@@ -104,8 +104,8 @@ export const TermsAndConditionsPage: FC = () => {
         <p>
           If you have any questions about these Terms and Conditions, please
           contact us at{' '}
-          <a href="mailto:contact@rwoc.dev" className="text-accent underline">
-            contact@rwoc.dev
+          <a href="mailto:contact@erisfy.dev" className="text-accent underline">
+            contact@erisfy.dev
           </a>
           .
         </p>

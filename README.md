@@ -269,7 +269,7 @@ You can update project identifiers either **manually** or by using the **setup s
    - **Organization**: e.g., “CambridgeMonorail” → “YourOrgName”  
    - **Machine-Readable App Name**: e.g., “react-weapons-of-choice” → “my-awesome-app”  
    - **Human-Readable App Name**: e.g., “React Weapons of Choice” → “My Awesome App”  
-   - **Abbreviation**: e.g., “rwoc” → “maa”  
+   - **Abbreviation**: e.g., “erisfy” → “maa”  
 
    You will also have the option to set a **new Git remote** URL.
 

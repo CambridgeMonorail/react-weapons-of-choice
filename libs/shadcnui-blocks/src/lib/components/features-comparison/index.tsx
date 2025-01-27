@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@rwoc/shadcnui';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@erisfy/shadcnui';
 import { Check, X } from 'lucide-react';
 
 /**

@@ -20,9 +20,9 @@ import {
   Footer,
   StepsSection,
   HeroSection,
-} from '@rwoc/landing';
-import { Logo, Tagline } from '@rwoc/shadcnui-blocks';
-import { LogoCarousel } from '@rwoc/shadcnui-blocks'; // Pfa41
+} from '@erisfy/landing';
+import { Logo, Tagline } from '@erisfy/shadcnui-blocks';
+import { LogoCarousel } from '@erisfy/shadcnui-blocks'; // Pfa41
 
 export const LandingPage: FC = () => {
   const navigate = useNavigate();

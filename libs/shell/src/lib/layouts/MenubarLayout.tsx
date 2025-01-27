@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from "react"
 import { Bell, Settings, User, House } from "lucide-react"
-import { Header } from "@rwoc/landing"
-import { ResponsiveNavBar } from "@rwoc/shadcnui-blocks"
+import { Header } from "@erisfy/landing"
+import { ResponsiveNavBar } from "@erisfy/shadcnui-blocks"
 
 /**
  * MenuItem type defines the structure of each menu item.

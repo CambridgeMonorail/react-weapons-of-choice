@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, Button } from '@rwoc/shadcnui';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, Button } from '@erisfy/shadcnui';
 
 /**
  * Interface representing a pricing tier.

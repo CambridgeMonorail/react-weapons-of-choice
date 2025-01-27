@@ -45,7 +45,7 @@ import { NotFound } from '../pages/not-found/NotFound';
 import { PricingPage } from '../pages/pricing/Pricing';
 import { StatusBoardPage } from '../.pages/status-board/StatusBoard';
 import { TermsAndConditionsPage } from '../pages/terms-and-conditions/TermsAndConditions';
-import { Layout } from '@rwoc/shell';
+import { Layout } from '@erisfy/shell';
 
 const paths = {
   landing: '/',
@@ -69,18 +69,18 @@ const paths = {
 
 const sidebarData: SidebarConfiguration = {
   user: {
-    name: 'rwoc',
+    name: 'erisfy',
     email: 'm@example.com',
     avatar: 'react-weapons-of-choice/assets/images/avatars/avatar.jpg',
   },
   teams: [
     {
-      name: 'RWOC',
+      name: 'erisfy',
       logo: Swords,
       plan: 'Enterprise',
     },
     {
-      name: 'RWOC Corp.',
+      name: 'erisfy Corp.',
       logo: AudioWaveform,
       plan: 'Startup',
     },

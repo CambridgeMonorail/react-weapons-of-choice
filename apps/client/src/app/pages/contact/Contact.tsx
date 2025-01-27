@@ -8,7 +8,7 @@ import {
   Input,
   Textarea,
   Button,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 
 const ContactPage: FC = () => {
   return (

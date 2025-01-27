@@ -4,16 +4,16 @@ import { Meta } from '@storybook/blocks';
 
 ## Introduction
 
-Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides an overview of the various libraries available within the monorepo, each designed to help you build a consistent, maintainable, and cohesive application.
+Welcome to the React Weapons of Choice (erisfy) monorepo. This document provides an overview of the various libraries available within the monorepo, each designed to help you build a consistent, maintainable, and cohesive application.
 
 ## Overview of Libraries
 
-#### 1. **`@rwoc/shadcnui`**
-- **Description**: A library providing base UI components styled with @rwoc/shadcnui, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
+#### 1. **`@erisfy/shadcnui`**
+- **Description**: A library providing base UI components styled with @erisfy/shadcnui, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
 - **Usage**: Use these components to maintain a cohesive design system throughout the application.
 - **Example**:
   ```tsx
-  import { Switch, Table, TableRow, TableCell } from '@rwoc/shadcnui';
+  import { Switch, Table, TableRow, TableCell } from '@erisfy/shadcnui';
 
   const Settings = () => (
     <div>
@@ -28,14 +28,14 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
   );
   ```
 
-For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.com/).
+For more information on @erisfy/shadcnui, visit their [website](https://ui.shadcn.com/).
 
-#### 2. **`@rwoc/shadcnui-blocks`**
+#### 2. **`@erisfy/shadcnui-blocks`**
 - **Description**: A collection of composite UI components built from the base Shadcn UI components. The library includes components such as buttons, cards, dialogs, and more.
 - **Usage**: Import and use these components to build consistent and cohesive user interfaces.
 - **Example**:
   ```tsx
-  import { Button, Card, Dialog } from '@rwoc/shadcnui-blocks';
+  import { Button, Card, Dialog } from '@erisfy/shadcnui-blocks';
 
   const App = () => (
     <div>
@@ -48,23 +48,23 @@ For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.
   );
   ```
 
-#### 3. **`@rwoc/common-tailwind`**
+#### 3. **`@erisfy/common-tailwind`**
 - **Description**: A library containing common Tailwind CSS configurations and utility classes used across the monorepo. It includes preflight styles and theme configurations.
 - **Usage**: Import the CSS files to apply consistent styling and utility classes throughout the application.
 - **Example**:
   ```css
-  @import '@rwoc/common-tailwind/src/preflight.css';
-  @import '@rwoc/common-tailwind/src/shadcn-theme.css';
+  @import '@erisfy/common-tailwind/src/preflight.css';
+  @import '@erisfy/common-tailwind/src/shadcn-theme.css';
   ```
 
 For more information on Tailwind CSS, visit their [website](https://tailwindcss.com/).
 
-#### 4. **`@rwoc/landing`**
+#### 4. **`@erisfy/landing`**
 - **Description**: A library containing components and sections specifically designed for the landing pages of the application. It includes sections like Hero, About, CTA, and more.
 - **Usage**: Use these components to build engaging and informative landing pages.
 - **Example**:
   ```tsx
-  import { HeroSection, AboutSection, CTASection } from '@rwoc/landing';
+  import { HeroSection, AboutSection, CTASection } from '@erisfy/landing';
 
   const LandingPage = () => (
     <div>
@@ -75,12 +75,12 @@ For more information on Tailwind CSS, visit their [website](https://tailwindcss.
   );
   ```
 
-#### 5. **`@rwoc/shell`**
+#### 5. **`@erisfy/shell`**
 - **Description**: A library providing layout components and utilities for the overall structure of the application. It includes components like `Layout`, `AppSidebar`, `Breadcrumb`, and more.
 - **Usage**: Use these components to create a consistent and responsive layout for the application.
 - **Example**:
   ```tsx
-  import { Layout, AppSidebar, Breadcrumb } from '@rwoc/shell';
+  import { Layout, AppSidebar, Breadcrumb } from '@erisfy/shell';
 
   const App = () => (
     <Layout>
@@ -97,11 +97,11 @@ For more information on Tailwind CSS, visit their [website](https://tailwindcss.
 
 The monorepo is organized into several libraries, each serving a specific purpose to ensure a modular, maintainable, and cohesive codebase. These libraries include:
 
-- **`@rwoc/shadcnui`**: Base @rwoc/shadcnui components.
-- **`@rwoc/shadcnui-blocks`**: Composite UI components built from @rwoc/shadcnui components.
-- **`@rwoc/common-tailwind`**: Common Tailwind CSS configurations.
-- **`@rwoc/landing`**: Components for landing pages.
-- **`@rwoc/shell`**: Layout components and utilities.
+- **`@erisfy/shadcnui`**: Base @erisfy/shadcnui components.
+- **`@erisfy/shadcnui-blocks`**: Composite UI components built from @erisfy/shadcnui components.
+- **`@erisfy/common-tailwind`**: Common Tailwind CSS configurations.
+- **`@erisfy/landing`**: Components for landing pages.
+- **`@erisfy/shell`**: Layout components and utilities.
 
 By leveraging these libraries, you can build a consistent and maintainable application with a clear separation of concerns.
 

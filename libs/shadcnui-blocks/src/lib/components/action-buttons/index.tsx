@@ -5,7 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
   TooltipContent,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 
 /**
  * Props for the ActionButton component.

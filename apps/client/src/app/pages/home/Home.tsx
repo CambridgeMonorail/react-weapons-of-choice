@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 
 interface ComponentDefinition {
   name: string;

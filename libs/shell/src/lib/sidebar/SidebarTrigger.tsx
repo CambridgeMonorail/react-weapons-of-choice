@@ -1,4 +1,4 @@
-import { Button } from '@rwoc/shadcnui';
+import { Button } from '@erisfy/shadcnui';
 import { useSidebar } from './SidebarProvider';
 import { Menu } from 'lucide-react';
 

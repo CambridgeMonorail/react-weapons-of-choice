@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@rwoc/shadcnui";
+import { Card, CardContent, CardHeader, CardTitle, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@erisfy/shadcnui";
 import { AlertCircle, AlertTriangle, Table } from "lucide-react";
 
 interface StatePerformanceData {

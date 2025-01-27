@@ -10,14 +10,14 @@ import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 import { AppSidebar } from './AppSidebar';
 import { ReactNode } from 'react';
 import { Moon, Sun, Github } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SidebarProvider as SidebarDataProvider, SidebarData } from './sidebarContext';
-import { Logo } from '@rwoc/shadcnui-blocks';
+import { Logo } from '@erisfy/shadcnui-blocks';
 
 interface LayoutProps {
   /** The main content to be displayed within the layout */

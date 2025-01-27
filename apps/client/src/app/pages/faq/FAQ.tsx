@@ -6,7 +6,7 @@ import {
   CardTitle,
   CardDescription,
   Input,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 
 interface FAQ {
   question: string;

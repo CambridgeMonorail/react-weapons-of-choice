@@ -79,18 +79,18 @@ export const Default: Story = {
   args: {
     sidebarData: {
       user: {
-        name: 'rwoc',
+        name: 'erisfy',
         email: 'm@example.com',
-        avatar: 'react-weapons-of-choice/assets/images/avatars/rwoc.jpg',
+        avatar: 'react-weapons-of-choice/assets/images/avatars/erisfy.jpg',
       },
       teams: [
         {
-          name: 'RWOC',
+          name: 'erisfy',
           logo: Swords,
           plan: 'Enterprise',
         },
         {
-          name: 'RWOC Corp.',
+          name: 'erisfy Corp.',
           logo: AudioWaveform,
           plan: 'Startup',
         },

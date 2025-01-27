@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react';
-import { Button } from '@rwoc/shadcnui'; // Import shadcn Button component
+import { Button } from '@erisfy/shadcnui'; // Import shadcn Button component
 
 /**
  * Possible color variants for the HeroSection.

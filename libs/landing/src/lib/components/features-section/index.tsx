@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
+import { Card, CardHeader, CardTitle, CardDescription } from '@erisfy/shadcnui';
 
 interface Feature {
   title: string;

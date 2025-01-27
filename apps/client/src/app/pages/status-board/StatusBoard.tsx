@@ -20,9 +20,9 @@ import {
   Button,
   Input,
   Textarea,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 import { useEffect, useState } from 'react';
-import { Logo } from '@rwoc/shadcnui-blocks';
+import { Logo } from '@erisfy/shadcnui-blocks';
 import { navigationConfig } from '../../constants/navigationConfig';
 
 const chartConfig = {

@@ -10,7 +10,7 @@
     "cssVariables": true
   },
   "aliases": {
-    "components": "@rwoc/shadcnui/components",
-    "utils": "@rwoc/shadcnui/lib/utils"
+    "components": "@erisfy/shadcnui/components",
+    "utils": "@erisfy/shadcnui/lib/utils"
   }
 }

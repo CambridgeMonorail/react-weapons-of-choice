@@ -2,7 +2,7 @@ import { useState } from "react";
 import { format, startOfMonth, endOfMonth } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
-import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@rwoc/shadcnui";
+import { Button, Calendar, cn, Popover, PopoverContent, PopoverTrigger } from "@erisfy/shadcnui";
 
 /**
  * CalendarDateRangePicker component allows users to select a date range using a calendar popover.

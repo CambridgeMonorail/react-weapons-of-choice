@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
-import { Button, Sheet, SheetContent, SheetTrigger, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, useMediaQuery } from "@rwoc/shadcnui";
+import { Button, Sheet, SheetContent, SheetTrigger, NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, useMediaQuery } from "@erisfy/shadcnui";
 
 type MenuItem = {
   label: string;

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '@rwoc/shadcnui';
+import { Avatar, AvatarFallback, AvatarImage } from '@erisfy/shadcnui';
 
 interface Sale {
   name: string;

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { ActionButtons, ActionButtonProps } from '@rwoc/shadcnui-blocks';
-import { cn } from '@rwoc/shadcnui';
+import { ActionButtons, ActionButtonProps } from '@erisfy/shadcnui-blocks';
+import { cn } from '@erisfy/shadcnui';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 // Define header variants using cva

@@ -2,7 +2,7 @@
 - Package Management: Use pnpm exclusively for installing packages.
 - Code Quality: Write clean, modern, type-safe React functional components that adhere to best practices, emphasizing security, robustness, maintainability, readability, separation of concerns, and the DRY principle.
 - State Management: Utilize React hooks such as useState and useEffect for state management and handling side effects.
-- Styling: Apply Tailwind CSS classes for component styling and prefer shadcn/ui components for consistent UI elements. Import shadcn components from '@rwoc/shadcnui'.
+- Styling: Apply Tailwind CSS classes for component styling and prefer shadcn/ui components for consistent UI elements. Import shadcn components from '@erisfy/shadcnui'.
 - Monorepo Organization: Follow the Nx monorepo structure for organizing applications and libraries.
 - TypeScript Practices: Adhere to TypeScript best practices, including strict typing and the use of interfaces.
 - Testing: Implement Vitest for unit testing and Playwright for end-to-end testing.

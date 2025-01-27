@@ -5,14 +5,14 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-} from '@rwoc/shadcnui';
+} from '@erisfy/shadcnui';
 
 import { navigationConfig } from '../../constants/navigationConfig';
 import { Github, Twitter } from 'lucide-react';
 import imageSrc from '../../../assets/images/undraw_our_solution.svg';
 
-import { CTASection, Footer, HeroSection } from '@rwoc/landing';
-import { TestimonialsSection } from '@rwoc/shadcnui-blocks';
+import { CTASection, Footer, HeroSection } from '@erisfy/landing';
+import { TestimonialsSection } from '@erisfy/shadcnui-blocks';
 
 interface TeamMember {
   name: string;
@@ -75,14 +75,14 @@ const AboutPage: FC = () => {
           Company Overview
         </h2>
         <p>
-          React Weapons of Choice (RWOC) was founded with the goal of
+          React Weapons of Choice (erisfy) was founded with the goal of
           simplifying React SPA development. Our project aims to provide a
           comprehensive boilerplate that integrates modern tools and best
           practices.
         </p>
         <h3 className="text-2xl font-bold mb-2 mt-6 text-primary">History</h3>
         <p>
-          RWOC was born out of the need for a streamlined development process.
+          erisfy was born out of the need for a streamlined development process.
           Over the years, we have achieved several milestones, including the
           integration of Nx, Tailwind CSS, and Shadcn UI.
         </p>
@@ -131,7 +131,7 @@ const AboutPage: FC = () => {
           )
         }
         buttonText="Contribute on GitHub"
-        description="Learn how you can contribute to RWOC and collaborate with the community."
+        description="Learn how you can contribute to erisfy and collaborate with the community."
         title="Community and Contributions"
         variant="light"
       />
@@ -146,7 +146,7 @@ const AboutPage: FC = () => {
       <section className="p-6 m-4">
         <h2 className="text-3xl font-bold mb-4 text-primary">Call to Action</h2>
         <p>
-          Engage with RWOC by contributing, providing feedback, or utilizing the
+          Engage with erisfy by contributing, providing feedback, or utilizing the
           boilerplate for your projects.
         </p>
       </section>

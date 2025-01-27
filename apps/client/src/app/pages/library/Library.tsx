@@ -1,4 +1,4 @@
-import { Button } from '@rwoc/shadcnui';
+import { Button } from '@erisfy/shadcnui';
 import imageSrc from '../../../assets/images/shad-samples.svg';
 
 /**

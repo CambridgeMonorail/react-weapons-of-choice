@@ -1,4 +1,4 @@
-import { LogoCarousel } from '@rwoc/shadcnui-blocks';
+import { LogoCarousel } from '@erisfy/shadcnui-blocks';
 import { ReactElement } from 'react';
 
 /**

@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@rwoc/shadcnui';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@erisfy/shadcnui';
 import { useSidebarData } from './sidebarContext';
 import { TeamSwitcher } from '../nav/TeamSwitcher';
 import { NavMain } from '../nav/NavMain';

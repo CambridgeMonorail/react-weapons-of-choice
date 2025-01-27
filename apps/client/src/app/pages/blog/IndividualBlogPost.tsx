@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@rwoc/shadcnui';
+import { Card, CardHeader, CardTitle, CardDescription } from '@erisfy/shadcnui';
 
 const IndividualBlogPostPage: FC = () => {
   return (
