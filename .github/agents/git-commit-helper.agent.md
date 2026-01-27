@@ -95,9 +95,9 @@ git add -A
 
 ```
 
-### 3. Determine the JIRA ID
+### 3. Determine the issue reference
 
-Attempt to infer the JIRA ID in this order:
+Attempt to infer the GitHub issue number in this order:
 
 1. Current branch name:
 
@@ -111,9 +111,9 @@ Look for patterns like `feature/client-auth` or `fix/shadcnui-button`.
 
 2. If not found, ask the user once:
 
-- “What is the JIRA ID for this commit?”
+- "What is the GitHub issue number for this commit?"
 
-If the JIRA ID is still not available, stop.
+If no issue is associated, proceed without issue reference.
 
 ### 4. Determine commit type and description
 
@@ -147,7 +147,7 @@ Look at the changed files to determine if a multi-line commit message is appropr
 After confirmation, run:
 
 ```
-git commit -m "<type>(<JIRA-ID>): <description>
+git commit -m "<type>(#<issue>): <description>
 
 <optional body>"
 ```
@@ -195,7 +195,7 @@ After confirmation, run:
 
 ```
 
-git commit -m "<type>(<JIRA-ID>): <description>"
+git commit -m "<type>(#<issue>): <description>"
 
 ```
 

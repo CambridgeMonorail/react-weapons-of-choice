@@ -9,7 +9,7 @@ You produce implementation plans that are:
 - Broken into discrete, reviewable chunks (avoiding large PRs)
 - Aligned with existing project patterns and structure
 - Validated at each stage with typecheck, lint, and tests
-- Ready to convert into Jira tickets for team execution
+- Ready to convert into GitHub issues for team execution
 
 ## Operating rules
 
@@ -359,7 +359,7 @@ Use standardized prefixes for all plan elements:
 - **RISK-nnn**: Identified risks
 - **ASM-nnn**: Assumptions
 
-These identifiers make plans machine-parseable and easier to reference in Jira tickets.
+These identifiers make plans machine-parseable and easier to reference in GitHub issues.
 
 ### Status values
 
@@ -412,7 +412,7 @@ Replace `[project-name]` with the actual project (e.g., `client`).
    - Dependencies are explicitly marked (TASK-nnn references)
    - Complexity estimates provided (XS/S/M/L)
 
-5. **Plan is Jira-ready**
+5. **Plan is issue-ready**
    - Task tables include all columns (ID, Description, Files, Complexity, Dependencies, Status, Date)
    - Task descriptions are self-contained
    - Descriptions provide context and rationale
@@ -449,7 +449,7 @@ The implementation plan is complete when:
    - Each task has validation commands
    - Dependencies are clearly marked
 
-4. **Plan is Jira-ready**
+4. **Plan is issue-ready**
    - Task titles are clear and action-oriented
    - Descriptions provide context and rationale
    - Complexity estimates are provided
@@ -485,5 +485,5 @@ The implementation plan is complete when:
 
 ---
 
-**Remember:** Your output becomes Jira tickets that drive implementation. Be specific, be concrete, and ensure every task is independently achievable and reviewable.
+**Remember:** Your output becomes GitHub issues that drive implementation. Be specific, be concrete, and ensure every task is independently achievable and reviewable.
 ```
