@@ -8,7 +8,7 @@ interface LogoCarouselProps {
 
 /**
  * LogoCarousel component displays a horizontal scrolling carousel of logos.
- * 
+ *
  * This component is useful for showcasing partner logos, client logos, or any
  * other set of logos in a visually appealing and interactive manner.
  */
@@ -58,7 +58,7 @@ const LogoCarousel: FC<LogoCarouselProps> = ({ logos, header, subheader }) => {
           {carouselLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex-shrink-0 w-1/4 h-24 flex items-center justify-center"
+              className="shrink-0 w-1/4 h-24 flex items-center justify-center"
             >
               {logo}
             </div>

@@ -1,17 +1,24 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { createRequire } from 'node:module';
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
 import type { StorybookConfig } from '@storybook/react-vite';
 
+const require = createRequire(import.meta.url);
+
 const config: StorybookConfig = {
-  stories: ['../../**/*.mdx', '../../**/*.stories.@(js|jsx|ts|tsx)', './Introduction.mdx'],
+  stories: [
+    '../../**/*.mdx',
+    '../../**/*.stories.@(js|jsx|ts|tsx)',
+    './Introduction.mdx',
+  ],
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@storybook/addon-links',
-    'storybook-dark-mode',
-    '@storybook/addon-themes',
-    '@storybook/addon-backgrounds',
+    getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('storybook-dark-mode'),
+    getAbsolutePath('@storybook/addon-themes'),
     {
-      name: '@storybook/addon-styling-webpack',
+      name: getAbsolutePath('@storybook/addon-styling-webpack'),
       options: {
         rules: [
           // Replaces existing CSS rules to support PostCSS
@@ -33,9 +40,10 @@ const config: StorybookConfig = {
         ],
       },
     },
+    getAbsolutePath('@storybook/addon-docs'),
   ],
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
         viteConfigPath: 'libs/storybook-host/vite.config.ts',
@@ -43,7 +51,6 @@ const config: StorybookConfig = {
     },
   },
   docs: {
-    autodocs: 'tag',
     defaultName: 'Documentation',
   },
   staticDirs: ['./assets'],
@@ -59,3 +66,7 @@ const config: StorybookConfig = {
 };
 
 export default config;
+
+function getAbsolutePath(value: string): any {
+  return dirname(fileURLToPath(import.meta.resolve(`${value}/package.json`)));
+}

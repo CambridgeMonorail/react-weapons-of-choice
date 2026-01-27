@@ -1,24 +1,13 @@
-@import '../../../libs/common-tailwind/src/preflight.css';
-@import '../../../libs/common-tailwind/src/shadcn-theme.css';
+@import '../../../libs/common-tailwind/src/main.css';
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-feature-settings: 'rlig' 1, 'calt' 1;
-  }
-  html {
-    @apply font-sans;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading;
   }
 }
 

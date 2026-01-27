@@ -1,5 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Select, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator } from './select';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+} from './select';
 
 const meta: Meta<typeof Select> = {
   title: 'Shadcnui/Input/Select',

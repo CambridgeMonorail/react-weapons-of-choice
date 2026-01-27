@@ -1,5 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from './collapsible';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from './collapsible';
 
 const meta: Meta<typeof Collapsible> = {
   title: 'Shadcnui/Layout/Collapsible',
@@ -26,7 +30,9 @@ export const Default: Story = {
   name: 'Default',
   render: (args) => (
     <Collapsible {...args}>
-      <CollapsibleTrigger className="bg-gray-200 p-2">Toggle</CollapsibleTrigger>
+      <CollapsibleTrigger className="bg-gray-200 p-2">
+        Toggle
+      </CollapsibleTrigger>
       <CollapsibleContent className="p-2">Content</CollapsibleContent>
     </Collapsible>
   ),
@@ -42,7 +48,9 @@ export const OpenByDefault: Story = {
   name: 'Open By Default',
   render: (args) => (
     <Collapsible {...args}>
-      <CollapsibleTrigger className="bg-gray-200 p-2">Toggle</CollapsibleTrigger>
+      <CollapsibleTrigger className="bg-gray-200 p-2">
+        Toggle
+      </CollapsibleTrigger>
       <CollapsibleContent className="p-2">Content</CollapsibleContent>
     </Collapsible>
   ),

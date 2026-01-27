@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RecentSales } from '.';
 import type { RecentSalesProps } from './index';
 
@@ -19,9 +19,27 @@ export default meta;
 type Story = StoryObj<typeof RecentSales>;
 
 const salesData = [
-  { name: 'John Doe', email: 'john@example.com', amount: '$100', avatarSrc: '', avatarFallback: 'JD' },
-  { name: 'Jane Smith', email: 'jane@example.com', amount: '$150', avatarSrc: '', avatarFallback: 'JS' },
-  { name: 'Alice Johnson', email: 'alice@example.com', amount: '$200', avatarSrc: '', avatarFallback: 'AJ' },
+  {
+    name: 'John Doe',
+    email: 'john@example.com',
+    amount: '$100',
+    avatarSrc: '',
+    avatarFallback: 'JD',
+  },
+  {
+    name: 'Jane Smith',
+    email: 'jane@example.com',
+    amount: '$150',
+    avatarSrc: '',
+    avatarFallback: 'JS',
+  },
+  {
+    name: 'Alice Johnson',
+    email: 'alice@example.com',
+    amount: '$200',
+    avatarSrc: '',
+    avatarFallback: 'AJ',
+  },
 ];
 
 /**
@@ -45,8 +63,20 @@ export const CustomSalesData: Story = {
   render: (args: RecentSalesProps) => <RecentSales {...args} />,
   args: {
     salesData: [
-      { name: 'Bob Brown', email: 'bob@example.com', amount: '$250', avatarSrc: '', avatarFallback: 'BB' },
-      { name: 'Charlie Davis', email: 'charlie@example.com', amount: '$300', avatarSrc: '', avatarFallback: 'CD' },
+      {
+        name: 'Bob Brown',
+        email: 'bob@example.com',
+        amount: '$250',
+        avatarSrc: '',
+        avatarFallback: 'BB',
+      },
+      {
+        name: 'Charlie Davis',
+        email: 'charlie@example.com',
+        amount: '$300',
+        avatarSrc: '',
+        avatarFallback: 'CD',
+      },
     ],
   },
 };

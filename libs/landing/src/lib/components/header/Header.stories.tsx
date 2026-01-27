@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Header } from './index';
 import { Home, User, Settings } from 'lucide-react';
 
@@ -30,7 +30,15 @@ const meta: Meta<typeof Header> = {
     variant: {
       name: 'Variant',
       control: 'select',
-      options: ['primary', 'card', 'secondary', 'muted', 'accent', 'destructive', 'sidebar'],
+      options: [
+        'primary',
+        'card',
+        'secondary',
+        'muted',
+        'accent',
+        'destructive',
+        'sidebar',
+      ],
       description: 'Variant of the header styling',
     },
     logoIcon: {

@@ -3,13 +3,8 @@ module.exports = {
     '../src/lib/components/**/*.stories.@(ts|tsx)',
     // ...other story paths
   ],
-  addons: [
-    '@storybook/addon-actions',
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    // ...other addons
-  ],
-  framework: '@storybook/react',
+  addons: ['@storybook/addon-links', '@storybook/addon-docs'],
+  framework: '@storybook/react-vite',
   core: {
     builder: 'webpack5',
   },

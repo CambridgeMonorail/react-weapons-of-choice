@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Checkbox } from './checkbox';
-
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Shadcnui/Input/Checkbox',

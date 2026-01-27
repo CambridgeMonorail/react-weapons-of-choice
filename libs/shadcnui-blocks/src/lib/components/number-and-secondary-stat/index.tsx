@@ -263,7 +263,7 @@ export const NumberAndSecondaryStat: FC<NumberAndSecondaryStatProps> = ({
       data-testid="number-and-secondary-stat"
     >
       <CardContent
-        className="flex-grow space-y-2 flex flex-col justify-center p-2 pb-0"
+        className="grow space-y-2 flex flex-col justify-center p-2 pb-0"
         data-testid="card-content"
       >
         {mainValueElement}

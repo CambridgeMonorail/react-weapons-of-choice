@@ -1,5 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogDescription, DialogClose } from './dialog';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from './dialog';
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Dialog> = {
@@ -42,7 +51,7 @@ export const CustomTrigger: Story = {
   render: () => (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="primary">Open Custom Dialog</Button>
+        <Button variant="default">Open Custom Dialog</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

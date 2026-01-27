@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Steps, StepsProps } from '.';
 
 const meta: Meta<typeof Steps> = {
@@ -43,9 +43,9 @@ export default meta;
 type Story = StoryObj<typeof Steps>;
 
 const stepData = [
-  { title: "Register", description: "Sign up by providing your details." },
-  { title: "Customize", description: "Choose preferences and settings." },
-  { title: "Enjoy", description: "Access all features instantly." }
+  { title: 'Register', description: 'Sign up by providing your details.' },
+  { title: 'Customize', description: 'Choose preferences and settings.' },
+  { title: 'Enjoy', description: 'Access all features instantly.' },
 ];
 
 /**

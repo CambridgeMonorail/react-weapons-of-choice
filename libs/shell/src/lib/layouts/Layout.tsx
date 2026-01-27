@@ -16,7 +16,10 @@ import { ReactNode } from 'react';
 import { Moon, Sun, Github } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SidebarProvider as SidebarDataProvider, SidebarData } from './sidebarContext';
+import {
+  SidebarProvider as SidebarDataProvider,
+  SidebarData,
+} from './sidebarContext';
 import { Logo } from '@rwoc/shadcnui-blocks';
 
 interface LayoutProps {
@@ -29,7 +32,7 @@ interface LayoutProps {
 /**
  * Layout component that provides a consistent structure for the application.
  * It includes a sidebar, header with breadcrumb navigation, theme toggle, and GitHub link.
- * 
+ *
  * ## When a Sidebar Is Better
  *
  * - **Scalability**: Ideal for applications with numerous top-level items, as side navigation can accommodate more links and is easier to expand as the product grows.
@@ -53,7 +56,7 @@ export function Layout({ children, sidebarData }: LayoutProps) {
         <AppSidebar />
         <SidebarInset className="flex flex-col h-full w-full">
           <header
-            className="flex h-16 flex-shrink-0 items-center justify-between gap-2 border-b px-4 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 w-full max-w-full"
+            className="flex h-16 shrink-0 items-center justify-between gap-2 border-b px-4 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 w-full max-w-full"
             data-testid="header"
             role="banner"
           >
@@ -62,7 +65,11 @@ export function Layout({ children, sidebarData }: LayoutProps) {
               data-testid="breadcrumb-container"
               aria-label="Breadcrumb navigation"
             >
-              <SidebarTrigger className="-ml-1" data-testid="sidebar-trigger" aria-label="Toggle sidebar" />
+              <SidebarTrigger
+                className="-ml-1"
+                data-testid="sidebar-trigger"
+                aria-label="Toggle sidebar"
+              />
               <Separator orientation="vertical" className="mr-2 h-4" />
               <Breadcrumb>
                 <BreadcrumbList>
@@ -76,7 +83,9 @@ export function Layout({ children, sidebarData }: LayoutProps) {
                         data-testid={`breadcrumb-item-${index}`}
                       >
                         {isLast ? (
-                          <BreadcrumbPage aria-current="page">{value}</BreadcrumbPage>
+                          <BreadcrumbPage aria-current="page">
+                            {value}
+                          </BreadcrumbPage>
                         ) : (
                           <BreadcrumbLink>
                             <Link to={to}>{value}</Link>

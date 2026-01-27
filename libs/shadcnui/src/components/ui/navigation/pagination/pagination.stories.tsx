@@ -1,5 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Pagination, PaginationContent, PaginationLink, PaginationItem, PaginationPrevious, PaginationNext, PaginationEllipsis } from './pagination';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationLink,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from './pagination';
 
 const meta: Meta<typeof Pagination> = {
   title: 'Shadcnui/Navigation/Pagination',

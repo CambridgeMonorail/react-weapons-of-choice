@@ -1,5 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from './resizable';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  ResizablePanelGroup,
+  ResizablePanel,
+  ResizableHandle,
+} from './resizable';
 
 const meta: Meta<typeof ResizablePanelGroup> = {
   title: 'Shadcnui/Layout/Resizable',

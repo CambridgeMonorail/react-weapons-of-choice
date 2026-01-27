@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TargetAchievementChart } from './index';
 import type { TargetAchievementChartProps } from './index';
 import { TooltipProvider } from '@radix-ui/react-tooltip';

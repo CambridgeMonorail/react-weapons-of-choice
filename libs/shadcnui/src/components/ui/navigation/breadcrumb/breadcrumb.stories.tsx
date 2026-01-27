@@ -1,5 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis } from './breadcrumb';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
+} from './breadcrumb';
 
 const meta: Meta<typeof Breadcrumb> = {
   title: 'Shadcnui/Navigation/Breadcrumb',

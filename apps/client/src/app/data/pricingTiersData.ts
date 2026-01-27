@@ -1,4 +1,4 @@
-import { PricingTier } from '../components/PricingTiers';
+import type { PricingTier } from '@rwoc/shadcnui-blocks';
 import { featuresList } from './featuresData';
 
 export const pricingTiers: PricingTier[] = [

@@ -1,7 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { MemoryRouter } from 'react-router-dom';
 import { Layout } from './Layout';
-import { Icon, Swords, AudioWaveform, SquareTerminal, Bot } from 'lucide-react';
+import {
+  type LucideIcon,
+  Swords,
+  AudioWaveform,
+  SquareTerminal,
+  Bot,
+} from 'lucide-react';
 
 export interface User {
   name: string;
@@ -11,14 +17,14 @@ export interface User {
 
 export interface Team {
   name: string;
-  logo: typeof Icon;
+  logo: LucideIcon;
   plan: string;
 }
 
 export interface NavItem {
   title: string;
   url: string;
-  icon?: typeof Icon;
+  icon?: LucideIcon;
   isActive?: boolean;
   items?: NavItem[];
 }

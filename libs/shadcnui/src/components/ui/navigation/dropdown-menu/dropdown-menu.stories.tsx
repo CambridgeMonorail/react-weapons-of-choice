@@ -1,17 +1,17 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { 
-  DropdownMenu, 
-  DropdownMenuTrigger, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuCheckboxItem, 
-  DropdownMenuRadioItem, 
-  DropdownMenuLabel, 
-  DropdownMenuSeparator, 
-  DropdownMenuShortcut, 
-  DropdownMenuSub, 
-  DropdownMenuSubContent, 
-  DropdownMenuSubTrigger 
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
 } from './dropdown-menu';
 
 const meta: Meta<typeof DropdownMenu> = {
@@ -51,7 +51,9 @@ export const WithCheckboxItems: Story = {
         <button>Click here</button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuCheckboxItem checked>Checkbox Item 1</DropdownMenuCheckboxItem>
+        <DropdownMenuCheckboxItem checked>
+          Checkbox Item 1
+        </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem>Checkbox Item 2</DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -69,8 +71,12 @@ export const WithRadioItems: Story = {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <div role="radiogroup">
-          <DropdownMenuRadioItem value="item-1">Radio Item 1</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="item-2">Radio Item 2</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="item-1">
+            Radio Item 1
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="item-2">
+            Radio Item 2
+          </DropdownMenuRadioItem>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -131,12 +137,10 @@ export const WithShortcuts: Story = {
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
-          Item 1
-          <DropdownMenuShortcut>⌘1</DropdownMenuShortcut>
+          Item 1<DropdownMenuShortcut>⌘1</DropdownMenuShortcut>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          Item 2
-          <DropdownMenuShortcut>⌘2</DropdownMenuShortcut>
+          Item 2<DropdownMenuShortcut>⌘2</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

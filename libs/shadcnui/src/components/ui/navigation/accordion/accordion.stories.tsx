@@ -1,5 +1,10 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './accordion';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from './accordion';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Shadcnui/Navigation/Accordion',

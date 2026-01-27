@@ -1,5 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { ChartContainer, ChartTooltip, ChartLegend, ChartTooltipContent, ChartLegendContent } from './chart';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartLegend,
+  ChartTooltipContent,
+  ChartLegendContent,
+} from './chart';
 
 const meta: Meta<typeof ChartContainer> = {
   title: 'Shadcnui/Data Display/Chart',
@@ -32,8 +38,10 @@ export const Default: Story = {
   name: 'Default',
   render: (args) => (
     <ChartContainer {...args}>
-      <ChartTooltip content={<ChartTooltipContent />} />
-      <ChartLegend content={<ChartLegendContent />} />
+      <>
+        <ChartTooltip content={<ChartTooltipContent />} />
+        <ChartLegend content={<ChartLegendContent />} />
+      </>
     </ChartContainer>
   ),
   args: {
@@ -55,8 +63,10 @@ export const CustomClassName: Story = {
   name: 'Custom Class Name',
   render: (args) => (
     <ChartContainer {...args}>
-      <ChartTooltip content={<ChartTooltipContent />} />
-      <ChartLegend content={<ChartLegendContent />} />
+      <>
+        <ChartTooltip content={<ChartTooltipContent />} />
+        <ChartLegend content={<ChartLegendContent />} />
+      </>
     </ChartContainer>
   ),
   args: {

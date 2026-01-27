@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
@@ -25,6 +26,7 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/libs/storybook-host',
 
   plugins: [
+    tailwindcss(),
     Markdown(),
     react(),
     nxViteTsPaths(),

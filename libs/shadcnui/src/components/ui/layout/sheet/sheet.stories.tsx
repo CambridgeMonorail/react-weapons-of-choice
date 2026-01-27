@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { 
-  Sheet, 
-  SheetTrigger, 
-  SheetClose, 
-  SheetPortal, 
-  SheetOverlay, 
-  SheetContent, 
-  SheetHeader, 
-  SheetFooter, 
-  SheetTitle, 
-  SheetDescription 
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetClose,
+  SheetPortal,
+  SheetOverlay,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
 } from './sheet';
 
 const meta: Meta<typeof Sheet> = {

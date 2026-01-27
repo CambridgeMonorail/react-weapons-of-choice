@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './tabs';
 
 const meta: Meta<typeof Tabs> = {
@@ -34,8 +34,12 @@ export const WithSizes: Story = {
   render: () => (
     <Tabs defaultValue="tab1">
       <TabsList>
-        <TabsTrigger value="tab1" className="text-sm">Small Tab</TabsTrigger>
-        <TabsTrigger value="tab2" className="text-lg">Large Tab</TabsTrigger>
+        <TabsTrigger value="tab1" className="text-sm">
+          Small Tab
+        </TabsTrigger>
+        <TabsTrigger value="tab2" className="text-lg">
+          Large Tab
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="tab1">Content for Small Tab</TabsContent>
       <TabsContent value="tab2">Content for Large Tab</TabsContent>

@@ -1,5 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuContent, NavigationMenuTrigger, NavigationMenuLink, NavigationMenuIndicator, NavigationMenuViewport } from './navigation-menu';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuContent,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  NavigationMenuIndicator,
+  NavigationMenuViewport,
+} from './navigation-menu';
 
 const meta: Meta<typeof NavigationMenu> = {
   title: 'Shadcnui/Navigation/NavigationMenu',

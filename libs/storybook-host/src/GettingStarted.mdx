@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/blocks';
+import { Meta } from '@storybook/addon-docs/blocks';
 
 <Meta title="Getting Started" />
 
@@ -9,9 +9,11 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
 ## Overview of Libraries
 
 #### 1. **`@rwoc/shadcnui`**
+
 - **Description**: A library providing base UI components styled with @rwoc/shadcnui, ensuring a consistent look and feel across the application. It includes components like switches, tables, and more.
 - **Usage**: Use these components to maintain a cohesive design system throughout the application.
 - **Example**:
+
   ```tsx
   import { Switch, Table, TableRow, TableCell } from '@rwoc/shadcnui';
 
@@ -31,9 +33,11 @@ Welcome to the React Weapons of Choice (RWOC) monorepo. This document provides a
 For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.com/).
 
 #### 2. **`@rwoc/shadcnui-blocks`**
+
 - **Description**: A collection of composite UI components built from the base Shadcn UI components. The library includes components such as buttons, cards, dialogs, and more.
 - **Usage**: Import and use these components to build consistent and cohesive user interfaces.
 - **Example**:
+
   ```tsx
   import { Button, Card, Dialog } from '@rwoc/shadcnui-blocks';
 
@@ -49,6 +53,7 @@ For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.
   ```
 
 #### 3. **`@rwoc/common-tailwind`**
+
 - **Description**: A library containing common Tailwind CSS configurations and utility classes used across the monorepo. It includes preflight styles and theme configurations.
 - **Usage**: Import the CSS files to apply consistent styling and utility classes throughout the application.
 - **Example**:
@@ -60,9 +65,11 @@ For more information on @rwoc/shadcnui, visit their [website](https://ui.shadcn.
 For more information on Tailwind CSS, visit their [website](https://tailwindcss.com/).
 
 #### 4. **`@rwoc/landing`**
+
 - **Description**: A library containing components and sections specifically designed for the landing pages of the application. It includes sections like Hero, About, CTA, and more.
 - **Usage**: Use these components to build engaging and informative landing pages.
 - **Example**:
+
   ```tsx
   import { HeroSection, AboutSection, CTASection } from '@rwoc/landing';
 
@@ -76,9 +83,11 @@ For more information on Tailwind CSS, visit their [website](https://tailwindcss.
   ```
 
 #### 5. **`@rwoc/shell`**
+
 - **Description**: A library providing layout components and utilities for the overall structure of the application. It includes components like `Layout`, `AppSidebar`, `Breadcrumb`, and more.
 - **Usage**: Use these components to create a consistent and responsive layout for the application.
 - **Example**:
+
   ```tsx
   import { Layout, AppSidebar, Breadcrumb } from '@rwoc/shell';
 
@@ -86,9 +95,7 @@ For more information on Tailwind CSS, visit their [website](https://tailwindcss.
     <Layout>
       <AppSidebar />
       <Breadcrumb />
-      <main>
-        {/* Main content */}
-      </main>
+      <main>{/* Main content */}</main>
     </Layout>
   );
   ```

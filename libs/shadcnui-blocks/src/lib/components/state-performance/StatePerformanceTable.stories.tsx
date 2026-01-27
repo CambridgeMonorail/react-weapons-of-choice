@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { StatePerformanceTable } from './index';
 import type { StatePerformanceTableProps } from './index';
 
@@ -19,9 +19,30 @@ export default meta;
 type Story = StoryObj<typeof StatePerformanceTable>;
 
 const sampleData = [
-  { state: 'California', forecast: 100000, q3Adjusted: 95000, actual: 90000, risk: 'high', targetAchieved: 90 },
-  { state: 'Texas', forecast: 80000, q3Adjusted: 85000, actual: 87000, risk: 'medium', targetAchieved: 102 },
-  { state: 'New York', forecast: 75000, q3Adjusted: 70000, actual: 72000, risk: 'low', targetAchieved: 96 },
+  {
+    state: 'California',
+    forecast: 100000,
+    q3Adjusted: 95000,
+    actual: 90000,
+    risk: 'high',
+    targetAchieved: 90,
+  },
+  {
+    state: 'Texas',
+    forecast: 80000,
+    q3Adjusted: 85000,
+    actual: 87000,
+    risk: 'medium',
+    targetAchieved: 102,
+  },
+  {
+    state: 'New York',
+    forecast: 75000,
+    q3Adjusted: 70000,
+    actual: 72000,
+    risk: 'low',
+    targetAchieved: 96,
+  },
 ];
 
 /**
@@ -30,7 +51,9 @@ const sampleData = [
  */
 export const Default: Story = {
   name: 'Default',
-  render: (args: StatePerformanceTableProps) => <StatePerformanceTable {...args} />,
+  render: (args: StatePerformanceTableProps) => (
+    <StatePerformanceTable {...args} />
+  ),
   args: {
     data: sampleData,
   },
@@ -42,7 +65,9 @@ export const Default: Story = {
  */
 export const EmptyData: Story = {
   name: 'Empty Data',
-  render: (args: StatePerformanceTableProps) => <StatePerformanceTable {...args} />,
+  render: (args: StatePerformanceTableProps) => (
+    <StatePerformanceTable {...args} />
+  ),
   args: {
     data: [],
   },
@@ -54,11 +79,27 @@ export const EmptyData: Story = {
  */
 export const CustomData: Story = {
   name: 'Custom Data',
-  render: (args: StatePerformanceTableProps) => <StatePerformanceTable {...args} />,
+  render: (args: StatePerformanceTableProps) => (
+    <StatePerformanceTable {...args} />
+  ),
   args: {
     data: [
-      { state: 'Florida', forecast: 60000, q3Adjusted: 62000, actual: 61000, risk: 'medium', targetAchieved: 98 },
-      { state: 'Illinois', forecast: 50000, q3Adjusted: 48000, actual: 47000, risk: 'high', targetAchieved: 94 },
+      {
+        state: 'Florida',
+        forecast: 60000,
+        q3Adjusted: 62000,
+        actual: 61000,
+        risk: 'medium',
+        targetAchieved: 98,
+      },
+      {
+        state: 'Illinois',
+        forecast: 50000,
+        q3Adjusted: 48000,
+        actual: 47000,
+        risk: 'high',
+        targetAchieved: 94,
+      },
     ],
   },
 };

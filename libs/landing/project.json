@@ -5,5 +5,12 @@
   "projectType": "library",
   "tags": ["UI"],
   "// targets": "to see all targets run: nx show project landing --web",
-  "targets": {}
+  "targets": {
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --project libs/landing/tsconfig.lib.json --noEmit"
+      }
+    }
+  }
 }

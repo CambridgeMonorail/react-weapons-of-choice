@@ -1,8 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import {
-  NumberAndSecondaryStat,
-  NumberAndSecondaryStatProps,
-} from '.';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { NumberAndSecondaryStat, NumberAndSecondaryStatProps } from '.';
 
 const meta: Meta<typeof NumberAndSecondaryStat> = {
   title: 'Shadcnui Blocks/NumberAndSecondaryStat',
@@ -102,14 +99,19 @@ export const GoalDemo: Story = {
   args: {
     mainValue: 7500,
     mainLabel: 'Current Progress',
-    goal: { current: 7500, target: 10000, showBar: true, label: 'Goal Progress' },
+    goal: {
+      current: 7500,
+      target: 10000,
+      showBar: true,
+      label: 'Goal Progress',
+    },
     className: 'w-[230px] h-[230px]',
   },
 };
 
 /**
  * This example demonstrates how to use the comparison prop to display comparison with a baseline value.
- * 
+ *
  * Props:
  * - `mainValue`: The current value to be displayed.
  * - `mainLabel`: A label for the main value.
@@ -117,7 +119,7 @@ export const GoalDemo: Story = {
  *   - `baselineValue`: The value to compare against.
  *   - `displayMode`: How to display the comparison ('absolute', 'percent', or 'both').
  *   - `label`: An optional label to describe the comparison.
- * 
+ *
  * Effects:
  * - The `comparison` prop drives the display of the comparison element.
  * - `baselineValue` is used to calculate the difference and percentage change.
@@ -191,15 +193,7 @@ export const CustomClassName: Story = {
       displayMode: 'percent',
       label: 'QTD',
     },
-    trendline: [
-      38594,
-      39957,
-      35316,
-      35913,
-      36668,
-      45660,
-      41949
-    ],
+    trendline: [38594, 39957, 35316, 35913, 36668, 45660, 41949],
     className: 'bg-primary text-primary-foreground w-[230px] h-[230px]',
   },
 };

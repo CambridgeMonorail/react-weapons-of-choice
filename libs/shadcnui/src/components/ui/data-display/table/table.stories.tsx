@@ -1,5 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Table, TableHeader, TableBody, TableFooter, TableRow, TableHead, TableCell, TableCaption } from './table';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from './table';
 
 const meta: Meta<typeof Table> = {
   title: 'Shadcnui/Data Display/Table',

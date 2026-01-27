@@ -1,5 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from './input-otp';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator,
+} from './input-otp';
 
 const meta: Meta<typeof InputOTP> = {
   title: 'Shadcnui/Input/InputOTP',
@@ -45,6 +50,7 @@ export const Default: Story = {
     </InputOTP>
   ),
   args: {
+    maxLength: 4,
     className: '',
     containerClassName: '',
     disabled: false,
@@ -68,6 +74,7 @@ export const Disabled: Story = {
     </InputOTP>
   ),
   args: {
+    maxLength: 4,
     className: '',
     containerClassName: '',
     disabled: true,

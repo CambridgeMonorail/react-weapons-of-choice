@@ -1,5 +1,12 @@
 import { FC } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, Button } from '@rwoc/shadcnui';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  Button,
+} from '@rwoc/shadcnui';
 
 /**
  * Interface representing a pricing tier.
@@ -23,10 +30,13 @@ interface PricingTiersProps {
 
 /**
  * PricingTiers component.
- * 
+ *
  * This component renders a list of pricing tiers, each represented by a card.
  */
-export const PricingTiers: FC<PricingTiersProps> = ({ billingAnnual, tiers }) => {
+export const PricingTiers: FC<PricingTiersProps> = ({
+  billingAnnual,
+  tiers,
+}) => {
   return (
     <section>
       <h2 className="text-3xl font-bold mb-4 text-primary">Pricing Tiers</h2>
@@ -46,21 +56,34 @@ export const PricingTiers: FC<PricingTiersProps> = ({ billingAnnual, tiers }) =>
               </div>
             )}
             <CardHeader>
-              <CardTitle id={`tier-${tier.name}`} className="text-2xl font-semibold">{tier.name}</CardTitle>
+              <CardTitle
+                id={`tier-${tier.name}`}
+                className="text-2xl font-semibold"
+              >
+                {tier.name}
+              </CardTitle>
               <CardDescription className="text-lg text-card-foreground">
-                {billingAnnual ? tier.annualPrice + '/yr' : tier.monthlyPrice + '/mo'}
+                {billingAnnual
+                  ? tier.annualPrice + '/yr'
+                  : tier.monthlyPrice + '/mo'}
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow flex flex-col justify-between">
+            <CardContent className="grow flex flex-col justify-between">
               <div>
-                <p className="text-sm text-card-foreground">{tier.description}</p>
+                <p className="text-sm text-card-foreground">
+                  {tier.description}
+                </p>
                 <ul className="list-disc list-inside space-y-1 text-foreground">
                   {tier.features.map((feature, index) => (
                     <li key={index}>{feature}</li>
                   ))}
                 </ul>
               </div>
-              <Button variant="default" className="w-full mt-4" aria-label={`Get started with ${tier.name} plan`}>
+              <Button
+                variant="default"
+                className="w-full mt-4"
+                aria-label={`Get started with ${tier.name} plan`}
+              >
                 Get Started
               </Button>
             </CardContent>

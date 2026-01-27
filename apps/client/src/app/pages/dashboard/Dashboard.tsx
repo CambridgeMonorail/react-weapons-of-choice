@@ -226,7 +226,7 @@ const DashboardPage: FC = () => {
               data-testid="overview-recent-sales"
             >
               <Card
-                className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4"
+                className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-4"
                 data-testid="visitors-card"
               >
                 <CardHeader className="w-full">
@@ -256,7 +256,7 @@ const DashboardPage: FC = () => {
               </Card>
 
               <Card
-                className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-sm transition-shadow flex flex-col items-start p-4"
+                className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-4"
                 data-testid="recent-sales-card"
               >
                 <CardHeader className="w-full">

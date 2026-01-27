@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { BrowserRouter } from 'react-router-dom';
 import { ResponsiveNavBar } from './index';
 
@@ -39,8 +39,8 @@ export const WithNestedItems: Story = {
   args: {
     menuItems: [
       { label: 'Home', path: '/' },
-      { 
-        label: 'Services', 
+      {
+        label: 'Services',
         children: [
           { label: 'Consulting', path: '/services/consulting' },
           { label: 'Development', path: '/services/development' },

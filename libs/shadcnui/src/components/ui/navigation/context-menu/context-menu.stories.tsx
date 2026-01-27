@@ -1,5 +1,21 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem, ContextMenuCheckboxItem, ContextMenuRadioItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuShortcut, ContextMenuGroup, ContextMenuPortal, ContextMenuSub, ContextMenuSubContent, ContextMenuSubTrigger, ContextMenuRadioGroup } from './context-menu';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuCheckboxItem,
+  ContextMenuRadioItem,
+  ContextMenuLabel,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuGroup,
+  ContextMenuPortal,
+  ContextMenuSub,
+  ContextMenuSubContent,
+  ContextMenuSubTrigger,
+  ContextMenuRadioGroup,
+} from './context-menu';
 
 const meta: Meta<typeof ContextMenu> = {
   title: 'Shadcnui/Navigation/ContextMenu',
@@ -38,7 +54,9 @@ export const WithCheckboxItems: Story = {
         <button>Right click here</button>
       </ContextMenuTrigger>
       <ContextMenuContent>
-        <ContextMenuCheckboxItem checked>Checkbox Item 1</ContextMenuCheckboxItem>
+        <ContextMenuCheckboxItem checked>
+          Checkbox Item 1
+        </ContextMenuCheckboxItem>
         <ContextMenuCheckboxItem>Checkbox Item 2</ContextMenuCheckboxItem>
       </ContextMenuContent>
     </ContextMenu>
@@ -56,8 +74,12 @@ export const WithRadioItems: Story = {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuRadioGroup value="item-1">
-          <ContextMenuRadioItem value="item-1">Radio Item 1</ContextMenuRadioItem>
-          <ContextMenuRadioItem value="item-2">Radio Item 2</ContextMenuRadioItem>
+          <ContextMenuRadioItem value="item-1">
+            Radio Item 1
+          </ContextMenuRadioItem>
+          <ContextMenuRadioItem value="item-2">
+            Radio Item 2
+          </ContextMenuRadioItem>
         </ContextMenuRadioGroup>
       </ContextMenuContent>
     </ContextMenu>
@@ -118,12 +140,10 @@ export const WithShortcuts: Story = {
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem>
-          Item 1
-          <ContextMenuShortcut>⌘1</ContextMenuShortcut>
+          Item 1<ContextMenuShortcut>⌘1</ContextMenuShortcut>
         </ContextMenuItem>
         <ContextMenuItem>
-          Item 2
-          <ContextMenuShortcut>⌘2</ContextMenuShortcut>
+          Item 2<ContextMenuShortcut>⌘2</ContextMenuShortcut>
         </ContextMenuItem>
       </ContextMenuContent>
     </ContextMenu>

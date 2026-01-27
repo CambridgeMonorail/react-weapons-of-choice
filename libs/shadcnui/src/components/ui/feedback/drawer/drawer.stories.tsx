@@ -1,5 +1,14 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerFooter, DrawerTitle, DrawerDescription, DrawerClose } from './drawer';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerTitle,
+  DrawerDescription,
+  DrawerClose,
+} from './drawer';
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Drawer> = {
@@ -42,7 +51,7 @@ export const CustomTrigger: Story = {
   render: () => (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="primary">Open Custom Drawer</Button>
+        <Button variant="default">Open Custom Drawer</Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>

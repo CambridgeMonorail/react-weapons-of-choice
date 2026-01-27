@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { Popover, PopoverTrigger, PopoverContent } from './popover';
 import { Button } from '../../input-controls/button';
 
@@ -34,7 +34,7 @@ export const CustomTrigger: Story = {
   render: () => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="primary">Open Custom Popover</Button>
+        <Button variant="default">Open Custom Popover</Button>
       </PopoverTrigger>
       <PopoverContent>
         <p>This is a custom popover content with additional information.</p>

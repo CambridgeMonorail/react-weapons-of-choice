@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Badge } from './badge';
 
 const meta: Meta<typeof Badge> = {
@@ -9,7 +9,7 @@ const meta: Meta<typeof Badge> = {
     variant: {
       name: 'Variant',
       control: 'select',
-      options: ['default', 'secondary', 'destructive', 'outline'],
+      options: ['default', 'secondary', 'destructive', 'outline-solid'],
       description: 'The variant of the badge',
     },
     className: {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { ForecastChart, ForecastChartProps } from '.';
 
 const meta: Meta<typeof ForecastChart> = {

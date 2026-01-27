@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Overview } from './index';
 
 const meta: Meta<typeof Overview> = {
@@ -22,14 +22,14 @@ export const Default: Story = {
 /**
  * This example shows how to use the Overview component with custom data.
  * It is useful when you want to display a chart with different data points.
- * 
+ *
  * @example
  * const customData = [
  *   { month: 'July', desktop: 150, mobile: 100 },
  *   { month: 'August', desktop: 200, mobile: 150 },
  *   { month: 'September', desktop: 250, mobile: 200 },
  * ];
- * 
+ *
  * return <Overview data={customData} />;
  */
 export const CustomData: Story = {

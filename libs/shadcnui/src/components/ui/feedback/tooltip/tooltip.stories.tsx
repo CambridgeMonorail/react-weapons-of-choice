@@ -1,5 +1,10 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from './tooltip';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+} from './tooltip';
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Tooltip> = {
@@ -21,9 +26,7 @@ export const Default: Story = {
         <TooltipTrigger asChild>
           <Button variant="outline">Hover me</Button>
         </TooltipTrigger>
-        <TooltipContent>
-          This is a default tooltip message.
-        </TooltipContent>
+        <TooltipContent>This is a default tooltip message.</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   ),
@@ -37,7 +40,7 @@ export const CustomTrigger: Story = {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant="primary">Hover me</Button>
+          <Button variant="default">Hover me</Button>
         </TooltipTrigger>
         <TooltipContent>
           This is a custom tooltip message with additional content.

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './hover-card';
 import { Button } from '../../input-controls/button';
 
@@ -37,12 +37,14 @@ export const CustomTrigger: Story = {
   render: () => (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Button variant="primary">Hover over me</Button>
+        <Button variant="default">Hover over me</Button>
       </HoverCardTrigger>
       <HoverCardContent>
         <div className="text-sm">
           <strong>Custom HoverCard Title</strong>
-          <p>This is a custom hover card description with additional content.</p>
+          <p>
+            This is a custom hover card description with additional content.
+          </p>
         </div>
       </HoverCardContent>
     </HoverCard>

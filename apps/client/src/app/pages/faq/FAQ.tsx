@@ -40,8 +40,8 @@ export const FAQPage = () => {
   useEffect(() => {
     setFilteredFaqs(
       faqs.filter((faq) =>
-        faq.question.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+        faq.question.toLowerCase().includes(searchTerm.toLowerCase()),
+      ),
     );
   }, [searchTerm]);
 
@@ -65,7 +65,7 @@ export const FAQPage = () => {
           placeholder="Search for questions..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="mb-4 border border-gray-300 shadow-sm"
+          className="mb-4 border border-gray-300 shadow-xs"
           aria-label="Search FAQs"
         />
         <div className="grid grid-cols-1 gap-6">

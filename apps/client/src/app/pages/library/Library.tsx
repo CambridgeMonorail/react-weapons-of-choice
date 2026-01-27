@@ -9,7 +9,7 @@ export function LibraryPage() {
     window.open(
       'https://github.com/CambridgeMonorail/react-weapons-of-choice',
       '_blank',
-      'noopener,noreferrer'
+      'noopener,noreferrer',
     );
   };
 
@@ -17,7 +17,7 @@ export function LibraryPage() {
     window.open(
       'https://cambridgemonorail.github.io/react-weapons-of-choice/storybook/?path=/docs/introduction--documentation',
       '_blank',
-      'noopener,noreferrer'
+      'noopener,noreferrer',
     );
   };
 
@@ -86,7 +86,7 @@ export function LibraryPage() {
       </section>
 
       {/* STORYBOOK LINK */}
-      <section className="bg-bg-background p-6 rounded-md shadow-sm mb-12">
+      <section className="bg-bg-background p-6 rounded-md shadow-xs mb-12">
         <h2 className="text-2xl font-semibold text-text-foreground mb-4">
           Explore the Components
         </h2>
@@ -101,7 +101,7 @@ export function LibraryPage() {
       </section>
 
       {/* ADDITIONAL RESOURCES */}
-      <section className="bg-bg-background p-6 rounded-md shadow-sm mb-12">
+      <section className="bg-bg-background p-6 rounded-md shadow-xs mb-12">
         <h2 className="text-2xl font-semibold text-text-foreground mb-4">
           Additional Resources
         </h2>

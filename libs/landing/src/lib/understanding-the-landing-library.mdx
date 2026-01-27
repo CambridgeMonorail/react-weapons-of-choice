@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/blocks';
+import { Meta } from '@storybook/addon-docs/blocks';
 import { HeroSection } from './components/hero-section/';
 import { AboutSection } from './components/about-section/';
 import { CTASection } from './components/cta-section/';
@@ -16,25 +16,22 @@ The `landing` library is a collection of React components specifically designed 
 ## Components
 
 ### 1. **`HeroSection`**
-- **Description**: 
-  - The `HeroSection` is typically the first thing users see when they arrive at your site. It often includes a title, subtitle, brief description, and a clear call-to-action button. 
+
+- **Description**:
+  - The `HeroSection` is typically the first thing users see when they arrive at your site. It often includes a title, subtitle, brief description, and a clear call-to-action button.
   - This component sets the tone and brand identity for the entire landing page, so be sure to include compelling imagery or concise copy that resonates with your audience.
 
 <HeroSection
   ctaPrimary={{
     onClick: () => {},
-    text: 'Get Started'
+    text: 'Get Started',
   }}
   ctaSecondary={{
     onClick: () => {},
-    text: 'Learn More'
+    text: 'Learn More',
   }}
   description="Discover the features and benefits of our platform."
-  highlights={[
-    'Feature 1',
-    'Feature 2',
-    'Feature 3'
-  ]}
+  highlights={['Feature 1', 'Feature 2', 'Feature 3']}
   image="https://via.placeholder.com/400"
   imageAlt="Placeholder Image"
   layout="left"
@@ -42,38 +39,82 @@ The `landing` library is a collection of React components specifically designed 
   title="Welcome to Our Platform"
 />
 
-> **Pro Tip:** 
-> - Keep the headline short and impactful. 
+> **Pro Tip:**
+>
+> - Keep the headline short and impactful.
 > - Use visuals (illustrations, screenshots, or product images) that immediately convey your product’s core benefits.
 
 ---
 
 ### 2. **`AboutSection`**
-- **Description**: 
-  - The `AboutSection` provides an overview of the project or company, highlighting key information, values, and the "why" behind it. 
+
+- **Description**:
+  - The `AboutSection` provides an overview of the project or company, highlighting key information, values, and the "why" behind it.
   - This helps build trust and connection with users who want to understand the story, mission, or background of your offering.
 
 <AboutSection
   description="We are dedicated to delivering top-notch solutions that empower businesses to achieve their goals. Our team of experts works tirelessly to innovate and provide exceptional value to our clients."
   logos={[
-    <svg key="logo1" fill="none" height="50" viewBox="0 0 24 24" width="50" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/><path d="M12 6v6l4 2" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>,
-    <svg key="logo2" fill="none" height="50" viewBox="0 0 24 24" width="50" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" stroke="currentColor" strokeWidth="2" width="18" x="3" y="3"/><path d="M3 9h18M9 21V9" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"/></svg>
+    <svg
+      key="logo1"
+      fill="none"
+      height="50"
+      viewBox="0 0 24 24"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+      <path
+        d="M12 6v6l4 2"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>,
+    <svg
+      key="logo2"
+      fill="none"
+      height="50"
+      viewBox="0 0 24 24"
+      width="50"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        height="18"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+        width="18"
+        x="3"
+        y="3"
+      />
+      <path
+        d="M3 9h18M9 21V9"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>,
   ]}
   title="About Us"
   header="Our Partners"
   subheader="Trusted by Leading Companies"
 />
 
-> **Best Practices:**  
-> - Use bullet points or short paragraphs to keep your message clear and scannable.  
-> - Include an “origin story” or motivation that shows authenticity.  
+> **Best Practices:**
+>
+> - Use bullet points or short paragraphs to keep your message clear and scannable.
+> - Include an “origin story” or motivation that shows authenticity.
 > - Consider adding visuals or icons to break up text and keep it engaging.
 
 ---
 
 ### 3. **`CTASection`**
-- **Description**: 
-  - The `CTASection` is designed to prompt users to take a specific action, such as trying a demo, signing up, or learning more. 
+
+- **Description**:
+  - The `CTASection` is designed to prompt users to take a specific action, such as trying a demo, signing up, or learning more.
   - This component typically includes a title, description, and a call-to-action button, making it a crucial part of driving user engagement and conversions.
 
 <CTASection
@@ -84,56 +125,76 @@ The `landing` library is a collection of React components specifically designed 
   variant="light"
 />
 
-> **Engagement Tips:**  
-> - Use clear and compelling language for the call-to-action to encourage user interaction.  
-> - Ensure the button stands out visually and is easy to click.  
+> **Engagement Tips:**
+>
+> - Use clear and compelling language for the call-to-action to encourage user interaction.
+> - Ensure the button stands out visually and is easy to click.
 > - Test different variants (e.g., light vs. dark) to see which performs better with your audience.
 
 ---
 
 ### 4. **`FeaturesSection`**
-- **Description**: 
-  - The `FeaturesSection` lists the standout features or benefits of your product or service. 
+
+- **Description**:
+  - The `FeaturesSection` lists the standout features or benefits of your product or service.
   - Each feature can be highlighted with a short title, descriptive text, and an optional icon or image for visual interest.
 
 <FeaturesSection
   title="Why Choose Us"
   features={[
-    { title: 'Seamless Integration', description: 'Easily integrate with your existing tools and workflows to enhance productivity and efficiency.' },
-    { title: 'Scalable Solutions', description: 'Our platform grows with your business, ensuring you never outgrow our services and can always meet demand.' },
-    { title: '24/7 Support', description: 'Get round-the-clock support from our dedicated team of experts, ensuring you are never left without assistance.' }
+    {
+      title: 'Seamless Integration',
+      description:
+        'Easily integrate with your existing tools and workflows to enhance productivity and efficiency.',
+    },
+    {
+      title: 'Scalable Solutions',
+      description:
+        'Our platform grows with your business, ensuring you never outgrow our services and can always meet demand.',
+    },
+    {
+      title: '24/7 Support',
+      description:
+        'Get round-the-clock support from our dedicated team of experts, ensuring you are never left without assistance.',
+    },
   ]}
 />
 
-> **How to Write Effective Features:**  
-> - Lead with benefits rather than just technical details (“Save time by automating ___,” “Reduce overhead by ___”).  
-> - Keep each feature description concise (2–3 sentences).  
+> **How to Write Effective Features:**
+>
+> - Lead with benefits rather than just technical details (“Save time by automating **_,” “Reduce overhead by _**”).
+> - Keep each feature description concise (2–3 sentences).
 > - Use a consistent format for easier scanning and aesthetic harmony.
 
 ---
 
-
 ## General Tips for Building a Successful Landing Page
 
-1. **Keep It Simple:**  
+1. **Keep It Simple:**
+
    - Too many sections or lengthy text blocks can overwhelm visitors. Each section should serve a clear purpose: introduce, explain, persuade, or convert.
 
-2. **Engaging Headlines:**  
+2. **Engaging Headlines:**
+
    - Grab attention with short, benefit-driven headlines. Users should understand the core value in a split second.
 
-3. **Strong Calls-to-Action (CTAs):**  
+3. **Strong Calls-to-Action (CTAs):**
+
    - CTA buttons should be visually prominent, use action-oriented text, and directly address user needs or pain points (e.g., “Start Free Trial,” “Join Community,” “Learn More”).
 
-4. **Mobile Responsiveness:**  
+4. **Mobile Responsiveness:**
+
    - With Tailwind, it’s easy to ensure each section is responsive. Verify that elements display well across a variety of screen sizes.
 
-5. **Visual Consistency:**  
+5. **Visual Consistency:**
+
    - Stick to consistent typography, spacing, and color usage. The `landing` library leverages Tailwind and shadcn/ui tokens to help you maintain a polished look.
 
-6. **Highlight Social Proof:**  
+6. **Highlight Social Proof:**
+
    - Show testimonials, user counts, or logos of organizations that trust your product. Users often look for reassurance before committing.
 
-7. **Measure and Optimize:**  
+7. **Measure and Optimize:**
    - Use analytics or A/B tests to see where users drop off and optimize your sections accordingly. Sometimes a simple headline tweak can boost conversions dramatically.
 
 ---
@@ -142,9 +203,10 @@ The `landing` library is a collection of React components specifically designed 
 
 By utilizing the components provided in the `landing` library, you can quickly assemble a cohesive and visually appealing landing page that effectively communicates the **value** of your project or product. Whether you’re showcasing features, building trust with community highlights, or outlining pricing plans, these sections are designed to help you convert curious visitors into engaged users.
 
-> **Next Steps:**  
-> 1. **Import** the components you need.  
-> 2. **Adjust Props** (titles, descriptions, images) to match your brand tone and messaging.  
+> **Next Steps:**
+>
+> 1. **Import** the components you need.
+> 2. **Adjust Props** (titles, descriptions, images) to match your brand tone and messaging.
 > 3. **Deploy & Iterate** by collecting user feedback and optimizing key calls-to-action.
 
 If you have any questions or encounter any issues while building your landing page, feel free to open an issue or reach out to the community for support!

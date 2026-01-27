@@ -1,4 +1,4 @@
-import '../../common-tailwind/src/main.css';
+import '@rwoc/common-tailwind/main.css';
 
 export const parameters = {
   options: {
@@ -19,10 +19,15 @@ export const parameters = {
     page: null,
   },
   backgrounds: {
-    default: 'light',
-    values: [
-      { name: 'light', value: '#ffffff' },
-      { name: 'dark', value: '#000000' },
-    ],
+    options: {
+      light: { name: 'light', value: '#ffffff' },
+      dark: { name: 'dark', value: '#000000' },
+    },
+  },
+};
+
+export const initialGlobals = {
+  backgrounds: {
+    value: 'light',
   },
 };

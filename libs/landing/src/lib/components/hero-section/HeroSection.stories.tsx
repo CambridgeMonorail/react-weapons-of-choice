@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { HeroSection } from '.';
 
 const meta: Meta<typeof HeroSection> = {
@@ -26,7 +26,8 @@ const meta: Meta<typeof HeroSection> = {
     highlights: {
       name: 'Highlights',
       control: { type: 'array' },
-      description: 'An optional list of highlights to display in the hero section',
+      description:
+        'An optional list of highlights to display in the hero section',
     },
     image: {
       name: 'Image',
@@ -62,7 +63,7 @@ const meta: Meta<typeof HeroSection> = {
       name: 'Variant',
       control: 'select',
       options: ['light', 'dark'],
-      description: 'The visual variant for the section\'s background and text',
+      description: "The visual variant for the section's background and text",
     },
   },
 };
@@ -82,7 +83,10 @@ export const Default: Story = {
     image: 'https://via.placeholder.com/400',
     imageAlt: 'Placeholder Image',
     ctaPrimary: { text: 'Get Started', onClick: action('primary-cta-click') },
-    ctaSecondary: { text: 'Learn More', onClick: action('secondary-cta-click') },
+    ctaSecondary: {
+      text: 'Learn More',
+      onClick: action('secondary-cta-click'),
+    },
     layout: 'left',
     variant: 'light',
   },

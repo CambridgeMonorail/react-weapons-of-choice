@@ -1,5 +1,11 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from './carousel';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from './carousel';
 
 const meta: Meta<typeof Carousel> = {
   title: 'Shadcnui/Data Display/Carousel',

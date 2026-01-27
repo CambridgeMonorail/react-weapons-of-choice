@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { FeaturesSection } from '.';
 
 const meta: Meta<typeof FeaturesSection> = {
@@ -14,7 +14,8 @@ const meta: Meta<typeof FeaturesSection> = {
     features: {
       name: 'Features',
       control: { type: 'object' },
-      description: 'An array of feature objects, each containing a title and description',
+      description:
+        'An array of feature objects, each containing a title and description',
     },
   },
 };

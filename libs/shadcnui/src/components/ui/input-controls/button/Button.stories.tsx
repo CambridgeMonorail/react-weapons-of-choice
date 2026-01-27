@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '.';
 
 const meta: Meta<typeof Button> = {
@@ -9,7 +9,14 @@ const meta: Meta<typeof Button> = {
     variant: {
       name: 'Variant',
       control: 'select',
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      options: [
+        'default',
+        'destructive',
+        'outline-solid',
+        'secondary',
+        'ghost',
+        'link',
+      ],
       description: 'The variant of the button',
     },
     size: {

@@ -1,5 +1,13 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Toast, ToastProvider, ToastViewport, ToastTitle, ToastDescription, ToastClose, ToastAction } from './toast';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Toast,
+  ToastProvider,
+  ToastViewport,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+} from './toast';
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof Toast> = {
@@ -17,7 +25,13 @@ type Story = StoryObj<typeof Toast>;
 export const Default: Story = {
   render: () => (
     <ToastProvider>
-      <Button onClick={() => { /* logic to show toast */ }}>Show Toast</Button>
+      <Button
+        onClick={() => {
+          /* logic to show toast */
+        }}
+      >
+        Show Toast
+      </Button>
       <Toast>
         <ToastTitle>Default Toast</ToastTitle>
         <ToastDescription>This is a default toast message.</ToastDescription>
@@ -34,10 +48,18 @@ export const Default: Story = {
 export const Destructive: Story = {
   render: () => (
     <ToastProvider>
-      <Button onClick={() => { /* logic to show toast */ }}>Show Destructive Toast</Button>
+      <Button
+        onClick={() => {
+          /* logic to show toast */
+        }}
+      >
+        Show Destructive Toast
+      </Button>
       <Toast variant="destructive">
         <ToastTitle>Destructive Toast</ToastTitle>
-        <ToastDescription>This is a destructive toast message.</ToastDescription>
+        <ToastDescription>
+          This is a destructive toast message.
+        </ToastDescription>
         <ToastClose />
       </Toast>
       <ToastViewport />
@@ -51,12 +73,18 @@ export const Destructive: Story = {
 export const WithAction: Story = {
   render: () => (
     <ToastProvider>
-      <Button onClick={() => { /* logic to show toast */ }}>Show Toast with Action</Button>
+      <Button
+        onClick={() => {
+          /* logic to show toast */
+        }}
+      >
+        Show Toast with Action
+      </Button>
       <Toast>
         <ToastTitle>Toast with Action</ToastTitle>
         <ToastDescription>This toast has an action button.</ToastDescription>
-        <ToastAction asChild>
-          <Button variant="primary">Undo</Button>
+        <ToastAction altText="Undo action" asChild>
+          <Button variant="default">Undo</Button>
         </ToastAction>
         <ToastClose />
       </Toast>

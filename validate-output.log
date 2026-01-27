@@ -1,0 +1,225 @@
+
+> react-weapons-of-choice@0.0.0 validate C:\Projects\react-weapons-of-choice
+> pnpm run format && pnpm run lint:all && pnpm run type-check:all && pnpm run test:all && pnpm run build:all
+
+
+> react-weapons-of-choice@0.0.0 format C:\Projects\react-weapons-of-choice
+> nx format:write
+
+
+> react-weapons-of-choice@0.0.0 lint:all C:\Projects\react-weapons-of-choice
+> nx run-many --target=lint --all
+
+
+ NX   Running target lint for 9 projects:
+
+- common-tailwind
+- shadcnui-blocks
+- storybook-host
+- client-e2e
+- shadcnui
+- landing
+- client
+- shell
+- react-weapons-of-choice
+
+
+
+> nx run shadcnui:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+(node:56704) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Projects/react-weapons-of-choice/libs/shadcnui/eslint.config.js?mtime=1769337050124 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Projects\react-weapons-of-choice\libs\shadcnui\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\data-display\chart\chart.tsx[24m[0m
+[0m  [2m6:3[22m  [33mwarning[39m  'NameType' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m7:3[22m  [33mwarning[39m  'Payload' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m8:3[22m  [33mwarning[39m  'ValueType' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\data-display\table\table.stories.tsx[24m[0m
+[0m  [2m10:3[22m  [33mwarning[39m  'TableCaption' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\feedback\alert\alert.tsx[24m[0m
+[0m  [2m47:3[22m  [33mwarning[39m  Headings must have content and the content must be accessible by a screen reader  [2mjsx-a11y/heading-has-content[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\input-controls\select\select.stories.tsx[24m[0m
+[0m  [2m10:3[22m  [33mwarning[39m  'SelectSeparator' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\layout\sheet\sheet.stories.tsx[24m[0m
+[0m  [2m6:3[22m  [33mwarning[39m  'SheetPortal' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m7:3[22m  [33mwarning[39m  'SheetOverlay' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\layout\sidebar\sidebar.stories.tsx[24m[0m
+[0m   [2m7:3[22m  [33mwarning[39m  'SidebarGroupAction' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m12:3[22m  [33mwarning[39m  'SidebarInset' is defined but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m14:3[22m  [33mwarning[39m  'SidebarMenuAction' is defined but never used     [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m15:3[22m  [33mwarning[39m  'SidebarMenuBadge' is defined but never used      [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m18:3[22m  [33mwarning[39m  'SidebarMenuSkeleton' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m19:3[22m  [33mwarning[39m  'SidebarMenuSub' is defined but never used        [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m20:3[22m  [33mwarning[39m  'SidebarMenuSubButton' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m21:3[22m  [33mwarning[39m  'SidebarMenuSubItem' is defined but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m23:3[22m  [33mwarning[39m  'SidebarRail' is defined but never used           [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\layout\sidebar\sidebar.tsx[24m[0m
+[0m  [2m35:7[22m  [33mwarning[39m  'SidebarContext' is already defined  [2mno-redeclare[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\navigation\context-menu\context-menu.stories.tsx[24m[0m
+[0m  [2m12:3[22m  [33mwarning[39m  'ContextMenuGroup' is defined but never used   [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m13:3[22m  [33mwarning[39m  'ContextMenuPortal' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\navigation\pagination\pagination.tsx[24m[0m
+[0m  [2m97:3[22m  [33mwarning[39m  Anchors must have content and the content must be accessible by a screen reader  [2mjsx-a11y/anchor-has-content[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\components\ui\navigation\tabs\tabs.stories.tsx[24m[0m
+[0m  [2m58:11[22m  [33mwarning[39m  Emojis should be wrapped in <span>, have role="img", and have an accessible description with aria-label or aria-labelledby  [2mjsx-a11y/accessible-emoji[22m[0m
+[0m  [2m61:11[22m  [33mwarning[39m  Emojis should be wrapped in <span>, have role="img", and have an accessible description with aria-label or aria-labelledby  [2mjsx-a11y/accessible-emoji[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui\src\hooks\use-toast.ts[24m[0m
+[0m  [2m21:7[22m  [33mwarning[39m  'actionTypes' is assigned a value but only used as a type  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[33m[1m✖ 24 problems (0 errors, 24 warnings)[22m[39m[0m
+[0m[33m[1m[22m[39m[0m
+
+> nx run shadcnui-blocks:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui-blocks\src\lib\components\charts\SparkLine.tsx[24m[0m
+[0m  [2m6:3[22m  [33mwarning[39m  'XAxis' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m7:3[22m  [33mwarning[39m  'YAxis' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui-blocks\src\lib\components\horizontal-nav-bar\index.tsx[24m[0m
+[0m  [2m3:10[22m  [33mwarning[39m  'ChevronDown' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui-blocks\src\lib\components\logo-carousel\index.tsx[24m[0m
+[0m  [2m17:25[22m  [33mwarning[39m  'setCarouselLogos' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m24:11[22m  [33mwarning[39m  'interval' is assigned a value but never used          [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\shadcnui-blocks\src\lib\components\number-and-secondary-stat\index.tsx[24m[0m
+[0m  [2m138:39[22m  [33mwarning[39m  'label' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[33m[1m✖ 6 problems (0 errors, 6 warnings)[22m[39m[0m
+[0m[33m[1m[22m[39m[0m
+
+> nx run landing:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\landing\eslint.config.js[24m[0m
+[0m  [2m2:8[22m  [33mwarning[39m  'storybook' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[33m[1m✖ 1 problem (0 errors, 1 warning)[22m[39m[0m
+[0m[33m[1m[22m[39m[0m
+
+> nx run shell:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+(node:48712) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Projects/react-weapons-of-choice/libs/shell/eslint.config.js?mtime=1769337050126 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Projects\react-weapons-of-choice\libs\shell\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> nx run common-tailwind:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+
+> nx run client:lint  [existing outputs match the cache, left as is]
+
+[2m> [22meslint .
+
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\apps\client\src\app\pages\dashboard\Dashboard.tsx[24m[0m
+[0m  [2m25:7[22m  [33mwarning[39m  'ArrowUpIcon' is assigned a value but never used    [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m39:7[22m  [33mwarning[39m  'ArrowDownIcon' is assigned a value but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m  [2m53:7[22m  [33mwarning[39m  'Sparkline' is assigned a value but never used      [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\apps\client\src\app\pages\features\Features.tsx[24m[0m
+[0m  [2m8:3[22m  [33mwarning[39m  'Tooltip' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\apps\client\src\app\pages\landing\Landing.tsx[24m[0m
+[0m  [2m25:10[22m  [33mwarning[39m  'LogoCarousel' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\apps\client\src\app\pages\status-board\StatusBoard.tsx[24m[0m
+[0m  [2m22:3[22m  [33mwarning[39m  'Textarea' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[33m[1m✖ 6 problems (0 errors, 6 warnings)[22m[39m[0m
+[0m[33m[1m[22m[39m[0m
+
+> nx run react-weapons-of-choice:lint
+
+> eslint ./src
+
+
+Oops! Something went wrong! :(
+
+ESLint: 9.19.0
+
+No files matching the pattern "./src" were found.
+Please check for typing mistakes in the pattern.
+
+> eslint ./src
+
+
+Oops! Something went wrong! :(
+
+ESLint: 9.19.0
+
+No files matching the pattern "./src" were found.
+Please check for typing mistakes in the pattern.
+
+Warning: command "eslint ./src" exited with non-zero status code
+> nx run client-e2e:lint
+
+> eslint .
+
+
+> nx run storybook-host:lint
+
+
+Linting "storybook-host"...
+(node:56724) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Projects/react-weapons-of-choice/libs/storybook-host/eslint.config.js?mtime=1769337037353 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Projects\react-weapons-of-choice\libs\storybook-host\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\storybook-host\.storybook\main.ts[24m[0m
+[0m  [2m70:42[22m  [33mwarning[39m  Unexpected any. Specify a different type  [2m@typescript-eslint/no-explicit-any[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\storybook-host\.storybook\preview.ts[24m[0m
+[0m  [2m1:1[22m  [31merror[39m  Projects cannot be imported by a relative or absolute path, and must begin with a npm scope  [2m@nx/enforce-module-boundaries[22m[0m
+[0m[0m
+[0m[4mC:\Projects\react-weapons-of-choice\libs\storybook-host\eslint.config.js[24m[0m
+[0m  [2m2:8[22m  [33mwarning[39m  'storybook' is defined but never used  [2m@typescript-eslint/no-unused-vars[22m[0m
+[0m[0m
+[0m[31m[1m✖ 3 problems (1 error, 2 warnings)[22m[39m[0m
+[0m[31m[1m[22m[39m[0m
+✖ 3 problems (1 error, 2 warnings)
+
+
+
+
+ NX   Running target lint for 9 projects failed
+
+Failed tasks:
+
+- react-weapons-of-choice:lint
+- storybook-host:lint
+
+
+ NX   Nx detected  flaky tasks
+
+  shadcnui-blocks:lint
+  landing:lint
+  shadcnui:lint
+
+Flaky tasks can disrupt your CI pipeline. Automatically retry them with Nx Cloud. Learn more at https://nx.dev/ci/features/flaky-tasks
+
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

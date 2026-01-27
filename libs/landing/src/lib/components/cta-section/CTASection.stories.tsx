@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { CTASection } from '.';
 
 const meta: Meta<typeof CTASection> = {
@@ -32,7 +32,7 @@ const meta: Meta<typeof CTASection> = {
       name: 'Variant',
       control: 'select',
       options: ['light', 'dark'],
-      description: 'The visual variant for the section\'s background and text',
+      description: "The visual variant for the section's background and text",
     },
   },
 };
@@ -43,9 +43,9 @@ type Story = StoryObj<typeof CTASection>;
 /**
  * Default story for the CTASection component.
  * Demonstrates the component with default props.
- * 
+ *
  * Effective CTA Button Text Guidelines:
- * 
+ *
  * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
  * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
  * - **Value Proposition**: Clearly communicate the benefit users will receive.
@@ -60,7 +60,8 @@ export const Default: Story = {
   render: (args) => <CTASection {...args} />,
   args: {
     title: 'Experience It Yourself',
-    description: 'Try our live demo to see how effortlessly you can set up and scale your React project with React Weapons of Choice.',
+    description:
+      'Try our live demo to see how effortlessly you can set up and scale your React project with React Weapons of Choice.',
     buttonText: 'Try the Demo',
     buttonAction: action('button-click'),
     variant: 'light',
@@ -70,9 +71,9 @@ export const Default: Story = {
 /**
  * Story for the CTASection component with different prop combinations.
  * Shows the component with a dark background and different text.
- * 
+ *
  * Effective CTA Button Text Guidelines:
- * 
+ *
  * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
  * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
  * - **Value Proposition**: Clearly communicate the benefit users will receive.
@@ -87,7 +88,8 @@ export const WithDifferentProps: Story = {
   render: (args) => <CTASection {...args} />,
   args: {
     title: 'Join the Community',
-    description: 'React Weapons of Choice is built by developers, for developers. Contribute, discuss, and shape the future of the project.',
+    description:
+      'React Weapons of Choice is built by developers, for developers. Contribute, discuss, and shape the future of the project.',
     buttonText: 'Contribute on GitHub',
     buttonAction: action('button-click'),
     variant: 'dark',
@@ -97,9 +99,9 @@ export const WithDifferentProps: Story = {
 /**
  * Story for the CTASection component with edge cases.
  * Demonstrates the component with empty strings for title, description, and buttonText.
- * 
+ *
  * Effective CTA Button Text Guidelines:
- * 
+ *
  * - **Action-Oriented Language**: Use strong verbs to clearly indicate the desired action.
  * - **Urgency**: Incorporate time-sensitive phrases to prompt immediate engagement.
  * - **Value Proposition**: Clearly communicate the benefit users will receive.

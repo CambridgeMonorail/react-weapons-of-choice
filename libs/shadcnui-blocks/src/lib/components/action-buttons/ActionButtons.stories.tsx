@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { TooltipProvider } from '@rwoc/shadcnui';
 import { ActionButtons, ActionButtonsProps } from './index';
 import { Beer, Coffee, Apple } from 'lucide-react';

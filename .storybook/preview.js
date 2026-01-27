@@ -1,4 +1,4 @@
-import { addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react-vite';
 import { BrowserRouter } from 'react-router-dom';
 
 addDecorator((story) => <BrowserRouter>{story()}</BrowserRouter>);

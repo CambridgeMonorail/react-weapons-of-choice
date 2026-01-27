@@ -1,7 +1,11 @@
-import * as React from "react"
-import { Root as RadioGroupRoot, Item as RadioGroupItemPrimitive, Indicator } from "@radix-ui/react-radio-group"
-import { cn } from "../../../../lib/utils"
-import { DotFilledIcon } from "@radix-ui/react-icons"
+import * as React from 'react';
+import {
+  Root as RadioGroupRoot,
+  Item as RadioGroupItemPrimitive,
+  Indicator,
+} from '@radix-ui/react-radio-group';
+import { cn } from '../../../../lib/utils';
+import { DotFilledIcon } from '@radix-ui/react-icons';
 
 /**
  * RadioGroup component.
@@ -14,13 +18,13 @@ const RadioGroup = React.forwardRef<
 >(({ className, ...props }, ref) => {
   return (
     <RadioGroupRoot
-      className={cn("grid gap-2", className)}
+      className={cn('grid gap-2', className)}
       {...props}
       ref={ref}
     />
-  )
-})
-RadioGroup.displayName = RadioGroupRoot.displayName
+  );
+});
+RadioGroup.displayName = RadioGroupRoot.displayName;
 
 /**
  * RadioGroupItem component.
@@ -42,8 +46,8 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupItemPrimitive
       ref={ref}
       className={cn(
-        "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-        className
+        'aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow-sm focus:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+        className,
       )}
       {...props}
     >
@@ -51,8 +55,8 @@ const RadioGroupItem = React.forwardRef<
         <DotFilledIcon className="h-3.5 w-3.5 fill-primary" />
       </Indicator>
     </RadioGroupItemPrimitive>
-  )
-})
-RadioGroupItem.displayName = RadioGroupItemPrimitive.displayName
+  );
+});
+RadioGroupItem.displayName = RadioGroupItemPrimitive.displayName;
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, RadioGroupItem };

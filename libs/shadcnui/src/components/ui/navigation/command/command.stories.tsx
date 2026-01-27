@@ -1,5 +1,15 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { Command, CommandDialog, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandShortcut, CommandSeparator } from './command';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+} from './command';
 
 const meta: Meta<typeof Command> = {
   title: 'Shadcnui/Navigation/Command',
@@ -58,12 +68,10 @@ export const WithShortcuts: Story = {
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
-            Item 1
-            <CommandShortcut>⌘1</CommandShortcut>
+            Item 1<CommandShortcut>⌘1</CommandShortcut>
           </CommandItem>
           <CommandItem>
-            Item 2
-            <CommandShortcut>⌘2</CommandShortcut>
+            Item 2<CommandShortcut>⌘2</CommandShortcut>
           </CommandItem>
         </CommandGroup>
       </CommandList>

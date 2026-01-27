@@ -1,5 +1,15 @@
-import { Meta, StoryObj } from '@storybook/react';
-import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogFooter, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel } from './alert-dialog';
+import { Meta, StoryObj } from '@storybook/react-vite';
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogFooter,
+  AlertDialogTitle,
+  AlertDialogDescription,
+  AlertDialogAction,
+  AlertDialogCancel,
+} from './alert-dialog';
 import { Button } from '../../input-controls/button';
 
 const meta: Meta<typeof AlertDialog> = {
@@ -24,7 +34,8 @@ export const Default: Story = {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your
+            account and remove your data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -43,13 +54,14 @@ export const CustomTrigger: Story = {
   render: () => (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="primary">Delete Account</Button>
+        <Button variant="destructive">Delete Account</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Account</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete your account? This action cannot be undone.
+            Are you sure you want to delete your account? This action cannot be
+            undone.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

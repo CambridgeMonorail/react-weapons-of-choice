@@ -1,6 +1,12 @@
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react-vite';
 import { StatsBlock, StatsBlockProps } from './StatsBlock';
-import { User, TrendingUp, DollarSign, Activity, ShoppingCart } from 'lucide-react';
+import {
+  User,
+  TrendingUp,
+  DollarSign,
+  Activity,
+  ShoppingCart,
+} from 'lucide-react';
 
 const meta: Meta<typeof StatsBlock> = {
   title: 'Shadcnui Blocks/StatsBlock',
@@ -19,9 +25,24 @@ export const Default: StoryObj<StatsBlockProps> = {
   render: (args) => <StatsBlock {...args} />,
   args: {
     stats: [
-      { icon: <User />, title: 'Users', value: '1,200', description: 'Total number of users' },
-      { icon: <TrendingUp />, title: 'Growth', value: '30%', description: 'Growth rate' },
-      { icon: <DollarSign />, title: 'Revenue', value: '$12,000', description: 'Total revenue' },
+      {
+        icon: <User />,
+        title: 'Users',
+        value: '1,200',
+        description: 'Total number of users',
+      },
+      {
+        icon: <TrendingUp />,
+        title: 'Growth',
+        value: '30%',
+        description: 'Growth rate',
+      },
+      {
+        icon: <DollarSign />,
+        title: 'Revenue',
+        value: '$12,000',
+        description: 'Total revenue',
+      },
     ],
   },
 };
@@ -35,9 +56,24 @@ export const CustomIcons: StoryObj<StatsBlockProps> = {
   render: (args) => <StatsBlock {...args} />,
   args: {
     stats: [
-      { icon: <User className="text-blue-500" />, title: 'New Users', value: '500', description: 'New users this month' },
-      { icon: <TrendingUp className="text-green-500" />, title: 'Monthly Growth', value: '15%', description: 'Growth rate this month' },
-      { icon: <DollarSign className="text-yellow-500" />, title: 'Monthly Revenue', value: '$5,000', description: 'Revenue this month' },
+      {
+        icon: <User className="text-blue-500" />,
+        title: 'New Users',
+        value: '500',
+        description: 'New users this month',
+      },
+      {
+        icon: <TrendingUp className="text-green-500" />,
+        title: 'Monthly Growth',
+        value: '15%',
+        description: 'Growth rate this month',
+      },
+      {
+        icon: <DollarSign className="text-yellow-500" />,
+        title: 'Monthly Revenue',
+        value: '$5,000',
+        description: 'Revenue this month',
+      },
     ],
   },
 };
@@ -63,9 +99,24 @@ export const MixedData: StoryObj<StatsBlockProps> = {
   render: (args) => <StatsBlock {...args} />,
   args: {
     stats: [
-      { icon: <Activity className="text-red-500" />, title: 'Active Sessions', value: '120', description: 'Current active sessions' },
-      { icon: <ShoppingCart className="text-purple-500" />, title: 'Orders', value: '75', description: 'Total orders today' },
-      { icon: <DollarSign className="text-yellow-500" />, title: 'Revenue', value: '$8,000', description: 'Revenue today' },
+      {
+        icon: <Activity className="text-red-500" />,
+        title: 'Active Sessions',
+        value: '120',
+        description: 'Current active sessions',
+      },
+      {
+        icon: <ShoppingCart className="text-purple-500" />,
+        title: 'Orders',
+        value: '75',
+        description: 'Total orders today',
+      },
+      {
+        icon: <DollarSign className="text-yellow-500" />,
+        title: 'Revenue',
+        value: '$8,000',
+        description: 'Revenue today',
+      },
     ],
   },
 };
@@ -80,9 +131,24 @@ export const CustomClass: StoryObj<StatsBlockProps> = {
   args: {
     className: 'bg-blue-50 p-6 rounded-lg',
     stats: [
-      { icon: <User />, title: 'Users', value: '1,200', description: 'Total number of users' },
-      { icon: <TrendingUp />, title: 'Growth', value: '30%', description: 'Growth rate' },
-      { icon: <DollarSign />, title: 'Revenue', value: '$12,000', description: 'Total revenue' },
+      {
+        icon: <User />,
+        title: 'Users',
+        value: '1,200',
+        description: 'Total number of users',
+      },
+      {
+        icon: <TrendingUp />,
+        title: 'Growth',
+        value: '30%',
+        description: 'Growth rate',
+      },
+      {
+        icon: <DollarSign />,
+        title: 'Revenue',
+        value: '$12,000',
+        description: 'Total revenue',
+      },
     ],
   },
 };
