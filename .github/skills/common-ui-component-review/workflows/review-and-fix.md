@@ -2,7 +2,7 @@
 
 ## Goal
 
-Perform a standards review of a common-ui component and apply safe, straightforward fixes.
+Perform a standards review of a shadcnui component and apply safe, straightforward fixes.
 
 ## Steps
 
@@ -45,10 +45,10 @@ Perform a standards review of a common-ui component and apply safe, straightforw
 
 Choose minimal commands that validate the affected scope, for example:
 
-- `nx lint common-ui`
-- `nx test common-ui`
-- `nx build common-ui`
-- `nx typecheck common-ui`
+- `nx lint shadcnui`
+- `nx test shadcnui`
+- `nx build shadcnui`
+- `nx typecheck shadcnui`
 
 If your repo uses `pnpm` scripts for affected targets, use those instead, but keep runs minimal.
 

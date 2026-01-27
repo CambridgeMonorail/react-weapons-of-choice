@@ -12,7 +12,7 @@ It will identify issues, apply straightforward fixes, and leave clear recommenda
 
 Use this skill when:
 
-- A new component has been added to common-ui
+- A new component has been added to shadcnui
 - An existing component has been modified and needs standards review
 - A component needs to be categorized correctly in the components taxonomy
 - We want confidence in accessibility, exports, tests, and Storybook coverage
@@ -21,7 +21,7 @@ Use this skill when:
 
 The user should provide:
 
-- Component path relative to `libs/common-ui/src/lib/components` (example: `information-display/badge`)
+- Component path relative to `libs/shadcnui/src/lib` (example: `data-display/badge`)
 - Optional: special concerns (for example, accessibility, API design, variants, performance)
 
 If the component path is missing, infer it from recent changes where possible. If you cannot infer it, ask once and stop.

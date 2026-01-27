@@ -9,16 +9,16 @@ applyTo: '**/*.tsx'
 ## Tailwind and Component Conventions
 
 - Use Tailwind CSS utility classes for all styling
-- Import shadcn/ui components from `@bs-client-ui/common-ui`
-- Use `cn()` utility for conditional classes (from `@bs-client-ui/common-ui`)
+- Import shadcn/ui components from `@rwoc/shadcnui`
+- Use `cn()` utility for conditional classes (from `@rwoc/shadcnui`)
 - Mobile-first responsive design with breakpoints: `sm:`, `md:`, `lg:`, `xl:`, `2xl:`
 - Dark mode support where applicable using `dark:` variant
 - Avoid custom CSS unless absolutely necessary
 
 ## Shadcn/ui Usage
 
-- All shadcn/ui components live in `libs/common-ui/src/lib/components/`
-- Import from workspace: `import { Button, Card } from '@bs-client-ui/common-ui'`
+- All shadcn/ui components live in `libs/shadcnui/src/lib/`
+- Import from workspace: `import { Button, Card } from '@rwoc/shadcnui'`
 - Follow shadcn/ui component API and prop patterns
 - Extend shadcn components rather than creating new primitives
 - Common components: Button, Card, Input, Select, Dialog, Dropdown, Table, Badge, etc.

@@ -14,8 +14,8 @@ applyTo: '**/*.test.{ts,tsx}, **/*.spec.{ts,tsx}, **/playwright/**/*.{ts,tsx}'
 - **Jest:** Only `control-panel-ui`
   - Configuration: `apps/control-panel-ui/jest.config.ts`
   - Run: `pnpm -w run test:control-panel-ui`
-- **Playwright:** E2E tests for `bs-management-cloud-ui`
-  - Tests in `apps/bs-management-cloud-ui-e2e/`
+- **Playwright:** E2E tests for `client` app
+  - Tests in `apps/client-e2e/`
   - Run: `pnpm -w run test:mc-ui:e2e`
 - **Storybook:** Component visual testing
   - Stories in `libs/storybook-host/`

@@ -22,7 +22,7 @@ You will apply straightforward fixes and leave clear recommendations for anythin
 ## Skill
 
 Use the skill guidance in:
-`.github/skills/common-ui-component-review/`
+`.github/skills/shadcnui-component-review/`
 
 Follow the workflows and templates where relevant.
 
