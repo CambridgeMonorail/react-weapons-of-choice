@@ -8,18 +8,15 @@ applyTo: '**/*.test.{ts,tsx}, **/*.spec.{ts,tsx}, **/playwright/**/*.{ts,tsx}'
 
 ## Test Frameworks by Project
 
-- **Vitest:** All projects except `control-panel-ui`
+- **Vitest:** All projects
   - Configuration: `vitest.workspace.ts`
-  - Run: `pnpm -w run test:<project>`
-- **Jest:** Only `control-panel-ui`
-  - Configuration: `apps/control-panel-ui/jest.config.ts`
-  - Run: `pnpm -w run test:control-panel-ui`
+  - Run: `pnpm test:<project>`
 - **Playwright:** E2E tests for `client` app
   - Tests in `apps/client-e2e/`
-  - Run: `pnpm -w run test:mc-ui:e2e`
+  - Run: `pnpm test:client:e2e`
 - **Storybook:** Component visual testing
   - Stories in `libs/storybook-host/`
-  - Run: `pnpm -w run start:storybook`
+  - Run: `pnpm serve:storybook`
 
 ## Preferred Testing Patterns
 
@@ -38,24 +35,27 @@ applyTo: '**/*.test.{ts,tsx}, **/*.spec.{ts,tsx}, **/playwright/**/*.{ts,tsx}'
 1. Run TypeScript check: `pnpm -w run typecheck:<project>`
 2. Run linter: `pnpm -w run lint:<project>`
 3. Run tests: `pnpm -w run test:<project>`
+type-check:<project>`
+2. Run linter: `pnpm lint:<project>`
+3. Run tests: `pnpm test:<project>`
 
 **For multiple project changes:**
 
-1. Use Nx affected: `pnpm -w run typecheck:affected`
-2. Then: `pnpm -w run lint:affected`
-3. Then: `pnpm -w run test:affected`
+1. Use Nx affected: `pnpm type-check:affected`
+2. Then: `pnpm lint:affected`
+3. Then: `pnpm test:affected`
 
 **Before commit:**
 
 ```bash
-pnpm -w run commit-checks  # Runs build, test, lint, typecheck on affected
+pnpm run validate  # Runs format, lint, type-check, test, build
 ```
 
 ## Existing package.json Scripts
 
 Use existing scripts - do not invent new ones:
 
-- `pnpm -w run validate:control-panel-ui` - Full validation (test, lint, typecheck, build)
-- `pnpm -w run validate:player-cloud-control` - Full validation for mobile
-- Individual project scripts: `typecheck:<project>`, `lint:<project>`, `test:<project>`
-- Affected scripts: `build:affected`, `test:affected`, `lint:affected`, `typecheck:affected`
+- `pnpm run validate` - Full validation pipeline (format, lint, type-check, test, build)
+- `pnpm validate:client` - Validate client app only
+- Individual project scripts: `type-check:<project>`, `lint:<project>`, `test:<project>`
+- Affected scripts: `build:affected`, `test:affected`, `lint:affected`, `type-

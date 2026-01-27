@@ -386,7 +386,7 @@ Replace `[project-name]` with the actual project (e.g., `client`).
 ### Monorepo structure
 - This is an Nx monorepo with pnpm workspaces
 - Apps are in `apps/`, shared libs in `libs/`
-- Common UI components are in `libs/common-ui/`
+- shadcn/ui components are in `libs/shadcnui/`
 - Use relative imports within a project, workspace imports across projects
 
    - All requirements have REQ-nnn identifiers

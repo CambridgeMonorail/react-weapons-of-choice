@@ -4,7 +4,7 @@
 
 This skill performs an end-to-end review of a newly added or modified component under:
 
-`libs/common-ui/src/lib/components`
+`libs/shadcnui/src/lib`
 
 It will identify issues, apply straightforward fixes, and leave clear recommendations for anything that requires design decisions or larger refactors.
 

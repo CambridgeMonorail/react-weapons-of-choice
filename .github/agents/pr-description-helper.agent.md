@@ -142,7 +142,7 @@ Output the complete PR description in a code block:
 
 [Generated description]
 
-**Jira**: [Title or ID](https://brightsign.atlassian.net/browse/[JIRA-ID])
+**Issue**: [Link to GitHub issue if applicable]
 
 ## 📋 List of Changes
 
