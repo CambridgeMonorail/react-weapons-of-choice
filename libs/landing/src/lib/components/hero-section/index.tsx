@@ -69,21 +69,21 @@ export const HeroSection: FC<HeroSectionProps> = ({
   // Default styles for the 'light' variant
   let sectionClasses = 'bg-background text-primary';
   let titleClasses = 'text-primary';
-  let subtitleClasses = 'text-foreground/90';
-  let descriptionClasses = 'text-foreground/90';
+  let subtitleClasses = 'text-foreground opacity-90';
+  let descriptionClasses = 'text-foreground opacity-90';
   let highlightIconClasses = 'text-accent';
-  let buttonPrimaryClasses = 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground';
-  let buttonSecondaryClasses = 'bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary';
+  let buttonPrimaryVariant: 'default' | 'secondary' = 'default';
+  let buttonSecondaryVariant: 'default' | 'secondary' | 'outline' = 'outline';
 
   // Override styles if using the 'dark' variant
   if (variant === 'dark') {
     sectionClasses = 'bg-primary text-primary-foreground';
     titleClasses = 'text-primary-foreground';
-    subtitleClasses = 'text-primary-foreground';
-    descriptionClasses = 'text-primary-foreground';
+    subtitleClasses = 'text-primary-foreground opacity-90';
+    descriptionClasses = 'text-primary-foreground opacity-90';
     highlightIconClasses = 'text-primary-foreground';
-    buttonPrimaryClasses = 'bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary';
-    buttonSecondaryClasses = 'bg-secondary text-secondary-foreground/90 hover:bg-secondary/90 hover:text-secondary-foreground';
+    buttonPrimaryVariant = 'default';
+    buttonSecondaryVariant = 'secondary';
   }
 
   return (
@@ -144,7 +144,7 @@ export const HeroSection: FC<HeroSectionProps> = ({
                 onClick={
                   ctaPrimary.onClick || (() => window.location.href = ctaPrimary.link || '#')
                 }
-                className={buttonPrimaryClasses}
+                variant={buttonPrimaryVariant}
                 data-testid="cta-primary"
               >
                 {ctaPrimary.text}
@@ -155,7 +155,7 @@ export const HeroSection: FC<HeroSectionProps> = ({
                 onClick={
                   ctaSecondary.onClick || (() => window.location.href = ctaSecondary.link || '#')
                 }
-                className={buttonSecondaryClasses}
+                variant={buttonSecondaryVariant}
                 data-testid="cta-secondary"
               >
                 {ctaSecondary.text}

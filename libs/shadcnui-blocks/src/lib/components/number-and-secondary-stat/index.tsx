@@ -234,12 +234,12 @@ export const NumberAndSecondaryStat: FC<NumberAndSecondaryStatProps> = ({
     <div className="flex flex-col items-start">
       <div className="flex items-baseline">
         {prefix && (
-          <span className="text-3xl" data-testid="main-value-prefix">
+          <span className="text-2xl" data-testid="main-value-prefix">
             {prefix}
           </span>
         )}
         <div
-          className="text-6xl font-bold tracking-tight"
+          className="text-5xl font-bold tracking-tight"
           data-testid="main-value"
         >
           {formattedMainValue}
@@ -263,7 +263,7 @@ export const NumberAndSecondaryStat: FC<NumberAndSecondaryStatProps> = ({
       data-testid="number-and-secondary-stat"
     >
       <CardContent
-        className="grow space-y-2 flex flex-col justify-center p-2 pb-0"
+        className="grow space-y-2 flex flex-col justify-center p-6 pb-4"
         data-testid="card-content"
       >
         {mainValueElement}

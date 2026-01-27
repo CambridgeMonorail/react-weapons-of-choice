@@ -43,7 +43,7 @@ interface AboutSectionProps {
  */
 export const AboutSection = ({ title, description, logos, header, subheader }: AboutSectionProps): ReactElement => {
   return (
-    <section data-testid="about-section" className="text-center py-20 px-5 bg-background text-primary w-full">
+    <section data-testid="about-section" className="text-center pt-20 pb-12 px-5 bg-background text-primary w-full">
       <h2 data-testid="about-title" className="text-4xl font-bold mb-6">{title}</h2>
       <p data-testid="about-description" className="text-xl mb-8 max-w-2xl mx-auto text-center">{description}</p>
       {logos.length > 0 ? (

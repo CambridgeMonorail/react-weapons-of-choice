@@ -1,4 +1,4 @@
-# Skill: Common UI Component Review
+# Skill: Shadcn UI Component Review
 
 ## Purpose
 

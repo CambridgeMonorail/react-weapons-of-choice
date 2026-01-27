@@ -44,15 +44,15 @@ export const CTASection: FC<CTASectionProps> = ({
   // Default styles for the 'light' variant
   let sectionClasses = 'bg-background text-primary';
   let headingClasses = `${baseHeadingClasses} text-primary`;
-  let paragraphClasses = `${baseParagraphClasses} text-primary`;
-  let buttonClasses = 'bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground';
+  let paragraphClasses = `${baseParagraphClasses} text-muted-foreground`;
+  let buttonVariant: 'default' | 'secondary' = 'default';
 
   // Override styles if using the 'dark' variant
   if (variant === 'dark') {
     sectionClasses = 'bg-primary text-primary-foreground';
     headingClasses = `${baseHeadingClasses} text-primary-foreground`;
-    paragraphClasses = `${baseParagraphClasses} text-primary-foreground`;
-    buttonClasses = 'bg-primary-foreground text-primary hover:bg-primary-foreground/90 hover:text-primary';
+    paragraphClasses = `${baseParagraphClasses} text-primary-foreground opacity-90`;
+    buttonVariant = 'secondary';
   }
 
   return (
@@ -62,7 +62,7 @@ export const CTASection: FC<CTASectionProps> = ({
       <Button
         size="lg"
         onClick={buttonAction}
-        className={buttonClasses}
+        variant={buttonVariant}
         aria-label={buttonText}
       >
         {buttonText}

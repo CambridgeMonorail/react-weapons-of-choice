@@ -129,7 +129,7 @@ const DashboardPage: FC = () => {
             <TabsTrigger
               value="analytics"
               disabled
-              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              className="disabled:opacity-40 disabled:cursor-not-allowed"
               data-testid="tab-analytics"
             >
               Analytics
@@ -137,7 +137,7 @@ const DashboardPage: FC = () => {
             <TabsTrigger
               value="reports"
               disabled
-              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              className="disabled:opacity-40 disabled:cursor-not-allowed"
               data-testid="tab-reports"
             >
               Reports
@@ -145,7 +145,7 @@ const DashboardPage: FC = () => {
             <TabsTrigger
               value="notifications"
               disabled
-              className="py-2 text-sm font-medium text-gray-400 cursor-not-allowed"
+              className="disabled:opacity-40 disabled:cursor-not-allowed"
               data-testid="tab-notifications"
             >
               Notifications
@@ -159,7 +159,7 @@ const DashboardPage: FC = () => {
           >
             {/* Stats Cards with Trend Arrows and Sparklines */}
             <div
-              className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
               data-testid="stats-cards"
             >
               {/* Total Revenue Card */}
@@ -222,14 +222,14 @@ const DashboardPage: FC = () => {
 
             {/* Overview and Recent Sales */}
             <div
-              className="grid gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7"
+              className="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-7"
               data-testid="overview-recent-sales"
             >
               <Card
-                className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-4"
+                className="col-span-1 md:col-span-2 lg:col-span-4 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-6"
                 data-testid="visitors-card"
               >
-                <CardHeader className="w-full">
+                <CardHeader className="w-full p-0 mb-4">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Visitors
                   </CardTitle>
@@ -256,10 +256,10 @@ const DashboardPage: FC = () => {
               </Card>
 
               <Card
-                className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-4"
+                className="col-span-1 md:col-span-2 lg:col-span-3 border border-gray-200 bg-primary-50 hover:shadow-xs transition-shadow flex flex-col items-start p-6"
                 data-testid="recent-sales-card"
               >
-                <CardHeader className="w-full">
+                <CardHeader className="w-full p-0 mb-4">
                   <CardTitle className="text-lg font-semibold text-gray-800">
                     Recent Sales
                   </CardTitle>

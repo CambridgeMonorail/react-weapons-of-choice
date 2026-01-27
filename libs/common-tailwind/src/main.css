@@ -3,6 +3,7 @@
 @import './shadcn-theme.css';
 
 @theme {
+  /* Colors only - let Tailwind handle spacing, typography, etc. */
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));

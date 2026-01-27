@@ -43,7 +43,7 @@ const StepsSection: FC<StepsSectionProps> = ({
       <Button
         size="lg"
         onClick={buttonAction}
-        className="bg-primary text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+        variant="default"
         aria-label={buttonText}
       >
         {buttonText}

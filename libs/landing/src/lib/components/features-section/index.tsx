@@ -20,8 +20,8 @@ interface FeaturesSectionProps {
  */
 const FeaturesSection: FC<FeaturesSectionProps> = ({ title, features, className, 'data-testid': dataTestId }) => {
   return (
-    <section id="features" className={`text-center py-20 w-full px-4 md:px-8 lg:px-16 ${className}`} data-testid={dataTestId}>
-      <h2 className="text-4xl font-bold mb-6 text-primary-foreground">{title}</h2>
+    <section id="features" className={`text-center pt-12 pb-20 w-full px-4 md:px-8 lg:px-16 bg-background ${className}`} data-testid={dataTestId}>
+      <h2 className="text-4xl font-bold mb-6 text-primary">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature, index) => (
           <Card key={index} className={`p-6 shadow-md bg-background ${feature.className}`}>
@@ -32,7 +32,7 @@ const FeaturesSection: FC<FeaturesSectionProps> = ({ title, features, className,
                   <p>{feature.title}</p>
                 </div>
               </CardTitle>
-              <CardDescription className="text-foreground">{feature.description}</CardDescription>
+              <CardDescription className="text-muted-foreground">{feature.description}</CardDescription>
             </CardHeader>
           </Card>
         ))}
