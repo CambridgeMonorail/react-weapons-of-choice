@@ -18,8 +18,8 @@ export default defineConfig({
     host: 'localhost',
   },
   plugins: [
-    tailwindcss(),
     react(),
+    tailwindcss(),
     nxViteTsPaths(),
     nxCopyAssetsPlugin(['*.md']),
   ],

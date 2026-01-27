@@ -17,7 +17,7 @@ export const RecentSales: FC<RecentSalesProps> = ({ salesData }) => {
   return (
     <div className="space-y-8">
       {salesData.map((sale) => (
-        <div key={sale.email} className="flex items-center">
+        <div key={sale.email} className="flex items-center p-3 -mx-3 rounded-lg transition-colors hover:bg-accent cursor-pointer">
           <Avatar className="h-9 w-9">
             <AvatarImage src={sale.avatarSrc} alt="Avatar" />
             <AvatarFallback>{sale.avatarFallback}</AvatarFallback>
