@@ -72,8 +72,14 @@ This will allow you to develop and test changes locally before submitting a pull
 - **Work on a forked repository** and create a **new branch** for each feature or bug fix (e.g., `feature/fretboard-animation` or `fix/tempo-slider`).
 - Provide a **clear title and description** for the PR, describing the purpose and the changes.
 - **Reference related issues** in the description (e.g., `Closes #12`).
+- **Run verification** before submitting: `pnpm verify`
+- **Include verification evidence** in PR description (see [verification skill](../ai/skills/verification.md)).
+- **Keep PRs small and focused** - Aim for < 500 lines when possible (see [code review ready skill](../ai/skills/code-review-ready.md)).
+- **Create implementation plans** for non-trivial changes in `docs/plans/` (see [planning skill](../ai/skills/planning.md)).
 - Ensure all **tests pass** by running `pnpm nx test`.
 - **Tag maintainers or reviewers** if you need help or clarification on your PR.
+
+For detailed workflow guidance, see [AGENTS.md](../../AGENTS.md) and the [workflow skills](../ai/skills/).
 
 ## Coding Standards
 

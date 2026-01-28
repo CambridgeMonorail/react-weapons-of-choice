@@ -90,3 +90,28 @@ App-specific conventions, patterns, and tooling guidance are in `.github/instruc
 Currently available:
 - Testing and quality workflows (`testing-and-quality.instructions.md`)
 - UI and accessibility patterns (`ui-and-accessibility.instructions.md`)
+
+## Definition of Done
+
+Work is complete when:
+
+- ✅ **Code follows conventions** - Lint and type-check pass
+- ✅ **Tests written and passing** - For new features and bug fixes
+- ✅ **Documentation updated** - README, comments, or guides as needed
+- ✅ **Verification passes** - `pnpm verify` runs successfully
+- ✅ **Changes are reviewable** - Small diffs, clear commit messages
+- ✅ **Evidence provided** - PR includes verification output
+
+See [AGENTS.md](../AGENTS.md) for detailed workflow guidance.
+
+## Agent Expectations
+
+When working as an agent in this repository:
+
+- **Plan before acting** - For non-trivial changes, create a plan in `docs/plans/`
+- **Work incrementally** - Make small, reviewable commits
+- **Verify your work** - Run `pnpm verify` before creating PRs
+- **Document decisions** - Explain trade-offs and reasoning
+- **Respect existing patterns** - Follow established conventions
+
+Refer to [AGENTS.md](../AGENTS.md) for complete behavioral guidance and [workflow skills](../docs/ai/skills/) for detailed process guidance.

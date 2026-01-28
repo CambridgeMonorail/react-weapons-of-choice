@@ -208,6 +208,22 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
+## Verification
+
+Before creating a pull request, run the verification command to ensure your changes meet quality standards:
+
+```bash
+pnpm verify
+```
+
+This runs:
+- Format check
+- Lint (affected projects)
+- Type check (affected projects)
+- Tests (affected projects)
+
+For more details on verification requirements and PR evidence expectations, see [docs/ai/skills/verification.md](docs/ai/skills/verification.md).
+
 ## GitHub Copilot Tooling
 
 This project includes comprehensive GitHub Copilot customization to accelerate development and maintain quality. We provide:
@@ -228,6 +244,38 @@ This project includes comprehensive GitHub Copilot customization to accelerate d
 For complete documentation on custom agents, skills, and how to create your own, see:
 
 **[📘 GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md)**
+
+## GitHub Copilot Setup
+
+This repository uses GitHub Copilot with custom instructions for enhanced code generation:
+
+1. **Enable instruction files** in VS Code settings:
+   ```json
+   "github.copilot.chat.codeGeneration.useInstructionFiles": true
+   ```
+
+2. **Instruction files** provide coding conventions and patterns:
+   - [.github/copilot-instructions.md](.github/copilot-instructions.md) - Repo-wide conventions
+   - [.github/instructions/](.github/instructions/) - Path-scoped rules
+
+3. **Agent workflow guidance** for working on tasks:
+   - [AGENTS.md](AGENTS.md) - Behavioral guidance for agents
+   - [docs/ai/skills/](docs/ai/skills/) - Workflow skills (planning, debugging, code review, verification)
+
+For more information, see [GitHub Copilot Tooling](docs/tooling/github-copilot-tooling.md).
+
+## For Contributors
+
+When contributing to this repository:
+
+- **Follow the workflow guidance** in [AGENTS.md](AGENTS.md)
+- **Use workflow skills** for structured approaches to common tasks:
+  - [Planning](docs/ai/skills/planning.md) - How to create implementation plans
+  - [Systematic Debugging](docs/ai/skills/systematic-debugging.md) - Root cause analysis
+  - [Code Review Ready](docs/ai/skills/code-review-ready.md) - Making PRs reviewable
+  - [Verification](docs/ai/skills/verification.md) - PR evidence expectations
+- **Run `pnpm verify`** before creating PRs
+- **Create plans** for non-trivial changes in `docs/plans/`
 
 # Make This Your Own
 
