@@ -208,6 +208,8 @@ GitHub Copilot can be customized to better align with your team’s workflows, c
 - [Copilot Customization Documentation](https://code.visualstudio.com/docs/copilot/copilot-customization)  
 - [Local Example: .github\copilot-instructions.md](.github\copilot-instructions.md)
 
+**\ud83d\udcd8 For comprehensive details on this project's custom agents, skills, and Copilot tooling, see: [GitHub Copilot Tooling Guide](./github-copilot-tooling.md)**
+
 ---
 
 ## v0 by Vercel

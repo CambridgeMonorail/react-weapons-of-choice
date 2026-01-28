@@ -32,6 +32,7 @@ These badges represent the results of Lighthouse audits, which are run to ensure
 - [Usage](#usage)
 - [Run tasks](#run-tasks)
 - [Install Nx Console](#install-nx-console)
+- [GitHub Copilot Tooling](#github-copilot-tooling)
 - [Make This Your Own](#make-this-your-own)
 - [Add new projects](#add-new-projects)
 - [Contributing](#contributing)
@@ -206,6 +207,27 @@ The following scripts are available to manage and build the project:
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## GitHub Copilot Tooling
+
+This project includes comprehensive GitHub Copilot customization to accelerate development and maintain quality. We provide:
+
+- **Custom Instructions** - Global and scoped rules for code generation aligned with project conventions
+- **Specialized Agents** - AI assistants for component review, UI design, debugging, requirements planning, and more
+- **Reusable Skills** - Workflows for shadcn/ui component review, Chrome DevTools debugging
+- **Automated Helpers** - Git commit formatting, PR description generation
+
+**Available Custom Agents**:
+- `@shadcnui-component-reviewer` - End-to-end component review for standards, accessibility, and tests
+- `@ui-designer` - Evidence-based UI/UX design review and recommendations
+- `@webapp-debugger` - Browser-based debugging using Chrome DevTools MCP
+- `@requirements-planner` - Transform requirements into actionable implementation plans
+- `@git-commit-helper` - Conventional commits with multi-line support
+- `@pr-description-helper` - Generate structured PR descriptions
+
+For complete documentation on custom agents, skills, and how to create your own, see:
+
+**[📘 GitHub Copilot Tooling Guide](./docs/github-copilot-tooling.md)**
 
 # Make This Your Own
 
@@ -393,6 +415,13 @@ Learn more:
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+**Project-Specific Guides**:
+
+- [GitHub Copilot Tooling Guide](./docs/github-copilot-tooling.md) - Custom agents, skills, and instructions
+- [Productivity Tooling](./docs/productivity-tooling.md) - Tools and techniques for acceleration
+- [Theming Your App](./docs/theming-a-new-app.md) - Shadcn UI and Tailwind CSS theming
+- [Adding Component Pages](./docs/adding-new-component-page.md) - React Router setup
 
 ## FAQs
 
