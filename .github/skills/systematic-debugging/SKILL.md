@@ -81,7 +81,7 @@ Use this skill when you need to:
 ## Integration
 
 - Referenced from [AGENTS.md](../../AGENTS.md) debugging section
-- See [full debugging guide](../../docs/ai/skills/systematic-debugging.md) for detailed examples
+- See [detailed debugging guide](workflows/detailed-guide.md) for complete examples
 - Use with [verification skill](../verification/SKILL.md) for PR evidence
 
-For complete examples and debugging techniques, see the [full systematic debugging documentation](../../docs/ai/skills/systematic-debugging.md).
+For complete examples and debugging techniques, see the [detailed debugging guide](workflows/detailed-guide.md).

@@ -46,7 +46,7 @@ Examples:
 
 ## Plan Template
 
-See [detailed plan template](../../docs/ai/skills/planning.md) for complete structure with examples.
+See [detailed plan template](workflows/detailed-guide.md) for complete structure with examples.
 
 ## Key Elements
 
@@ -66,4 +66,4 @@ Every plan must include:
 - Plans live in `docs/plans/` directory
 - Update plan status as work progresses
 
-For complete examples and detailed guidance, see the [full planning documentation](../../docs/ai/skills/planning.md).
+For complete examples and detailed guidance, see the [detailed planning guide](workflows/detailed-guide.md).

@@ -114,4 +114,4 @@ When working as an agent in this repository:
 - **Document decisions** - Explain trade-offs and reasoning
 - **Respect existing patterns** - Follow established conventions
 
-Refer to [AGENTS.md](../AGENTS.md) for complete behavioral guidance and [workflow skills](../docs/ai/skills/) for detailed process guidance.
+Refer to [AGENTS.md](../AGENTS.md) for complete behavioral guidance and [workflow skills](.github/skills/) for detailed process guidance.

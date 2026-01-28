@@ -261,5 +261,5 @@ scope: 'apps/client'
 ## Related Documentation
 
 - [AGENTS.md](../AGENTS.md) - Agent workflow guide
-- [docs/ai/](../docs/ai/) - Detailed workflow documentation
+- [.github/skills/](.github/skills/) - Workflow skills with detailed guides
 - [.github/copilot-instructions.md](./copilot-instructions.md) - Root instructions

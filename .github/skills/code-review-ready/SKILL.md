@@ -83,6 +83,6 @@ pnpm verify
 
 - Referenced from [AGENTS.md](../../AGENTS.md) PR requirements
 - Use with [verification skill](../verification/SKILL.md) for evidence
-- See [full code review guide](../../docs/ai/skills/code-review-ready.md) for detailed examples
+- See [detailed code review guide](workflows/detailed-guide.md) for complete examples
 
-For complete examples and tips for breaking down large PRs, see the [full code review ready documentation](../../docs/ai/skills/code-review-ready.md).
+For complete examples and tips for breaking down large PRs, see the [detailed code review guide](workflows/detailed-guide.md).

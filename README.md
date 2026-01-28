@@ -222,7 +222,7 @@ This runs:
 - Type check (affected projects)
 - Tests (affected projects)
 
-For more details on verification requirements and PR evidence expectations, see [docs/ai/skills/verification.md](docs/ai/skills/verification.md).
+For more details on verification requirements and PR evidence expectations, see [.github/skills/verification/workflows/detailed-guide.md](.github/skills/verification/workflows/detailed-guide.md).
 
 ## GitHub Copilot Tooling
 
@@ -260,7 +260,7 @@ This repository uses GitHub Copilot with custom instructions for enhanced code g
 
 3. **Agent workflow guidance** for working on tasks:
    - [AGENTS.md](AGENTS.md) - Behavioral guidance for agents
-   - [docs/ai/skills/](docs/ai/skills/) - Workflow skills (planning, debugging, code review, verification)
+   - [.github/skills/](.github/skills/) - Workflow skills (planning, debugging, code review, verification)
 
 For more information, see [GitHub Copilot Tooling](docs/tooling/github-copilot-tooling.md).
 
@@ -270,10 +270,10 @@ When contributing to this repository:
 
 - **Follow the workflow guidance** in [AGENTS.md](AGENTS.md)
 - **Use workflow skills** for structured approaches to common tasks:
-  - [Planning](docs/ai/skills/planning.md) - How to create implementation plans
-  - [Systematic Debugging](docs/ai/skills/systematic-debugging.md) - Root cause analysis
-  - [Code Review Ready](docs/ai/skills/code-review-ready.md) - Making PRs reviewable
-  - [Verification](docs/ai/skills/verification.md) - PR evidence expectations
+  - [Planning](.github/skills/planning/workflows/detailed-guide.md) - How to create implementation plans
+  - [Systematic Debugging](.github/skills/systematic-debugging/workflows/detailed-guide.md) - Root cause analysis
+  - [Code Review Ready](.github/skills/code-review-ready/workflows/detailed-guide.md) - Making PRs reviewable
+  - [Verification](.github/skills/verification/workflows/detailed-guide.md) - PR evidence expectations
 - **Run `pnpm verify`** before creating PRs
 - **Create plans** for non-trivial changes in `docs/plans/`
 

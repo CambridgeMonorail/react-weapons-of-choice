@@ -103,6 +103,6 @@ pnpm verify
 
 - Referenced from [AGENTS.md](../../AGENTS.md) PR requirements
 - Use with [code-review-ready skill](../code-review-ready/SKILL.md)
-- See [full verification guide](../../docs/ai/skills/verification.md) for templates
+- See [detailed verification guide](workflows/detailed-guide.md) for complete templates
 
-For complete verification requirements and templates, see the [full verification documentation](../../docs/ai/skills/verification.md).
+For complete verification requirements and templates, see the [detailed verification guide](workflows/detailed-guide.md).
