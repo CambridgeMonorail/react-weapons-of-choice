@@ -30,16 +30,17 @@ These badges represent the results of Lighthouse audits, which are run to ensure
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Run tasks](#run-tasks)
+- [Run Tasks](#run-tasks)
 - [Install Nx Console](#install-nx-console)
+- [GitHub Copilot Tooling](#github-copilot-tooling)
 - [Make This Your Own](#make-this-your-own)
 - [Add new projects](#add-new-projects)
+- [Theming Your App](#theming-your-app)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [Useful links](#useful-links)
 - [FAQs](#faqs)
-
 ## Overview
 
 An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
@@ -56,7 +57,7 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
 - **Community Collaboration**: Foster an open-source community to innovate, improve, and expand the project.
 
-For a detailed breakdown of the project goals, see [Project Goals](./docs/project-goals.md).
+For a detailed breakdown of the project goals, see [Project Goals](./docs/getting-started/project-goals.md).
 
 ## Features
 
@@ -72,7 +73,7 @@ While tools like Nx, Tailwind CSS, and Shadcn UI are incredibly powerful and off
 
 This project was built to address these challenges by providing a pre-configured, ready-to-use boilerplate that simplifies the initial setup process. By leveraging this boilerplate, developers can quickly start building their applications without worrying about the complexities of configuration, allowing them to focus on writing code and delivering features.
 
-For more details on why a React SPA boilerplate may still have some value in a Next.js world, see [Why a React SPA Boilerplate in a Next.js World?](./docs/why-spa-why.md)
+For more details on why a React SPA boilerplate may still have some value in a Next.js world, see [Why a React SPA Boilerplate in a Next.js World?](./docs/getting-started/why-spa-why.md)
 
 ## Technologies Used
 
@@ -206,6 +207,27 @@ The following scripts are available to manage and build the project:
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+## GitHub Copilot Tooling
+
+This project includes comprehensive GitHub Copilot customization to accelerate development and maintain quality. We provide:
+
+- **Custom Instructions** - Global and scoped rules for code generation aligned with project conventions
+- **Specialized Agents** - AI assistants for component review, UI design, debugging, requirements planning, and more
+- **Reusable Skills** - Workflows for shadcn/ui component review, Chrome DevTools debugging
+- **Automated Helpers** - Git commit formatting, PR description generation
+
+**Available Custom Agents**:
+- `@shadcnui-component-reviewer` - End-to-end component review for standards, accessibility, and tests
+- `@ui-designer` - Evidence-based UI/UX design review and recommendations
+- `@webapp-debugger` - Browser-based debugging using Chrome DevTools MCP
+- `@requirements-planner` - Transform requirements into actionable implementation plans
+- `@git-commit-helper` - Conventional commits with multi-line support
+- `@pr-description-helper` - Generate structured PR descriptions
+
+For complete documentation on custom agents, skills, and how to create your own, see:
+
+**[📘 GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md)**
 
 # Make This Your Own
 
@@ -360,17 +382,17 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 ## Theming Your App
 
-To learn how to theme your app using Shadcn UI and Tailwind CSS, please refer to the detailed guide in [docs/theming-a-new-app.md](./docs/theming-a-new-app.md).
+To learn how to theme your app using Shadcn UI and Tailwind CSS, please refer to the detailed guide in [docs/theming-a-new-app.md](./docs/guides/theming-a-new-app.md).
 
 **Note:** The current theme was generated using the Ready.js [Shadcn UI Theme Generator](https://www.readyjs.dev/tools/shadcn-ui-theme-generator).
 
 ### Adding a New Component Page to the Routing in Your React SPA
 
-To add a new component page to the routing in your React SPA, please refer to the detailed guide in [docs/adding-new-component-page.md](./docs/adding-new-component-page.md).
+To add a new component page to the routing in your React SPA, please refer to the detailed guide in [docs/adding-new-component-page.md](./docs/guides/addding-new-component-page.md).
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes. For detailed guidelines on how to contribute, see [Contributing](./docs/CONTRIBUTING.md).
+Contributions are welcome! Please open an issue or submit a pull request for any changes. For detailed guidelines on how to contribute, see [Contributing](./docs/contributing/CONTRIBUTING.md).
 
 ## License
 
@@ -393,6 +415,13 @@ Learn more:
 - [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 - [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+
+**Project-Specific Guides**:
+
+- [GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md) - Custom agents, skills, and instructions
+- [Productivity Tooling](./docs/tooling/productivity-tooling.md) - Tools and techniques for acceleration
+- [Theming Your App](./docs/guides/theming-a-new-app.md) - Shadcn UI and Tailwind CSS theming
+- [Adding Component Pages](./docs/guides/addding-new-component-page.md) - React Router setup
 
 ## FAQs
 
