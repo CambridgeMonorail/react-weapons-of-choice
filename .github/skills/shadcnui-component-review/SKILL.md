@@ -1,4 +1,9 @@
-# Skill: Shadcn UI Component Review
+---
+name: shadcnui-component-review
+description: End-to-end review of shadcn/ui components in libs/shadcnui/src/lib. Checks accessibility, exports, tests, Storybook coverage, and taxonomy. Applies fixes and provides recommendations for design decisions.
+---
+
+# Shadcn UI Component Review Skill
 
 ## Purpose
 
