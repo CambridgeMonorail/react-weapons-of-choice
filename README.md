@@ -57,7 +57,7 @@ Thanks to the help from this tutorial here: <https://medium.com/readytowork-org/
 - **Enhanced Developer Experience**: Deliver a well-documented, intuitive, and maintainable codebase to boost productivity and reduce onboarding time.
 - **Community Collaboration**: Foster an open-source community to innovate, improve, and expand the project.
 
-For a detailed breakdown of the project goals, see [Project Goals](./docs/project-goals.md).
+For a detailed breakdown of the project goals, see [Project Goals](./docs/getting-started/project-goals.md).
 
 ## Features
 
@@ -73,7 +73,7 @@ While tools like Nx, Tailwind CSS, and Shadcn UI are incredibly powerful and off
 
 This project was built to address these challenges by providing a pre-configured, ready-to-use boilerplate that simplifies the initial setup process. By leveraging this boilerplate, developers can quickly start building their applications without worrying about the complexities of configuration, allowing them to focus on writing code and delivering features.
 
-For more details on why a React SPA boilerplate may still have some value in a Next.js world, see [Why a React SPA Boilerplate in a Next.js World?](./docs/why-spa-why.md)
+For more details on why a React SPA boilerplate may still have some value in a Next.js world, see [Why a React SPA Boilerplate in a Next.js World?](./docs/getting-started/why-spa-why.md)
 
 ## Technologies Used
 
@@ -227,7 +227,7 @@ This project includes comprehensive GitHub Copilot customization to accelerate d
 
 For complete documentation on custom agents, skills, and how to create your own, see:
 
-**[📘 GitHub Copilot Tooling Guide](./docs/github-copilot-tooling.md)**
+**[📘 GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md)**
 
 # Make This Your Own
 
@@ -382,17 +382,17 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 
 ## Theming Your App
 
-To learn how to theme your app using Shadcn UI and Tailwind CSS, please refer to the detailed guide in [docs/theming-a-new-app.md](./docs/theming-a-new-app.md).
+To learn how to theme your app using Shadcn UI and Tailwind CSS, please refer to the detailed guide in [docs/theming-a-new-app.md](./docs/guides/theming-a-new-app.md).
 
 **Note:** The current theme was generated using the Ready.js [Shadcn UI Theme Generator](https://www.readyjs.dev/tools/shadcn-ui-theme-generator).
 
 ### Adding a New Component Page to the Routing in Your React SPA
 
-To add a new component page to the routing in your React SPA, please refer to the detailed guide in [docs/adding-new-component-page.md](./docs/adding-new-component-page.md).
+To add a new component page to the routing in your React SPA, please refer to the detailed guide in [docs/adding-new-component-page.md](./docs/guides/addding-new-component-page.md).
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes. For detailed guidelines on how to contribute, see [Contributing](./docs/CONTRIBUTING.md).
+Contributions are welcome! Please open an issue or submit a pull request for any changes. For detailed guidelines on how to contribute, see [Contributing](./docs/contributing/CONTRIBUTING.md).
 
 ## License
 
@@ -418,10 +418,10 @@ Learn more:
 
 **Project-Specific Guides**:
 
-- [GitHub Copilot Tooling Guide](./docs/github-copilot-tooling.md) - Custom agents, skills, and instructions
-- [Productivity Tooling](./docs/productivity-tooling.md) - Tools and techniques for acceleration
-- [Theming Your App](./docs/theming-a-new-app.md) - Shadcn UI and Tailwind CSS theming
-- [Adding Component Pages](./docs/adding-new-component-page.md) - React Router setup
+- [GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md) - Custom agents, skills, and instructions
+- [Productivity Tooling](./docs/tooling/productivity-tooling.md) - Tools and techniques for acceleration
+- [Theming Your App](./docs/guides/theming-a-new-app.md) - Shadcn UI and Tailwind CSS theming
+- [Adding Component Pages](./docs/guides/addding-new-component-page.md) - React Router setup
 
 ## FAQs
 
