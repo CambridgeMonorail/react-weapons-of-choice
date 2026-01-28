@@ -4,31 +4,17 @@ Documentation for maintaining, upgrading, and securing the React Weapons of Choi
 
 ## Documents in this Section
 
-### [Modernization](./modernization.md)
-Strategies and guidelines for keeping the project modern, including dependency updates, framework migrations, and adopting new best practices.
-
-**Key Topics**: Dependency management, framework updates, modernization strategies, technical debt
-
----
-
 ### [Upgrade Notes](./UPGRADE_NOTES.md)
-Detailed notes on major version upgrades, breaking changes, and migration guides. Chronicles the project's evolution and provides upgrade paths.
+Historical record of major version upgrades, breaking changes, and migration details. Chronicles the project's evolution including the 2026 modernization (Nx 22, Tailwind v4, React 19).
 
 **Key Topics**: Version migrations, breaking changes, upgrade procedures, compatibility notes
 
 ---
 
 ### [Security Audit](./SECURITY_AUDIT.md)
-Security audit findings, vulnerability tracking, and remediation plans. Documents security considerations and hardening recommendations.
+Security audit findings, vulnerability tracking, and remediation status. Documents security considerations and dependency vulnerabilities.
 
-**Key Topics**: Vulnerability assessment, security best practices, dependency security, remediation
-
----
-
-### [Branch Status](./BRANCH_STATUS.md)
-Current status of major development branches, feature work in progress, and coordination information for active development.
-
-**Key Topics**: Branch tracking, feature status, development coordination
+**Key Topics**: Vulnerability assessment, security best practices, dependency security, remediation status
 
 ---
 
