@@ -30,17 +30,17 @@ These badges represent the results of Lighthouse audits, which are run to ensure
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Run tasks](#run-tasks)
+- [Run Tasks](#run-tasks)
 - [Install Nx Console](#install-nx-console)
 - [GitHub Copilot Tooling](#github-copilot-tooling)
 - [Make This Your Own](#make-this-your-own)
 - [Add new projects](#add-new-projects)
+- [Theming Your App](#theming-your-app)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 - [Useful links](#useful-links)
 - [FAQs](#faqs)
-
 ## Overview
 
 An open-source boilerplate designed to simplify the development of single-page React applications (SPAs). By leveraging Nx, Tailwind CSS, and Shadcn UI, this project offers developers a seamless and efficient starting point for building modern front-end applications. It is ideal for those who prefer not to use Next.js or cannot use it but still want the benefits of this powerful toolset.
