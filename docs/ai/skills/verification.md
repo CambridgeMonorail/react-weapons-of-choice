@@ -124,7 +124,7 @@ This command runs all standard checks in sequence:
 3. Type check (affected)
 4. Tests (affected)
 
-**Note:** The exact implementation of `pnpm verify` may vary. Check `package.json` for the current definition.
+This command is defined in `package.json` as: `format:check && lint:affected && type-check:affected && test:affected`
 
 ## PR Verification Evidence Template
 

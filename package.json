@@ -47,6 +47,7 @@
     "test:shadcnui": "nx test shadcnui",
     "type-check:affected": "nx affected --target=type-check",
     "type-check:all": "nx run-many --target=type-check --all",
+    "verify": "pnpm format:check && pnpm lint:affected && pnpm type-check:affected && pnpm test:affected",
     "type-check:client": "nx run client:type-check",
     "type-check:shadcnui": "nx run shadcnui:type-check",
     "validate": "pnpm run format && pnpm run lint:all && pnpm run type-check:all && pnpm run test:all && pnpm run build:all"
