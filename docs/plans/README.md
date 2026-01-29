@@ -14,7 +14,7 @@ Plans serve several critical purposes:
 
 ## When to Create a Plan
 
-See [Planning Skill](../ai/skills/planning.md) for detailed guidance.
+See [Planning Skill](../../.github/skills/planning/workflows/detailed-guide.md) for detailed guidance.
 
 **Required:**
 - New features with multiple components
