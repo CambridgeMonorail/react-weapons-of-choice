@@ -33,12 +33,14 @@ You produce implementation plans that are:
 3. **Create implementation plan**
 
    - Break work into discrete tasks (target 1-5 files per task)
+   - **Context Strategy**: Ensure each task is small enough to fit in the AI context window.
    - Each task must be independently reviewable and mergeable
    - Include validation checkpoints after each task
    - Flag dependencies between tasks
    - Provide complexity/sizing indicators
 
 4. **Validate plan completeness**
+   - Plan MUST start with a `## Progress Checklist` for tracking
    - Every task has clear acceptance criteria
    - Validation commands are specified (pnpm commands)
    - File paths and component names are concrete, not abstract

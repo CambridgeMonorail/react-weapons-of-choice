@@ -31,18 +31,18 @@ Don't start coding yet. In this repo, we treat plans as "Durable Intent".
 **Why?** This gives Copilot a "spec" to refer to later, preventing hallucination and scope creep.
 
 ## Step 2: Implement with Context
-**Tool**: Copilot Chat + Instructions
+**Tool**: `/implement-next` Prompt
 **Artifact**: Code components
 
 Now, start coding. Copilot automatically reads the "Constitution" (`copilot-instructions.md`) and path-specific rules (`instructions/*.md`).
 
-1.  **Scaffold**:
-    > "Using the plan in @2026-01-29-waitlist-feature.md, scaffold the file structure for the Waitlist component in libs/landing."
-    
-    *Note: Copilot knows to use functional components, strict types, and correct folder structure because of the instruction files.*
+1.  **Iterative Implementation**:
+    *   Type `/implement-next` in Chat.
+    *   The prompt will read your plan, find the first unchecked task, and implement it.
+    *   This ensures the AI **only focuses on one task at a time**, preventing context loss.
 
-2.  **Iterate**:
-    > "Implement the form logic using react-hook-form and zod, ensuring it meets the accessibility requirements in our instructions."
+2.  **Manual Scaffold (Optional)**:
+    > "Using the plan in @2026-01-29-waitlist-feature.md, scaffold the file structure for the Waitlist component in libs/landing."
 
 ## Step 3: Refine & Review
 **Tool**: `@ui-designer`, `@shadcnui-component-review`, Skills

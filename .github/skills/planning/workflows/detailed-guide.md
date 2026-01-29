@@ -49,6 +49,12 @@ Skip planning for:
 **Status:** 🔄 In Progress | ✅ Complete | ⏸️ Paused  
 **Author:** [Your name or "Copilot Agent"]
 
+## Progress Checklist
+
+- [ ] Task 1: [Task Name]
+- [ ] Task 2: [Task Name]
+- [ ] Task 3: [Task Name]
+
 ## Goal
 
 [One or two sentences describing what you're trying to achieve]
