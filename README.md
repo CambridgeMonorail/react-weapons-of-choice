@@ -225,8 +225,10 @@ This project employs an **Evolving AI Tooling Architecture** to accelerate devel
 
 **Available Tools**:
 - **Agents**: `@requirements-planner`, `@ui-designer`, `@shadcnui-component-reviewer`
-- **Prompts**: `/commit`, `/pr-desc`, `/implement-next`, `/mcp-check`
+- **Prompts**: `/help`, `/commit`, `/pr-desc`, `/implement-next`, `/mcp-check`
 - **Skills**: `planning`, `systematic-debugging`, `code-review-ready`
+
+> **Tip**: Type `/help` in Copilot Chat for a quick reference guide to all available tools.
 
 # Make This Your Own
 

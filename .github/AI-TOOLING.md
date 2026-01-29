@@ -66,12 +66,16 @@ See [AI-Assisted Feature Workflow](../docs/getting-started/ai-assisted-feature-w
 ### Prompts (`/prompts`)
 **Use for**: Specific, repeatable tasks.
 
-*   `commit.prompt.md`: "Commit these changes" (Stages, conventional commit, pushes)
-*   `pr-desc.prompt.md`: "Generate PR description" (Analyzes diff, writes markdown)
-*   `mcp-check.prompt.md`: "Check MCP setup" (Verifies environment)
+*   `help.prompt.md`: "Show this guide" - `/help`
+*   `commit.prompt.md`: "Commit these changes" - `/commit`
+*   `pr-desc.prompt.md`: "Generate PR description" - `/pr-desc`
+*   `implement-next.prompt.md`: "Implement next task from plan" - `/implement-next`
+*   `mcp-check.prompt.md`: "Check MCP setup" - `/mcp-check`
 *   `validate-client.prompt.md`: "Validate my work" (Runs checks)
 
 **How to use**: Type `/` in Chat or select from the prompt menu.
+
+> **New to the tooling?** Start with `/help` for a quick reference guide.
 
 ### Skills (`/skills`)
 **Use for**: Specialized workflows available to the default agent.
