@@ -1,4 +1,9 @@
-# Skill: Chrome DevTools WebApp Debugging
+---
+name: chrome-devtools-webapp-debug
+description: Repeatable workflows for debugging web application issues using Chrome DevTools MCP.
+---
+
+# Chrome DevTools WebApp Debugging Skill
 
 ## Purpose
 

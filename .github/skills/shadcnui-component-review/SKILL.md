@@ -1,4 +1,9 @@
-# Skill: Shadcn UI Component Review
+---
+name: shadcnui-component-review
+description: End-to-end review of shadcn/ui components in libs/shadcnui/src/lib.
+---
+
+# Shadcn UI Component Review Skill
 
 ## Purpose
 
