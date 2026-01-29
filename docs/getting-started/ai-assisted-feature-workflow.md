@@ -12,6 +12,43 @@ This guide walks you through implementing a new feature in this repository using
 
 ---
 
+## Model Selection
+
+While this workflow works with any GitHub Copilot model, we recommend **Claude models** for coding work:
+
+### Why Claude?
+
+**Claude Sonnet** and **Claude Haiku** behave more like disciplined engineers than enthusiastic interns.
+
+**Better at following instructions**  
+They stick to constraints, house rules, and specs with less creative wandering. That matters more than raw cleverness in real repositories.
+
+**Stronger at long-form reasoning**  
+Planning, refactoring, debugging, and reading large codebases feels more deliberate and less jumpy.
+
+**Calmer under complexity**  
+When the context gets big, they degrade more gracefully. Fewer sudden hallucinations, fewer invented APIs.
+
+**More predictable**  
+You get roughly the same quality on the tenth prompt as the first. That consistency is gold for agent workflows.
+
+**Less eager to "improve" things you didn't ask for**  
+They're better at doing the job requested, not the job they wish you had asked for.
+
+**Faster where it counts**  
+Haiku is quick and cheap for mechanical tasks. Sonnet hits the sweet spot for serious coding without feeling sluggish.
+
+### The Result
+
+Not flashier code. Fewer surprises, cleaner diffs, and less time spent asking "why did it do that?"
+
+**Claude is not always the most creative model, but it is often the most reliable collaborator.**  
+For day-to-day engineering work, reliability beats brilliance almost every time.
+
+> **Note**: Model capabilities evolve rapidly. These recommendations reflect our current experience (January 2026) and may change as models improve.
+
+---
+
 ## Step 1: Define & Plan
 **Tool**: `@requirements-planner` Agent
 **Artifact**: A Plan file in `docs/plans/`

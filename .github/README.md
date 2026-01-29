@@ -32,6 +32,23 @@ The Definition of Done. Scripts that provide the objective truth of ecosystem he
 
 ---
 
+## Model Recommendations
+
+While GitHub Copilot works with various models, we typically use **Claude Sonnet** (for complex work) and **Claude Haiku** (for mechanical tasks) because they behave more like disciplined engineers than enthusiastic interns.
+
+Claude models tend to:
+- Follow instructions and constraints with less creative wandering
+- Provide stronger long-form reasoning for planning and debugging
+- Degrade more gracefully under complexity (fewer hallucinations)
+- Deliver consistent quality across multiple prompts
+- Stick to the requested job rather than "improving" unrequested things
+
+**In short**: Claude is not always the most creative model, but it is often the most reliable collaborator. For day-to-day engineering, reliability beats brilliance.
+
+See [AI-Assisted Feature Workflow](../docs/getting-started/ai-assisted-feature-workflow.md#model-selection) for detailed model guidance.
+
+---
+
 ## Directory Structure
 
 ```
