@@ -2,6 +2,20 @@
 
 This skill defines how to create structured implementation plans for non-trivial work in this repository.
 
+## The Dual Role of Plans
+
+In this repository, a "Plan" (`docs/plans/*.md`) serves two simultaneous purposes:
+
+1.  **Specification (The "What")**:
+    *   It records the "Durable Intent" of the feature.
+    *   It defines architectural decisions, constraints, and scope.
+    *   It serves as the source of truth for *what* is being built, preventing AI hallucination.
+
+2.  **Task Tracker (The "How")**:
+    *   It acts as a dynamic checklist to manage AI context.
+    *   It breaks large features into "context-safe" chunks (1-5 files).
+    *   It tracks progress state (`[ ]` to `[x]`) to support the `/implement-next` workflow.
+
 ## When to Create a Plan
 
 ### Plan Required ✅

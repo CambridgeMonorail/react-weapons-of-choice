@@ -16,7 +16,10 @@ This guide walks you through implementing a new feature in this repository using
 **Tool**: `@requirements-planner` Agent
 **Artifact**: A Plan file in `docs/plans/`
 
-Don't start coding yet. In this repo, we treat plans as "Durable Intent".
+In this repo, a Plan is **both** a Specification and a Task Tracker.
+
+*   **As a Spec**: It defines the "Durable Intent" (Architecture, UI rules) so the AI doesn't forget.
+*   **As a Tracker**: It breaks the work into small "Context-Safe" chunks that the AI can execute one by one.
 
 1.  Open the GitHub Copilot Chat.
 2.  Invoke the planner agent:
