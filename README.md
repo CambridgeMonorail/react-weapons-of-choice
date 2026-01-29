@@ -210,24 +210,23 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 ## GitHub Copilot Tooling
 
-This project includes comprehensive GitHub Copilot customization to accelerate development and maintain quality. We provide:
+This project employs an **Evolving AI Tooling Architecture** to accelerate development. Currently organized into 6 pillars, this structure is designed to adapt as AI capabilities improve and our collective experience with AI-assisted workflows matures:
 
-- **Custom Instructions** - Global and scoped rules for code generation aligned with project conventions
-- **Specialized Agents** - AI assistants for component review, UI design, debugging, requirements planning, and more
-- **Reusable Skills** - Workflows for shadcn/ui component review, Chrome DevTools debugging
-- **Automated Helpers** - Git commit formatting, PR description generation
+1.  **Copilot for Execution**: "The Constitution" (`copilot-instructions.md`)
+2.  **Agents for Roles**: Specialized personas (`@requirements-planner`, `@ui-designer`)
+3.  **Workflow Discipline**: Established by `AGENTS.md`
+4.  **Instructions for Context**: Path-specific coding rules
+5.  **Specs as Durable Intent**: Implementation Plans as Spec + Tracker
+6.  **Verification as Truth**: `pnpm verify` as the definition of done
 
-**Available Custom Agents**:
-- `@shadcnui-component-reviewer` - End-to-end component review for standards, accessibility, and tests
-- `@ui-designer` - Evidence-based UI/UX design review and recommendations
-- `@webapp-debugger` - Browser-based debugging using Chrome DevTools MCP
-- `@requirements-planner` - Transform requirements into actionable implementation plans
-- `@git-commit-helper` - Conventional commits with multi-line support
-- `@pr-description-helper` - Generate structured PR descriptions
+**Start Here:**
+*   👉 **[AI-Assisted Feature Workflow](./docs/getting-started/ai-assisted-feature-workflow.md)**: A step-by-step guide to shipping features using these tools.
+*   **[GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md)**: Deep dive into all agents, skills, and prompts.
 
-For complete documentation on custom agents, skills, and how to create your own, see:
-
-**[📘 GitHub Copilot Tooling Guide](./docs/tooling/github-copilot-tooling.md)**
+**Available Tools**:
+- **Agents**: `@requirements-planner`, `@ui-designer`, `@shadcnui-component-reviewer`
+- **Prompts**: `/commit`, `/pr-desc`, `/implement-next`, `/mcp-check`
+- **Skills**: `planning`, `systematic-debugging`, `code-review-ready`
 
 # Make This Your Own
 

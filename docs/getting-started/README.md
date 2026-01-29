@@ -25,6 +25,13 @@ Detailed breakdown of the project's objectives, target audience, and guiding pri
 
 ---
 
+### [AI-Assisted Feature Workflow](./ai-assisted-feature-workflow.md)
+A step-by-step guide to implementing features using our "6 Pillars" AI tooling architecture. Learn how to mix Agents, Skills, and Prompts to work faster.
+
+**Key Topics**: `@requirements-planner`, `pnpm verify`, 6 Pillars, Agents vs Prompts
+
+---
+
 ## Next Steps
 
 After understanding the basics:

@@ -46,28 +46,33 @@ These tools work together to ensure code quality, consistency, and adherence to 
 ├── agents/                           # Custom Copilot agents
 │   ├── common-ui-component-reviewer.agent.md
 │   ├── custom-agent-foundry.agent.md
-│   ├── git-commit-helper.agent.md
-│   ├── mcp-preflight.agent.md
-│   ├── pr-description-helper.agent.md
 │   ├── requirements-planner.agent.md
-│   ├── ui-designer.agent.md
-│   └── webapp-debugger.agent.md
+│   └── ui-designer.agent.md
 ├── skills/                           # Reusable skill workflows
-│   ├── shadcnui-component-review/
+│   ├── shadcnui/
 │   │   ├── SKILL.md
 │   │   └── workflows/
 │   │       ├── a11y-and-focus.md
-│   │       ├── performance-and-bundle.md
-│   │       ├── review-and-fix.md
-│   │       ├── taxonomy-and-exports.md
-│   │       └── tests-and-storybook.md
-│   └── chrome-devtools-webapp-debug/
-│       ├── SKILL.md
-│       └── workflows/
+│   │       ├── ...
+│   ├── planning/
+│   │   ├── SKILL.md
+│   │   └── workflows/detailed-guide.md
+│   ├── systematic-debugging/
+│   │   ├── SKILL.md
+│   │   └── workflows/detailed-guide.md
+│   ├── code-review-ready/
+│   │   ├── SKILL.md
+│   │   └── workflows/detailed-guide.md
+│   ├── verification/
+│   │   ├── SKILL.md
+│   │   └── workflows/detailed-guide.md
+│   └── ...
 ├── chatmodes/                        # Custom chat modes
 │   └── enhanced-gpt4.1.chatmode.md
-├── prompts/                          # Validation prompts
-│   └── validate-client.prompt.md
+├── prompts/                          # Reusable prompts
+│   ├── commit.prompt.md
+│   ├── mcp-check.prompt.md
+│   └── pr-desc.prompt.md
 └── workflows/                        # GitHub Actions workflows
     ├── ci.yml
     ├── deploy.yml
@@ -176,38 +181,7 @@ Agents are specialized AI assistants that handle specific development tasks. Inv
 **Handoffs**:
 - 🎨 Implement Design Changes
 
----
 
-### Git Commit Helper
-
-**File**: `.github/agents/git-commit-helper.agent.md`
-
-**Purpose**: Safely stages, commits, and pushes changes using conventional commits with multi-line support
-
-**When to use**:
-- Ready to commit and push changes
-- Want conventional commit message formatting
-- Need multi-line commit messages with bullet points
-
-**Usage**:
-```
-@git-commit-helper feat add MCP tools - also include commit body
-```
-
-**Capabilities**:
-- Conventional commit formatting (`type(scope): description`)
-- Multi-line commit bodies with bullet points
-- Safe staging and pushing workflow
-- Git status verification
-
-**Commit format**:
-```
-<type>(<scope>): <short, present-tense description>
-
-Optional body with bullet points:
-- Detail 1
-- Detail 2
-```
 
 ---
 
@@ -242,98 +216,11 @@ Optional body with bullet points:
 - Validation commands
 - Concrete file paths and component names
 
----
 
-### WebApp Debugger
 
-**File**: `.github/agents/webapp-debugger.agent.md`
 
-**Purpose**: Evidence-driven web app debugging using Chrome DevTools MCP (console, network, screenshots, performance traces)
 
-**When to use**:
-- Debugging runtime issues
-- Investigating console errors
-- Network request problems
-- Performance bottlenecks
-- Visual rendering issues
 
-**Usage**:
-```
-@webapp-debugger [URL, repro steps, expected vs actual behavior]
-```
-
-**Capabilities**:
-- Browser-based issue reproduction
-- Console message collection
-- Network request analysis
-- Screenshot capture of failing state
-- Performance trace recording
-- Evidence-driven hypothesis testing
-
-**Requirements**:
-- Chrome DevTools MCP server enabled
-- URL (local or deployed)
-- Clear repro steps
-
-**Debugging loop**:
-1. Confirm inputs
-2. Reproduce using Chrome DevTools MCP
-3. Capture evidence (screenshots, console, network)
-4. Form hypothesis
-5. Propose fix
-6. Verification plan
-
----
-
-### PR Description Helper
-
-**File**: `.github/agents/pr-description-helper.agent.md`
-
-**Purpose**: Generates pull request descriptions using the repository template with GitHub issue link and list of changes
-
-**When to use**:
-- Creating a pull request
-- Need structured PR description
-- Want automatic change list generation
-
-**Usage**:
-```
-@pr-description-helper adds MCP debugging tools
-```
-
-**Capabilities**:
-- Extracts GitHub issue number from branch name
-- Generates structured PR description
-- Lists substantive changes
-- Follows repository template format
-
-**Template format**:
-```markdown
-## 📝 Description
-
-[A few sentences describing changes made in PR]
-
-**Issue**: [Link to GitHub issue if applicable]
-
-## 📋 List of Changes
-
-- [Main change 1]
-- [Main change 2]
-- [Main change 3]
-```
-
----
-
-### MCP Preflight
-
-**File**: `.github/agents/mcp-preflight.agent.md`
-
-**Purpose**: Validates MCP (Model Context Protocol) server availability and configuration
-
-**When to use**:
-- Before using Chrome DevTools-dependent agents
-- Troubleshooting MCP server issues
-- Validating MCP configuration
 
 ---
 
@@ -424,6 +311,60 @@ Skills are reusable workflows and procedures that can be referenced by agents or
 
 ---
 
+### Planning Skill
+
+**Location**: `.github/skills/planning/`
+
+**Purpose**: Standardized workflow for planning non-trivial changes
+
+**When to use**:
+- Implementing new features
+- Complex refactoring
+- Changes affecting multiple files
+
+See `docs/plans/` for plan templates and storage.
+
+---
+
+### Systematic Debugging Skill
+
+**Location**: `.github/skills/systematic-debugging/`
+
+**Purpose**: Rigorous 6-step process for root cause analysis
+
+**When to use**:
+- Fixing bugs
+- Investigating regressions
+- Solving complex integration issues
+
+---
+
+### Code Review Ready Skill
+
+**Location**: `.github/skills/code-review-ready/`
+
+**Purpose**: Ensures changes are packaged effectively for review
+
+**When to use**:
+- Preparing a PR
+- Self-reviewing code
+- Ensuring documentation is complete
+
+---
+
+### Verification Skill
+
+**Location**: `.github/skills/verification/`
+
+**Purpose**: Standardized verification steps ("Definition of Done")
+
+**When to use**:
+- Before committing
+- Before creating a PR
+- Validating a fix
+
+---
+
 ## Chat Modes
 
 ### Enhanced GPT-4.1
@@ -437,6 +378,30 @@ Skills are reusable workflows and procedures that can be referenced by agents or
 ---
 
 ## Prompts
+
+### Commit Helper
+
+**File**: `.github/prompts/commit.prompt.md`
+
+**Purpose**: Generates conventional commit messages
+
+**When to use**: Staging and committing changes
+
+### PR Description
+
+**File**: `.github/prompts/pr-desc.prompt.md`
+
+**Purpose**: Generates standardized PR descriptions
+
+**When to use**: Creating pull requests
+
+### MCP Check
+
+**File**: `.github/prompts/mcp-check.prompt.md`
+
+**Purpose**: Validates MCP server configuration
+
+**When to use**: Troubleshooting AI tools
 
 ### Validate Client
 
@@ -583,12 +548,12 @@ Focus on accessibility using the a11y-and-focus workflow
 ### Integration with Development Workflow
 
 1. **Pre-Development**: `@requirements-planner` for feature planning
-2. **Development**: Regular Copilot for code generation
+2. **Development**: Regular Copilot with `planning` skill for iterative work
 3. **Component Review**: `@shadcnui-component-reviewer` for quality checks
 4. **UI Review**: `@ui-designer` for design validation
-5. **Debugging**: `@webapp-debugger` for runtime issues
-6. **Pre-Commit**: `@git-commit-helper` for conventional commits
-7. **PR Creation**: `@pr-description-helper` for PR descriptions
+5. **Debugging**: Use `systematic-debugging` skill for runtime issues
+6. **Pre-Commit**: Use `commit.prompt.md` for conventional commits
+7. **PR Creation**: Use `pr-desc.prompt.md` for PR descriptions
 
 ---
 

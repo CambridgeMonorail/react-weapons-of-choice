@@ -271,7 +271,7 @@ The validation state was not updating when form data changed due to a
 stale closure in the validation logic that captured the initial formData 
 value.
 
-See [Systematic Debugging](docs/ai/skills/systematic-debugging.md) 
+See [Systematic Debugging](../../systematic-debugging/workflows/detailed-guide.md) 
 for the full investigation process.
 ```
 
