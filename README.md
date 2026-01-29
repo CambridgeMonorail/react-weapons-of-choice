@@ -210,7 +210,7 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 ## GitHub Copilot Tooling
 
-This project uses a sophisticated **6-Pillar AI Tooling Architecture** to accelerate development:
+This project employs an **Evolving AI Tooling Architecture** to accelerate development. Currently organized into 6 pillars, this structure is designed to adapt as AI capabilities improve and our collective experience with AI-assisted workflows matures:
 
 1.  **Copilot for Execution**: "The Constitution" (`copilot-instructions.md`)
 2.  **Agents for Roles**: Specialized personas (`@requirements-planner`, `@ui-designer`)
