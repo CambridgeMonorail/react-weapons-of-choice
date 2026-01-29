@@ -2,6 +2,8 @@
 
 This guide walks you through implementing a new feature in this repository using our specialized AI tooling. It demonstrates how to leverage the **6 Pillars of AI Tooling** to work faster and with higher quality.
 
+> **Quick Reference**: Type `/help` in Copilot Chat to see all available tools and commands.
+
 ## The Workflow at a Glance
 
 1.  **Plan**: create a solid specification (`@requirements-planner`)
